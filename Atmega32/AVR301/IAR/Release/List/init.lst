@@ -1,0 +1,64 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:30:52                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\init.c                        #
+#       List file     =  c:\projects\at17c8515\release\list\init.lst         #
+#       Object file   =  c:\projects\at17c8515\release\obj\init.r90          #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Release\Obj\ -e     #
+#                        -gA -RCODE -LC:\Projects\at17c8515\Release\List\    #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -z9 -K                   #
+#                        C:\Projects\at17c8515\Init.c                        #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+      1            // init.c
+      2            
+      3            #include "at17c.h"
+      4             
+      5            void Init(void) {
+      6            
+      7                // P0 = SDA - bidirectional
+      8                // P1 = SCL - output
+      9                // P2 = SER_EN - output
+     10             
+     11                // P7, P6, P5, P4, P3, P2, P1, P0
+     12                //  O   O   O   O   O   O   O   O
+     13                //  1   1   1   1   1   1   1   1
+     14                DDRB = 0xfc;
+     15                PORTB = 0xfc; // outputs to a 1, inputs have no pull-ups
+     16             
+     17                // port c used to light leds on prototype board
+     18                DDRC = 0xff;
+     19                PORTC = 0x00; // 0 turns leds off ... really should be the other way around
+     20                
+     21                // use pushbutton switches on atstk200 kit to start events
+     22                DDRD = 0x00;
+     23                PORTD |= 0xff;
+     24                                                     
+     25                TCCR1A = 0x00; // timer/counter 1 PWM disable
+     26                TCCR1B = 0x00; // timer/counter 1 clock disable
+     27                TCNT1H = 0x00;
+     28                TCNT1L = 0x00; // clear counter
+     29            
+     30                TCNT0 = 0x00;
+     31                TCCR0 = 0x00; // stop the clock
+     32                TIMSK |= 0x82; // enable timer counter 0 & 1 interrupt on overflow
+     33                
+     34            
+     35            }
+
+Source file: c:\projects\at17c8515\init.c
+Errors: none
+Warnings: none
+Code size: 44
+Constant size: 0
+Static variable size: 0
+

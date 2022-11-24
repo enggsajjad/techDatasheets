@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0032)http://www.rentron.com/LCD51.htm -->
+<HTML><HEAD><TITLE>8051 3-Wire LCD Example</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="3-Wire LCD With The 8051 Microcontroller" name=description>
+<META content="rings2 111" name="Microsoft Theme">
+<META content=none name="Microsoft Border">
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#0000ff aLink=#0000ff link=#0000ff bgColor=#cccccc 
+leftMargin=50 background="8051 3-Wire LCD Example_files/spiral.gif"><!--mstheme--><FONT 
+face=Verdana>
+<P align=center><MAP name=FPMap4><AREA shape=RECT coords=7,2,95,21 
+  href="http://www.rentron.com/BasicStamp.htm"><AREA shape=RECT 
+  coords=7,27,94,47 href="http://www.rentron.com/listinfoadd/signup.htm"><AREA 
+  shape=RECT coords=106,2,196,21 
+  href="http://www.rentron.com/PicBasic.htm"><AREA shape=RECT 
+  coords=108,28,195,48 href="http://www.rentron.com/Robo-Ware.htm"><AREA 
+  shape=RECT coords=206,3,294,22 href="http://www.rentron.com/8051.htm"><AREA 
+  shape=RECT coords=206,29,294,48 
+  href="http://www.rentron.com/PicBasic/Rentron.htm"><AREA shape=RECT 
+  coords=303,3,397,23 href="http://www.rentron.com/remote.htm"><AREA shape=RECT 
+  coords=303,27,395,47 href="http://www.rentron.com/index.html"><AREA shape=RECT 
+  coords=405,2,494,23 href="http://www.rentron.com/pic.htm"><AREA shape=RECT 
+  coords=407,27,492,48 href="http://www.rentron.com/books.htm"></MAP><IMG 
+height=49 src="8051 3-Wire LCD Example_files/rentron-buttons.gif" width=500 
+useMap=#FPMap4 border=0></P>
+<DIV align=center>
+<CENTER><!--mstheme--></FONT>
+<TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#e6e6e6><!--mstheme--><FONT face=Verdana>
+      <P align=center><FONT face=Arial>3-Wire LCD Interface For 8051 
+      Systems<BR>Submitted by: Vidyasagaran P. (v_sagar_p@yahoo.com)</FONT><!--mstheme--></FONT></P></TD></TR></TBODY></TABLE><!--mstheme--><FONT 
+face=Verdana></CENTER></DIV>
+<DIV align=center>
+<CENTER><!--mstheme--></FONT>
+<TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left width="100%" 
+    background="8051 3-Wire LCD Example_files/spider.gif"><!--mstheme--><FONT 
+      face=Verdana><!--mstheme--></FONT><PRE>; ------------- READS51 generated header -------------- 
+; module  : C:\Rigel\Reads51\Work\LCD\LCD.asm
+; created : 20:34:08, Thursday, August 15, 2002
+; author  : Vidyasagaran P. (v_sagar_p@yahoo.com)
+; This file contains all the routines needed to manipulate the LCD display
+; Please note that these routines are hardware wiring specific and will need
+; changes if the wiring changes. You may have to adjust the delay (DLY_IDX) depending on
+; the processor speed.
+;       +-------+                                       +---------------+
+;       |   P0.0+--------------------------------------&gt;+E     LCD      |
+;       |       |               +----------+            |               |
+;       |   P0.1+--------------&gt;+CLK     D5+-----------&gt;+RS          R/W+---+
+;       |   P0.2+--------------&gt;+INPUT D0-4+--------\--&gt;+D4-D7          |   |
+;       |       |               |          |     +--\--&gt;+D0-D3          |   - Gnd
+;       +-------+               +----------+     |      +---------------+
+;         8051                    74HC164        -Gnd    LCD display
+; How data is loaded into the LCD
+;   
+;       1. clock the upper nibble in and use E bit to latch the higher 4 bits
+;       2. clock the lower nibble in similarly
+; ----------------------------------------------------- 
+;
+; The following definitions are as per the ABOVE hardware wiring.
+; It assumes 3 port pins used for display functions. First one directly connected to LCD
+; E (enable) bit and reset two are connected to an 8 bit output shift register as below.
+
+#include &lt;sfr51.inc&gt;<SFR51.INC>
+
+;----------------------- PORTING Changes to be done in the following ---------
+#define LCD_PORT    	P3  	;Port used for LCD interface
+#define BASE    	000     ;where the code this located
+#define DLY_IDX 	2FH     ;depends on speed of processor
+
+#define EBIT    LCD_PORT.0    ;LCD Ebit pin
+#define S2P_CLK LCD_PORT.1    ;Serial to parallel convertor 74HC164 clock pin
+#define S2P_IN  LCD_PORT.2    ;Serial to parallel convertor 74HC164 serial input
+
+
+CodeSeg segment code
+
+Public  _Init_LCD
+Public  _display_string
+    
+        rseg Codeseg
+        org     BASE
+
+_Init_LCD:
+        clr     EBIT       ;reset the LCD E bit used. Other pins need not be cleared.
+	
+        acall   init_lcd
+        mov     DPTR,#Init_msg
+        acall   _display_string
+        ret
+
+;-----------------------------------------------------------
+;clear_home_cursor - put the cursor back to first char
+clear_home_cursor:
+        ;clear display
+        clr     c
+        mov     acc,#00000001b
+        acall   _write_char
+
+        ;home cursor
+        clr     c
+        mov     acc,#00000010b
+        acall   _write_char
+        ret
+
+;-----------------------------------------------------------
+;_display_string is a function which assumes the address of the string
+;to be passed in DPTR, in the code memory. Strin must have a NULL at the end.
+_display_string:
+        mov     acc,r1          ;save R1
+        push    acc
+        mov     acc,r0          ;save R0, as this is destroyed in _write_char
+        push    acc
+
+        acall   clear_home_cursor
+        mov     r1,#0           ;index count for next character
+display_string_loop:
+        mov     a,r1            ;move index count to accumulator
+        movc    a,@a+DPTR       ;next char to go
+        jz      display_string_out      ;is it a null?
+        setb    c               ;if not null set carry to write char
+        acall   _write_char     ;call write_char function
+        inc     r1              ;next char to go
+        sjmp    display_string_loop    ;repeat till all chars are done
+display_string_out:
+
+        pop     acc             ;restore R0 as write_char destroys this
+        mov     r0,acc
+        pop     acc             ;restore R1
+        mov     r1,acc
+        ret
+
+;-----------------------------------------------------------
+;A character is passed in to this routine in accumulator
+;this routine assumes the following wiring from uP to the LCD.
+;R0 is destroyed. But exported functions "display_string" saves this,
+;(a precausion which is optimised also!)
+_write_char:
+        mov     ov,c            ;store state of c for second nibble write
+        mov     r0,#5           ;we need to shift these many times
+        setb    ac              ;this indicates second nibble needs to be written yet
+
+write_char_loop:
+        mov     S2P_IN,c        ;serial input bit
+        clr     S2P_CLK         ;clock once
+        setb    S2P_CLK
+        rlc     a               ;get c flag set as per data bits from next time
+        djnz    r0,write_char_loop
+
+        ;make the LCD latch the value
+        setb    EBIT            ;pulse Ebit for one time for the first nibble
+        clr     EBIT
+
+        jnb     ac,write_char_over
+        clr     ac              ;get out after the second nibble written
+
+        rrc     a               ;remove that extra rotation
+        mov     c,ov            ;restore the original carry to write second nibble
+        mov     r0,#5           ;we need to write these many times
+        sjmp    write_char_loop
+
+write_char_over:
+        jb      ov,write_char_nodelay   ;for command writes delay is needed, not for chars!
+        acall   big_dly
+write_char_nodelay:
+        ret
+
+;----------------------------------------------------------
+;write_one_nibble : writes one Most significant nibble in a passed char
+;to the LCD. Caller should set the C to indicate write to LCD command
+;Assumes left roation of bits and hence wiring of data bits from Latch
+;to be accordingly
+;contents of R0 is destroyed
+write_one_nibble:
+        mov     r0,#5           ;we need to write these many times
+
+write_one_nibble_loop:
+        mov     S2P_IN,c        ;serial input bit
+        clr     S2P_CLK         ;clock once
+        setb    S2P_CLK
+        rlc     a               ;get c flag set as per data bits from second time
+        djnz    r0,write_one_nibble_loop
+
+        ;make the LCD latch the value
+        setb    EBIT            ;pulse Ebit for one time for the first nibble
+        clr     EBIT
+        acall   big_dly
+        ret
+
+;----------------------------------------------------------
+;a big delay for the LCD to settle after each init stuff. Some places this
+;delay seems to be very critical. I have put more since it doesn't take much
+;time and also since it is only one time init.
+big_dly:
+        mov     r0,#DLY_IDX
+odly:
+        mov     acc,#FFH
+dly:
+        djnz    acc,dly        ;Simulater virtually hangs here. So comment this during simulation
+        djnz    r0,odly
+        ret
+
+;----------------------------------------------------------
+;init_lcd : the following routine works fine from the first write after
+;the power is applied. "write_one_nibble" is used to change the  LCD mode
+;from 8 bit interface to 4 bit one. For this write alone the D0-D3 is taken
+;as 0000 as they are hardwired to ground.
+init_lcd:
+        ;set display width
+        clr     c
+        mov     acc,#00100000b
+        acall   write_one_nibble       
+
+        ;enable display and cursor
+        clr     c
+        mov     acc,#00001100b          ;no cursor and no blink
+        acall   _write_char
+
+        ;clear display
+        clr     c
+        mov     acc,#00000001b
+        acall   _write_char
+
+        ;home cursor
+        clr     c
+        mov     acc,#00000010b
+        acall   _write_char
+        ret
+
+;-----------------------------------------------------------
+Init_msg:
+        DB      "Display OK",0
+
+        end
+</PRE><!--mstheme--><FONT face=Verdana>
+      <P></P>
+      <P align=center>Back to the 8051 projects section <A 
+      href="http://www.rentron.com/8051.htm">HERE</A><BR>&nbsp;</P>
+      <P align=center><MAP name=FPMap3><AREA shape=RECT coords=7,2,95,21 
+        href="http://www.rentron.com/BasicStamp.htm"><AREA shape=RECT 
+        coords=7,27,94,47 
+        href="http://www.rentron.com/listinfoadd/signup.htm"><AREA shape=RECT 
+        coords=106,2,196,21 href="http://www.rentron.com/PicBasic.htm"><AREA 
+        shape=RECT coords=108,28,195,48 
+        href="http://www.rentron.com/Robo-Ware.htm"><AREA shape=RECT 
+        coords=206,3,294,22 href="http://www.rentron.com/8051.htm"><AREA 
+        shape=RECT coords=206,29,294,48 
+        href="http://www.rentron.com/PicBasic/Rentron.htm"><AREA shape=RECT 
+        coords=303,3,397,23 href="http://www.rentron.com/remote.htm"><AREA 
+        shape=RECT coords=303,27,395,47 
+        href="http://www.rentron.com/index.html"><AREA shape=RECT 
+        coords=405,2,494,23 href="http://www.rentron.com/pic.htm"><AREA 
+        shape=RECT coords=407,27,492,48 
+      href="http://www.rentron.com/books.htm"></MAP><IMG height=49 
+      src="8051 3-Wire LCD Example_files/rentron-buttons.gif" width=500 
+      useMap=#FPMap3 border=0></P><!--mstheme--></FONT></TD></TR></TBODY></TABLE><!--mstheme--><FONT 
+face=Verdana></CENTER></DIV><!--webbot bot="Navigation" S-Type="arrows" S-Orientation="horizontal" S-Rendering="graphics" B-Include-Home="TRUE" B-Include-Up="TRUE" U-Page S-Target startspan --><!--webbot bot="Navigation" i-checksum="0" endspan -->
+<P></P>&nbsp;<!--mstheme--></FONT></BODY></HTML>

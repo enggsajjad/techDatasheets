@@ -1,0 +1,91 @@
+BL51 BANKED LINKER/LOCATER V5.00                                                        05/03/2002  12:10:33  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.00, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE main.obj TO memwrite RAMSIZE (256) PDATA (0XFF00)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  memwrite (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0058H                  *** GAP ***
+            DATA    0060H     0010H     ABSOLUTE     
+                    0070H     0040H                  *** GAP ***
+            IDATA   00B0H     0010H     ABSOLUTE     
+            IDATA   00C0H     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+                    0000H     0200H                  *** GAP ***
+            XDATA   0200H     0010H     ABSOLUTE     
+                    0210H     FD50H                  *** GAP ***
+            XDATA   FF60H     0010H     ABSOLUTE     
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    00F9H     0052H     UNIT         ?CO?MAIN
+            CODE    014BH     004EH     UNIT         ?PR?MAIN?MAIN
+            CODE    0199H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   memwrite (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?CO?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  memwrite (MAIN)
+
+BL51 BANKED LINKER/LOCATER V5.00                                                      05/03/2002  12:10:33  PAGE 2
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:014BH         PUBLIC        main
+  I:00B0H         PUBLIC        idata_buffer
+  X:FF60H         PUBLIC        pdata_buffer
+  X:0200H         PUBLIC        xdata_buffer
+  D:0060H         PUBLIC        data_buffer
+  -------         PROC          MAIN
+  C:014BH         LINE#         13
+  C:014BH         LINE#         14
+  C:014BH         LINE#         18
+  C:015EH         LINE#         23
+  C:0171H         LINE#         28
+  C:0184H         LINE#         33
+  C:0197H         LINE#         38
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?COPY
+  C:00D3H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+Program Size: data=41.0 xdata=32 code=421
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

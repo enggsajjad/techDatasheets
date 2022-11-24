@@ -1,0 +1,79 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:30:54                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\sendbyte.c                    #
+#       List file     =  c:\projects\at17c8515\release\list\sendbyte.lst     #
+#       Object file   =  c:\projects\at17c8515\release\obj\sendbyte.r90      #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Release\Obj\ -e     #
+#                        -gA -RCODE -LC:\Projects\at17c8515\Release\List\    #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -z9 -K                   #
+#                        C:\Projects\at17c8515\SendByte.c                    #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+      1            // SendByte.c
+      2            // send a byte of address or data to the slave
+      3            // parameter order used to select between sending LSB or MSB first
+      4            // returns a 1 if the slave didn't ack and a 0 if the slave did
+      5             
+      6            #include "at17c.h"
+      7            
+      8            extern void WriteSCL(unsigned char state);
+      9            extern void WriteSDA(unsigned char state);
+     10            extern void BitDelay(void);
+     11            extern unsigned char SetSCLHigh(void);
+     12            
+     13            unsigned char SendByte(unsigned char byte, unsigned char order) {
+     14            
+     15            unsigned char i;
+     16            unsigned char error;
+     17            
+     18                for (i = 0; i < 8; i++) {
+     19                    if (order) {
+     20                        WriteSDA(byte & 0x80); // if > 0 SDA will be a 1
+     21                        byte = byte << 1; // send each bit, MSB first for address
+     22                    }
+     23                    else {
+     24                        WriteSDA(byte & 0x01); // if > 0 SDA will be a 1
+     25                        byte = byte >> 1; // send each bit, LSB first for data
+     26                    }
+     27            
+     28                    BitDelay();
+     29                    SetSCLHigh();
+     30                    BitDelay();
+     31                    WriteSCL(0);
+     32                    BitDelay();
+     33                }
+     34                
+     35                // now for an ack
+     36                
+     37                // master generates clock pulse for ACK
+     38                WriteSDA(1); // release SDA ... listen for ACK
+     39                BitDelay();
+     40                SetSCLHigh(); // ACK should be stable ... data not allowed to change when SCL is high
+     41             
+     42                // SDA at 0 ?
+     43                error = (PINB & 0x01); // ack didn't happen if bit 0 = 1
+     44            
+     45                WriteSCL(0);
+     46                BitDelay();
+     47             
+     48                return(error);
+     49            
+     50            }
+
+Source file: c:\projects\at17c8515\sendbyte.c
+Errors: none
+Warnings: none
+Code size: 72
+Constant size: 0
+Static variable size: 0
+

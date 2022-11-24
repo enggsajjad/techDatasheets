@@ -1,0 +1,4 @@
+C:\CF_PROJ\TEST4\config.obj,
+C:\CF_PROJ\TEST4\main.obj,
+C:\CF_PROJ\TEST4\fonts.obj,
+C:\CF_PROJ\TEST4\lcd240x64.obj  TO C:\CF_PROJ\TEST4\test RS(256) PL(68) PW(78) CO(0-FDFFH) XD(0-FFFH) 

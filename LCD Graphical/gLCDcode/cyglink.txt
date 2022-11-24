@@ -1,0 +1,4 @@
+C:\CF_PROJ\TEST1\lcd106x56.obj,
+C:\CF_PROJ\TEST1\config.obj,
+C:\CF_PROJ\TEST1\main.obj,
+C:\CF_PROJ\TEST1\fonts.obj  TO C:\CF_PROJ\TEST1\test RS(256) PL(68) PW(78) CO(0-FDFFH) XD(0-FFFH) 

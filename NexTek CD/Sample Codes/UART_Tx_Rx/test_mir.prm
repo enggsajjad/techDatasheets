@@ -1,0 +1,17 @@
+PROMGEN: Xilinx Prom Generator G.23
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+promgen -w -p mcs -c FF -o C:\testing_FROM\UART_Tx_Rx//test_mir -u 0 C:\testing_FROM\UART_Tx_Rx\uart_top.bit -x xc1701 
+
+PROM C:\testing_FROM\UART_Tx_Rx//test_mir.prm map: Tue Dec 07 17:18:36 2004
+
+Calculating PROM checksum with fill value ff
+
+Format        Mcs86 (32-bit)
+Size          128K
+PROM start    0000:0000
+PROM end      0001:ffff
+PROM checksum 008770a8
+
+        Addr1        Addr2 File(s)
+    0000:0000    0001:fbdb C:/testing_FROM/UART_Tx_Rx/uart_top.bit

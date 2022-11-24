@@ -1,0 +1,7 @@
+SCHEMATIC START ;
+// created by map version G.23 on Mon Dec 06 14:35:02 2004 
+COMP "clk_1200Hz" LOCATE =  SITE "P187" LEVEL 1; 
+COMP "clk_16MHz" LOCATE =  SITE "P77" LEVEL 1; 
+COMP "rst_n" LOCATE =  SITE "P36" LEVEL 1; 
+COMP "ser_data_to_pc" LOCATE =  SITE "P69" LEVEL 1; 
+SCHEMATIC END ;

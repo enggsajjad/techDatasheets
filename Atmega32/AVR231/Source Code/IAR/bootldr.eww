@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\bootldr128.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\bootldr16.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\bootldr162.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\bootldr169.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\bootldr32.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\bootldr64.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\bootldr8.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>
+
+

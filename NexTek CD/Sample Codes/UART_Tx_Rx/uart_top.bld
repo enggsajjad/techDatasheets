@@ -1,0 +1,24 @@
+Release 6.1i - ngdbuild G.23
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -intstyle ise -dd
+\\nextek3\c\testing_from\uart_tx_rx/_ngo -uc uart_top.ucf -p xc2s150-pq208-5
+uart_top.ngc uart_top.ngd 
+
+Reading NGO file "//Nextek3/C/testing_FROM/UART_Tx_Rx/uart_top.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "uart_top.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 36528 kilobytes
+
+Writing NGD file "uart_top.ngd" ...
+
+Writing NGDBUILD log file "uart_top.bld"...

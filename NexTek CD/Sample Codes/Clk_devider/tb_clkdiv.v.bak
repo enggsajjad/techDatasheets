@@ -1,0 +1,49 @@
+//*****************************************************************************************//
+//    Project      : Clock Divider
+//    File         : clkdiv.v
+//    Author       : NexTek Service
+//    Company      : NexTek Service
+//    Start Date   : Apr 06th, 2003.
+//    Last Updated : Apr 06th  2003
+//    Version      : 1.0
+//    Abstract     : This module implements the test bench of a Clock Divider.                                
+//    Modification History:
+//==========================================================================================
+//    Date                       By                 Version              Change Description
+//==========================================================================================
+//   Apr 06th  2003          NexTek Service           1.0                  Original Version
+//******************************************************************************************//
+
+module tb_clkdiv();
+
+reg      clk16MHz ;
+reg      reset ;
+
+wire     clk2MHz ;
+wire     clk1MHz ;
+
+//   initialize inputs
+initial
+begin
+  //initialize clock 
+    clk16MHz =1'b0;         
+  // Generate  reset     
+    reset =1'b1 ;      
+    # 50 reset =1'b0;        
+    # 10000 $stop; 
+end  
+ 
+// Generate Clock 20MHz only for testing
+always 
+   # 25  clk16MHz = ~clk16MHz ;
+
+// INSTANCIATE DESIGN BLOCK HERE
+ clkdiv  clkdiv_inst(//>>>>>>>>INPUTS>>>>>>>>
+		     clk16MHz, 
+		     reset, 
+       	             //<<<<<<<<OUTPUTS<<<<<<<
+		     clk2MHz, 
+		     clk1MHz
+                    );
+
+endmodule

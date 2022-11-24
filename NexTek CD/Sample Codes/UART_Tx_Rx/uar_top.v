@@ -1,0 +1,194 @@
+
+
+//*********************************************************************************************************************//
+//    Project      : NexTek Service
+//    File         : uar_top.v
+//    Author       : NexTek Service
+//    Company      : NexTek Service
+//    Start Date   : Jan 06th, 2004.
+//    Last Updated : Feb 17th, 2004.
+//    Version      : Final
+//    Device	   : xc2s150-5pq208 
+//    PROM	   : xcf01s
+//    Abstract     : Universal Asyncronous Rx Top
+// 
+//    Modification History:
+//==========================================================================================
+//    Date                       By                 Version                Change Description
+//==========================================================================================
+//    Feb 17th, 2004          NexTek Service          Final                 Original Version
+//******************************************************************************************//
+
+module uar_top(// Inputs
+               clk,
+               rst_n,
+               ser_in,
+               // Outputs
+               dout_rdy,
+               dout_byte
+              );
+              
+// Inputs              
+input        clk;
+input        rst_n;
+input        ser_in;
+
+// Outputs
+output       dout_rdy;
+output [7:0] dout_byte;
+
+reg          ser_in_r1;
+reg          ser_in_r2;
+
+reg   [4:0] count_rdy_sig;
+reg   [3:0] count_sample;
+reg   [3:0] shift_count;
+reg   [7:0] dout_byte_temp;
+reg         dout_rdy_temp;
+reg   [7:0] dout_byte;
+reg         dout_rdy;
+reg         dout_rdy_d;
+
+wire        start_bit_sig;
+wire        data_bits_sig;
+wire        stop_bit_sig;
+wire        valid_data;
+
+
+// Latch Decode Data
+always @(posedge clk or negedge rst_n)
+begin
+  if(~rst_n)
+    dout_byte <= 8'd0 ;
+  else if(dout_rdy_temp)
+    dout_byte <= dout_byte_temp ;
+  else
+    dout_byte <= dout_byte ;
+end   
+
+always @(posedge clk or negedge rst_n)
+begin
+  if(~rst_n) 
+  begin
+    count_rdy_sig <= 5'd0 ;
+    dout_rdy_d    <= 1'b0 ;
+  end
+  else if(dout_rdy_temp)
+  begin
+    count_rdy_sig <= 5'd1 ;
+    dout_rdy_d    <= 1'b1 ;
+  end
+  else if(count_rdy_sig != 5'd0 && count_rdy_sig != 5'd16) 
+  begin
+    count_rdy_sig <= count_rdy_sig + 1 ;
+    dout_rdy_d    <= 1'b1 ;
+  end
+  else 
+  begin
+    count_rdy_sig <= 5'd0 ;
+    dout_rdy_d    <= 1'b0 ; 
+  end
+end   
+
+// Delay Data Ready Signal
+always @(posedge clk or negedge rst_n)
+begin
+  if(~rst_n)
+    dout_rdy <= 1'b0;
+  else
+    dout_rdy <= dout_rdy_d;
+end   
+
+// Detect Input Data
+always @(posedge clk or negedge rst_n)
+begin
+  if(~rst_n) 
+  begin 
+    ser_in_r1 <= 1'b1 ;
+    ser_in_r2 <= 1'b1 ;
+  end
+  else 
+  begin
+    ser_in_r1 <= ser_in ;
+    ser_in_r2 <= ser_in_r1 ;
+  end
+end   
+
+assign valid_data = (~ser_in_r1 && ser_in_r2) ? 1'b1 : 1'b0 ;
+
+// Output Logic
+always @(posedge clk or negedge rst_n)
+begin
+  if(~rst_n)
+    count_sample <= 4'd0 ;
+  else if(start_bit_sig || data_bits_sig || stop_bit_sig) 
+    count_sample <= count_sample + 1 ;
+  else
+    count_sample <= 4'd0 ;
+end
+
+// Counter that count shift in Data Buffer Logic
+always @(posedge clk or negedge rst_n)
+begin
+  if(~rst_n)
+    shift_count <= 4'd0 ;
+  else if(count_sample == 4'd9 && shift_count == 4'd9)
+    shift_count <= 4'd0 ;
+  else if(count_sample == 4'd9 && (start_bit_sig || data_bits_sig || stop_bit_sig))
+    shift_count <= shift_count + 1 ;
+  else
+    shift_count <= shift_count ;
+end
+      
+// Output Logic
+always @(posedge clk or negedge rst_n)
+begin
+  if(~rst_n) 
+  begin 
+    dout_byte_temp <= 8'd0 ;
+    dout_rdy_temp  <= 1'b0 ;
+  end
+  else 
+  begin
+    case({stop_bit_sig, data_bits_sig, start_bit_sig})
+      3'b001 : 
+              begin                                     // Data Bits Extract
+                dout_byte_temp <= dout_byte_temp ;
+                dout_rdy_temp  <= 1'b0 ;
+              end   
+      3'b010 : 
+              begin                                     // Data Bits Extract
+                if(count_sample == 4'd7)
+                 dout_byte_temp <= {ser_in_r2, dout_byte_temp[7:1]} ;
+                dout_rdy_temp   <= 1'b0 ;
+                end   
+      3'b100 : 
+              begin                                     // Data Bits Extract
+                if(count_sample == 4'd7 && ser_in_r2 == 1'b1)
+                  dout_rdy_temp <= 1'b1 ;
+                else
+                  dout_rdy_temp <= 1'b0 ;
+                dout_byte_temp  <= dout_byte_temp ;
+              end   
+     default : 
+              begin                                     // Retain previous status
+                dout_byte_temp <= dout_byte_temp ;
+                dout_rdy_temp  <= 1'b0 ;
+              end
+     endcase
+  end                   
+end         
+      
+// State machine for Tx
+uar_sm uar_sm_inst(// Inputs
+                   .clk             (clk),
+                   .rst_n           (rst_n),
+                   .din_rdy         (valid_data),
+                   .shift_count     (shift_count),
+		   .count_sample    (count_sample),
+                   // Outputs
+                   .start_bit_sig   (start_bit_sig),
+                   .data_bits_sig   (data_bits_sig),
+                   .stop_bit_sig    (stop_bit_sig)
+                  );  
+endmodule

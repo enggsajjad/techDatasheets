@@ -1,0 +1,1095 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Adam Davis - Electronics - Sanyo 4x40 LCD Pinout
+Date: Wed, 12 Sep 2007 14:47:47 +0500
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_001D_01C7F54B.E283F6C0";
+	type="text/html"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_001D_01C7F54B.E283F6C0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://ubasics.com/adam/electronics/lcd/pinout.shtml
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Adam Davis - Electronics - Sanyo 4x40 LCD =
+Pinout</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"Resource for computers and electronics" =
+name=3Ddescription>
+<META=20
+content=3D"Programming, electronics, microcontrollers, VB, VC, =
+Visual,basic,c,c++,assembly,PIC,microchip,micro,basics, ubasics"=20
+name=3Dkeywords>
+<META content=3D"MSHTML 6.00.2800.1106" name=3DGENERATOR></HEAD>
+<BODY text=3D#000000 bgColor=3D#00ffff>
+<DIV align=3Dleft>
+<TABLE height=3D169 cellSpacing=3D0 cellPadding=3D0 width=3D"100%" =
+border=3D0>
+  <TBODY>
+  <TR>
+    <TD width=3D"13%" height=3D37>
+      <P align=3Dcenter><SMALL><SMALL>Last Change<BR><!--webbot =
+bot=3D"Timestamp" S-Type=3D"EDITED" S-Format=3D"%d %b %Y" startspan =
+-->25=20
+      May=20
+      2000<!--webbot bot=3D"Timestamp" endspan i-checksum=3D"15108" =
+--></SMALL></SMALL></P></TD>
+    <TD width=3D"87%" height=3D37><STRONG><BIG><BIG><BIG>LCD -=20
+      Pinout</BIG></BIG></BIG></STRONG></TD></TR>
+  <TR>
+    <TD vAlign=3Dtop width=3D"13%" height=3D132><!--webbot =
+bot=3D"Include" U-Include=3D"../menu.htm" TAG=3D"BODY" startspan -->
+      <HR>
+
+      <P align=3Dcenter><A=20
+      =
+href=3D"http://ubasics.com/adam/index.shtml"><STRONG><BIG>Home</BIG></STR=
+ONG></A></P>
+      <P align=3Dcenter><A=20
+      =
+href=3D"http://ubasics.com/adam/personal/index.shtml"><STRONG><BIG>About =
+
+      Me</BIG></STRONG></A></P>
+      <P align=3Dcenter><A=20
+      =
+href=3D"http://ubasics.com/adam/electronics/"><STRONG><BIG>Electronics</B=
+IG><BR></STRONG></A><A=20
+      href=3D"http://ubasics.com/adam/electronics/ha/">HAT</A><BR><A=20
+      =
+href=3D"http://ubasics.com/adam/electronics/cm17.shtml">CM17A</A><BR><A=20
+      =
+href=3D"http://ubasics.com/adam/electronics/dmx512.shtml">DMX-512</A><BR>=
+<A=20
+      =
+href=3D"http://ubasics.com/adam/electronics/doc/phasecon.shtml">Light=20
+      Dimming</A><BR><A=20
+      =
+href=3D"http://ubasics.com/adam/electronics/doc/rotryenc.shtml">Rotary=20
+      Encoders</A><BR><A=20
+      href=3D"http://ubasics.com/adam/electronics/ti/index.shtml">TI=20
+      Calculators</A><BR><A=20
+      =
+href=3D"http://ubasics.com/adam/electronics/doc/pwrsup.shtml">Power=20
+      Supply</A><BR><A =
+href=3D"http://ubasics.com/adam/electronics/lcd/">LCD=20
+      Projects</A></P>
+      <P align=3Dcenter><BIG><STRONG><A=20
+      href=3D"http://ubasics.com/adam/pic/index.shtml">PIC=20
+      uC</A></STRONG></BIG></P>
+      <P align=3Dcenter><A=20
+      =
+href=3D"http://ubasics.com/adam/computers/index.shtml"><STRONG><BIG>Compu=
+ters</BIG></STRONG></A></P>
+      <P align=3Dcenter><A=20
+      =
+href=3D"http://ubasics.com/adam/search.htm"><STRONG><BIG>Search</BIG></ST=
+RONG></A></P>
+      <P align=3Dcenter><STRONG><BIG><A =
+href=3D"mailto:adavis@ubasics.com">Email=20
+      Me</A></BIG></STRONG></P>
+      <HR>
+<!--webbot bot=3D"Include" endspan i-checksum=3D"52057" --></TD>
+    <TD vAlign=3Dtop width=3D"87%" height=3D154>
+      <BLOCKQUOTE>
+        <P>This page discribes the pinout of the Tottori Sanyo =
+LCM54451RZ 4 line=20
+        by 40 character display currently sold by <A=20
+        href=3D"http://www.mpja.com/">MPJA</A> as item <A=20
+        =
+href=3D"http://www.mpja.com/product.asp?product=3D12295+OP">#12295 =
+OP</A>.=20
+        Please note that this pinout is NOT an industry standard. It was =
+found=20
+        by tracing the circuit board of the LCD display and correlating =
+pins on=20
+        the HD44780 with pins on the connector. I have tested the =
+display, and=20
+        found that it works in both 4-bit and 8-bit mode as expected. =
+All power,=20
+        data and control lines are connected to both chips excepting the =
+enable=20
+        control lines. These are seperate signals for the seperate =
+HD44780s, one=20
+        which controls the upper two lines of the display, the other =
+controlling=20
+        the lower two lines of the display. I could not find any data on =
+these=20
+        displays, and am assuming the specifications are similar to =
+other=20
+        HD44780 controlled LCD displays.</P>
+        <DIV align=3Dcenter>
+        <CENTER>
+        <TABLE cellSpacing=3D0 border=3D0>
+          <CAPTION>Pictures of the display can be seen by following the =
+links=20
+          below:<BR><SMALL><EM>(The medium resolution is just enough to =
+read the=20
+          chip IDs)</EM></SMALL></CAPTION>
+          <TBODY>
+          <TR>
+            <TD><IMG height=3D74 alt=3D"thumfront.jpg (6622 bytes)"=20
+              =
+src=3D"http://ubasics.com/adam/electronics/lcd/thumfront.jpg"=20
+              width=3D258><BR>See NOTE below</TD>
+            <TD><A=20
+              =
+href=3D"http://ubasics.com/adam/electronics/lcd/medfface.jpg">Medium=20
+              resolution</A>, ~126K JPEG
+              <P><A=20
+              =
+href=3D"http://ubasics.com/adam/electronics/lcd/fullface.gif">High=20
+              Resolution</A>, ~1.18MB GIF</P></TD></TR>
+          <TR>
+            <TD><IMG height=3D79 alt=3D"thumback.jpg (10469 bytes)"=20
+              =
+src=3D"http://ubasics.com/adam/electronics/lcd/thumback.jpg"=20
+              width=3D266></TD>
+            <TD><A=20
+              =
+href=3D"http://ubasics.com/adam/electronics/lcd/medback.jpg">Medium=20
+              resolution</A>, ~178K JPEG
+              <P><A =
+href=3D"http://ubasics.com/adam/electronics/lcd/back.gif">High=20
+              Resolution</A>, ~1.21MB =
+GIF</P></TD></TR></TBODY></TABLE></CENTER></DIV>
+        <DIV align=3Dleft>
+        <TABLE cellSpacing=3D0 border=3D0>
+          <CAPTION>Legend:</CAPTION>
+          <TBODY>
+          <TR>
+            <TD align=3Dmiddle><IMG height=3D16 alt=3DPower=20
+              src=3D"http://ubasics.com/adam/images/xbluegreen.gif" =
+width=3D18><IMG=20
+              height=3D16 alt=3DPower =
+src=3D"http://ubasics.com/adam/images/xred.gif"=20
+              width=3D18><IMG height=3D16 alt=3DPower=20
+              src=3D"http://ubasics.com/adam/images/xgreen.gif" =
+width=3D18></TD>
+            <TD>=3D</TD>
+            <TD>Power connections</TD></TR>
+          <TR>
+            <TD align=3Dmiddle><IMG height=3D16 alt=3DControl=20
+              src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD>
+            <TD>=3D</TD>
+            <TD>Control lines</TD></TR>
+          <TR>
+            <TD align=3Dmiddle><IMG height=3D16 alt=3DData=20
+              src=3D"http://ubasics.com/adam/images/xblue.gif" =
+width=3D18></TD>
+            <TD>=3D</TD>
+            <TD>Data bus</TD></TR>
+          <TR>
+            <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+              src=3D"http://ubasics.com/adam/images/xblack.gif" =
+width=3D18></TD>
+            <TD>=3D</TD>
+            <TD>Don't=20
+Care</TD></TR></TBODY></TABLE></DIV></BLOCKQUOTE></TD></TR></TBODY></TABL=
+E></DIV>
+<TABLE width=3D"80%" border=3D1>
+  <CAPTION>Sorted by <STRONG>PIN NUMBER</STRONG></CAPTION>
+  <TBODY>
+  <TR>
+    <TH vAlign=3Dcenter width=3D"5%" rowSpan=3D2>Pin</TH>
+    <TH vAlign=3Dcenter width=3D"10%" rowSpan=3D2>Symbol</TH>
+    <TH vAlign=3Dcenter width=3D"15%" colSpan=3D2>Level</TH>
+    <TH vAlign=3Dcenter width=3D"10%" rowSpan=3D2>I/O</TH>
+    <TH vAlign=3Dcenter width=3D"50%" rowSpan=3D2>Function</TH>
+    <TH vAlign=3Dcenter width=3D"10%" colSpan=3D2>Interface</TH></TR>
+  <TR>
+    <TH vAlign=3Dcenter width=3D"8%">Idle</TH>
+    <TH vAlign=3Dcenter width=3D"7%">Active</TH>
+    <TH vAlign=3Dcenter align=3Dmiddle width=3D"5%">4-bit</TH>
+    <TH vAlign=3Dcenter align=3Dmiddle width=3D"5%">8-bit</TH></TR>
+  <TR>
+    <TD align=3Dmiddle>1</TD>
+    <TD align=3Dmiddle>DB6</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 6</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DData=20
+      src=3D"http://ubasics.com/adam/images/xblue.gif" width=3D18></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DData=20
+      src=3D"http://ubasics.com/adam/images/xblue.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>2</TD>
+    <TD align=3Dmiddle>DB7</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 7 (MSB)</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DData=20
+      src=3D"http://ubasics.com/adam/images/xblue.gif" width=3D18></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DData=20
+      src=3D"http://ubasics.com/adam/images/xblue.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>3</TD>
+    <TD align=3Dmiddle>DB4</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 4</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DData=20
+      src=3D"http://ubasics.com/adam/images/xblue.gif" width=3D18></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DData=20
+      src=3D"http://ubasics.com/adam/images/xblue.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>4</TD>
+    <TD align=3Dmiddle>DB5</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 5</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DData=20
+      src=3D"http://ubasics.com/adam/images/xblue.gif" width=3D18></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DData=20
+      src=3D"http://ubasics.com/adam/images/xblue.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>5</TD>
+    <TD align=3Dmiddle>DB3</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 3</TD>
+    <TD align=3Dmiddle></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DData=20
+      src=3D"http://ubasics.com/adam/images/xblue.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>6</TD>
+    <TD align=3Dmiddle>DB2</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 2</TD>
+    <TD align=3Dmiddle></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DData=20
+      src=3D"http://ubasics.com/adam/images/xblue.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>7</TD>
+    <TD align=3Dmiddle>DB0</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 0 (LSB)</TD>
+    <TD align=3Dmiddle></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DData=20
+      src=3D"http://ubasics.com/adam/images/xblue.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>8</TD>
+    <TD align=3Dmiddle>DB1</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 1</TD>
+    <TD align=3Dmiddle></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DData=20
+      src=3D"http://ubasics.com/adam/images/xblue.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>9</TD>
+    <TD align=3Dmiddle>E1</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>1-&gt;0</TD>
+    <TD align=3Dmiddle>I</TD>
+    <TD>Enable signal row 0 &amp; 1</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>10</TD>
+    <TD align=3Dmiddle>E2</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>1-&gt;0</TD>
+    <TD align=3Dmiddle>I</TD>
+    <TD>Enable signal row 2 &amp; 3</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>11</TD>
+    <TD align=3Dmiddle>RS</TD>
+    <TD align=3Dmiddle>1</TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I</TD>
+    <TD>0 =3D Instruction input<BR>1 =3D Data input</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>12</TD>
+    <TD align=3Dmiddle>R/W</TD>
+    <TD align=3Dmiddle>1</TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I</TD>
+    <TD>0 =3D Write to LCD module<BR>1 =3D Read from LCD module</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>13</TD>
+    <TD align=3Dmiddle>Vee</TD>
+    <TD align=3Dmiddle colSpan=3D2>0 to -5 VDC</TD>
+    <TD align=3Dmiddle>-</TD>
+    <TD>LCD Voltage [0 to -5 VDC] (Contrast adjust) <BR>I've found -3 =
+VDC to=20
+      be optimal.</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xbluegreen.gif" =
+width=3D18></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xbluegreen.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>14</TD>
+    <TD align=3Dmiddle>Vcc</TD>
+    <TD align=3Dmiddle colSpan=3D2>5 VDC +/- 5%</TD>
+    <TD align=3Dmiddle>-</TD>
+    <TD>Power supply (+5V)</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xred.gif" width=3D18></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xred.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>15</TD>
+    <TD align=3Dmiddle>Vss</TD>
+    <TD align=3Dmiddle colSpan=3D2>0</TD>
+    <TD align=3Dmiddle>-</TD>
+    <TD>Power supply (GND)</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xgreen.gif" width=3D18></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xgreen.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>16</TD>
+    <TD align=3Dmiddle>Vss</TD>
+    <TD align=3Dmiddle colSpan=3D2>0</TD>
+    <TD align=3Dmiddle>-</TD>
+    <TD>Power supply (GND)</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xgreen.gif" width=3D18></TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xgreen.gif"=20
+width=3D18></TD></TR></TBODY></TABLE>
+<P></P>
+<TABLE width=3D"80%" border=3D1>
+  <CAPTION>Sorted by <STRONG>PIN FUNCTION</STRONG></CAPTION>
+  <TBODY>
+  <TR>
+    <TH vAlign=3Dcenter width=3D"10%" rowSpan=3D2>Symbol</TH>
+    <TH vAlign=3Dcenter width=3D"5%" rowSpan=3D2>Pin</TH>
+    <TH vAlign=3Dcenter width=3D"15%" colSpan=3D2>Level</TH>
+    <TH vAlign=3Dcenter width=3D"10%" rowSpan=3D2>I/O</TH>
+    <TH vAlign=3Dcenter width=3D"50%" rowSpan=3D2>Function</TH>
+    <TH vAlign=3Dcenter width=3D"10%" colSpan=3D2>Interface</TH></TR>
+  <TR>
+    <TH vAlign=3Dcenter width=3D"8%">Idle</TH>
+    <TH vAlign=3Dcenter width=3D"7%">Active</TH>
+    <TH vAlign=3Dcenter width=3D"5%">4-bit</TH>
+    <TH vAlign=3Dcenter width=3D"5%">8-bit</TH></TR>
+  <TR>
+    <TD align=3Dmiddle>Vss</TD>
+    <TD align=3Dmiddle>15</TD>
+    <TD align=3Dmiddle colSpan=3D2>0</TD>
+    <TD align=3Dmiddle>-</TD>
+    <TD>Power supply (GND)</TD>
+    <TD><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xgreen.gif" width=3D18></TD>
+    <TD><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xgreen.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>Vss</TD>
+    <TD align=3Dmiddle>16</TD>
+    <TD align=3Dmiddle colSpan=3D2>0</TD>
+    <TD align=3Dmiddle>-</TD>
+    <TD>Power supply (GND)</TD>
+    <TD><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xgreen.gif" width=3D18></TD>
+    <TD><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xgreen.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>Vcc</TD>
+    <TD align=3Dmiddle>14</TD>
+    <TD align=3Dmiddle colSpan=3D2>5 VDC +/- 5%</TD>
+    <TD align=3Dmiddle>-</TD>
+    <TD>Power supply (+5V)</TD>
+    <TD><IMG height=3D16 alt=3DPower =
+src=3D"http://ubasics.com/adam/images/xred.gif"=20
+      width=3D18></TD>
+    <TD><IMG height=3D16 alt=3DPower =
+src=3D"http://ubasics.com/adam/images/xred.gif"=20
+      width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>Vee</TD>
+    <TD align=3Dmiddle>13</TD>
+    <TD align=3Dmiddle colSpan=3D2>0 to -5 VDC</TD>
+    <TD align=3Dmiddle>-</TD>
+    <TD>LCD Voltage [0 to -5 VDC] (Contrast adjust) <BR>I've found -3 =
+VDC to=20
+      be optimal.</TD>
+    <TD><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xbluegreen.gif" =
+width=3D18></TD>
+    <TD><IMG height=3D16 alt=3DPower=20
+      src=3D"http://ubasics.com/adam/images/xbluegreen.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>E1</TD>
+    <TD align=3Dmiddle>9</TD>
+    <TD align=3Dmiddle>1</TD>
+    <TD align=3Dmiddle>1-&gt;0</TD>
+    <TD align=3Dmiddle>I</TD>
+    <TD>Enable signal row 0 &amp; 1</TD>
+    <TD><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD>
+    <TD><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>E2</TD>
+    <TD align=3Dmiddle>10</TD>
+    <TD align=3Dmiddle>1</TD>
+    <TD align=3Dmiddle>1-&gt;0</TD>
+    <TD align=3Dmiddle>I</TD>
+    <TD>Enable signal row 2 &amp; 3</TD>
+    <TD><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD>
+    <TD><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>RS</TD>
+    <TD align=3Dmiddle>11</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I</TD>
+    <TD>0 =3D Instruction input<BR>1 =3D Data input</TD>
+    <TD><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD>
+    <TD><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>R/W</TD>
+    <TD align=3Dmiddle>12</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I</TD>
+    <TD>0 =3D Write to LCD module<BR>1 =3D Read from LCD module</TD>
+    <TD><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD>
+    <TD><IMG height=3D16 alt=3DControl=20
+      src=3D"http://ubasics.com/adam/images/xyellow.gif" =
+width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>DB0</TD>
+    <TD align=3Dmiddle>7</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 0 (LSB)</TD>
+    <TD></TD>
+    <TD><IMG height=3D16 alt=3DData =
+src=3D"http://ubasics.com/adam/images/xblue.gif"=20
+      width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>DB1</TD>
+    <TD align=3Dmiddle>8</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 1</TD>
+    <TD></TD>
+    <TD><IMG height=3D16 alt=3DData =
+src=3D"http://ubasics.com/adam/images/xblue.gif"=20
+      width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>DB2</TD>
+    <TD align=3Dmiddle>6</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 2</TD>
+    <TD></TD>
+    <TD><IMG height=3D16 alt=3DData =
+src=3D"http://ubasics.com/adam/images/xblue.gif"=20
+      width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>DB3</TD>
+    <TD align=3Dmiddle>5</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 3</TD>
+    <TD></TD>
+    <TD><IMG height=3D16 alt=3DData =
+src=3D"http://ubasics.com/adam/images/xblue.gif"=20
+      width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>DB4</TD>
+    <TD align=3Dmiddle>3</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 4</TD>
+    <TD><IMG height=3D16 alt=3DData =
+src=3D"http://ubasics.com/adam/images/xblue.gif"=20
+      width=3D18></TD>
+    <TD><IMG height=3D16 alt=3DData =
+src=3D"http://ubasics.com/adam/images/xblue.gif"=20
+      width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>DB5</TD>
+    <TD align=3Dmiddle>4</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 5</TD>
+    <TD><IMG height=3D16 alt=3DData =
+src=3D"http://ubasics.com/adam/images/xblue.gif"=20
+      width=3D18></TD>
+    <TD><IMG height=3D16 alt=3DData =
+src=3D"http://ubasics.com/adam/images/xblue.gif"=20
+      width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>DB6</TD>
+    <TD align=3Dmiddle>1</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 6</TD>
+    <TD><IMG height=3D16 alt=3DData =
+src=3D"http://ubasics.com/adam/images/xblue.gif"=20
+      width=3D18></TD>
+    <TD><IMG height=3D16 alt=3DData =
+src=3D"http://ubasics.com/adam/images/xblue.gif"=20
+      width=3D18></TD></TR>
+  <TR>
+    <TD align=3Dmiddle>DB7</TD>
+    <TD align=3Dmiddle>2</TD>
+    <TD align=3Dmiddle><IMG height=3D16 alt=3DX=20
+      src=3D"http://ubasics.com/adam/images/xblack.gif" width=3D18></TD>
+    <TD align=3Dmiddle>0/1</TD>
+    <TD align=3Dmiddle>I/O</TD>
+    <TD>Data bus line 7 (MSB)</TD>
+    <TD><IMG height=3D16 alt=3DData =
+src=3D"http://ubasics.com/adam/images/xblue.gif"=20
+      width=3D18></TD>
+    <TD><IMG height=3D16 alt=3DData =
+src=3D"http://ubasics.com/adam/images/xblue.gif"=20
+      width=3D18></TD></TR></TBODY></TABLE>
+<P><BR><STRONG>NOTE</STRONG>: The scans of the LCD are not perfect, =
+notably: I=20
+did not remove the plastic covering from the display face, which caused =
+the=20
+white 'quarter moon' on the right of the display. My scanner is away =
+from my=20
+work area, so I had to connect a portable power supply, and disconnect =
+other=20
+connections before scanning. During this switch, the lower display =
+shifted (I=20
+must've been shaking the display too hard...;-)</P>
+<P align=3Dcenter><EM><SMALL>Everything on/in this site is <A=20
+href=3D"http://ubasics.com/adam/cpyright.htm">copyright</A> Adam Davis, =
+1999,=20
+except where otherwise noted</SMALL></EM><BR>17917</P></BODY></HTML>
+
+------=_NextPart_000_001D_01C7F54B.E283F6C0
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://ubasics.com/adam/electronics/lcd/thumfront.jpg
+
+/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsK
+CwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQU
+FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCABKAQIDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDkPjn8
+TvG2hfEe90zR9bvsXFzdMFa7lAQLIemHGABXnnh34t/EDVvGuj6BP4m1GA3t/b2byreTNsEsqJuH
+z843ZxWx+09L9n+KlxNCX3x3FwR5Z+YkzEbR9c1w/wAOWMnxO8IGeB4Zn1ywKNIpBcfa4x1PXpXN
+Um4p2Z8hiq9WNdxTaXMuulrL9T0PW/ih4s0jXdS0xfFOquLO6ktQ5vZMv5blN33upxk/WqEfxc8Y
+eayt4n1VRnAP22X/AOKrm/F0v2Hx/wCLv3jt5usXbbc5CHznHA7Diq636PFt+dh02qB/hXqcqPcu
+zsZPij4wRTnxVrC7Rzm+k/xrLl+MHjSNiF8V6yR2H26TP86xvtQSNhtPphiM/wAqjXUQCRsHPO3A
+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
+Tto9BWh6dj//2Q==
+
+------=_NextPart_000_001D_01C7F54B.E283F6C0
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://ubasics.com/adam/electronics/lcd/thumback.jpg
+
+/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsK
+CwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQU
+FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCABPAQoDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD6W+MP
+ivUNC8M+JLyK+uIjbrIylZWGMN9a+PLv9qHxWJp7eCS8mSA8zrfOpbIyOvH69q+mf2nrn7J8LfHM
+oOCtvMc/jXxJ4B8E2/izw3falJqcVmYYRMYZpADORwBGCDluayrT5EmeFjJ1IuKptrXW1r2s310O
+50n9r3xTFq1tBBDqGo3E7iNIBeuSxJ+n8+K9Q8Z/GT4gaR4Gl8XXGl6hZ2Nq8VvdJJelDBM5G2Mj
+O4n5lOQMYYHNfFQuZ9J8QpPZSmO4s5m2SMA3qCCDw2RkEHrzWnfar4i1lltLu71bUTK/mizmkmk3
+Hk7lj6cc4wMDtiuSVWqmlGx42GzGboS9q5Obvbay7dNdT22H9sbxVdTCOK0vHc9FGoSAn9Kmb9rL
+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
+
+------=_NextPart_000_001D_01C7F54B.E283F6C0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ubasics.com/adam/images/xbluegreen.gif
+
+R0lGODlhEgAQAPcAAAAAADMAAGYAAJkAAMwAAP8AAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZm
+AJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAAD/ADP/AGb/AJn/
+AMz/AP//AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xm
+M/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMwD/MzP/M2b/M5n/M8z/M///
+MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZv9mZgCZ
+ZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZmbMZpnMZszMZv/MZgD/ZjP/Zmb/Zpn/Zsz/Zv//ZgAAmTMA
+mWYAmZkAmcwAmf8AmQAzmTMzmWYzmZkzmcwzmf8zmQBmmTNmmWZmmZlmmcxmmf9mmQCZmTOZmWaZ
+mZmZmcyZmf+ZmQDMmTPMmWbMmZnMmczMmf/MmQD/mTP/mWb/mZn/mcz/mf//mQAAzDMAzGYAzJkA
+zMwAzP8AzAAzzDMzzGYzzJkzzMwzzP8zzABmzDNmzGZmzJlmzMxmzP9mzACZzDOZzGaZzJmZzMyZ
+zP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/zJn/zMz/zP//zAAA/zMA/2YA/5kA/8wA//8A
+/wAz/zMz/2Yz/5kz/8wz//8z/wBm/zNm/2Zm/5lm/8xm//9m/wCZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM
+/zPM/2bM/5nM/8zM///M/wD//zP//2b//5n//8z//////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAANcALAAAAAASABAA
+QAhGAK8JvCZN2sCDCBEWXFgw4UGGBBkaHChxokCJChc+hJiwosWMED1a1OiwJMmNHy+erNhRZEmK
+HF+KbAgTo8qYNlG+3CkwIAA7
+
+------=_NextPart_000_001D_01C7F54B.E283F6C0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ubasics.com/adam/images/xred.gif
+
+R0lGODlhEgAQAPcAAAAAADMAAGYAAJkAAMwAAP8AAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZm
+AJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAAD/ADP/AGb/AJn/
+AMz/AP//AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xm
+M/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMwD/MzP/M2b/M5n/M8z/M///
+MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZv9mZgCZ
+ZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZmbMZpnMZszMZv/MZgD/ZjP/Zmb/Zpn/Zsz/Zv//ZgAAmTMA
+mWYAmZkAmcwAmf8AmQAzmTMzmWYzmZkzmcwzmf8zmQBmmTNmmWZmmZlmmcxmmf9mmQCZmTOZmWaZ
+mZmZmcyZmf+ZmQDMmTPMmWbMmZnMmczMmf/MmQD/mTP/mWb/mZn/mcz/mf//mQAAzDMAzGYAzJkA
+zMwAzP8AzAAzzDMzzGYzzJkzzMwzzP8zzABmzDNmzGZmzJlmzMxmzP9mzACZzDOZzGaZzJmZzMyZ
+zP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/zJn/zMz/zP//zAAA/zMA/2YA/5kA/8wA//8A
+/wAz/zMz/2Yz/5kz/8wz//8z/wBm/zNm/2Zm/5lm/8xm//9m/wCZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM
+/zPM/2bM/5nM/8zM///M/wD//zP//2b//5n//8z//////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAANcALAAAAAASABAA
+QAhGAK8JvFagwMCDCBEWXFgw4UGGBBkaHChxokCJChc+hJiwosWMED1a1OiwJMmNHy+erNhRZEmK
+HF+KbAgTo8qYNlG+3CkwIAA7
+
+------=_NextPart_000_001D_01C7F54B.E283F6C0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ubasics.com/adam/images/xgreen.gif
+
+R0lGODlhEgAQAPcAAAAAADMAAGYAAJkAAMwAAP8AAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZm
+AJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAAD/ADP/AGb/AJn/
+AMz/AP//AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xm
+M/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMwD/MzP/M2b/M5n/M8z/M///
+MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZv9mZgCZ
+ZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZmbMZpnMZszMZv/MZgD/ZjP/Zmb/Zpn/Zsz/Zv//ZgAAmTMA
+mWYAmZkAmcwAmf8AmQAzmTMzmWYzmZkzmcwzmf8zmQBmmTNmmWZmmZlmmcxmmf9mmQCZmTOZmWaZ
+mZmZmcyZmf+ZmQDMmTPMmWbMmZnMmczMmf/MmQD/mTP/mWb/mZn/mcz/mf//mQAAzDMAzGYAzJkA
+zMwAzP8AzAAzzDMzzGYzzJkzzMwzzP8zzABmzDNmzGZmzJlmzMxmzP9mzACZzDOZzGaZzJmZzMyZ
+zP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/zJn/zMz/zP//zAAA/zMA/2YA/5kA/8wA//8A
+/wAz/zMz/2Yz/5kz/8wz//8z/wBm/zNm/2Zm/5lm/8xm//9m/wCZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM
+/zPM/2bM/5nM/8zM///M/wD//zP//2b//5n//8z//////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAANcALAAAAAASABAA
+QAhGAK8JvObBw8CDCBEWXFgw4UGGBBkaHChxokCJChc+hJiwosWMED1a1OiwJMmNHy+erNhRZEmK
+HF+KbAgTo8qYNlG+3CkwIAA7
+
+------=_NextPart_000_001D_01C7F54B.E283F6C0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ubasics.com/adam/images/xyellow.gif
+
+R0lGODlhEgAQAPcAAAAAADMAAGYAAJkAAMwAAP8AAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZm
+AJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAAD/ADP/AGb/AJn/
+AMz/AP//AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xm
+M/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMwD/MzP/M2b/M5n/M8z/M///
+MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZv9mZgCZ
+ZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZmbMZpnMZszMZv/MZgD/ZjP/Zmb/Zpn/Zsz/Zv//ZgAAmTMA
+mWYAmZkAmcwAmf8AmQAzmTMzmWYzmZkzmcwzmf8zmQBmmTNmmWZmmZlmmcxmmf9mmQCZmTOZmWaZ
+mZmZmcyZmf+ZmQDMmTPMmWbMmZnMmczMmf/MmQD/mTP/mWb/mZn/mcz/mf//mQAAzDMAzGYAzJkA
+zMwAzP8AzAAzzDMzzGYzzJkzzMwzzP8zzABmzDNmzGZmzJlmzMxmzP9mzACZzDOZzGaZzJmZzMyZ
+zP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/zJn/zMz/zP//zAAA/zMA/2YA/5kA/8wA//8A
+/wAz/zMz/2Yz/5kz/8wz//8z/wBm/zNm/2Zm/5lm/8xm//9m/wCZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM
+/zPM/2bM/5nM/8zM///M/wD//zP//2b//5n//8z//////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAANcALAAAAAASABAA
+QAhGAK8JvDZixMCDCBEWXFgw4UGGBBkaHChxokCJChc+hJiwosWMED1a1OiwJMmNHy+erNhRZEmK
+HF+KbAgTo8qYNlG+3CkwIAA7
+
+------=_NextPart_000_001D_01C7F54B.E283F6C0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ubasics.com/adam/images/xblue.gif
+
+R0lGODlhEgAQAPcAAAAAADMAAGYAAJkAAMwAAP8AAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZm
+AJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAAD/ADP/AGb/AJn/
+AMz/AP//AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xm
+M/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMwD/MzP/M2b/M5n/M8z/M///
+MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZv9mZgCZ
+ZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZmbMZpnMZszMZv/MZgD/ZjP/Zmb/Zpn/Zsz/Zv//ZgAAmTMA
+mWYAmZkAmcwAmf8AmQAzmTMzmWYzmZkzmcwzmf8zmQBmmTNmmWZmmZlmmcxmmf9mmQCZmTOZmWaZ
+mZmZmcyZmf+ZmQDMmTPMmWbMmZnMmczMmf/MmQD/mTP/mWb/mZn/mcz/mf//mQAAzDMAzGYAzJkA
+zMwAzP8AzAAzzDMzzGYzzJkzzMwzzP8zzABmzDNmzGZmzJlmzMxmzP9mzACZzDOZzGaZzJmZzMyZ
+zP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/zJn/zMz/zP//zAAA/zMA/2YA/5kA/8wA//8A
+/wAz/zMz/2Yz/5kz/8wz//8z/wBm/zNm/2Zm/5lm/8xm//9m/wCZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM
+/zPM/2bM/5nM/8zM///M/wD//zP//2b//5n//8z//////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAANcALAAAAAASABAA
+QAhGAK8JvEaL1sCDCBEWXFgw4UGGBBkaHChxokCJChc+hJiwosWMED1a1OiwJMmNHy+erNhRZEmK
+HF+KbAgTo8qYNlG+3CkwIAA7
+
+------=_NextPart_000_001D_01C7F54B.E283F6C0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ubasics.com/adam/images/xblack.gif
+
+R0lGODlhEgAQAPcAAAAAADMAAGYAAJkAAMwAAP8AAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZm
+AJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAAD/ADP/AGb/AJn/
+AMz/AP//AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xm
+M/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMwD/MzP/M2b/M5n/M8z/M///
+MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZv9mZgCZ
+ZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZmbMZpnMZszMZv/MZgD/ZjP/Zmb/Zpn/Zsz/Zv//ZgAAmTMA
+mWYAmZkAmcwAmf8AmQAzmTMzmWYzmZkzmcwzmf8zmQBmmTNmmWZmmZlmmcxmmf9mmQCZmTOZmWaZ
+mZmZmcyZmf+ZmQDMmTPMmWbMmZnMmczMmf/MmQD/mTP/mWb/mZn/mcz/mf//mQAAzDMAzGYAzJkA
+zMwAzP8AzAAzzDMzzGYzzJkzzMwzzP8zzABmzDNmzGZmzJlmzMxmzP9mzACZzDOZzGaZzJmZzMyZ
+zP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/zJn/zMz/zP//zAAA/zMA/2YA/5kA/8wA//8A
+/wAz/zMz/2Yz/5kz/8wz//8z/wBm/zNm/2Zm/5lm/8xm//9m/wCZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM
+/zPM/2bM/5nM/8zM///M/wD//zP//2b//5n//8z//////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAANcALAAAAAASABAA
+QAhGAK8JvAYAwMCDCBEWXFgw4UGGBBkaHChxokCJChc+hJiwosWMED1a1OiwJMmNHy+erNhRZEmK
+HF+KbAgTo8qYNlG+3CkwIAA7
+
+------=_NextPart_000_001D_01C7F54B.E283F6C0--

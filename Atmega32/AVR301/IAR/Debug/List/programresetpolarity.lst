@@ -1,0 +1,156 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:31:16                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\programresetpolarity.c        #
+#       List file     =  c:\projects\at17c8515\debug\list\programresetpolarity.lst#
+#       Object file   =  c:\projects\at17c8515\debug\obj\programresetpolarity.r90#
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Debug\Obj\ -e -gA   #
+#                        -RCODE -r0e -LC:\Projects\at17c8515\Debug\List\ -q  #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -K                       #
+#                        C:\Projects\at17c8515\ProgramResetPolarity.c        #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+   \                     	NAME	programresetpolarity(17)
+   \                     	RSEG	CODE(0)
+   \                     	PUBLIC	ProgramResetPolarity
+   \                     	EXTERN	SendByte
+   \                     	EXTERN	SendStartBit
+   \                     	EXTERN	SendStopBit
+   \                     	EXTERN	t1_timed_out
+   \                     	EXTERN	?PROLOGUE3_L09
+   \                     	EXTERN	?EPILOGUE_B3_L09
+   \                     	EXTERN	?CL1S_1_30_L08
+   \                     	RSEG	CODE
+   \                     ProgramResetPolarity:
+      1          // ProgramResetPolarity.c
+      2          // Locations 0x20000 through 0x20003 are used to store the reset/ouput enable polarity.
+      3          // 0xff = active high reset and active low output enable.
+      4          // 0x00 = active low reset and active high output enable.
+      5          // So the memory location values determine the reset polarity.
+      6          // After programming the data polling method is used to determine the end of 
+      7          // the internal programming cycle.
+      8          // Timer/Counter1 is used to ensure the polling code exits its while loop.
+      9          
+     10          #include "at17c.h"
+     11          
+     12          extern volatile unsigned char t1_timed_out;
+     13           
+     14          extern unsigned char SendByte(unsigned char byte, unsigned char order);
+     15          extern void SendStartBit(void);
+     16          extern void SendStopBit(void);
+     17           
+     18          void ProgramResetPolarity(unsigned char state) {
+   \   00000000   ....                       RCALL   ?PROLOGUE3_L09
+   \   00000002   A02F                       MOV     R26,R16
+     19          
+     20          unsigned char i;
+     21          unsigned char test_ack = 0xff;
+   \   00000004   9FEF                       LDI     R25,255
+     22          
+     23              PORTB &= 0xfb; // bring SER_EN low
+   \   00000006   C298                       CBI     LOW(24),LOW(2)
+     24          
+     25              SendStartBit();
+   \   00000008   ....                       RCALL   SendStartBit
+     26              SendByte(AT17C010 + WRITE,MSB_FIRST);  // send device address byte
+   \   0000000A   4FEF                       LDI     R20,255
+   \   0000000C   06EA                       LDI     R16,166
+   \   0000000E   ....                       RCALL   SendByte
+     27              SendByte(0x00,MSB_FIRST);                 // 1st address byte
+   \   00000010   4FEF                       LDI     R20,255
+   \   00000012   0027                       CLR     R16
+   \   00000014   ....                       RCALL   SendByte
+     28              SendByte(0x00,MSB_FIRST);                 // 2nd address byte
+   \   00000016   4FEF                       LDI     R20,255
+   \   00000018   0027                       CLR     R16
+   \   0000001A   ....                       RCALL   SendByte
+     29              SendByte(0x02,MSB_FIRST);                 // 3rd address byte ... most significant byte
+   \   0000001C   4FEF                       LDI     R20,255
+   \   0000001E   02E0                       LDI     R16,2
+   \   00000020   ....                       RCALL   SendByte
+     30           
+     31              for (i = 0; i < 4; i++)
+   \   00000022   8827                       CLR     R24
+   \                     ?0003:
+   \   00000024   8430                       CPI     R24,LOW(4)
+   \   00000026   28F4                       BRCC    ?0002
+     32                  SendByte(state,LSB_FIRST);
+   \   00000028   4427                       CLR     R20
+   \   0000002A   0A2F                       MOV     R16,R26
+   \   0000002C   ....                       RCALL   SendByte
+   \   0000002E   8395                       INC     R24
+   \   00000030   F9CF                       RJMP    ?0003
+   \                     ?0002:
+     33                      
+     34              SendStopBit();
+   \   00000032   ....                       RCALL   SendStopBit
+     35          
+     36              t1_timed_out = FALSE; // set in timer counter 0 overflow interrupt routine
+   \   00000034   0027                       CLR     R16
+   \   00000036   0093....                   STS     LWRD(t1_timed_out),R16
+     37           
+     38              // 20 milli-second timeout
+     39              // 7.3728MHz / 1024 = 7200 Hz
+     40              // 7200 Hz = 138.8 us
+     41              // 20 ms / 138.8 us = 144.09
+     42              // 65536 - 144 = 65392 = ff70
+     43              // interrupt on ffff to 0000 transition
+     44              TCNT1H = 0xff;  
+   \   0000003A   0FEF                       LDI     R16,255
+   \   0000003C   0DBD                       OUT     LOW(45),R16
+     45              TCNT1L = 0x70; // load counter
+   \   0000003E   00E7                       LDI     R16,112
+   \   00000040   0CBD                       OUT     LOW(44),R16
+     46              TCCR1B = 0x05; // timer/counter 1 clock / 1024
+   \   00000042   05E0                       LDI     R16,5
+   \   00000044   0EBD                       OUT     LOW(46),R16
+   \                     ?0007:
+     47          
+     48              // continue sending start bit and device address until we get an ack back
+     49              // data poll to program complete ... time out for error
+     50              while (test_ack && !t1_timed_out) {
+   \   00000046   9923                       TST     R25
+   \   00000048   51F0                       BREQ    ?0006
+   \   0000004A   0091....                   LDS     R16,LWRD(t1_timed_out)
+   \   0000004E   0023                       TST     R16
+   \   00000050   31F4                       BRNE    ?0006
+     51                  SendStartBit();
+   \   00000052   ....                       RCALL   SendStartBit
+     52                  test_ack = SendByte(AT17C010 + WRITE,MSB_FIRST); // send device address byte
+   \   00000054   4FEF                       LDI     R20,255
+   \   00000056   06EA                       LDI     R16,166
+   \   00000058   ....                       RCALL   SendByte
+   \   0000005A   902F                       MOV     R25,R16
+   \   0000005C   F4CF                       RJMP    ?0007
+   \                     ?0006:
+     53              }
+     54              SendStopBit();
+   \   0000005E   ....                       RCALL   SendStopBit
+     55          
+     56              PORTB |= 0x04; // bring SER_EN high
+   \   00000060   C29A                       SBI     LOW(24),LOW(2)
+     57                  
+     58          }
+   \   00000062   E3E0                       LDI     R30,3
+   \   00000064   ....                       RJMP    ?EPILOGUE_B3_L09
+   \                     ;	state           	R26
+   \                     ;	i               	R24
+   \                     ;	test_ack        	R25
+   \                     	END
+
+Source file: c:\projects\at17c8515\programresetpolarity.c
+Errors: none
+Warnings: none
+Code size: 102
+Constant size: 0
+Static variable size: 0
+

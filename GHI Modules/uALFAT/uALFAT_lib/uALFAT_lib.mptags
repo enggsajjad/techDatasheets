@@ -1,0 +1,981 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+ACCESS::0	C:\Data\pic projects\uALFAT_lib\p18f452.h	750;"	d	line:750
+ACKDT	C:\Data\pic projects\uALFAT_lib\p18f452.h	503;"	m	line:503
+ACKEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	502;"	m	line:502
+ACKSTAT	C:\Data\pic projects\uALFAT_lib\p18f452.h	504;"	m	line:504
+ADCS0	C:\Data\pic projects\uALFAT_lib\p18f452.h	477;"	m	line:477
+ADCS1	C:\Data\pic projects\uALFAT_lib\p18f452.h	478;"	m	line:478
+ADCS2	C:\Data\pic projects\uALFAT_lib\p18f452.h	465;"	m	line:465
+ADDEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	377;"	m	line:377
+ADDRESS::(0xa4)	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	42;"	d	line:42
+ADFM	C:\Data\pic projects\uALFAT_lib\p18f452.h	466;"	m	line:466
+ADIE	C:\Data\pic projects\uALFAT_lib\p18f452.h	309;"	m	line:309
+ADIF	C:\Data\pic projects\uALFAT_lib\p18f452.h	320;"	m	line:320
+ADIP	C:\Data\pic projects\uALFAT_lib\p18f452.h	331;"	m	line:331
+ADON	C:\Data\pic projects\uALFAT_lib\p18f452.h	471;"	m	line:471
+AN0	C:\Data\pic projects\uALFAT_lib\p18f452.h	23;"	m	line:23
+AN1	C:\Data\pic projects\uALFAT_lib\p18f452.h	24;"	m	line:24
+AN2	C:\Data\pic projects\uALFAT_lib\p18f452.h	25;"	m	line:25
+AN3	C:\Data\pic projects\uALFAT_lib\p18f452.h	26;"	m	line:26
+AN4	C:\Data\pic projects\uALFAT_lib\p18f452.h	28;"	m	line:28
+AN5	C:\Data\pic projects\uALFAT_lib\p18f452.h	131;"	m	line:131
+AN6	C:\Data\pic projects\uALFAT_lib\p18f452.h	132;"	m	line:132
+AN7	C:\Data\pic projects\uALFAT_lib\p18f452.h	133;"	m	line:133
+ASCIItoNibble	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	39;"	f	line:39	signature:(int8 digit)
+BANKED::1	C:\Data\pic projects\uALFAT_lib\p18f452.h	751;"	d	line:751
+BAUD_RATE::9600	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	42;"	d	line:42
+BAUD_RATE::9600	C:\Data\pic projects\uALFAT_lib\PIC_example.c	53;"	d	line:53	file:
+BCLIE	C:\Data\pic projects\uALFAT_lib\p18f452.h	339;"	m	line:339
+BCLIF	C:\Data\pic projects\uALFAT_lib\p18f452.h	347;"	m	line:347
+BCLIP	C:\Data\pic projects\uALFAT_lib\p18f452.h	355;"	m	line:355
+BF	C:\Data\pic projects\uALFAT_lib\p18f452.h	520;"	m	line:520
+BLINKCUR_OFF::0b00001100	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	47;"	d	line:47	file:
+BLINKCUR_ON::0b00001101	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	46;"	d	line:46	file:
+BOR	C:\Data\pic projects\uALFAT_lib\p18f452.h	575;"	m	line:575
+BRGH	C:\Data\pic projects\uALFAT_lib\p18f452.h	387;"	m	line:387
+BUSY_PIN::PORTBbits.RB1	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	56;"	d	line:56
+BUSY_PIN::PORTDbits.RD1	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	50;"	d	line:50
+BlinkEverySecond	C:\Data\pic projects\uALFAT_lib\PIC_example.c	65;"	f	line:65	signature:(void)
+C	C:\Data\pic projects\uALFAT_lib\p18f452.h	622;"	m	line:622
+CCP1	C:\Data\pic projects\uALFAT_lib\p18f452.h	92;"	m	line:92
+CCP1IE	C:\Data\pic projects\uALFAT_lib\p18f452.h	305;"	m	line:305
+CCP1IF	C:\Data\pic projects\uALFAT_lib\p18f452.h	316;"	m	line:316
+CCP1IP	C:\Data\pic projects\uALFAT_lib\p18f452.h	327;"	m	line:327
+CCP1M0	C:\Data\pic projects\uALFAT_lib\p18f452.h	442;"	m	line:442
+CCP1M1	C:\Data\pic projects\uALFAT_lib\p18f452.h	443;"	m	line:443
+CCP1M2	C:\Data\pic projects\uALFAT_lib\p18f452.h	444;"	m	line:444
+CCP1M3	C:\Data\pic projects\uALFAT_lib\p18f452.h	445;"	m	line:445
+CCP1X	C:\Data\pic projects\uALFAT_lib\p18f452.h	447;"	m	line:447
+CCP1Y	C:\Data\pic projects\uALFAT_lib\p18f452.h	446;"	m	line:446
+CCP2	C:\Data\pic projects\uALFAT_lib\p18f452.h	60;"	m	line:60
+CCP2	C:\Data\pic projects\uALFAT_lib\p18f452.h	91;"	m	line:91
+CCP2IE	C:\Data\pic projects\uALFAT_lib\p18f452.h	336;"	m	line:336
+CCP2IF	C:\Data\pic projects\uALFAT_lib\p18f452.h	344;"	m	line:344
+CCP2IP	C:\Data\pic projects\uALFAT_lib\p18f452.h	352;"	m	line:352
+CCP2M0	C:\Data\pic projects\uALFAT_lib\p18f452.h	419;"	m	line:419
+CCP2M1	C:\Data\pic projects\uALFAT_lib\p18f452.h	420;"	m	line:420
+CCP2M2	C:\Data\pic projects\uALFAT_lib\p18f452.h	421;"	m	line:421
+CCP2M3	C:\Data\pic projects\uALFAT_lib\p18f452.h	422;"	m	line:422
+CCP2X	C:\Data\pic projects\uALFAT_lib\p18f452.h	424;"	m	line:424
+CCP2Y	C:\Data\pic projects\uALFAT_lib\p18f452.h	423;"	m	line:423
+CFGS	C:\Data\pic projects\uALFAT_lib\p18f452.h	366;"	m	line:366
+CG_RAM_ADDR::0b01000000	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	54;"	d	line:54	file:
+CHS0	C:\Data\pic projects\uALFAT_lib\p18f452.h	474;"	m	line:474
+CHS1	C:\Data\pic projects\uALFAT_lib\p18f452.h	475;"	m	line:475
+CHS2	C:\Data\pic projects\uALFAT_lib\p18f452.h	476;"	m	line:476
+CK	C:\Data\pic projects\uALFAT_lib\p18f452.h	96;"	m	line:96
+CKE	C:\Data\pic projects\uALFAT_lib\p18f452.h	526;"	m	line:526
+CKP	C:\Data\pic projects\uALFAT_lib\p18f452.h	513;"	m	line:513
+CLK0	C:\Data\pic projects\uALFAT_lib\p18f452.h	37;"	m	line:37
+CLOCK_FREQ::32000000	C:\Data\pic projects\uALFAT_lib\PIC_example.c	54;"	d	line:54	file:
+CLOCK_FREQ::8000000	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	43;"	d	line:43
+CLR_DISP::0b00000001	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	36;"	d	line:36	file:
+COMMANDER_PASS::0x00	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	78;"	d	line:78
+CREN	C:\Data\pic projects\uALFAT_lib\p18f452.h	378;"	m	line:378
+CSRC	C:\Data\pic projects\uALFAT_lib\p18f452.h	392;"	m	line:392
+CTS_PIN::PORTCbits.RC4	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	54;"	d	line:54
+CUR_HOME::0b00000010	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	37;"	d	line:37	file:
+CUR_LEFT::0b00010000	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	39;"	d	line:39	file:
+CUR_RIGHT::0b00010100	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	38;"	d	line:38	file:
+CheckResult::if(fresult!=ERROR_NO_ERROR)ret	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	165;"	d	line:165
+ClrWdt::{_asmclrwdt_endasm}	C:\Data\pic projects\uALFAT_lib\p18f452.h	757;"	d	line:757
+DATARDY_PIN::PORTBbits.RB0	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	55;"	d	line:55
+DATARDY_PIN::PORTDbits.RD2	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	49;"	d	line:49
+DC	C:\Data\pic projects\uALFAT_lib\p18f452.h	623;"	m	line:623
+DC1B0	C:\Data\pic projects\uALFAT_lib\p18f452.h	451;"	m	line:451
+DC1B1	C:\Data\pic projects\uALFAT_lib\p18f452.h	452;"	m	line:452
+DC2B0	C:\Data\pic projects\uALFAT_lib\p18f452.h	428;"	m	line:428
+DC2B1	C:\Data\pic projects\uALFAT_lib\p18f452.h	429;"	m	line:429
+DCCPX	C:\Data\pic projects\uALFAT_lib\p18f452.h	433;"	m	line:433
+DD_RAM_ADDR2::0b11000000	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	53;"	d	line:53	file:
+DD_RAM_ADDR::0b10000000	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	52;"	d	line:52	file:
+DIR_ENT_FOUND::0x40	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	52;"	d	line:52
+DIR_ENT_NOT_FOUND::0x41	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	53;"	d	line:53
+DISP_OFF::0b00001000	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	43;"	d	line:43	file:
+DISP_ON::0b00001100	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	42;"	d	line:42	file:
+DONE	C:\Data\pic projects\uALFAT_lib\p18f452.h	486;"	m	line:486
+DT	C:\Data\pic projects\uALFAT_lib\p18f452.h	97;"	m	line:97
+DUALCUR_OFF::0b00001100	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	49;"	d	line:49	file:
+DUALCUR_ON::0b00001111	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	48;"	d	line:48	file:
+D_A	C:\Data\pic projects\uALFAT_lib\p18f452.h	525;"	m	line:525
+EEIE	C:\Data\pic projects\uALFAT_lib\p18f452.h	340;"	m	line:340
+EEIF	C:\Data\pic projects\uALFAT_lib\p18f452.h	348;"	m	line:348
+EEIP	C:\Data\pic projects\uALFAT_lib\p18f452.h	356;"	m	line:356
+EEPGD	C:\Data\pic projects\uALFAT_lib\p18f452.h	367;"	m	line:367
+ENTRY_INC::0b00000110	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	51;"	d	line:51	file:
+ERROR_ATTACH_IDE_DEVICE_IDENTIFY_TIMEOUT::0x55	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	73;"	d	line:73
+ERROR_ATTACH_IDE_DEVICE_RESET_TIMEOUT::0x54	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	72;"	d	line:72
+ERROR_BOMS::0x80	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	109;"	d	line:109
+ERROR_BOMS_CSW::ERROR_BOMS+0x03	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	112;"	d	line:112
+ERROR_BOMS_CSW_COMMAND_FAILD::ERROR_BOMS+0x01	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	110;"	d	line:110
+ERROR_BOMS_CSW_STATUS_PHASE_ERROR::ERROR_BOMS+0x02	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	111;"	d	line:111
+ERROR_BOMS_WORNG_CSW_SIGNATURE::ERROR_BOMS+0x05	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	114;"	d	line:114
+ERROR_BOMS_WORNG_LUN_NUMBER::ERROR_BOMS+0x04	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	113;"	d	line:113
+ERROR_BOMS_WORNG_TAG_MISSMATCHED::ERROR_BOMS+0x06	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	115;"	d	line:115
+ERROR_BR_COMMAND::0xD8	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	157;"	d	line:157
+ERROR_BS_SIGNATURE_MISSMATCH::0x12	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	31;"	d	line:31
+ERROR_CHECKSUM::0xD4	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	153;"	d	line:153
+ERROR_CHECK_SUM::0x69	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	87;"	d	line:87
+ERROR_CLUSTER_OVER_RANGE::0x21	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	38;"	d	line:38
+ERROR_CLUSTER_UNDER_RANGE::0x22	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	39;"	d	line:39
+ERROR_COMMANDER_BAD_COMMAND::0x61	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	79;"	d	line:79
+ERROR_COMMANDER_FAILED_TO_OPEN_MEDIA::0x67	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	85;"	d	line:85
+ERROR_COMMANDER_INCORRECT_CMD_PARAMETER::0x68	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	86;"	d	line:86
+ERROR_COMMANDER_NAME_NOT_VALID::0x63	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	81;"	d	line:81
+ERROR_COMMANDER_NUMBER_INVALID::0x64	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	82;"	d	line:82
+ERROR_COMMANDER_STR_LEN_TOO_LONG::0x62	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	80;"	d	line:80
+ERROR_COMMANDER_UNKNOWN_ERROR::0xFD	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	89;"	d	line:89
+ERROR_COMMANDER_UNKNOWN_MEDIA_LETTER::0x66	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	84;"	d	line:84
+ERROR_COMMANDER_WRITE_PARTIAL_FAILURE::0x65	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	83;"	d	line:83
+ERROR_DESCRIPTOR_NOT_FOUND::USBD+0x0B	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	104;"	d	line:104
+ERROR_END_OF_DIR_LIST::0x4D	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	65;"	d	line:65
+ERROR_ERASE_SECTOR::0x03	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	23;"	d	line:23
+ERROR_FAT12_NOT_SUPPORTED::0x15	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	34;"	d	line:34
+ERROR_FAT16_NOT_SUPPORTED::0x16	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	35;"	d	line:35
+ERROR_FILE_IS_EMPTY::0xDA	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	158;"	d	line:158
+ERROR_FILE_NAME_DIR_EXTENSION_OVER_3::0x33	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	47;"	d	line:47
+ERROR_FILE_NAME_DIR_NAME_OVER_8::0x32	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	46;"	d	line:46
+ERROR_FILE_NAME_FIRST_CHAR_ZERO::0x34	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	48;"	d	line:48
+ERROR_FILE_NAME_FORBIDDEN_CHAR::0x31	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	45;"	d	line:45
+ERROR_FILE_NOT_FOUND::0xDB	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	159;"	d	line:159
+ERROR_FILE_PARAMETERS::0x4E	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	66;"	d	line:66
+ERROR_FLASH_NOT_BLANK::0xD1	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	150;"	d	line:150
+ERROR_FOLDER_IS_CORRUPTED_DIR_DOTDOT_NOT_FOUND::0x44	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	56;"	d	line:56
+ERROR_FOLDER_IS_CORRUPTED_DIR_DOT_NOT_FOUND::0x43	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	55;"	d	line:55
+ERROR_FOLDER_IS_CORRUPTED_FIRST_CLUSTER::0x42	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	54;"	d	line:54
+ERROR_FOLDER_NOT_EMPTY::0x4A	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	62;"	d	line:62
+ERROR_FSINFO_SIGNATURE_MISSMATCH::0x14	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	33;"	d	line:33
+ERROR_HANDLE_IN_USE::0x4F	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	67;"	d	line:67
+ERROR_HCD_BABBLE::HCD+0x0F	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	146;"	d	line:146
+ERROR_HCD_BADBC::HCD+0x08	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	139;"	d	line:139
+ERROR_HCD_BADREQ::HCD+0x02	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	133;"	d	line:133
+ERROR_HCD_BUSY::HCD+0x01	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	132;"	d	line:132
+ERROR_HCD_CRCERR::HCD+0x0B	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	142;"	d	line:142
+ERROR_HCD_INDEFINED_CASE::0x91	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	127;"	d	line:127
+ERROR_HCD_INIT_FAIL::0x90	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	126;"	d	line:126
+ERROR_HCD_JERR::HCD+0x0D	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	144;"	d	line:144
+ERROR_HCD_KERR::HCD+0x0C	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	143;"	d	line:143
+ERROR_HCD_NAK::HCD+0x04	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	135;"	d	line:135
+ERROR_HCD_PIDERR::HCD+0x09	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	140;"	d	line:140
+ERROR_HCD_PKTERR::HCD+0x0A	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	141;"	d	line:141
+ERROR_HCD_STALL::HCD+0x05	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	136;"	d	line:136
+ERROR_HCD_TIMEOUT::HCD+0x0E	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	145;"	d	line:145
+ERROR_HCD_TOGERR::HCD+0x06	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	137;"	d	line:137
+ERROR_HCD_UNDEF::HCD+0x03	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	134;"	d	line:134
+ERROR_HCD_USB_DEVICE_NOT_CONNECTED::USBD+0x0D	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	106;"	d	line:106
+ERROR_HCD_WRONGPID::HCD+0x07	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	138;"	d	line:138
+ERROR_INTERNAL::0xD3	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	152;"	d	line:152
+ERROR_INVALID_FIRMWARE::0xD7	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	156;"	d	line:156
+ERROR_INVALID_HANDLE::0X4F	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	68;"	d	line:68
+ERROR_INVALID_SEEK_POINTER::0x49	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	61;"	d	line:61
+ERROR_IS_NOT_FOLDER::0x4B	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	63;"	d	line:63
+ERROR_MBR_SIGNATURE_MISSMATCH::0x11	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	30;"	d	line:30
+ERROR_MEDIA_FULL::0x35	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	49;"	d	line:49
+ERROR_MMC_INIT_TIMEOUT::0x05	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	25;"	d	line:25
+ERROR_MMC_SEND_COMMAND_FAIL::0x07	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	27;"	d	line:27
+ERROR_NEXT_CLUSTER_VALUE_OVER_RANGE::0x23	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	40;"	d	line:40
+ERROR_NEXT_CLUSTER_VALUE_UNDER_RANGE::0x24	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	41;"	d	line:41
+ERROR_NO_ERROR::0x00	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	18;"	d	line:18
+ERROR_NO_FREE_CLUSTERS::0x25	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	42;"	d	line:42
+ERROR_OPEN_FOLDER_FILE::0x46	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	58;"	d	line:58
+ERROR_READ_IDE_SECTOR_TIMEOUT::0x56	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	74;"	d	line:74
+ERROR_READ_MODE_REQUIRED::0x4C	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	64;"	d	line:64
+ERROR_READ_SECTOR::0x01	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	21;"	d	line:21
+ERROR_ROOT_DIRECTORY_IS_FULL::0x45	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	57;"	d	line:57
+ERROR_SD_UNEXPECTED_VALUE::0x04	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	24;"	d	line:24
+ERROR_SECTOR_SIZE_NOT_512::0x13	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	32;"	d	line:32
+ERROR_SEEK_REQUIER_READ_MODE::0x48	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	60;"	d	line:60
+ERROR_SET_BLOCK_SIZE_FAIL::0x06	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	26;"	d	line:26
+ERROR_SPC_INVALID_SENSE::MASSSTORAGE+0x03	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	122;"	d	line:122
+ERROR_SPC_NO_ASC_ASCQ::MASSSTORAGE+0x04	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	123;"	d	line:123
+ERROR_UNEXPECTED_VALUE::0xF0	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	163;"	d	line:163
+ERROR_UNKNOWN_COMMAND::0xDE	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	160;"	d	line:160
+ERROR_USBD_CONTROL_TRANSFER_REQUIERED::USBD+0x07	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	100;"	d	line:100
+ERROR_USBD_DATA_SIZE_IS_BIG_FOR_ENDPOINT::USBD+0x05	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	98;"	d	line:98
+ERROR_USBD_DESCRIPTOR_CORRUPTED::USBD+0x0A	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	103;"	d	line:103
+ERROR_USBD_HANDLE_CORRUPTED::USBD+0x09	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	102;"	d	line:102
+ERROR_USBD_HANDLE_INUSE::USBD+0x02	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	95;"	d	line:95
+ERROR_USBD_INCORRECT_DESCRIPTOR::USBD+0x03	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	96;"	d	line:96
+ERROR_USBD_NACK::USBD+0x08	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	101;"	d	line:101
+ERROR_USBD_NONCONTROL_TRANSFER_FUNCTION::USBD+0x04	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	97;"	d	line:97
+ERROR_USBD_NO_ENOUGH_PIPES::USBD+0x01	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	94;"	d	line:94
+ERROR_USBD_TIMEOUT::USBD+0x06	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	99;"	d	line:99
+ERROR_USB_HUB_NOT_FOUND::USBD+0x0C	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	105;"	d	line:105
+ERROR_USB_MASSSTORAGE_COMMAD_FAILED::ERROR_BOMS_CSW_COMMAND_FAILD	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	116;"	d	line:116
+ERROR_USB_MASSSTORAGE_NOT_FOUND::MASSSTORAGE+0x05	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	124;"	d	line:124
+ERROR_USB_MASSSTORAGE_PROTOCOL_NOT_SUPPORTED::MASSSTORAGE+0x01	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	120;"	d	line:120
+ERROR_USB_MASSSTORAGE_SUBCLASS_NOT_SUPPORTED::MASSSTORAGE+0x02	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	121;"	d	line:121
+ERROR_USB_MASS_STORAGE_DEVICE_NOT_READY::MASSSTORAGE	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	119;"	d	line:119
+ERROR_VERIFY::0xD2	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	151;"	d	line:151
+ERROR_WRITE_SECTOR::0x02	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	22;"	d	line:22
+ERROR_WRTIE_TO_READ_MODE_FILE::0x47	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	59;"	d	line:59
+ERROR_ZERO_SIZE_FILE::0x50	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	69;"	d	line:69
+FAT_ERROR_CODE	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	4;"	d	line:4
+FAT_Time_Structure	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	148;"	t	line:148
+FERR	C:\Data\pic projects\uALFAT_lib\p18f452.h	376;"	m	line:376
+FILE_UNKNOWN_DRIVE_LETTER::0x57	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	75;"	d	line:75
+FREE	C:\Data\pic projects\uALFAT_lib\p18f452.h	364;"	m	line:364
+GCEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	505;"	m	line:505
+GHI_ChangeDirectory	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	142;"	f	line:142	signature:(int8 * filename)
+GHI_ChangeDirectory	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	73;"	p	line:73	signature:(int8* dirname)
+GHI_CloseFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	218;"	f	line:218	signature:(int8 filehandle)
+GHI_CloseFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	105;"	p	line:105	signature:(int8 filehandle)
+GHI_CloseInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	75;"	f	line:75	signature:(void)
+GHI_CloseInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	75;"	p	line:75	signature:(void)
+GHI_CloseInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	75;"	f	line:75	signature:(void)
+GHI_CloseInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	86;"	p	line:86	signature:(void)
+GHI_CloseInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	125;"	f	line:125	signature:(void)
+GHI_CloseInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	80;"	p	line:80	signature:(void)
+GHI_CloseInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.c	56;"	f	line:56	signature:(void)
+GHI_CloseInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.h	63;"	p	line:63	signature:(void)
+GHI_DataIsReady	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	166;"	f	line:166	signature:(void)
+GHI_DataIsReady	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	99;"	p	line:99	signature:(void)
+GHI_DataIsReady	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	200;"	f	line:200	signature:(void)
+GHI_DataIsReady	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	110;"	p	line:110	signature:(void)
+GHI_DataIsReady	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	175;"	f	line:175	signature:(void)
+GHI_DataIsReady	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	104;"	p	line:104	signature:(void)
+GHI_DataIsReady	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.c	78;"	f	line:78	signature:(void)
+GHI_DataIsReady	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.h	87;"	p	line:87	signature:(void)
+GHI_DeleteFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	271;"	f	line:271	signature:(int8 * filename)
+GHI_DeleteFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	107;"	p	line:107	signature:(int8 *filename)
+GHI_EnterBootLoader	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	599;"	f	line:599	signature:(void)
+GHI_EnterBootLoader	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	53;"	p	line:53	signature:(void)
+GHI_FlushFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	281;"	f	line:281	signature:(int8 filehandle)
+GHI_FlushFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	106;"	p	line:106	signature:(int8 filehandle)
+GHI_GetC	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	93;"	f	line:93	signature:(void)
+GHI_GetC	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	87;"	p	line:87	signature:(void)
+GHI_GetC	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	118;"	f	line:118	signature:(void)
+GHI_GetC	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	98;"	p	line:98	signature:(void)
+GHI_GetC	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	137;"	f	line:137	signature:(void)
+GHI_GetC	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	92;"	p	line:92	signature:(void)
+GHI_GetC	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.c	66;"	f	line:66	signature:(void)
+GHI_GetC	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.h	75;"	p	line:75	signature:(void)
+GHI_GetC	C:\Data\pic projects\uALFAT_lib\PIC_example.c	408;"	p	line:408	file:
+GHI_GetC	C:\Data\pic projects\uALFAT_lib\PIC_example.c	549;"	p	line:549	file:
+GHI_GetFileInfo	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	361;"	f	line:361	signature:(int8 * filename, int32 * size, int8 * attributes, int32 *date_time)
+GHI_GetFileInfo	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	109;"	p	line:109	signature:(int8 * filename, int32 * size, int8 * attributes, int32 *date_time)
+GHI_GetFormattedTime	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	462;"	f	line:462	signature:(int8 *buffer)
+GHI_GetFormattedTime	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	136;"	p	line:136	signature:(int8 *buffer)
+GHI_GetLibraryVersion	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	594;"	f	line:594	signature:(void)
+GHI_GetLibraryVersion	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	47;"	p	line:47	signature:(void)
+GHI_GetNextFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	507;"	f	line:507	signature:(int8 * filename,int8 * fileext, int8 * attributes, int32 * size)
+GHI_GetNextFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	115;"	p	line:115	signature:(int8 * filename,int8 * fileext, int8 * attributes, int32 * size)
+GHI_GetReadAndWriteResult	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	185;"	f	line:185	signature:(int32 * actualdatasize)
+GHI_GetReadAndWriteResult	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	88;"	p	line:88	signature:(int32 * actualdatasize)
+GHI_GetResult	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	109;"	f	line:109	signature:(void)
+GHI_GetResult	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	64;"	p	line:64	signature:(void)
+GHI_GetResultsMediaStatistics	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	297;"	f	line:297	signature:(int32 * size ,int32 * free)
+GHI_GetResultsMediaStatistics	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	119;"	p	line:119	signature:(int32 * size ,int32 * free)
+GHI_GetTime	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	433;"	f	line:433	signature:(int32 * time)
+GHI_GetTime	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	134;"	p	line:134	signature:(int32 * time)
+GHI_GetVersion	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	229;"	f	line:229	signature:(int8* major,int8 * BCDminor)
+GHI_GetVersion	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	157;"	p	line:157	signature:(int8* major,int8 * BCDminor)
+GHI_InitGetFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	499;"	f	line:499	signature:(void)
+GHI_InitGetFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	112;"	p	line:112	signature:(void)
+GHI_InitTime	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	410;"	f	line:410	signature:(int8 backup)
+GHI_InitTime	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	132;"	p	line:132	signature:(int8 backup)
+GHI_InitializeSD	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	128;"	f	line:128	signature:(void)
+GHI_InitializeSD	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	67;"	p	line:67	signature:(void)
+GHI_InitializeUSB	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	135;"	f	line:135	signature:(void)
+GHI_InitializeUSB	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	70;"	p	line:70	signature:(void)
+GHI_MakeDirectory	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	151;"	f	line:151	signature:(int8 * filename)
+GHI_MakeDirectory	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	74;"	p	line:74	signature:( int8* dirname)
+GHI_OpenFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	160;"	f	line:160	signature:(int8 filehandle,int8 *filename, int8 openmode)
+GHI_OpenFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	77;"	p	line:77	signature:(int8 filehandle, int8 *filename, int8 openmode)
+GHI_OpenInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	59;"	f	line:59	signature:(void)
+GHI_OpenInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	69;"	p	line:69	signature:(void)
+GHI_OpenInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	61;"	f	line:61	signature:(void)
+GHI_OpenInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	80;"	p	line:80	signature:(void)
+GHI_OpenInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	99;"	f	line:99	signature:(void)
+GHI_OpenInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	74;"	p	line:74	signature:(void)
+GHI_OpenInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.c	49;"	f	line:49	signature:(void)
+GHI_OpenInterface	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.h	57;"	p	line:57	signature:(void)
+GHI_PrintDWORD	C:\Data\pic projects\uALFAT_lib\PIC_example.c	94;"	f	line:94	signature:(int32 dw)
+GHI_PrintNibble	C:\Data\pic projects\uALFAT_lib\PIC_example.c	79;"	f	line:79	signature:(int8 n)
+GHI_PutC	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	120;"	f	line:120	signature:(int8 ch)
+GHI_PutC	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	93;"	p	line:93	signature:(int8 c)
+GHI_PutC	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	157;"	f	line:157	signature:(int8 ch)
+GHI_PutC	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	104;"	p	line:104	signature:(int8 c)
+GHI_PutC	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	158;"	f	line:158	signature:(int8 ch)
+GHI_PutC	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	98;"	p	line:98	signature:(int8 c)
+GHI_PutC	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.c	70;"	f	line:70	signature:(int8 ch)
+GHI_PutC	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.h	81;"	p	line:81	signature:(int8 c)
+GHI_PutDWORD	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	85;"	f	line:85	signature:(int32 dw)
+GHI_PutNibble	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	76;"	f	line:76	signature:(int8 n)
+GHI_PutS	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	157;"	f	line:157	signature:(int8 * str)
+GHI_PutS	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	96;"	p	line:96	signature:(int8 * str)
+GHI_PutS	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	190;"	f	line:190	signature:(int8 * str)
+GHI_PutS	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	107;"	p	line:107	signature:(int8 * str)
+GHI_PutS	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	166;"	f	line:166	signature:(int8 * str)
+GHI_PutS	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	101;"	p	line:101	signature:(int8 * str)
+GHI_PutS	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.c	74;"	f	line:74	signature:(int8 * str)
+GHI_PutS	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.h	84;"	p	line:84	signature:(int8 * str)
+GHI_PutWORD	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	98;"	f	line:98	signature:(int16 w)
+GHI_ReadFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	550;"	f	line:550	signature:(int8 handle, int8 *buffer, int32 size, int8 filler, int32 *actualdatasize)
+GHI_ReadFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	99;"	p	line:99	signature:(int8 handle, int8 *buffer, int32 size, int8 filler, int32 *actualdatasize)
+GHI_SeekFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	259;"	f	line:259	signature:(int8 filehandle, int32 newposition)
+GHI_SeekFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	108;"	p	line:108	signature:(int8 filehandle, int32 newposition)
+GHI_SendLoadFirmwareFromSDCommand	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	607;"	f	line:607	signature:(void)
+GHI_SendLoadFirmwareFromSDCommand	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	58;"	p	line:58	signature:(void)
+GHI_SendLoadFirmwareFromUSBCommand	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	615;"	f	line:615	signature:(void)
+GHI_SendLoadFirmwareFromUSBCommand	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	59;"	p	line:59	signature:(void)
+GHI_SendReadCommand	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	172;"	f	line:172	signature:(int8 filehandle,int32 datasize, int8 filler)
+GHI_SendReadCommand	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	82;"	p	line:82	signature:(int8 filehandle,int32 datasize, int8 filler)
+GHI_SendWriteCommand	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	205;"	f	line:205	signature:( int8 filehandle,int32 desireddatasize )
+GHI_SendWriteCommand	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	92;"	p	line:92	signature:( int8 filehandle,int32 datasize )
+GHI_SetBaudRate	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	81;"	f	line:81	signature:(int32 baud)
+GHI_SetBaudRate	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	81;"	p	line:81	signature:(int32 baud)
+GHI_SetBaudRate	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	80;"	f	line:80	signature:(int32 baud)
+GHI_SetBaudRate	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	92;"	p	line:92	signature:(int32 baud)
+GHI_SetBaudRate	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	131;"	f	line:131	signature:(int32 baud)
+GHI_SetBaudRate	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	86;"	p	line:86	signature:(int32 baud)
+GHI_SetBaudRate	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.c	61;"	f	line:61	signature:(int32 baud)
+GHI_SetBaudRate	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.h	69;"	p	line:69	signature:(int32 baud)
+GHI_SetTime	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	423;"	f	line:423	signature:(int32 time)
+GHI_SetTime	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	133;"	p	line:133	signature:(int32 time)
+GHI_Sleep	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	50;"	f	line:50	signature:(int16 ms)
+GHI_Sleep	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	64;"	p	line:64	signature:(int16 ms)
+GHI_Sleep	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	52;"	f	line:52	signature:(int16 ms)
+GHI_Sleep	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	75;"	p	line:75	signature:(int16 ms)
+GHI_Sleep	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	64;"	f	line:64	signature:(int16 ms)
+GHI_Sleep	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	69;"	p	line:69	signature:(int16 ms)
+GHI_Sleep	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.c	40;"	f	line:40	signature:(int16 ms)
+GHI_Sleep	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.h	52;"	p	line:52	signature:(int16 ms)
+GHI_StartMediStatistics	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	291;"	f	line:291	signature:(void)
+GHI_StartMediStatistics	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	118;"	p	line:118	signature:(void)
+GHI_ToggleWakePin	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	46;"	f	line:46	signature:(void)
+GHI_ToggleWakePin	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	60;"	p	line:60	signature:(void)
+GHI_ToggleWakePin	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	48;"	f	line:48	signature:(void)
+GHI_ToggleWakePin	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	71;"	p	line:71	signature:(void)
+GHI_ToggleWakePin	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	60;"	f	line:60	signature:(void)
+GHI_ToggleWakePin	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	65;"	p	line:65	signature:(void)
+GHI_ToggleWakePin	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.c	36;"	f	line:36	signature:(void)
+GHI_ToggleWakePin	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.h	48;"	p	line:48	signature:(void)
+GHI_UALFAT_LIBRARY_VERSION::0x102	C:\Data\pic projects\uALFAT_lib\Types.h	34;"	d	line:34
+GHI_WriteFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	564;"	f	line:564	signature:(int8 handle, int8 *buffer, int32 size, int32 *actualdatasize)
+GHI_WriteFile	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	100;"	p	line:100	signature:(int8 handle, int8 *buffer, int32 size, int32 *actualdatasize)
+GHI_uALFATHibernate	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	347;"	f	line:347	signature:(void)
+GHI_uALFATHibernate	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	127;"	p	line:127	signature:(void)
+GHI_uALFATPowerMode	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	332;"	f	line:332	signature:(int8 mode, int16 baud)
+GHI_uALFATPowerMode	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	124;"	p	line:124	signature:(int8 mode, int16 baud)
+GHI_uALFATWake	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	355;"	f	line:355	signature:(void)
+GHI_uALFATWake	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	129;"	p	line:129	signature:(void)
+GIE	C:\Data\pic projects\uALFAT_lib\p18f452.h	705;"	m	line:705
+GIEH	C:\Data\pic projects\uALFAT_lib\p18f452.h	715;"	m	line:715
+GIEL	C:\Data\pic projects\uALFAT_lib\p18f452.h	714;"	m	line:714
+GO	C:\Data\pic projects\uALFAT_lib\p18f452.h	473;"	m	line:473
+GO_DONE	C:\Data\pic projects\uALFAT_lib\p18f452.h	490;"	m	line:490
+GetFATTimeStructure	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	580;"	f	line:580	signature:(int32 year, int32 month, int32 day, int32 hours, int32 minutes, int32 seconds)
+GetFATTimeStructure	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	153;"	p	line:153	signature:(int32 year, int32 month, int32 day, int32 hours, int32 minutes, int32 seconds)
+GetMediaType	C:\Data\pic projects\uALFAT_lib\PIC_example.c	227;"	f	line:227	signature:(void)
+HCD::0xB0	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	129;"	d	line:129
+HDT::0xfe	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	62;"	d	line:62
+HEXstrToDouble	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	57;"	f	line:57	signature:(int8 str[])
+IBF	C:\Data\pic projects\uALFAT_lib\p18f452.h	283;"	m	line:283
+IBF	C:\Data\pic projects\uALFAT_lib\p18f452.h	298;"	m	line:298
+IBOV	C:\Data\pic projects\uALFAT_lib\p18f452.h	281;"	m	line:281
+IBOV	C:\Data\pic projects\uALFAT_lib\p18f452.h	296;"	m	line:296
+INT0	C:\Data\pic projects\uALFAT_lib\p18f452.h	57;"	m	line:57
+INT0E	C:\Data\pic projects\uALFAT_lib\p18f452.h	702;"	m	line:702
+INT0F	C:\Data\pic projects\uALFAT_lib\p18f452.h	699;"	m	line:699
+INT0IE	C:\Data\pic projects\uALFAT_lib\p18f452.h	712;"	m	line:712
+INT0IF	C:\Data\pic projects\uALFAT_lib\p18f452.h	709;"	m	line:709
+INT1	C:\Data\pic projects\uALFAT_lib\p18f452.h	58;"	m	line:58
+INT1E	C:\Data\pic projects\uALFAT_lib\p18f452.h	661;"	m	line:661
+INT1F	C:\Data\pic projects\uALFAT_lib\p18f452.h	658;"	m	line:658
+INT1IE	C:\Data\pic projects\uALFAT_lib\p18f452.h	671;"	m	line:671
+INT1IF	C:\Data\pic projects\uALFAT_lib\p18f452.h	668;"	m	line:668
+INT1IP	C:\Data\pic projects\uALFAT_lib\p18f452.h	674;"	m	line:674
+INT1P	C:\Data\pic projects\uALFAT_lib\p18f452.h	664;"	m	line:664
+INT2	C:\Data\pic projects\uALFAT_lib\p18f452.h	59;"	m	line:59
+INT2E	C:\Data\pic projects\uALFAT_lib\p18f452.h	662;"	m	line:662
+INT2F	C:\Data\pic projects\uALFAT_lib\p18f452.h	659;"	m	line:659
+INT2IE	C:\Data\pic projects\uALFAT_lib\p18f452.h	672;"	m	line:672
+INT2IF	C:\Data\pic projects\uALFAT_lib\p18f452.h	669;"	m	line:669
+INT2IP	C:\Data\pic projects\uALFAT_lib\p18f452.h	675;"	m	line:675
+INT2P	C:\Data\pic projects\uALFAT_lib\p18f452.h	665;"	m	line:665
+INT3P	C:\Data\pic projects\uALFAT_lib\p18f452.h	682;"	m	line:682
+INTEDG0	C:\Data\pic projects\uALFAT_lib\p18f452.h	687;"	m	line:687
+INTEDG1	C:\Data\pic projects\uALFAT_lib\p18f452.h	686;"	m	line:686
+INTEDG2	C:\Data\pic projects\uALFAT_lib\p18f452.h	685;"	m	line:685
+INTEDG3	C:\Data\pic projects\uALFAT_lib\p18f452.h	684;"	m	line:684
+INTSAVELOCS::TBLPTR,TABLAT,PROD	C:\Data\pic projects\uALFAT_lib\p18f452.h	771;"	d	line:771
+IPEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	582;"	m	line:582
+IRVST	C:\Data\pic projects\uALFAT_lib\p18f452.h	601;"	m	line:601
+ISRhandlerHigh	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	75;"	f	line:75	signature:(void)
+InterruptVectorHigh	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	89;"	f	line:89	signature:(void)
+LATA0	C:\Data\pic projects\uALFAT_lib\p18f452.h	138;"	m	line:138
+LATA1	C:\Data\pic projects\uALFAT_lib\p18f452.h	139;"	m	line:139
+LATA2	C:\Data\pic projects\uALFAT_lib\p18f452.h	140;"	m	line:140
+LATA3	C:\Data\pic projects\uALFAT_lib\p18f452.h	141;"	m	line:141
+LATA4	C:\Data\pic projects\uALFAT_lib\p18f452.h	142;"	m	line:142
+LATA5	C:\Data\pic projects\uALFAT_lib\p18f452.h	143;"	m	line:143
+LATA6	C:\Data\pic projects\uALFAT_lib\p18f452.h	144;"	m	line:144
+LATB0	C:\Data\pic projects\uALFAT_lib\p18f452.h	148;"	m	line:148
+LATB1	C:\Data\pic projects\uALFAT_lib\p18f452.h	149;"	m	line:149
+LATB2	C:\Data\pic projects\uALFAT_lib\p18f452.h	150;"	m	line:150
+LATB3	C:\Data\pic projects\uALFAT_lib\p18f452.h	151;"	m	line:151
+LATB4	C:\Data\pic projects\uALFAT_lib\p18f452.h	152;"	m	line:152
+LATB5	C:\Data\pic projects\uALFAT_lib\p18f452.h	153;"	m	line:153
+LATB6	C:\Data\pic projects\uALFAT_lib\p18f452.h	154;"	m	line:154
+LATB7	C:\Data\pic projects\uALFAT_lib\p18f452.h	155;"	m	line:155
+LATC0	C:\Data\pic projects\uALFAT_lib\p18f452.h	159;"	m	line:159
+LATC1	C:\Data\pic projects\uALFAT_lib\p18f452.h	160;"	m	line:160
+LATC2	C:\Data\pic projects\uALFAT_lib\p18f452.h	161;"	m	line:161
+LATC3	C:\Data\pic projects\uALFAT_lib\p18f452.h	162;"	m	line:162
+LATC4	C:\Data\pic projects\uALFAT_lib\p18f452.h	163;"	m	line:163
+LATC5	C:\Data\pic projects\uALFAT_lib\p18f452.h	164;"	m	line:164
+LATC6	C:\Data\pic projects\uALFAT_lib\p18f452.h	165;"	m	line:165
+LATC7	C:\Data\pic projects\uALFAT_lib\p18f452.h	166;"	m	line:166
+LATD0	C:\Data\pic projects\uALFAT_lib\p18f452.h	170;"	m	line:170
+LATD1	C:\Data\pic projects\uALFAT_lib\p18f452.h	171;"	m	line:171
+LATD2	C:\Data\pic projects\uALFAT_lib\p18f452.h	172;"	m	line:172
+LATD3	C:\Data\pic projects\uALFAT_lib\p18f452.h	173;"	m	line:173
+LATD4	C:\Data\pic projects\uALFAT_lib\p18f452.h	174;"	m	line:174
+LATD5	C:\Data\pic projects\uALFAT_lib\p18f452.h	175;"	m	line:175
+LATD6	C:\Data\pic projects\uALFAT_lib\p18f452.h	176;"	m	line:176
+LATD7	C:\Data\pic projects\uALFAT_lib\p18f452.h	177;"	m	line:177
+LATE0	C:\Data\pic projects\uALFAT_lib\p18f452.h	181;"	m	line:181
+LATE1	C:\Data\pic projects\uALFAT_lib\p18f452.h	182;"	m	line:182
+LATE2	C:\Data\pic projects\uALFAT_lib\p18f452.h	183;"	m	line:183
+LCD_BlinkOff	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	243;"	f	line:243	signature:(void)
+LCD_BlinkOff	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	72;"	p	line:72	signature:(void)
+LCD_BlinkOn	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	240;"	f	line:240	signature:(void)
+LCD_BlinkOn	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	71;"	p	line:71	signature:(void)
+LCD_Clear	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	207;"	f	line:207	signature:(void)
+LCD_Clear	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	61;"	p	line:61	signature:(void)
+LCD_CursorHome	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	211;"	f	line:211	signature:(void)
+LCD_CursorHome	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	62;"	p	line:62	signature:(void)
+LCD_CursorLeft	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	218;"	f	line:218	signature:(void)
+LCD_CursorLeft	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	64;"	p	line:64	signature:(void)
+LCD_CursorRight	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	214;"	f	line:214	signature:(void)
+LCD_CursorRight	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	63;"	p	line:63	signature:(void)
+LCD_D4::PORTDbits.RD0	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	44;"	d	line:44
+LCD_D4_TRIS::TRISDbits.TRISD0	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	48;"	d	line:48
+LCD_D5::PORTDbits.RD1	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	45;"	d	line:45
+LCD_D5_TRIS::TRISDbits.TRISD1	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	49;"	d	line:49
+LCD_D6::PORTDbits.RD2	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	46;"	d	line:46
+LCD_D6_TRIS::TRISDbits.TRISD2	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	50;"	d	line:50
+LCD_D7::PORTDbits.RD3	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	47;"	d	line:47
+LCD_D7_TRIS::TRISDbits.TRISD3	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	51;"	d	line:51
+LCD_DelayMs	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	203;"	f	line:203	signature:(int16 x)
+LCD_DelayMs	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	56;"	p	line:56	file:	signature:(int16 x)
+LCD_DisplayOff	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	231;"	f	line:231	signature:(void)
+LCD_DisplayOff	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	68;"	p	line:68	signature:(void)
+LCD_DisplayOn	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	228;"	f	line:228	signature:(void)
+LCD_DisplayOn	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	67;"	p	line:67	signature:(void)
+LCD_E::LATDbits.LATD4	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	38;"	d	line:38
+LCD_E_TRIS::TRISDbits.TRISD4	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	41;"	d	line:41
+LCD_Init	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	60;"	f	line:60	signature:(void)
+LCD_Init	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	55;"	p	line:55	signature:(void)
+LCD_Putc	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	150;"	f	line:150	signature:(int8 c)
+LCD_Putc	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	57;"	p	line:57	signature:(int8)
+LCD_Putrs	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	194;"	f	line:194	signature:(const rom char * s)
+LCD_Putrs	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	58;"	p	line:58	signature:(const rom char*)
+LCD_Puts	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	198;"	f	line:198	signature:(const char * s)
+LCD_Puts	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	59;"	p	line:59	signature:(const char*)
+LCD_RS::LATDbits.LATD6	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	36;"	d	line:36
+LCD_RS_OUT::LATDbits.LATD6	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	42;"	d	line:42
+LCD_RS_TRIS::TRISDbits.TRISD6	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	39;"	d	line:39
+LCD_R_W::LATDbits.LATD5	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	37;"	d	line:37
+LCD_R_W_OUT::LATDbits.LATD5	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	43;"	d	line:43
+LCD_R_W_TRIS::TRISDbits.TRISD5	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	40;"	d	line:40
+LCD_ScrollLeft	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	225;"	f	line:225	signature:(void)
+LCD_ScrollLeft	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	66;"	p	line:66	signature:(void)
+LCD_ScrollRight	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	221;"	f	line:221	signature:(void)
+LCD_ScrollRight	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	65;"	p	line:65	signature:(void)
+LCD_SendCmd	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	173;"	f	line:173	signature:(int8 d)
+LCD_SendCmd	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	57;"	p	line:57	file:	signature:(int8 d)
+LCD_SetCursor	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	246;"	f	line:246	signature:(int8 row,int8 col)
+LCD_SetCursor	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	73;"	p	line:73	signature:(int8 row,int8 col)
+LCD_UnderlineOff	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	237;"	f	line:237	signature:(void)
+LCD_UnderlineOff	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	70;"	p	line:70	signature:(void)
+LCD_UnderlineOn	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	234;"	f	line:234	signature:(void)
+LCD_UnderlineOn	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.h	69;"	p	line:69	signature:(void)
+LCD_wait	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	120;"	f	line:120	signature:(void)
+LED0_PIN::LATBbits.LATB4	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	47;"	d	line:47
+LED0_TRIS::TRISBbits.TRISB4	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	48;"	d	line:48
+LED1_PIN::LATBbits.LATB3	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	49;"	d	line:49
+LED1_TRIS::TRISBbits.TRISB3	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	50;"	d	line:50
+LVDEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	600;"	m	line:600
+LVDIE	C:\Data\pic projects\uALFAT_lib\p18f452.h	338;"	m	line:338
+LVDIF	C:\Data\pic projects\uALFAT_lib\p18f452.h	346;"	m	line:346
+LVDIN	C:\Data\pic projects\uALFAT_lib\p18f452.h	41;"	m	line:41
+LVDIP	C:\Data\pic projects\uALFAT_lib\p18f452.h	354;"	m	line:354
+LVDL0	C:\Data\pic projects\uALFAT_lib\p18f452.h	596;"	m	line:596
+LVDL1	C:\Data\pic projects\uALFAT_lib\p18f452.h	597;"	m	line:597
+LVDL2	C:\Data\pic projects\uALFAT_lib\p18f452.h	598;"	m	line:598
+LVDL3	C:\Data\pic projects\uALFAT_lib\p18f452.h	599;"	m	line:599
+LWRT	C:\Data\pic projects\uALFAT_lib\p18f452.h	581;"	m	line:581
+MASSSTORAGE::0xA0	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	118;"	d	line:118
+N	C:\Data\pic projects\uALFAT_lib\p18f452.h	626;"	m	line:626
+NDT::0xff	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	61;"	d	line:61
+NOT_BOR	C:\Data\pic projects\uALFAT_lib\p18f452.h	565;"	m	line:565
+NOT_DONE	C:\Data\pic projects\uALFAT_lib\p18f452.h	482;"	m	line:482
+NOT_IPEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	572;"	m	line:572
+NOT_LWRT	C:\Data\pic projects\uALFAT_lib\p18f452.h	571;"	m	line:571
+NOT_PD	C:\Data\pic projects\uALFAT_lib\p18f452.h	567;"	m	line:567
+NOT_POR	C:\Data\pic projects\uALFAT_lib\p18f452.h	566;"	m	line:566
+NOT_RI	C:\Data\pic projects\uALFAT_lib\p18f452.h	569;"	m	line:569
+NOT_T1SYNC	C:\Data\pic projects\uALFAT_lib\p18f452.h	548;"	m	line:548
+NOT_T3SYNC	C:\Data\pic projects\uALFAT_lib\p18f452.h	411;"	m	line:411
+NOT_TO	C:\Data\pic projects\uALFAT_lib\p18f452.h	568;"	m	line:568
+NO_ERROR::0x00	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	45;"	d	line:45
+NO_ERROR::0x00	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	43;"	d	line:43
+NO_ERROR::0x00	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	50;"	d	line:50
+Nop::{_asmnop_endasm}	C:\Data\pic projects\uALFAT_lib\p18f452.h	756;"	d	line:756
+OBF	C:\Data\pic projects\uALFAT_lib\p18f452.h	282;"	m	line:282
+OBF	C:\Data\pic projects\uALFAT_lib\p18f452.h	297;"	m	line:297
+OERR	C:\Data\pic projects\uALFAT_lib\p18f452.h	375;"	m	line:375
+ONE_MB_OVER_16::0x10000	C:\Data\pic projects\uALFAT_lib\PIC_example.c	61;"	d	line:61	file:
+OSC2	C:\Data\pic projects\uALFAT_lib\p18f452.h	29;"	m	line:29
+OV	C:\Data\pic projects\uALFAT_lib\p18f452.h	625;"	m	line:625
+P	C:\Data\pic projects\uALFAT_lib\p18f452.h	524;"	m	line:524
+PCFG0	C:\Data\pic projects\uALFAT_lib\p18f452.h	460;"	m	line:460
+PCFG1	C:\Data\pic projects\uALFAT_lib\p18f452.h	461;"	m	line:461
+PCFG2	C:\Data\pic projects\uALFAT_lib\p18f452.h	462;"	m	line:462
+PCFG3	C:\Data\pic projects\uALFAT_lib\p18f452.h	463;"	m	line:463
+PD	C:\Data\pic projects\uALFAT_lib\p18f452.h	577;"	m	line:577
+PEIE	C:\Data\pic projects\uALFAT_lib\p18f452.h	704;"	m	line:704
+PEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	500;"	m	line:500
+PGC	C:\Data\pic projects\uALFAT_lib\p18f452.h	63;"	m	line:63
+PGD	C:\Data\pic projects\uALFAT_lib\p18f452.h	64;"	m	line:64
+PGM	C:\Data\pic projects\uALFAT_lib\p18f452.h	62;"	m	line:62
+POR	C:\Data\pic projects\uALFAT_lib\p18f452.h	576;"	m	line:576
+PSA	C:\Data\pic projects\uALFAT_lib\p18f452.h	612;"	m	line:612
+PSP0	C:\Data\pic projects\uALFAT_lib\p18f452.h	113;"	m	line:113
+PSP1	C:\Data\pic projects\uALFAT_lib\p18f452.h	114;"	m	line:114
+PSP2	C:\Data\pic projects\uALFAT_lib\p18f452.h	115;"	m	line:115
+PSP3	C:\Data\pic projects\uALFAT_lib\p18f452.h	116;"	m	line:116
+PSP4	C:\Data\pic projects\uALFAT_lib\p18f452.h	117;"	m	line:117
+PSP5	C:\Data\pic projects\uALFAT_lib\p18f452.h	118;"	m	line:118
+PSP6	C:\Data\pic projects\uALFAT_lib\p18f452.h	119;"	m	line:119
+PSP7	C:\Data\pic projects\uALFAT_lib\p18f452.h	120;"	m	line:120
+PSPIE	C:\Data\pic projects\uALFAT_lib\p18f452.h	310;"	m	line:310
+PSPIF	C:\Data\pic projects\uALFAT_lib\p18f452.h	321;"	m	line:321
+PSPIP	C:\Data\pic projects\uALFAT_lib\p18f452.h	332;"	m	line:332
+PSPMODE	C:\Data\pic projects\uALFAT_lib\p18f452.h	280;"	m	line:280
+PSPMODE	C:\Data\pic projects\uALFAT_lib\p18f452.h	295;"	m	line:295
+ProcessCharFromUSART	C:\Data\pic projects\uALFAT_lib\PIC_example.c	252;"	f	line:252	signature:(int8 *character)
+ProcessRX	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	91;"	f	line:91	signature:(int8 rx)
+RA0	C:\Data\pic projects\uALFAT_lib\p18f452.h	14;"	m	line:14
+RA0	C:\Data\pic projects\uALFAT_lib\p18f452.h	187;"	m	line:187
+RA1	C:\Data\pic projects\uALFAT_lib\p18f452.h	15;"	m	line:15
+RA1	C:\Data\pic projects\uALFAT_lib\p18f452.h	188;"	m	line:188
+RA2	C:\Data\pic projects\uALFAT_lib\p18f452.h	16;"	m	line:16
+RA2	C:\Data\pic projects\uALFAT_lib\p18f452.h	189;"	m	line:189
+RA3	C:\Data\pic projects\uALFAT_lib\p18f452.h	17;"	m	line:17
+RA3	C:\Data\pic projects\uALFAT_lib\p18f452.h	190;"	m	line:190
+RA4	C:\Data\pic projects\uALFAT_lib\p18f452.h	18;"	m	line:18
+RA4	C:\Data\pic projects\uALFAT_lib\p18f452.h	191;"	m	line:191
+RA5	C:\Data\pic projects\uALFAT_lib\p18f452.h	192;"	m	line:192
+RA5	C:\Data\pic projects\uALFAT_lib\p18f452.h	19;"	m	line:19
+RA6	C:\Data\pic projects\uALFAT_lib\p18f452.h	193;"	m	line:193
+RA6	C:\Data\pic projects\uALFAT_lib\p18f452.h	20;"	m	line:20
+RB0	C:\Data\pic projects\uALFAT_lib\p18f452.h	207;"	m	line:207
+RB0	C:\Data\pic projects\uALFAT_lib\p18f452.h	47;"	m	line:47
+RB1	C:\Data\pic projects\uALFAT_lib\p18f452.h	208;"	m	line:208
+RB1	C:\Data\pic projects\uALFAT_lib\p18f452.h	48;"	m	line:48
+RB2	C:\Data\pic projects\uALFAT_lib\p18f452.h	209;"	m	line:209
+RB2	C:\Data\pic projects\uALFAT_lib\p18f452.h	49;"	m	line:49
+RB3	C:\Data\pic projects\uALFAT_lib\p18f452.h	210;"	m	line:210
+RB3	C:\Data\pic projects\uALFAT_lib\p18f452.h	50;"	m	line:50
+RB4	C:\Data\pic projects\uALFAT_lib\p18f452.h	211;"	m	line:211
+RB4	C:\Data\pic projects\uALFAT_lib\p18f452.h	51;"	m	line:51
+RB5	C:\Data\pic projects\uALFAT_lib\p18f452.h	212;"	m	line:212
+RB5	C:\Data\pic projects\uALFAT_lib\p18f452.h	52;"	m	line:52
+RB6	C:\Data\pic projects\uALFAT_lib\p18f452.h	213;"	m	line:213
+RB6	C:\Data\pic projects\uALFAT_lib\p18f452.h	53;"	m	line:53
+RB7	C:\Data\pic projects\uALFAT_lib\p18f452.h	214;"	m	line:214
+RB7	C:\Data\pic projects\uALFAT_lib\p18f452.h	54;"	m	line:54
+RBIE	C:\Data\pic projects\uALFAT_lib\p18f452.h	701;"	m	line:701
+RBIF	C:\Data\pic projects\uALFAT_lib\p18f452.h	698;"	m	line:698
+RBIP	C:\Data\pic projects\uALFAT_lib\p18f452.h	681;"	m	line:681
+RBPU	C:\Data\pic projects\uALFAT_lib\p18f452.h	688;"	m	line:688
+RC0	C:\Data\pic projects\uALFAT_lib\p18f452.h	229;"	m	line:229
+RC0	C:\Data\pic projects\uALFAT_lib\p18f452.h	70;"	m	line:70
+RC1	C:\Data\pic projects\uALFAT_lib\p18f452.h	230;"	m	line:230
+RC1	C:\Data\pic projects\uALFAT_lib\p18f452.h	71;"	m	line:71
+RC2	C:\Data\pic projects\uALFAT_lib\p18f452.h	231;"	m	line:231
+RC2	C:\Data\pic projects\uALFAT_lib\p18f452.h	72;"	m	line:72
+RC3	C:\Data\pic projects\uALFAT_lib\p18f452.h	232;"	m	line:232
+RC3	C:\Data\pic projects\uALFAT_lib\p18f452.h	73;"	m	line:73
+RC4	C:\Data\pic projects\uALFAT_lib\p18f452.h	233;"	m	line:233
+RC4	C:\Data\pic projects\uALFAT_lib\p18f452.h	74;"	m	line:74
+RC5	C:\Data\pic projects\uALFAT_lib\p18f452.h	234;"	m	line:234
+RC5	C:\Data\pic projects\uALFAT_lib\p18f452.h	75;"	m	line:75
+RC6	C:\Data\pic projects\uALFAT_lib\p18f452.h	235;"	m	line:235
+RC6	C:\Data\pic projects\uALFAT_lib\p18f452.h	76;"	m	line:76
+RC7	C:\Data\pic projects\uALFAT_lib\p18f452.h	236;"	m	line:236
+RC7	C:\Data\pic projects\uALFAT_lib\p18f452.h	77;"	m	line:77
+RCEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	501;"	m	line:501
+RCIE	C:\Data\pic projects\uALFAT_lib\p18f452.h	308;"	m	line:308
+RCIF	C:\Data\pic projects\uALFAT_lib\p18f452.h	319;"	m	line:319
+RCIP	C:\Data\pic projects\uALFAT_lib\p18f452.h	330;"	m	line:330
+RD	C:\Data\pic projects\uALFAT_lib\p18f452.h	360;"	m	line:360
+RD0	C:\Data\pic projects\uALFAT_lib\p18f452.h	103;"	m	line:103
+RD0	C:\Data\pic projects\uALFAT_lib\p18f452.h	251;"	m	line:251
+RD1	C:\Data\pic projects\uALFAT_lib\p18f452.h	104;"	m	line:104
+RD1	C:\Data\pic projects\uALFAT_lib\p18f452.h	252;"	m	line:252
+RD16	C:\Data\pic projects\uALFAT_lib\p18f452.h	407;"	m	line:407
+RD16	C:\Data\pic projects\uALFAT_lib\p18f452.h	553;"	m	line:553
+RD2	C:\Data\pic projects\uALFAT_lib\p18f452.h	105;"	m	line:105
+RD2	C:\Data\pic projects\uALFAT_lib\p18f452.h	253;"	m	line:253
+RD3	C:\Data\pic projects\uALFAT_lib\p18f452.h	106;"	m	line:106
+RD3	C:\Data\pic projects\uALFAT_lib\p18f452.h	254;"	m	line:254
+RD4	C:\Data\pic projects\uALFAT_lib\p18f452.h	107;"	m	line:107
+RD4	C:\Data\pic projects\uALFAT_lib\p18f452.h	255;"	m	line:255
+RD5	C:\Data\pic projects\uALFAT_lib\p18f452.h	108;"	m	line:108
+RD5	C:\Data\pic projects\uALFAT_lib\p18f452.h	256;"	m	line:256
+RD6	C:\Data\pic projects\uALFAT_lib\p18f452.h	109;"	m	line:109
+RD6	C:\Data\pic projects\uALFAT_lib\p18f452.h	257;"	m	line:257
+RD7	C:\Data\pic projects\uALFAT_lib\p18f452.h	110;"	m	line:110
+RD7	C:\Data\pic projects\uALFAT_lib\p18f452.h	258;"	m	line:258
+RE0	C:\Data\pic projects\uALFAT_lib\p18f452.h	126;"	m	line:126
+RE0	C:\Data\pic projects\uALFAT_lib\p18f452.h	274;"	m	line:274
+RE1	C:\Data\pic projects\uALFAT_lib\p18f452.h	127;"	m	line:127
+RE1	C:\Data\pic projects\uALFAT_lib\p18f452.h	275;"	m	line:275
+RE2	C:\Data\pic projects\uALFAT_lib\p18f452.h	128;"	m	line:128
+RE2	C:\Data\pic projects\uALFAT_lib\p18f452.h	276;"	m	line:276
+RESET_PIN::LATCbits.LATC0	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	53;"	d	line:53
+RESET_TRIS::TRISCbits.TRISC0	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	52;"	d	line:52
+RI	C:\Data\pic projects\uALFAT_lib\p18f452.h	579;"	m	line:579
+ROM_TYPE::(charromnear*)	C:\Data\pic projects\uALFAT_lib\PIC_example.c	59;"	d	line:59	file:
+RSEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	499;"	m	line:499
+RTS_PIN::LATCbits.LATC5	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	56;"	d	line:56
+RX	C:\Data\pic projects\uALFAT_lib\p18f452.h	87;"	m	line:87
+RX9	C:\Data\pic projects\uALFAT_lib\p18f452.h	380;"	m	line:380
+RX9D	C:\Data\pic projects\uALFAT_lib\p18f452.h	374;"	m	line:374
+R_W	C:\Data\pic projects\uALFAT_lib\p18f452.h	522;"	m	line:522
+Reset::{_asmreset_endasm}	C:\Data\pic projects\uALFAT_lib\p18f452.h	759;"	d	line:759
+ResetuALFATandEnterSPI	C:\Data\pic projects\uALFAT_lib\PIC_example.c	107;"	f	line:107	signature:(void)
+Rlcf::(f,dest,access){_asmmovlbfrlcf	C:\Data\pic projects\uALFAT_lib\p18f452.h	761;"	d	line:761
+Rlncf::(f,dest,access){_asmmovlbfrlnc	C:\Data\pic projects\uALFAT_lib\p18f452.h	762;"	d	line:762
+Rrcf::(f,dest,access){_asmmovlbfrrcf	C:\Data\pic projects\uALFAT_lib\p18f452.h	763;"	d	line:763
+Rrncf::(f,dest,access){_asmmovlbfrrnc	C:\Data\pic projects\uALFAT_lib\p18f452.h	764;"	d	line:764
+S	C:\Data\pic projects\uALFAT_lib\p18f452.h	523;"	m	line:523
+SCK	C:\Data\pic projects\uALFAT_lib\p18f452.h	83;"	m	line:83
+SCL	C:\Data\pic projects\uALFAT_lib\p18f452.h	93;"	m	line:93
+SCROLL_LEFT::0b00011000	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	41;"	d	line:41	file:
+SCROLL_RIGHT::0b00011100	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	40;"	d	line:40	file:
+SCS	C:\Data\pic projects\uALFAT_lib\p18f452.h	605;"	m	line:605
+SDA	C:\Data\pic projects\uALFAT_lib\p18f452.h	94;"	m	line:94
+SDI	C:\Data\pic projects\uALFAT_lib\p18f452.h	84;"	m	line:84
+SDO	C:\Data\pic projects\uALFAT_lib\p18f452.h	85;"	m	line:85
+SEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	498;"	m	line:498
+SET_CURSOR::0b10000000	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	50;"	d	line:50	file:
+SMP	C:\Data\pic projects\uALFAT_lib\p18f452.h	527;"	m	line:527
+SPBRG_VAL::(((CLOCK_FREQ/BAUD_RATE)/16))	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	44;"	d	line:44
+SPBRG_VAL::(((CLOCK_FREQ/BAUD_RATE)/16))	C:\Data\pic projects\uALFAT_lib\PIC_example.c	55;"	d	line:55	file:
+SPEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	381;"	m	line:381
+SPI_Delay::Nop;Nop;Nop;	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	87;"	d	line:87	file:
+SREN	C:\Data\pic projects\uALFAT_lib\p18f452.h	379;"	m	line:379
+SS	C:\Data\pic projects\uALFAT_lib\p18f452.h	36;"	m	line:36
+SSEL_PIN::LATCbits.LATC2	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	58;"	d	line:58
+SSEL_TRIS::TRISCbits.TRISC2	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	57;"	d	line:57
+SSPEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	514;"	m	line:514
+SSPIE	C:\Data\pic projects\uALFAT_lib\p18f452.h	306;"	m	line:306
+SSPIF	C:\Data\pic projects\uALFAT_lib\p18f452.h	317;"	m	line:317
+SSPIP	C:\Data\pic projects\uALFAT_lib\p18f452.h	328;"	m	line:328
+SSPM0	C:\Data\pic projects\uALFAT_lib\p18f452.h	509;"	m	line:509
+SSPM1	C:\Data\pic projects\uALFAT_lib\p18f452.h	510;"	m	line:510
+SSPM2	C:\Data\pic projects\uALFAT_lib\p18f452.h	511;"	m	line:511
+SSPM3	C:\Data\pic projects\uALFAT_lib\p18f452.h	512;"	m	line:512
+SSPOV	C:\Data\pic projects\uALFAT_lib\p18f452.h	515;"	m	line:515
+STKFUL	C:\Data\pic projects\uALFAT_lib\p18f452.h	739;"	m	line:739
+STKPTR0	C:\Data\pic projects\uALFAT_lib\p18f452.h	732;"	m	line:732
+STKPTR1	C:\Data\pic projects\uALFAT_lib\p18f452.h	733;"	m	line:733
+STKPTR2	C:\Data\pic projects\uALFAT_lib\p18f452.h	734;"	m	line:734
+STKPTR3	C:\Data\pic projects\uALFAT_lib\p18f452.h	735;"	m	line:735
+STKPTR4	C:\Data\pic projects\uALFAT_lib\p18f452.h	736;"	m	line:736
+STKUNF	C:\Data\pic projects\uALFAT_lib\p18f452.h	738;"	m	line:738
+SWDTE	C:\Data\pic projects\uALFAT_lib\p18f452.h	591;"	m	line:591
+SWDTEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	588;"	m	line:588
+SYNC	C:\Data\pic projects\uALFAT_lib\p18f452.h	389;"	m	line:389
+SetTimeStructure	C:\Data\pic projects\uALFAT_lib\PIC_example.c	263;"	f	line:263	signature:(int32 *time)
+Sleep::{_asmsleep_endasm}	C:\Data\pic projects\uALFAT_lib\p18f452.h	758;"	d	line:758
+Swapf::(f,dest,access){_asmmovlbfswap	C:\Data\pic projects\uALFAT_lib\p18f452.h	765;"	d	line:765
+SystemFail	C:\Data\pic projects\uALFAT_lib\PIC_example.c	175;"	f	line:175	signature:(void)
+T08BIT	C:\Data\pic projects\uALFAT_lib\p18f452.h	615;"	m	line:615
+T0CKI	C:\Data\pic projects\uALFAT_lib\p18f452.h	35;"	m	line:35
+T0CS	C:\Data\pic projects\uALFAT_lib\p18f452.h	614;"	m	line:614
+T0IE	C:\Data\pic projects\uALFAT_lib\p18f452.h	703;"	m	line:703
+T0IF	C:\Data\pic projects\uALFAT_lib\p18f452.h	700;"	m	line:700
+T0IP	C:\Data\pic projects\uALFAT_lib\p18f452.h	683;"	m	line:683
+T0PS0	C:\Data\pic projects\uALFAT_lib\p18f452.h	609;"	m	line:609
+T0PS1	C:\Data\pic projects\uALFAT_lib\p18f452.h	610;"	m	line:610
+T0PS2	C:\Data\pic projects\uALFAT_lib\p18f452.h	611;"	m	line:611
+T0SE	C:\Data\pic projects\uALFAT_lib\p18f452.h	613;"	m	line:613
+T1CKI	C:\Data\pic projects\uALFAT_lib\p18f452.h	90;"	m	line:90
+T1CKPS0	C:\Data\pic projects\uALFAT_lib\p18f452.h	550;"	m	line:550
+T1CKPS1	C:\Data\pic projects\uALFAT_lib\p18f452.h	551;"	m	line:551
+T1OSCEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	549;"	m	line:549
+T1OSI	C:\Data\pic projects\uALFAT_lib\p18f452.h	81;"	m	line:81
+T1OSO	C:\Data\pic projects\uALFAT_lib\p18f452.h	80;"	m	line:80
+T1SYNC	C:\Data\pic projects\uALFAT_lib\p18f452.h	557;"	m	line:557
+T2CKPS0	C:\Data\pic projects\uALFAT_lib\p18f452.h	533;"	m	line:533
+T2CKPS1	C:\Data\pic projects\uALFAT_lib\p18f452.h	534;"	m	line:534
+T3CCP1	C:\Data\pic projects\uALFAT_lib\p18f452.h	403;"	m	line:403
+T3CCP2	C:\Data\pic projects\uALFAT_lib\p18f452.h	406;"	m	line:406
+T3CKPS0	C:\Data\pic projects\uALFAT_lib\p18f452.h	404;"	m	line:404
+T3CKPS1	C:\Data\pic projects\uALFAT_lib\p18f452.h	405;"	m	line:405
+T3SYNC	C:\Data\pic projects\uALFAT_lib\p18f452.h	402;"	m	line:402
+TMR0IE	C:\Data\pic projects\uALFAT_lib\p18f452.h	713;"	m	line:713
+TMR0IF	C:\Data\pic projects\uALFAT_lib\p18f452.h	710;"	m	line:710
+TMR0IP	C:\Data\pic projects\uALFAT_lib\p18f452.h	692;"	m	line:692
+TMR0ON	C:\Data\pic projects\uALFAT_lib\p18f452.h	616;"	m	line:616
+TMR1CS	C:\Data\pic projects\uALFAT_lib\p18f452.h	547;"	m	line:547
+TMR1IE	C:\Data\pic projects\uALFAT_lib\p18f452.h	303;"	m	line:303
+TMR1IF	C:\Data\pic projects\uALFAT_lib\p18f452.h	314;"	m	line:314
+TMR1IP	C:\Data\pic projects\uALFAT_lib\p18f452.h	325;"	m	line:325
+TMR1ON	C:\Data\pic projects\uALFAT_lib\p18f452.h	546;"	m	line:546
+TMR2IE	C:\Data\pic projects\uALFAT_lib\p18f452.h	304;"	m	line:304
+TMR2IF	C:\Data\pic projects\uALFAT_lib\p18f452.h	315;"	m	line:315
+TMR2IP	C:\Data\pic projects\uALFAT_lib\p18f452.h	326;"	m	line:326
+TMR2ON	C:\Data\pic projects\uALFAT_lib\p18f452.h	535;"	m	line:535
+TMR3CS	C:\Data\pic projects\uALFAT_lib\p18f452.h	401;"	m	line:401
+TMR3IE	C:\Data\pic projects\uALFAT_lib\p18f452.h	337;"	m	line:337
+TMR3IF	C:\Data\pic projects\uALFAT_lib\p18f452.h	345;"	m	line:345
+TMR3IP	C:\Data\pic projects\uALFAT_lib\p18f452.h	353;"	m	line:353
+TMR3ON	C:\Data\pic projects\uALFAT_lib\p18f452.h	400;"	m	line:400
+TO	C:\Data\pic projects\uALFAT_lib\p18f452.h	578;"	m	line:578
+TOUTPS0	C:\Data\pic projects\uALFAT_lib\p18f452.h	536;"	m	line:536
+TOUTPS1	C:\Data\pic projects\uALFAT_lib\p18f452.h	537;"	m	line:537
+TOUTPS2	C:\Data\pic projects\uALFAT_lib\p18f452.h	538;"	m	line:538
+TOUTPS3	C:\Data\pic projects\uALFAT_lib\p18f452.h	539;"	m	line:539
+TRISA0	C:\Data\pic projects\uALFAT_lib\p18f452.h	197;"	m	line:197
+TRISA1	C:\Data\pic projects\uALFAT_lib\p18f452.h	198;"	m	line:198
+TRISA2	C:\Data\pic projects\uALFAT_lib\p18f452.h	199;"	m	line:199
+TRISA3	C:\Data\pic projects\uALFAT_lib\p18f452.h	200;"	m	line:200
+TRISA4	C:\Data\pic projects\uALFAT_lib\p18f452.h	201;"	m	line:201
+TRISA5	C:\Data\pic projects\uALFAT_lib\p18f452.h	202;"	m	line:202
+TRISA6	C:\Data\pic projects\uALFAT_lib\p18f452.h	203;"	m	line:203
+TRISB0	C:\Data\pic projects\uALFAT_lib\p18f452.h	218;"	m	line:218
+TRISB1	C:\Data\pic projects\uALFAT_lib\p18f452.h	219;"	m	line:219
+TRISB2	C:\Data\pic projects\uALFAT_lib\p18f452.h	220;"	m	line:220
+TRISB3	C:\Data\pic projects\uALFAT_lib\p18f452.h	221;"	m	line:221
+TRISB4	C:\Data\pic projects\uALFAT_lib\p18f452.h	222;"	m	line:222
+TRISB5	C:\Data\pic projects\uALFAT_lib\p18f452.h	223;"	m	line:223
+TRISB6	C:\Data\pic projects\uALFAT_lib\p18f452.h	224;"	m	line:224
+TRISB7	C:\Data\pic projects\uALFAT_lib\p18f452.h	225;"	m	line:225
+TRISC0	C:\Data\pic projects\uALFAT_lib\p18f452.h	240;"	m	line:240
+TRISC1	C:\Data\pic projects\uALFAT_lib\p18f452.h	241;"	m	line:241
+TRISC2	C:\Data\pic projects\uALFAT_lib\p18f452.h	242;"	m	line:242
+TRISC3	C:\Data\pic projects\uALFAT_lib\p18f452.h	243;"	m	line:243
+TRISC4	C:\Data\pic projects\uALFAT_lib\p18f452.h	244;"	m	line:244
+TRISC5	C:\Data\pic projects\uALFAT_lib\p18f452.h	245;"	m	line:245
+TRISC6	C:\Data\pic projects\uALFAT_lib\p18f452.h	246;"	m	line:246
+TRISC7	C:\Data\pic projects\uALFAT_lib\p18f452.h	247;"	m	line:247
+TRISD0	C:\Data\pic projects\uALFAT_lib\p18f452.h	262;"	m	line:262
+TRISD1	C:\Data\pic projects\uALFAT_lib\p18f452.h	263;"	m	line:263
+TRISD2	C:\Data\pic projects\uALFAT_lib\p18f452.h	264;"	m	line:264
+TRISD3	C:\Data\pic projects\uALFAT_lib\p18f452.h	265;"	m	line:265
+TRISD4	C:\Data\pic projects\uALFAT_lib\p18f452.h	266;"	m	line:266
+TRISD5	C:\Data\pic projects\uALFAT_lib\p18f452.h	267;"	m	line:267
+TRISD6	C:\Data\pic projects\uALFAT_lib\p18f452.h	268;"	m	line:268
+TRISD7	C:\Data\pic projects\uALFAT_lib\p18f452.h	269;"	m	line:269
+TRISE0	C:\Data\pic projects\uALFAT_lib\p18f452.h	289;"	m	line:289
+TRISE1	C:\Data\pic projects\uALFAT_lib\p18f452.h	290;"	m	line:290
+TRISE2	C:\Data\pic projects\uALFAT_lib\p18f452.h	291;"	m	line:291
+TRMT	C:\Data\pic projects\uALFAT_lib\p18f452.h	386;"	m	line:386
+TX	C:\Data\pic projects\uALFAT_lib\p18f452.h	86;"	m	line:86
+TX9	C:\Data\pic projects\uALFAT_lib\p18f452.h	391;"	m	line:391
+TX9D	C:\Data\pic projects\uALFAT_lib\p18f452.h	385;"	m	line:385
+TXEN	C:\Data\pic projects\uALFAT_lib\p18f452.h	390;"	m	line:390
+TXIE	C:\Data\pic projects\uALFAT_lib\p18f452.h	307;"	m	line:307
+TXIF	C:\Data\pic projects\uALFAT_lib\p18f452.h	318;"	m	line:318
+TXIP	C:\Data\pic projects\uALFAT_lib\p18f452.h	329;"	m	line:329
+UA	C:\Data\pic projects\uALFAT_lib\p18f452.h	521;"	m	line:521
+UART_USE_INTERRUPT	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	48;"	d	line:48
+UNDERLINE_OFF::0b00001100	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	45;"	d	line:45	file:
+UNDERLINE_ON::0b00001110	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	44;"	d	line:44	file:
+UNKNOWN_ERROR::0xFF	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	46;"	d	line:46
+UNKNOWN_ERROR::0xFF	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	44;"	d	line:44
+UNKNOWN_ERROR::0xFF	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	51;"	d	line:51
+USBD::0x70	C:\Data\pic projects\uALFAT_lib\ErrorCode.h	93;"	d	line:93
+VREFM	C:\Data\pic projects\uALFAT_lib\p18f452.h	33;"	m	line:33
+VREFP	C:\Data\pic projects\uALFAT_lib\p18f452.h	34;"	m	line:34
+WCOL	C:\Data\pic projects\uALFAT_lib\p18f452.h	516;"	m	line:516
+WR	C:\Data\pic projects\uALFAT_lib\p18f452.h	361;"	m	line:361
+WREN	C:\Data\pic projects\uALFAT_lib\p18f452.h	362;"	m	line:362
+WRERR	C:\Data\pic projects\uALFAT_lib\p18f452.h	363;"	m	line:363
+Z	C:\Data\pic projects\uALFAT_lib\p18f452.h	624;"	m	line:624
+_BORV_25_2L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	845;"	d	line:845
+_BORV_27_2L::0xFB	C:\Data\pic projects\uALFAT_lib\p18f452.h	844;"	d	line:844
+_BORV_42_2L::0xF7	C:\Data\pic projects\uALFAT_lib\p18f452.h	843;"	d	line:843
+_BORV_45_2L::0xF3	C:\Data\pic projects\uALFAT_lib\p18f452.h	842;"	d	line:842
+_BOR_OFF_2L::0xFD	C:\Data\pic projects\uALFAT_lib\p18f452.h	839;"	d	line:839
+_BOR_ON_2L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	840;"	d	line:840
+_CCP2MUX_OFF_3H::0xFE	C:\Data\pic projects\uALFAT_lib\p18f452.h	867;"	d	line:867
+_CCP2MUX_ON_3H::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	868;"	d	line:868
+_CONFIG1H_DEFAULT::0x27	C:\Data\pic projects\uALFAT_lib\p18f452.h	819;"	d	line:819
+_CONFIG2H_DEFAULT::0x0F	C:\Data\pic projects\uALFAT_lib\p18f452.h	850;"	d	line:850
+_CONFIG2L_DEFAULT::0x0F	C:\Data\pic projects\uALFAT_lib\p18f452.h	835;"	d	line:835
+_CONFIG3H_DEFAULT::0x01	C:\Data\pic projects\uALFAT_lib\p18f452.h	866;"	d	line:866
+_CONFIG4L_DEFAULT::0x85	C:\Data\pic projects\uALFAT_lib\p18f452.h	873;"	d	line:873
+_CONFIG5H_DEFAULT::0xC0	C:\Data\pic projects\uALFAT_lib\p18f452.h	902;"	d	line:902
+_CONFIG5L_DEFAULT::0x0F	C:\Data\pic projects\uALFAT_lib\p18f452.h	886;"	d	line:886
+_CONFIG6H_DEFAULT::0xE0	C:\Data\pic projects\uALFAT_lib\p18f452.h	928;"	d	line:928
+_CONFIG6L_DEFAULT::0x0F	C:\Data\pic projects\uALFAT_lib\p18f452.h	912;"	d	line:912
+_CONFIG7H_DEFAULT::0x40	C:\Data\pic projects\uALFAT_lib\p18f452.h	957;"	d	line:957
+_CONFIG7L_DEFAULT::0x0F	C:\Data\pic projects\uALFAT_lib\p18f452.h	941;"	d	line:941
+_CONFIG_DECL::(_CONFIG1H,\	C:\Data\pic projects\uALFAT_lib\p18f452.h	788;"	d	line:788
+_CP0_OFF_5L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	888;"	d	line:888
+_CP0_ON_5L::0xFE	C:\Data\pic projects\uALFAT_lib\p18f452.h	887;"	d	line:887
+_CP1_OFF_5L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	891;"	d	line:891
+_CP1_ON_5L::0xFD	C:\Data\pic projects\uALFAT_lib\p18f452.h	890;"	d	line:890
+_CP2_OFF_5L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	894;"	d	line:894
+_CP2_ON_5L::0xFB	C:\Data\pic projects\uALFAT_lib\p18f452.h	893;"	d	line:893
+_CP3_OFF_5L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	897;"	d	line:897
+_CP3_ON_5L::0xF7	C:\Data\pic projects\uALFAT_lib\p18f452.h	896;"	d	line:896
+_CPB_OFF_5H::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	904;"	d	line:904
+_CPB_ON_5H::0xBF	C:\Data\pic projects\uALFAT_lib\p18f452.h	903;"	d	line:903
+_CPD_OFF_5H::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	907;"	d	line:907
+_CPD_ON_5H::0x7F	C:\Data\pic projects\uALFAT_lib\p18f452.h	906;"	d	line:906
+_DEBUG_OFF_4L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	881;"	d	line:881
+_DEBUG_ON_4L::0x7F	C:\Data\pic projects\uALFAT_lib\p18f452.h	880;"	d	line:880
+_EBTR0_OFF_7L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	943;"	d	line:943
+_EBTR0_ON_7L::0xFE	C:\Data\pic projects\uALFAT_lib\p18f452.h	942;"	d	line:942
+_EBTR1_OFF_7L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	946;"	d	line:946
+_EBTR1_ON_7L::0xFD	C:\Data\pic projects\uALFAT_lib\p18f452.h	945;"	d	line:945
+_EBTR2_OFF_7L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	949;"	d	line:949
+_EBTR2_ON_7L::0xFB	C:\Data\pic projects\uALFAT_lib\p18f452.h	948;"	d	line:948
+_EBTR3_OFF_7L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	952;"	d	line:952
+_EBTR3_ON_7L::0xF7	C:\Data\pic projects\uALFAT_lib\p18f452.h	951;"	d	line:951
+_EBTRB_OFF_7H::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	959;"	d	line:959
+_EBTRB_ON_7H::0xBF	C:\Data\pic projects\uALFAT_lib\p18f452.h	958;"	d	line:958
+_GHI_INTERFACE_PIC_I2C_HEADER	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.h	32;"	d	line:32
+_GHI_INTERFACE_PIC_SPI_HEADER	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.h	32;"	d	line:32
+_GHI_INTERFACE_PIC_UART_HEADER	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.h	32;"	d	line:32
+_GHI_INTERFACE_USER_HEADER_	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.h	32;"	d	line:32
+_LVP_OFF_4L::0xFB	C:\Data\pic projects\uALFAT_lib\p18f452.h	877;"	d	line:877
+_LVP_ON_4L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	878;"	d	line:878
+_OSCS_OFF_1H::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	830;"	d	line:830
+_OSCS_ON_1H::0xDF	C:\Data\pic projects\uALFAT_lib\p18f452.h	829;"	d	line:829
+_OSC_ECIO_1H::0xFD	C:\Data\pic projects\uALFAT_lib\p18f452.h	825;"	d	line:825
+_OSC_EC_1H::0xFC	C:\Data\pic projects\uALFAT_lib\p18f452.h	824;"	d	line:824
+_OSC_HSPLL_1H::0xFE	C:\Data\pic projects\uALFAT_lib\p18f452.h	826;"	d	line:826
+_OSC_HS_1H::0xFA	C:\Data\pic projects\uALFAT_lib\p18f452.h	822;"	d	line:822
+_OSC_LP_1H::0xF8	C:\Data\pic projects\uALFAT_lib\p18f452.h	820;"	d	line:820
+_OSC_RCIO_1H::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	827;"	d	line:827
+_OSC_RC_1H::0xFB	C:\Data\pic projects\uALFAT_lib\p18f452.h	823;"	d	line:823
+_OSC_XT_1H::0xF9	C:\Data\pic projects\uALFAT_lib\p18f452.h	821;"	d	line:821
+_PWRT_OFF_2L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	837;"	d	line:837
+_PWRT_ON_2L::0xFE	C:\Data\pic projects\uALFAT_lib\p18f452.h	836;"	d	line:836
+_STVR_OFF_4L::0xFE	C:\Data\pic projects\uALFAT_lib\p18f452.h	874;"	d	line:874
+_STVR_ON_4L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	875;"	d	line:875
+_TYPES_HEADER_	C:\Data\pic projects\uALFAT_lib\Types.h	32;"	d	line:32
+_USE_GHI_INTR_PIC_SPI_::	C:\Data\pic projects\uALFAT_lib\Types.h	45;"	d	line:45
+_USE_READWRITE_WRAPERS_	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	40;"	d	line:40
+_WDTPS_128_2H::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	861;"	d	line:861
+_WDTPS_16_2H::0xF9	C:\Data\pic projects\uALFAT_lib\p18f452.h	858;"	d	line:858
+_WDTPS_1_2H::0xF1	C:\Data\pic projects\uALFAT_lib\p18f452.h	854;"	d	line:854
+_WDTPS_2_2H::0xF3	C:\Data\pic projects\uALFAT_lib\p18f452.h	855;"	d	line:855
+_WDTPS_32_2H::0xFB	C:\Data\pic projects\uALFAT_lib\p18f452.h	859;"	d	line:859
+_WDTPS_4_2H::0xF5	C:\Data\pic projects\uALFAT_lib\p18f452.h	856;"	d	line:856
+_WDTPS_64_2H::0xFD	C:\Data\pic projects\uALFAT_lib\p18f452.h	860;"	d	line:860
+_WDTPS_8_2H::0xF7	C:\Data\pic projects\uALFAT_lib\p18f452.h	857;"	d	line:857
+_WDT_OFF_2H::0xFE	C:\Data\pic projects\uALFAT_lib\p18f452.h	851;"	d	line:851
+_WDT_ON_2H::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	852;"	d	line:852
+_WRT0_OFF_6L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	914;"	d	line:914
+_WRT0_ON_6L::0xFE	C:\Data\pic projects\uALFAT_lib\p18f452.h	913;"	d	line:913
+_WRT1_OFF_6L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	917;"	d	line:917
+_WRT1_ON_6L::0xFD	C:\Data\pic projects\uALFAT_lib\p18f452.h	916;"	d	line:916
+_WRT2_OFF_6L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	920;"	d	line:920
+_WRT2_ON_6L::0xFB	C:\Data\pic projects\uALFAT_lib\p18f452.h	919;"	d	line:919
+_WRT3_OFF_6L::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	923;"	d	line:923
+_WRT3_ON_6L::0xF7	C:\Data\pic projects\uALFAT_lib\p18f452.h	922;"	d	line:922
+_WRTB_OFF_6H::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	930;"	d	line:930
+_WRTB_ON_6H::0xBF	C:\Data\pic projects\uALFAT_lib\p18f452.h	929;"	d	line:929
+_WRTC_OFF_6H::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	933;"	d	line:933
+_WRTC_ON_6H::0xDF	C:\Data\pic projects\uALFAT_lib\p18f452.h	932;"	d	line:932
+_WRTD_OFF_6H::0xFF	C:\Data\pic projects\uALFAT_lib\p18f452.h	936;"	d	line:936
+_WRTD_ON_6H::0x7F	C:\Data\pic projects\uALFAT_lib\p18f452.h	935;"	d	line:935
+__18F452_H	C:\Data\pic projects\uALFAT_lib\p18f452.h	9;"	d	line:9
+_c	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	151;"	l	line:151
+_d	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	174;"	l	line:174
+_uALFAT_LIB_HEADER	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	32;"	d	line:32
+attr	C:\Data\pic projects\uALFAT_lib\PIC_example.c	326;"	l	line:326
+bcd	C:\Data\pic projects\uALFAT_lib\PIC_example.c	324;"	l	line:324
+buffer	C:\Data\pic projects\uALFAT_lib\PIC_example.c	265;"	l	line:265
+buffer	C:\Data\pic projects\uALFAT_lib\PIC_example.c	48;"	v	line:48
+c	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	159;"	l	line:159
+c	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	95;"	l	line:95
+c	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	120;"	l	line:120
+c	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	192;"	l	line:192
+c	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	168;"	l	line:168
+c	C:\Data\pic projects\uALFAT_lib\PIC_example.c	188;"	l	line:188
+c	C:\Data\pic projects\uALFAT_lib\PIC_example.c	324;"	l	line:324
+c	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	112;"	l	line:112
+c	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	188;"	l	line:188
+c	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	231;"	l	line:231
+c	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	299;"	l	line:299
+c	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	364;"	l	line:364
+c	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	435;"	l	line:435
+c	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	509;"	l	line:509
+datastring	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	187;"	l	line:187
+day	C:\Data\pic projects\uALFAT_lib\PIC_example.c	266;"	l	line:266
+day	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	145;"	m	line:145
+file_ext	C:\Data\pic projects\uALFAT_lib\PIC_example.c	326;"	l	line:326
+file_name	C:\Data\pic projects\uALFAT_lib\PIC_example.c	326;"	l	line:326
+getcUSART	C:\Data\pic projects\uALFAT_lib\PIC_example.c	403;"	p	line:403	file:
+got_hdt	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	93;"	l	line:93	file:
+hours	C:\Data\pic projects\uALFAT_lib\PIC_example.c	266;"	l	line:266
+hours	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	144;"	m	line:144
+i	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	121;"	l	line:121
+i	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	60;"	l	line:60
+index	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	464;"	l	line:464
+int16::unsignedshort	C:\Data\pic projects\uALFAT_lib\Types.h	37;"	d	line:37
+int32::unsignedlong	C:\Data\pic projects\uALFAT_lib\Types.h	38;"	d	line:38
+int8::unsignedchar	C:\Data\pic projects\uALFAT_lib\Types.h	36;"	d	line:36
+main	C:\Data\pic projects\uALFAT_lib\PIC_example.c	322;"	f	line:322	signature:(void)
+major	C:\Data\pic projects\uALFAT_lib\PIC_example.c	188;"	l	line:188
+minor	C:\Data\pic projects\uALFAT_lib\PIC_example.c	188;"	l	line:188
+minutes	C:\Data\pic projects\uALFAT_lib\PIC_example.c	266;"	l	line:266
+minutes	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	143;"	m	line:143
+month	C:\Data\pic projects\uALFAT_lib\PIC_example.c	266;"	l	line:266
+month	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	146;"	m	line:146
+of	C:\Data\pic projects\uALFAT_lib\GHI_HD44780_LCD.c	122;"	l	line:122
+result	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	111;"	l	line:111
+result	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	59;"	l	line:59
+rx_fifo	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	39;"	v	line:39
+rx_fifo	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	40;"	v	line:40
+rx_fifo	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	53;"	v	line:53
+rx_fifo_in	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	41;"	v	line:41
+rx_fifo_in	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	42;"	v	line:42
+rx_fifo_in	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	55;"	v	line:55
+rx_fifo_out	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	42;"	v	line:42
+rx_fifo_out	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	43;"	v	line:43
+rx_fifo_out	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	56;"	v	line:56
+seconds	C:\Data\pic projects\uALFAT_lib\PIC_example.c	266;"	l	line:266
+seconds2	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	142;"	m	line:142
+size	C:\Data\pic projects\uALFAT_lib\PIC_example.c	325;"	l	line:325
+temp	C:\Data\pic projects\uALFAT_lib\PIC_example.c	265;"	l	line:265
+temp	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	300;"	l	line:300
+temp	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	363;"	l	line:363
+temp	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	436;"	l	line:436
+temp	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	510;"	l	line:510
+time	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	582;"	l	line:582
+type	C:\Data\pic projects\uALFAT_lib\PIC_example.c	229;"	l	line:229
+uALFAT_Initialize	C:\Data\pic projects\uALFAT_lib\PIC_example.c	186;"	f	line:186	signature:(void)
+var	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	566;"	l	line:566
+var32	C:\Data\pic projects\uALFAT_lib\PIC_example.c	325;"	l	line:325
+var32	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.c	552;"	l	line:552
+var8	C:\Data\pic projects\uALFAT_lib\PIC_example.c	324;"	l	line:324
+x	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	54;"	l	line:54
+x	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	56;"	l	line:56
+x	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	68;"	l	line:68
+x	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.c	44;"	l	line:44
+year	C:\Data\pic projects\uALFAT_lib\PIC_example.c	266;"	l	line:266
+years_since_1980	C:\Data\pic projects\uALFAT_lib\uALFAT_lib.h	147;"	m	line:147
+z	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_I2C.c	54;"	l	line:54
+z	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_SPI.c	56;"	l	line:56
+z	C:\Data\pic projects\uALFAT_lib\GHI_inter_PIC_UART.c	68;"	l	line:68
+z	C:\Data\pic projects\uALFAT_lib\GHI_inter_user.c	44;"	l	line:44

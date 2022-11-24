@@ -1,0 +1,3 @@
+Place & Route Module uart_top . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+PAR completed successfully

@@ -1,0 +1,72 @@
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\transmitter\uart/_ngo -i  -p xc2s150-pq208-5 uart_top.ngc uart_top.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+trce -intstyle ise -e 3 -l 3 -xml uart_top uart_top.ncd -o uart_top.twr uart_top.pcf
+ngdbuild -intstyle ise -dd c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf  -p xc2s150-pq208-5 uart_top.ngc uart_top.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+trce -intstyle ise -e 3 -l 3 -xml uart_top uart_top.ncd -o uart_top.twr uart_top.pcf
+bitgen -intstyle ise -f uart_top.ut uart_top.ncd
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf  -p xc2s150-pq208-5 uart_top.ngc uart_top.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+trce -intstyle ise -e 3 -l 3 -xml uart_top uart_top.ncd -o uart_top.twr uart_top.pcf
+bitgen -intstyle ise -f uart_top.ut uart_top.ncd
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf  -p xc2s150-pq208-5 uart_top.ngc uart_top.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+trce -intstyle ise -e 3 -l 3 -xml uart_top uart_top.ncd -o uart_top.twr uart_top.pcf
+bitgen -intstyle ise -f uart_top.ut uart_top.ncd
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf  -p xc2s150-pq208-5 uart_top.ngc uart_top.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+trce -intstyle ise -e 3 -l 3 -xml uart_top uart_top.ncd -o uart_top.twr uart_top.pcf
+bitgen -intstyle ise -f uart_top.ut uart_top.ncd
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf  -p xc2s150-pq208-5 uart_top.ngc uart_top.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+trce -intstyle ise -e 3 -l 3 -xml uart_top uart_top.ncd -o uart_top.twr uart_top.pcf
+bitgen -intstyle ise -f uart_top.ut uart_top.ncd
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf  -p xc2s150-pq208-5 uart_top.ngc uart_top.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+trce -intstyle ise -e 3 -l 3 -xml uart_top uart_top.ncd -o uart_top.twr uart_top.pcf
+bitgen -intstyle ise -f uart_top.ut uart_top.ncd
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf  -p xc2s150-pq208-5 uart_top.ngc uart_top.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+trce -intstyle ise -e 3 -l 3 -xml uart_top uart_top.ncd -o uart_top.twr uart_top.pcf
+bitgen -intstyle ise -f uart_top.ut uart_top.ncd
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+ngdbuild -intstyle ise -dd c:\uart_tx/_ngo -uc uart_top.ucf  -p xc2s100-pq208-5 uart_top.ngc uart_top.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+trce -intstyle ise -e 3 -l 3 -xml uart_top uart_top.ncd -o uart_top.twr uart_top.pcf
+bitgen -intstyle ise -f uart_top.ut uart_top.ncd
+ngdbuild -intstyle ise -dd c:\uart_tx/_ngo -uc uart_top.ucf  -p xc2s100-pq208-5 uart_top.ngc uart_top.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+trce -intstyle ise -e 3 -l 3 -xml uart_top uart_top.ncd -o uart_top.twr uart_top.pcf
+bitgen -intstyle ise -f uart_top.ut uart_top.ncd
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+ngdbuild -intstyle ise -dd c:\testing_from\uart_tx/_ngo -uc uart_top.ucf  -p xc2s150-pq208-5 uart_top.ngc uart_top.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+trce -intstyle ise -e 3 -l 3 -xml uart_top uart_top.ncd -o uart_top.twr uart_top.pcf
+xst -intstyle ise -ifn __projnav/uart_top.xst -ofn uart_top.syr
+ngdbuild -intstyle ise -dd c:\testing_from\uart_tx/_ngo -uc uart_top.ucf  -p xc2s150-pq208-5 uart_top.ngc uart_top.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+trce -intstyle ise -e 3 -l 3 -xml uart_top uart_top.ncd -o uart_top.twr uart_top.pcf
+bitgen -intstyle ise -f uart_top.ut uart_top.ncd

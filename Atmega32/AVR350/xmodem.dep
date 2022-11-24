@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\Debug\Obj\purge.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\receive.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\recv_wait.r90</file>
+      <file>$TOOLKIT_DIR$\inc\iomacro.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\calcrc.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\init.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\xmodem.pbd</file>
+      <file>$TOOLKIT_DIR$\src\template\cfgm88.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\recv_wait.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\respond.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\timer1.pbi</file>
+      <file>$PROJ_DIR$\Debug\Exe\xmodem.dbg</file>
+      <file>$PROJ_DIR$\Debug\Obj\validate_packet.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\receive.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\validate_packet.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\init.r90</file>
+      <file>$TOOLKIT_DIR$\src\template\cfg1s.xcl</file>
+      <file>$PROJ_DIR$\calcrc.c</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\respond.r90</file>
+      <file>$PROJ_DIR$\Debug\Exe\xmodem.a90</file>
+      <file>$PROJ_DIR$\Debug\Obj\xmodem.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\calcrc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\xmodem.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\sendc.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl1s-ec.r90</file>
+      <file>$PROJ_DIR$\init.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\purge.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\inavr.h</file>
+      <file>$PROJ_DIR$\xmodem.h</file>
+      <file>$TOOLKIT_DIR$\inc\iom48.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\sendc.r90</file>
+      <file>$PROJ_DIR$\receive.c</file>
+      <file>$PROJ_DIR$\recv_wait.c</file>
+      <file>$PROJ_DIR$\purge.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\timer1.r90</file>
+      <file>$PROJ_DIR$\respond.c</file>
+      <file>$PROJ_DIR$\sendc.c</file>
+      <file>$PROJ_DIR$\timer1.c</file>
+      <file>$PROJ_DIR$\uart.c</file>
+      <file>$PROJ_DIR$\validate_packet.c</file>
+      <file>$PROJ_DIR$\xmodem.c</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\xmodem.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 23 5 28 14 9 10 25 11 29 15 24</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\xmodem.dbg</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 8 17 4 16 0 1 2 20 33 37 6 13 22 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\calcrc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 4</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 21</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\xmodem.a90</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 8 17 4 16 0 1 2 20 33 37 6 13 22 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\init.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\receive.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 1</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\recv_wait.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 2</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\purge.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 0</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\respond.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 20</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\sendc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 33</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\timer1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 11</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\uart.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 6</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\validate_packet.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 13</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\xmodem.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 22</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 32 3 30 19</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

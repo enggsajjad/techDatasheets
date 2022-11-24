@@ -1,0 +1,79 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:31:18                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\sendstopbit.c                 #
+#       List file     =  c:\projects\at17c8515\debug\list\sendstopbit.lst    #
+#       Object file   =  c:\projects\at17c8515\debug\obj\sendstopbit.r90     #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Debug\Obj\ -e -gA   #
+#                        -RCODE -r0e -LC:\Projects\at17c8515\Debug\List\ -q  #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -K                       #
+#                        C:\Projects\at17c8515\SendStopBit.c                 #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+   \                     	NAME	sendstopbit(17)
+   \                     	RSEG	CODE(0)
+   \                     	EXTERN	BitDelay
+   \                     	PUBLIC	SendStopBit
+   \                     	EXTERN	SetSCLHigh
+   \                     	EXTERN	WriteSDA
+   \                     	EXTERN	?CL1S_1_30_L08
+   \                     	RSEG	CODE
+   \                     SendStopBit:
+      1          // SendStopBit.c
+      2          // generates a stop bit
+      3          // assumes SCL is low
+      4          // stop bit is a 0 to 1 transition on SDA while SCL is high
+      5          /*
+      6                   ____________
+      7                  /
+      8          SCL ___/
+      9              
+     10                         ______
+     11                        /
+     12          SDA _________/
+     13          
+     14          */
+     15          
+     16          #include "at17c.h"
+     17           
+     18          extern void WriteSCL(unsigned char state);
+     19          extern void WriteSDA(unsigned char state);
+     20          extern void BitDelay(void);
+     21          extern unsigned char SetSCLHigh(void);
+     22                      
+     23          void SendStopBit(void) {
+     24              
+     25              WriteSDA(0);
+   \   00000000   0027                       CLR     R16
+   \   00000002   ....                       RCALL   WriteSDA
+     26              BitDelay();
+   \   00000004   ....                       RCALL   BitDelay
+     27              SetSCLHigh();
+   \   00000006   ....                       RCALL   SetSCLHigh
+     28              BitDelay();
+   \   00000008   ....                       RCALL   BitDelay
+     29              WriteSDA(1);
+   \   0000000A   01E0                       LDI     R16,1
+   \   0000000C   ....                       RCALL   WriteSDA
+     30              BitDelay();
+   \   0000000E   ....                       RCALL   BitDelay
+     31          }
+   \   00000010   0895                       RET     
+   \                     	END
+
+Source file: c:\projects\at17c8515\sendstopbit.c
+Errors: none
+Warnings: none
+Code size: 18
+Constant size: 0
+Static variable size: 0
+

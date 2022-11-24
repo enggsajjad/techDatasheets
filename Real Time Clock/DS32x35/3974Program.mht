@@ -1,0 +1,495 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: 
+Date: Thu, 1 Nov 2007 09:41:50 +0500
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="windows-1256"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.maxim-ic.com/images/appnotes/3974/3974Program.txt
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1256">
+<META content=3D"MSHTML 6.00.2900.2180" name=3DGENERATOR></HEAD>
+<BODY><PRE>/*************************************************************=
+**/
+/* DS32X35an.c                                                  */
+/***************************************************************/
+#include &lt;stdio.h&gt;		/* Prototypes for I/O functions     */
+#include &lt;DS5000.h&gt;		/* Register declarations for DS5000 */
+/***************************** Defines **************************/
+/************************* bit definitions *********************/
+#define	ACK	0
+#define	NACK	1
+#define	ADDRTC	0xd0	/* base address of TCXO */
+#define	ADDRAM 0xa0	/* base address of FRAM */
+sbit	scl =3D P0^0;        	/* I2C pin definitions */
+sbit	sda =3D P0^1;
+sbit	wp  =3D P0^3;		/* WP input */
+sbit	sqwint =3D P3^3;	/* SQW/INTb output to INT1 on 8051 */
+/*********************** function prototypes *******************/
+void	start();
+void	stop();
+uchar	writebytei2c(uchar d);
+uchar	readbytei2c(int);
+void	readbytetcxo();
+void	writebytetcxo();
+void	initialize_tcxo();
+void	rd_temp();
+void	disp_regs(uchar);
+void	fill_ram(uchar);
+void	wr_ram(uchar);
+void	ver_ram(uchar);
+void	rd_ram();
+/************************* Global Variables ***************************/
+uchar	ram =3D 7, sec, min, hr, dy, dt, mn, yr;
+/**************************** functions ******************************/
+void start()		/* ----------------------------------------------- */
+{
+  sda =3D 1;  scl =3D 1;	scl =3D 1; scl =3D 1;	/* Initiate start =
+condition */
+  sda =3D 0;=20
+}
+void stop()		/* ----------------------------------------------- */
+{
+  sda =3D 0;  sda =3D 0;  sda =3D 0;  sda =3D 0;	/* Initiate stop =
+condition */
+  scl =3D 1;  scl =3D 1;  sda =3D 1;
+}
+uchar writebytei2c(uchar d)	/* ----------------------------- */
+{
+uchar i;
+
+	scl =3D 0;
+	for (i =3D 0; i &lt; 8; i++)
+	{
+		sda =3D (d &amp; 0x80);
+		scl =3D 1;
+		d =3D d &lt;&lt; 1;
+		scl =3D 0;
+	}
+	sda =3D 1;	/* Release the sda line */
+	scl =3D 1;
+	i =3D sda;
+	scl =3D 0;
+	return i;
+}
+uchar readbytei2c(int b)	/* ----------------------------------- */
+{
+uchar i, d;
+
+	sda =3D 1;             /* Let go of sda line */
+	scl =3D 0;
+	for (i =3D 0; i &lt; 8; i++)	/* read the msb first */
+	{
+		scl =3D 1;
+		d =3D d &lt;&lt; 1;
+		d =3D d | sda;
+		scl =3D 0;
+	}
+	sda =3D b;          /* low for ack, high for nack */
+	scl =3D 1;
+	scl =3D 0;
+
+	sda =3D 1;          /* Release the sda line */
+	return d;
+}
+void writebytetcxo()	/* ----------------------------------------------- =
+*/
+{
+uchar Add, Data;
+
+	printf("\nAddress: ");	/* Get Address */
+	scanf("%bx", &amp;Add);
+	printf("Data: ");
+	scanf("%bx", &amp;Data);	/* and data */
+	start();
+	writebytei2c(ADDRTC);
+	writebytei2c(Add);
+	writebytei2c(Data);
+	stop();
+}
+void readbytetcxo()	/* ----------------------------------------------- =
+*/
+{
+uchar Add;
+	printf("\nADDRESS: ");	/* Get Address */
+	scanf("%bx", &amp;Add);
+	start();
+	writebytei2c(ADDRTC);
+	writebytei2c(Add);
+	start();
+	writebytei2c(ADDRTC | 1);
+	printf("%2bx", readbytei2c(NACK) );
+	stop();
+}
+void initialize_tcxo()	/* ----------------------------------------- */
+/* Note: NO error checking is done on the user entries! */
+{
+   printf("\nEnter the year (0-99): ");
+   scanf("%bx", &amp;yr);
+   printf("Enter the month (1-12): ");
+   scanf("%bx", &amp;mn);
+   printf("Enter the date (1-31): ");
+   scanf("%bx", &amp;dt);
+   printf("Enter the day (1-7): ");
+   scanf("%bx", &amp;dy);
+   printf("Enter the hour (1-23): ");
+   scanf("%bx", &amp;hr);
+   /* hr =3D hr &amp; 0x3f;	/* force clock to 24 hour mode */
+   printf("Enter the minute (0-59): ");
+   scanf("%bx", &amp;min);
+   printf("Enter the second (0-59): ");
+   scanf("%bx", &amp;sec);
+
+   start();
+   writebytei2c(ADDRTC);	/* write slave address, write tcxo */
+   writebytei2c(0x00);	/* write register address, 1st clock register */
+   writebytei2c(sec);
+   writebytei2c(min);
+   writebytei2c(hr);
+   writebytei2c(dy);
+   writebytei2c(dt);
+   writebytei2c(mn);
+   writebytei2c(yr);
+   writebytei2c(0x10);	/* enable sqw, 1hz output */
+   stop();
+}
+void	rd_temp()	/* -------- display temperature -------- */
+{
+int	itemp;
+float	ftemp;
+
+	while(!RI)
+	{
+		start();
+		writebytei2c(ADDRTC);
+		writebytei2c(0x0e);		/* address of control register */
+		start();
+		writebytei2c(ADDRTC + 1);	/* send the device address for read */
+		itemp =3D readbytei2c(NACK);	/* get the control register value */
+		start();
+		writebytei2c(ADDRTC);
+		writebytei2c(0x0e);		/* address of control register */
+		writebytei2c(itemp | 0x20);	/* force temperature conversion */
+		stop();
+
+		do
+		{
+			start();
+			writebytei2c(ADDRTC);
+			writebytei2c(0x0e);		/* address of control register */
+			start();
+			writebytei2c(ADDRTC + 1);	/* send the device address for read */
+			itemp =3D readbytei2c(NACK);	/* get the control register value */
+			stop();
+		}	while(itemp &amp; 0x20);		/* wait until CNVT bit goes inactive */
+
+		start();
+		writebytei2c(ADDRTC);
+		writebytei2c(0x11);		/* address of temperature MSB */
+		start();
+		writebytei2c(ADDRTC + 1);	/* send the device address for read */
+		itemp =3D ( (int) readbytei2c(ACK) &lt;&lt; 5 );
+		itemp +=3D ( readbytei2c(NACK) &gt;&gt; 3);
+		stop();
+		if(itemp &amp; 0x1000)	itemp +=3D 0xe000;	/* if sign bit set, make 16 =
+bit 2's comp */
+
+		ftemp =3D 0.03125 * (float) itemp;	/* convert to degrees C */
+		/* ftemp =3D ftemp * 9 / 5 + 32;	/* skip this if you don't want =
+degrees F */
+
+		printf("\n%5.2f", ftemp);
+	}
+	RI =3D 0;
+}
+void disp_regs(uchar prv_sec)	/* ------ display date/time, once if entry =
+code=3D0xfe ------ */
+{
+uchar	Sec, Min, Hrs, Dte, Mon, Day, Yr, mil, pm, cn;
+
+	printf("\n    Yr Mn Dt Dy Hr:Mn:Sc");
+	while(!RI)	/* Read &amp; Display Clock Registers */
+	{
+		start();
+		writebytei2c(ADDRTC);
+		writebytei2c(0);
+		start();
+		writebytei2c(ADDRTC | 1);
+		Sec =3D readbytei2c(ACK);
+		Min =3D readbytei2c(ACK);
+		Hrs =3D readbytei2c(ACK);
+		Day =3D readbytei2c(ACK);
+		Dte =3D readbytei2c(ACK);
+		Mon =3D readbytei2c(ACK);
+		Yr =3D readbytei2c(NACK);
+		stop();
+		if(Hrs &amp; 0x40)
+			mil =3D 0;
+		else
+			mil =3D 1;
+
+		if(Sec !=3D prv_sec)	/* display every time seconds change */
+		{
+			if(mil)
+			{
+				printf("\nDUT %02bx/%02bx/%02bx %02bx", Yr, Mon, Dte, Day);
+				printf(" %02bx:%02bx:%02bx", Hrs, Min, Sec);
+			}
+			else
+			{
+				if(Hrs &amp; 0x20)
+					pm =3D 'A';
+				else
+					pm =3D 'P';
+				Hrs &amp;=3D 0x1f;	/* strip mode and am/pm bits */
+				printf("\nDUT %02bx/%02bx/%02bx %02bx", Yr, (Mon &amp; 0x1f), Dte, =
+Day);
+				printf(" %02bx:%02bx:%02bx %cM %1bx", Hrs, Min, Sec, pm, cn);
+			}
+		}
+		if(prv_sec =3D=3D 0xfe)	return;
+		prv_sec =3D Sec;
+	}
+	RI =3D 0;  /* Swallow keypress to exit loop */
+}
+void fill_ram(uchar val)	/* -------- fill RAM with with user data =
+-------- */
+{
+uchar j, k;
+
+	for(k =3D 0; k &lt;=3D ram; k++)
+	{
+		start();
+		if(ram &amp; 0x10)		/* if 64k bits */
+		{
+			writebytei2c(ADDRAM);	/* slave address+ write bit */
+			writebytei2c(k);		/* write upper 5 bits of address */
+			writebytei2c(0);		/* and set lower 8 bits to 1st add */
+		}
+		else				/* if 16k bits */
+		{
+			writebytei2c(ADDRAM + (k &lt;&lt; 1));	/* write slv add  + pg sel */
+			writebytei2c(0);		/* and set lower 8 bits to 1st add */
+		}
+
+		j =3D 0;
+		while(1)
+		{
+			writebytei2c(val);
+			if(j =3D=3D 0xff)	break;	/* wait until we finish with all 256 =
+locations */
+			j++;
+		}
+		stop();
+	}
+}
+void wr_ram(uchar inv)	/* -------- fill RAM with incrementing data =
+-------- */
+{
+uchar j, k, dat =3D 0;
+
+	for(k =3D 0; k &lt;=3D ram; k++)
+	{
+		start();
+		if(ram &amp; 0x10)		/* if 64k bits */
+		{
+			writebytei2c(ADDRAM);	/* slave address+ write bit */
+			writebytei2c(k);		/* write upper 5 bits of address */
+			writebytei2c(0);		/* and set lower 8 bits to 1st add */
+		}
+		else				/* if 16k bits */
+		{
+			writebytei2c(ADDRAM + (k &lt;&lt; 1));	/* write slv add  + pg sel */
+			writebytei2c(0);		/* and set lower 8 bits to 1st add */
+		}
+
+		j =3D 0;
+		while(1)
+		{
+			if(inv)
+				writebytei2c((dat ^ 0xff));
+			else
+				writebytei2c(dat);
+			dat++;
+			if(j =3D=3D 0xff)	break;	/* wait until we finish with all 256 =
+locations */
+			j++;
+		}
+		dat++;	/* shift the data once per 'page' */
+		stop();
+	}
+}
+void ver_ram(uchar inv)	/* -------- verify FRAM with incrementing data =
+-------- */
+{
+uchar j, k, dat =3D 0, val;
+
+	for(k =3D 0; k &lt;=3D ram; k++)
+	{
+		start();
+		writebytei2c(ADDRAM);	/* slave address+ write bit */
+		if(ram &amp; 0x10)		/* if 64k bits */
+			writebytei2c(k);	/* write upper 5 bits of address */
+
+		writebytei2c(0);		/* write word address, 1st FRAM location */
+		start();
+		if(ram &amp; 0x10)		/* if 64k bits */
+			writebytei2c(ADDRAM + 1);
+		else				/* if 16k bits */
+			writebytei2c(ADDRAM + (k &lt;&lt; 1) + 1);	/* write slv add  + page + =
+rd bit */
+
+		j =3D 0;
+		while(1)
+		{
+			if(inv)
+			{
+				val =3D readbytei2c(ACK);
+				if(val !=3D (dat ^ 0xff) )
+				{
+					printf("\nAdd: %02bx%02bx", k, j);
+					printf(" Expected: %02bx read: %02bx", (dat ^ 0xff), val);
+					break;
+				}
+			}
+			else
+			{
+				val =3D readbytei2c(ACK);
+				if(val !=3D dat)
+				{
+					printf("\nAdd: %02bx%02bx", k, j);
+					printf(" Expected: %02bx read: %02bx", dat, val);
+					break;
+				}
+			}
+			dat++;
+			if(j =3D=3D 0xff)	break;	/* wait until we finish with all 256 =
+locations */
+			j++;
+		}
+		readbytei2c(NACK);	/* terminate read */
+		dat++;			/* shift the data once per 'page' */
+		stop();
+	}
+}
+void	rd_ram()	/* ----- read and display the FRAM ----- */
+{
+uchar	j, k;
+
+	for(k =3D 0; k &lt;=3D ram; k++)
+	{
+		start();
+		writebytei2c(ADDRAM);	/* slave address+ write bit */
+		if(ram &amp; 0x10)		/* if 64k bits */
+			writebytei2c(k);	/* write upper 5 bits of address */
+
+		writebytei2c(0);		/* write word address, 1st FRAM location */
+		start();
+		if(ram &amp; 0x10)		/* if 64k bits */
+			writebytei2c(ADDRAM + 1);
+		else				/* if 16k bits */
+			writebytei2c(ADDRAM + (k &lt;&lt; 1) + 1);	/* write slv add  + page + =
+rd bit */
+
+		j =3D 0;
+		while(1)
+		{
+			if(!(j % 16)) printf("\n%02bx%02bx ", k, j);
+			printf("%02bX ", readbytei2c(ACK) );
+			if(j =3D=3D 0xff)	break;	/* wait until we finish with all 256 =
+locations */
+			j++;
+		}
+		readbytei2c(NACK);	/* dummy read to NACK the last read byte */
+		stop();
+	}
+}
+main (void)		/* ----------------------------------------------------- */
+{
+uchar M, M1;
+
+	sqwint =3D 1;	/* set port bits to read */
+	wp =3D 0;	/* turn off write protect for FRAM */
+	while (1)
+	{=20
+		printf("\nDS32X35-");
+		if(ram =3D=3D 7)	printf("16");	else printf("64");
+		printf(" build %s\n", __DATE__);
+		printf("CI Init RTC  CR Read Clock\n");
+		printf("BR Byte Read BW Byte Write\n");
+		printf("RC RAM Check RW RAM Write inc\n");
+		printf("RR RAM Read  RV RAM Verify inc\n");
+		printf("S  Show Temp\n");
+		printf("Enter Menu Selection:");
+
+		M =3D _getkey();
+
+		switch(M)=20
+		{
+			case 'B':
+			case 'b':
+			printf("\nRead or Write: ");
+
+			M1 =3D _getkey();
+			switch(M1)=20
+			{
+				case 'R':
+		 		case 'r':	readbytetcxo(); 	break;
+		 		case 'W':
+				case 'w':	writebytetcxo();	break;
+			}
+			break;
+
+			case 'C':
+			case 'c':
+			printf("\rEnter Clock Routine to run:C");
+
+			M1 =3D _getkey();
+			switch(M1)=20
+			{
+				case 'I':
+				case 'i':	initialize_tcxo();	break;
+				case 'R':
+				case 'r':	disp_regs(0x99);	break;
+			}
+			break;
+
+			case 'P':
+			case 'p':	wp ^=3D 1;	break;
+
+			case 'R':
+			case 'r':
+			printf("\r2)2K, 8)8K, F)ill RAM R)ead RAM W)rite RAM: R");
+
+			M1 =3D _getkey();
+			switch(M1)=20
+			{
+				case '2':	ram =3D 7;	break;	/* 2,048-byte FRAM size */
+				case '8':	ram =3D 0x1f;	break;	/* 8,192-byte FRAM size */
+				case 'C':
+				case 'c':	wr_ram(0);	ver_ram(0);
+						wr_ram(1);	ver_ram(1);	break;
+				case 'F':
+				case 'f':	printf("\nEnter fill value (hex): ");
+						scanf("%bx", &amp;M1);	fill_ram(M1);	break;
+				case 'R':
+				case 'r':	rd_ram();	break;
+
+				case 'V':	ver_ram(1);	break;
+				case 'v':	ver_ram(0);	break;
+
+				case 'W':	wr_ram(1);	break;
+				case 'w':	wr_ram(0);	break;
+			}
+			break;
+
+			case 'S':
+			case 's':	rd_temp();	break;
+		}
+	}
+}
+</PRE></BODY></HTML>

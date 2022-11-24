@@ -1,0 +1,147 @@
+
+//*********************************************************************************************//
+//    Project      : UART 
+//    File         : Uat_top.v
+//    Author       : NexTek Service
+//    Company      : NexTek Service
+//    Start Date   : Nov  06th, 2004.
+//    Last Updated : Dec  15th, 2004.
+//    Version      : 2.0
+//    Device	   : xc2s150-5pq208 
+//    PROM	   : xcf01s
+//    Abstract     : This is top level Module that defines Transmitter
+// 
+//    Modification History:
+//==============================================================================================
+//    Date                       By                 Version                Change Description
+//==============================================================================================
+//    Jan 01th, 2004          NexTek Service          0.1                   Original Version
+//*********************************************************************************************//
+ 
+// Desighn Block
+module uat_top(//Inputs
+               clk,                      //1-bit System Clock input
+               rst_n,                    //1-bit Asyncronous Active Low Reset input
+              // Output
+               ser_out,                  //1-bit Tx data output from UART
+               uart_ready                
+              );
+
+// Declaration inputs, outputs 
+input       clk;
+input       rst_n;
+
+output      ser_out;      
+output      uart_ready;
+
+reg         ser_out;
+
+reg   [7:0] data_buf;         
+reg   [2:0] shift_count;
+reg         din_rdy_reg;
+reg   [4:0] count ;
+wire        start_bit_sig;
+wire        data_bits_sig;
+wire        stop_bit_sig;
+      
+
+//Output Logic
+always @(negedge clk or negedge rst_n)
+begin
+   if(~rst_n)
+      ser_out <= 1'b1;
+   else 
+   begin
+     case({start_bit_sig,data_bits_sig,stop_bit_sig})
+        3'b100: ser_out <= 1'b0;
+        3'b010: ser_out <= data_buf[0];
+        3'b001: ser_out <= 1'b1;
+        default: ser_out <= 1'b1;
+     endcase
+   end
+end         
+
+// strat bit pipelining
+always @(negedge clk or negedge rst_n)
+begin
+   if(~rst_n)
+      data_buf <= 8'd0;
+   else if(start_bit_sig)
+	 begin
+	   case(count)
+		  5'd0 : data_buf <=   8'd32;
+		  5'd1 : data_buf <=   8'd78;		// N
+		  5'd2 : data_buf <=   8'd101;		// e
+		  5'd3 : data_buf <=   8'd120;		// x
+		  5'd4 : data_buf <=   8'd84;		// T
+		  5'd5 : data_buf <=   8'd101;		// e
+		  5'd6 : data_buf <=   8'd107;		// k
+		  5'd7 : data_buf <=   8'd32;
+		  5'd8 : data_buf <=   8'd83;		 // S
+		  5'd9 : data_buf <=   8'd101;		 // e
+		  5'd10: data_buf <=   8'd114;		 // r
+		  5'd11 : data_buf <=  8'd118;		 // v
+		  5'd12 : data_buf <=  8'd105;		 // i
+		  5'd13 : data_buf <=  8'd99;		 // c
+		  5'd14 : data_buf <=  8'd101;		 // e
+		  5'd15 : data_buf <=  8'd32;
+		  5'd16 : data_buf <=  8'd78;		 // N
+		  5'd17 : data_buf <=  8'd84;		 // T
+		  5'd18 : data_buf <=  8'd45;		 // -
+		  5'd19 : data_buf <=  8'd70;		 // F
+		  5'd20 : data_buf <=  8'd84;		 // T
+		  5'd21 : data_buf <=  8'd82;		 // R
+		  5'd22 : data_buf <=  8'd65;		 // A
+		  5'd23 : data_buf <=  8'd73;		 // I
+                  5'd24 : data_buf <=  8'd78;		 // N
+		  5'd25 : data_buf <=  8'd45; 		 //-
+		  5'd26 : data_buf <=  8'd48;		 // 0
+		  5'd27 : data_buf <=  8'd49; 		 //1
+                  5'd28 : data_buf <=  8'd10;      	 // new line
+		  default : data_buf <=   8'd32;
+		endcase       
+	   end
+     else if(data_bits_sig)
+      data_buf <= {1'b1,data_buf[7:1]};
+   else
+      data_buf <= data_buf;
+end
+  
+// Counter that count shift in Data Buffer Logic
+always @(negedge clk or negedge rst_n)
+begin
+   if(~rst_n)
+      shift_count <= 3'd0;
+   else if(data_bits_sig)
+      shift_count <= shift_count + 1; //Counter will start when data is vlaid by High the data_its_sig flag  
+   else
+      shift_count <= 3'd0;
+end
+
+// Address generator for display the logo. 
+always @(negedge clk or negedge rst_n)
+begin
+  if(~rst_n)
+    count <= 5'd0;
+  else if(count==5'd29)
+    count <= 5'd0;
+  else if(start_bit_sig)
+    count <= count + 1; //Counter will start when data is vlaid by High the data_its_sig flag  
+  else
+    count <= count;
+end
+
+
+// State machine for Tx
+uat_sm uat_sm_inst(// Inputs
+                   .clk              (clk),
+                   .rst_n            (rst_n),
+                   .shift_count      (shift_count),
+                   // Outputs
+                   .start_bit_sig    (start_bit_sig),    // Start bit insertion Control Signal generate from State Mechiene
+                   .data_bits_sig    (data_bits_sig),    // Data bits insertion Control Signal generate from State Mechiene
+                   .stop_bit_sig     (stop_bit_sig),     // Stop Bit insertion  Control Signal generate from State Mechiene
+                   .uart_ready       (uart_ready) 
+                  );
+endmodule
+

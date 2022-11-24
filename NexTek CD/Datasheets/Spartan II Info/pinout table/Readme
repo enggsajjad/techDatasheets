@@ -1,0 +1,9 @@
+Advance Spartan_II pin-out tables in the form of editable Excel spreadsheets: pin_2s15.xls, pin_2s30.xls, pin_2s50.xls, pin_2s100.xls, pin_2s150.xls, and pin_2s200.xls
+
+Version: These pin-out tables were exported from the Spartan-II data sheet v. 1.1. They were revised to include the latest corrections. 
+
+Release Date: 6/29/2000
+
+On October 4, 2000, the XC2S50 table was revised to show a GND between B12 and C11 on the FG256 package (instead of the Vcco Bank 1 shown on the preceding version).					
+
+The accompanying files contain Excel spreadsheet versions of the Spartan-II pin-out tables. All these files constitute advance information. The user may edit these files to suit his/her individual needs. The "Save As" command under "File" in the Excel menu permits these spreadsheets to be saved as a tab-delimited text file (.txt), a comma-delimited text file (.csv), or a space-delimited text file (.prn). 

@@ -1,0 +1,23 @@
+Release 6.1i - ngdbuild G.23
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc
+seg_display.ucf -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd 
+
+Reading NGO file "C:/testing_FROM/SEVEN_SEGMENT/seg_display.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "seg_display.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 36524 kilobytes
+
+Writing NGD file "seg_display.ngd" ...
+
+Writing NGDBUILD log file "seg_display.bld"...

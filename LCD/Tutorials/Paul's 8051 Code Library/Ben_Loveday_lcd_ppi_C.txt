@@ -1,0 +1,146 @@
+/*
+From: "Ben Loveday" <lovedayben AT hotmail DOT com> (NOSPAM)
+To: <paul@pjrc.com>
+Subject: LCD code
+Date: Sat, 22 Jun 2002 20:22:18 +1200
+
+I havent had much time lately to work on my 8051 board but i have
+completed some lcd routines that allow a 4x20 char lcd to run off the
+ppi. I've attatched it so you can put it in the code section if you
+like.
+
+Cheers,
+Ben Loveday
+
+
+  Note from Paul: Ben's C code includes two files which appear to be
+  the ones included in the LED Blink example, found at this page:
+  http://www.pjrc.com/tech/8051/board3/blink_sdcc.html
+*/
+
+
+
+
+
+/* LCD.C - Lcd routines for the 8051 family microcontroller
+ * Written by Ben Loveday
+ * Thanks to Randy Rasa's parallel port lcd interface code.
+ * Configured for use with Paul S 8051 development board
+ * Set to use 4x20 char lcd, data lines on PA.0-PA.7
+ * RS, R/W, and E on PB.5-PB.7 respectively
+ */
+
+#include "c:\sdcc\bin\delay_ms.h"
+#include "c:\sdcc\bin\paulmon2.h"
+#include <8051.h>
+
+/* Function declarations */
+
+void ppi_set_output(void);
+void init_lcd(void);
+void clear_lcd(void);
+void write_control(unsigned char);
+void write_data(unsigned char);
+void lcd_cursor (char row, char column);
+void lcd_displayscreen (char ptr);
+void lcd_displayrow(char row, char *string);
+void lcd_char(char input);
+
+xdata at 0x4000 unsigned char lcd_data; //port_a;
+xdata at 0x4001 unsigned char lcd_control; //port_b;
+xdata at 0x4002 unsigned char port_c;
+xdata at 0x4003 unsigned char config;
+
+/* Configures the PPI for output */
+
+void ppi_set_output()
+{
+    config = 128;	/* all ports outputs */
+}
+
+/* Writes given control to lcd */
+
+void write_control(unsigned char contr)
+{
+    lcd_control = 0x00;    
+    lcd_data = contr;	      	
+    lcd_control = 0x80;    
+    lcd_control = 0x00;    
+    lcd_control = 0x40;
+    delay_ms(5);   
+}
+
+/* Writes given data to lcd */
+
+void write_lcd(unsigned char disp)
+{
+    lcd_control = 0x20;    
+    lcd_data = disp;	      	
+    lcd_control = 0xa0;  
+    lcd_control = 0x20;    
+    lcd_control = 0x60;
+    delay_ms(5);
+}
+
+/* Initialises lcd */
+
+void init_lcd()
+{
+    write_control(0x38);
+    write_control(0x38);
+    write_control(0x38);
+    write_control(0x06);
+    write_control(0x0d); 
+}
+
+/* Clears lcd */
+
+void clear_lcd()
+{
+    write_control(0x01);
+	delay_ms(5);
+}
+
+/* Sets current lcd cursor position */
+
+void lcd_cursor (char row, char column)
+{
+  switch (row) {
+    case 1: write_control(0x80 + column - 1); break;
+    case 2: write_control(0xc0 + column - 1); break;
+    case 3: write_control(0x94 + column - 1); break;
+    case 4: write_control(0xd4 + column - 1); break;
+    default: break;
+  }
+}
+
+/* Displays entire screen on lcd ( takes an 80 char string )*/
+
+void lcd_displayscreen (char ptr)
+{
+  lcd_displayrow(1,ptr+ 0);
+  lcd_displayrow(2,ptr+20);
+  lcd_displayrow(3,ptr+40);
+  lcd_displayrow(4,ptr+60);
+}
+
+/* Displays a character at the current cursor position */
+
+void lcd_char(char input)
+{
+	char input2;
+	input2 = (int)input;
+	write_lcd(input2);
+}
+
+/* Displays entire row of text from current cursor position */
+
+void lcd_displayrow(char row, char *string)
+{
+  char i;
+ 
+  lcd_cursor(row, 1);
+  for (i=0; i<19; i++)
+	  
+    lcd_char(*string++);
+}

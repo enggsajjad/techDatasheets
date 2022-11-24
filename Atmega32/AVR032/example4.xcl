@@ -1,0 +1,45 @@
+    -!    XLINK command file for ATmega103. 4Kbytes internal data address 
+      space,128 Kbytes program address space. -!
+
+    -!    Define CPU type (AVR) -!
+
+-ca90
+      
+    -! Define interrupt vector segment -!
+
+-Z(CODE)INTVEC=0-61
+
+    -! Define segments in flash memory -!
+
+-Z(CODE)RCODE,CDATA0,CDATA1,CCSTR,SWITCH,FLASH,CODE=62-1FFFF
+
+    -! Define segments in RAM
+    Built-in SRAM in 60-25F. The registers are in 0-1F and memory mapped I/O in 20-5F -!
+
+    -! The IDATA0 and UDATA0 segments contains tiny variables, the segments must be placed within the reach of a tiny(8 bits) pointer. -!
+    -! Read the segment map file carefully make sure IDATA0 and UDATA0 do not exeed address FF(hex) -!
+    -! Data stack in internal memory, size is 200(hex)bytes     -! 
+    -! Return stack size is 80(hex) -!
+
+-Z(DATA)IDATA0,UDATA0,RSTACK+80,IDATA1,UDATA1,ECSTR,CSTACK+200=60-0FFF
+                           
+    -!  Select reduced "printf" support to reduce library size.
+        See the configuration section of the IAR C-compiler Users Guide concerning use of printf/sprintf. -!
+
+-e_small_write=_formatted_write
+-e_small_write_P=_formatted_write_P
+
+    -!  Disable floating-point support in "scanf" to reduce library size.
+    See the configuration section of the IAR C-compiler Users Guide concerning use of scanf/sscanf -!
+
+-e_medium_read=_formatted_read
+-e_medium_read_P=_formatted_read_P
+
+    -! Suppress one warning which is not relevant for this processor -!
+
+-w29
+
+    -! Load the 'C' library -!
+
+cl3s
+ 

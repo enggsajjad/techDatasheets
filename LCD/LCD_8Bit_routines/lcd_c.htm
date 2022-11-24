@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.8052.com/users/aspdigital/lcd.c.html -->
+<HTML><HEAD><TITLE>lcd.c</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="" name=description>
+<META content="" name=keywords>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY>
+<STYLE type=text/css>.linkTextWhite {
+	COLOR: white; TEXT-DECORATION: none
+}
+.linkTextBlue {
+	COLOR: blue; TEXT-DECORATION: none
+}
+.linkTextBlack {
+	COLOR: black; TEXT-DECORATION: none
+}
+</STYLE>
+<XBODY BGCOLOR="#FFFFFF">
+<TABLE cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top bgColor=#d0d0d0>
+      <TABLE cellSpacing=0 cellPadding=3 width=100 align=left border=0 
+      VALIGN="TOP">
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=middle BORDER="0"><A 
+            href="http://www.8052.com/"><IMG src="lcd_c_files/8052bubble5.gif" 
+            border=0></A><BR><FONT size=2>
+            <HR>
+            </FONT></TD></TR>
+        <FORM action=/search.phtml method=get>
+        <TR>
+          <TD align=middle><FONT size=2 xCOLOR="#FFFFFF"><B>Search 
+            8052.com...</B><BR><INPUT maxLength=40 size=8 name=TERMS> <INPUT type=submit value=Search!><BR></FORM>
+            <HR>
+
+            <FORM action=/login.phtml method=post><INPUT type=hidden 
+            value=/users/aspdigital/lcd.c.html name=LOGINPAGE><B>User 
+            (Email)</B><BR><INPUT maxLength=40 size=14 
+            name=EMAIL><BR><B>Password</B><BR><INPUT type=password maxLength=10 
+            size=14 name=PASSWORD><BR><INPUT type=checkbox 
+            name=REMEMBER>Remember 
+            Logon<BR><INPUT type=submit value=Login></FORM>
+            <P><A href="http://www.8052.com/forget.phtml">Forgot 
+            password?</A><BR><A href="http://www.8052.com/newacct.phtml">Create 
+            Account</A>
+            <P></P></FONT></TD></TR>
+        <TR>
+          <TD align=middle BORDER="0">
+            <HR>
+            <A href="http://www.8052.com/store/"><IMG height=20 
+            alt="8052.com Online Store" src="lcd_c_files/estore.gif" width=100 
+            vspace=2 border=0></A><BR><A href="http://www.8052.com/"><IMG 
+            height=20 alt="Back to 8052.com Main Page" 
+            src="lcd_c_files/main.gif" width=100 vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/forum"><IMG height=20 
+            src="lcd_c_files/msgbrd.gif" width=100 vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/tutorial.phtml"><IMG height=20 
+            src="lcd_c_files/tutorial.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/faqs.phtml"><IMG 
+            height=20 src="lcd_c_files/faq.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/book"><IMG height=20 
+            src="lcd_c_files/8052book.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/news.phtml"><IMG 
+            height=20 src="lcd_c_files/news.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/codelib.phtml"><IMG 
+            height=20 src="lcd_c_files/codelib.gif" width=100 vspace=2 
+            border=0><BR><A href="http://www.8052.com/chips.phtml"><IMG 
+            height=20 src="lcd_c_files/chips.gif" width=100 vspace=2 
+            border=0><BR><A href="http://www.8052.com/challenge.phtml"><IMG 
+            height=20 src="lcd_c_files/challenge.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/links.phtml"><IMG 
+            height=20 src="lcd_c_files/links.gif" width=100 vspace=2 
+            border=0><BR><A href="http://www.8052.com/books.phtml"><IMG 
+            height=20 src="lcd_c_files/books.gif" width=100 vspace=2 
+            border=0><BR><A href="http://www.8052.com/services.phtml"><IMG 
+            height=20 src="lcd_c_files/service.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/homepages.phtml"><IMG 
+            height=20 src="lcd_c_files/upages.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/sbc"><IMG height=20 
+            src="lcd_c_files/sbc.gif" width=100 vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/users/phillipmgallo"><IMG height=20 
+            src="lcd_c_files/video.gif" width=100 vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/tcpip"><IMG height=20 
+            src="lcd_c_files/tcpip.gif" width=100 vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/users/jsno"><IMG height=20 
+            src="lcd_c_files/cdrom.gif" width=100 vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/users/disasm/"><IMG height=20 
+            src="lcd_c_files/disassembler.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/members.phtml"><IMG 
+            height=20 src="lcd_c_files/members.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/contact.phtml"><IMG 
+            height=20 src="lcd_c_files/contact.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/aboutvis.phtml"><IMG 
+            height=20 src="lcd_c_files/about.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/disclaim.phtml"><IMG 
+            height=20 src="lcd_c_files/disclaim.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/privacy.phtml"><IMG 
+            height=20 src="lcd_c_files/privacy.gif" width=100 vspace=2 
+            border=0></A><BR></TD></TR>
+        <TR>
+          <TD align=middle BORDER="0"></TD></TR>
+        <TR>
+          <TD align=middle BORDER="0">
+            <HR>
+
+            <CENTER><A href="http://www.8052.com/redirlnk.phtml?ID=96"><IMG 
+            src="lcd_c_files/pinico.gif" vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/redirlnk.phtml?ID=98"><IMG 
+            src="lcd_c_files/SLAB_icon.gif" border=0></A><BR><A 
+            href="http://www.8052.com/redirlnk.phtml?ID=157"><IMG 
+            src="lcd_c_files/raisonancesidebar.gif" vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/redirlnk.phtml?ID=149"><IMG 
+            src="lcd_c_files/analogdevices_sb.gif" vspace=2 
+            border=0></A><BR></CENTER></TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top><FONT size=2>
+      <CENTER><A href="http://www.8052.com/redirlnk.phtml?ID=215"><IMG height=60 
+      src="lcd_c_files/keilstore.gif" width=468 border=0></A></CENTER>
+      <CENTER><FONT size=1>A D V E R T I S E M E N T - Please visit our sponsors 
+      to support this site</FONT></CENTER>
+      <P>
+      <TABLE cellPadding=10 width="100%">
+        <TBODY>
+        <TR>
+          <TD><FONT size=2>lcd.c <PRE>/*****************************************************************************
+ * LCD control functions.
+ * lcd.c
+ * <FONT face="Courier New, monospace">©</FONT> 2004 ASP Digital.  All rights reserved.
+ * Andy Peters, devel@latke.net
+ * devel@latke.net
+ * 
+ * Various functions to support the usual sort of LCD display.  This design
+ * uses the LCD's eight-bit I/O interface.
+ *
+ * The user must define the I/O port pins that are used to control the LCD's
+ * E, R/W and RS signals.  Also, the user must choose which I/O port is used
+ * to drive the LCD's I/O port.  I chose Port 1.
+ *
+ ****************************************************************************/
+#include <FONT face="Courier New, monospace">&lt;</FONT>C8051F200.h&gt;      // Or whatever header works for your micro!
+#include "lcd.h"
+#include "lcdcmd.h"
+
+/*
+ * Private prototypes.  User application code should not call these functions.
+ */
+void LcdWriteCmd(unsigned char cmd);
+bit isLcdBusy(void);
+
+/*
+ * Define the port pins you wish to use for the LCD control signals here.
+ */
+sbit LCD_E  = P0^6;
+sbit LCD_RW = P0^7;
+sbit LCD_RS = P0^5;
+
+/*
+ * Fetch LCD's busy flag.
+ * Put P1 into read mode before attempting to read!
+ */
+bit isLcdBusy(void) {
+    bit retbit = 0;
+
+    PRT1CF = 0x00; // C8051F2xx specific: set port 1 as input
+    LCD_RW = 1;
+    LCD_RS = 0;
+    LCD_E = 1;
+    P1 = 0xFF;
+    retbit = P1^7;
+    LCD_E = 0;
+    PRT1CF = 0xFF;  // C8051F2xx specific: set port 1 as output
+    LCD_RW = 0;
+    return (retbit);
+} // isLcdBusy
+
+/*
+ * Write a character to the display at the current cursor position.
+ * Return after the LCD has finished the operation.
+ */
+void LcdWriteChar(unsigned char dval) 
+{
+    unsigned char i;
+
+    LCD_RW = 0;
+    LCD_RS = 1;
+    LCD_E  = 1;
+    P1 = dval;
+    LCD_E  = 0;
+    i = 255;
+    while (i != 0)
+    {
+        if (isLcdBusy())
+            --i;
+        else
+           i = 0;
+    } 
+} // LcdWriteChar()
+
+/*
+ * Write a string to the display, starting at the current cursor position.
+ */
+void LcdWriteString(unsigned char *str)
+{
+    while (*str != '\0')
+    {
+        LcdWriteChar(*str);
+        ++str;
+    }
+} // LcdWriteString
+
+/*
+ * Move the cursor to the specified row and column.
+ */
+void LcdMoveCursor(unsigned char row, unsigned char col)
+{
+    LcdWriteCmd(LCD_MOVEDISPLAY | (row &lt;&lt; 6) | col);
+} // LcdMoveCursor
+
+/*
+ * Write a command to the LCD.
+ * Return after the LCD has finished the operation.
+ */
+void LcdWriteCmd(unsigned char cmd) {
+    unsigned char i;
+
+    LCD_RW = 0;
+    LCD_RS = 0;
+    LCD_E = 1;
+    P1 = cmd;
+    LCD_E = 0;
+    i = 255;
+    while (i != 0)
+    {
+        if (isLcdBusy())
+            --i;
+        else
+            i = 0;
+    }
+} // LcdWriteCmd
+
+/*
+ * Initialize the LCD.
+ */
+
+void LcdInit(void) {
+
+    LCD_RW = 0;
+    LCD_RS = 0;
+    LCD_E  = 0;
+
+    LcdWriteCmd(0x30);
+    LcdWriteCmd(0x30);
+    LcdWriteCmd(0x30);
+    LcdWriteCmd(LCD_SETIFLEN | LCD_SETIFLEN_N | LCD_SETIFLEN_DL); 
+
+    // The thing oughta be initialized here.
+
+    LcdWriteCmd(LCD_DISPEN); // display off, cursor off, no blink
+    LcdWriteCmd(LCD_CLEAR);
+    LcdWriteCmd(LCD_DISPEN | LCD_DISPEN_DISP); // | LCD_DISPEN_CURSOR);
+    LcdWriteCmd(LCD_MOVEDIR | LCD_MOVEDIR_ID); 
+
+} // LcdInit
+
+/*
+ * Clear the LCD.
+ */
+void LcdClear(void)
+{
+    LcdWriteCmd(LCD_CLEAR);
+} // LcdClear()</PRE>
+            <P>[<A href="http://www.8052.com/users/aspdigital/index.html">Back 
+            to main LCD page</A>]</P>
+            <HR>
+
+            <CENTER><FONT size=1>(C) Copyright 1997 - 2006 by <A 
+            href="http://www.vaultbbs.com/">Vault Information Services LLC</A>. 
+            All Rights Reserved.<BR>Information provided "as-is" without 
+            warranty. Please <A href="http://www.8052.com/disclaim.phtml">see 
+            details</A>.<BR><A href="http://www.8052.com/contact.phtml">Contact 
+            us</A> for usage and copy permission.<BR>
+            <H6></H6></CENTER><BR></FONT></FONT></TD></TR></TBODY></TABLE></P></FONT></TD></TR></TBODY></TABLE></TD></TR></TABLE></BODY></HTML>

@@ -1,0 +1,49 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:30:51                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\bitdelay.c                    #
+#       List file     =  c:\projects\at17c8515\release\list\bitdelay.lst     #
+#       Object file   =  c:\projects\at17c8515\release\obj\bitdelay.r90      #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Release\Obj\ -e     #
+#                        -gA -RCODE -LC:\Projects\at17c8515\Release\List\    #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -z9 -K                   #
+#                        C:\Projects\at17c8515\BitDelay.c                    #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+      1            // BitDelay.c
+      2            // for a 3.3v device min clock pulse width low and high is 4 us
+      3            // generate 2us delay for bit timing using NOP's
+      4            // 7.3728MHz crystal
+      5                       
+      6            #include "at17c.h"
+      7             
+      8            void BitDelay(void) {
+      9            
+     10                _NOP();
+     11                _NOP();
+     12                _NOP();
+     13                _NOP();
+     14                _NOP();
+     15                _NOP();
+     16                _NOP();
+     17                _NOP();
+     18                
+     19                return;
+     20            }
+
+Source file: c:\projects\at17c8515\bitdelay.c
+Errors: none
+Warnings: none
+Code size: 18
+Constant size: 0
+Static variable size: 0
+

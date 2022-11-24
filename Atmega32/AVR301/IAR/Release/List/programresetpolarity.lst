@@ -1,0 +1,87 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:30:53                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\programresetpolarity.c        #
+#       List file     =  c:\projects\at17c8515\release\list\programresetpolarity.lst#
+#       Object file   =  c:\projects\at17c8515\release\obj\programresetpolarity.r90#
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Release\Obj\ -e     #
+#                        -gA -RCODE -LC:\Projects\at17c8515\Release\List\    #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -z9 -K                   #
+#                        C:\Projects\at17c8515\ProgramResetPolarity.c        #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+      1            // ProgramResetPolarity.c
+      2            // Locations 0x20000 through 0x20003 are used to store the reset/ouput enable polarity.
+      3            // 0xff = active high reset and active low output enable.
+      4            // 0x00 = active low reset and active high output enable.
+      5            // So the memory location values determine the reset polarity.
+      6            // After programming the data polling method is used to determine the end of 
+      7            // the internal programming cycle.
+      8            // Timer/Counter1 is used to ensure the polling code exits its while loop.
+      9            
+     10            #include "at17c.h"
+     11            
+     12            extern volatile unsigned char t1_timed_out;
+     13             
+     14            extern unsigned char SendByte(unsigned char byte, unsigned char order);
+     15            extern void SendStartBit(void);
+     16            extern void SendStopBit(void);
+     17             
+     18            void ProgramResetPolarity(unsigned char state) {
+     19            
+     20            unsigned char i;
+     21            unsigned char test_ack = 0xff;
+     22            
+     23                PORTB &= 0xfb; // bring SER_EN low
+     24            
+     25                SendStartBit();
+     26                SendByte(AT17C010 + WRITE,MSB_FIRST);  // send device address byte
+     27                SendByte(0x00,MSB_FIRST);                 // 1st address byte
+     28                SendByte(0x00,MSB_FIRST);                 // 2nd address byte
+     29                SendByte(0x02,MSB_FIRST);                 // 3rd address byte ... most significant byte
+     30             
+     31                for (i = 0; i < 4; i++)
+     32                    SendByte(state,LSB_FIRST);
+     33                        
+     34                SendStopBit();
+     35            
+     36                t1_timed_out = FALSE; // set in timer counter 0 overflow interrupt routine
+     37             
+     38                // 20 milli-second timeout
+     39                // 7.3728MHz / 1024 = 7200 Hz
+     40                // 7200 Hz = 138.8 us
+     41                // 20 ms / 138.8 us = 144.09
+     42                // 65536 - 144 = 65392 = ff70
+     43                // interrupt on ffff to 0000 transition
+     44                TCNT1H = 0xff;  
+     45                TCNT1L = 0x70; // load counter
+     46                TCCR1B = 0x05; // timer/counter 1 clock / 1024
+     47            
+     48                // continue sending start bit and device address until we get an ack back
+     49                // data poll to program complete ... time out for error
+     50                while (test_ack && !t1_timed_out) {
+     51                    SendStartBit();
+     52                    test_ack = SendByte(AT17C010 + WRITE,MSB_FIRST); // send device address byte
+     53                }
+     54                SendStopBit();
+     55            
+     56                PORTB |= 0x04; // bring SER_EN high
+     57                    
+     58            }
+
+Source file: c:\projects\at17c8515\programresetpolarity.c
+Errors: none
+Warnings: none
+Code size: 100
+Constant size: 0
+Static variable size: 0
+

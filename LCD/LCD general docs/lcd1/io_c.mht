@@ -1,0 +1,98 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: 
+Date: Wed, 12 Nov 2008 09:30:54 +0500
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://esd.cs.ucr.edu/labs/interface/io.c
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<META content=3D"MSHTML 6.00.2900.2180" name=3DGENERATOR></HEAD>
+<BODY><PRE>#pragma SMALL DB OE
+
+/*-----------------------------------------------------------------------=
+--*/
+
+#include &lt;reg51.h&gt;
+#include "io.h"
+         =20
+/*-----------------------------------------------------------------------=
+--*/
+
+sfr DATA_BUS =3D 0xa0;
+sbit RS =3D 0xb0;
+sbit E  =3D 0xb1;
+
+/*-----------------------------------------------------------------------=
+--*/
+
+static void EnableLCD(int t) {
+
+    unsigned char i;
+
+    E =3D 1; for(i=3D0; i&lt;t; i++) i =3D i;
+    E =3D 0; for(i=3D0; i&lt;t; i++) i =3D i;
+}
+
+/*-----------------------------------------------------------------------=
+--*/
+
+void InitIO(void) {
+
+    RS=3D0;                                       =20
+
+    DATA_BUS=3D0x38; EnableLCD(255);          =20
+    DATA_BUS=3D0x38; EnableLCD(255);              =20
+    DATA_BUS=3D0x38; EnableLCD(255);              =20
+
+    DATA_BUS=3D0x38; EnableLCD(255);      // FUNCTION SET (8-bit =
+Interface)          =20
+    DATA_BUS=3D0x08; EnableLCD(255);      // DISPLAY OFF            =20
+    DATA_BUS=3D0x01; EnableLCD(255);      // CLEAR SCREEN
+    DATA_BUS=3D0x06; EnableLCD(255);      // ENTRY MODE SET          =20
+    DATA_BUS=3D0x0D; EnableLCD(255);      // DISPLAY ON         =20
+    RS =3D 1;					=20
+}
+
+/*-----------------------------------------------------------------------=
+--*/
+
+void ClearScreen(void) {
+
+    RS=3D0;                                       =20
+    DATA_BUS=3D0x01; EnableLCD(255);      // CLEAR SCREEN          =20
+    RS =3D 1;					=20
+}
+
+/*-----------------------------------------------------------------------=
+--*/
+
+void GotoXY(unsigned char r, unsigned char c) {
+
+    RS=3D0;                                       =20
+    DATA_BUS=3D0x02; EnableLCD(255);              =20
+    for(r=3Dr*40+c, c=3D0; c&lt;r; c++)
+        DATA_BUS =3D 0x14, EnableLCD(45);
+    RS=3D1;
+}
+
+/*-----------------------------------------------------------------------=
+--*/
+
+void PutChar(char c) {
+
+   DATA_BUS =3D c; EnableLCD(45);
+}
+
+/*-----------------------------------------------------------------------=
+--*/
+
+void PrintString(const char* s) {
+
+    while( *s ) DATA_BUS =3D *(s++), EnableLCD(45);
+}
+</PRE></BODY></HTML>

@@ -1,0 +1,4 @@
+"main.obj" 
+TO "clocl" 
+RAMSIZE(256) 
+CODE( 03h )

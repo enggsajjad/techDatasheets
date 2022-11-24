@@ -1,0 +1,124 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:31:14                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\getbyte.c                     #
+#       List file     =  c:\projects\at17c8515\debug\list\getbyte.lst        #
+#       Object file   =  c:\projects\at17c8515\debug\obj\getbyte.r90         #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Debug\Obj\ -e -gA   #
+#                        -RCODE -r0e -LC:\Projects\at17c8515\Debug\List\ -q  #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -K                       #
+#                        C:\Projects\at17c8515\GetByte.c                     #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+   \                     	NAME	getbyte(17)
+   \                     	RSEG	CODE(0)
+   \                     	EXTERN	BitDelay
+   \                     	PUBLIC	GetByte
+   \                     	EXTERN	SetSCLHigh
+   \                     	EXTERN	WriteSCL
+   \                     	EXTERN	WriteSDA
+   \                     	EXTERN	?C_SHL_L01
+   \                     	EXTERN	?PROLOGUE3_L09
+   \                     	EXTERN	?EPILOGUE_B3_L09
+   \                     	EXTERN	?CL1S_1_30_L08
+   \                     	RSEG	CODE
+   \                     GetByte:
+      1          // GetByte.c
+      2          // reads a byte from the slave, lastbyte is used to tell slave that the read is over
+      3          
+      4          #include "at17c.h"
+      5           
+      6          extern void WriteSCL(unsigned char state);
+      7          extern void WriteSDA(unsigned char state);
+      8          extern void BitDelay(void);
+      9          extern unsigned char SetSCLHigh(void);
+     10          
+     11          unsigned char GetByte(unsigned char lastbyte) {
+   \   00000000   ....                       RCALL   ?PROLOGUE3_L09
+   \   00000002   902F                       MOV     R25,R16
+     12          
+     13          // lastbyte == 1 for last byte
+     14           
+     15          unsigned char i, bit;
+     16          unsigned char result = 0;
+   \   00000004   AA27                       CLR     R26
+     17              
+     18              DDRB &= 0xfe; // SDA to input
+   \   00000006   B898                       CBI     LOW(23),LOW(0)
+     19          
+     20              for (i = 0;i < 8;i++) { // each bit at a time, LSB first
+   \   00000008   8827                       CLR     R24
+   \                     ?0003:
+   \   0000000A   8830                       CPI     R24,LOW(8)
+   \   0000000C   68F4                       BRCC    ?0002
+     21                  SetSCLHigh();
+   \   0000000E   ....                       RCALL   SetSCLHigh
+     22                  BitDelay();
+   \   00000010   ....                       RCALL   BitDelay
+     23                  bit = (PINB & 0x01);
+   \   00000012   06B3                       IN      R16,LOW(22)
+   \   00000014   0170                       ANDI    R16,LOW(1)
+     24                  result = (bit << (i)) | result;
+   \   00000016   482F                       MOV     R20,R24
+   \   00000018   ....                       RCALL   ?C_SHL_L01
+   \   0000001A   0A2B                       OR      R16,R26
+   \   0000001C   A02F                       MOV     R26,R16
+     25                  WriteSCL(0);
+   \   0000001E   0027                       CLR     R16
+   \   00000020   ....                       RCALL   WriteSCL
+     26                  BitDelay();
+   \   00000022   ....                       RCALL   BitDelay
+   \   00000024   8395                       INC     R24
+   \   00000026   F1CF                       RJMP    ?0003
+   \                     ?0002:
+     27              }
+     28                                 
+     29              // send ACK
+     30              WriteSDA(lastbyte); // no ack on last byte ... lastbyte = 1 for the last byte
+   \   00000028   092F                       MOV     R16,R25
+   \   0000002A   ....                       RCALL   WriteSDA
+     31              BitDelay();
+   \   0000002C   ....                       RCALL   BitDelay
+     32              SetSCLHigh();
+   \   0000002E   ....                       RCALL   SetSCLHigh
+     33              BitDelay();
+   \   00000030   ....                       RCALL   BitDelay
+     34              WriteSCL(0);
+   \   00000032   0027                       CLR     R16
+   \   00000034   ....                       RCALL   WriteSCL
+     35              BitDelay();
+   \   00000036   ....                       RCALL   BitDelay
+     36              WriteSDA(1);
+   \   00000038   01E0                       LDI     R16,1
+   \   0000003A   ....                       RCALL   WriteSDA
+     37              BitDelay();
+   \   0000003C   ....                       RCALL   BitDelay
+     38              
+     39              return(result);
+   \   0000003E   0A2F                       MOV     R16,R26
+     40          
+     41          }
+   \   00000040   E3E0                       LDI     R30,3
+   \   00000042   ....                       RJMP    ?EPILOGUE_B3_L09
+   \                     ;	lastbyte        	R25
+   \                     ;	bit             	R16
+   \                     ;	i               	R24
+   \                     ;	result          	R26
+   \                     	END
+
+Source file: c:\projects\at17c8515\getbyte.c
+Errors: none
+Warnings: none
+Code size: 68
+Constant size: 0
+Static variable size: 0
+

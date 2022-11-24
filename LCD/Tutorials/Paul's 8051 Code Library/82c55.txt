@@ -1,0 +1,349 @@
+;You won't believe this, but as soon as I exited Netscape and fired up 
+;my board, it worked.
+
+;Good to hear you got the board working.
+
+org    2100h
+
+        mov     p0, #0ffh
+        mov     p1, #0ffh
+        mov     p2, #0ffh
+        mov     p3, #0ffh
+end
+
+;The way I see it, all three ports (24 pins) of the left 82C55 chip
+;should be 1's (5V), as well as PA of the right 82C55. 
+
+;Those instructions change the ports on the 8051 itself, and not
+;the ports on the 8255 chips.  Of course, ports 0 and 2 won't be
+;useful since that 8051 spends nearly all of its time using those
+;ports for the address and data busses.  You should be able to
+;observe the results on port 1 and some pins on port 3 (which
+;aren't in use as their alternate function)
+
+;To read/write to the 82C55 chips, you need to access the memory
+;where they are mapped.  To make matters a bit more complicated,
+;you need to write a configuration word to the fourth register
+;of the 82C55 chip so it knows which ports are input and which
+;are output.  Here's a table showing the various configurations:
+
+cfg_table:
+        db     10000000b       ;c=out  b=out  a=out
+        db     10010000b       ;c=out  b=out  a=in 
+        db     10000010b       ;c=out  b=in   a=out
+        db     10010010b       ;c=out  b=in   a=in 
+        db     10001001b       ;c=in   b=out  a=out
+        db     10011001b       ;c=in   b=out  a=in 
+        db     10001011b       ;c=in   b=in   a=out
+        db     10011011b       ;c=in   b=in   a=in 
+
+;So you'd have to write something along these lines:
+
+	mov	a, #128
+	mov	dptr, #0x4003
+	movx	@dptr, a	;make all 24 lines into outputs
+	mov	dptr, #0x4000
+	mov	a, #0xFF
+	movx	@dptr, a	;drive all lines on port A high
+	inc	dptr
+	movx	@dptr, a	;drive all lines on port B high
+	inc	dptr
+	mov	@dptr, a	;drive all lines on port C high
+
+;Likewise to control the other chip you'd have to use the addresses
+;from 0x6000 to 0x6003, assuming you connected the address decoder
+;as shown in the schematic.
+
+;The 82C55 chips also have some more complex modes, but you'll have
+;to read the data book if you want to use these.  With those eight
+;configuration words, the 82C55 acts like a simple group of I/O
+;ports.  Unlike the 8051, you can't indiviually control the direction
+;of each pin... port A and B are all in or all out, and port C is
+;in two groups of 4 bits, though the config words I showed above
+;only list the words where port C is all in or all out.  You'll have
+;to get the databook for the other config words if you need them.
+
+;I will also attach some I wrote a while back which makes using the
+;six ports on that board easier, at the expense of efficiency.  I
+;don't have much time to explain how it works, but I will say that
+;it remembers in the 8051 which direction the ports are set, so that
+;you don't have to worry about writing to that fourth config register.
+;It uses some internal RAM, so you need to make sure nothing else
+;will write on top of that memory.
+
+;I hope this clears up the confusion about the 82C55 chips.  I think
+;I'll make a ugly looking web page out of this email message since
+;a few other people have had problems figuring out how to use the
+;82C55 chips.
+
+;Good Luck,
+
+;Paul
+
+
+;Holger Metschulat raised the following (very good) point in email:
+
+;From: homer@rt.e-technik.th-darmstadt.de
+;Subject: Re:  Your 82c55 Page
+
+;I just saw your 82c55 page. You could note that the 82c55 reset
+;is much longer than the 80c31 reset and so the 82c55 operations
+;issued while the 82c55 in reset take no effect. If you want to
+;aviod that, you have to plan in a time-loop after the 80c31 reset.
+;A thing that I found after two weeks of desperate looking for
+;the fault.
+
+;A good point... in fact I had this exact problem long ago
+;with the drum machine, and I spent about 3 weeks trying to
+;figure out why it would work on a development board (with
+;paulmon) but not when I put my code into the eprom.
+
+;It's actually the trigger point of the reset input pins,
+;so you only get this if you use a simple R-C reset circuit
+;instead of something which gives a "nice" digital signal.
+
+
+
+;Code to interact w/ 8255 chips...  not efficient, but it makes
+;thing easier above.  Just call rd_port_x (value returned in acc)
+;or wr_port_x (uses value in acc).
+
+;note, dir_a through dir_f must be defined as bit addressable
+;locations, which are used to remember what ports are configured
+;for input or output.
+
+equ    flags, 0x20		;don't let stack overwrite this!
+
+;flags (in 0x20)
+equ    dir_a, 0                ;set = input, clear = output
+equ    dir_b, 1
+equ    dir_c, 2
+equ    dir_d, 3
+equ    dir_e, 4
+equ    dir_f, 5
+
+;82C55 memory locations
+equ    port_a, 0x4000
+equ    port_b, 0x4001
+equ    port_c, 0x4002
+equ    port_abc_pgm, 0x4003
+equ    port_d, 0x6000
+equ    port_e, 0x6001
+equ    port_f, 0x6002
+equ    port_def_pgm, 0x6003
+
+
+rd_port_a:
+        jnb     dir_a, rdpta2
+        push    dpl
+        push    dph
+        mov     dptr, #port_a
+        clr     a
+        movc    a, @a+dptr
+        pop     dph
+        pop     dpl
+        ret
+rdpta2: setb    dir_a
+        lcall   cfg_abc
+        sjmp    rd_port_a
+
+rd_port_b:
+        jnb     dir_b, rdptb2
+        push    dpl
+        push    dph
+        mov     dptr, #port_b
+        clr     a
+        movc    a, @a+dptr
+        pop     dph
+        pop     dpl
+        ret
+rdptb2: setb    dir_b
+        lcall   cfg_abc
+        sjmp    rd_port_b
+
+rd_port_c:
+        jnb     dir_c, rdptc2
+        push    dpl
+        push    dph
+        mov     dptr, #port_c
+        clr     a
+        movc    a, @a+dptr
+        pop     dph
+        pop     dpl
+        ret
+rdptc2: setb    dir_c
+        lcall   cfg_abc
+        sjmp    rd_port_c
+
+rd_port_d:
+        jnb     dir_d, rdptd2
+        push    dpl
+        push    dph
+        mov     dptr, #port_d
+        clr     a
+        movc    a, @a+dptr
+        pop     dph
+        pop     dpl
+        ret
+rdptd2: setb    dir_d
+        lcall   cfg_def
+        sjmp    rd_port_d
+
+rd_port_e:
+        jnb     dir_e, rdpte2
+        push    dpl
+        push    dph
+        mov     dptr, #port_e
+        clr     a
+        movc    a, @a+dptr
+        pop     dph
+        pop     dpl
+        ret
+rdpte2: setb    dir_e
+        lcall   cfg_def
+        sjmp    rd_port_e
+
+rd_port_f:
+        jnb     dir_f, rdptf2
+        push    dpl
+        push    dph
+        mov     dptr, #port_f
+        clr     a
+        movc    a, @a+dptr
+        pop     dph
+        pop     dpl
+        ret
+rdptf2: setb    dir_f
+        lcall   cfg_def
+        sjmp    rd_port_f
+
+
+wr_port_a:
+        jb      dir_a, wrpta2
+        push    dpl
+        push    dph
+        mov     dptr, #port_a
+        movx    @dptr, a
+        pop     dph
+        pop     dpl
+        ret
+wrpta2: clr     dir_a
+        lcall   cfg_abc
+        sjmp    wr_port_a
+
+wr_port_b:
+        jb      dir_b, wrptb2
+        push    dpl
+        push    dph
+        mov     dptr, #port_b
+        movx    @dptr, a
+        pop     dph
+        pop     dpl
+        ret
+wrptb2: clr     dir_b
+        lcall   cfg_abc
+        sjmp    wr_port_b
+
+wr_port_c:
+        jb      dir_c, wrptc2
+        push    dpl
+        push    dph
+        mov     dptr, #port_c
+        movx    @dptr, a
+        pop     dph
+        pop     dpl
+        ret
+wrptc2: clr     dir_c
+        lcall   cfg_abc
+        sjmp    wr_port_c
+
+wr_port_d:
+        jb      dir_d, wrptd2
+        push    dpl
+        push    dph
+        mov     dptr, #port_d
+        movx    @dptr, a
+        pop     dph
+        pop     dpl
+        ret
+wrptd2: clr     dir_d
+        lcall   cfg_def
+        sjmp    wr_port_d
+
+wr_port_e:
+        jb      dir_e, wrpte2
+        push    dpl
+        push    dph
+        mov     dptr, #port_e
+        movx    @dptr, a
+        pop     dph
+        pop     dpl
+        ret
+wrpte2: clr     dir_e
+        lcall   cfg_def
+        sjmp    wr_port_e
+
+wr_port_f:
+        jb      dir_f, wrptf2
+        push    dpl
+        push    dph
+        mov     dptr, #port_f
+        movx    @dptr, a
+        pop     dph
+        pop     dpl
+        ret
+wrptf2: clr     dir_f
+        lcall   cfg_def
+        sjmp    wr_port_f
+
+cfg_abc:
+        push    acc
+        push    dpl
+        push    dph
+        clr     a
+        mov     c, dir_a
+        mov     acc.0, c
+        mov     c, dir_b
+        mov     acc.1, c
+        mov     c, dir_c
+        mov     acc.2, c
+        mov     dptr, #cfg_table
+        movc    a, @a+dptr
+        mov     dptr, #port_abc_pgm
+        movx    @dptr, a
+        pop     dph
+        pop     dpl
+        pop     acc
+        ret
+
+cfg_def:
+        push    acc
+        push    dpl
+        push    dph
+        clr     a
+        mov     c, dir_d
+        mov     acc.0, c
+        mov     c, dir_e
+        mov     acc.1, c
+        mov     c, dir_f
+        mov     acc.2, c
+        mov     dptr, #cfg_table
+        movc    a, @a+dptr
+        mov     dptr, #port_def_pgm
+        movx    @dptr, a
+        pop     dph
+        pop     dpl
+        pop     acc
+        ret
+
+cfg_table:
+        db     10000000b       ;c=out  b=out  a=out
+        db     10010000b       ;c=out  b=out  a=in 
+        db     10000010b       ;c=out  b=in   a=out
+        db     10010010b       ;c=out  b=in   a=in 
+        db     10001001b       ;c=in   b=out  a=out
+        db     10011001b       ;c=in   b=out  a=in 
+        db     10001011b       ;c=in   b=in   a=out
+        db     10011011b       ;c=in   b=in   a=in 
+
+

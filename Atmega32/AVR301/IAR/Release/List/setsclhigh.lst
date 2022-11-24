@@ -1,0 +1,58 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:30:55                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\setsclhigh.c                  #
+#       List file     =  c:\projects\at17c8515\release\list\setsclhigh.lst   #
+#       Object file   =  c:\projects\at17c8515\release\obj\setsclhigh.r90    #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Release\Obj\ -e     #
+#                        -gA -RCODE -LC:\Projects\at17c8515\Release\List\    #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -z9 -K                   #
+#                        C:\Projects\at17c8515\SetSCLHigh.c                  #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+      1            // SetSCLHigh.c
+      2            // Det SCL high, and wait for it to go high.
+      3            // Returns the value of t0_timed_out. If 0xff then we timed out before SCL went high and
+      4            // should be used to indicate an error to the caller
+      5            // Crystal frequency is 7.3728 MHz
+      6            
+      7            #include "at17c.h"
+      8            
+      9            extern volatile unsigned char t0_timed_out;
+     10            
+     11            extern void WriteSCL(unsigned char state);
+     12            
+     13            unsigned char SetSCLHigh(void) {
+     14            
+     15                WriteSCL(1); // release SCL
+     16            
+     17                // set up timer counter 0 for timeout
+     18                t0_timed_out = FALSE; // will be set after approximately 34 us
+     19                TCNT0 = 0; // clear counter
+     20                TCCR0 = 1; // ck/1 ..  enable counting
+     21            
+     22                // wait till SCL goes to a 1
+     23                while (!(PINB & 0x02) && !t0_timed_out);
+     24            
+     25                TCCR0 = 0; // stop the counter clock
+     26            
+     27                return(t0_timed_out);
+     28            
+     29            }
+
+Source file: c:\projects\at17c8515\setsclhigh.c
+Errors: none
+Warnings: none
+Code size: 38
+Constant size: 0
+Static variable size: 0
+

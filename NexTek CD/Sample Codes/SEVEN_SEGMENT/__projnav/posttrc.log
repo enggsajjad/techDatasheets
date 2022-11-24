@@ -1,0 +1,4 @@
+Post Route Timing Report for Module seg_display . . .
+TRACE command line and options:
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+Post Route Timing Report for Module seg_display : DONE

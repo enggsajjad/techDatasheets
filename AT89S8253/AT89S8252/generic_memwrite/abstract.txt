@@ -1,0 +1,17 @@
+ABSTRACT for MemWrite
+=====================
+This program is a simple demonstration of the DATA, IDATA, PDATA, and XDATA
+memory areas of the 8051.  The program writes a short string into each of
+these memory areas.  You may use the memory window (View - Memory Window)
+to view the contents of each memory area.
+
+There are four user-configurable Memory Windows available.  Each one can be
+configured to display a memory area and data type.  So, you can watch HEX
+values from XDATA in one memory window and ASCII values from IDATA in another
+window.
+
+The example program writes stuff into memory ONLY for demonstration purposes.
+You should not use this method of writing into memory in structured, high-level
+programming languages.
+
+-o-

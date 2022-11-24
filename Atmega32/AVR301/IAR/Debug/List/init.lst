@@ -1,0 +1,100 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:31:15                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\init.c                        #
+#       List file     =  c:\projects\at17c8515\debug\list\init.lst           #
+#       Object file   =  c:\projects\at17c8515\debug\obj\init.r90            #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Debug\Obj\ -e -gA   #
+#                        -RCODE -r0e -LC:\Projects\at17c8515\Debug\List\ -q  #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -K                       #
+#                        C:\Projects\at17c8515\Init.c                        #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+   \                     	NAME	init(17)
+   \                     	RSEG	CODE(0)
+   \                     	PUBLIC	Init
+   \                     	EXTERN	?CL1S_1_30_L08
+   \                     	RSEG	CODE
+   \                     Init:
+      1          // init.c
+      2          
+      3          #include "at17c.h"
+      4           
+      5          void Init(void) {
+      6          
+      7              // P0 = SDA - bidirectional
+      8              // P1 = SCL - output
+      9              // P2 = SER_EN - output
+     10           
+     11              // P7, P6, P5, P4, P3, P2, P1, P0
+     12              //  O   O   O   O   O   O   O   O
+     13              //  1   1   1   1   1   1   1   1
+     14              DDRB = 0xfc;
+   \   00000000   0CEF                       LDI     R16,252
+   \   00000002   07BB                       OUT     LOW(23),R16
+     15              PORTB = 0xfc; // outputs to a 1, inputs have no pull-ups
+   \   00000004   0CEF                       LDI     R16,252
+   \   00000006   08BB                       OUT     LOW(24),R16
+     16           
+     17              // port c used to light leds on prototype board
+     18              DDRC = 0xff;
+   \   00000008   0FEF                       LDI     R16,255
+   \   0000000A   04BB                       OUT     LOW(20),R16
+     19              PORTC = 0x00; // 0 turns leds off ... really should be the other way around
+   \   0000000C   0027                       CLR     R16
+   \   0000000E   05BB                       OUT     LOW(21),R16
+     20              
+     21              // use pushbutton switches on atstk200 kit to start events
+     22              DDRD = 0x00;
+   \   00000010   0027                       CLR     R16
+   \   00000012   01BB                       OUT     LOW(17),R16
+     23              PORTD |= 0xff;
+   \   00000014   02B3                       IN      R16,LOW(18)
+   \   00000016   0F6F                       ORI     R16,LOW(255)
+   \   00000018   02BB                       OUT     LOW(18),R16
+     24                                                   
+     25              TCCR1A = 0x00; // timer/counter 1 PWM disable
+   \   0000001A   0027                       CLR     R16
+   \   0000001C   0FBD                       OUT     LOW(47),R16
+     26              TCCR1B = 0x00; // timer/counter 1 clock disable
+   \   0000001E   0027                       CLR     R16
+   \   00000020   0EBD                       OUT     LOW(46),R16
+     27              TCNT1H = 0x00;
+   \   00000022   0027                       CLR     R16
+   \   00000024   0DBD                       OUT     LOW(45),R16
+     28              TCNT1L = 0x00; // clear counter
+   \   00000026   0027                       CLR     R16
+   \   00000028   0CBD                       OUT     LOW(44),R16
+     29          
+     30              TCNT0 = 0x00;
+   \   0000002A   0027                       CLR     R16
+   \   0000002C   02BF                       OUT     LOW(50),R16
+     31              TCCR0 = 0x00; // stop the clock
+   \   0000002E   0027                       CLR     R16
+   \   00000030   03BF                       OUT     LOW(51),R16
+     32              TIMSK |= 0x82; // enable timer counter 0 & 1 interrupt on overflow
+   \   00000032   09B7                       IN      R16,LOW(57)
+   \   00000034   0268                       ORI     R16,LOW(130)
+   \   00000036   09BF                       OUT     LOW(57),R16
+     33              
+     34          
+     35          }
+   \   00000038   0895                       RET     
+   \                     	END
+
+Source file: c:\projects\at17c8515\init.c
+Errors: none
+Warnings: none
+Code size: 58
+Constant size: 0
+Static variable size: 0
+

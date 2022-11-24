@@ -1,0 +1,220 @@
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -i  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\fpga_train\design\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s100-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd
+xst -intstyle ise -ifn __projnav/seg_display.xst -ofn seg_display.syr
+ngdbuild -intstyle ise -dd c:\testing_from\seven_segment/_ngo -uc seg_display.ucf  -p xc2s150-pq208-5 seg_display.ngc seg_display.ngd
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o seg_display_map.ncd seg_display.ngd seg_display.pcf
+par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+trce -intstyle ise -e 3 -l 3 -xml seg_display seg_display.ncd -o seg_display.twr seg_display.pcf
+bitgen -intstyle ise -f seg_display.ut seg_display.ncd

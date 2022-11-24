@@ -1,0 +1,2607 @@
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 1   
+
+
+C51 COMPILER V7.00, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c OPTIMIZE(3,SPEED) BROWSE DEBUG OBJECTEXTEND CODE
+
+stmt level    source
+
+   1          #include<reg51.h>
+   2          
+   3          sbit RS=P2^0;
+   4          sbit E=P2^1;
+   5          sbit SCLK=P2^2;
+   6          sbit IO=P2^3;
+   7          sbit RST=P2^4;
+   8          sbit bt1=P2^5;
+   9          sbit bt2=P2^6;
+  10          sbit alm=P3^0;
+  11          sbit PWR=P2^7;
+  12          sbit reset=P3^1;
+  13          
+  14          bit blag,rstflag,almflag;
+  15          bit pm_flag;
+  16          bit odd;
+  17          
+  18          unsigned char i,j,pt,blind,bcount;
+  19          unsigned char time[8];
+  20          unsigned char nbr[3];
+  21          unsigned char AlmCount,counter;
+  22          
+  23          void init(void);
+  24          void initLCD(void);
+  25          void delay(unsigned int d);
+  26          void gotoxy(unsigned char x,unsigned char y);
+  27          void putch_lcd(unsigned char ch,bit rs);
+  28          void PrintLCD(unsigned char *ch);
+  29          void ClearLCD(void);
+  30          void WriteClk(unsigned char cmd,unsigned char ch);
+  31          void BrstReadClk(unsigned char *ch);
+  32          void num2char(unsigned char num,unsigned char *ch);
+  33          void UpdateTime(unsigned char *tm);
+  34          unsigned char increment(unsigned char n);
+  35          void ldelay(void);
+  36          void Cal(unsigned char date,unsigned char month,unsigned char year);
+  37          unsigned char hex2dec(unsigned char num);
+  38          
+  39          void main(void)
+  40          {
+  41   1              RST=0;
+  42   1              init();
+  43   1              
+  44   1              initLCD();
+  45   1      
+  46   1              while(1)
+  47   1              {
+  48   2                      if(!reset)
+  49   2                      {
+  50   3                              init();
+  51   3                              while(!reset);
+  52   3                              delay(0xFFF0);
+  53   3                              ClearLCD();     
+  54   3                              WriteClk(0x8E,0x00); //Disable Write Protect
+  55   3                              WriteClk(0x90,0xA5); //Initialize Trickle Charger
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 2   
+
+  56   3                              
+  57   3                              WriteClk(0x80,0x00); //Clear Seconds
+  58   3                              WriteClk(0x82,0x00); //Clear Minutes
+  59   3                              WriteClk(0x84,0x00); //Clear Hours
+  60   3                              WriteClk(0x86,0x01); //Clear Date
+  61   3                              WriteClk(0x88,0x01); //Clear Month
+  62   3                              WriteClk(0x8A,0x01); //Clear Day
+  63   3                              WriteClk(0x8C,0x00); //Clear Year
+  64   3      
+  65   3                              WriteClk(0x8E,0x80); //Enalble Write Protect
+  66   3                      }
+  67   2      
+  68   2                      BrstReadClk(time);
+  69   2                      if(time[0]!=pt)
+  70   2                      {
+  71   3                              pt=time[0];
+  72   3                              UpdateTime(time);
+  73   3                      }
+  74   2                      
+  75   2                      if(!bt1)
+  76   2                      {
+  77   3                              while(!bt1);
+  78   3                              ldelay();
+  79   3                              ldelay();
+  80   3                              if(!blind)
+  81   3                              {
+  82   4                                      blag=1;
+  83   4                                      putch_lcd(0x0E,0);      //Enable cursor
+  84   4                                      WriteClk(0x8E,0x00); //Disable Write Protect
+  85   4                              }
+  86   3                              blind++;
+  87   3                              if(blind==7)
+  88   3                              {
+  89   4                                      blag=0;
+  90   4                                      blind=0;
+  91   4                                      switch(time[4])
+  92   4                                      {
+  93   5                                              case 0x04:
+  94   5                                              case 0x06:
+  95   5                                              case 0x09:
+  96   5                                              case 0x11:
+  97   5                                                      if(time[3]==0x31)
+  98   5                                                              time[3]=0x01;
+  99   5                                                      break;
+ 100   5                                              
+ 101   5                                              case 0x02:
+ 102   5                                                      i=time[6] & 0xF0;
+ 103   5                                                      j=time[6] & 0x0F;
+ 104   5                                                      i=i>>4;
+ 105   5                                                      i=i*10;
+ 106   5                                                      i=i+j;
+ 107   5                                                      j=i & 0x03;
+ 108   5                                                      if(j!=0 && time[3]>0x28)        //Not Leap year
+ 109   5                                                              time[3]=0x01;
+ 110   5      
+ 111   5                                                      if(j==0 && time[3]>0x29)
+ 112   5                                                              time[3]=0x01;
+ 113   5                                      }
+ 114   4                                      WriteClk(0x86,time[3]);
+ 115   4                                      Cal(time[3],time[4],time[6]);
+ 116   4                                      UpdateTime(time);
+ 117   4                                      WriteClk(0x8E,0x80); //Enalble Write Protect
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 3   
+
+ 118   4                                      putch_lcd(0x0C,0);      //Disable Cursor
+ 119   4                              }
+ 120   3                      }
+ 121   2                      
+ 122   2                      if(!blag && !bt2)
+ 123   2                      {
+ 124   3                              ClearLCD();
+ 125   3                              gotoxy(0,0);
+ 126   3                              PrintLCD("Real Time Clock");
+ 127   3                              gotoxy(0,1);
+ 128   3                              PrintLCD("By AAMER MUMTAZ");
+ 129   3                              for(i=0;i<100;i++)
+ 130   3                                      delay(0xFF00);
+ 131   3                              while(!bt2);
+ 132   3                              ClearLCD();
+ 133   3                      }
+ 134   2      
+ 135   2                      if(blag)
+ 136   2                      {
+ 137   3                              switch(blind)
+ 138   3                              {
+ 139   4                                      case 1:
+ 140   4                                              gotoxy(11,1);   
+ 141   4                                              if(!bt2)
+ 142   4                                              {
+ 143   5                                                      ldelay();
+ 144   5                                                      time[0]=increment(time[0]);
+ 145   5                                                      if(time[0]==0x60)
+ 146   5                                                              time[0]=0;
+ 147   5                                                      WriteClk(0x80,time[0]);
+ 148   5                                              }
+ 149   4                                              break;
+ 150   4      
+ 151   4                                      case 2:
+ 152   4                                              gotoxy(8,1);
+ 153   4                                              if(!bt2)
+ 154   4                                              {
+ 155   5                                                      ldelay();
+ 156   5                                                      time[1]=increment(time[1]);
+ 157   5                                                      if(time[1]==0x60)
+ 158   5                                                              time[1]=0;
+ 159   5                                                      WriteClk(0x82,time[1]);
+ 160   5                                                      UpdateTime(time);
+ 161   5                                              }
+ 162   4                                              break;
+ 163   4      
+ 164   4                                      case 3:
+ 165   4                                              gotoxy(6,1);
+ 166   4                                              if(!bt2)
+ 167   4                                              {
+ 168   5                                                      ldelay();
+ 169   5                                                      time[2]=increment(time[2]);
+ 170   5                                                      if(time[2]==0x24)
+ 171   5                                                              time[2]=0x00;
+ 172   5                                                      WriteClk(0x84,time[2]);
+ 173   5                                                      UpdateTime(time);
+ 174   5                                              }
+ 175   4                                              break;
+ 176   4      
+ 177   4                                      case 4:
+ 178   4                                              gotoxy(12,0);
+ 179   4                                              if(!bt2)
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 4   
+
+ 180   4                                              {
+ 181   5                                                      ldelay();
+ 182   5                                                      time[6]=increment(time[6]);
+ 183   5                                                      if(time[6]==0x99)
+ 184   5                                                              time[6]=0x00;
+ 185   5                                                      WriteClk(0x8C,time[6]);
+ 186   5                                                      UpdateTime(time);
+ 187   5                                               }
+ 188   4                                               break;
+ 189   4      
+ 190   4                                      case 5:
+ 191   4                                              gotoxy(8,0);
+ 192   4                                              if(!bt2)
+ 193   4                                              {
+ 194   5                                                      ldelay();
+ 195   5                                                      time[4]=increment(time[4]);
+ 196   5                                                      if(time[4]==0x13)
+ 197   5                                                              time[4]=0x01;
+ 198   5                                                      WriteClk(0x88,time[4]);
+ 199   5                                                      UpdateTime(time);
+ 200   5                                              }
+ 201   4                                              break;
+ 202   4                                      
+ 203   4                                      case 6:
+ 204   4                                              gotoxy(5,0);
+ 205   4                                              if(!bt2)
+ 206   4                                              {
+ 207   5                                                      ldelay();
+ 208   5                                                      time[3]=increment(time[3]);
+ 209   5                                                      switch(time[4])
+ 210   5                                                      {
+ 211   6                                                              case 0x01: 
+ 212   6                                                              case 0x03: 
+ 213   6                                                              case 0x05: 
+ 214   6                                                              case 0x07: 
+ 215   6                                                              case 0x08: 
+ 216   6                                                              case 0x10: 
+ 217   6                                                              case 0x12:
+ 218   6                                                              if(time[3]==0x32)
+ 219   6                                                                              time[3]=0x01;
+ 220   6                                                                      break;
+ 221   6      
+ 222   6                                                              case 0x04:
+ 223   6                                                              case 0x06:
+ 224   6                                                              case 0x09:
+ 225   6                                                              case 0x11:
+ 226   6                                                                      if(time[3]==0x31)
+ 227   6                                                                              time[3]=0x01;
+ 228   6                                                                      break;
+ 229   6      
+ 230   6                                                              case 0x02:
+ 231   6                                                                      i=time[6] & 0xF0;
+ 232   6                                                                      j=time[6] & 0x0F;
+ 233   6                                                                      i=i>>4;
+ 234   6                                                                      i=i*10;
+ 235   6                                                                      i=i+j;
+ 236   6                                                                      j=i & 0x03;
+ 237   6                                                                      if(j!=0 && time[3]==0x29)       //Not Leap year
+ 238   6                                                                              time[3]=0x01;
+ 239   6      
+ 240   6                                                                      if(j==0 && time[3]==0x30)
+ 241   6                                                                              time[3]=0x01;
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 5   
+
+ 242   6                                                      }
+ 243   5                                                      WriteClk(0x86,time[3]);
+ 244   5                                                      UpdateTime(time);
+ 245   5                                              }
+ 246   4                                      }
+ 247   3      
+ 248   3                      }
+ 249   2              }
+ 250   1      }
+ 251          
+ 252          ////////////////////////////--Initialization Function--//////////////////////////////
+ 253          void init(void)
+ 254          {
+ 255   1              TMOD=0x11;
+ 256   1              TF0=0;
+ 257   1              TR0=0;
+ 258   1              pt=0xFF;
+ 259   1              blind=0;
+ 260   1              bcount=0;
+ 261   1              blag=0;
+ 262   1              EA=1;
+ 263   1              ET1=1;
+ 264   1              EX0=1;
+ 265   1              almflag=0;
+ 266   1      }
+ 267          
+ 268          void delay(unsigned int d)
+ 269          {
+ 270   1              d=~d;
+ 271   1              d--;
+ 272   1              TL0=d;
+ 273   1              TH0=d>>8;
+ 274   1              TR0=1;
+ 275   1              while(!TF0);
+ 276   1              TR0=0;
+ 277   1              TF0=0;
+ 278   1      }
+ 279          
+ 280          ///////////////////////////--Initialize LCD in 8-bit mode--///////////////////////////////
+ 281          void initLCD(void)
+ 282          {
+ 283   1              delay(0xFFFE);
+ 284   1              putch_lcd(0x30,0);
+ 285   1              delay(0x3000);
+ 286   1              putch_lcd(0x30,0);
+ 287   1              delay(300);
+ 288   1              putch_lcd(0x30,0);
+ 289   1              delay(300);
+ 290   1      
+ 291   1              putch_lcd(0x38,0);      //Set interface length
+ 292   1              putch_lcd(0x10,0);      //Turn off display
+ 293   1              putch_lcd(0x01,0);      //Clear the display
+ 294   1              delay(0x3000);
+ 295   1              putch_lcd(0x06,0);      //Set cursor move direction
+ 296   1              putch_lcd(0x0C,0);      //Enable display cursor
+ 297   1      }
+ 298          
+ 299          ////////////////////--Write one Character/Command (rs=0 comamnd, rs=1 character) on LCD--//////////
+ 300          void putch_lcd(unsigned char ch,bit rs)
+ 301          {
+ 302   1              E=1;
+ 303   1              P0=ch;
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 6   
+
+ 304   1              RS=rs;
+ 305   1              delay(400);
+ 306   1              E=0;
+ 307   1              delay(400);
+ 308   1      }
+ 309          
+ 310          ///////////////////////--Move Cursor on LCD--/////////////////////////////////
+ 311          void gotoxy(unsigned char x,unsigned char y)
+ 312          {
+ 313   1              unsigned char ch;
+ 314   1      
+ 315   1              if(x==0 && y==0)
+ 316   1                      ch=0x02;
+ 317   1              else
+ 318   1              {
+ 319   2                      ch=0x80;
+ 320   2                      ch=ch | x;
+ 321   2                      if(y==1)
+ 322   2                              ch=ch | 0x40;
+ 323   2              }
+ 324   1              putch_lcd(ch,0);
+ 325   1              if(x==0 && y==0)
+ 326   1                      delay(0x3000);
+ 327   1      }
+ 328          
+ 329          ///////////////////--Write String on LCD--////////////////////////////////
+ 330          void PrintLCD(unsigned char *ch)
+ 331          {
+ 332   1              while(*ch)
+ 333   1              {
+ 334   2                      putch_lcd(*ch,1);
+ 335   2                      ch++;
+ 336   2              }
+ 337   1      }
+ 338          
+ 339          void ClearLCD(void)
+ 340          {
+ 341   1              putch_lcd(0x01,0);      //Clear the display
+ 342   1              delay(0x3000);
+ 343   1      }
+ 344          
+ 345          //////////////////// Write a character in DS1302 ////////////////////
+ 346          void WriteClk(unsigned char cmd,unsigned char ch)
+ 347          {
+ 348   1              unsigned char count,mask,temp,wrd;
+ 349   1              SCLK=0;
+ 350   1              RST=1;
+ 351   1              mask=0x01;
+ 352   1              wrd=cmd;
+ 353   1              
+ 354   1              for(count=0;count<16;count++)
+ 355   1              {
+ 356   2                      IO=0;
+ 357   2                      temp=wrd & mask;
+ 358   2                      if(temp)
+ 359   2                              IO=1;
+ 360   2                      SCLK=1;
+ 361   2                      mask=mask<<1;
+ 362   2      
+ 363   2                      if(count==7)
+ 364   2                      {
+ 365   3                              wrd=ch;
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 7   
+
+ 366   3                              mask=0x01;
+ 367   3                      }
+ 368   2      
+ 369   2                      SCLK=0;
+ 370   2                      //_nop_();
+ 371   2              }
+ 372   1      
+ 373   1              RST=0;
+ 374   1              SCLK=1;
+ 375   1              IO=1;   
+ 376   1      }
+ 377          
+ 378          /////////////////////// Burst Clock Read /////////////////////////////
+ 379          void BrstReadClk(unsigned char *ch)
+ 380          {
+ 381   1              unsigned char count,wrd,mask,temp,i;
+ 382   1              //WriteClk(0x8E,0x00); //Disable Write Protect
+ 383   1              RST=1;
+ 384   1              
+ 385   1              wrd=0xBF;
+ 386   1              mask=0x01;
+ 387   1              for(count=0;count<8;count++)
+ 388   1              {
+ 389   2                      IO=0;
+ 390   2                      temp=wrd & mask;
+ 391   2      
+ 392   2                      if(temp)
+ 393   2                              IO=1;
+ 394   2                      SCLK=1;
+ 395   2                      mask=mask <<1;
+ 396   2                      SCLK=0;
+ 397   2              }
+ 398   1      
+ 399   1              for(count=0;count<8;count++)
+ 400   1              {
+ 401   2                      wrd=0x00;
+ 402   2                      for(i=0;i<8;i++)
+ 403   2                      {
+ 404   3                              if(IO)
+ 405   3                                      temp=0x01;
+ 406   3                              else
+ 407   3                                      temp=0x00;
+ 408   3                              
+ 409   3                              SCLK=1;
+ 410   3                              temp=temp<<i;
+ 411   3                              wrd=wrd | temp;
+ 412   3                              SCLK=0;
+ 413   3                      }
+ 414   2      
+ 415   2                      *ch++=wrd;                      
+ 416   2              }
+ 417   1              WriteClk(0x8E,0x80); //Enable Write Protect
+ 418   1              RST=0;
+ 419   1              SCLK=1;
+ 420   1              IO=1;
+ 421   1      }
+ 422          //////////////////////////--Update Time--//////////////////////////////////////
+ 423          void UpdateTime(unsigned char *tm)
+ 424          {       
+ 425   1              unsigned char temp;
+ 426   1              bit h_flag;
+ 427   1              h_flag=0;
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 8   
+
+ 428   1              gotoxy(0,0);
+ 429   1              tm+=5;
+ 430   1              temp=*tm;
+ 431   1      
+ 432   1              switch(temp)
+ 433   1              {
+ 434   2                      case 0x01:
+ 435   2                              PrintLCD("SAT");        break;
+ 436   2                      case 0x02:
+ 437   2                              PrintLCD("SUN");        break;
+ 438   2                      case 0x03:
+ 439   2                              PrintLCD("MON");        break;
+ 440   2                      case 0x04:
+ 441   2                              PrintLCD("TUE");        break;
+ 442   2                      case 0x05:
+ 443   2                              PrintLCD("WED");        break;
+ 444   2                      case 0x06:
+ 445   2                              PrintLCD("THU");        break;
+ 446   2                      case 0x07:
+ 447   2                              PrintLCD("FRI");        break;
+ 448   2              }
+ 449   1              PrintLCD("  ");
+ 450   1      
+ 451   1              tm-=2;
+ 452   1              temp=*tm;
+ 453   1      
+ 454   1              num2char(temp,nbr);
+ 455   1              PrintLCD(nbr);  //Date
+ 456   1      
+ 457   1              tm++;
+ 458   1              temp=*tm;
+ 459   1              switch(temp)
+ 460   1              {
+ 461   2                      case 0x01:
+ 462   2                              PrintLCD(" JAN ");      break;
+ 463   2                      case 0x02:
+ 464   2                              PrintLCD(" FEB ");      break;
+ 465   2                      case 0x03:
+ 466   2                              PrintLCD(" MAR ");      break;
+ 467   2                      case 0x04:
+ 468   2                              PrintLCD(" APR ");      break;
+ 469   2                      case 0x05:
+ 470   2                              PrintLCD(" MAY ");      break;
+ 471   2                      case 0x06:
+ 472   2                              PrintLCD(" JUN ");      break;
+ 473   2                      case 0x07:
+ 474   2                              PrintLCD(" JUL ");      break;
+ 475   2                      case 0x08:
+ 476   2                              PrintLCD(" AUG ");      break;
+ 477   2                      case 0x09:
+ 478   2                              PrintLCD(" SEP ");      break;
+ 479   2                      case 0x10:
+ 480   2                              PrintLCD(" OCT ");      break;
+ 481   2                      case 0x11:
+ 482   2                              PrintLCD(" NOV ");      break;
+ 483   2                      case 0x12:
+ 484   2                              PrintLCD(" DEC ");      break;
+ 485   2      
+ 486   2                      default:
+ 487   2                              PrintLCD(" ERR ");
+ 488   2              }
+ 489   1      
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 9   
+
+ 490   1              tm+=2;
+ 491   1              temp=*tm;
+ 492   1              num2char(temp,nbr);
+ 493   1              PrintLCD("20");
+ 494   1              PrintLCD(nbr);
+ 495   1      
+ 496   1              gotoxy(5,1);
+ 497   1              tm-=4;
+ 498   1              temp=*tm;
+ 499   1              if(temp==0x00)
+ 500   1              {               
+ 501   2                      temp=0x12;
+ 502   2                      pm_flag=0;
+ 503   2              }
+ 504   1              else
+ 505   1              {
+ 506   2                      if(temp<0x12)
+ 507   2                              pm_flag=0;
+ 508   2                      if(temp==0x12)
+ 509   2                              pm_flag=1;
+ 510   2                      if(temp>0x12)
+ 511   2                      {
+ 512   3                              temp-=0x12;
+ 513   3                              pm_flag=1;
+ 514   3                      }
+ 515   2              }
+ 516   1              if(temp==0x0E)
+ 517   1                      temp=0x08;
+ 518   1              if(temp==0x0F)
+ 519   1                      temp=0x09;
+ 520   1              num2char(temp,nbr);
+ 521   1              PrintLCD(nbr);  //Hour
+ 522   1              if(temp<0x10)
+ 523   1                      h_flag=1;
+ 524   1      
+ 525   1              PrintLCD(":");
+ 526   1              tm--;
+ 527   1              temp=*tm;
+ 528   1              num2char(temp,nbr);
+ 529   1              PrintLCD(nbr);
+ 530   1              PrintLCD(":");
+ 531   1              tm--;
+ 532   1              temp=*tm;
+ 533   1              num2char(temp,nbr);
+ 534   1              PrintLCD(nbr);  //Seconds
+ 535   1      
+ 536   1              if(pm_flag)
+ 537   1                      PrintLCD(" PM");
+ 538   1              else
+ 539   1                      PrintLCD(" AM");
+ 540   1      
+ 541   1              if(h_flag)
+ 542   1              {
+ 543   2                      gotoxy(5,1);
+ 544   2                      PrintLCD(" ");
+ 545   2              }
+ 546   1      
+ 547   1              tm++;
+ 548   1              temp=*tm;
+ 549   1              if(temp==0x00 && !almflag)
+ 550   1              {
+ 551   2                      almflag=1;
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 10  
+
+ 552   2                      tm++;
+ 553   2                      AlmCount=hex2dec(*tm);
+ 554   2                      counter=0;
+ 555   2                      TL1=0;
+ 556   2                      TH1=0;
+ 557   2                      TR1=1;
+ 558   2              }
+ 559   1      }
+ 560          
+ 561          void num2char(unsigned char num,unsigned char *ch)
+ 562          {
+ 563   1              unsigned char temp;
+ 564   1              temp=num & 0xF0;
+ 565   1              temp=temp>>4;
+ 566   1              *ch=temp+48;
+ 567   1              ch++;
+ 568   1              temp=num & 0x0F;
+ 569   1              *ch=temp+48;
+ 570   1      }
+ 571          
+ 572          unsigned char increment(unsigned char n)
+ 573          {
+ 574   1              unsigned char t,u;
+ 575   1              u=n & 0x0F;
+ 576   1              t=n>>4;
+ 577   1              u++;
+ 578   1              if(u>9)
+ 579   1              {
+ 580   2                      t++;
+ 581   2                      u=0;
+ 582   2              }
+ 583   1              t=t<<4;
+ 584   1              t=t | u;
+ 585   1              return t;
+ 586   1      }
+ 587          
+ 588          void ldelay(void)
+ 589          {
+ 590   1              for(i=0;i<5;i++)
+ 591   1                      delay(0xFFF0);
+ 592   1      }
+ 593          
+ 594          ///////////////--Calander function (accepts date, month and year and write day in DS1302)--///////
+ 595          void Cal(unsigned char date,unsigned char month,unsigned char year)
+ 596          {
+ 597   1              unsigned char t2,t3;
+ 598   1              year=hex2dec(year);
+ 599   1              date=hex2dec(date);
+ 600   1              
+ 601   1              switch(month)
+ 602   1              {
+ 603   2                      case 0x10:
+ 604   2                      case 0x01:      t2=0;   break;
+ 605   2                      case 0x11:
+ 606   2                      case 0x02:
+ 607   2                      case 0x03:      t2=3;   break;
+ 608   2                      case 0x07:
+ 609   2                      case 0x04:      t2=6;   break;
+ 610   2                      case 0x05:      t2=1;   break;
+ 611   2                      case 0x06:      t2=4;   break;
+ 612   2                      case 0x08:      t2=2;   break;
+ 613   2                      case 0x12:
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 11  
+
+ 614   2                      case 0x09:      t2=5;   break;
+ 615   2              }
+ 616   1              if(month>0x02)
+ 617   1              {
+ 618   2                      if(year==0 || year>3)
+ 619   2                      {
+ 620   3                              t3=year & 0x03;
+ 621   3                              if(t3==0)
+ 622   3                                      t2++;
+ 623   3                      }
+ 624   2              }
+ 625   1              t2=t2+year+date;
+ 626   1              if(year==0)
+ 627   1                      t2--;
+ 628   1              if(t2>6)
+ 629   1                      t2=t2%7;
+ 630   1              t2++;
+ 631   1              WriteClk(0x8A,t2);
+ 632   1      }
+ 633          
+ 634          unsigned char hex2dec(unsigned char num)
+ 635          {
+ 636   1              unsigned char hexnum;
+ 637   1              i=num & 0xF0;
+ 638   1              i=i>>4;
+ 639   1              i=i*10;
+ 640   1              j=num & 0x0F;
+ 641   1              hexnum=i+j;
+ 642   1      
+ 643   1              return hexnum;
+ 644   1      }
+ 645          
+ 646          void timer1(void) interrupt 3
+ 647          {
+ 648   1                      
+ 649   1      }
+ 650          
+ 651          
+ 652                          
+ 653                  
+ 654                  
+ 655          
+ 656          
+ 657          
+ 658                  
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 12  
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION main (BEGIN)
+                                           ; SOURCE LINE # 39
+                                           ; SOURCE LINE # 40
+                                           ; SOURCE LINE # 41
+0000 C2A4              CLR     RST
+                                           ; SOURCE LINE # 42
+0002 120000      R     LCALL   init
+                                           ; SOURCE LINE # 44
+0005 120000      R     LCALL   initLCD
+0008         ?C0001:
+                                           ; SOURCE LINE # 46
+                                           ; SOURCE LINE # 47
+                                           ; SOURCE LINE # 48
+0008 20B156            JB      reset,?C0003
+                                           ; SOURCE LINE # 49
+                                           ; SOURCE LINE # 50
+000B 120000      R     LCALL   init
+000E         ?C0004:
+                                           ; SOURCE LINE # 51
+000E 30B1FD            JNB     reset,?C0004
+0011         ?C0005:
+                                           ; SOURCE LINE # 52
+0011 7FF0              MOV     R7,#0F0H
+0013 7EFF              MOV     R6,#0FFH
+0015 120000      R     LCALL   _delay
+                                           ; SOURCE LINE # 53
+0018 120000      R     LCALL   ClearLCD
+                                           ; SOURCE LINE # 54
+001B E4                CLR     A
+001C FD                MOV     R5,A
+001D 7F8E              MOV     R7,#08EH
+001F 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 55
+0022 7DA5              MOV     R5,#0A5H
+0024 7F90              MOV     R7,#090H
+0026 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 57
+0029 E4                CLR     A
+002A FD                MOV     R5,A
+002B 7F80              MOV     R7,#080H
+002D 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 58
+0030 E4                CLR     A
+0031 FD                MOV     R5,A
+0032 7F82              MOV     R7,#082H
+0034 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 59
+0037 E4                CLR     A
+0038 FD                MOV     R5,A
+0039 7F84              MOV     R7,#084H
+003B 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 60
+003E 7D01              MOV     R5,#01H
+0040 7F86              MOV     R7,#086H
+0042 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 61
+0045 7D01              MOV     R5,#01H
+0047 7F88              MOV     R7,#088H
+0049 120000      R     LCALL   _WriteClk
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 13  
+
+                                           ; SOURCE LINE # 62
+004C 7D01              MOV     R5,#01H
+004E 7F8A              MOV     R7,#08AH
+0050 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 63
+0053 E4                CLR     A
+0054 FD                MOV     R5,A
+0055 7F8C              MOV     R7,#08CH
+0057 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 65
+005A 7D80              MOV     R5,#080H
+005C 7F8E              MOV     R7,#08EH
+005E 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 66
+0061         ?C0003:
+                                           ; SOURCE LINE # 68
+0061 7B00              MOV     R3,#00H
+0063 7A00        R     MOV     R2,#HIGH time
+0065 7900        R     MOV     R1,#LOW time
+0067 120000      R     LCALL   _BrstReadClk
+                                           ; SOURCE LINE # 69
+006A E500        R     MOV     A,time
+006C 6500        R     XRL     A,pt
+006E 600C              JZ      ?C0006
+                                           ; SOURCE LINE # 70
+                                           ; SOURCE LINE # 71
+0070 850000      R     MOV     pt,time
+                                           ; SOURCE LINE # 72
+0073 7B00              MOV     R3,#00H
+0075 7A00        R     MOV     R2,#HIGH time
+0077 7900        R     MOV     R1,#LOW time
+0079 120000      R     LCALL   _UpdateTime
+                                           ; SOURCE LINE # 73
+007C         ?C0006:
+                                           ; SOURCE LINE # 75
+007C 30A503            JNB     bt1,$ + 6H
+007F 020000      R     LJMP    ?C0007
+                                           ; SOURCE LINE # 76
+0082         ?C0008:
+                                           ; SOURCE LINE # 77
+0082 30A5FD            JNB     bt1,?C0008
+0085         ?C0009:
+                                           ; SOURCE LINE # 78
+0085 120000      R     LCALL   ldelay
+                                           ; SOURCE LINE # 79
+0088 120000      R     LCALL   ldelay
+                                           ; SOURCE LINE # 80
+008B E500        R     MOV     A,blind
+008D 7010              JNZ     ?C0010
+                                           ; SOURCE LINE # 81
+                                           ; SOURCE LINE # 82
+008F D200        R     SETB    blag
+                                           ; SOURCE LINE # 83
+0091 C200        R     CLR     ?_putch_lcd?BIT
+0093 7F0E              MOV     R7,#0EH
+0095 120000      R     LCALL   _putch_lcd
+                                           ; SOURCE LINE # 84
+0098 E4                CLR     A
+0099 FD                MOV     R5,A
+009A 7F8E              MOV     R7,#08EH
+009C 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 85
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 14  
+
+009F         ?C0010:
+                                           ; SOURCE LINE # 86
+009F 0500        R     INC     blind
+                                           ; SOURCE LINE # 87
+00A1 E500        R     MOV     A,blind
+00A3 6407              XRL     A,#07H
+00A5 6003              JZ      $ + 5H
+00A7 020000      R     LJMP    ?C0007
+                                           ; SOURCE LINE # 88
+                                           ; SOURCE LINE # 89
+00AA C200        R     CLR     blag
+                                           ; SOURCE LINE # 90
+00AC F500        R     MOV     blind,A
+                                           ; SOURCE LINE # 91
+00AE E500        R     MOV     A,time+04H
+00B0 120000      E     LCALL   ?C?CCASE
+00B3 0000        R     DW      ?C0018
+00B5 02                DB      02H
+00B6 0000        R     DW      ?C0016
+00B8 04                DB      04H
+00B9 0000        R     DW      ?C0016
+00BB 06                DB      06H
+00BC 0000        R     DW      ?C0016
+00BE 09                DB      09H
+00BF 0000        R     DW      ?C0016
+00C1 11                DB      011H
+00C2 0000              DW      00H
+00C4 0000        R     DW      ?C0012
+                                           ; SOURCE LINE # 92
+                                           ; SOURCE LINE # 93
+                                           ; SOURCE LINE # 94
+                                           ; SOURCE LINE # 95
+                                           ; SOURCE LINE # 96
+00C6         ?C0016:
+                                           ; SOURCE LINE # 97
+00C6 E500        R     MOV     A,time+03H
+00C8 6431              XRL     A,#031H
+00CA 7040              JNZ     ?C0012
+                                           ; SOURCE LINE # 98
+00CC 750001      R     MOV     time+03H,#01H
+                                           ; SOURCE LINE # 99
+00CF 803B              SJMP    ?C0012
+                                           ; SOURCE LINE # 101
+00D1         ?C0018:
+                                           ; SOURCE LINE # 102
+00D1 E500        R     MOV     A,time+06H
+00D3 54F0              ANL     A,#0F0H
+00D5 F500        R     MOV     i,A
+                                           ; SOURCE LINE # 103
+00D7 E500        R     MOV     A,time+06H
+00D9 540F              ANL     A,#0FH
+00DB F500        R     MOV     j,A
+                                           ; SOURCE LINE # 104
+00DD E500        R     MOV     A,i
+00DF C4                SWAP    A
+00E0 540F              ANL     A,#0FH
+00E2 F500        R     MOV     i,A
+                                           ; SOURCE LINE # 105
+00E4 75F00A            MOV     B,#0AH
+00E7 A4                MUL     AB
+00E8 F500        R     MOV     i,A
+                                           ; SOURCE LINE # 106
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 15  
+
+00EA 2500        R     ADD     A,j
+00EC F500        R     MOV     i,A
+                                           ; SOURCE LINE # 107
+00EE 5403              ANL     A,#03H
+00F0 F500        R     MOV     j,A
+                                           ; SOURCE LINE # 108
+00F2 600A              JZ      ?C0019
+00F4 E500        R     MOV     A,time+03H
+00F6 D3                SETB    C
+00F7 9428              SUBB    A,#028H
+00F9 4003              JC      ?C0019
+                                           ; SOURCE LINE # 109
+00FB 750001      R     MOV     time+03H,#01H
+00FE         ?C0019:
+                                           ; SOURCE LINE # 111
+00FE E500        R     MOV     A,j
+0100 700A              JNZ     ?C0012
+0102 E500        R     MOV     A,time+03H
+0104 D3                SETB    C
+0105 9429              SUBB    A,#029H
+0107 4003              JC      ?C0012
+                                           ; SOURCE LINE # 112
+0109 750001      R     MOV     time+03H,#01H
+                                           ; SOURCE LINE # 113
+010C         ?C0012:
+                                           ; SOURCE LINE # 114
+010C AD00        R     MOV     R5,time+03H
+010E 7F86              MOV     R7,#086H
+0110 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 115
+0113 AB00        R     MOV     R3,time+06H
+0115 AD00        R     MOV     R5,time+04H
+0117 AF00        R     MOV     R7,time+03H
+0119 120000      R     LCALL   _Cal
+                                           ; SOURCE LINE # 116
+011C 7B00              MOV     R3,#00H
+011E 7A00        R     MOV     R2,#HIGH time
+0120 7900        R     MOV     R1,#LOW time
+0122 120000      R     LCALL   _UpdateTime
+                                           ; SOURCE LINE # 117
+0125 7D80              MOV     R5,#080H
+0127 7F8E              MOV     R7,#08EH
+0129 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 118
+012C C200        R     CLR     ?_putch_lcd?BIT
+012E 7F0C              MOV     R7,#0CH
+0130 120000      R     LCALL   _putch_lcd
+                                           ; SOURCE LINE # 119
+                                           ; SOURCE LINE # 120
+0133         ?C0007:
+                                           ; SOURCE LINE # 122
+0133 200040      R     JB      blag,?C0021
+0136 20A63D            JB      bt2,?C0021
+                                           ; SOURCE LINE # 123
+                                           ; SOURCE LINE # 124
+0139 120000      R     LCALL   ClearLCD
+                                           ; SOURCE LINE # 125
+013C E4                CLR     A
+013D FD                MOV     R5,A
+013E FF                MOV     R7,A
+013F 120000      R     LCALL   _gotoxy
+                                           ; SOURCE LINE # 126
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 16  
+
+0142 7BFF              MOV     R3,#0FFH
+0144 7A00        R     MOV     R2,#HIGH ?SC_0
+0146 7900        R     MOV     R1,#LOW ?SC_0
+0148 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 127
+014B 7D01              MOV     R5,#01H
+014D E4                CLR     A
+014E FF                MOV     R7,A
+014F 120000      R     LCALL   _gotoxy
+                                           ; SOURCE LINE # 128
+0152 7BFF              MOV     R3,#0FFH
+0154 7A00        R     MOV     R2,#HIGH ?SC_16
+0156 7900        R     MOV     R1,#LOW ?SC_16
+0158 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 129
+015B E4                CLR     A
+015C F500        R     MOV     i,A
+015E         ?C0022:
+015E E500        R     MOV     A,i
+0160 C3                CLR     C
+0161 9464              SUBB    A,#064H
+0163 500B              JNC     ?C0025
+                                           ; SOURCE LINE # 130
+0165 7F00              MOV     R7,#00H
+0167 7EFF              MOV     R6,#0FFH
+0169 120000      R     LCALL   _delay
+016C 0500        R     INC     i
+016E 80EE              SJMP    ?C0022
+0170         ?C0025:
+                                           ; SOURCE LINE # 131
+0170 30A6FD            JNB     bt2,?C0025
+0173         ?C0026:
+                                           ; SOURCE LINE # 132
+0173 120000      R     LCALL   ClearLCD
+                                           ; SOURCE LINE # 133
+0176         ?C0021:
+                                           ; SOURCE LINE # 135
+0176 200003      R     JB      blag,$ + 6H
+0179 020000      R     LJMP    ?C0001
+                                           ; SOURCE LINE # 136
+                                           ; SOURCE LINE # 137
+017C E500        R     MOV     A,blind
+017E 120000      E     LCALL   ?C?CCASE
+0181 0000        R     DW      ?C0029
+0183 01                DB      01H
+0184 0000        R     DW      ?C0032
+0186 02                DB      02H
+0187 0000        R     DW      ?C0035
+0189 03                DB      03H
+018A 0000        R     DW      ?C0038
+018C 04                DB      04H
+018D 0000        R     DW      ?C0041
+018F 05                DB      05H
+0190 0000        R     DW      ?C0044
+0192 06                DB      06H
+0193 0000              DW      00H
+0195 0000        R     DW      ?C0001
+                                           ; SOURCE LINE # 138
+                                           ; SOURCE LINE # 139
+0197         ?C0029:
+                                           ; SOURCE LINE # 140
+0197 7D01              MOV     R5,#01H
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 17  
+
+0199 7F0B              MOV     R7,#0BH
+019B 120000      R     LCALL   _gotoxy
+                                           ; SOURCE LINE # 141
+019E 30A603            JNB     bt2,$ + 6H
+01A1 020000      R     LJMP    ?C0001
+                                           ; SOURCE LINE # 142
+                                           ; SOURCE LINE # 143
+01A4 120000      R     LCALL   ldelay
+                                           ; SOURCE LINE # 144
+01A7 AF00        R     MOV     R7,time
+01A9 120000      R     LCALL   _increment
+01AC 8F00        R     MOV     time,R7
+                                           ; SOURCE LINE # 145
+01AE E500        R     MOV     A,time
+01B0 B46003            CJNE    A,#060H,?C0031
+                                           ; SOURCE LINE # 146
+01B3 E4                CLR     A
+01B4 F500        R     MOV     time,A
+01B6         ?C0031:
+                                           ; SOURCE LINE # 147
+01B6 AD00        R     MOV     R5,time
+01B8 7F80              MOV     R7,#080H
+01BA 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 148
+                                           ; SOURCE LINE # 149
+01BD 020000      R     LJMP    ?C0001
+                                           ; SOURCE LINE # 151
+01C0         ?C0032:
+                                           ; SOURCE LINE # 152
+01C0 7D01              MOV     R5,#01H
+01C2 7F08              MOV     R7,#08H
+01C4 120000      R     LCALL   _gotoxy
+                                           ; SOURCE LINE # 153
+01C7 30A603            JNB     bt2,$ + 6H
+01CA 020000      R     LJMP    ?C0001
+                                           ; SOURCE LINE # 154
+                                           ; SOURCE LINE # 155
+01CD 120000      R     LCALL   ldelay
+                                           ; SOURCE LINE # 156
+01D0 AF00        R     MOV     R7,time+01H
+01D2 120000      R     LCALL   _increment
+01D5 8F00        R     MOV     time+01H,R7
+                                           ; SOURCE LINE # 157
+01D7 E500        R     MOV     A,time+01H
+01D9 B46003            CJNE    A,#060H,?C0034
+                                           ; SOURCE LINE # 158
+01DC E4                CLR     A
+01DD F500        R     MOV     time+01H,A
+01DF         ?C0034:
+                                           ; SOURCE LINE # 159
+01DF AD00        R     MOV     R5,time+01H
+01E1 7F82              MOV     R7,#082H
+01E3 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 160
+01E6 7B00              MOV     R3,#00H
+01E8 7A00        R     MOV     R2,#HIGH time
+01EA 7900        R     MOV     R1,#LOW time
+01EC 120000      R     LCALL   _UpdateTime
+                                           ; SOURCE LINE # 161
+                                           ; SOURCE LINE # 162
+01EF 020000      R     LJMP    ?C0001
+                                           ; SOURCE LINE # 164
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 18  
+
+01F2         ?C0035:
+                                           ; SOURCE LINE # 165
+01F2 7D01              MOV     R5,#01H
+01F4 7F06              MOV     R7,#06H
+01F6 120000      R     LCALL   _gotoxy
+                                           ; SOURCE LINE # 166
+01F9 30A603            JNB     bt2,$ + 6H
+01FC 020000      R     LJMP    ?C0001
+                                           ; SOURCE LINE # 167
+                                           ; SOURCE LINE # 168
+01FF 120000      R     LCALL   ldelay
+                                           ; SOURCE LINE # 169
+0202 AF00        R     MOV     R7,time+02H
+0204 120000      R     LCALL   _increment
+0207 8F00        R     MOV     time+02H,R7
+                                           ; SOURCE LINE # 170
+0209 E500        R     MOV     A,time+02H
+020B B42403            CJNE    A,#024H,?C0037
+                                           ; SOURCE LINE # 171
+020E E4                CLR     A
+020F F500        R     MOV     time+02H,A
+0211         ?C0037:
+                                           ; SOURCE LINE # 172
+0211 AD00        R     MOV     R5,time+02H
+0213 7F84              MOV     R7,#084H
+0215 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 173
+0218 7B00              MOV     R3,#00H
+021A 7A00        R     MOV     R2,#HIGH time
+021C 7900        R     MOV     R1,#LOW time
+021E 120000      R     LCALL   _UpdateTime
+                                           ; SOURCE LINE # 174
+                                           ; SOURCE LINE # 175
+0221 020000      R     LJMP    ?C0001
+                                           ; SOURCE LINE # 177
+0224         ?C0038:
+                                           ; SOURCE LINE # 178
+0224 E4                CLR     A
+0225 FD                MOV     R5,A
+0226 7F0C              MOV     R7,#0CH
+0228 120000      R     LCALL   _gotoxy
+                                           ; SOURCE LINE # 179
+022B 30A603            JNB     bt2,$ + 6H
+022E 020000      R     LJMP    ?C0001
+                                           ; SOURCE LINE # 180
+                                           ; SOURCE LINE # 181
+0231 120000      R     LCALL   ldelay
+                                           ; SOURCE LINE # 182
+0234 AF00        R     MOV     R7,time+06H
+0236 120000      R     LCALL   _increment
+0239 8F00        R     MOV     time+06H,R7
+                                           ; SOURCE LINE # 183
+023B E500        R     MOV     A,time+06H
+023D B49903            CJNE    A,#099H,?C0040
+                                           ; SOURCE LINE # 184
+0240 E4                CLR     A
+0241 F500        R     MOV     time+06H,A
+0243         ?C0040:
+                                           ; SOURCE LINE # 185
+0243 AD00        R     MOV     R5,time+06H
+0245 7F8C              MOV     R7,#08CH
+0247 120000      R     LCALL   _WriteClk
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 19  
+
+                                           ; SOURCE LINE # 186
+024A 7B00              MOV     R3,#00H
+024C 7A00        R     MOV     R2,#HIGH time
+024E 7900        R     MOV     R1,#LOW time
+0250 120000      R     LCALL   _UpdateTime
+                                           ; SOURCE LINE # 187
+                                           ; SOURCE LINE # 188
+0253 020000      R     LJMP    ?C0001
+                                           ; SOURCE LINE # 190
+0256         ?C0041:
+                                           ; SOURCE LINE # 191
+0256 E4                CLR     A
+0257 FD                MOV     R5,A
+0258 7F08              MOV     R7,#08H
+025A 120000      R     LCALL   _gotoxy
+                                           ; SOURCE LINE # 192
+025D 30A603            JNB     bt2,$ + 6H
+0260 020000      R     LJMP    ?C0001
+                                           ; SOURCE LINE # 193
+                                           ; SOURCE LINE # 194
+0263 120000      R     LCALL   ldelay
+                                           ; SOURCE LINE # 195
+0266 AF00        R     MOV     R7,time+04H
+0268 120000      R     LCALL   _increment
+026B 8F00        R     MOV     time+04H,R7
+                                           ; SOURCE LINE # 196
+026D E500        R     MOV     A,time+04H
+026F B41303            CJNE    A,#013H,?C0043
+                                           ; SOURCE LINE # 197
+0272 750001      R     MOV     time+04H,#01H
+0275         ?C0043:
+                                           ; SOURCE LINE # 198
+0275 AD00        R     MOV     R5,time+04H
+0277 7F88              MOV     R7,#088H
+0279 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 199
+027C 7B00              MOV     R3,#00H
+027E 7A00        R     MOV     R2,#HIGH time
+0280 7900        R     MOV     R1,#LOW time
+0282 120000      R     LCALL   _UpdateTime
+                                           ; SOURCE LINE # 200
+                                           ; SOURCE LINE # 201
+0285 020000      R     LJMP    ?C0001
+                                           ; SOURCE LINE # 203
+0288         ?C0044:
+                                           ; SOURCE LINE # 204
+0288 E4                CLR     A
+0289 FD                MOV     R5,A
+028A 7F05              MOV     R7,#05H
+028C 120000      R     LCALL   _gotoxy
+                                           ; SOURCE LINE # 205
+028F 30A603            JNB     bt2,$ + 6H
+0292 020000      R     LJMP    ?C0001
+                                           ; SOURCE LINE # 206
+                                           ; SOURCE LINE # 207
+0295 120000      R     LCALL   ldelay
+                                           ; SOURCE LINE # 208
+0298 AF00        R     MOV     R7,time+03H
+029A 120000      R     LCALL   _increment
+029D 8F00        R     MOV     time+03H,R7
+                                           ; SOURCE LINE # 209
+029F E500        R     MOV     A,time+04H
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 20  
+
+02A1 120000      E     LCALL   ?C?CCASE
+02A4 0000        R     DW      ?C0053
+02A6 01                DB      01H
+02A7 0000        R     DW      ?C0060
+02A9 02                DB      02H
+02AA 0000        R     DW      ?C0053
+02AC 03                DB      03H
+02AD 0000        R     DW      ?C0058
+02AF 04                DB      04H
+02B0 0000        R     DW      ?C0053
+02B2 05                DB      05H
+02B3 0000        R     DW      ?C0058
+02B5 06                DB      06H
+02B6 0000        R     DW      ?C0053
+02B8 07                DB      07H
+02B9 0000        R     DW      ?C0053
+02BB 08                DB      08H
+02BC 0000        R     DW      ?C0058
+02BE 09                DB      09H
+02BF 0000        R     DW      ?C0053
+02C1 10                DB      010H
+02C2 0000        R     DW      ?C0058
+02C4 11                DB      011H
+02C5 0000        R     DW      ?C0053
+02C7 12                DB      012H
+02C8 0000              DW      00H
+02CA 0000        R     DW      ?C0046
+                                           ; SOURCE LINE # 210
+                                           ; SOURCE LINE # 211
+                                           ; SOURCE LINE # 212
+                                           ; SOURCE LINE # 213
+                                           ; SOURCE LINE # 214
+                                           ; SOURCE LINE # 215
+                                           ; SOURCE LINE # 216
+                                           ; SOURCE LINE # 217
+02CC         ?C0053:
+                                           ; SOURCE LINE # 218
+02CC E500        R     MOV     A,time+03H
+02CE 6432              XRL     A,#032H
+02D0 7047              JNZ     ?C0046
+                                           ; SOURCE LINE # 219
+02D2 750001      R     MOV     time+03H,#01H
+                                           ; SOURCE LINE # 220
+02D5 8042              SJMP    ?C0046
+                                           ; SOURCE LINE # 222
+                                           ; SOURCE LINE # 223
+                                           ; SOURCE LINE # 224
+                                           ; SOURCE LINE # 225
+02D7         ?C0058:
+                                           ; SOURCE LINE # 226
+02D7 E500        R     MOV     A,time+03H
+02D9 6431              XRL     A,#031H
+02DB 703C              JNZ     ?C0046
+                                           ; SOURCE LINE # 227
+02DD 750001      R     MOV     time+03H,#01H
+                                           ; SOURCE LINE # 228
+02E0 8037              SJMP    ?C0046
+                                           ; SOURCE LINE # 230
+02E2         ?C0060:
+                                           ; SOURCE LINE # 231
+02E2 E500        R     MOV     A,time+06H
+02E4 54F0              ANL     A,#0F0H
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 21  
+
+02E6 F500        R     MOV     i,A
+                                           ; SOURCE LINE # 232
+02E8 E500        R     MOV     A,time+06H
+02EA 540F              ANL     A,#0FH
+02EC F500        R     MOV     j,A
+                                           ; SOURCE LINE # 233
+02EE E500        R     MOV     A,i
+02F0 C4                SWAP    A
+02F1 540F              ANL     A,#0FH
+02F3 F500        R     MOV     i,A
+                                           ; SOURCE LINE # 234
+02F5 75F00A            MOV     B,#0AH
+02F8 A4                MUL     AB
+02F9 F500        R     MOV     i,A
+                                           ; SOURCE LINE # 235
+02FB 2500        R     ADD     A,j
+02FD F500        R     MOV     i,A
+                                           ; SOURCE LINE # 236
+02FF 5403              ANL     A,#03H
+0301 F500        R     MOV     j,A
+                                           ; SOURCE LINE # 237
+0303 6008              JZ      ?C0061
+0305 E500        R     MOV     A,time+03H
+0307 B42903            CJNE    A,#029H,?C0061
+                                           ; SOURCE LINE # 238
+030A 750001      R     MOV     time+03H,#01H
+030D         ?C0061:
+                                           ; SOURCE LINE # 240
+030D E500        R     MOV     A,j
+030F 7008              JNZ     ?C0046
+0311 E500        R     MOV     A,time+03H
+0313 B43003            CJNE    A,#030H,?C0046
+                                           ; SOURCE LINE # 241
+0316 750001      R     MOV     time+03H,#01H
+                                           ; SOURCE LINE # 242
+0319         ?C0046:
+                                           ; SOURCE LINE # 243
+0319 AD00        R     MOV     R5,time+03H
+031B 7F86              MOV     R7,#086H
+031D 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 244
+0320 7B00              MOV     R3,#00H
+0322 7A00        R     MOV     R2,#HIGH time
+0324 7900        R     MOV     R1,#LOW time
+0326 120000      R     LCALL   _UpdateTime
+                                           ; SOURCE LINE # 245
+                                           ; SOURCE LINE # 246
+                                           ; SOURCE LINE # 248
+                                           ; SOURCE LINE # 249
+0329 020000      R     LJMP    ?C0001
+032C 22                RET     
+             ; FUNCTION main (END)
+
+             ; FUNCTION init (BEGIN)
+                                           ; SOURCE LINE # 253
+                                           ; SOURCE LINE # 254
+                                           ; SOURCE LINE # 255
+0000 758911            MOV     TMOD,#011H
+                                           ; SOURCE LINE # 256
+0003 C28D              CLR     TF0
+                                           ; SOURCE LINE # 257
+0005 C28C              CLR     TR0
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 22  
+
+                                           ; SOURCE LINE # 258
+0007 7500FF      R     MOV     pt,#0FFH
+                                           ; SOURCE LINE # 259
+000A E4                CLR     A
+000B F500        R     MOV     blind,A
+                                           ; SOURCE LINE # 260
+000D F500        R     MOV     bcount,A
+                                           ; SOURCE LINE # 261
+000F C200        R     CLR     blag
+                                           ; SOURCE LINE # 262
+0011 D2AF              SETB    EA
+                                           ; SOURCE LINE # 263
+0013 D2AB              SETB    ET1
+                                           ; SOURCE LINE # 264
+0015 D2A8              SETB    EX0
+                                           ; SOURCE LINE # 265
+0017 C200        R     CLR     almflag
+                                           ; SOURCE LINE # 266
+0019 22                RET     
+             ; FUNCTION init (END)
+
+             ; FUNCTION _delay (BEGIN)
+                                           ; SOURCE LINE # 268
+0000 8E00        R     MOV     d,R6
+0002 8F00        R     MOV     d+01H,R7
+                                           ; SOURCE LINE # 269
+                                           ; SOURCE LINE # 270
+0004 6300FF      R     XRL     d+01H,#0FFH
+0007 6300FF      R     XRL     d,#0FFH
+                                           ; SOURCE LINE # 271
+000A E500        R     MOV     A,d+01H
+000C 1500        R     DEC     d+01H
+000E 7002              JNZ     ?C0162
+0010 1500        R     DEC     d
+0012         ?C0162:
+                                           ; SOURCE LINE # 272
+0012 85008A      R     MOV     TL0,d+01H
+                                           ; SOURCE LINE # 273
+0015 E500        R     MOV     A,d
+0017 F58C              MOV     TH0,A
+                                           ; SOURCE LINE # 274
+0019 D28C              SETB    TR0
+001B         ?C0065:
+                                           ; SOURCE LINE # 275
+001B 308DFD            JNB     TF0,?C0065
+001E         ?C0066:
+                                           ; SOURCE LINE # 276
+001E C28C              CLR     TR0
+                                           ; SOURCE LINE # 277
+0020 C28D              CLR     TF0
+                                           ; SOURCE LINE # 278
+0022 22                RET     
+             ; FUNCTION _delay (END)
+
+             ; FUNCTION initLCD (BEGIN)
+                                           ; SOURCE LINE # 281
+                                           ; SOURCE LINE # 282
+                                           ; SOURCE LINE # 283
+0000 7FFE              MOV     R7,#0FEH
+0002 7EFF              MOV     R6,#0FFH
+0004 120000      R     LCALL   _delay
+                                           ; SOURCE LINE # 284
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 23  
+
+0007 C200        R     CLR     ?_putch_lcd?BIT
+0009 7F30              MOV     R7,#030H
+000B 120000      R     LCALL   _putch_lcd
+                                           ; SOURCE LINE # 285
+000E 7F00              MOV     R7,#00H
+0010 7E30              MOV     R6,#030H
+0012 120000      R     LCALL   _delay
+                                           ; SOURCE LINE # 286
+0015 C200        R     CLR     ?_putch_lcd?BIT
+0017 7F30              MOV     R7,#030H
+0019 120000      R     LCALL   _putch_lcd
+                                           ; SOURCE LINE # 287
+001C 7F2C              MOV     R7,#02CH
+001E 7E01              MOV     R6,#01H
+0020 120000      R     LCALL   _delay
+                                           ; SOURCE LINE # 288
+0023 C200        R     CLR     ?_putch_lcd?BIT
+0025 7F30              MOV     R7,#030H
+0027 120000      R     LCALL   _putch_lcd
+                                           ; SOURCE LINE # 289
+002A 7F2C              MOV     R7,#02CH
+002C 7E01              MOV     R6,#01H
+002E 120000      R     LCALL   _delay
+                                           ; SOURCE LINE # 291
+0031 C200        R     CLR     ?_putch_lcd?BIT
+0033 7F38              MOV     R7,#038H
+0035 120000      R     LCALL   _putch_lcd
+                                           ; SOURCE LINE # 292
+0038 C200        R     CLR     ?_putch_lcd?BIT
+003A 7F10              MOV     R7,#010H
+003C 120000      R     LCALL   _putch_lcd
+                                           ; SOURCE LINE # 293
+003F C200        R     CLR     ?_putch_lcd?BIT
+0041 7F01              MOV     R7,#01H
+0043 120000      R     LCALL   _putch_lcd
+                                           ; SOURCE LINE # 294
+0046 7F00              MOV     R7,#00H
+0048 7E30              MOV     R6,#030H
+004A 120000      R     LCALL   _delay
+                                           ; SOURCE LINE # 295
+004D C200        R     CLR     ?_putch_lcd?BIT
+004F 7F06              MOV     R7,#06H
+0051 120000      R     LCALL   _putch_lcd
+                                           ; SOURCE LINE # 296
+0054 C200        R     CLR     ?_putch_lcd?BIT
+0056 7F0C              MOV     R7,#0CH
+0058 120000      R     LCALL   _putch_lcd
+                                           ; SOURCE LINE # 297
+005B 22                RET     
+             ; FUNCTION initLCD (END)
+
+             ; FUNCTION _putch_lcd (BEGIN)
+                                           ; SOURCE LINE # 300
+0000 8F00        R     MOV     ch,R7
+                                           ; SOURCE LINE # 301
+                                           ; SOURCE LINE # 302
+0002 D2A1              SETB    E
+                                           ; SOURCE LINE # 303
+0004 850080      R     MOV     P0,ch
+                                           ; SOURCE LINE # 304
+0007 A200        R     MOV     C,rs
+0009 92A0              MOV     RS,C
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 24  
+
+                                           ; SOURCE LINE # 305
+000B 7F90              MOV     R7,#090H
+000D 7E01              MOV     R6,#01H
+000F 120000      R     LCALL   _delay
+                                           ; SOURCE LINE # 306
+0012 C2A1              CLR     E
+                                           ; SOURCE LINE # 307
+0014 120000      R     LCALL   _delay
+                                           ; SOURCE LINE # 308
+0017 22                RET     
+             ; FUNCTION _putch_lcd (END)
+
+             ; FUNCTION _gotoxy (BEGIN)
+                                           ; SOURCE LINE # 311
+0000 8F00        R     MOV     x,R7
+0002 8D00        R     MOV     y,R5
+                                           ; SOURCE LINE # 312
+                                           ; SOURCE LINE # 315
+0004 E500        R     MOV     A,x
+0006 7009              JNZ     ?C0070
+0008 E500        R     MOV     A,y
+000A 7005              JNZ     ?C0070
+                                           ; SOURCE LINE # 316
+000C 750002      R     MOV     ch,#02H
+000F 800F              SJMP    ?C0071
+0011         ?C0070:
+                                           ; SOURCE LINE # 318
+                                           ; SOURCE LINE # 319
+0011 750080      R     MOV     ch,#080H
+                                           ; SOURCE LINE # 320
+0014 E500        R     MOV     A,x
+0016 4200        R     ORL     ch,A
+                                           ; SOURCE LINE # 321
+0018 E500        R     MOV     A,y
+001A B40103            CJNE    A,#01H,?C0071
+                                           ; SOURCE LINE # 322
+001D 430040      R     ORL     ch,#040H
+                                           ; SOURCE LINE # 323
+0020         ?C0071:
+                                           ; SOURCE LINE # 324
+0020 C200        R     CLR     ?_putch_lcd?BIT
+0022 AF00        R     MOV     R7,ch
+0024 120000      R     LCALL   _putch_lcd
+                                           ; SOURCE LINE # 325
+0027 E500        R     MOV     A,x
+0029 700A              JNZ     ?C0074
+002B E500        R     MOV     A,y
+002D 7006              JNZ     ?C0074
+                                           ; SOURCE LINE # 326
+002F FF                MOV     R7,A
+0030 7E30              MOV     R6,#030H
+0032 120000      R     LCALL   _delay
+                                           ; SOURCE LINE # 327
+0035         ?C0074:
+0035 22                RET     
+             ; FUNCTION _gotoxy (END)
+
+             ; FUNCTION _PrintLCD (BEGIN)
+                                           ; SOURCE LINE # 330
+0000 8B00        R     MOV     ch,R3
+0002 8A00        R     MOV     ch+01H,R2
+0004 8900        R     MOV     ch+02H,R1
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 25  
+
+                                           ; SOURCE LINE # 331
+0006         ?C0075:
+                                           ; SOURCE LINE # 332
+0006 AB00        R     MOV     R3,ch
+0008 AA00        R     MOV     R2,ch+01H
+000A A900        R     MOV     R1,ch+02H
+000C 120000      E     LCALL   ?C?CLDPTR
+000F 6016              JZ      ?C0077
+                                           ; SOURCE LINE # 333
+                                           ; SOURCE LINE # 334
+0011 120000      E     LCALL   ?C?CLDPTR
+0014 FF                MOV     R7,A
+0015 D200        R     SETB    ?_putch_lcd?BIT
+0017 120000      R     LCALL   _putch_lcd
+                                           ; SOURCE LINE # 335
+001A 7401              MOV     A,#01H
+001C 2500        R     ADD     A,ch+02H
+001E F500        R     MOV     ch+02H,A
+0020 E4                CLR     A
+0021 3500        R     ADDC    A,ch+01H
+0023 F500        R     MOV     ch+01H,A
+                                           ; SOURCE LINE # 336
+0025 80DF              SJMP    ?C0075
+                                           ; SOURCE LINE # 337
+0027         ?C0077:
+0027 22                RET     
+             ; FUNCTION _PrintLCD (END)
+
+             ; FUNCTION ClearLCD (BEGIN)
+                                           ; SOURCE LINE # 339
+                                           ; SOURCE LINE # 340
+                                           ; SOURCE LINE # 341
+0000 C200        R     CLR     ?_putch_lcd?BIT
+0002 7F01              MOV     R7,#01H
+0004 120000      R     LCALL   _putch_lcd
+                                           ; SOURCE LINE # 342
+0007 7F00              MOV     R7,#00H
+0009 7E30              MOV     R6,#030H
+000B 120000      R     LCALL   _delay
+                                           ; SOURCE LINE # 343
+000E 22                RET     
+             ; FUNCTION ClearLCD (END)
+
+             ; FUNCTION _WriteClk (BEGIN)
+                                           ; SOURCE LINE # 346
+0000 8F00        R     MOV     cmd,R7
+0002 8D00        R     MOV     ch,R5
+                                           ; SOURCE LINE # 347
+                                           ; SOURCE LINE # 349
+0004 C2A2              CLR     SCLK
+                                           ; SOURCE LINE # 350
+0006 D2A4              SETB    RST
+                                           ; SOURCE LINE # 351
+0008 750001      R     MOV     mask,#01H
+                                           ; SOURCE LINE # 352
+000B 850000      R     MOV     wrd,cmd
+                                           ; SOURCE LINE # 354
+000E E4                CLR     A
+000F F500        R     MOV     count,A
+0011         ?C0079:
+0011 E500        R     MOV     A,count
+0013 C3                CLR     C
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 26  
+
+0014 9410              SUBB    A,#010H
+0016 5025              JNC     ?C0080
+                                           ; SOURCE LINE # 355
+                                           ; SOURCE LINE # 356
+0018 C2A3              CLR     IO
+                                           ; SOURCE LINE # 357
+001A E500        R     MOV     A,wrd
+001C 5500        R     ANL     A,mask
+001E F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 358
+0020 6002              JZ      ?C0082
+                                           ; SOURCE LINE # 359
+0022 D2A3              SETB    IO
+0024         ?C0082:
+                                           ; SOURCE LINE # 360
+0024 D2A2              SETB    SCLK
+                                           ; SOURCE LINE # 361
+0026 E500        R     MOV     A,mask
+0028 25E0              ADD     A,ACC
+002A F500        R     MOV     mask,A
+                                           ; SOURCE LINE # 363
+002C E500        R     MOV     A,count
+002E B40706            CJNE    A,#07H,?C0083
+                                           ; SOURCE LINE # 364
+                                           ; SOURCE LINE # 365
+0031 850000      R     MOV     wrd,ch
+                                           ; SOURCE LINE # 366
+0034 750001      R     MOV     mask,#01H
+                                           ; SOURCE LINE # 367
+0037         ?C0083:
+                                           ; SOURCE LINE # 369
+0037 C2A2              CLR     SCLK
+                                           ; SOURCE LINE # 371
+0039 0500        R     INC     count
+003B 80D4              SJMP    ?C0079
+003D         ?C0080:
+                                           ; SOURCE LINE # 373
+003D C2A4              CLR     RST
+                                           ; SOURCE LINE # 374
+003F D2A2              SETB    SCLK
+                                           ; SOURCE LINE # 375
+0041 D2A3              SETB    IO
+                                           ; SOURCE LINE # 376
+0043 22                RET     
+             ; FUNCTION _WriteClk (END)
+
+             ; FUNCTION _BrstReadClk (BEGIN)
+                                           ; SOURCE LINE # 379
+0000 8B00        R     MOV     ch,R3
+0002 8A00        R     MOV     ch+01H,R2
+0004 8900        R     MOV     ch+02H,R1
+                                           ; SOURCE LINE # 380
+                                           ; SOURCE LINE # 383
+0006 D2A4              SETB    RST
+                                           ; SOURCE LINE # 385
+0008 7500BF      R     MOV     wrd,#0BFH
+                                           ; SOURCE LINE # 386
+000B 750001      R     MOV     mask,#01H
+                                           ; SOURCE LINE # 387
+000E E4                CLR     A
+000F F500        R     MOV     count,A
+0011         ?C0085:
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 27  
+
+0011 E500        R     MOV     A,count
+0013 C3                CLR     C
+0014 9408              SUBB    A,#08H
+0016 501A              JNC     ?C0086
+                                           ; SOURCE LINE # 388
+                                           ; SOURCE LINE # 389
+0018 C2A3              CLR     IO
+                                           ; SOURCE LINE # 390
+001A E500        R     MOV     A,wrd
+001C 5500        R     ANL     A,mask
+001E F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 392
+0020 6002              JZ      ?C0088
+                                           ; SOURCE LINE # 393
+0022 D2A3              SETB    IO
+0024         ?C0088:
+                                           ; SOURCE LINE # 394
+0024 D2A2              SETB    SCLK
+                                           ; SOURCE LINE # 395
+0026 E500        R     MOV     A,mask
+0028 25E0              ADD     A,ACC
+002A F500        R     MOV     mask,A
+                                           ; SOURCE LINE # 396
+002C C2A2              CLR     SCLK
+                                           ; SOURCE LINE # 397
+002E 0500        R     INC     count
+0030 80DF              SJMP    ?C0085
+0032         ?C0086:
+                                           ; SOURCE LINE # 399
+0032 E4                CLR     A
+0033 F500        R     MOV     count,A
+0035         ?C0089:
+0035 E500        R     MOV     A,count
+0037 C3                CLR     C
+0038 9408              SUBB    A,#08H
+003A 5047              JNC     ?C0090
+                                           ; SOURCE LINE # 400
+                                           ; SOURCE LINE # 401
+003C E4                CLR     A
+003D F500        R     MOV     wrd,A
+                                           ; SOURCE LINE # 402
+003F F500        R     MOV     i,A
+0041         ?C0092:
+0041 E500        R     MOV     A,i
+0043 C3                CLR     C
+0044 9408              SUBB    A,#08H
+0046 5024              JNC     ?C0093
+                                           ; SOURCE LINE # 403
+                                           ; SOURCE LINE # 404
+0048 30A305            JNB     IO,?C0095
+                                           ; SOURCE LINE # 405
+004B 750001      R     MOV     temp,#01H
+004E 8003              SJMP    ?C0096
+0050         ?C0095:
+                                           ; SOURCE LINE # 407
+0050 E4                CLR     A
+0051 F500        R     MOV     temp,A
+0053         ?C0096:
+                                           ; SOURCE LINE # 409
+0053 D2A2              SETB    SCLK
+                                           ; SOURCE LINE # 410
+0055 AF00        R     MOV     R7,i
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 28  
+
+0057 E500        R     MOV     A,temp
+0059 A807              MOV     R0,AR7
+005B 08                INC     R0
+005C 8002              SJMP    ?C0164
+005E         ?C0163:
+005E C3                CLR     C
+005F 33                RLC     A
+0060         ?C0164:
+0060 D8FC              DJNZ    R0,?C0163
+0062 F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 411
+0064 4200        R     ORL     wrd,A
+                                           ; SOURCE LINE # 412
+0066 C2A2              CLR     SCLK
+                                           ; SOURCE LINE # 413
+0068 0500        R     INC     i
+006A 80D5              SJMP    ?C0092
+006C         ?C0093:
+                                           ; SOURCE LINE # 415
+006C AB00        R     MOV     R3,ch
+006E 0500        R     INC     ch+02H
+0070 E500        R     MOV     A,ch+02H
+0072 AA00        R     MOV     R2,ch+01H
+0074 7002              JNZ     ?C0165
+0076 0500        R     INC     ch+01H
+0078         ?C0165:
+0078 14                DEC     A
+0079 F9                MOV     R1,A
+007A E500        R     MOV     A,wrd
+007C 120000      E     LCALL   ?C?CSTPTR
+                                           ; SOURCE LINE # 416
+007F 0500        R     INC     count
+0081 80B2              SJMP    ?C0089
+0083         ?C0090:
+                                           ; SOURCE LINE # 417
+0083 7D80              MOV     R5,#080H
+0085 7F8E              MOV     R7,#08EH
+0087 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 418
+008A C2A4              CLR     RST
+                                           ; SOURCE LINE # 419
+008C D2A2              SETB    SCLK
+                                           ; SOURCE LINE # 420
+008E D2A3              SETB    IO
+                                           ; SOURCE LINE # 421
+0090 22                RET     
+             ; FUNCTION _BrstReadClk (END)
+
+             ; FUNCTION _UpdateTime (BEGIN)
+                                           ; SOURCE LINE # 423
+0000 8B00        R     MOV     tm,R3
+0002 8A00        R     MOV     tm+01H,R2
+0004 8900        R     MOV     tm+02H,R1
+                                           ; SOURCE LINE # 424
+                                           ; SOURCE LINE # 427
+0006 C200        R     CLR     h_flag
+                                           ; SOURCE LINE # 428
+0008 E4                CLR     A
+0009 FD                MOV     R5,A
+000A FF                MOV     R7,A
+000B 120000      R     LCALL   _gotoxy
+                                           ; SOURCE LINE # 429
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 29  
+
+000E 7405              MOV     A,#05H
+0010 2500        R     ADD     A,tm+02H
+0012 F500        R     MOV     tm+02H,A
+0014 E4                CLR     A
+0015 3500        R     ADDC    A,tm+01H
+0017 F500        R     MOV     tm+01H,A
+                                           ; SOURCE LINE # 430
+0019 AB00        R     MOV     R3,tm
+001B FA                MOV     R2,A
+001C A900        R     MOV     R1,tm+02H
+001E 120000      E     LCALL   ?C?CLDPTR
+0021 F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 432
+0023 120000      E     LCALL   ?C?CCASE
+0026 0000        R     DW      ?C0099
+0028 01                DB      01H
+0029 0000        R     DW      ?C0100
+002B 02                DB      02H
+002C 0000        R     DW      ?C0101
+002E 03                DB      03H
+002F 0000        R     DW      ?C0102
+0031 04                DB      04H
+0032 0000        R     DW      ?C0103
+0034 05                DB      05H
+0035 0000        R     DW      ?C0104
+0037 06                DB      06H
+0038 0000        R     DW      ?C0105
+003A 07                DB      07H
+003B 0000              DW      00H
+003D 0000        R     DW      ?C0098
+                                           ; SOURCE LINE # 433
+                                           ; SOURCE LINE # 434
+003F         ?C0099:
+                                           ; SOURCE LINE # 435
+003F 7BFF              MOV     R3,#0FFH
+0041 7A00        R     MOV     R2,#HIGH ?SC_32
+0043 7900        R     MOV     R1,#LOW ?SC_32
+0045 120000      R     LCALL   _PrintLCD
+0048 8040              SJMP    ?C0098
+                                           ; SOURCE LINE # 436
+004A         ?C0100:
+                                           ; SOURCE LINE # 437
+004A 7BFF              MOV     R3,#0FFH
+004C 7A00        R     MOV     R2,#HIGH ?SC_36
+004E 7900        R     MOV     R1,#LOW ?SC_36
+0050 120000      R     LCALL   _PrintLCD
+0053 8035              SJMP    ?C0098
+                                           ; SOURCE LINE # 438
+0055         ?C0101:
+                                           ; SOURCE LINE # 439
+0055 7BFF              MOV     R3,#0FFH
+0057 7A00        R     MOV     R2,#HIGH ?SC_40
+0059 7900        R     MOV     R1,#LOW ?SC_40
+005B 120000      R     LCALL   _PrintLCD
+005E 802A              SJMP    ?C0098
+                                           ; SOURCE LINE # 440
+0060         ?C0102:
+                                           ; SOURCE LINE # 441
+0060 7BFF              MOV     R3,#0FFH
+0062 7A00        R     MOV     R2,#HIGH ?SC_44
+0064 7900        R     MOV     R1,#LOW ?SC_44
+0066 120000      R     LCALL   _PrintLCD
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 30  
+
+0069 801F              SJMP    ?C0098
+                                           ; SOURCE LINE # 442
+006B         ?C0103:
+                                           ; SOURCE LINE # 443
+006B 7BFF              MOV     R3,#0FFH
+006D 7A00        R     MOV     R2,#HIGH ?SC_48
+006F 7900        R     MOV     R1,#LOW ?SC_48
+0071 120000      R     LCALL   _PrintLCD
+0074 8014              SJMP    ?C0098
+                                           ; SOURCE LINE # 444
+0076         ?C0104:
+                                           ; SOURCE LINE # 445
+0076 7BFF              MOV     R3,#0FFH
+0078 7A00        R     MOV     R2,#HIGH ?SC_52
+007A 7900        R     MOV     R1,#LOW ?SC_52
+007C 120000      R     LCALL   _PrintLCD
+007F 8009              SJMP    ?C0098
+                                           ; SOURCE LINE # 446
+0081         ?C0105:
+                                           ; SOURCE LINE # 447
+0081 7BFF              MOV     R3,#0FFH
+0083 7A00        R     MOV     R2,#HIGH ?SC_56
+0085 7900        R     MOV     R1,#LOW ?SC_56
+0087 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 448
+008A         ?C0098:
+                                           ; SOURCE LINE # 449
+008A 7BFF              MOV     R3,#0FFH
+008C 7A00        R     MOV     R2,#HIGH ?SC_60
+008E 7900        R     MOV     R1,#LOW ?SC_60
+0090 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 451
+0093 74FE              MOV     A,#0FEH
+0095 2500        R     ADD     A,tm+02H
+0097 F500        R     MOV     tm+02H,A
+0099 74FF              MOV     A,#0FFH
+009B 3500        R     ADDC    A,tm+01H
+009D F500        R     MOV     tm+01H,A
+                                           ; SOURCE LINE # 452
+009F AB00        R     MOV     R3,tm
+00A1 FA                MOV     R2,A
+00A2 A900        R     MOV     R1,tm+02H
+00A4 120000      E     LCALL   ?C?CLDPTR
+00A7 F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 454
+00A9 7B00              MOV     R3,#00H
+00AB 7A00        R     MOV     R2,#HIGH nbr
+00AD 7900        R     MOV     R1,#LOW nbr
+00AF FF                MOV     R7,A
+00B0 120000      R     LCALL   _num2char
+                                           ; SOURCE LINE # 455
+00B3 7B00              MOV     R3,#00H
+00B5 7A00        R     MOV     R2,#HIGH nbr
+00B7 7900        R     MOV     R1,#LOW nbr
+00B9 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 457
+00BC 7401              MOV     A,#01H
+00BE 2500        R     ADD     A,tm+02H
+00C0 F500        R     MOV     tm+02H,A
+00C2 E4                CLR     A
+00C3 3500        R     ADDC    A,tm+01H
+00C5 F500        R     MOV     tm+01H,A
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 31  
+
+                                           ; SOURCE LINE # 458
+00C7 AB00        R     MOV     R3,tm
+00C9 FA                MOV     R2,A
+00CA A900        R     MOV     R1,tm+02H
+00CC 120000      E     LCALL   ?C?CLDPTR
+00CF F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 459
+00D1 120000      E     LCALL   ?C?CCASE
+00D4 0000        R     DW      ?C0107
+00D6 01                DB      01H
+00D7 0000        R     DW      ?C0108
+00D9 02                DB      02H
+00DA 0000        R     DW      ?C0109
+00DC 03                DB      03H
+00DD 0000        R     DW      ?C0110
+00DF 04                DB      04H
+00E0 0000        R     DW      ?C0111
+00E2 05                DB      05H
+00E3 0000        R     DW      ?C0112
+00E5 06                DB      06H
+00E6 0000        R     DW      ?C0113
+00E8 07                DB      07H
+00E9 0000        R     DW      ?C0114
+00EB 08                DB      08H
+00EC 0000        R     DW      ?C0115
+00EE 09                DB      09H
+00EF 0000        R     DW      ?C0116
+00F1 10                DB      010H
+00F2 0000        R     DW      ?C0117
+00F4 11                DB      011H
+00F5 0000        R     DW      ?C0118
+00F7 12                DB      012H
+00F8 0000              DW      00H
+00FA 0000        R     DW      ?C0119
+                                           ; SOURCE LINE # 460
+                                           ; SOURCE LINE # 461
+00FC         ?C0107:
+                                           ; SOURCE LINE # 462
+00FC 7BFF              MOV     R3,#0FFH
+00FE 7A00        R     MOV     R2,#HIGH ?SC_63
+0100 7900        R     MOV     R1,#LOW ?SC_63
+0102 120000      R     LCALL   _PrintLCD
+0105 020000      R     LJMP    ?C0106
+                                           ; SOURCE LINE # 463
+0108         ?C0108:
+                                           ; SOURCE LINE # 464
+0108 7BFF              MOV     R3,#0FFH
+010A 7A00        R     MOV     R2,#HIGH ?SC_69
+010C 7900        R     MOV     R1,#LOW ?SC_69
+010E 120000      R     LCALL   _PrintLCD
+0111 8077              SJMP    ?C0106
+                                           ; SOURCE LINE # 465
+0113         ?C0109:
+                                           ; SOURCE LINE # 466
+0113 7BFF              MOV     R3,#0FFH
+0115 7A00        R     MOV     R2,#HIGH ?SC_75
+0117 7900        R     MOV     R1,#LOW ?SC_75
+0119 120000      R     LCALL   _PrintLCD
+011C 806C              SJMP    ?C0106
+                                           ; SOURCE LINE # 467
+011E         ?C0110:
+                                           ; SOURCE LINE # 468
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 32  
+
+011E 7BFF              MOV     R3,#0FFH
+0120 7A00        R     MOV     R2,#HIGH ?SC_81
+0122 7900        R     MOV     R1,#LOW ?SC_81
+0124 120000      R     LCALL   _PrintLCD
+0127 8061              SJMP    ?C0106
+                                           ; SOURCE LINE # 469
+0129         ?C0111:
+                                           ; SOURCE LINE # 470
+0129 7BFF              MOV     R3,#0FFH
+012B 7A00        R     MOV     R2,#HIGH ?SC_87
+012D 7900        R     MOV     R1,#LOW ?SC_87
+012F 120000      R     LCALL   _PrintLCD
+0132 8056              SJMP    ?C0106
+                                           ; SOURCE LINE # 471
+0134         ?C0112:
+                                           ; SOURCE LINE # 472
+0134 7BFF              MOV     R3,#0FFH
+0136 7A00        R     MOV     R2,#HIGH ?SC_93
+0138 7900        R     MOV     R1,#LOW ?SC_93
+013A 120000      R     LCALL   _PrintLCD
+013D 804B              SJMP    ?C0106
+                                           ; SOURCE LINE # 473
+013F         ?C0113:
+                                           ; SOURCE LINE # 474
+013F 7BFF              MOV     R3,#0FFH
+0141 7A00        R     MOV     R2,#HIGH ?SC_99
+0143 7900        R     MOV     R1,#LOW ?SC_99
+0145 120000      R     LCALL   _PrintLCD
+0148 8040              SJMP    ?C0106
+                                           ; SOURCE LINE # 475
+014A         ?C0114:
+                                           ; SOURCE LINE # 476
+014A 7BFF              MOV     R3,#0FFH
+014C 7A00        R     MOV     R2,#HIGH ?SC_105
+014E 7900        R     MOV     R1,#LOW ?SC_105
+0150 120000      R     LCALL   _PrintLCD
+0153 8035              SJMP    ?C0106
+                                           ; SOURCE LINE # 477
+0155         ?C0115:
+                                           ; SOURCE LINE # 478
+0155 7BFF              MOV     R3,#0FFH
+0157 7A00        R     MOV     R2,#HIGH ?SC_111
+0159 7900        R     MOV     R1,#LOW ?SC_111
+015B 120000      R     LCALL   _PrintLCD
+015E 802A              SJMP    ?C0106
+                                           ; SOURCE LINE # 479
+0160         ?C0116:
+                                           ; SOURCE LINE # 480
+0160 7BFF              MOV     R3,#0FFH
+0162 7A00        R     MOV     R2,#HIGH ?SC_117
+0164 7900        R     MOV     R1,#LOW ?SC_117
+0166 120000      R     LCALL   _PrintLCD
+0169 801F              SJMP    ?C0106
+                                           ; SOURCE LINE # 481
+016B         ?C0117:
+                                           ; SOURCE LINE # 482
+016B 7BFF              MOV     R3,#0FFH
+016D 7A00        R     MOV     R2,#HIGH ?SC_123
+016F 7900        R     MOV     R1,#LOW ?SC_123
+0171 120000      R     LCALL   _PrintLCD
+0174 8014              SJMP    ?C0106
+                                           ; SOURCE LINE # 483
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 33  
+
+0176         ?C0118:
+                                           ; SOURCE LINE # 484
+0176 7BFF              MOV     R3,#0FFH
+0178 7A00        R     MOV     R2,#HIGH ?SC_129
+017A 7900        R     MOV     R1,#LOW ?SC_129
+017C 120000      R     LCALL   _PrintLCD
+017F 8009              SJMP    ?C0106
+                                           ; SOURCE LINE # 486
+0181         ?C0119:
+                                           ; SOURCE LINE # 487
+0181 7BFF              MOV     R3,#0FFH
+0183 7A00        R     MOV     R2,#HIGH ?SC_135
+0185 7900        R     MOV     R1,#LOW ?SC_135
+0187 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 488
+018A         ?C0106:
+                                           ; SOURCE LINE # 490
+018A 7402              MOV     A,#02H
+018C 2500        R     ADD     A,tm+02H
+018E F500        R     MOV     tm+02H,A
+0190 E4                CLR     A
+0191 3500        R     ADDC    A,tm+01H
+0193 F500        R     MOV     tm+01H,A
+                                           ; SOURCE LINE # 491
+0195 AB00        R     MOV     R3,tm
+0197 FA                MOV     R2,A
+0198 A900        R     MOV     R1,tm+02H
+019A 120000      E     LCALL   ?C?CLDPTR
+019D F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 492
+019F 7B00              MOV     R3,#00H
+01A1 7A00        R     MOV     R2,#HIGH nbr
+01A3 7900        R     MOV     R1,#LOW nbr
+01A5 FF                MOV     R7,A
+01A6 120000      R     LCALL   _num2char
+                                           ; SOURCE LINE # 493
+01A9 7BFF              MOV     R3,#0FFH
+01AB 7A00        R     MOV     R2,#HIGH ?SC_141
+01AD 7900        R     MOV     R1,#LOW ?SC_141
+01AF 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 494
+01B2 7B00              MOV     R3,#00H
+01B4 7A00        R     MOV     R2,#HIGH nbr
+01B6 7900        R     MOV     R1,#LOW nbr
+01B8 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 496
+01BB 7D01              MOV     R5,#01H
+01BD 7F05              MOV     R7,#05H
+01BF 120000      R     LCALL   _gotoxy
+                                           ; SOURCE LINE # 497
+01C2 74FC              MOV     A,#0FCH
+01C4 2500        R     ADD     A,tm+02H
+01C6 F500        R     MOV     tm+02H,A
+01C8 74FF              MOV     A,#0FFH
+01CA 3500        R     ADDC    A,tm+01H
+01CC F500        R     MOV     tm+01H,A
+                                           ; SOURCE LINE # 498
+01CE AB00        R     MOV     R3,tm
+01D0 FA                MOV     R2,A
+01D1 A900        R     MOV     R1,tm+02H
+01D3 120000      E     LCALL   ?C?CLDPTR
+01D6 F500        R     MOV     temp,A
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 34  
+
+                                           ; SOURCE LINE # 499
+01D8 7007              JNZ     ?C0120
+                                           ; SOURCE LINE # 500
+                                           ; SOURCE LINE # 501
+01DA 750012      R     MOV     temp,#012H
+                                           ; SOURCE LINE # 502
+01DD C200        R     CLR     pm_flag
+                                           ; SOURCE LINE # 503
+01DF 801F              SJMP    ?C0121
+01E1         ?C0120:
+                                           ; SOURCE LINE # 505
+                                           ; SOURCE LINE # 506
+01E1 E500        R     MOV     A,temp
+01E3 C3                CLR     C
+01E4 9412              SUBB    A,#012H
+01E6 5002              JNC     ?C0122
+                                           ; SOURCE LINE # 507
+01E8 C200        R     CLR     pm_flag
+01EA         ?C0122:
+                                           ; SOURCE LINE # 508
+01EA E500        R     MOV     A,temp
+01EC B41202            CJNE    A,#012H,?C0123
+                                           ; SOURCE LINE # 509
+01EF D200        R     SETB    pm_flag
+01F1         ?C0123:
+                                           ; SOURCE LINE # 510
+01F1 E500        R     MOV     A,temp
+01F3 D3                SETB    C
+01F4 9412              SUBB    A,#012H
+01F6 4008              JC      ?C0121
+                                           ; SOURCE LINE # 511
+                                           ; SOURCE LINE # 512
+01F8 74EE              MOV     A,#0EEH
+01FA 2500        R     ADD     A,temp
+01FC F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 513
+01FE D200        R     SETB    pm_flag
+                                           ; SOURCE LINE # 514
+                                           ; SOURCE LINE # 515
+0200         ?C0121:
+                                           ; SOURCE LINE # 516
+0200 E500        R     MOV     A,temp
+0202 B40E03            CJNE    A,#0EH,?C0125
+                                           ; SOURCE LINE # 517
+0205 750008      R     MOV     temp,#08H
+0208         ?C0125:
+                                           ; SOURCE LINE # 518
+0208 E500        R     MOV     A,temp
+020A B40F03            CJNE    A,#0FH,?C0126
+                                           ; SOURCE LINE # 519
+020D 750009      R     MOV     temp,#09H
+0210         ?C0126:
+                                           ; SOURCE LINE # 520
+0210 7B00              MOV     R3,#00H
+0212 7A00        R     MOV     R2,#HIGH nbr
+0214 7900        R     MOV     R1,#LOW nbr
+0216 AF00        R     MOV     R7,temp
+0218 120000      R     LCALL   _num2char
+                                           ; SOURCE LINE # 521
+021B 7B00              MOV     R3,#00H
+021D 7A00        R     MOV     R2,#HIGH nbr
+021F 7900        R     MOV     R1,#LOW nbr
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 35  
+
+0221 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 522
+0224 E500        R     MOV     A,temp
+0226 C3                CLR     C
+0227 9410              SUBB    A,#010H
+0229 5002              JNC     ?C0127
+                                           ; SOURCE LINE # 523
+022B D200        R     SETB    h_flag
+022D         ?C0127:
+                                           ; SOURCE LINE # 525
+022D 7BFF              MOV     R3,#0FFH
+022F 7A00        R     MOV     R2,#HIGH ?SC_144
+0231 7900        R     MOV     R1,#LOW ?SC_144
+0233 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 526
+0236 74FF              MOV     A,#0FFH
+0238 2500        R     ADD     A,tm+02H
+023A F500        R     MOV     tm+02H,A
+023C 74FF              MOV     A,#0FFH
+023E 3500        R     ADDC    A,tm+01H
+0240 F500        R     MOV     tm+01H,A
+                                           ; SOURCE LINE # 527
+0242 AB00        R     MOV     R3,tm
+0244 FA                MOV     R2,A
+0245 A900        R     MOV     R1,tm+02H
+0247 120000      E     LCALL   ?C?CLDPTR
+024A F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 528
+024C 7B00              MOV     R3,#00H
+024E 7A00        R     MOV     R2,#HIGH nbr
+0250 7900        R     MOV     R1,#LOW nbr
+0252 FF                MOV     R7,A
+0253 120000      R     LCALL   _num2char
+                                           ; SOURCE LINE # 529
+0256 7B00              MOV     R3,#00H
+0258 7A00        R     MOV     R2,#HIGH nbr
+025A 7900        R     MOV     R1,#LOW nbr
+025C 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 530
+025F 7BFF              MOV     R3,#0FFH
+0261 7A00        R     MOV     R2,#HIGH ?SC_144
+0263 7900        R     MOV     R1,#LOW ?SC_144
+0265 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 531
+0268 74FF              MOV     A,#0FFH
+026A 2500        R     ADD     A,tm+02H
+026C F500        R     MOV     tm+02H,A
+026E 74FF              MOV     A,#0FFH
+0270 3500        R     ADDC    A,tm+01H
+0272 F500        R     MOV     tm+01H,A
+                                           ; SOURCE LINE # 532
+0274 AB00        R     MOV     R3,tm
+0276 FA                MOV     R2,A
+0277 A900        R     MOV     R1,tm+02H
+0279 120000      E     LCALL   ?C?CLDPTR
+027C F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 533
+027E 7B00              MOV     R3,#00H
+0280 7A00        R     MOV     R2,#HIGH nbr
+0282 7900        R     MOV     R1,#LOW nbr
+0284 FF                MOV     R7,A
+0285 120000      R     LCALL   _num2char
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 36  
+
+                                           ; SOURCE LINE # 534
+0288 7B00              MOV     R3,#00H
+028A 7A00        R     MOV     R2,#HIGH nbr
+028C 7900        R     MOV     R1,#LOW nbr
+028E 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 536
+0291 30000B      R     JNB     pm_flag,?C0128
+                                           ; SOURCE LINE # 537
+0294 7BFF              MOV     R3,#0FFH
+0296 7A00        R     MOV     R2,#HIGH ?SC_146
+0298 7900        R     MOV     R1,#LOW ?SC_146
+029A 120000      R     LCALL   _PrintLCD
+029D 8009              SJMP    ?C0129
+029F         ?C0128:
+                                           ; SOURCE LINE # 539
+029F 7BFF              MOV     R3,#0FFH
+02A1 7A00        R     MOV     R2,#HIGH ?SC_150
+02A3 7900        R     MOV     R1,#LOW ?SC_150
+02A5 120000      R     LCALL   _PrintLCD
+02A8         ?C0129:
+                                           ; SOURCE LINE # 541
+02A8 300010      R     JNB     h_flag,?C0130
+                                           ; SOURCE LINE # 542
+                                           ; SOURCE LINE # 543
+02AB 7D01              MOV     R5,#01H
+02AD 7F05              MOV     R7,#05H
+02AF 120000      R     LCALL   _gotoxy
+                                           ; SOURCE LINE # 544
+02B2 7BFF              MOV     R3,#0FFH
+02B4 7A00        R     MOV     R2,#HIGH ?SC_154
+02B6 7900        R     MOV     R1,#LOW ?SC_154
+02B8 120000      R     LCALL   _PrintLCD
+                                           ; SOURCE LINE # 545
+02BB         ?C0130:
+                                           ; SOURCE LINE # 547
+02BB 7401              MOV     A,#01H
+02BD 2500        R     ADD     A,tm+02H
+02BF F500        R     MOV     tm+02H,A
+02C1 E4                CLR     A
+02C2 3500        R     ADDC    A,tm+01H
+02C4 F500        R     MOV     tm+01H,A
+                                           ; SOURCE LINE # 548
+02C6 AB00        R     MOV     R3,tm
+02C8 FA                MOV     R2,A
+02C9 A900        R     MOV     R1,tm+02H
+02CB 120000      E     LCALL   ?C?CLDPTR
+02CE F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 549
+02D0 7024              JNZ     ?C0132
+02D2 200021      R     JB      almflag,?C0132
+                                           ; SOURCE LINE # 550
+                                           ; SOURCE LINE # 551
+02D5 D200        R     SETB    almflag
+                                           ; SOURCE LINE # 552
+02D7 04                INC     A
+02D8 2500        R     ADD     A,tm+02H
+02DA F500        R     MOV     tm+02H,A
+02DC E4                CLR     A
+02DD 3500        R     ADDC    A,tm+01H
+02DF F500        R     MOV     tm+01H,A
+                                           ; SOURCE LINE # 553
+02E1 FA                MOV     R2,A
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 37  
+
+02E2 A900        R     MOV     R1,tm+02H
+02E4 120000      E     LCALL   ?C?CLDPTR
+02E7 FF                MOV     R7,A
+02E8 120000      R     LCALL   _hex2dec
+02EB 8F00        R     MOV     AlmCount,R7
+                                           ; SOURCE LINE # 554
+02ED E4                CLR     A
+02EE F500        R     MOV     counter,A
+                                           ; SOURCE LINE # 555
+02F0 F58B              MOV     TL1,A
+                                           ; SOURCE LINE # 556
+02F2 F58D              MOV     TH1,A
+                                           ; SOURCE LINE # 557
+02F4 D28E              SETB    TR1
+                                           ; SOURCE LINE # 558
+                                           ; SOURCE LINE # 559
+02F6         ?C0132:
+02F6 22                RET     
+             ; FUNCTION _UpdateTime (END)
+
+             ; FUNCTION _num2char (BEGIN)
+                                           ; SOURCE LINE # 561
+0000 8F00        R     MOV     num,R7
+0002 8B00        R     MOV     ch,R3
+0004 8A00        R     MOV     ch+01H,R2
+0006 8900        R     MOV     ch+02H,R1
+                                           ; SOURCE LINE # 562
+                                           ; SOURCE LINE # 564
+0008 E500        R     MOV     A,num
+000A 54F0              ANL     A,#0F0H
+000C F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 565
+000E C4                SWAP    A
+000F 540F              ANL     A,#0FH
+0011 F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 566
+0013 2430              ADD     A,#030H
+0015 120000      E     LCALL   ?C?CSTPTR
+                                           ; SOURCE LINE # 567
+0018 7401              MOV     A,#01H
+001A 2500        R     ADD     A,ch+02H
+001C F500        R     MOV     ch+02H,A
+001E E4                CLR     A
+001F 3500        R     ADDC    A,ch+01H
+0021 F500        R     MOV     ch+01H,A
+                                           ; SOURCE LINE # 568
+0023 E500        R     MOV     A,num
+0025 540F              ANL     A,#0FH
+0027 F500        R     MOV     temp,A
+                                           ; SOURCE LINE # 569
+0029 2430              ADD     A,#030H
+002B AB00        R     MOV     R3,ch
+002D AA00        R     MOV     R2,ch+01H
+002F A900        R     MOV     R1,ch+02H
+0031 120000      E     LCALL   ?C?CSTPTR
+                                           ; SOURCE LINE # 570
+0034 22                RET     
+             ; FUNCTION _num2char (END)
+
+             ; FUNCTION _increment (BEGIN)
+                                           ; SOURCE LINE # 572
+0000 8F00        R     MOV     n,R7
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 38  
+
+                                           ; SOURCE LINE # 573
+                                           ; SOURCE LINE # 575
+0002 E500        R     MOV     A,n
+0004 540F              ANL     A,#0FH
+0006 F500        R     MOV     u,A
+                                           ; SOURCE LINE # 576
+0008 E500        R     MOV     A,n
+000A C4                SWAP    A
+000B 540F              ANL     A,#0FH
+000D F500        R     MOV     t,A
+                                           ; SOURCE LINE # 577
+000F 0500        R     INC     u
+                                           ; SOURCE LINE # 578
+0011 E500        R     MOV     A,u
+0013 D3                SETB    C
+0014 9409              SUBB    A,#09H
+0016 4005              JC      ?C0134
+                                           ; SOURCE LINE # 579
+                                           ; SOURCE LINE # 580
+0018 0500        R     INC     t
+                                           ; SOURCE LINE # 581
+001A E4                CLR     A
+001B F500        R     MOV     u,A
+                                           ; SOURCE LINE # 582
+001D         ?C0134:
+                                           ; SOURCE LINE # 583
+001D E500        R     MOV     A,t
+001F C4                SWAP    A
+0020 54F0              ANL     A,#0F0H
+0022 F500        R     MOV     t,A
+                                           ; SOURCE LINE # 584
+0024 E500        R     MOV     A,u
+0026 4200        R     ORL     t,A
+                                           ; SOURCE LINE # 585
+0028 AF00        R     MOV     R7,t
+                                           ; SOURCE LINE # 586
+002A         ?C0135:
+002A 22                RET     
+             ; FUNCTION _increment (END)
+
+             ; FUNCTION ldelay (BEGIN)
+                                           ; SOURCE LINE # 588
+                                           ; SOURCE LINE # 589
+                                           ; SOURCE LINE # 590
+0000 E4                CLR     A
+0001 F500        R     MOV     i,A
+0003         ?C0136:
+0003 E500        R     MOV     A,i
+0005 C3                CLR     C
+0006 9405              SUBB    A,#05H
+0008 500B              JNC     ?C0139
+                                           ; SOURCE LINE # 591
+000A 7FF0              MOV     R7,#0F0H
+000C 7EFF              MOV     R6,#0FFH
+000E 120000      R     LCALL   _delay
+0011 0500        R     INC     i
+0013 80EE              SJMP    ?C0136
+                                           ; SOURCE LINE # 592
+0015         ?C0139:
+0015 22                RET     
+             ; FUNCTION ldelay (END)
+
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 39  
+
+             ; FUNCTION _Cal (BEGIN)
+                                           ; SOURCE LINE # 595
+0000 8F00        R     MOV     date,R7
+0002 8D00        R     MOV     month,R5
+0004 8B00        R     MOV     year,R3
+                                           ; SOURCE LINE # 596
+                                           ; SOURCE LINE # 598
+0006 AF00        R     MOV     R7,year
+0008 120000      R     LCALL   _hex2dec
+000B 8F00        R     MOV     year,R7
+                                           ; SOURCE LINE # 599
+000D AF00        R     MOV     R7,date
+000F 120000      R     LCALL   _hex2dec
+0012 8F00        R     MOV     date,R7
+                                           ; SOURCE LINE # 601
+0014 E500        R     MOV     A,month
+0016 120000      E     LCALL   ?C?CCASE
+0019 0000        R     DW      ?C0142
+001B 01                DB      01H
+001C 0000        R     DW      ?C0145
+001E 02                DB      02H
+001F 0000        R     DW      ?C0145
+0021 03                DB      03H
+0022 0000        R     DW      ?C0147
+0024 04                DB      04H
+0025 0000        R     DW      ?C0148
+0027 05                DB      05H
+0028 0000        R     DW      ?C0149
+002A 06                DB      06H
+002B 0000        R     DW      ?C0147
+002D 07                DB      07H
+002E 0000        R     DW      ?C0150
+0030 08                DB      08H
+0031 0000        R     DW      ?C0152
+0033 09                DB      09H
+0034 0000        R     DW      ?C0142
+0036 10                DB      010H
+0037 0000        R     DW      ?C0145
+0039 11                DB      011H
+003A 0000        R     DW      ?C0152
+003C 12                DB      012H
+003D 0000              DW      00H
+003F 0000        R     DW      ?C0140
+                                           ; SOURCE LINE # 602
+                                           ; SOURCE LINE # 603
+                                           ; SOURCE LINE # 604
+0041         ?C0142:
+0041 E4                CLR     A
+0042 F500        R     MOV     t2,A
+0044 801C              SJMP    ?C0140
+                                           ; SOURCE LINE # 605
+                                           ; SOURCE LINE # 606
+                                           ; SOURCE LINE # 607
+0046         ?C0145:
+0046 750003      R     MOV     t2,#03H
+0049 8017              SJMP    ?C0140
+                                           ; SOURCE LINE # 608
+                                           ; SOURCE LINE # 609
+004B         ?C0147:
+004B 750006      R     MOV     t2,#06H
+004E 8012              SJMP    ?C0140
+                                           ; SOURCE LINE # 610
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 40  
+
+0050         ?C0148:
+0050 750001      R     MOV     t2,#01H
+0053 800D              SJMP    ?C0140
+                                           ; SOURCE LINE # 611
+0055         ?C0149:
+0055 750004      R     MOV     t2,#04H
+0058 8008              SJMP    ?C0140
+                                           ; SOURCE LINE # 612
+005A         ?C0150:
+005A 750002      R     MOV     t2,#02H
+005D 8003              SJMP    ?C0140
+                                           ; SOURCE LINE # 613
+                                           ; SOURCE LINE # 614
+005F         ?C0152:
+005F 750005      R     MOV     t2,#05H
+                                           ; SOURCE LINE # 615
+0062         ?C0140:
+                                           ; SOURCE LINE # 616
+0062 E500        R     MOV     A,month
+0064 D3                SETB    C
+0065 9402              SUBB    A,#02H
+0067 4013              JC      ?C0153
+                                           ; SOURCE LINE # 617
+                                           ; SOURCE LINE # 618
+0069 E500        R     MOV     A,year
+006B 6005              JZ      ?C0155
+006D D3                SETB    C
+006E 9403              SUBB    A,#03H
+0070 400A              JC      ?C0153
+0072         ?C0155:
+                                           ; SOURCE LINE # 619
+                                           ; SOURCE LINE # 620
+0072 E500        R     MOV     A,year
+0074 5403              ANL     A,#03H
+0076 F500        R     MOV     t3,A
+                                           ; SOURCE LINE # 621
+0078 7002              JNZ     ?C0153
+                                           ; SOURCE LINE # 622
+007A 0500        R     INC     t2
+                                           ; SOURCE LINE # 623
+                                           ; SOURCE LINE # 624
+007C         ?C0153:
+                                           ; SOURCE LINE # 625
+007C E500        R     MOV     A,t2
+007E 2500        R     ADD     A,year
+0080 2500        R     ADD     A,date
+0082 F500        R     MOV     t2,A
+                                           ; SOURCE LINE # 626
+0084 E500        R     MOV     A,year
+0086 7002              JNZ     ?C0157
+                                           ; SOURCE LINE # 627
+0088 1500        R     DEC     t2
+008A         ?C0157:
+                                           ; SOURCE LINE # 628
+008A E500        R     MOV     A,t2
+008C D3                SETB    C
+008D 9406              SUBB    A,#06H
+008F 4009              JC      ?C0158
+                                           ; SOURCE LINE # 629
+0091 E500        R     MOV     A,t2
+0093 75F007            MOV     B,#07H
+0096 84                DIV     AB
+C51 COMPILER V7.00  MAIN                                                                   11/17/2007 15:02:39 PAGE 41  
+
+0097 85F000      R     MOV     t2,B
+009A         ?C0158:
+                                           ; SOURCE LINE # 630
+009A 0500        R     INC     t2
+                                           ; SOURCE LINE # 631
+009C AD00        R     MOV     R5,t2
+009E 7F8A              MOV     R7,#08AH
+00A0 120000      R     LCALL   _WriteClk
+                                           ; SOURCE LINE # 632
+00A3 22                RET     
+             ; FUNCTION _Cal (END)
+
+             ; FUNCTION _hex2dec (BEGIN)
+                                           ; SOURCE LINE # 634
+0000 8F00        R     MOV     num,R7
+                                           ; SOURCE LINE # 635
+                                           ; SOURCE LINE # 637
+0002 E500        R     MOV     A,num
+0004 54F0              ANL     A,#0F0H
+0006 F500        R     MOV     i,A
+                                           ; SOURCE LINE # 638
+0008 C4                SWAP    A
+0009 540F              ANL     A,#0FH
+000B F500        R     MOV     i,A
+                                           ; SOURCE LINE # 639
+000D 75F00A            MOV     B,#0AH
+0010 A4                MUL     AB
+0011 F500        R     MOV     i,A
+                                           ; SOURCE LINE # 640
+0013 E500        R     MOV     A,num
+0015 540F              ANL     A,#0FH
+0017 F500        R     MOV     j,A
+                                           ; SOURCE LINE # 641
+0019 2500        R     ADD     A,i
+001B F500        R     MOV     hexnum,A
+                                           ; SOURCE LINE # 643
+001D FF                MOV     R7,A
+                                           ; SOURCE LINE # 644
+001E         ?C0160:
+001E 22                RET     
+             ; FUNCTION _hex2dec (END)
+
+             ; FUNCTION timer1 (BEGIN)
+                                           ; SOURCE LINE # 646
+                                           ; SOURCE LINE # 649
+0000 32                RETI    
+             ; FUNCTION timer1 (END)
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   2385    ----
+   CONSTANT SIZE    =    156    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     18      42
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      5       2
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

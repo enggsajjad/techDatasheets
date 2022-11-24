@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0042)http://www.pjrc.com/tech/8051/autobaud.asm -->
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY><PRE>; To set the baud rate, use this formula or set to 0 for auto detection
+; baud_const = 256 - (crystal / (12 * 16 * baud))
+
+.equ    baud_const, 0           ;automatic baud rate detection
+;.equ   baud_const, 255         ;57600 baud w/ 11.0592 MHz
+;.equ   baud_const, 253         ;19200 baud w/ 11.0592 MHz
+;.equ   baud_const, 252         ;19200 baud w/ 14.7456 MHz
+;.equ   baud_const, 243         ;4808 baud w/ 12 MHz
+
+
+;to do automatic baud rate detection, we assume the user will
+;press the carriage return, which will cause this bit pattern
+;to appear on port 3 pin 0 (CR = ascii code 13, assume 8N1 format)
+;
+;              0 1 0 1 1 0 0 0 0 1
+;              | |             | |
+; start bit----+ +--lsb   msb--+ +----stop bit
+;
+;we'll start timer #1 in 16 bit mode at the transition between the
+;start bit and the LSB and stop it between the MBS and stop bit.
+;That will give approx the number of cpu cycles for 8 bits.  Divide
+;by 8 for one bit and by 16 since the built-in UART takes 16 timer
+;overflows for each bit.  We need to be careful about roundoff during
+;division and the result has to be inverted since timer #1 counts up.  Of
+;course, timer #1 gets used in 8-bit auto reload mode for generating the
+;built-in UART's baud rate once we know what the reload value should be.
+
+autobaud:
+        mov     tmod, #0x11     ;get timer #1 ready for action (16 bit mode)
+        mov     tcon, #0x00
+        clr     a
+        mov     th1, a
+        mov     tl1, a
+        mov     a, #baud_const  ;skip if user supplied baud rate constant
+        jnz     autoend
+        mov     a, 0x7B         ;is there a value from a previous boot?
+        xrl     0x7A, #01010101b
+        xrl     0x79, #11001100b
+        xrl     0x78, #00011101b
+        cjne    a, 0x7A, autob2
+        cjne    a, 0x79, autob2
+        cjne    a, 0x78, autob2
+        sjmp    autoend
+autob2: jb      p3.0, *         ;wait for start bit
+        jb      p3.0, autob2
+        jb      p3.0, autob2    ;  check it a few more times to make
+        jb      p3.0, autob2    ;  sure we don't trigger on some noise
+        jb      p3.0, autob2
+        jnb     p3.0, *         ;wait for bit #0 to begin
+        setb    tr1             ;and now we're timing it
+        jb      p3.0, *         ;wait for bit #1 to begin
+        jnb     p3.0, *         ;wait for bit #2 to begin
+        jb      p3.0, *         ;wait for bit #4 to begin
+        jnb     p3.0, *         ;wait for stop bit to begin
+        clr     tr1             ;stop timing
+        mov     a, tl1
+        mov     c, acc.6        ;save bit 6 for rounding up if necessary
+        mov     f0, c
+        mov     c, acc.7        ;grab bit 7... it's the lsb we want
+        mov     a, th1
+        rlc     a               ;do the div by 128
+        mov     c, f0
+        addc    a, #0           ;round off if necessary
+        cpl     a               ;invert since timer #1 will count up
+        inc     a               ;now acc has the correct reload value (I hope)
+autoend:mov     0x7B, a
+        mov     0x7A, a         ;store the baud rate for next warm boot.
+        mov     0x79, a
+        mov     0x78, a
+        xrl     0x7A, #01010101b
+        xrl     0x79, #11001100b
+        xrl     0x78, #00011101b
+        mov     th1, a
+        mov     tl1, a
+        mov     tmod, #0x21     ;set timer #1 for 8 bit auto-reload
+        mov     pcon, #0x80     ;configure built-in uart
+        mov     scon, #0x52
+        setb    tr1             ;start the baud rate timer
+        mov     r0, #0
+        djnz    r0, *
+        djnz    r0, *
+        ret
+
+</PRE></BODY></HTML>

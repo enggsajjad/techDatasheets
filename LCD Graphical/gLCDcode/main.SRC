@@ -1,0 +1,408 @@
+; main.SRC generated from: main.c
+; COMPILER INVOKED BY:
+;        C:\Keil\C51\BIN\c51.exe main.c DB OE SB ROM(COMPACT)
+
+$NOMOD51
+
+NAME	MAIN
+
+SWT	BIT	0B0H.7
+CCF2	BIT	0D8H.2
+TB80	BIT	098H.3
+SPI0CKR	DATA	09DH
+CCF3	BIT	0D8H.3
+P0	DATA	080H
+SPIEN	BIT	0F8H.0
+CCF4	BIT	0D8H.4
+SM00	BIT	098H.7
+P1	DATA	090H
+AA	BIT	0C0H.2
+SM10	BIT	098H.6
+WDTCN	DATA	0FFH
+P2	DATA	0A0H
+SM20	BIT	098H.5
+ADC0CF	DATA	0BCH
+P3	DATA	0B0H
+AC	BIT	0D0H.6
+ADC1CF	DATA	0ABH
+P4	DATA	084H
+EIE1	DATA	0E6H
+P5	DATA	085H
+EA	BIT	0A8H.7
+EIE2	DATA	0E7H
+P6	DATA	086H
+P7	DATA	096H
+PSCTL	DATA	08FH
+MSTEN	BIT	0F8H.1
+CF	BIT	0D8H.7
+ADC0CN	DATA	0E8H
+DAC0CN	DATA	0D4H
+DAC1CN	DATA	0D7H
+ADC1CN	DATA	0AAH
+P0MDOUT	DATA	0A4H
+P1MDOUT	DATA	0A5H
+IE	DATA	0A8H
+P2MDOUT	DATA	0A6H
+P3MDOUT	DATA	0A7H
+TMR3RLH	DATA	093H
+EIP1	DATA	0F6H
+EIP2	DATA	0F7H
+PCA0CPH0	DATA	0FAH
+PCA0CPH1	DATA	0FBH
+P3IF	DATA	0ADH
+TMR3RLL	DATA	092H
+PCA0CPH2	DATA	0FCH
+CR	BIT	0D8H.6
+PCA0CPH3	DATA	0FDH
+EXF2	BIT	0C8H.6
+REN0	BIT	098H.4
+PCA0CPH4	DATA	0FEH
+PCA0CPL0	DATA	0EAH
+EMI0CF	DATA	0A3H
+PCA0CPL1	DATA	0EBH
+PCA0CPM0	DATA	0DAH
+PCA0MD	DATA	0D9H
+PCA0CN	DATA	0D8H
+PCA0CPL2	DATA	0ECH
+PCA0CPM1	DATA	0DBH
+PCA0CPL3	DATA	0EDH
+PCA0CPM2	DATA	0DCH
+IP	DATA	0B8H
+PCA0CPL4	DATA	0EEH
+PCA0CPM3	DATA	0DDH
+PCA0CPM4	DATA	0DEH
+TXBSY	BIT	0F8H.3
+CY	BIT	0D0H.7
+SI	BIT	0C0H.3
+XBR0	DATA	0E1H
+SADEN0	DATA	0B9H
+XBR1	DATA	0E2H
+EMI0CN	DATA	0AFH
+SADEN1	DATA	0AEH
+XBR2	DATA	0E3H
+REF0CN	DATA	0D1H
+SADDR0	DATA	0A9H
+SADDR1	DATA	0F3H
+AMX0CF	DATA	0BAH
+AD0INT	BIT	0E8H.5
+RCAP2H	DATA	0CBH
+PS	BIT	0B8H.4
+SP	DATA	081H
+RCAP4H	DATA	0E5H
+EMI0TC	DATA	0A1H
+OV	BIT	0D0H.2
+SMB0CN	DATA	0C0H
+RCAP2L	DATA	0CAH
+MODF	BIT	0F8H.5
+RCAP4L	DATA	0E4H
+SMB0CR	DATA	0CFH
+CPT0CN	DATA	09EH
+P1MDIN	DATA	0BDH
+CPT1CN	DATA	09FH
+LCD_RST	BIT	0B0H.0
+SPI0CN	DATA	0F8H
+PCON	DATA	087H
+SPIF	BIT	0F8H.7
+P74OUT	DATA	0B5H
+TMOD	DATA	089H
+TCON	DATA	088H
+WCOL	BIT	0F8H.6
+AMX0SL	DATA	0BBH
+AMX1SL	DATA	0ACH
+TMR3CN	DATA	091H
+LCD_CD	BIT	0B0H.2
+IE0	BIT	088H.1
+IE1	BIT	088H.3
+B	DATA	0F0H
+DAC0H	DATA	0D3H
+ADC0H	DATA	0BFH
+OSCICN	DATA	0B2H
+DAC1H	DATA	0D6H
+SMBFTE	BIT	0C0H.1
+BUSY	BIT	0C0H.7
+DAC0L	DATA	0D2H
+ADC0L	DATA	0BEH
+DAC1L	DATA	0D5H
+ACC	DATA	0E0H
+ES0	BIT	0A8H.4
+AD0EN	BIT	0E8H.7
+CT2	BIT	0C8H.1
+ET0	BIT	0A8H.1
+LCD_CS	BIT	0B0H.1
+ET1	BIT	0A8H.3
+TF0	BIT	088H.5
+ET2	BIT	0A8H.5
+RI0	BIT	098H.0
+TF1	BIT	088H.7
+TF2	BIT	0C8H.7
+SMBTOE	BIT	0C0H.0
+TH0	DATA	08CH
+EX0	BIT	0A8H.0
+TI0	BIT	098H.1
+IT0	BIT	088H.0
+PCA0H	DATA	0F9H
+TH1	DATA	08DH
+EX1	BIT	0A8H.2
+IT1	BIT	088H.2
+TH2	DATA	0CDH
+P	BIT	0D0H.0
+TH4	DATA	0F5H
+OSCXCN	DATA	0B1H
+TL0	DATA	08AH
+PCA0L	DATA	0E9H
+TL1	DATA	08BH
+TL2	DATA	0CCH
+PT0	BIT	0B8H.1
+TL4	DATA	0F4H
+RS0	BIT	0D0H.3
+PT1	BIT	0B8H.3
+RS1	BIT	0D0H.4
+PT2	BIT	0B8H.5
+TR0	BIT	088H.4
+AD0TM	BIT	0E8H.6
+TR1	BIT	088H.6
+TR2	BIT	0C8H.2
+PX0	BIT	0B8H.0
+PX1	BIT	0B8H.2
+SLVSEL	BIT	0F8H.2
+DPH	DATA	083H
+RCLK0	BIT	0C8H.5
+ADC0GTH	DATA	0C5H
+TCLK0	BIT	0C8H.4
+DPL	DATA	082H
+LCD_SDAT	BIT	0B0H.6
+ADC0GTL	DATA	0C4H
+SBUF0	DATA	099H
+LCD_SCLK	BIT	0B0H.4
+SBUF1	DATA	0F2H
+ADC0LTH	DATA	0C7H
+EXEN2	BIT	0C8H.3
+RSTSRC	DATA	0EFH
+FLACL	DATA	0B7H
+CPRL2	BIT	0C8H.0
+SCON0	DATA	098H
+SCON1	DATA	0F1H
+ADC0LTL	DATA	0C6H
+T2CON	DATA	0C8H
+STA	BIT	0C0H.5
+T4CON	DATA	0C9H
+SMB0ADR	DATA	0C3H
+SMB0DAT	DATA	0C2H
+SPI0CFG	DATA	09AH
+TMR3H	DATA	095H
+CKCON	DATA	08EH
+RXOVRN	BIT	0F8H.4
+TMR3L	DATA	094H
+AD0LJST	BIT	0E8H.0
+F0	BIT	0D0H.5
+FLSCL	DATA	0B6H
+AD0CM0	BIT	0E8H.2
+F1	BIT	0D0H.1
+STO	BIT	0C0H.4
+ENSMB	BIT	0C0H.6
+AD0CM1	BIT	0E8H.3
+SPI0DAT	DATA	09BH
+AD0WINT	BIT	0E8H.1
+ADC1	DATA	09CH
+AD0BUSY	BIT	0E8H.4
+PSW	DATA	0D0H
+CCF0	BIT	0D8H.0
+RB80	BIT	098H.2
+SMB0STA	DATA	0C1H
+CCF1	BIT	0D8H.1
+?PR?main?MAIN        SEGMENT CODE INBLOCK 
+?CO?MAIN             SEGMENT CODE 
+	EXTRN	CODE (_lcd_invert_area)
+	EXTRN	DATA (?_lcd_invert_area?BYTE)
+	EXTRN	CODE (lcd_erase)
+	EXTRN	CODE (_lcd_text)
+	EXTRN	DATA (?_lcd_text?BYTE)
+	EXTRN	CODE (_lcd_box)
+	EXTRN	DATA (?_lcd_box?BYTE)
+	EXTRN	CODE (lcd_init)
+	EXTRN	CODE (config)
+	EXTRN	CODE (_lcd_clear_area)
+	EXTRN	DATA (?_lcd_clear_area?BYTE)
+	EXTRN	CODE (_lcd_update)
+	EXTRN	CODE (?C_STARTUP)
+	PUBLIC	main
+
+	RSEG  ?CO?MAIN
+?SC_0:
+	DB  'M' ,'i' ,'c' ,'h' ,'a' ,'e' ,'l' ,' ' ,'K' ,'a' 
+	DB  'r' ,'a' ,'s' ,000H
+
+?SC_14:
+	DB  '1' ,'2' ,'3' ,'4' ,000H
+
+?SC_19:
+	DB  'c' ,'a' ,'r' ,'o' ,'u' ,'s' ,'e' ,'l' ,'d' ,'e' 
+	DB  's' ,'i' ,'g' ,'n' ,'.' ,'c' ,'o' ,'m' ,000H
+
+; #pragma SRC
+; //-----------------------------------------------------------------------------
+; // main.c
+; //-----------------------------------------------------------------------------
+; // Copyright 2003 Carousel Design Solutions
+; //
+; // AUTH: Michael Karas
+; // DATE: 09 May 2003
+; //
+; // Target: C8051F020
+; // Tool chain: KEIL C51 6.03 / KEIL EVAL C51
+; //
+; 
+; #pragma CODE
+; 
+; 
+; //-----------------------------------------------------------------------------
+; // Includes
+; //-----------------------------------------------------------------------------
+; 
+; #include <c8051f020.h>                 	// SFR declarations
+; #include <config.h>
+; #include <lcd106x56.h>					// definitions for the LCD controller
+; 
+; //-----------------------------------------------------------------------------
+; // Function PROTOTYPES
+; //-----------------------------------------------------------------------------
+; 
+; 
+; //-----------------------------------------------------------------------------
+; // Global VARIABLES
+; //-----------------------------------------------------------------------------
+; 
+; 
+; //-----------------------------------------------------------------------------
+; // MAIN Routine
+; //-----------------------------------------------------------------------------
+; 
+; sbit SWT = P3^7;					/* eval board switch */
+; 
+; void main (void) 
+
+	RSEG  ?PR?main?MAIN
+main:
+	USING	0
+			; SOURCE LINE # 41
+; {
+			; SOURCE LINE # 42
+; 	config();								// setup all the SFR initialization
+			; SOURCE LINE # 43
+	LCALL	config
+; 
+; 	lcd_init();								// initialize LCD display
+			; SOURCE LINE # 45
+	LCALL	lcd_init
+; 
+; 	lcd_erase();							// erase the display 
+			; SOURCE LINE # 47
+	LCALL	lcd_erase
+?C0001:
+; 
+; 	
+; 	while(1)
+			; SOURCE LINE # 50
+; 	{
+			; SOURCE LINE # 51
+; 		// switch over to the buffered interface
+; 		lcd_clear_area(SCRN_LEFT,SCRN_TOP,SCRN_RIGHT,SCRN_BOTTOM);
+			; SOURCE LINE # 53
+	MOV  	?_lcd_clear_area?BYTE+03H,#037H
+	MOV  	R3,#069H
+	CLR  	A
+	MOV  	R5,A
+	MOV  	R7,A
+	LCALL	_lcd_clear_area
+; 
+; 		lcd_box(SCRN_LEFT,SCRN_TOP,SCRN_RIGHT,SCRN_BOTTOM);
+			; SOURCE LINE # 55
+	MOV  	?_lcd_box?BYTE+03H,#037H
+	MOV  	R3,#069H
+	CLR  	A
+	MOV  	R5,A
+	MOV  	R7,A
+	LCALL	_lcd_box
+; 		lcd_box(SCRN_LEFT+2,SCRN_TOP+2,SCRN_RIGHT-2,SCRN_BOTTOM-2);
+			; SOURCE LINE # 56
+	MOV  	?_lcd_box?BYTE+03H,#035H
+	MOV  	R3,#067H
+	MOV  	R5,#02H
+	MOV  	R7,#02H
+	LCALL	_lcd_box
+; 
+; 		lcd_text(6,3,1,"Michael Karas");
+			; SOURCE LINE # 58
+	MOV  	?_lcd_text?BYTE+03H,#0FFH
+	MOV  	?_lcd_text?BYTE+04H,#HIGH (?SC_0)
+	MOV  	?_lcd_text?BYTE+05H,#LOW (?SC_0)
+	MOV  	R3,#01H
+	MOV  	R5,#03H
+	MOV  	R7,#06H
+	LCALL	_lcd_text
+; 
+; 		lcd_text(11,15,2,"1234");
+			; SOURCE LINE # 60
+	MOV  	?_lcd_text?BYTE+03H,#0FFH
+	MOV  	?_lcd_text?BYTE+04H,#HIGH (?SC_14)
+	MOV  	?_lcd_text?BYTE+05H,#LOW (?SC_14)
+	MOV  	R3,#02H
+	MOV  	R5,#0FH
+	MOV  	R7,#0BH
+	LCALL	_lcd_text
+; 
+; 		lcd_text(5,40,0,"carouseldesign.com");
+			; SOURCE LINE # 62
+	MOV  	?_lcd_text?BYTE+03H,#0FFH
+	MOV  	?_lcd_text?BYTE+04H,#HIGH (?SC_19)
+	MOV  	?_lcd_text?BYTE+05H,#LOW (?SC_19)
+	CLR  	A
+	MOV  	R3,A
+	MOV  	R5,#028H
+	MOV  	R7,#05H
+	LCALL	_lcd_text
+; 
+; 		lcd_update(SCRN_TOP,SCRN_BOTTOM);
+			; SOURCE LINE # 64
+	MOV  	R5,#037H
+	CLR  	A
+	MOV  	R7,A
+	LCALL	_lcd_update
+?C0003:
+; 
+; 		while(SWT == 1);
+			; SOURCE LINE # 66
+	JB   	SWT,?C0003
+?C0005:
+; 		while(SWT == 0);
+			; SOURCE LINE # 67
+	JNB  	SWT,?C0005
+?C0006:
+; 
+; 		lcd_invert_area(SCRN_LEFT+2,SCRN_TOP+2,SCRN_RIGHT-2,SCRN_BOTTOM-2);
+			; SOURCE LINE # 69
+	MOV  	?_lcd_invert_area?BYTE+03H,#035H
+	MOV  	R3,#067H
+	MOV  	R5,#02H
+	MOV  	R7,#02H
+	LCALL	_lcd_invert_area
+; 
+; 		lcd_update(SCRN_TOP,SCRN_BOTTOM);
+			; SOURCE LINE # 71
+	MOV  	R5,#037H
+	CLR  	A
+	MOV  	R7,A
+	LCALL	_lcd_update
+?C0007:
+; 
+; 		while(SWT == 1);
+			; SOURCE LINE # 73
+	JB   	SWT,?C0007
+?C0009:
+; 		while(SWT == 0);
+			; SOURCE LINE # 74
+	JB   	SWT,?C0001
+	SJMP 	?C0009
+; END OF main
+
+	END

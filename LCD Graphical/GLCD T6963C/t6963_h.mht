@@ -1,0 +1,279 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: t6963.h
+Date: Wed, 19 Sep 2007 22:30:33 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.picant.com/c2c/examples/t6963/t6963.h.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>t6963.h</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.2900.2180" name=3DGENERATOR></HEAD>
+<BODY style=3D"BACKGROUND: #fffedd">
+<H1>t6963.h</H1>Code to drive a Toshiba T6963C based graphic LCD module =
+(by <A=20
+href=3D"mailto:richard@artaylor.myip.org">Richard Taylor</A>).<BR><BR>
+<HR>
+<PRE><CODE><FONT color=3D#000000>
+<FONT =
+color=3D#0000a0>/********************************************</FONT>
+<FONT color=3D#0000a0> * Filename: t6963.h                        =
+*</FONT>
+<FONT color=3D#0000a0> *                                          =
+*</FONT>
+<FONT color=3D#0000a0> * Description: Header file for t6963.c     =
+*</FONT>
+<FONT color=3D#0000a0> *                                          =
+*</FONT>
+<FONT color=3D#0000a0> *                                          =
+*</FONT>
+<FONT color=3D#0000a0> * Date: 06/02/2003                         =
+*</FONT>
+<FONT color=3D#0000a0> =
+*******************************************/</FONT>
+<FONT color=3D#0000a0>/* Pragmas */</FONT>
+<FONT color=3D#008000>#pragma CLOCK_FREQ      4000000</FONT>
+
+<FONT color=3D#0000a0>/* LCD Parameters */</FONT>
+<FONT color=3D#0000a0>//#define LCD_TEXT_WIDTH          0x14    /* Text =
+Width =3D Graphics Width / Character Width */</FONT>
+<FONT color=3D#0000a0>//#define LCD_TEXT_HEIGHT         0x08    /* Text =
+Height =3D Graphics Height / Character Height */</FONT>
+<FONT color=3D#0000a0>//#define LCD_GRAPHICS_WIDTH      0xA0    /* Width =
+of display (0xA0 =3D 160 pixels) */</FONT>
+<FONT color=3D#0000a0>//#define LCD_GRAPHICS_HEIGHT     0x80    /* =
+Height of display (0x80 =3D 128 pixels) */</FONT>
+<FONT color=3D#008000>#define LCD_NUMBER_OF_SCREENS   0x02    =
+</FONT><FONT color=3D#0000a0>/* for &gt; 68 pixels height, is probably =
+split into 2 screens */</FONT>
+                                        <FONT color=3D#0000a0>/* into 2 =
+screens */</FONT>
+<FONT color=3D#008000>#define LCD_CHARACTER_WIDTH     0x08    =
+</FONT><FONT color=3D#0000a0>/* Is character 8x8 or 6x8 (0x08 / 0x06) =
+*/</FONT>
+
+<FONT color=3D#0000a0>/* Define the Memory Map */</FONT>
+<FONT color=3D#008000>#define LCD_GRAPHICS_HOME   0x0000  </FONT><FONT =
+color=3D#0000a0>/* This will usually be at the start of RAM */</FONT>
+<FONT color=3D#008000>#define LCD_GRAPHICS_AREA   0x14    </FONT><FONT =
+color=3D#0000a0>/* A graphic character is 8 bits wide (same as 8x8 char) =
+*/</FONT>
+<FONT color=3D#008000>#define LCD_GRAPHICS_SIZE   0x0800  </FONT><FONT =
+color=3D#0000a0>/* Size of graphics RAM */</FONT>
+<FONT color=3D#008000>#define LCD_TEXT_HOME       0x0A00  </FONT><FONT =
+color=3D#0000a0>/* Graphics Area + Text Attribute Size (same size as =
+text size) */</FONT>
+<FONT color=3D#008000>#define LCD_TEXT_AREA       0x14    </FONT><FONT =
+color=3D#0000a0>/* Text line is 20 chars wide */</FONT>
+<FONT color=3D#008000>#define LCD_TEXT_SIZE       0x0200  </FONT><FONT =
+color=3D#0000a0>/* Size of text RAM */</FONT>
+
+<FONT color=3D#0000a0>/*  Memory Map for 160x128 pixel display */</FONT>
+<FONT color=3D#0000a0>/*  This display is made up of two screens =
+*/</FONT>
+<FONT color=3D#0000a0>/*  Both 160x64 pixels */</FONT>
+
+<FONT color=3D#0000a0>/*  Screen 1 */</FONT>
+
+<FONT color=3D#0000a0>/*  0x0000  ----------------------------- =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | Graphic RAM Area          | =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | 0x0000 to 0x07FF          | =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | (256x64 pixels)           | =
+*/</FONT>
+<FONT color=3D#0000a0>/*  0x0800  ----------------------------- =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | Text Attribute Area       | =
+*/</FONT>
+<FONT color=3D#0000a0>/*  0x0A00  ----------------------------- =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | Text RAM Area             | =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | 512 Bytes                 | =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | (256x64 pixels)           | =
+*/</FONT>
+<FONT color=3D#0000a0>/*  0x0C00  ----------------------------- =
+*/</FONT>
+
+<FONT color=3D#0000a0>/*  Screen 2 (Automatically derived from Screen 1) =
+*/</FONT>
+
+<FONT color=3D#0000a0>/*  0x8000  ----------------------------- =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | Graphic RAM Area          | =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | 0x0000 to 0x07FF          | =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | (256x64 pixels)           | =
+*/</FONT>
+<FONT color=3D#0000a0>/*  0x8800  ----------------------------- =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | Text Attribute Area       | =
+*/</FONT>
+<FONT color=3D#0000a0>/*  0x8A00  ----------------------------- =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | Text RAM Area             | =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | 512 Bytes                 | =
+*/</FONT>
+<FONT color=3D#0000a0>/*          | (256x64 pixels)           | =
+*/</FONT>
+<FONT color=3D#0000a0>/*  0x8C00  ----------------------------- =
+*/</FONT>
+
+
+<FONT color=3D#0000a0>/* LCD Data Bus Pins */</FONT>
+<FONT color=3D#008000>#define LCD_DATA_BUS        portb</FONT>
+<FONT color=3D#008000>#define LCD_DATA_BUS_TRIS   trisb</FONT>
+
+<FONT color=3D#0000a0>/* LCD Control Pins */</FONT>
+<FONT color=3D#008000>#define LCD_CONTROL         portc</FONT>
+<FONT color=3D#008000>#define LCD_CONTROL_TRIS    trisc</FONT>
+<FONT color=3D#008000>#define LCD_WR_BIT          0x00</FONT>
+<FONT color=3D#008000>#define LCD_RD_BIT          0x01</FONT>
+<FONT color=3D#008000>#define LCD_CE_BIT          0x02</FONT>
+<FONT color=3D#008000>#define LCD_CD_BIT          0x03</FONT>
+<FONT color=3D#008000>#define LCD_RST_BIT         0x04</FONT>
+
+<FONT color=3D#008000>#define LCD_WR              0x01</FONT>
+<FONT color=3D#008000>#define LCD_RD              0x02</FONT>
+<FONT color=3D#008000>#define LCD_CE              0x04</FONT>
+<FONT color=3D#008000>#define LCD_CD              0x08</FONT>
+<FONT color=3D#008000>#define LCD_RST             0x10</FONT>
+
+<FONT color=3D#0000a0>/* Control Word Definitions */</FONT>
+<FONT color=3D#008000>#define LCD_CURSOR_POINTER_SET          =
+00100001b</FONT>
+<FONT color=3D#008000>#define LCD_OFFSET_REGISTER_SET         =
+00100010b</FONT>
+<FONT color=3D#008000>#define LCD_ADDRESS_POINTER_SET         =
+00100100b</FONT>
+
+<FONT color=3D#008000>#define LCD_TEXT_HOME_ADDRESS_SET       =
+01000000b</FONT>
+<FONT color=3D#008000>#define LCD_TEXT_AREA_SET               =
+01000001b</FONT>
+<FONT color=3D#008000>#define LCD_GRAPHIC_HOME_ADDRESS_SET    =
+01000010b</FONT>
+<FONT color=3D#008000>#define LCD_GRAPHIC_AREA_SET            =
+01000011b</FONT>
+
+<FONT color=3D#008000>#define LCD_CG_ROM_MODE_OR              =
+10000000b</FONT>
+<FONT color=3D#008000>#define LCD_CG_ROM_MODE_EXOR            =
+10000001b</FONT>
+<FONT color=3D#008000>#define LCD_CG_ROM_MODE_AND             =
+10000011b</FONT>
+<FONT color=3D#008000>#define LCD_CG_ROM_MODE_TEXT            =
+10000100b</FONT>
+<FONT color=3D#008000>#define LCD_CG_RAM_MODE_OR              =
+10001000b</FONT>
+<FONT color=3D#008000>#define LCD_CG_RAM_MODE_EXOR            =
+10001001b</FONT>
+<FONT color=3D#008000>#define LCD_CG_RAM_MODE_AND             =
+10001011b</FONT>
+<FONT color=3D#008000>#define LCD_CG_RAM_MODE_TEXT            =
+10001100b</FONT>
+
+<FONT color=3D#0000a0>/* 1001 0000 is all off, OR together for ON modes =
+*/</FONT>
+<FONT color=3D#008000>#define LCD_DISPLAY_MODES_ALL_OFF       =
+10010000b</FONT>
+<FONT color=3D#008000>#define LCD_DISPLAY_MODES_GRAPHICS_ON   =
+10011000b</FONT>
+<FONT color=3D#008000>#define LCD_DISPLAY_MODES_TEXT_ON       =
+10010100b</FONT>
+<FONT color=3D#008000>#define LCD_DISPLAY_MODES_CURSOR_ON     =
+10010010b</FONT>
+<FONT color=3D#008000>#define LCD_DISPLAY_MODES_CURSOR_BLINK  =
+10010001b</FONT>
+
+<FONT color=3D#0000a0>/* Cursor Pattern Select */</FONT>
+<FONT color=3D#008000>#define LCD_CURSOR_PATTERN_UNDERLINE    =
+10100000b</FONT>
+<FONT color=3D#008000>#define LCD_CURSOR_PATTERN_BLOCK        =
+10100111b</FONT>
+
+<FONT color=3D#0000a0>/* Send Auto_XX Command, then block of data, then =
+Auto_reset */</FONT>
+<FONT color=3D#008000>#define LCD_DATA_AUTO_WRITE_SET         =
+10110000b</FONT>
+<FONT color=3D#008000>#define LCD_DATA_AUTO_READ_SET          =
+10110001b</FONT>
+<FONT color=3D#008000>#define LCD_DATA_AUTO_RESET             =
+10110010b</FONT>
+
+<FONT color=3D#0000a0>/* Send R/W Then one byte Data */</FONT>
+<FONT color=3D#008000>#define LCD_DATA_WRITE_AUTO_INCREMENT   =
+11000000b</FONT>
+<FONT color=3D#008000>#define LCD_DATA_READ_AUTO_INCREMENT    =
+11000001b</FONT>
+<FONT color=3D#008000>#define LCD_DATA_WRITE_NO_INCREMENT     =
+11000100b</FONT>
+<FONT color=3D#008000>#define LCD_DATA_READ_NO_INCREMENT      =
+11000101b</FONT>
+
+
+<FONT color=3D#0000a0>/* Status Register Bits */</FONT>
+<FONT color=3D#008000>#define LCD_STATUS_BUSY1    0x01</FONT>
+<FONT color=3D#008000>#define LCD_STATUS_BUSY2    0x02</FONT>
+<FONT color=3D#008000>#define LCD_STATUS_DARRDY   0x04</FONT>
+<FONT color=3D#008000>#define LCD_STATUS_DAWRDY   0x08</FONT>
+
+<FONT color=3D#008000>#define LCD_STATUS_CLR      0x20</FONT>
+<FONT color=3D#008000>#define LCD_STATUS_ERR      0x40</FONT>
+<FONT color=3D#008000>#define LCD_STATUS_BLINK    0x80</FONT>
+
+<FONT color=3D#0000a0>/* Definitions */</FONT>
+<FONT color=3D#008000>#define ALL_INPUTS  0xFF</FONT>
+<FONT color=3D#008000>#define ALL_OUTPUTS 0x00</FONT>
+
+<FONT color=3D#0000a0>/* Function Declarations */</FONT>
+<FONT color=3D#800000><B>void</B></FONT> interrupt<FONT =
+color=3D#800000>(<B>void</B>);</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_initialise<FONT =
+color=3D#800000>(<B>void</B>);</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_write_data<FONT =
+color=3D#800000>(<B>unsigned char</B></FONT> data<FONT =
+color=3D#800000>);</FONT>
+<FONT color=3D#800000><B>unsigned char</B></FONT> lcd_read_data<FONT =
+color=3D#800000>(<B>void</B>);</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_write_command<FONT =
+color=3D#800000>(<B>unsigned char</B></FONT> data<FONT =
+color=3D#800000>);</FONT>
+<FONT color=3D#800000><B>unsigned char</B></FONT> lcd_read_status<FONT =
+color=3D#800000>(<B>void</B>);</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_clear_graphics<FONT =
+color=3D#800000>(<B>void</B>);</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_clear_text<FONT =
+color=3D#800000>(<B>void</B>);</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_write_text<FONT =
+color=3D#800000>(<B>unsigned char</B></FONT> character<FONT =
+color=3D#800000>, <B>unsigned char</B></FONT> x<FONT color=3D#800000>, =
+<B>unsigned char</B></FONT> y<FONT color=3D#800000>);</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_set_pixel<FONT =
+color=3D#800000>(<B>unsigned char</B></FONT> x<FONT color=3D#800000>, =
+<B>unsigned char</B></FONT> y<FONT color=3D#800000>);</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_clear_pixel<FONT =
+color=3D#800000>(<B>unsigned char</B></FONT> x<FONT color=3D#800000>, =
+<B>unsigned char</B></FONT> y<FONT color=3D#800000>);</FONT>
+<FONT color=3D#800000><B>unsigned char</B></FONT> lcd_bit_to_byte<FONT =
+color=3D#800000>(<B>unsigned char</B></FONT> bit<FONT =
+color=3D#800000>);</FONT>
+
+</FONT>
+</CODE></PRE>
+<HR>
+
+<ADDRESS style=3D"align: right"><SMALL><A=20
+href=3D"http://www.picant.com/c2c/c.html">http://www.picant.com/c2c/c.htm=
+l</A><BR>Copyright=A9=20
+2003 <A href=3D"mailto:support@picant.com">Pavel Baranov</A>.=20
+</SMALL></ADDRESS></BODY></HTML>

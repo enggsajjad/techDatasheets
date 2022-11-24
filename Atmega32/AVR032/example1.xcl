@@ -1,0 +1,42 @@
+-!    XLINK command file for the AT90S2313  128 bytes(60 - DF) data address 
+      space and 2 Kbytes(0- 7FF) program address space. -!
+
+-!    Define CPU type (AVR) -!
+
+-ca90
+      
+-! Define reset and I/O interrupt vector segment, requires 22(dec) locations -!
+
+-Z(CODE)INTVEC=0-15
+
+-! Define segments in flash memory -!
+
+-Z(CODE)RCODE,CDATA0,CCSTR,SWITCH,FLASH,CODE=16-7FF
+
+-! Define segments in RAM
+The registers are in 0-1F, memory mapped I/O in 20-5F, Built-in SRAM in 60-DF.     -!
+
+-! Return stack size is 10 bytes(hex), data stack size is 40 bytes(hex) -!
+
+-Z(DATA)IDATA0,UDATA0,RSTACK+10,ECSTR,CSTACK+40=60-DF
+
+-!  Select reduced "printf" support to reduce library size.
+See the configuration section of the IAR C-compiler Users Guide concerning use of printf/sprintf. -!
+
+-e_small_write=_formatted_write
+-e_small_write_P=_formatted_write_P
+
+-!  Disable floating-point support in "scanf" to reduce library size.
+See the configuration section of the IAR C-compiler Users Guide concerning use of scanf/sscanf -!
+
+-e_medium_read=_formatted_read
+-e_medium_read_P=_formatted_read_P
+
+-! Suppress one warning which is not relevant for this processor -!
+
+-w29
+
+-! Load the 'C' library -!
+
+cl0t
+

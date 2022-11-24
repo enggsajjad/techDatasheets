@@ -1,0 +1,2360 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Interfacing the LCD module to PC parallel port: ElectroSOfts.com
+Date: Tue, 18 Sep 2007 19:11:24 -0700
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C7FA27.B4F2FB80"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C7FA27.B4F2FB80
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file://D:\ICCC\Parallel and Serial Communication\Parallel\Code & Tutorial Access LCD in VC\Interfacing the LCD module to PC parallel port ElectroSOfts_com.htm
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=3D(0041)http://electrosofts.com/parallel/lcd.html =
+--><HTML><HEAD><TITLE>Interfacing the LCD module to PC parallel port: =
+ElectroSOfts.com</TITLE>
+<META content=3D"MSHTML 6.00.2900.2180" name=3DGENERATOR>
+<META content=3DFrontPage.Editor.Document name=3DProgId>
+<META content=3D"Shreeharsha Perla" name=3DAUTHOR>
+<META content=3D"Copyright (c) 2006-07 by www.electrosofts.com" =
+name=3DCOPYRIGHT>
+<META=20
+content=3D"Parallel port interfacing, lcd, hd44780, dos, turboc, turbo, =
+c, pc interfacing, lpt port, printer port, hardware, inport, inportb, =
+outport, outportb "=20
+name=3DKEYWORDS>
+<META content=3D"Tutorial on Interfacing the 20x4 LCD module to PC =
+parallel port"=20
+name=3DDESCRIPTION>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<STYLE fprolloverstyle>A:hover {
+	FONT-WEIGHT: bold; COLOR: red
+}
+</STYLE>
+
+<META content=3D"tb, default" name=3D"Microsoft Border"></HEAD>
+<BODY vLink=3D#000000 link=3D#000000 =
+stylesrc=3D"../about.html"><!--msnavigation-->
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D0>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV align=3Dcenter>
+      <CENTER>
+      <TABLE id=3DAutoNumber1 style=3D"BORDER-COLLAPSE: collapse"=20
+      borderColor=3D#111111 height=3D5 cellSpacing=3D0 cellPadding=3D0 =
+width=3D770=20
+      border=3D0>
+        <TBODY>
+        <TR>
+          <TD=20
+          style=3D"BORDER-RIGHT: #ffe1e1 1px solid; BORDER-TOP: #ffe1e1 =
+1px solid; BORDER-LEFT: #ffe1e1 1px solid; BORDER-BOTTOM: #ffe1e1 1px =
+solid"=20
+          width=3D78 height=3D11>
+            <P align=3Dcenter><B><FONT face=3DArial size=3D2><A=20
+            =
+href=3D"http://electrosofts.com/index.html">HOME</A></FONT></B></P></TD>
+          <TD width=3D236 bgColor=3D#000000 colSpan=3D2 height=3D21=20
+rowSpan=3D2>&nbsp;</TD>
+          <TD=20
+          style=3D"BORDER-RIGHT: #ffe1e1 1px solid; BORDER-TOP: #ffe1e1 =
+1px solid; BORDER-LEFT: #ffe1e1 1px solid; BORDER-BOTTOM: #ffe1e1 1px =
+solid"=20
+          align=3Dmiddle width=3D146 height=3D11><B><FONT face=3DArial =
+size=3D2>&nbsp;=20
+            <A href=3D"http://electrosofts.com/webdir">Electronics=20
+            Directory</A></FONT></B></TD>
+          <TD=20
+          style=3D"BORDER-RIGHT: #ffe1e1 1px solid; BORDER-TOP: #ffe1e1 =
+1px solid; BORDER-LEFT: #ffe1e1 1px solid; BORDER-BOTTOM: #ffe1e1 1px =
+solid"=20
+          align=3Dmiddle width=3D146 height=3D11><B><FONT face=3DArial =
+size=3D2><A=20
+            href=3D"http://electrosofts.com/articles.html">Articles/=20
+            Tutorials</A></FONT></B></TD>
+          <TD=20
+          style=3D"BORDER-RIGHT: #ffe1e1 1px solid; BORDER-TOP: #ffe1e1 =
+1px solid; BORDER-LEFT: #ffe1e1 1px solid; BORDER-BOTTOM: #ffe1e1 1px =
+solid"=20
+          align=3Dmiddle width=3D159 height=3D11><B><FONT face=3DArial =
+size=3D2><A=20
+            =
+href=3D"http://electrosofts.com/ebooks">eBooks</A></FONT></B></TD></TR>
+        <TR>
+          <TD=20
+          style=3D"BORDER-RIGHT: #ffe1e1 1px solid; BORDER-TOP: #ffe1e1 =
+1px solid; BORDER-LEFT: #ffe1e1 1px solid; BORDER-BOTTOM: #ffe1e1 1px =
+solid"=20
+          width=3D78 height=3D10>
+            <P align=3Dcenter><B><FONT face=3DArial size=3D2><A=20
+            href=3D"http://electrosofts.com/about.html">About=20
+          Us</A></FONT></B></P></TD>
+          <TD=20
+          style=3D"BORDER-RIGHT: #ffe1e1 1px solid; BORDER-TOP: #ffe1e1 =
+1px solid; BORDER-LEFT: #ffe1e1 1px solid; BORDER-BOTTOM: #ffe1e1 1px =
+solid"=20
+          align=3Dmiddle width=3D146 height=3D10><B><FONT face=3DArial =
+size=3D2><A=20
+            =
+href=3D"http://electrosofts.com/forum">FORUM</A></FONT></B></TD>
+          <TD=20
+          style=3D"BORDER-RIGHT: #ffe1e1 1px solid; BORDER-TOP: #ffe1e1 =
+1px solid; BORDER-LEFT: #ffe1e1 1px solid; BORDER-BOTTOM: #ffe1e1 1px =
+solid"=20
+          align=3Dmiddle width=3D146 height=3D10><B><FONT face=3DArial =
+size=3D2><A=20
+            =
+href=3D"http://electrosofts.com/links">Links</A></FONT></B></TD>
+          <TD=20
+          style=3D"BORDER-RIGHT: #ffe1e1 1px solid; BORDER-TOP: #ffe1e1 =
+1px solid; BORDER-LEFT: #ffe1e1 1px solid; BORDER-BOTTOM: #ffe1e1 1px =
+solid"=20
+          align=3Dmiddle width=3D159 height=3D10><B><FONT face=3DArial =
+size=3D2><A=20
+            href=3D"http://electrosofts.com/feedback.html">Contact Us=20
+            </A></FONT></B></TD></TR>
+        <TR>
+          <TD borderColor=3D#ff0000 width=3D80 bgColor=3D#d90000 =
+height=3D1>&nbsp;</TD>
+          <TD borderColor=3D#ff0000 width=3D236 bgColor=3D#000000 =
+colSpan=3D2=20
+            height=3D1><A href=3D"http://electrosofts.com/"><IMG =
+height=3D32=20
+            =
+src=3D"file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/C=
+ode%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20m=
+odule%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/electrosofts.j=
+pg"=20
+            width=3D232 border=3D0></A></TD>
+          <TD borderColor=3D#ff0000 width=3D454 bgColor=3D#d90000 =
+colSpan=3D3=20
+          height=3D1>&nbsp;</TD></TR>
+        <TR>
+          <TD borderColor=3D#ff0000 width=3D80 height=3D1></TD>
+          <TD borderColor=3D#ff0000 width=3D174 bgColor=3D#000000 =
+height=3D1>
+            <P align=3Dleft><IMG height=3D27=20
+            =
+src=3D"file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/C=
+ode%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20m=
+odule%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/shadebwl.jpg" =
+
+            width=3D27 border=3D0></P></TD>
+          <TD borderColor=3D#ff0000 width=3D62 bgColor=3D#000000 =
+height=3D1><IMG=20
+            height=3D27 hspace=3D0=20
+            =
+src=3D"file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/C=
+ode%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20m=
+odule%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/shadebwr.jpg" =
+
+            width=3D27 align=3Dright border=3D0></TD>
+          <TD borderColor=3D#ff0000 width=3D294 colSpan=3D2 =
+height=3D1></TD>
+          <TD borderColor=3D#ff0000 width=3D160=20
+      =
+height=3D1></TD></TR></TBODY></TABLE></CENTER></DIV></TD></TR><!--msnavig=
+ation--></TBODY></TABLE><!--msnavigation-->
+<TABLE dir=3Dltr cellSpacing=3D0 cellPadding=3D0 width=3D"100%" =
+border=3D0>
+  <TBODY>
+  <TR><!--msnavigation-->
+    <TD vAlign=3Dtop>
+      <DIV align=3Dcenter>
+      <CENTER>
+      <P>&nbsp;</P>
+      <TABLE id=3DAutoNumber3 style=3D"BORDER-COLLAPSE: collapse"=20
+      borderColor=3D#ff0000 cellSpacing=3D0 cellPadding=3D4 width=3D768 =
+bgColor=3D#ffe1e1=20
+      border=3D1>
+        <TBODY>
+        <TR>
+          <TD width=3D758>
+            <P align=3Dcenter><U><B><FONT face=3D"Lucida Sans Unicode"=20
+            size=3D5>Interfacing the LCD module to Parallel=20
+Port</FONT></B></U></P>
+            <P align=3Dright><B><FONT face=3D"Book Antiqua" =
+color=3D#808080>(3rd=20
+            article in Parallel port programming =
+series)&nbsp;&nbsp;&nbsp;=20
+            by</FONT><FONT face=3D"Book Antiqua" color=3D#ffff00>&nbsp; =
+</FONT><FONT=20
+            face=3DArial size=3D2><A =
+href=3D"http://electrosofts.com/harsha">Harsha=20
+            =
+Perla</A></FONT></B></P></TD></TR></TBODY></TABLE></CENTER></DIV>
+      <DIV align=3Dcenter>
+      <CENTER>
+      <TABLE id=3DAutoNumber2 style=3D"BORDER-COLLAPSE: collapse"=20
+      borderColor=3D#ffe1e1 cellSpacing=3D0 cellPadding=3D5 width=3D767 =
+bgColor=3D#ffffff=20
+      border=3D1>
+        <TBODY>
+        <TR>
+          <TD width=3D820>
+            <P=20
+            =
+align=3Dcenter>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+            <I>You have seen LCD modules used in many of the electronics =
+devices=20
+            like coin phone, billing machine and weighing machines. It =
+is a=20
+            powerful display options for stand alone systems. Because of =
+low=20
+            power dissipation, high readability, flexibility for =
+programmers;=20
+            LCD modules are becoming popular. In this article, we will =
+learn how=20
+            to connect LCD module to PC parallel port and we will =
+prepare some=20
+            library routines for LCD interfacing.</I> </P>
+            <P align=3Dcenter>
+            <SCRIPT type=3Dtext/javascript><!--
+google_ad_client =3D "pub-1403170442550738";
+google_ad_width =3D 336;
+google_ad_height =3D 280;
+google_ad_format =3D "336x280_as";
+google_ad_type =3D "text_image";
+google_ad_channel =3D"";
+google_color_border =3D "FFFFFF";
+google_color_bg =3D "FFFFFF";
+google_color_link =3D "000000";
+google_color_url =3D "000000";
+google_color_text =3D "FF0000";
+//--></SCRIPT>
+
+            <SCRIPT=20
+            =
+src=3D"file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/C=
+ode%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing the LCD module =
+to PC parallel port ElectroSOfts_com_files/show_ads.js"=20
+            type=3Dtext/javascript>
+      </SCRIPT>
+            </P>
+            <P align=3Djustify>&nbsp;</P>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Djustify><FONT =
+face=3DArial>Before=20
+            starting our study, let us know why you need to interface =
+LCD or=20
+            Liquid Crystal Display module to the parallel port =
+.</FONT></P>
+            <UL>
+              <LI>
+              <P style=3D"LINE-HEIGHT: 150%" align=3Dleft><FONT =
+face=3DArial>We can=20
+              easily program the parallel port. (To know parallel port=20
+              programming, we have these two articles in <A=20
+              =
+href=3D"http://electrosofts.com/">electroSofts.com</A>:&nbsp;&nbsp;=20
+              </FONT><I><B><FONT face=3DArial><A=20
+              =
+href=3D"http://electrosofts.com/parallel/index.html">Parallel Port=20
+              Programming (PART 1) : with C, in=20
+              =
+DOS<BR></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;=20
+              <A=20
+              =
+href=3D"http://electrosofts.com/parallel/parallelwin.html">Parallel=20
+              Port Programming (PART 2): with VC++, in=20
+              Widows<BR></A></FONT></B></I><FONT face=3DArial>If you =
+don't know=20
+              how to program the parallel port, you must read the first =
+part of=20
+              the articles mentioned above. So, to study the LCD module=20
+              programming, this is easiest method I think.) =
+<BR>&nbsp;</FONT>=20
+              </P>
+              <LI>
+              <P style=3D"LINE-HEIGHT: 150%" align=3Dleft><FONT =
+face=3DArial>If you=20
+              need to modify the code, you need not have to disconnect =
+the=20
+              circuit or re-program the chip as you do in the case of=20
+              microcontroller.<BR>&nbsp;</FONT> </P>
+              <LI>
+              <P style=3D"LINE-HEIGHT: 150%" align=3Dleft><FONT =
+face=3DArial>You need=20
+              to spend less: One LCD module, D25 female connector, one=20
+              potentiometer (optional), and some wires- this is what you =
+need=20
+              along with a computer. <BR>&nbsp;</FONT> </P>
+              <LI>
+              <P style=3D"LINE-HEIGHT: 150%" align=3Dleft><FONT =
+face=3DArial>When you=20
+              are using computer in full screen mode like Games, movie =
+or TV;=20
+              You need to exit the application to get a small updating=20
+              information from the computer. i.e., if you need to watch =
+time in=20
+              that time, you have to close the games. But instead of =
+that you=20
+              can use LCD module to display real time from the PC and =
+you can=20
+              use it along with your application. Real time&nbsp; =
+implementation=20
+              from the system clock example is explained in this =
+article. If you=20
+              are good in programming, even you can connect to the =
+internet to=20
+              get news, stock exchange updates and make them flash in =
+the LCD=20
+              module, only if you found it important, you can go through =
+it by=20
+              exiting your application. </FONT></P></LI></UL>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Djustify><FONT =
+face=3DArial>LCD=20
+            modules are available in a wide range like 8x1, 8x2, 16x1, =
+16x2,=20
+            20x2, 20x4, 40x4. Here we have used <B>16x2</B>- that means =
+2 rows=20
+            of 16 characters. It is a Hitachi HD44780 compatible module, =
+having=20
+            16 pins including 2 pins for backlight.</FONT>=20
+            <P style=3D"LINE-HEIGHT: 150%" align=3Djustify><FONT=20
+            face=3DArial>&nbsp;Following table gives pin structure of =
+LCD module.=20
+            LCD modules without backlight will have only 14 pins. If you =
+are=20
+            using such LCDs, simply ignore 15th and 16th pins.</FONT>=20
+            <P align=3Djustify>=20
+            <DIV align=3Dcenter>
+            <CENTER>
+            <TABLE id=3DAutoNumber4 style=3D"BORDER-COLLAPSE: collapse"=20
+            borderColor=3D#ff0000 cellSpacing=3D0 cellPadding=3D4 =
+width=3D446=20
+            bgColor=3D#ffe1e1 border=3D1>
+              <TBODY>
+              <TR>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                width=3D66><B><FONT face=3DArial>Pin No</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D98><B><FONT =
+face=3DArial>Symbol</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                width=3D254><B><FONT =
+face=3DArial>Details</FONT></B></TD></TR>
+              <TR>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D66><B><FONT =
+face=3DArial>1</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D98><B><FONT =
+face=3DArial>GND</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                width=3D254><B><FONT =
+face=3DArial>Ground</FONT></B></TD></TR>
+              <TR>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D66><B><FONT =
+face=3DArial>2</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D98><B><FONT =
+face=3DArial>Vcc</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                width=3D254><B><FONT face=3DArial>Supply Voltage=20
+              +5V</FONT></B></TD></TR>
+              <TR>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D66><B><FONT =
+face=3DArial>3</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D98><B><FONT =
+face=3DArial>Vo</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                width=3D254><B><FONT face=3DArial>Contrast=20
+              adjustment</FONT></B></TD></TR>
+              <TR>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D66><B><FONT =
+face=3DArial>4</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D98><B><FONT =
+face=3DArial>RS</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                width=3D254><B><FONT face=3DArial>0-&gt;Control=20
+                  input,&nbsp;&nbsp;&nbsp; 1-&gt; Data =
+input</FONT></B></TD></TR>
+              <TR>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D66><B><FONT =
+face=3DArial>5</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D98><B><FONT =
+face=3DArial>R/W</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                width=3D254><B><FONT face=3DArial>Read/ =
+Write</FONT></B></TD></TR>
+              <TR>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D66><B><FONT =
+face=3DArial>6</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D98><B><FONT =
+face=3DArial>E</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                width=3D254><B><FONT =
+face=3DArial>Enable</FONT></B></TD></TR>
+              <TR>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D66><B><FONT face=3DArial>7 to=20
+14</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D98><B><FONT face=3DArial>D0 to=20
+                D7</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                width=3D254><B><FONT =
+face=3DArial>Data</FONT></B></TD></TR>
+              <TR>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D66><B><FONT =
+face=3DArial>15</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D98><B><FONT =
+face=3DArial>VB1</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                width=3D254><B><FONT face=3DArial>Backlight =
++5V</FONT></B></TD></TR>
+              <TR>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D66><B><FONT =
+face=3DArial>16</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                align=3Dmiddle width=3D98><B><FONT =
+face=3DArial>VB0</FONT></B></TD>
+                <TD=20
+                style=3D"BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; =
+BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge"=20
+                width=3D254><B><FONT face=3DArial>Backlight=20
+              ground</FONT></B></TD></TR></TBODY></TABLE></CENTER></DIV>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Djustify><FONT =
+face=3DArial>To=20
+            program the LCD module, first we have to initialize the LCD =
+by=20
+            sending some control words. RS should be low and E should be =
+high=20
+            when we send control. R/W pin 0 mean write data or control =
+to LCD=20
+            and R/W pin 1 means read data from the LCD. To send a data =
+to LCD,=20
+            make RS high, R/W low, place the data in pins 7 to 14 and =
+make pin E=20
+            high and low once. You can understand exact method after =
+seeing the=20
+            code, later in this tutorial. To make this let us first =
+build a=20
+            circuit. </FONT></P>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Djustify><FONT =
+face=3DArial>Here, we=20
+            are going to write on the LCD module and not reading back. =
+So, R/W=20
+            is connected to ground directly. We need not have to input =
+any data=20
+            through, so all output pins are used in our application. =
+Data pins=20
+            of LCD are connected to data pins of the port. Strobe signal =
+(Pin 1=20
+            of D25 connector) is given to E (Pin 6 of LCD), Select =
+printer (Pin=20
+            17 of D25) is connected to RS (pin 4 of the LCD). =
+</FONT></P>
+            <P align=3Dcenter><FONT face=3D"Book Antiqua"><IMG =
+height=3D319=20
+            =
+src=3D"file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/C=
+ode%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20m=
+odule%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/lcd_circuit.jp=
+g"=20
+            width=3D431 border=3D0></FONT></P>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Djustify><FONT =
+face=3DArial>In the=20
+            above diagram, LCD module is connected to the lpt port using =
+D25=20
+            male connector. Pin number 3 of the LCD is for adjusting the =
+
+            contrast, connected in such a way that it can be varied from =
+0V to=20
+            5V. Keep it to 0 initially. </FONT></P>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Dleft><FONT =
+face=3DArial>If=20
+            everything is OK, you should get the LCD module as follows =
+when=20
+            power is switched ON.</FONT></P>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Dcenter><FONT =
+face=3DArial><IMG=20
+            height=3D180=20
+            =
+src=3D"file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/C=
+ode%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20m=
+odule%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/lcd.gif"=20
+            width=3D443 border=3D0></FONT></P>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Djustify><FONT =
+face=3DArial>If you=20
+            get this screen, then we can start programming. Otherwise =
+check your=20
+            connections, try by varying the 10K potentiometer. If you =
+get this=20
+            display also, you can get maximum clearness by varying the =
+pot. For=20
+            me, pot was needed to be nearly 0V. So, it is OK if you =
+don't use=20
+            pot also, just connect pin 3 to ground. </FONT></P>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Djustify><FONT=20
+            face=3DArial>Following table explains how to write control =
+words. When=20
+            RS=3D0 and R/W=3D0, data in the pins D0 to D7 will have =
+following=20
+            meaning.</FONT></P>
+            <DIV align=3Dcenter>
+            <CENTER>
+            <TABLE id=3DAutoNumber5 style=3D"BORDER-COLLAPSE: collapse"=20
+            borderColor=3D#ff0000 cellSpacing=3D0 cellPadding=3D5 =
+width=3D717=20
+            bgColor=3D#ffe1e1 border=3D1>
+              <TBODY>
+              <TR>
+                <TD align=3Dmiddle width=3D99><I><FONT color=3D#ff0000=20
+                  size=3D4><B>Instruction</B></FONT></I></TD>
+                <TD align=3Dmiddle width=3D20><I><FONT color=3D#ff0000=20
+                  size=3D4><B>D7</B></FONT></I></TD>
+                <TD align=3Dmiddle width=3D20><I><FONT color=3D#ff0000=20
+                  size=3D4><B>D6</B></FONT></I></TD>
+                <TD align=3Dmiddle width=3D20><I><FONT color=3D#ff0000=20
+                  size=3D4><B>D5</B></FONT></I></TD>
+                <TD align=3Dmiddle width=3D22><I><FONT color=3D#ff0000=20
+                  size=3D4><B>D4</B></FONT></I></TD>
+                <TD align=3Dmiddle width=3D24><I><FONT color=3D#ff0000=20
+                  size=3D4><B>D3</B></FONT></I></TD>
+                <TD align=3Dmiddle width=3D26><I><FONT color=3D#ff0000=20
+                  size=3D4><B>D2</B></FONT></I></TD>
+                <TD align=3Dmiddle width=3D22><I><FONT color=3D#ff0000=20
+                  size=3D4><B>D1</B></FONT></I></TD>
+                <TD align=3Dmiddle width=3D20><I><FONT color=3D#ff0000=20
+                  size=3D4><B>D0</B></FONT></I></TD>
+                <TD align=3Dmiddle width=3D333><I><FONT color=3D#ff0000=20
+                  size=3D4><B>Description</B></FONT></I></TD></TR>
+              <TR>
+                <TD align=3Dmiddle width=3D99><B>Clear Display</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D22><B>0</B></TD>
+                <TD align=3Dmiddle width=3D24><B>0</B></TD>
+                <TD align=3Dmiddle width=3D26><B>0</B></TD>
+                <TD align=3Dmiddle width=3D22><B>0</B></TD>
+                <TD align=3Dmiddle width=3D20><B>1</B></TD>
+                <TD align=3Dleft width=3D333><B>Clears Display and =
+returns cursor=20
+                  to home position.</B></TD></TR>
+              <TR>
+                <TD align=3Dmiddle width=3D99><B>Cursor home</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D22><B>0</B></TD>
+                <TD align=3Dmiddle width=3D24><B>0</B></TD>
+                <TD align=3Dmiddle width=3D26><B>0</B></TD>
+                <TD align=3Dmiddle width=3D22><B>1</B></TD>
+                <TD align=3Dmiddle width=3D20><B>X</B></TD>
+                <TD align=3Dleft width=3D333><B>Returns cursor to home =
+position.=20
+                  Also returns display being shifted to the original=20
+                  position.</B></TD></TR>
+              <TR>
+                <TD align=3Dmiddle width=3D99><B>Entry mode set</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D22><B>0</B></TD>
+                <TD align=3Dmiddle width=3D24><B>0</B></TD>
+                <TD align=3Dmiddle width=3D26><B>1</B></TD>
+                <TD align=3Dmiddle width=3D22><B>I/D</B></TD>
+                <TD align=3Dmiddle width=3D20><B>S</B></TD>
+                <TD align=3Dleft width=3D333><B>I/D =3D 0 --&gt; cursor =
+is in=20
+                  decrement =
+position.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I/D =3D=20
+                  1 --&gt; cursor is in increment position. <BR>S =3D 0 =
+--&gt;=20
+                  Shift is invisible.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S =
+=3D 1 --&gt;=20
+                  Shift is visible</B></TD></TR>
+              <TR>
+                <TD align=3Dmiddle width=3D99><B>Display ON- OFF =
+Control</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D22><B>0</B></TD>
+                <TD align=3Dmiddle width=3D24><B>1</B></TD>
+                <TD align=3Dmiddle width=3D26><B>D</B></TD>
+                <TD align=3Dmiddle width=3D22><B>C</B></TD>
+                <TD align=3Dmiddle width=3D20><B>B</B></TD>
+                <TD align=3Dleft width=3D333><B>D- Display, C- cursor, =
+B- Blinking=20
+                  cursor<BR>&nbsp;=3D 0 --&gt; OFF<BR>&nbsp;=3D1 --&gt; =
+ON</B></TD></TR>
+              <TR>
+                <TD align=3Dmiddle width=3D99><B>Cursor/ Display =
+Shift</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D22><B>1</B></TD>
+                <TD align=3Dmiddle width=3D24><B>S/C</B></TD>
+                <TD align=3Dmiddle width=3D26><B>R/L</B></TD>
+                <TD align=3Dmiddle width=3D22><B>X</B></TD>
+                <TD align=3Dmiddle width=3D20><B>X</B></TD>
+                <TD align=3Dleft width=3D333><B>S/C =3D 0 --&gt; Move=20
+                  cursor.&nbsp;&nbsp;&nbsp;&nbsp; S/C =3D 1 --&gt; Shift =
+display.=20
+                  <BR>R/L =3D 0 --&gt; Shift =
+left.&nbsp;&nbsp;&nbsp;&nbsp; R/L =3D 1=20
+                  --&gt; Shift right</B></TD></TR>
+              <TR>
+                <TD align=3Dmiddle width=3D99><B>Function Set</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D20><B>0</B></TD>
+                <TD align=3Dmiddle width=3D20><B>1</B></TD>
+                <TD align=3Dmiddle width=3D22><B>DL</B></TD>
+                <TD align=3Dmiddle width=3D24><B>N</B></TD>
+                <TD align=3Dmiddle width=3D26><B>F</B></TD>
+                <TD align=3Dmiddle width=3D22><B>X</B></TD>
+                <TD align=3Dmiddle width=3D20><B>X</B></TD>
+                <TD align=3Dleft width=3D333><B>DL =3D 0 --&gt; 4 bit =
+interface. DL=20
+                  =3D 1 --&gt; 8 bit interface. N =3D 0 --&gt; 1/8 or =
+1/11 Duty (1=20
+                  line). N =3D 1 --&gt; 1/16 Duty (2 lines). F =3D 0 =
+--&gt; 5x7=20
+                  dots.&nbsp;&nbsp;&nbsp;&nbsp; F =3D 1 --&gt; 5x10=20
+              dots.</B></TD></TR></TBODY></TABLE></CENTER></DIV>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Djustify><FONT =
+face=3DArial>I have=20
+            left other instruction related to read and write LCD RAM =
+area, we=20
+            will see them later. Using these information, we will write =
+some=20
+            routines for basic functions of LCD. Now look at our first =
+program=20
+            below. Here I have written functions for all our needs in =
+LCD=20
+            interfacing. So, in our next programs, we are going to =
+change our=20
+            "main" function only.&nbsp; You can save these function as =
+library=20
+            and include in your next programs if you want.</FONT></P>
+            <DIV align=3Dcenter>
+            <CENTER>
+            <TABLE id=3DAutoNumber6 style=3D"BORDER-COLLAPSE: collapse"=20
+            borderColor=3D#111111 cellSpacing=3D0 cellPadding=3D5 =
+bgColor=3D#ffffff=20
+            border=3D1>
+              <TBODY>
+              <TR>
+                <TD><FONT face=3DCourier><FONT color=3D#800000>#include=20
+                  &lt;dos.h&gt;<BR>#include &lt;string.h&gt;<BR>#include =
+
+                  &lt;conio.h&gt;<BR>#include =
+&lt;time.h&gt;<BR><BR>#define=20
+                  PORTADDRESS 0x378 /* Enter Your Port Address Here=20
+                  */<BR><BR>#define DATA PORTADDRESS+0<BR>#define STATUS =
+
+                  PORTADDRESS+1<BR>#define CONTROL=20
+                  PORTADDRESS+2</FONT><BR><BR><FONT =
+color=3D#0000ff>void</FONT>=20
+                  lcd_init(<FONT color=3D#0000ff>void</FONT>);<BR><FONT=20
+                  color=3D#0000ff>void</FONT> lcd_write(<FONT=20
+                  color=3D#0000ff>char</FONT> char2write);<BR><FONT=20
+                  color=3D#0000ff>void </FONT>lcd_putch(<FONT=20
+                  color=3D#0000ff>char</FONT> char2write);<BR><FONT=20
+                  color=3D#0000ff>void</FONT> lcd_puts(<FONT=20
+                  color=3D#0000ff>char</FONT> * str2write);<BR><FONT=20
+                  color=3D#0000ff>void</FONT> lcd_goto(<FONT=20
+                  color=3D#0000ff>int</FONT> row, <FONT =
+color=3D#0000ff>int</FONT>=20
+                  column);<BR><FONT color=3D#0000ff>void</FONT> =
+lcd_clear(<FONT=20
+                  color=3D#0000ff>void</FONT>);<BR><FONT =
+color=3D#0000ff>void</FONT>=20
+                  lcd_home(<FONT color=3D#0000ff>void</FONT>);<BR><FONT=20
+                  color=3D#0000ff>void</FONT> lcd_cursor(<FONT=20
+                  color=3D#0000ff>int</FONT> cursor);<BR><FONT=20
+                  color=3D#0000ff>void</FONT> lcd_entry_mode(<FONT=20
+                  color=3D#0000ff>int</FONT> mode);<BR><BR><BR><FONT=20
+                  color=3D#0000ff>void</FONT> main(<FONT=20
+                  color=3D#0000ff>void</FONT>)<BR>{</FONT>=20
+                  <BLOCKQUOTE>
+                    <P><FONT=20
+                    =
+face=3DCourier>lcd_init();<BR>lcd_goto(1,1);<BR>lcd_puts("Welcome=20
+                    =
+To");<BR>lcd_goto(1,0);<BR>lcd_puts("electroSofts.com");<BR><BR><FONT=20
+                    color=3D#0000ff>while</FONT>(!kbhit() ) <FONT=20
+                    color=3D#008000>//wait until a key is=20
+                    pressed...</FONT><BR>{}</FONT></P></BLOCKQUOTE>
+                  <P><FONT face=3DCourier>}<BR><BR><FONT =
+color=3D#0000ff>void</FONT>=20
+                  lcd_init()<BR>{</FONT></P>
+                  <BLOCKQUOTE>
+                    <P><FONT face=3DCourier>outportb(CONTROL, =
+inportb(CONTROL)=20
+                    &amp; 0xDF); <BR><FONT color=3D#008000>//config data =
+pins as=20
+                    output</FONT><BR><BR>outportb(CONTROL, =
+inportb(CONTROL) |=20
+                    0x08);<BR><FONT color=3D#008000>//RS is made high: =
+control=20
+                    (register=20
+                    =
+select)</FONT><BR><BR>lcd_write(0x0f);<BR>delay(20);<BR>lcd_write(=20
+                    0x01);<BR>delay(20);<BR>lcd_write(=20
+                    0x38);<BR>delay(20);</FONT></P></BLOCKQUOTE>
+                  <P><FONT face=3DCourier>}<BR><BR><FONT =
+color=3D#0000ff>void=20
+                  </FONT>lcd_write(<FONT color=3D#0000ff>char</FONT>=20
+                  char2write)<BR>{</FONT></P>
+                  <BLOCKQUOTE>
+                    <P><FONT face=3DCourier>outportb(DATA,=20
+                    char2write);<BR>outportb(CONTROL,inportb(CONTROL) |=20
+                    0x01);<FONT color=3D#008000> /* Set Strobe=20
+                    =
+*/</FONT><BR>delay(2);<BR>outportb(CONTROL,inportb(CONTROL)=20
+                    &amp; 0xFE); <FONT color=3D#008000>/* Reset Strobe=20
+                    */</FONT><BR>delay(2);</FONT></P></BLOCKQUOTE>
+                  <P><FONT face=3DCourier>}<BR><BR><FONT =
+color=3D#0000ff>void</FONT>=20
+                  lcd_putch(<FONT color=3D#0000ff>char</FONT>=20
+                  char2write)<BR>{</FONT></P>
+                  <BLOCKQUOTE>
+                    <P><FONT face=3DCourier>outportb(CONTROL, =
+inportb(CONTROL)=20
+                    &amp; 0xF7);<BR><FONT color=3D#008000>//RS=3Dlow:=20
+                    =
+data</FONT><BR>lcd_write(char2write);</FONT></P></BLOCKQUOTE>
+                  <P><FONT face=3DCourier>}<BR><BR><FONT =
+color=3D#0000ff>void</FONT>=20
+                  lcd_puts(<FONT color=3D#0000ff>char</FONT>=20
+                  *str2write)<BR>{</FONT></P>
+                  <BLOCKQUOTE>
+                    <P><FONT face=3DCourier>outportb(CONTROL, =
+inportb(CONTROL)=20
+                    &amp; 0xF7);<BR><FONT color=3D#008000>//RS=3Dlow:=20
+                    data</FONT><BR><FONT=20
+                    =
+color=3D#0000ff>while</FONT>(*str2write)<BR>&nbsp;&nbsp;&nbsp;=20
+                    lcd_write(*(str2write++));</FONT></P></BLOCKQUOTE>
+                  <P><FONT face=3DCourier>}</FONT></P>
+                  <P><FONT face=3DCourier><FONT color=3D#0000ff>void=20
+                  </FONT>lcd_goto(<FONT color=3D#0000ff>int</FONT> row, =
+<FONT=20
+                  color=3D#0000ff>int</FONT> column)<BR>{</FONT></P>
+                  <BLOCKQUOTE>
+                    <P><FONT face=3DCourier>outportb(CONTROL, =
+inportb(CONTROL) |=20
+                    0x08);<BR><FONT =
+color=3D#0000ff>if</FONT>(row=3D=3D2)=20
+                    column+=3D0x40;<BR><FONT color=3D#008000>/* Add =
+these if you are=20
+                    using LCD module with 4 columns<BR>if(row=3D=3D2)=20
+                    column+=3D0x14;<BR>if(row=3D=3D3)=20
+                    column+=3D0x54;<BR>*/</FONT><BR>lcd_write(0x80 |=20
+                    column);</FONT></P></BLOCKQUOTE>
+                  <P><FONT face=3DCourier>}<BR><BR><FONT =
+color=3D#0000ff>void=20
+                  </FONT>lcd_clear()<BR>{</FONT></P>
+                  <BLOCKQUOTE>
+                    <P><FONT face=3DCourier>outportb(CONTROL, =
+inportb(CONTROL) |=20
+                    0x08);<BR>lcd_write(0x01);</FONT></P></BLOCKQUOTE>
+                  <P><FONT face=3DCourier>}</FONT></P>
+                  <P><FONT face=3DCourier><FONT =
+color=3D#0000ff>void</FONT>=20
+                  lcd_home()<BR>{</FONT></P>
+                  <BLOCKQUOTE>
+                    <P><FONT face=3DCourier>outportb(CONTROL, =
+inportb(CONTROL) |=20
+                    0x08);<BR>lcd_write(0x02);</FONT></P></BLOCKQUOTE>
+                  <P><FONT face=3DCourier>}</FONT>=20
+                  <P><FONT face=3DCourier><FONT =
+color=3D#0000ff>void</FONT>=20
+                  lcd_entry_mode(<FONT color=3D#0000ff>int</FONT>=20
+                  mode)<BR>{</FONT>=20
+                  <BLOCKQUOTE>
+                    <P><FONT face=3DCourier><FONT =
+color=3D#008000>/*<BR>if you dont=20
+                    call this function, entry mode sets to 2 by=20
+                    default.<BR>mode: 0 - cursor left shift, no text =
+shift<BR>1=20
+                    - no cursor shift, text right shift<BR>2 - cursor =
+right=20
+                    shift, no text shift<BR>3 - no cursor shift, text =
+left=20
+                    shift<BR>*/</FONT><BR>outportb(CONTROL, =
+inportb(CONTROL) |=20
+                    0x08);<BR>lcd_write(0x04 + =
+(mode%4));</FONT></P></BLOCKQUOTE>
+                  <P><FONT face=3DCourier>}<BR><BR><FONT =
+color=3D#0000ff>void</FONT>=20
+                  lcd_cursor(<FONT color=3D#0000ff>int</FONT> =
+cursor)<BR>{</FONT>=20
+                  <BLOCKQUOTE>
+                    <P><FONT face=3DCourier><FONT =
+color=3D#008000>/*<BR>set cursor:=20
+                    0 - no cursor, no blink<BR>1 - only blink, no =
+cursor<BR>2 -=20
+                    only cursor, no blink<BR>3 - both cursor and=20
+                    blink<BR>*/<BR></FONT><BR><BR>outportb( CONTROL,=20
+                    inportb(CONTROL) | 0x08 );<BR>lcd_write( 0x0c +=20
+                    (cursor%4));</FONT></P></BLOCKQUOTE>
+                  <P><FONT=20
+            =
+face=3DCourier>}</FONT></P></TD></TR></TBODY></TABLE></CENTER></DIV>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Dleft><FONT =
+face=3DArial>Output of=20
+            this program should be like this:</FONT></P>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Dcenter><FONT =
+face=3DArial><IMG=20
+            height=3D62=20
+            =
+src=3D"file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/C=
+ode%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20m=
+odule%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/lcd_welcome.gi=
+f"=20
+            width=3D321 border=3D0></FONT></P>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Djustify><FONT =
+face=3DArial>I need=20
+            not give details to all the functions above. You can =
+understand them=20
+            yourself. So, try using all the functions. In the next =
+examples, we=20
+            will generate a program that displays the system time in the =
+LCD=20
+            module. It may not be having much use in DOS, but if you =
+transfer=20
+            the same to Windows, you will gain many benefits. Also, if =
+your=20
+            computer will be working in DOS most of the time, you can =
+think of=20
+            writing an TSR for the same.</FONT></P>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Djustify><FONT =
+face=3DArial>Program=20
+            to display date and time in an LCD module: Just replace the =
+'main'=20
+            of previous program with the following and run. </FONT></P>
+            <DIV align=3Dcenter>
+            <CENTER>
+            <TABLE id=3DAutoNumber7 style=3D"BORDER-COLLAPSE: collapse"=20
+            borderColor=3D#111111 cellSpacing=3D0 cellPadding=3D5 =
+width=3D671=20
+              border=3D1><TBODY>
+              <TR>
+                <TD width=3D659 bgColor=3D#ffffff><FONT face=3DCourier=20
+                  color=3D#0000ff>void</FONT><FONT face=3DCourier> =
+main(<FONT=20
+                  color=3D#0000ff>void</FONT>)<BR>{</FONT>=20
+                  <BLOCKQUOTE>
+                    <P><FONT face=3DCourier><FONT =
+color=3D#0000ff>struct</FONT> time=20
+                    t;<BR><FONT color=3D#0000ff>struct</FONT> date =
+d;<BR><FONT=20
+                    color=3D#0000ff>char</FONT> strtime[17];</FONT></P>
+                    <P><FONT=20
+                    =
+face=3DCourier>textbackground(0);<BR>clrscr();<BR>textcolor(0);<BR>textba=
+ckground(10);<BR>gotoxy(8,5);<BR>cputs("=20
+                    ");<BR>gotoxy(8,4);<BR>cputs(" ");</FONT></P>
+                    <P><FONT=20
+                    =
+face=3DCourier>lcd_init();<BR>lcd_cursor(0);</FONT></P>
+                    <P><FONT face=3DCourier =
+color=3D#0000ff>while</FONT><FONT=20
+                    face=3DCourier>(!kbhit())<BR>{</FONT></P>
+                    <BLOCKQUOTE>
+                      <P><FONT=20
+                      =
+face=3DCourier>gettime(&amp;t);<BR>getdate(&amp;d);<BR>lcd_goto(0,4);<BR>=
+sprintf(strtime,"%02d:%02d:%02d",=20
+                      t.ti_hour%12, t.ti_min,=20
+                      =
+t.ti_sec);<BR>lcd_puts(strtime);<BR>gotoxy(12,4);<BR>cputs(strtime);<BR><=
+BR>lcd_goto(1,3);<BR>sprintf(strtime,"%02d:%02d:%4d",=20
+                      d.da_day, d.da_mon,=20
+                      =
+d.da_year);<BR>lcd_puts(strtime);<BR>gotoxy(11,5);<BR>cputs(strtime);<BR>=
+delay(200);</FONT></P></BLOCKQUOTE>
+                    <P><FONT=20
+                    =
+face=3DCourier>}<BR>textbackground(0);<BR>textcolor(7);</FONT></P></BLOCK=
+QUOTE>
+                  <P><FONT=20
+            =
+face=3DCourier>}</FONT></P></TD></TR></TBODY></TABLE></CENTER></DIV>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Djustify><FONT =
+face=3DArial>I will=20
+            stop this article here itself. You can change these program =
+if you=20
+            want to interface LCD with microcontroller. We have many =
+other=20
+            interesting articles on port programming in <A=20
+            =
+href=3D"http://www.electrosofts.com/">http://www.electrosofts.com/</A>=20
+            and other websites. <A=20
+            =
+href=3D"http://electrosofts.com/links/port_programming.html">Click=20
+            here get a list of interfacing related articles</A>. =
+</FONT></P>
+            <P style=3D"LINE-HEIGHT: 150%" align=3Djustify><FONT =
+face=3DArial><A=20
+            =
+href=3D"http://electrosofts.com/forum/viewforum.php?f=3D2">Use=20
+            Interfacing section of electrosofts Forum for your comments =
+and=20
+            doubts</A>. I am getting many emails and I may not be able =
+to answer=20
+            all of them.</FONT></P></TD></TR></TBODY></TABLE>
+      <SCRIPT type=3Dtext/javascript><!--
+google_ad_client =3D "pub-1403170442550738";
+google_alternate_color =3D "CC0000";
+google_ad_width =3D 728;
+google_ad_height =3D 15;
+google_ad_format =3D "728x15_0ads_al";
+google_ad_channel =3D"";
+google_color_border =3D "FFE1E1";
+google_color_bg =3D "FFFFFF";
+google_color_link =3D "000000";
+google_color_url =3D "000000";
+google_color_text =3D "000000";
+//--></SCRIPT>
+
+      <SCRIPT=20
+      =
+src=3D"file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/C=
+ode%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing the LCD module =
+to PC parallel port ElectroSOfts_com_files/show_ads.js"=20
+      type=3Dtext/javascript>
+</SCRIPT>
+      </CENTER></DIV>
+      <P align=3Dcenter>&nbsp;</P>
+      <FORM action=3Dhttp://www.google.com/custom method=3Dget =
+target=3Dgoogle_window>
+      <DIV align=3Dcenter>
+      <CENTER>
+      <TABLE style=3D"BORDER-COLLAPSE: collapse" borderColor=3D#111111 =
+cellSpacing=3D0=20
+      cellPadding=3D0 bgColor=3D#ffffff border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dtop noWrap align=3Dleft height=3D32><A=20
+            href=3D"http://www.google.com/"><IMG height=3D32 =
+alt=3DGoogle=20
+            =
+src=3D"file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/C=
+ode%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20m=
+odule%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/Logo_25wht.gif=
+"=20
+            width=3D75 align=3Dmiddle border=3D0></A> </TD>
+          <TD noWrap><INPUT type=3Dhidden value=3DelectroSofts.com =
+name=3Ddomains>=20
+            <INPUT maxLength=3D255 size=3D31 name=3Dq> <INPUT =
+type=3Dsubmit value=3DSearch name=3Dsa> </TD></TR>
+        <TR>
+          <TD>&nbsp;</TD>
+          <TD noWrap>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD><INPUT type=3Dradio name=3Dsitesearch> <FONT =
+color=3D#000000=20
+                  size=3D-1>Web</FONT> </TD>
+                <TD><INPUT type=3Dradio CHECKED value=3DelectroSofts.com =
+
+                  name=3Dsitesearch> <FONT color=3D#000000=20
+                  size=3D-1>electroSofts.com</FONT> =
+</TD></TR></TBODY></TABLE><INPUT=20
+            type=3Dhidden value=3Dpub-1403170442550738 name=3Dclient> =
+<INPUT=20
+            type=3Dhidden value=3D1 name=3Dforid> <INPUT type=3Dhidden =
+value=3DISO-8859-1=20
+            name=3Die> <INPUT type=3Dhidden value=3DISO-8859-1 =
+name=3Doe> <INPUT=20
+            type=3Dhidden=20
+            =
+value=3DGALT:#FF0000;GL:1;DIV:#FF0000;VLC:663399;AH:center;BGC:FFFFFF;LBG=
+C:000000;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;LH:32;LW:3=
+32;L:http://electrosofts.com/images/electrosofts.jpg;S:http://electrosoft=
+s.com;FORID:1;=20
+            name=3Dcof> <INPUT type=3Dhidden value=3Den=20
+      name=3Dhl></TD></TR></TBODY></TABLE></CENTER></DIV></FORM><!-- =
+SiteSearch Google -->
+      <P=20
+align=3Dcenter><!--msnavigation--></P></TD></TR><!--msnavigation--></TBOD=
+Y></TABLE><!--msnavigation-->
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D0>
+  <TBODY>
+  <TR>
+    <TD><FONT face=3D"Lucida Sans Unicode">
+      <P align=3Dcenter><FONT face=3DVerdana color=3D#606060 size=3D1><A =
+
+      href=3D"http://electrosofts.com/">Home</A>&nbsp;&nbsp; =
+|&nbsp;&nbsp;&nbsp;=20
+      <A href=3D"http://electrosofts.com/about.html">About =
+Us</A>&nbsp;&nbsp;=20
+      |&nbsp;&nbsp; <A =
+href=3D"http://electrosofts.com/articles.html">Articles/=20
+      Tutorials</A>&nbsp;&nbsp; |&nbsp;&nbsp; <A=20
+      =
+href=3D"http://electrosofts.com/downloads/index.html">Downloads</A>&nbsp;=
+&nbsp;=20
+      |&nbsp;&nbsp; <A href=3D"http://electrosofts.com/forum">Discussion =
+
+      Forum</A>&nbsp;&nbsp; |&nbsp;&nbsp; <A=20
+      =
+href=3D"http://electrosofts.com/feedback.html">Feedback</A>&nbsp;&nbsp;=20
+      |&nbsp;&nbsp; <A=20
+      =
+href=3D"http://electrosofts.com/links/index.html">Links</A>&nbsp;&nbsp;=20
+      |&nbsp;&nbsp; <A=20
+      =
+href=3D"http://electrosofts.com/ebooks/index.html">eBooks</A><BR>Copyrigh=
+t =A9=20
+      2005-2007 electroSofts.com.<BR><A=20
+      =
+href=3D"mailto:webmaster@electroSofts.com">webmaster@electroSofts.com</A>=
+</FONT></P></FONT></TD></TR><!--msnavigation--></TBODY></TABLE></BODY></H=
+TML>
+
+------=_NextPart_000_0000_01C7FA27.B4F2FB80
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/Code%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20module%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/electrosofts.jpg
+
+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
+bjCqU7q9Q1Ia6GikOGIoX//Z
+
+------=_NextPart_000_0000_01C7FA27.B4F2FB80
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/Code%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20module%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/shadebwl.jpg
+
+/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsK
+CwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQU
+FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCAAbABsDASIA
+AhEBAxEB/8QAGgAAAgIDAAAAAAAAAAAAAAAAAAgHCQIEBv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/
+2gAMAwEAAhADEAAAAVf1J5gYAC0NMXfCq3GzXkD/xAAcEAABBAMBAAAAAAAAAAAAAAAFAQIEBgMH
+EAD/2gAIAQEAAQUCl4HRZXds1Z4o10gPjlYds1UQD5HNVjukQA0v5daVpV//xAAUEQEAAAAAAAAA
+AAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAp
+EAACAQEGAwkAAAAAAAAAAAABAgMEAAURIDGRJEFxEhUyM0JSgZPR/9oACAEBAAY/ApoX8cblD1GR
+ryiThKw4kj0yc99d8ktLVRCaCQYMps813K14UWuC+YnUc/ixVhgRqDk4yhgqD7njHa3tj3Wv2P8A
+tv/EACMQAQABAgMJAAAAAAAAAAAAAAERAFEgITFBYXGBkaGx0fD/2gAIAQEAAT8hGpBVuQ+MCBmL
+mWzPxyYL/a1+nfWikgZKw93QUsB0AhHBn2n5wcNRTJStjr//2gAMAwEAAgADAAAAEHPDNP/EABQR
+AQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIB
+AT8QH//EAB0QAQABBQEBAQAAAAAAAAAAAAERACAhMVGBQZH/2gAIAQEAAT8Q3KmkEk+qxogtMU82
+KV2osO32PgbETIIIERBESptofpegJJyZhWhlPmwWERyJyxRjeAk5D+SUPGkoZ4BDyv/Z
+
+------=_NextPart_000_0000_01C7FA27.B4F2FB80
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/Code%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20module%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/shadebwr.jpg
+
+/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsK
+CwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQU
+FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCAAbABsDASIA
+AhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAgFBgkH/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/a
+AAwDAQACEAMQAAABVQAkNREjdwyrv/f2SIKwgf/EABsQAAEFAQEAAAAAAAAAAAAAAAUCAwQGEAcA
+/9oACAEBAAEFAsHxVT5+8jryiR7KrSiFrkAgkavDfc/pwadGbbQyjP/EABQRAQAAAAAAAAAAAAAA
+AAAAACD/2gAIAQMBAT8BH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BH//EACoQAAIB
+AgMECwAAAAAAAAAAAAECAwQQETFBACEikRITFBUgJDJRcYHR/9oACAEBAAY/ArU1MnqmkWMfZw8H
+eEi+Wot4J1kOX7yuBAhipQeOpccI+Pc7RUVIvRiTU5sdSbdoqKFJ5Vy6wkjljhsqRqERdwVRgBf/
+xAAgEAEAAQMEAwEAAAAAAAAAAAABERAhgQAxQVEgYbHw/9oACAEBAAE/IaGRJT7AffBnJCIsSDi/
+onasFkls+T4jMag+m+591yv61HLwJZe5MmjK5ZA6Ar//2gAMAwEAAgADAAAAEPFMPP/EABQRAQAA
+AAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8Q
+H//EAB4QAQACAQQDAAAAAAAAAAAAAAERMSEAEEFRIGGh/9oACAEBAAE/ENlmH5b94HhKVmRsAzaW
+Uz0DchoUYJ6GCm5JDOl4oMZoCtB6CAAAae7bkdMyFHJoWNQwVAAB0b//2Q==
+
+------=_NextPart_000_0000_01C7FA27.B4F2FB80
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/Code%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20module%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/lcd_circuit.jpg
+
+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
+ZKdBgoG9NX9JUzWMdSN1oaFHYtcPIpcXX6vdqECDk4t7sHlIcXEbw9Q9QpylZwblu1R4lZwblu1R
+4lZwblu1R4lZwblu1R4lZwblu1R4lZwblu1R4kG4PTfcdUeJWcG5btUeJFuD+px1R4k8MB4BqNHx
+KiLA4F+RTOicfqhTd4NaKlPRo3Na6rgpXh54IoN2u/T0eJ+LeHJ8xLLJb6vSo5DE4PCvRsWKf+hA
+6LzZGjr3/EApzCzgsaK/OZ54v//EAFsQAAECAwIEDBEIBwcEAgMAAAIBAwAEEQUSBhMhMRAUICI1
+NkFRdKOy0SMyMzRhcXWBhJGSlKKls8LhFTBCRlKhscEkQERyg6TSRXOChZPD8CVDUGIWJlNj8f/a
+AAgBAQAGPwL/AMIyy+8DZub5JkSi5V8UTzpFOjJMmOuauIKDdSudKruxagKt90LhSyb99KCnlIsN
+i4eMNBRCP7S7/wD5PTL+RJerl77ORU/BVi8k8S2fMIhK1cSqpvXt6JScIlRWK6zcLe8X6jbElJWw
+NlS9noyiIkqLt++N6q1jbd6ta5423erWueNt3q1rnjbd6ta5423erWueNt3q1rnjbd6ta5423erW
+ueNt3q1rnjbd6ta5423erWueNt3q1rnjbd6ta5423erWueNt3q1rnjbd6ta5423erWueNt3q1rnj
+bd6ta5423erWueNt3q1rnjbd6ta5423erWueNt3q1rnjbd6ta5423erWueNt3q1rnjbd6ta54Kyr
+Qtb5TZWz9MoulwaouMQdzv8Aj1U2l6gA0Zkn2qCtPvpDAldxBNNm1rsuUUvV79fH+pYXeCeyX9d/
+yb/f1Vo8Gc5KxZ3Bm+Sn6lhd4J7Jf13/ACb/AH9VaPBnOSsYLWfZQyavT0suWcQrqXGxX6Pfj6v8
+fH1f4+Pq/wAfH1f4+Pq/x8fV/j4+r/Hx9X+Pj6v8fH1f4+Pq/wAfH1f4+Pq/x8fV/j4sz5QGxylp
+ucalV0sjt9L3b7S6OF3gnsl+YJx0xbbHKpGtESClrBknLZfTIrga1gO2axMTNuWqWsbIxkpDobQr
+TdXOUWW68auOEylSLOv6l/k3+/qrR4M5yVjADgz/ALAdFaLmz/OYOd2Zf3tHC7wT2S6pX5t9uXZT
+6bhUSFbwcs0poc2npvobCdrdKBfwhn3LWcTKkv0jAf4UzwLTDQMtDkEGxoiRO/3B8mLJ/uE/Uv8A
+Jv8Af0LT+TxscZaUnHZVNMo7fW72u2kfV/j4+r/Hx9X+Pib0z8h6WxRY3FY6/dplpXdjBG78l38U
+7pGuMpdxSVxnZu0zbsSvytMWfJWc65cemrPQ77SUXPfyIi5qw7LSloFatmpL3yeJUPFuXulQ0z1T
+c7EWw2KkX6Wi1Mryqqstw0Tl/SggZuKCLnSlEWm5n8UA9LK6Rt65WVVdbeyXezSqr4odbaR8DG4j
+S667evKpLXNSlPv3fmcHO7Mv72jhd4J7JdQ7NTLiNMNJeI13IpYln6RlF/b7QyV/dCBm7VfctudT
+/uTXSD+6GZIRESiJuJoDLK6OmCFTRuuWibv3xPf3B8mLJ/uE/Uv8m/39DCPuzMe7Euw8+Db0wt1o
+CXKUAU0+DAmSAN9aVVYOYmnRYZDOZRPmKoQlKuKipu61YwA4M/7AdDJkh3SjwPKK6+7+P3Z+xCY7
+pUXdWiQaItVFaL2N38/msHO7Mv72jhd4J7JdQ0C5RKbZQkXMqXoEnnBaEiQEvbqrkRIbl1cFHzFS
+FvdVEzr9+jLTQgKILbgmW6tbtPwWJ/8AuD5KxZyi6bKo02tQKlcv4fqX+Tf78TGlaaZxZYqua9TJ
+FqaT0tTHlj9P1pjvpdL9KH3LUmCmrWfSqzY/9ldzF9hInLTwkf8AlacBlW2wTpA3rvZ3VWJSctib
+W0JZobsvKrmHsnvrEzZtloU5ZxlUDAujNN7rdN3PubyxguM3ZpvzDGmdKtuOiBODi0RUX7N3sxKD
+O2G/J2aDl6Z0tNI4bg0yJQctK0h5ySYmpax9LUMJgTFCdrnECy5q1h+ZRs5crgtty6sk2jTaVomV
+M+XczZIZVtLxg4K0VclLyL+UO3QcJL4peA0S8K0vLnz507WaBTKtE3dSzIoX6OsqrpDTdvU1GDnd
+mX97Rwu8E9kuol+GM8qBEQEnRcbIVLcoaKv3JA2gsw262V+9VvXCOS6Na5u9v7+jPYSnhA9JzjJn
+dkhJEZburkbIN1V/OHjLBe6y7LKqvaeBMijnu5+9FnS//wASbtKUFobhuzjVD7N1UyQgjgggimRE
+S0msn3RtR9ZNc0bUfWTXNG1H1k1zRtR9ZNc0bUfWTXNG1H1k1zRtR9ZNc0bUfWTXNG1H1k1zRtR9
+ZNc0bUfWTXNG1H1k1zRtR9ZNc0bUfWTXNDk5OYLYmWbpeP5QBaVWm4nZ0P8AJv8Af0MKbjptKltP
+LVtaVyhkhZ9HXNMFNOy9L63cWglkpm+jeietGYNXHNKOYsL3UrrRD5WUq9vsRZxgNCdlmSPsrixT
+8tDBHwv2SQpuGLYJnIloiRfl323w+02SEkOI2Draign0ULt4SrdJOwtFhMYaDVaJDiJXWFdXxIv5
+6pJlwDR+5i8Y26QLd3siwjoNrjEzEZqS/fo4Od2Zf3tHC7wT2S6iX4Yzyoa0s8koUxMhLlNKnUBL
+OcSFmBa0xa0tOsmbgTR4w2VFKoVd5c2jp96zmjmq3lLLRV31HMsWhwdzkrFjI4Uxr2mxFuVK6bq0
+6Wu540zQDc0ak7Ulop37qKuQby56Jkr8/af8P2o6H+Tf7+hhLLvK4jZW1MVxZqK/R3UgphcZfJFy
+YxbqKo3VKm/TJWJyXHGA3NM4ly6X/rdvb1afhDUuzhRcaaBAAfk9vIiZt2NtXq5vnjB1p23sdMua
+YxMxpMExNA12t+lWJV2anwt4WH0d0o4yLCKl0k765UXLvQ7aSyQ2aysticTeFScK9W8V3Jkzd+Jq
+aelDk8a2COCbiHecSuUcq63xdqG7qoLgGJXl3kJF/KMappixWoUXLS7Si9+q6qXl1N2Us4hq5NMj
+Uq/Zr9HtwyDTL7xoSEjgo6tF7J6ODndmX97Rwu8E9kuol+GM8qHJeZaF5hxKEBpkWHCs+TCXJzpi
+qpL410Z7CU8IHpOcZM7skJIjLd1cjZBuqv5w8btnYtt2VVSdR5KIijnpn70WbLFZIWjKA0NwzMaF
+kz0XNCMy9how0mYG3RRI2JP/AFhjYlz/AFEjYp3y0jYp7ykjYp/xpGxcx90bFzP3RsZNeKNjJvyY
+2MnPIjY2d/042Nnv9KNjZ/8A0YeBGnmTapeF4aLli0/4ftR0P8m/39DCPuzMe7qcEfC/ZJGNmnUa
+BVupXdXeRN1YcCXdq63lJswUDT/CWWJ1hoVpLEgYzcJd2naVFSBvVVSWiIm7lp+cNI1ePGALlaZk
+WtK+JdUyEw7cN6txLqrWmfNFGJlp0vsieXxaODndmX97Rwu8E9kuol+GM8qGtLPJKFMTIS5TSp1A
+SznEhZgWtMWtLTrJm4E0eMNlRSqFXeXNo6fes5o5qt5Sy0Vd9RzLFpcGc5KxZQgbonpYFQWTQCPJ
+mqsAT6krwm4BIeUhoapdVd2mavz1r/wuTFp/w/ajoDaGn7QkZkWcRWSexdRqq73ZjbHhB598Itr/
+AK1bEvibTeZ6BNXb9Ka4smUuzG2PCDz74Rtjwg8++EbY8IPPvhG2PCDz74Rg7LfLVsOaY0x0Zyaq
+43dCusWmSu7EtOS1sz83Myx3wC03sa1mVF7WfPDlozrrTbulllm25WutRVqq3lzr3ofpNOzDBNtg
+2jt2qXa7wpAArmLRK1yZ8mTxLl70BMTKNA6AE30H6Q1RU8X/ACmbVWVOsNY5uVv3wQkQlqnZhWUs
+wWXV6WYfcGrfZS7VYZacdV4wBBJxc5Lv6GDndmX97Rwu8E9kuol+GM8qHJeZaF5hxKEBpkWHCs+T
+CXJzpiqpL410Z7CU8IHpOcZM7skJIjLd1cjZBuqv5w847YmKaelFUndMjrUUM93P3os2X+QtOSwN
+Arb2m0bVcmQk3RgWWMG0baHMKToRtf8A50I2v/zoRtf/AJ0I2v8A86EbX/50I2v/AM6EbX/50I2v
+/wA6EbX/AOdCNr/86EbX/wCdCHHnLButtipEunAyIneiXmLtzHNi5drWlUrFr/wuTFp/w/ajqMJA
+QxU0teYK7XLTJl1OCPhfskhq+Ljrrx4tpllKmZdiDk3Jd+SmxDGYmYRKqOaqKKqi+OHDdcarQTFo
+GTbIEWue8uu7abywKlTKqJrioiVWmXxwpLLuDdZxqiWQq7g08fih3NdQqCu/k56/M4Od2Zf3tHC7
+wT2S6iX4Yzyoa0s8koUxMhLlNKnUBLOcSFmBa0xa0tOsmbgTR4w2VFKoVd5c2jp96zmjmq3lLLRV
+31HMsWpwV3krFjq31Z2XbbArqkIa3pl7CRLuE8UwaVEnCzrl+ctHgznJWLO4M3yUi1/4XJi0/wCH
+7UdRbTk6JzTcvPOyjbZGo9L9JVTdyxsZx7v9UbGce7/VGxnHu/1RsZx7v9UYOybUjdlpvTGODGnr
+roVHdhDswDs6ZE0cF5s1NaoipmKuShLBT81NnNzatYkVuoAgFa5ESCempvTjmLRoCxd2gpv5cq9n
+7oAXq0GubspT84NZk8Y6TeKvhrdbz54QRSiJkRPmcHO7Mv72jhd4J7JdG3ZZ+amXQ0yNCxqgQ9DE
+qIo0omWCnxmZo5Q55pqXaemDcS6h5T1y7qp4ocl5loXmHEoQGmRYcKz5MJcnOmKqkvjXRtC0rStB
+5nCxt06DjVRxtxF1oAP2c0TITUvdRZQkdmK0+hlK5+UWa2xLaZZGXBAexiDfSmem5AtM2bcbHMmP
+SNj+OSNj+OSNj+OSNj+OSNj+OSNj+OSNj+OSNj+OSNj+OSNj+OSFYdl8QVy/097di0eDOclYs7gz
+fJSLX/hcmLT/AIftRjZPiHf6Y2T4h3+mNk+Id/pi2tMz2L0xab0w10I1vAVKLkSNk+Id/pjZPiHf
+6Y2T4h3+mNk+Id/pjB2canr0tKaYxx4o9beCg7kNs2QXyjNuOI2jaoTSJkVaqqpmoK5qw7Iz0qDM
+wLCzIKy7jAMUWi50Si5oPTbjymbQPCDzQhStekp9H97L44bBsdcZClVFSrVctKbyIqwl+l7sJTVM
+SslRbRmjuNIuW6m6UYlRQrdxiy2Ip9P7Xa3YmpWfJCn5Ry4aolLybhaGDndmX97Rta0LKKy1ZnsV
+knFcvJcCn0e/H1f4+Pq/x8Txg9ZF6b6oquvrTJSqd78Ik5eZSxxlGnmQbSWxt6qLrc+5CfKbsgxZ
+pugEy9ZmMxoNquVcsSUtg3Mq/JOsGU62DquNjk1hV+1XRGaOTYOaHM8TaX078WrwR3kLGDw2fjMY
+TbKHilFFQcXvki03IVHScJ5pwm3MaqKtU7KIn4fN+De9Fo8Gc5KxZ3Bm+SkWv/C5Opwj7szHu6nB
+Hwv2SQAPiXQyvgYEokBb6KkOTCY1+ZcG4T0w4pld+zlzJBEDrzq3UbHHFW4CZhSG1cRVVtaiqEo0
+XvQgClBTVDNq0KzAjcFzdRIKcRgEmiSiu0ywU2jSJMENxXN9NDBzuzL+9q5fhjPKhRJEIVyKi7sE
+kpKsyqFlVGW0Cvi0Zq0rbn5prCRt8rwtO3X21QsgNjvUpE0c0hiyUoSupREdQbmXsXossJc3WpcW
+WyZO/dcRLuStOxCMsoN2qqqkqqpKudVWPoR9CPoR9CPoR9CPoR9CFXWZIRd9I8G96LR4M5yVizuD
+N8lItTTLmLv4q7rVX6Mdc8WXNHXPFlzR1zxZc0dc8WXNFvYx+7jLWfcHWLlRadiOueLLmjrniy5o
+654suaOueLLmjBd4X6ttaavrcXJVtKbkSctZz7OmZl/FX3wK6CXVWtMlc1KV3YOyZxxmZrLaYF5k
+FbVNdShJVfHE+80b6sX8Q2Lr5udL0y65V+lVP8MNNtLdIzFEW7WuXL4kqsXEJFuOAgkidWEnSSvk
+iq5NUMve0nJ4u9prFX7xfZ3k78TYOVekwpiplW8Wpb6U3e3o4Od2Zf3tXL8MZ5UBcddYljmGwm3m
+emBlemVPuiyUs6remGHitGVbIiaboq4stcq0Vcm7+OiM0cmwc0OZ4m0vp34tfgbvIWLCSXAjmZhh
+lpu6N6nQ6qtOwiLAuAprnAsYN0kJMi1T5ku1A9qPBvei0eDOclYs7gzfJTVYR92Zj3dTgj4X7JIV
+mZZB9pc4ODVIPSks1L3+mUBopduCBmiDeJVRPtKtV+9Yo4Amn/slYQrqXkyItNXLShl0aYvXEpvZ
+9HBzuzL+9q5fhjPKhRJEIVyKi7sSLgNiLjmMvkiZS6IWfRnLStWffawobfWoi6outqhZAbHepE4c
+2jQsFJmrqUVHUG5l7F6LI0u40y00y25LO5caOsoldytFyxim1lCyqSkakqkSrVVWP2L0o/YvSj9i
+9KP2L0o/YvSj9i9KP2L0oWWmUZ6ljKtV36bsF2oHtR4N70WjwZzkrEky5N3XG2QEkxZ5FRO1HXvF
+HzR17xR80de8UfNHXvFHzR17xR80W7jpq5jrVfdDoZLUVpRc0de8UfNHXvFHzR17xR80de8UfNGD
+MwE1VljTOMLFlkq2iJuRKsyVpLLibyJMTCNL0Jui5aklE111K9mHpWWnytazxl8YTqqJ4tyvS3hz
+1Tc7EHRWFxkoyf6P2y6pvn2d2kNChE2JGOvFabuur/hr4+1Eo0TjiJfdcoedW8woXj+7VNPIiTUm
+Ld1ZQnFDXV6bs9+JadGUalZdtsgUEdqtV3aUpo4Od2Zf3tXL8MZ5UBcddYljmGwm3memBlemVPui
+x25B9w1fZeK0ma1AKEuLLsLm/wCLohjtIfKmS5fuY7sU3Ytjgb3IWLJdbmglBakmjMzbvpdRtOzD
+bs/dxzmvQRC7dHcRez8x4L70F2oHtR4N73zGEfdmY93U4I+F+yTQoKIibyQ/pE2DofRcTTpuz8wk
+njP0lQxiB/678HKI4izADfIN5NHBzuzL+9q5fhjPKhRJEIVyKi7sSLgNiLjmMvkiZS6IWfRn7NtO
+z3nsK3HToSNKrjhqutMC+zmicCbWyyYGTNHVq4ryjcy9i9Fny7a2SkkrDKih4y+oIiKiF+cf2Hx0
+f2Hx0f2Hx0f2Hx0f2Hx0f2Hx0TE04liq2w2ThIONrRErElNOIiOPsA4SDmqo1jwX3oLtQPahH2pf
+HjirnToO7Gx/HJGx/HJGx/HJGx/HJGx/HJGx/HJGx/HJGEFyTxlbXmFXoqJRdbkjY/jkjY/jkjY/
+jkjY/jkjBVVk7pppq6ONTXdDSJRHJKZGTR9FmUlXKmTd0slBy0vXc0PLItTbFkLL0JJhDBFdvZwQ
+8uate9C1WrEvKty6dAVtcirkWv0k3aZMsNIgK43fGtNyi1Xx0p34YbdljRAdJ4CyLi0qqoFdzvdr
+VNzzT5y8yDeKqiIqKOfMsPzxzJvuvAgLeFEzdrRwc7sy/vauX4YzyoC466xLHMNhNvM9MDK9Mqfd
+FjtyD7hq+y8VpM1qAUJcWXYXN/xdFJU5xgJoszKuJfXvRbHA3eQsWGYqIX2ZdrGECncqGe6mVYZm
+Tu3iUkqGRFoSpWm5mzbmqtbgjvIWLJ4I1yEjwX3oLtQPa+Zwj7szHu6nBHwv2SQpmSACZyJaIkX2
+HQeD7TZVSJh1s1eFh7S64pLyk5kyJv54CZRxAaP/APJrcu9l3Ya6M30XpNd03a1ViS7Tii28ruMF
+PpUHUYOd2Zf3tXL8MZ5UHjbuLprr+anZiVxWK0xU8dcperfKl7vaNoWbaVnvPYWOOnQsUquOOKus
+MC+zmialpyVyJJk29Nq6i/Qop3fvpFjjLyhfozbZsTIvBruh3a3V30WFbSzCdIjJwzKYCpEq1Xcj
+Yn+ZGNif5kY2J/mRjYn+ZGJll6W0s4zdql+9ni1uCO8hYsngjXISPBfegk7EImLzf+0dS9KOpelH
+UvSjqXpR1L0o6l6UdS9KOpelGEVG6/8AWJjd/djqXpR1L0o6l6UdS9KME+h5f0vJX/8AWkSSjJhN
+DLzKPHLmadES6SdrOqLl3odtHSKWXLrL4lWbw3nSvVvLdqmTN34mn25YjFueB8Wm6VMMSALT7/FD
+NW0FSfJ82jXKKK6riJXxVhm8qDdeN8rpZNdXW07+fVNPk2JPNVuGqZRrn1GDndmX97Vy/DGeVAYt
+p1+XCYbObZZ6Y2U6ZE+6LHckGXAVhl4bSepQDqS4seyub/iaKSpzjATRZmVcS+vei2OCO8lYsBAV
+psn2mWsa/wBIHQq1XxU78GZYsjbdJpTZWoFTdTU2t/C5MWtwR3kLFk8Ea5CR4L73zeEfdmY93U4I
++F+ySMdNPCy3W6irurvJvwYS715xvpmyFRNO8uWJ+YxL9yVcxVMWt5zWiuRP8UMTB1BHhEkHOuWn
+OkASOZDPFpky3t6mqaZZaMJRQqswA3tdvZlu+KDGYfV4VTWojK63tndFPu0cHO7Mv72rl+GM8qHJ
+yccxbAeNewkSlk1JudaEzQTGiODjCyiu7o2hZtpWe89hY46dCxSq444q6wwL7OaHwtIgIRkqTBN9
+UXWa6m5WJJmVOXBgpdu4r4XyuXUpVM1YCWZ0vcHdWtVVcqqsfs3pR+zelCuuIwoDnQa10LW/hcmL
+W4I7yFiyeCNchISYZmtLli8X1O9u1jZPiBjZPiBjZPiBjZPiBjZPiBjZPiBjZPiBjZPiBjZPiBjZ
+PiBi38XPYulrzCF0JFvLkyxsnxAxsnxAxsnxAxsnxAxgsJT14y01dPFJrehpEs4M626/LPo+2jzV
+BXWkKotP3vuhbUniYBxJfS4My9VSl68qqS5829Fq1p+kuXg/0gH8RWJJvGIBsi3fSlUK7m++GHce
+SqDhOmlEoRLXxdN81g53Zl/e1cvwxnlQzpMgSblZgJpoXekIh3FixJ94W2ZCzwfGXVFqbxGRXq7y
+Jo6QetFoJqt1Ry0Rd5SzJFr8Fc/CLL4K1yU1Dve/HQtb+FyYtbgjvIWLJ4I1yE+cwj7szHu6nBHw
+v2SQ2TguOE6eKbbaG8Rlnp9ywcobD8nNiGMxMwiVUc1UVFVFidRmUBl5qZRkUeLMNwSvFT97NDMw
+43UzW5RrpV19xFTsLuQwAtlfdMm7pZKKOf5rBzuzL+9q5fhjPKhycnHMWwHjXsJEpZNSbnWhM0Ex
+ojg4wsoru6M9g0eD705OPmaDOiKYly8uRwj3FT8om5Zw8Y4zZ+LI/tKgUrFmcFa5Kah3vfjoWt/C
+5MTEq4qo2+2TZKOeipSBbbty2gbBLoiM3RETxRs/bnnnwjZ+3PPPhGz9ueefCNn7c88+EbP25558
+I2ftzzz4Rs/bnnnwjZ+3PPPhGz9ueefCNn7c88+EbP25558Itv8A6varGKtN9roEzdv0priyZS7M
+bP25558I2ftzzz4Rs/bnnnwjZ+3PPPhGDcv8r2q5j9M9FOZqbdArrVpkruw08Ft2obzJX2lmHkdE
+SzVuqm8qp34K0JqaWbm8ViRW4gCAVrkSJ4GJoWVm3xcK8Crrbgio5FTPd++JZH3BF5ndlQuBkza1
+a5oDXEVwlNEL7S1qX3rqjmW5bHiCVJVO6iQk7NLiW7iEXf3IvPK1KMF0mNc1y9vcTx6GDndmX97V
+y/DGeVDOkyBJuVmAmmhd6QiHcWLEn3hbZkLPB8ZdUWpvEZFervImjpB60Wgmq3VHLRF3lLMkWvwY
+/wAIs3gzfJTUO978dC1v4XJ+ewj7szHu6nBHwv2SRLo1L6ZmJh3Ett3rqVopZV3EoKwVnTsqMtNY
+rHgrTuMAxrRctEy5U3ItQSdCXdZmbqKyF9QbxYFRN8ssSrhUOYO6JV1tFU7mVN/fTcosCwo4ty+o
+GuVRTXKKeOi6opZx91pkumFu7rvGkaSmXnXhyKji0QkpmzJCy01POuy5dMKCIqXbWn4QIClBFKIk
+YOd2Zf3tXL8MZ5UOTk45i2A8a9hIlLJqTc60JmgmNEcHGFlFd3RnsGjwfenJx8zQZ0RTEuXlyOEe
+4qflE3LOHjHGZDFkf2lQaVizuDN8lNQ73vx0CeeYvuFnW8sdbemXPHW3plzx1t6Zc8dbemXPHW3p
+lzx1t6Zc8dbemXPHW3plzx1t6Zc8dbemXPHW3plzx1t6Zc8dbemXPFv4xi9i7WfbHXLkRKR1t6Zc
+8dbemXPHW3plzx1t6Zc8YLsixRt3TV9Ly5aNpSBoyTZit4HG3SQgXfRawczedmJoxuK8+5fK7vJv
+JEzcfeYceeR/GNqlQJBEcmTeHdhllb7mKJTRxToSktVVcm+qrAEjVFHNl7effzr49UDqtg42q0Uc
+ZRz/AAp9KFGVYo02tHSfK6af4M/jpo4Od2Zf3tXL8MZ5UM6TIEm5WYCaaF3pCIdxYsSfeFtmQs8H
+xl1Ram8RkV6u8iaOkHrRaCardUctEXeUsyRa/ByizuDt8lNQ73vxjq7flpHV2/LSOrt+WkdXb8tI
+6u35aR1dvy0jq7flpHV2/LSOrt+WkdXb8tI6u35aR1dvy0jq7flpHV2/LSOrt+WkYRXnQStsTCpU
+v3Y6u35aR1dvy0jq7flpHV2/LSMEyR0FFNN1W9m6GkSTMk7LrMTUwjCE6tRDWkVaJn6X74Kypw2J
+hVl9Mg8yChRL1KENVi1dMzYm+U6jLTjiUbbvNAubeTKvZ78WUTb+OddbaFXVyqa1RC76ZVhoRdAV
+Rw0KgdOAlSvY1WmFbbxtKY27rqduBmEBs3hyI6iJVO/o4Od2Zf3tSbblqyLbgLdICmARUXezxszZ
+/nQc8MAxaUm+aTbJXW3xJaXs+eHJlJ+XnCHpWZZ4TMl8cWfY78u4wZA45LPLlB9L5Xqbyp+WjPYN
+Hg+9OTj5mgzoimJcvLkcI9xU/KJuWcPGOMyOLI/tKg0rFn8Hb5Kai6SIQ7yx1BvyEjqDfkJHUG/I
+SOoN+QkdQb8hI6g35CR1BvyEjqDfkJHUG/ISOoN+QkdQb8hI6g35CR1BvyEjqDfkJHUG/ISMIrzQ
+LS2JhEqP7sdQb8hI6g35CR1BvyEjqDfkJGCYo0CCum6pdz9DSFaelGXG1ziQJB6Vlm2FPplFMpdt
+YeMBoTpXz7K0RPwRIaYxIqy0lAEkvU8cfQCiIm9k3NVKh8m6dVa9ENsjba7aIiw3NnjUmEFREW5I
+2Gu/ky99dHBzuzL+9qcInJuQlZpxLYmBQ3mRNaZMmWNhrP8ANQ5oYNizZNg1m2RvNsCK0vZs0K1K
+SkpITQkhtvNy4503CyZU7ENWhaU5ZjbVmCbbMtZusaaUumUt5V3oRxsxcBcxCtUXQ0g9aLQTVbqj
+loi7ylmSLW4OUSHBw5KfqmEfdmY93U4I+F+ySJARmNJSzz9x+coi4oaLv5EqtEqsOyTFoLasikvj
+CeW6WKcvdLeFN1MtOxFrSZTIUctJqpzqYwS1jRUVMniyRK4tAaaFwWsXKDdHqlFUUTcX84aJEBXF
+FOhkla65ETxJfy9mJw0dvgJI2iVyJkr+f3fM4Od2Zf3tThH3ZmPd0Bd+g1NMma7yXs8I4BIYKlUI
+cqLDxlITUoiYoRYZbQVBsDvJn6Zd1fu7LaTCEh1Kl9EQrt5btaZK0poT2DR4PvTk4+ZoM6IpiXLy
+5HCPcVPyialnDxjjMkjZH9pURErEj/cByf1TCPuzMe7qcEfC/ZJFFypFAFBTeRIm9MrL4hF/SMbS
+7WidN3rv3Q2TKhiLqXFDpadiLpmiFkydv/8Ai/NYOd2Zf3tThH3ZmPd0DaeAXWjS6QElUVIV7B20
+Ts1a1WUd6JLl3tyEawjs45Dc04x0SXL8xgXpZ4H2izG2VU0J9hXWWQFgDZKlbqqpJUvFmi3wmVLG
+sXm9eiIVKIqVpk3dyJL+4Dk/qmEfdmY93U4I+F+ySJG6kwUjj/0sZSuMUKLTpctK0rSHVkQm27I0
+vrkmUNEV69kuIeXNWu5E5izKTlm7TFxx0RvKKYgddlr9JUyr24lXLpPdFSiXEG+GM6am5VMsNG2p
+I5d6ZBqOUkr4kRfHDLpgQELZ41SSl4yJPwp+HzODndmX97U4R92Zj3dQokiEK5FRYKasaZdsScXd
+lupl+8GaLtuWdpmWT9vs/XJ/iDOkOPSrrM6DgYtz93eJNzOueLXbYbRsVaVVpurEl/ch+H6phH3Z
+mPd1OCPhfsk+fwc7sy/vanCPuzMe7q9NModmz+5NSa3C7+/EzZRty9sszA4sZsSRlwOyaZvFDDKr
+VWwQa9pP1TCPuzMe7qbCtGzrP+UdJY++3jha6cURMq9+NqPrJrmjaj6ya5o2o+smuaNqPrJrmjaj
+6ya5o2o+smuaNqPrJrmjaj6ya5o2o+smuaNqPrJrmjaj6ya5o2o+smuaNqPrJrmjaj6ya5oscHsH
+tIsy1oMzJu6dbcyDnyd/UzTzNsWxJ6ZeJ825aauBeLPkpG2PCDz74Rtjwg8++EbY8IPPvhG2PCDz
+74Rtjwg8++EbY8IPPvhG2PCDz74Rtjwg8++EbY8IPPvhG2PCDz74Rtjwg8++EbY8IPPvhG2PCDz7
+4Rtjwg8++EbY8IPPvhG2PCDz74Rtjwg8++EbY8IPPvhG2PCDz74Rtjwg8++EbY8IPPvhG2PCDz74
+Rtjwg8++EbY8IPPvhG2PCDz74Rtjwg8++EbY8IPPvhG2PCDz74RbrOMcexdrPhjHVqZUu5VXf/8A
+KM/J9lfKd6t/9IFq5mpnz7vijar6xb5otH/65jtOTjk3182N29TW/dDbc3YGkpda3n9OAd3JvJ/5
+SYtD5I+U7QK70PTJNX8yZ60TJ+EEE/gp8nNIFUd+UVdqu9RF/wCUhqXZG400CAA1zImb9V//xAAr
+EAEAAQMDAgYDAAMBAQAAAAABEQAhMUFRYXHwECAwgaHRQJGxUMHxYOH/2gAIAQEAAT8h/wAI6McE
+vFxxh1SnDOTzXQNdkxpQCpghgcz+ykyvAAwXs3/ybFHD07o/oe9RzqyQhboWpE3b0WFZA931SnX8
+F0wb9qkdkbWtEWyv5kkkkkkkkkkkkkkkkkkkkkkkkkkkkk85Ma43tjV0W83NzjyQ+b2qXTESTOAi
+2Yu9H/rJEWLSItPPdZ1TUlnQ6Y9eSSSSSSS/elySykwxuXi3pyFRSGA3VxSwuy09p7Gd6FuuvBSf
+7TbLUjfvTBaV1bZ/MRbgqAVQBw5/3+LaTJJUXSvrxU9C2TypfoKQp0a+4+Y51KGYMEPsBYqzvbq7
+Rz+Ird6XJJCzTGxebeSSf7aae2smJtNd4cK9BjdpQnIU6QEgqBZtOlQ3IR4wAhcMpTqoZdNcoVV5
+fbBagEDPEjLXCF7WmsJ0zydYJbx8D4UEehdVnJlzmy/4C0mkz6o70oNAwRkNzu8LZ1irwKi6n6Ti
+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
+05GcI9HP2jACpWbV+l//2Q==
+
+------=_NextPart_000_0000_01C7FA27.B4F2FB80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/Code%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20module%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/lcd.gif
+
+R0lGODlhuwG0APerAAAAAGqCCCZBEqLDCE1aAhJrCdjBPy9RFtDrBRwjArWSLipfFbvdCCIrA0BR
+BYWiCDVeFkFBQePjRDRBBNXQNjNZFrnRBPTwQTdkFitJESE3EJeAJo13IzVSF/LTPjExMVluB8fp
+B3eRCD1fGx1mDgwzBrqwMSI6Ea/RCPfhSg0QAcXeBJSzCfLZR2N6BzZhFzJLFfnBMyhlEsfHPPn5
+QjNABTFVFS46BPTtP3CKCDVaFbjaCCtMFidEE7DHA6qiLDBeFzVLFzVWFgZyA4uqCD1lFv7WSxwx
+C//5VdX2BRorDT9aEzddGhdpCyg/Ev/hUxkdAMrlBGl6AgkJCWuFB8PlByxKFpuTKPfTS192B36a
+CNCoNSU+E/HJRrmdKj9PBtXPNzFSGMPdBEZXBuXRRbbYCJq5Cf7ZTTliF/7+UTNWGTZaG8HaBK/O
+CB41DRwuDShCE1FlBihiEyIiIjxRFzNaG73WBDpoFikzBDlSFmNyAs7wBrTQBRISEsjiBGZ+CClF
+Ete6RMu8QDo6OioqKuTJSg5wBgA7AN/aOBoaGuTFSKKbKafICP33VP7qTrqbK3yXCaCHKbedKuO+
+Q9WxPMOdMdPxBU9iB+niPPfZUCxGFfrKQNjIRCJjEXWPCQlwBJKpBBxoDVlnAomnCNbWQ87qBZi3
+Cdj6BkZYBv3iVg0PAf39XzxiGTVNFfHXUrqgKbfPBCxlE8znBAUFBRBtCL7hCOTkSTdFBTY2Nlxy
+B8nJQP7+RDA9BLHKBC9hFj1pFhsuDRRtCZuVJ4CdCPHNSCYmJio1AxYWFj09PS0tLR0dHabGCIek
+CfT0QfPUPgs0BbPUCBEWAZS0CTVXGwB2AI+tCNf4Bf/lS2t8AtGuPZ6+COXNQ7aYNcOjOfjPSY15
+I/fkTfLfSjBPGMDiB+XUSP/dUT1WFbXWCP/sUPfeVZCuCP7lV9HuBRwkAkNVBurmPiJkEVpoAs/s
+BQ4ODm6AAzplFSU7Er/YBC5OFoCVAzlPGL2gMTheFjhBASxKEl5tAiwAAAAAuwG0AAAI/wDXCBw4
+raAacVZ6cOFib2GMNI2wEJtEaYYCLiccQpRI0aIALh8fRpxYUUEPAXAAieRYEpBLlRtJevwoQOQZ
+LF0mkaok4CPIlTIVwHFCFGjHiycaPkRyxoi3LhK2aFrIkIvRklWtxjxKs+bWkj17XrX4MsNYBS5T
+nqWqlWlTI2k2FZw2sK7dNXXy6t3LN+/dgX0D9xXIpA6Tw4gTK2aChhUTVpAjF5lcr7JlNEXQ8NPM
+j0lnCItDFx4tmskI02tGpKZLcK7r1wUJroEdm/XfNUxwLwZymPfhF48f82PVGHPlOngF0i0YRhwP
+TQoxak2TzlWhQLq4CTgRMg1169i1g//0+v169pcwy4fPAIhX+urmtYd9mCZVOiyKSHU7OZ4+/PBD
+OQGHf+BlxxZ966SSCTG2ZKPJUFQRGN+B3v2XHRz9VVigfAL0IOF6LpmlYXzofZidT9Ots84T5aTh
+TWx1qZabQMjViJdgeyW33Gx1LNdjX2oMZtiQuRWJ25GIAecYKy8QJ1kRrNRThJRSFjFcY/yMkGVn
+TAAH2peHrQEBbkQywZtvh52m2prTjNCmcsrRZhucs9W5I4y3IWnYYXvyBhxwaHimpZPGRQmYcj1O
+g5AmKHIhSRqrgBMOGQYIwgFNjkIqKaWWhiWAF5pOWuk3ZYEaqaiCfMMee6+EyumlYbX/uoojkm7D
+yQYnhfXoqa8CIoCAj7haKQdsBbsKOo6k0AI5kUyFIRdOGLvpsE4sBIe0qHKg0EmmTmtproB0i6qq
+vGSQgazeqvoStq/6JICx6CB7DTr71HaXanb5hWOOt+k7zY//5lVBHQMPXIcOpO2pMJ9JdrkkZJhF
+SdlllaGxBJb8dMaPl4qNOWZhoDHccGLmqGZOanTYVRtsdspm51wEuZnazPjKSBpieyIWKHEjoOEz
+GhUnBydzYfCQUA9I96CPJB7Q0Mw7FFyBz0lI58G001Bf0QogSAOShxdNPx11B+Zm4I85r4QNtTBf
+lJ2BOWBjTYEwrWTQA3t5vOLMLjRc/4DIInnY3bXVas9dNyCaaEJH3E+DcUUQD8IBhz5e7M03Jj9M
+Y0XikmuizyNqOw45HIlTHvrjR2vydeFXdBAiIHAXLow5/pS9RNpyC5MHDGafzXjWrUCHNOWW74KD
+CTLPOfNdyCW3r40t3/mjXgHnaCMEOZemGJOsYADZHZhNKX5lVgI9XMZdMhGy+nWAqdtodbwQv5mK
+qUnzm3TIHCfMd6rsZpsA1N9f6oCv943GF4dBoJK6pKWfZSYz9aBRXebSHIQczWg8wMcBwnAAHniQ
+azzoQQYPYIMw2OAA+DCauazgjwOQUA0nRCE+/IEPfNjABjqAAAR0oIMb1i4DNgAiDv9vaIMZ1s4f
+PGghEW/YQQ9mwIM8ICERXYgPFvpDEzAQRxjC0IHmVDFxibOCOLQYhmlscYya2Jwax3hGC4JRE2MU
+hxraaIU6QnGLNlCDC5uIRCXikIc9tIE/lsjDjPFDB0KwAQz80Qp8tOKGQlCDHmtYx0qO0YxqeE2e
+Bui8fW2yRgDLS/X0ooMhkQl+qNzTnx7WpO+x4g7kq1hl+FE+Q/5GfYkxzJf6VBjg3NKXqFnNQJLX
+spftKEYF+d9rZFZAu4yAgNnLHmKW9BjiAK0emPFLXRJlRudA0YP42OIWqfjNPUqyhDJMoQZNqIYK
+tHOKRCykDuoBSBvIwQF/BGQiY9j/QRuS0J0VqAA/PejCPNqgDjA8YRZhEE4udkANHejAGMVYxzgy
+pyBxpGgcxWFGRWV0o2UkWhx5QMZ25oWfe7SBEABZzx4uwAE8hMAS6nFIHu4Tku3MqRdJSlIyuqaY
+NBNIM/N1IyHlSXoB+1fAnEeYvGhvMX9qEgbQcIdXjs8yl9kM+vihw97gcn1ejd+eEIgmxKzGTaqh
+C1rr9LK7APCtyYyr8taUGmg+9ZZL+tnPjiO01mByo1qUpGDFuUcXSjKgMJyjC/EYBpMGVKA2EGgh
+aVoPHcbCHbGwwQJs4IAFsBSyJ1wiwQrmzpSSEAhqAEIdUJvQA3TxoZmcxkO7WMFL/4bUNZe06Gs4
+Clg5xXGLQQoSweoATyEYVweGBKQDfBFTrM60psY17hoQpoM1uHOOzdminDaZp+aB0qiflGBRbzRd
+vHyMSOi92W8e5r3uTakesKRSZS6m1c3cEgLy6xj9blbW9CVmmGpljW36pzwBo3Uu/2Nmv575TMQg
+8JbBcUxjiCM+oDFVZdMYrCQbG1zhzvHDMESoSYl7zsMOtwJMCChLIXBIrFb2sjxkLldjKtDNAuGG
+BEtxBVSb2h6HAbWr3THBBEvkaQhhLhvu6G19i1E5zYWjr0lUooI7XNUKbBoVMG7GlpAxmmJgh5V1
+8SwNeUjPrIEfYrKuYDMcZRjNVf+oy2NeJ63HXTkT1bu4QZj2sveCPhMHfLCc0i/e62KfZexLoNFl
++9iHs/wqDDhlPStb4zrUTdJ1NgHEU4zwwmC7PjVQgyoO0K4JPbscmc2ZFO6/qNxhhBLMurkxWJAq
+8C/2dVWHLNYMVt2BVV9UZp641iEQdIDY1eYYNAUTsZVVC7L2EczImt6fk6dN7YKEUqlK1QuNDoO9
+PHvGM7qeqWX4IebJTCZjp+ESLuGHl6QCjK11rjSNQHnh5tX5UKWuLhP0jZdU3uxPj8GAVF8JX0KP
+m6Yb29i6z8RtxGBPvX6SZpiGGec6CfBeGG/ZgeXdb2g2WDG+HMELevaY4mD1wnb/qW6dBibJvbAa
+oViuSwXWIATr2nzmCAMTfl/wZcvcIRYuhsCvK/uCHUJAyEhPcZGSrReDAQF7Dy8vvKVObWljG8Ou
+kbK967T1/x5Gz1tixWZmSVkXD7pKE7bvxjgWsjorj+IV32Ynmbp1uxhpRvcmjN4/pm+vps/P3sNA
+oCtzh7OPGwP1eMHG8Pv0xPDG2Yw208ISuJjbrNVeywHgbNLazLVa2uOhcUxwImyaK2EGaIjXdp5U
+Xl68O+9fVgAGMJQg+9rPfvZKoD0wjmB73h/h979vQPDdEPwjCN/4JTj+729Pe93X/gjNz33ubU/9
+2zP/DdjHvvS3L33tvyH602/+/xtqP4fZKwP3Sii/7Jt/ferzHhjZzz7wgX984QsfD78n/vyXfwTs
+v7/601d78TeA2Qd/3hd/zld9tid+BKgE2rd+1qeAABiBCugGwGCBGAh8+rd/HPh/EviBtWeBEkiA
+2ueAufcGc4B9KbiCwFB+LqgByqABLtiCNDiDc6ABLagB6WeBc+AGOKgBPwgMQRgGh5FX1nRNQKMv
+dYcb5uB1eXICABCFUjiFVFiFVniFWJiFWriFXGiFswAAXzgLYjiGZDiGURiGYCiGZ5iGYNiFbviG
+W/iFbViGaIiGc5iGdJiHdNiGcNiHXsiHfuiHdWiGcjiFcliHgHiFhaiIUoiIg/+Ih3r4hVxgGmjQ
+QMOBTfWQetqETANxMnd3F2EQiKI4iqRYiqZ4iqiYiqq4iqzYiq64irOAYiIHMT5TGRiAAXxhFydz
+GrrhiUdSF1D4isI4jMRYjMZ4jMiYjMr4hvZQicKhV4iHi5v4F004M5WXG8CwjNq4jdzYjd74jeA4
+im+gJYNCbuR2i/WQi86EJO/DjoeRjeEYj/I4j/RYj/b4hm/AGIyhGeYTjap3FyczM9WYSzMCj/d4
+kAiZkAq5kKx4BKchdsTxAmgQjemYI2+yPHcXJhlpkAzZkR75kSC5kPkYHIqHAeeYifoyQQJxMtWI
+L6FRBxwZkjI5kzRZk8X4Bkv/AihTRZH8snkXiZEaqRgxaZNEWZRGeZRbmI/pZmgUKY1LCHcDaUCj
+MZRIWZVWeZUhiZP6iAYSiY589ZQjEJBFoj1UiZVmeZZoGY/AcBiBIpE+w5OlxiZBRVehUZZpeZd4
+mZfD6AbBoVcu1ld38YlGoiamwQRvoJeImZiKmYpruZV++ZV1MZaL0YSngRqFeZiLmZmauZlauJZM
+UnK1SGoDkZG6gSR0RZingZmcuZqsmZl8CSg+QxxVUgTsVprasyYjQJiqyYWHOIdhGIlkOAWzIJxi
+KJzGOZxTkJzKuZzMqZzzMAXPCZ3Q+ZzzUJ3WeZ3Y2QfzoJ190J3e+Z3g+Z3H/9AH41mex3Ce6Jme
+6rme55kIx5AI8Pme8DmfyjCfiaAM9Zmf94mf/Nmf/smfczAHyiCgAVqgBnqgB1oMc6CgDFoMDvqg
+EBqhxUAIEkqhFjqhhJChGrqhHJqhyfChIJoMHxCiIlqiI/oBKJqiKrqiLKqiuICiuBCjMjqjNEqj
+gxCjNzoIOrqjPNqjPIoMQBqkQjqkQxoByGCkEZCkSrqkSkqFa9kkTeIzD3Qco2GboWE/qJmbmMmk
+XNqlXvqlYBqmYjqmZFqmZnqmaJqmarqmbNqmbvqmR/qmcjqnTgpMevVeRdBxQSmZiYGbuWkaIwCP
+czqohFqohnqoagoAiLqojP/aqI7aplP4pD7DGKwwpRH0cNIEGhqTJoAKqGriBlL4qKI6qqRaqqZ6
+qqiaqmcaqb6kV6c3JaOhcyHjS52Rpbl5qwYppke6q0QKpIOADL9KpL/qoz6KCzlqrDaKozVKox8Q
+o83qoi3aoiY6rSc6rST6oRuaDB26rRw6od5KoREKrhLqoAtaoAqaoAiKoAO6rgLKrvhJoP/Jn/c5
+r/Vpn/Z6r/Hpnu7JnvyKnuT5r+MZngLLndtZsARrndqJnQpbnckZncvpsM25nMM5sceZnBQ7scCp
+h4nYh8DQZ7CJieKzGOvjSyPHqbd6q6wwAqDamizbsnfZsfsYmljFJ6DhJwD/16pqkrMpCxl26bI+
++7Mz+aRuWYszC3B/xxgj5zOhlpuQMQKRsbJAG7VSG5IdK5FD62K/FCha2xhROhxMu7ORwQo9O7Vk
+W7bxeARWO5HXhHiVYU1bKZGO0STDQYthG7ZQa7Z4m7fgCAxc+ZaZaBmCF2E/wySxWbh1Cxm/wAqJ
+e7d627iOi4xHsJMUSXiwRCjFYU0PVBxQUqmKi7iQwbiPG7qi25C36JV3IHinCz5OcoQOZBwPZG5Q
+kriDBrqjW7u2K4pHgIlYBUu8GxlSWqmT4brhMxnAO2iDVgS0e7vKu7xamLvwBV+pG72cCyXkAzSZ
+G7ywm73Iy7zc271Y6Abw/4W6qHsH5IsB2iu8Faa9k2G8RXAE3vu+8HsEvAu9qYu6UHK/lHG9wzu8
+x2tuyXuFvAAKIXAKBFzABnzACJzACrzADNzADvzAEBzBEjzBFFzBFnzBGJzBGrzBHPzASdAGUqAK
+bgi+5Du/JUy+wHu9VCI+r5u97Pu/VUgP1tDBNFzDNnzDOJzDOrzDPNzDE2wHCdCFuRtfvPtzJXy/
+lYqJpyclw7vC/Tsl7suFBODDVFzFVnzFWJzFWlzFfLCI30u+z1vCv0B40+u66Wu9swm7xxvFW9gL
+W/zGcBzHcjzHdFzD1vAFXOi8RexzKCxqoXlNZ6y9lsHGWpgEdXzIiJzIiv+8yFUsBVxIwmFMv/Bl
+uEATJaNWDxJjHJfBwjA8hYz8yaAcyqI8ygeMDXl8upEcX20bs666xFMyapW6xEBDyFlIyrZ8y7ic
+y1RsylsYuZk4v9ALX50hYV3SyncKQa/aGLSMhbrczM78zNAMwbzcvF7pc2FcmOu1GXd6eoPbyst8
+hdEczuI8zrg8zVkYuamLVf37PlzyJ8ZsuYTCCt9sheRcz/Z8z3RszlgYuaVLPuOTpwZ0s33LunoF
+kfywm7WMzwq90Ay9w/p8hWg7VROJp+YWmXy2lfq4JFmStCMwz1XY0CAd0iJtwQ9thW7QZztJYZNx
+B3lqI4p2s46Z0VuJ0Mz/PNI2fdM4XcAlXYVV+zOBl8IwM11OlRhG25fBkZpdmNNKvdQMvdNUeNI8
+15VRUlVSknn6AnX+dVceTYVM3dVeLc5OzarAIXATGSWvxApz0SPWpRePNzKJQU00Dc4LHIV4cA5R
+mAtEEIVEkAVRWAbGEIUHTNfQcNd5DQB73dd/DQAGLNiErde5EIXnkNiBDQB4MNgAgNeODdl4ANgE
+zNiXXdhE8NgAcA6brdiLTdmWjdmGLdqRzdmdDQDGUAaNvdqQLdkFTNd2/dmZPdqlfduoPduhrdmu
+7duVDdysbduvXdfGLdymndypDdp8PdrIHYXGkNuqfdjSPdyn4NnXHd2k/z3c3A3arN3bp20Mz73b
+393cCxzWUgizUPozgFYEqDZKN4JKZJnUc/3buk3bvK3d4Y3e5O3cy93f6r3dlG3d4s3cxH3e/J3e
+k13c+x3cBF7elp0FCT7hCz7gDi7gET7e2m3gEH7dHq7e/93gAQ7iDC7hG47iGo7cHC7iCp7hHR7j
+Mg7j2V3gCczeUfia7jxV3fNKWddyw5UXzFYmfDq2UsjAIiACzBACS64N0LDk0KANSx4Co7DkB6wF
+WlANIaDlA3AOWl4GA6DlIVANWm7AWs7lXg7mWiDmZG7mw5DlW97lWvDlYT7mWlDmZ07AWgAJal7n
+bO7meW7mWnDAkDDna/9+52++53yO6ICu6IOuBXFewGlO53be5niu54XO535u6YGe6YSOwH3+55cu
+6JqO5o5e6qDO6KdQ6YmO6Yu+6a2e6p++6JNO6bQO6Xp+67NO6rUe6bLe6L6u66HewDoOAO7tsRPp
+PbBUZK7GF4WhF9Fud0j+4QYMAiCQA+OA7dXACNjOCOqA7eOQA9h+wHEQBwFQC+c+Cstw7stABOde
+BVRw7gZ87um+7u0eB+8e7wFA7/WO7uoeB+zu7vAeB+PQ73FQwPYe8AOv7wV/8P6u8Og+Dvju7qNw
+7hCf8BIfABQv8PnOCBcfB1WA8P/O8RUfByCP8fOu8aew8Ce/7wZP8ub/DvAvH/IZX/Id3/Apb/Ar
+X++XYPIef+47Pw49T8AuH/T6HvIjH/FGT/NIvwxKL/NG//MMn+8wT/RM3/JOr/M2X/QMfOxP2iV9
+praAxmpUNjDYI+3ahF4wid8KXOLY3doFjtsDDg0uDveibff+feAD7teuTfczDgB+P/f63d21Dd6F
+D91RqPckzvcR7t0BDvg2PvgILPmKf+OnrdyPf/iNH+KXv+KWr9fRzfgPnuKjf/eOb+Ny/+AILvo0
+vt5cuJY2S7hTdbotd/t5IVw4UlTIUe04bsAN0ADusAPBnwOmEPymkAPBzwDuEPwHPAZjkAW1MAao
+8AADQP0D8ACogAq1/+AC22/A1O8C01/9148K2b/93f/94D8G4k/91o/92s/93o8KBQz90u/+5X/+
+8q/+9R/94//+AIFqwIMxqMa5QIXq1MJTBV3UKvhgQMGBBWshVMjQIURUEikSRHUxocYxWTh6FPgg
+ociMDBuWPDkxZcGDI0majCizYkgXBV2OGfMw50eLGG/GJMrT5tGhM5W2bIgKZ0edKp+6fDkV5U6W
+WL2ewgZA7FiyY4G9YMLkxdoXGDCwwnBHTR01aqbZnVtH716+a/Ya8lsHWFnCY78yXLaszZ7EO6ok
+rrIj8R4Uyxhh1aKlWojMA84N01JmgJZhIaqRdpmZCGctnkGLJm0adf9qLas7fw49uvTpYQwhaWbt
+Onds3piB3858bgBo2b0Zqg5eJrnu5rRttz5HWjnxzM+PY39NvTjW35uRa1HOfPzCzOaxax+tRbaW
+1JDce4bP3fmp9sGzD99tNu/u+w+2APfj7zvhDKyONgKnU0/Aw8AqjDBg1FILLQzQcMutuugCca68
++OqrDlqooaaOT5SokLAJTxELD2jEyoUIsYjIQqxzjBELKxVUqeEcVVRxQR1VVFDHBRVUKGOCJV0a
+soYyhizyyCSXbPJJKIGckkgjkVSSSSdVYCjKLqsEE8sxsTKTSnWWvFJMLRdq00s4w8ySzDK5dPPH
+OPPcU0o3rcRzTTb/+VTlj2ruVPPHLQW1U5U4dzCUTkT/MFLSQueMUkg705RTz0DPfBNUQEcd1NRK
+LQ2yT1XnnDCsFs1KK8O13rojLhE/HJFEX5tAcYETD5mVrBdjnBGALGwEAEexoOERAKwSSOCLHail
+ggVqTaGinXZ2cMBbl6i1FlttE+DWW3DFHbfaaxPIdttuvw23HYbIfTdedOdd1952y4VX23ak4bfe
+f/MVmGB1Db7XXXOpVZhedk/B9+EEWMhh4YkbBjiAhAveuOKAIQbZ34VE9phkjU0WWd+I+53W4ZET
+eJnhk2XWN12JTb4Z4HgHLvnFhWSddZYLMXwBrg49FBHEOiro1VcS/4IFlprBiu1xQhRQ2MESFKCp
+JQRooAlhHGhQsGSHsbF64AEWQmDmAUZ2iHsHRphhJgRp8HbpAWbe9nsZuh+wG2+9+XYp7rfjnrvu
+u/OWxm+GFIebGcEdN3xvZtj+OwS/G2emcMglZ8hvwC0fvPAHDn+g787xXoYBvEU/fPOFTK/88tCX
+ibt2ryhnnO7QH9eb9Nvdhltu4WnXPHHkP1/+7tUjb/34xZXHfPq42UY++NmJb37y7lHHHHLES+8e
+e8LBPz9WrAG4cAQmWLnVrVzvCDF/Eqepg/9pOkERPKZGDTmw6H0vikY0blGGBGIqgSz4QwJ3cIsE
+YoUXN7gEA27AC/8RmGGDZhABL3jBgDiI0CU3wKAGOehBXoBQhCQ04QlTuMEOfjCEIywhLxiCwgzS
+kIUuxGEMdzjDFYoQiDDU4RB7WMQW3hCJMlyiJ37oxBwqUYU1bOILq4gVHl7RDEakohBP0UUfglGL
+YiTjCm14xiSOkYgdNGMQ27iQNMIxi3KEohfXiMc8lvGOTxQa0WYFDPmhJWlvWRqv9BI1Xy0ARSQA
+IDXgUYdnvE9aE0IWjZhFhFzoKFpYmQUAbgCNUGahGqGsRo5mcY4bAGAWLgnlKEt5SgCk0pWsdCUo
+Z2GMc8wSlarE5SsXMotd9lJZtLTlKlspTIYQk5elJMIvb7lMWIr/kpTKimYtVVkGajbTmr7UZii5
+mcthfvOY0lQmOWFZTGj+UpzdLKcssYnOcTLzFLG85rLcCYB6elOe+tSmK/tZzX9mM5XvVOc9zWlK
+dAYTlAs16Dbh6T6sXYgV81NaXDTav0XupQL746ghqFEAR1IjFHUgAbEOOKE/BAASVQjAH0zRhgAE
+AAWmqGkVtBAAKmClppAIQU3NQFMqtMEMVKBCFYaBVJf8NKgBGCpPjYpUpTK1qQHQAkwDMFOpHjWp
+S+3pQmqaVaESdapftSpDxqrVqBbVq1UNq1hd+tShIhUFbwXrVcm6VbPiNa0/ZWtfqZpXn2I1sF0d
+bFpPMVY/lBWx/2iN62INW1aknhWuap0rZalw18RGVrJaaCxUBQtZvR7WrZ0tLFA1y1nSBvJ9b0gL
+K+gn26VhwH9r8EtufaWXAqBIRSOtAwBVirUXxfSlMeXqH1AgjZzuNACF3WtdN+tVzih2raulrhYU
++9nGUqGuNs3uXzO7VRTYNbyedSplwYvU6kb2uqKlwnqp0N7Sqvem7NVuXMf6VFOUd7r43a5kVctX
+u3Jrvvmtr3fbEF/WXhaz0SXqfedL2M8GlsHnhS5MFXxh9lK4wtgFMHonC1/50te1WHvDCC4KF7jc
+Ly5rmEZu11CBGes2MANcQG9TVNISWPJYAJCRJm+UIwDsKGsMcf8lL11pSlfiKJSsDKVLknyOJVej
+yVl48kRhtMsyVPnKWY7yQqa8ZBvNwslFvkGYkVxML5sZy2hO6JhnwWQ3g/mSYmbnnCNq5zUrWc9f
+RrOa+0zlOVu5zoG+85afOYtcGPrMUE60nOl8UET7k9B0fnSaE63oXjLa0W92aJ9JWWhAQ/qhN7j0
+p/l84mIBY8UsjgsrcoUB3Na61kywNW4j2Qkc10GkBTAgcSeUwAU2UB0PjGA0JlhBl4gwgyKUYhwB
+uRBnMwDaX/zjFhlS7QtGO9tCvOCzb9DBGnx7jqcIt7Vv4O0jahvdvHg2L9gdxjmmG4V2bDe4U3hB
+cpvbK+nmN7b/813vNwqc3s3et7wNzsYdwlvd+D44wpcIcYZve4bjXjgfLS5uimucosVK8Wxhfb87
+CAG3Ojg5rm1cUkiiqBNr0LFgfKw1rlEGBeMIwdfK9rU9qA0a3APcAwTXNrv5rXi2s57nhL4DojPi
+AaM4OtCVPre2McDpo0N624I+9PUZPXJIT3rbqN51qH+9b89TXtWvHnX0BX3sRcd62z2HuqZ73Xhy
+bxvXmXd3rSud61a3O9j7nnemdz3uYU/7AwB/eLwvXe1eb9/gHW94tjd+7Iuv/MdnpYHYsnjW9cBA
+PXKt8jWQfg2/9sUjURqsNVxN2IeJEZUBUKMhe/LIPUMYtVgQ/zSO5f5ivOdYGSy2+5UFf/jA75nw
+Z0b8nR3s+MXv/fPbwQCbtexczIdZzL6gfH0xn/ohqxb3rz+v7/PM+roH/vl/D/3oLx/56se+zXAv
+/ey/SJAtCvlF79DiuNTjDie/tdKrA1xjAmD5BF8bqTWAhwDyC9crlh8LstnbpE4qsk96FE9xgWqw
+kj9YEkqBlU6hEg0EFQ8UFVbBQA1UhWrgQBUgwUA5QThZwRa8QFeZlFUBQSJBQRXsQBsEkhdEkhU8
+lVO4wQzcwB2EFRMMQUYJFYawhiHMQSDkwVbBQRg0QlFxwiHRQRZcFSHswRDEQij8wC6cwh+swkOR
+QiJMwRjcwv+vuL8KcTWM8rzQCz3cMofSszUCXEBqWAADrIPUowYSqDUHnJUXWYYBWIzGeIxlCAG7
+WQbKSAzjuI4FWY7dGAYE0QJIiETc2IFJNI1KxAz78I/wqMRO3I/fyERRpEQEOQVTDEUt2MRRrAZP
+fA5MbEXRgEVZZI/aqEVOjMX9uEQCQUVS9ApWvA3QeMVUdAliBI/cuEVLBMXzsEVkZI9nhIQBkI5h
+sEX56MVPBEZmlMZcPEVvFEbr2MVmFBoKQTEVOySluQM0AL1cw620wC0geKQ8XAAELAACbL2ZO4wG
+aAB32AF/zAFp8EdpyAF/3AFU8EesAAqcGINhmIgxGIiVMAr/pnjIiJzIq/gJmAAKiASKjOyKhWhI
+jvBIibSKkLTIkgTJihRJjrzIjzxJlswKiHhJk6TIpRjJjsTImFwKpkAFleRJqMjJmlzJnszJnxyA
+hCjKljhKoLxJqJhJnYTJp9zIqXBKjUzJnaRKVmsRo3k1WWMF0LsfeLRD3AoGaqAFevxDJjjLA2SC
+AdzHlYI9IEsW2msWCjSyTcskCbwRCoSW29tLu+SkZ7FAJKNLIbtLwjyywJxAxdTLw+TLxASAv4w0
+yBRMvyxMGLHMxpzMwmTMvnRMr/hMycxLKdtM0OxMwDxNyaRMw4zAy7S9x3xNzixN16xLzmxN05xN
+1MxN+3uf/zecrbb4PNtagzrMtTqQARQBgrOkBSawx1rBNUFskRcBARDIgVqoTiJghOpkhGqozirI
+ARDIBayIg0sIgFqIgzgYhWVIz2UYhfQcBypIT5dIz/NMz/Vsz/eMg/icT/qMA/tUT/aMA/eET/mM
+A4aoz3G4TwEl0P00UPL8TwUN0Pws0P5ciPpEzwkdUP3kzwNF0AhdUAp1UAvF0BDd0Ar1UP8MAAnF
+zxPdzwCw0FNIUBNt0A6lT/PM0Bat0Qe9UBylUQ7lUQT1UQ3d0RidUSIF0hiV0SHV0SRNUc1rETfA
+qHV0C7GEMToMQJEiATlAEV+og0cyPSaQzgp5EU/whLwxU/9tgAYREIFz0AY2DYFRYFPyAEVIqEZo
+yAzY0EYJsVPbuNM8jY8G8Q1atNMBwNPh2FP6WAg73YxCPVQ9nQ86bdTWeNRAXY9VpMVLNFRAzQxB
+xdRG/VNEFdQ+DQFH5dREHcY6DVVIPQ1FXVRV3VRRvVRWNFVZ7Y5XBdVYZVUJ+dRSXVVL5VNYrdRO
+vdRerdVdVUU2/M35YYL965BcqYd6iLEYy7UFPEAtrQPmJMBaicvX+4rRHMzUlM3bRM3aFLPVDFdz
+PdfdJE3PRFe8zEzNZNd0zUxwhVfVnNd7vTN7jU3RfNd+tU3EpFd8Jdd2Xcx/rcDbk9eCHdjKzFeA
+DdjIbNj/c2zDwnC1pGGCDdEojbpSaq21T5CkBRyCNUhOavCFWhvAARzTwoBAhqXAMsADheVXfopZ
+h3VZsYBZmUXYnN3Xna1ZrJhZntXNm6VZghXYl/3ZdSVaoQVahFXXoE1apT1anI1aqNXZhy1am53a
+rG1arGVa36yoFUOkZ42Lab1S3MrDNRgCSUJAEkjZ0iPAlXWRc6TburXbu8XbvNXbveXbvvXbvwXc
+wBXcwSVcl6hYC5mf+uG/XMGtaaDWGDsREkhbkdWtt4RLuS2LwtXczeXczvXczwXd0BVdwj3csniD
+i0qatthYxqWDxsWtL02RE4EHtZWk133LtFBZfhzd3eXd/9713d8F3uD129Ili7NIXFjTqP+DMbNd
+wAJQy+BCERlL2dvFXGMR3uvF3uzV3u3l3rsl3rGQUtQ9JPtxC7N13DWQ3QWkBRNh29f1i9uVObns
+3vml3/q13/sN3O8Vi6NZC/qprf97XBhTzhPphOetg9x6SwEUU939CjFYgRBIgiiIAnmwBFmIAkuQ
+Bz/wgyTwAza4B6xwYAiWhVJgB0tAAARIAhNGYXYoBVlwiSgohVJIAlmQBQqWYAz2gyiYYQnGihNG
+AGs44RKmYUvYAw3eYT9gCDu4hw1eAT8gYQ3G4Q2OghVYAazQYB2W4BI+4RRmB3bgYnZwiRzGYidm
+ByjOYP8p1mCXoGII1uAnXoE9KIUVEIMkEAM7sACGyGFZiOAJtoQblgcJ3uEo8AoEKOEk6GJLSIIT
+toQyXgE6tgNYcAkLYAMdzmEbvuA/1mELFmQ8huE9tmQMjoIN9gMx+OCF8AELmGMHLoU9aGI4lmM6
+toBewAoJlmEJ/mRMDmSXiGEUlgdCVuEUjuEkaOFNZogu9mIEkIU9YAc/BmRN5kr8W7GMbdbFndbz
+daRPmAbfmhpakN73TdnqNYwXueId3oM+lgVQlmIxYAMQ9gM9HuFjLmEVtgYWLgVdLgUUpuFylmA4
+buZQ7mFCTmQEsARLaGGCDuUIzmGGuAcxEGUntoQc5mf/NK7iMI4CPa7oEr7nFCbkee7iF65oDvYD
+eSjjKGCHP95gWUhjPM5hT+7jCy4FP2hkmBYDlcbiCV5mPwDlTOZhrDBmjkZkRV7mRq7jO2YIhq5p
+kc5iBOhnYj4FC5bhFrbkkjZimWYIC7iHRm7iJ/YDOIbpJFiBeyBqhpDgo77pnM5lhtjlgP5pgf5l
+eRhhngboFhbopF7qZ3ZDpBnfpelYGFvAJrhm9u2EGDtgAVRgcFZYrzhkQx7oFEZkQ/biPZAHecAK
+ZUbkxWZsa0jhJLCGgbYEl+DsU+Bsx/7iL8aKz7bsxSZiLx5oMF4IBJCHPTDkchbtRX7skubpQo7n
+y85s/8xGZJdI7EVG5C5OYWV2bNZeiMQuZMUe7sru6OPG7ecebdr2isoG7SSwbstmB9imZ99+7uBW
+beGWboYI7UW2bvAG715G69eeZ9kGb+KG7Hr27O6ebfM2btBG5M1u7IHmbUvA7852icy2b++O7uaG
+0gqRUmZF3jtQ8GkYgWruLV6jhibI5hTp5umNX2/9ilX2YuGebZFOAjiGb4Z4Z8eu7Pzm788u5sVO
+bHkohYHu5SRgcQTgadRWcQomaBmGYxlfiBAoBXkQ5hbHYBuPbBiPYayIYR/3ZcZm7BMfaJdgcdju
+8XLu8YF2bSIP8VOI7OAW6PnecAKPYS/OcgyW4SD/8P8iL239Pm3VDuZSiIIq0GUE2ANreG0Xt/GM
+7mUdd27vDm4h9/EYDvEQqOEfH+gpB3FhDgGmPoUjF2YhH/Mhj2zJTvESD24T3+wSPnP+PuQgH3Re
+NvMCt9haoZ/+RSRpddxpFakckyQuPUDBjscDtlzD3jSvgOGnJmETBvIWPmIrduIZZustNmF2mOcT
+dgkfBmJfHmJcduZh3+IgruBzNumzPoUmpuSQbumSBuRQRmKPtmhZOGYUXuQf7mI8PwUJtmiS7mOc
+RvaUXggafmpfVmRbN+ROD+Vyj2pk32nu5u93B+qDjgIxmGmxHuEI5vZmX2RAZnOmRoCMTnghdnZ+
+V3f/aWfpLC5jUVbnWe5kW652e0f4Ze/1jjdkYeduYGf2LNZ4uy6MFDOk2SLfOzDfCf+tBZiaJqhw
+y41OBvaKEUZhRf74FH5xt0Z0nE/kQl7k/u7v+NbzRKZgerby0pZv117kYE74EGf3H5dyGVb6GHZh
+e+5zoffiy0bxhUjrGK76p5dhFr9ydthy8lbu1a504w77Vb5xsk/kThfvEp5nFUfhQm/hbG9tgE7y
+kubiFb5nfCfxgI73spf3NYf7GJb7gzdyxR97pTd7fL/7SS/v767vAK/0Qbf6YJ58sG212Epct0CD
+dgTgK/3ST1gDFJmGBz/gwU7gBL7wB3wRALduzbZu/8zO/euebKG/78bG7/327N838eHG/DPX7DQv
+b9gO71NIbOKebWXebGW+7RK/bv5m7FMA8GKWb+JObeMf/s4+7dv//RTmfkSm7A9Xbe8ncPEmfmvA
+b8aG7T2A7PC37+u//qJ3/+Qv/u9P7WIGiD2WkrBjlyTJHoOWEiLcU+oURIjsBBJkN5DhQoUTI56y
+NNCaxyQgLVlL4rHjQI6nTIoMSXCPSYwbVarEBuAmzpw43TDpiYEJBlYYMNwhumbaiKNyqNFaQG3I
+mk/UFqypyqTOVSZrsK4BpvMrTpoqZZVCkAQBAo9o1ZZKUkpWFJV+/LSVlfasWUsFrRVkxxEtAmtr
+Lf/JkqU3ShS3iFUCdlvKImJLpRAngRsX4lxZSRDLY4d4jzzKcP2oRFz3McG8e/Ui4Gh6cxR5liKH
+Tjz5MkTAfO+yUx24t1/MdGHLpi16MWO0gtMSNoxAtJ8VHMnKc4vA4GC0BMty7B14cKlShxOPjugn
+imbTs6NYqr15hZjSUdpyXt/+uKy/ytFiZ74/vEoFkdSbQMbZhpxYENkElk7A9PQCE0JhgMYdFNZz
+1DRVdUJNE0vRsgY11HB1VVV1rEFiHV4xqFOCEYVnVnZmeXdWYaX5EQJeHgmoFkjX6cfOcmy1V5hb
+ZCUXWHgWFTbkgflhNh9skBnm2YG4QYReW+HpmJf/JYHpFRxEcNEni5JTolfkQxHxV9FABZmkF0gF
+RfQaelKOp5iTPy5nEQJmkhcFaWqidt1A15nU226tqXnXWmeJxw6Rt80JZZ2QskdlZdGNRWkUZR6m
+2WR5nsKfYBbhlVpbaKUZkYCpeQTXfZoVJqpYC654k4MPYvDChEQRNQJSVTVBTSgkcOjLU1op29OJ
+W2ml4q03tQjRQEmsdJA1JWV70LXWciQQSSGBJNK4JZnE0UGWoJRutSF5pC5H7x6aLkwLDaQjqxRZ
+dG+9eh26h0oC9SuSSdl+NO63C1kD7ksHWTQSvNSm5FLB6Zrr7SkJ1WsqQwjdqxdN78aZrkJwfhmv
+/0clVcsSwvfGe+7KLvl7MrUPM7zQmwZNBHC8+rrbr0YRo0QSyzKHexK6H7E0L0H8Cl1rtDfxBCEr
+L6Ah1B1Z33HUUSMMC8+woWxIy7JYma0VVtBGO+2oZeWYY5cwvjUWWW+/K7JeQl8HZKtaOiRjKfIw
+hlqSzen1Fppz1l2YQEs6BCqCYYZgVlmFfny00G9lKYtAb+lVt3fd7bXvm2/eK+eVUIZApmRTEinP
+6jQ1hsBjhIm3R92lhGAloWw2nXOcYJ7SF1+mggdqjWGGV2TnhuEO6lwqac687QshHp6ovZHUKKFd
+pmokytvv6zmkyK+aoK23OvgC+2gMVZTWVSU1Df8t1MgRDDXwwENNMCcu25NWSqS2W7GNLDDyDwJp
+RCtAyYpRXurNoRSVG0Pxp3rsQBztzncKOsXGPu6xjHkocx7x0GYum9EURzJTGQeaRDtxc82ZziOb
+8wwpVQBaFJC4ty8I0uwUK1hBYuYyQ/aExg+wCZRrhnOetBjHiIBC4qj2YyoeGqpLwlsTeB51HNww
+kDhU0osJo8MG+aQnNl+Ux3kqE7kXwW0tllKjlYZ3nR55BDHs+GDkoBY1YECICS+o2h1YobWtVaUq
+hpjKIWUQNmU1q5FoG+CK2LavoY1EZeFCXUTk0ZmmHc2SEAsfX9xVsssFiIJ32WR7qnNHMGlSZ7L/
+SYImCRJLh4SAMW7y15sMpq53/WV0FMGIu5AmsV2SpJKV5CVEwlMdTXpkD3mJ5R0FV8ocnrI6X5Ll
++XgprpS9aV3ho+TPdJYQVrmpd7FM5cJ0N01ZDuScECyINCXyMNLd0k3AUck2q3XLTcKTbelbER95
+xSusZe0XhEwKE4ZADSBIZQH4g8ey1jACZgWwK1GT1rQENBJ2Oex0wjtFK0d2zIKNBJTyMhW+kKmm
+Ke6wLXpRpSYziYA9WKMz7XTpLG+YSZSmLGUldRk5dcZSdg0NlLnk5kmAeooQlAIm8mgqLNsCmuqA
+RoNybNMOralJvui0qPlsSTGFCc52GaQih2Kl/z1fuaNYPpVWNoXlFLXKt86Ijm8hqedvMAmRbrqk
+nvLgC12n9U8G5cpq79PaL35R0YSKSKG+qJ8MAEjRZgUQkgxi21sOyCf/fG+BfmigRRAVt91cUTlv
+sYjnJCMjtJCROOu5I6COGML0+GGGfrijCaMAn9LUrVE7SkuPhPeawqBWPKMtiASj+B3eqCZcaYmI
+GMTgB0v88DEr8INDovMe6diojMWZLhoTo9v44PAs++pSCwekVyxy9nCdnZR3qeTMMN7DDq01jWfA
+G1sQTqourFvSc/4Ux30FqTmwFbA/LxpQ9hH0Dom9A0J7EiImhIih1PCFZK8S4UJaFiwFtMvb3P+o
+nT7RqjCpusvMTAay8saohQrxkWsWVzstlc8tsQvT4v7rvMkoBoqnKEsOz3s0L4nVgCFWjUZKa9d7
+EfmBYJoLjgBVHCJCx8cbXFynDIe7A3F3gks+qoqFpr1StSkv2gkdjv3rqS1XpgrkdVHudLyQSCVP
+eZSb8aPoTCsd7aZQt9NzgvfIPl4RRZAOTixlKUwNRTMWwwCcKFesYtGLsu0g1rL0tk5hrosF6GH5
+1KU3I4K3nrarJefqTk/LirOYBC8iDHv16fjFM1EnlVzFNNgnaU3MdGGr1ymhNVh1CWqlIkCtv7Qm
+Qyby0YzZU18agclUX0ZMYYPEYKfe60eqNS7/XluSVT/r6L+KF0+J6Asmv+Nz3uKF0qE2M05P+2rp
+2m2vQEdrwUEhSkERDcA6JGvCCpXsCOoQ8Ikya9JRY9twa0e7z0EujsNNIGt6lNzwbE5JCCStfLLU
+VMk86noIEpMaG3cpuLgler0MMpPVcjThFYZyzD3rWfWzXJW/y0ushch1jShEdpzHIfs1OUekK94o
+iHwhlImCGMaIw+KVOU4219voXn7Ne0Jkd2NKC6wwJYvdTifHWO/UG99iJTr9d+S2gUunZ87xz509
+jjQZLFimRmh8H1qxykLWEPDO6Awvtlkd/grC59M61LrOMKU4j1w+WxnWKWe0gJkOp1CbQDQr/25z
+QmpOyZGIGO968OhA9zLTz+JcmycXPQcslJn5plcjc+/ij4dIdHVeW0vQMLwntLIdpJuEEdK+U0VM
+QhXYYN+IGLDALgTudZKrUR26ODUS3LxrDfSeN6eO89Lnb/Vhw0Qq/8nHpDrefRAsWAVjeCj3zvcv
+/McEvOP9BRN+NN8re1EAsE1kS6tYwZQKkYRoJNiV7CY5YdXHeBIAetvHsAvExJw8CaBZ6QVNFcSs
+SQzBhNWthRXGeJXSFBNJiVXeQIwxkVrEBA5MTARWxYQ4LVt4jCDHKESydZU2VSC1/Rq1VIwGxoy5
+RIxGtcotJRtodBoDTsS/KGDNqFcJXlMPDf/TusyLEeqVHkWLGwwaoQ1SYkkW+z0Fsixa/E0WE/wd
+i0yLiS0e4TEcnqjE6rjclhzK6HGEMjkG6gHPJHFEK/nOLXUJV63KGqbg2jlEW8iDLNSSumHOMZFa
+acVa03igSimX8V3cCwkHfeCZRywP9tBEFQzHabHhBUFPFegJc5ybyViESZGaIXpiMgWOY8AEjUFi
+CPjYHRJOW1zQHnYVGyUJG+phVGmQyLRKFtUivakP+5hfIElhVqyfFQ7jELACwElWI3FhTrDNeZRR
+WtDQcxgR9uEcEO1eltlF3KSFqsBQGYkHWbDGaiXXKbQcXvQHqigGF51JfURGNJ5Ql03Q9iD/nyLe
+nJ29DRU5GTcuHtY5B5EUBm7cAxvInjzswfV9HkTk3nTJEM8RURgJX9edmFq4Hj12hDy2IWu0kASd
+R5SZUc+hkRNxXX950XkcGBzlI2cs5H04kUHqRgUtCR65XU1c1NRUza7Aj9ZQITHqXU9MlPr1BFZs
+4fyxDe3IzeW5TQbxlsZZpHJQXttUh5bA1Vm1Wi+V4LmNzlO5CCkWzlM94ivG0ajFIObUVfEg4Kjp
+zYghUETiRZ5EweSUYnvczvK4Ik2MkGMYhN9AItqxGKMAyZcE1ycK2wuGoNsEjl0a1/LwYRzdoWy8
+JVfqIlY6pXiwIcc5pq6RWY7Qoh7uIkAN/5r5+cpNMkEs1E+IyAAx9lEWMosyhkVGJRu7jQ4TiiBc
+tUm7XJLwkCBfUAQuIdW7JRWpkeWKZYxA3Gab1AtDRBsoVVu4IKe1fdOnGUxHXNvwzBNLSVyi7JRB
+JMRFlNW6RWDVDWRDFKGbVJXoDIgoGSIHVlu5+FS1FSAJvkQ7Eed1XmXPkETHACFCsKDw2EtMDKdJ
+eKey4VNvmlUDzkSLwN1XuEHVCIWCBkWF3AETLEWIRCgx9oQxTtQIPFaINAVQUtq0XFcQ1VZ+SUYa
+PZFK2IEdGFF18dx0BVimvCP0reOlGOVEbtDydM/xwYgsaJ7iydAezIWI6twK3IMtxWM80v+RYHTJ
+dMjoGY5WlwgNYgRRFDzjigLKbPwQdK0AjsjQa+ER7gXk7vnBTNmRR+6eGAzfkzgjYbAHiZ0FoOgH
+kaoFRhZPRqbRXDzGXFyQdvmBQ5qk4IkpZRze2KljlJ5RGFmpzBUJZLDHbWSKlcWkoP3R3HnmT9RP
+MFxhiOTdU5hmT1hqhC5AamJUi7DBdX2pnWLX4X3kO56CBeSeJUQXmfwQnibkCihd6gxdZ0RGjb1e
+CM1cjszIZCDRXHyoeMxFdq3A7u3pojzdclDnImKGXQQJmTHpRAYrqapob4yqGEWEh84GiLIjdLid
+BdxDQtIF7U3XqdIesp5CM67HM6openD/K63K0XekDHNIqwTBB4quQFNdF+74qJ5agHxA6a2qaW61
+6ZwonpRtqY/CR7z+GIi1HLeGH6NqJoM8oYQsqPsIkvtd2MZGqN4RXE9Q6vrhDy18Kv2xDcqmrMqu
+LE1YQ8q6LMvGrMzOLM3WrM3eLM7mrM7uLM8aaIPQpIQUBdaggaIBgYRKqEJRwwiEyNJe2KaGiMny
+rNROLdVWrdVeLdZmrdZuLcWCBTBk7L0BkoS8AKWGCP4cbYiwQtqGSB9d4REEJdfGrdzOLd3Wrd3e
+rdX6bE5YrPlhzVBobCygLTWgwdE2bdNW6guQbNTiLeM2ruM+LuRG7s3qLU4cwYJKCIMO/wX7hGaI
+HNLgHq3aUkPoHm0sLK7kni7qpq7qrm7eXtQRhK3Q+mI9oMHVEK7oru3t5m7oni0txMILvC2Hsq7w
+Di/xFu/wUu5NHIH7UAjzNigazO5Q2K7thm4R4G7osgL2QqrpGi/3dq/3fm/WIi8AKG+FTIjz1gP6
+mm/o3kGIVC81/EKIwK/uBgUasA/wHhz45q/+7i//pqz4Ki8GzO4doC8Bo68gUQjuuq/7hq78Yu/f
+YsD9rk3/TjAFV3D3iq8bBHA9BLAGF/AvMnD8hvD7Wm/WsMLsRjABWbAKrzALP+7/bnABe3A9FMEv
+tq8NU0MRKNQv6HD8ssLzBjAKR1ILD/8xERcx1r5w+tbDAC8xDbOCQckvFIfwEEQxDsdwEF+WEWex
+Fm/xzL4wvgUwEw+wQTkx7u7wCJ+xGRdBEczuBl+xh3ExHMexHEfE/w4wGCvxDM9wETjxL4AwGt+w
+/A5wAbsx4M2xIR8yEf8vUeBxAf9CPTwYGZ+xH8uvAv9wG8MtImeyJvdvHSvxIouxGvfxE5fxDStw
+iLgP9EIwJm8yK7ey8XoxHt/BGhfBL6jxB4sw9d6w9PIDBvDDJV8UzLqyMA8z6kqB69oxAYvxDBuU
+1oQI+1LDM4eu7WJAiPDyUEDA785fJhIzN3cz44qC68JwDD+yGvuwIFlviFDz564zBkD/AAS0sypf
+VD54Mz3XM9daAhS4rgZ3sBrrsa+ErjoH9CmzbYi8s0FDACHrhAqYqT03tEPr7D/M3+uKcwH3c/26
+D0FTw8ZudEEXtDu7czxfVDSAQjA/tEmfdMqOAwHM3/jSri/7cgwXwYSwT0ZzNDVAQEff9Ee7c0KD
+BRQQgB5gg1APNVEXtVEfNVIndVJLgVIXNT00NVRHtVI/dVJTtVFb9VRLtVZvNVd3NVdTNVYTdVh7
+NVmXtVlLdTz0wyyw9Pjysi8/L0wvwRr7EYTUtF3ftEfvdE+zNV/3tV//NWDz9VoP9iwUtmEXNgCs
+9UUN9k0odmA/NmRHtmIzNmNHtmVf/zZms7Ty8gMa8ANMw3Q98AP7+NGEZTRO4zVq73Q773Vmt7Zr
+vzZsx7ZszzZt17Zts/URePYLcPZLs3E99AQQKNrGCndpL1pefzRr37ZyLzdzN7dzPzd0K/cb8HZn
+9zL60m49QAAAFfdwF/dpa7c7vwAEmGx0l7d5nzd6p7d6u3Zu63Znzy5MowFWBHdx85tx3zej1QGE
+AMELkPd6/zeAB7iAD/hyr09nczZ2szGJgIiIFDej5TQ267cf+TeBV7iFXziGZ7hOHAET8AMTXDR2
+o7KJYEV9O7iDMwE2B3dyaziLt7iLvzhz89GHfzjtWvKFlEiI2DeDM/iDYyEA9TeMB/+5kA85kb82
+h0MIiLNxAE8Dk09DiDg5Ney4iS+aaQJ5kV85lme5ln+FgYP48zZok0M5lPP4lF+FaVL4lqe5mq/5
+ecs40db4+yx5kz85nUd5mWeYG7C5nu85n6M3H4l2jR+wJ4d5nUu5neN3hqF5ny86ozd6X3M40RqW
++3DwHWRIhoQIg4/5nUuWoju6p386qAPAgsE5Bsj0ABM6NWj6oZO5jwNQp4c6rMf6mq+PHy1vnFd6
+kyvUNCiUoRs63/k3ZSf2YQ87sR/2FBT2sU9Bss+Csje7sz/7PCh7tE9BtFc7tVP7PGS7tm+7tvfB
+PHg7uPeBuIf7uJe7uZ/7MfTBMaT/+7q3u7u7eyIcQ7zPeyLUu73feyIoQ73rO7/ne74rA8AHvMAP
+fMDPgTIYPMLPgcIvPMM3vMMrfDFEvMRPPMVHPCEUw8VnPCFsPMd3PMcnAyGAfDKMPMmXvMmT/Ack
+Q8qvvMqvvMt/AMzHvMzDPC7Q/AfUPM7jgs7fvM73vM/3/CDgQtAHvdAX/dAPAtInfdIjwyAgA9Mz
+fdM7vdRPvdRHADJYvdNbfQRo/dZ3fQTkBB9hs6QXxQbj+qWnOqY/BasrGmWlDU54PdzHvdzPPd3X
+vd3fPd7nvd7vPd/3vd//PeAHvuAPPuEXvuELPtiL/UVHL9lXBZPzeqGnPX4nGjAo//bhXz7mZ77m
+b37eAwDnfz7oh77o9z1OAEN4S3rZUwiTV4XkSzlUSP7Ayd/bjz7t177t3z7u577u777cVy77iLZh
+DQUBF9Kuo73x93qObwWH5UTdXz3VS33TR330P330V7/SXz/SG732D/3Pd3/P3zz4y3zNzzz5q3zL
+s7z5s3zKn/zJdzzIezz8bzzGS/zFV7z9T/wcFEP+6z//5z/EPzxAzBE4RxlBgsoQIjyYcGFCZYkg
+QnwYkWLFiMcwZkyUkWPHPsc+hgQ5UmQfkydRppzXZ2XLeS1ZvpQ5U+aUl1Nw2tSpc15Onz9xzpoi
+lOgso0eRJkUK4ChTp7MARJU6lf9qVGAQILx4wQ8Dmq53MGBYM23NGmrUzKI9m5bt2rJrmKwBVpVu
+Xbt38ebVu5dvX79/AQcWPJhwYcOHESfGe/UFBAyOX9QLW6/e2zVD1KLF3DazZbhzFYcWPZp0adOn
+UadWjRhY48YYXkyebHlt7c624eauo2R1b9+/gQcXPpx41SNYXcf2igYs7dvP2dZZI11ucevXsWfX
+vj1166xaYYed/RZ3+czUp9cBzZ19e/fv4Rc/AqTx99gY6nnNzZk/7jr//1svvgEJLNDAA/NqTSvH
+whNPLPJuG6I/av6bbjreEMxQww05vO4qCHx5DDwH4YrLvDpsQ5FCC6XDsMMXYYz/UUbDjqgvKwfF
+YyKuEcwzS8KzVGRxmt1mLNLII5G0KjnHbhRvvx6B3AzIseoY0sUkscxSS/iAoe/GEB28Q8eyyvuR
+QiCpGaLKKq3c0s034STOu/oadLIsHp+rA7NpzuKTwmmGBPTKOAkt1NDEjnsBiAbva24EMiNUEUU1
++wR0GjXqOOHQTTnttK8TXGMSxwfhOnFPNP8EVI1pwoDK01dh9XSWCoDIisFRn1TrR0rPHMJPSwGt
+Qw0uYi3W2DgFsHWr18J8iwlTqfFTxWADHRIfN5QARtttuX3D22+9PeKNI8g9wg1z0T0X3XLZJReY
+I96Nt1twweXWXmDozRdcJfjt//cNJf4NuN97CS5YW33p3Tbcdtk9V12H12WY3HER/rZffhWu2FuD
+OT5Y22wvDjlkgTUuueE3IIY4YoblbXlbeDu+F+FtRb4YX4tJjpnjegnW4AAgmICAnxe8GlWsuCZM
+69c02WyaLM90jFrqqdFgompWsMa6iK253rqeIijLD42hsSobglrLfoEJtdWGYO2s3mabCX7m1vHR
+u98iC9Cx+N5bb75ZDFy6wQEs3MISp46abbfd3oofNCAPW/Jf6qH8l66LyBrrEVjhnHMmRojas9Et
+e7SsuJBmsfDVByc977GAjT12wE9HPPGoQ0eDc80x7/rrsCEn28azlXV77bfXlv9bK62OH/PR1En/
+W3bLnhZcddanuz1xoNVe+/Hv8cMArDucxU3KM6Ptc81AqzxdhzHfHxP1qFmxmhU07scfc8slp4yr
+ocmGHLh1T2rKYwLQjic30DHBHAx8ywiq97qn/a0sEXSdZQynvakBrQ46YtvjIBe5sN2hHiTk3x1I
+CDZW1ON+rHjBCAhYP9B5pnoULN3pUOcZ1hnughUkC5ss5TTpRPB9/LDd7aqWxBZmrmv8kxw/6vG9
+JbmGPjpqXNSAVkUEehB0dHueOR5lDtcFqoJ9g13gepjBDmpwi0C7IhqIlp/whSVX/aEUr6jFJmeV
+KH5G1CAT6veCFmLgfkUgYdj/wBY2KGJgaPVZ0NrcuDi21UFRyTPg3NYQukxmUoxiHJ3epMc3wlWo
+daU8XQcBxIQ1Tm2VQasbK/gBQq/07xd3+MUti3C5zLHwfiPAHyDrJ8McUo92Y8HbnfbzFuoM0ZQV
+ip4P88i+ar3Fj3ExIt1yc7tgQi5/W6NcIvvnv2U5coDJa57yKLk85hHQiKaLSwNp2Dcb6tB6psxe
+B+HSysS1Um1jC2H4wlY+6KBKUnls3xp0gLg1+DGb9Dse1gRJSBRSJpfhjGIUAWgjRbFNgQlkG9B8
+0VFMZnIankzm61BaRlIeznWDU+UfpUZJxT0uf2iQHApNaLnL1TJzK2whINUW/zqpxbOMpHNnDlO3
+pvW1zqgRrNZSg1ilClBzoVWVn9Rk6EKtoqEIzAmbExUZRUaGSosGXGcVmcc9LtKNgaDz5Dt7OEFR
+rjSN+XypjuogVLxy8Zz8qGn/xJcrHpmJM5N66t5qx4QiWnOYUgtdMAkpwkNalDKQGSBazco8XzBh
+s8s74Ad3hMxNjtZ0nxSl4OzJopeiMnu20ydf64c/VmzNpl+t3C1xy7U79DSYwVxb6I5JTMBNw3Sl
+De4nS8lU4t5wuKtjXzEVqyM/whNpWAUkIPHHVcqGlZEico051Xk8tSavip0lYCaRtlzj9hCD10Oj
+alGpyuzdtYPdi29Q/SpLyv/ghzK169H5Cto0Z1VgalXN5hGB6sKv1JayEKiHg7HiXa3QJ7yZ1Uo6
+RZpDT8JzDZ6EIARJt1Kmkm61dxXdCFbZwS1aza/ZhRzYDHlb3M5Yl1mTrdV0JEz5CreYZAFxaUWb
+t/9IEz2lm+d0Zjck2s1vodLdz/z0qlXl8He7lX2whDGbQI96lqOVVBs24cLhDiOtuBZ8GoCsR+L4
+vjaminPzEmfL4BLWEUqEbd8QLRNdul3zwDtaYCDzh5/JbjfC3+EeRy25Ts1y+QUyhUCJxBhavJV2
+uTrcYZrtusa8ohLFUWOz3Vo8264mkn80xi0rLmdjrF13qEAuKqA+bExkHtP/dBM0pZlj7epmQheh
+Tb4qh59nN6Bml8rhjAUqYvHgB1Pxo+pkNBdDyuXm5eaLm7zbcitNz9UdrpQo5vS3VYniTt8udy1e
+gpwDusmz4GkE50uLntCCZOhqb8yne95jI8ocdIct2e5ItoMfY5+NqjOYiPaFCznLBAyYd5UK7TBJ
+rw1B4kZwh86E2qbHvelwaxyJvvTrbEUNY52aOpeo1pxvhT0mok7wb8UVratFKU3PlLmYZZRekXEo
+XUwi9U5/BqR4RlhlCEvY2WoL5DqjfbzNLr15qSttJx8IawtWnKXKzOR/YtppTe/VzbqT7dfASRkx
+QShpaFJTzd1XN7rFb5jojb3uNiUjdrmP8NixeMzCJ1x08GoWAwmHjdyqWKLTwTOMFcx1e7En4nx6
+W+PgbnPiYglLJq7Qazs1NS5vCfJfFhx0GOfxBGHu8tG+WrmyznZwd13U0+3ZyW0P9tsFWdtiSy7Z
+9Uh2WARO4S4LUm1973vR14nPxlqb+KRV5qVF3Pi8cv3ber1dflu473oEBAA7
+
+------=_NextPart_000_0000_01C7FA27.B4F2FB80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/Code%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20module%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/lcd_welcome.gif
+
+R0lGODlhQQE+APcAAAAAANj6BgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAABBAT4A
+AAj+AAEIHEiwoMGDCBMqXMiwocOHECNKnEixosWLGC0G2Mixo8ePIEOKHEmypMmTKFOqXMmypcuX
+MGOyFCizps2bOHPq3MmzZ0yaPoMKHUq0qNGjI4EiXcq0qdOnS5VCnUq1qtWrIKVi3cq1q9ecWr+K
+HUu2bMewZtOqXesULdu3cOOCBUDW7Ua7KWnilatSL12/AfbyNSmYKt7CJQEP/vm3cWDHi10ijky5
+MtzJTw/TtYnZctLNniWD/qr5ZufQWUej7qt6tevXXk8zLf0RcOHbjksr9rj78WffshO3Tg18+OLg
+SGnzzm18OWHmv3tz7K0bMk7cxVEjh829e8/tRqX+ih+tnLhIzOXHnyXf3Dfn9uWPt7eqfjr73+fh
+z3eef71/+/+FBB5/Aupn2YDeJajgSwgOVd9d99lmnXkF5mUggBhC6J+E7tUUH4GRNSjUgx1mx2F/
+KJ6U3n0Zmgjde/hVWJmIC9ZoY4yksahhiyt9GGCJtelIIZA++cjjYDQWKSSJPV4o445PEvljkiQZ
+CWWI+92o5ZYWpsWkc9KBmeWJFYYp5ZEu6oSdmfJ5KWSQ2fW35oRwmukjmaaN+aJnVHLpp3d9/imo
+a4EOauiBWR6qqI2FosRmeIm2xCGNj565KI5R0Znpd9BRqumPlz4X6qh+NsoaVH2aeiWaqnbXqor+
+kXKqZqyiDYkmqbbiqqurtIpa6a1iWppmnXsSZ2evw0YpZ7HECttknGV+Sh2ymMqEZ4rRfQrgscka
+Ky2y14K4LLTeOntqpeGSm+Sru7ZblYhWCrviTHpW2y2wJaYLp3CyOupkvm/W6uG/+yoLomzYYbvt
+tzjqK67BeXaJLYkNsuvuxW1RW67D8nY6IcL1KlxlwKCuOnKXv8IqcZQUa/xwrZMSHCyeIIsqcsMy
+m1tytjrz6y/OU7q8M8ZEIyn00CrfrLTJUn6J9JB3xooWesOh+++8S586MIM5Zz111STjW3DHudpL
+dbleh31lvCsX7bbRc5HbLL9Wyx0tz1/fO3NT1yfnzXHKem/IcNZtb133nGQDfjjDfzP7Mt1gB76w
+r9pqyC3hP7+tuVwWb+553J+HblbnopcusOmob0V66qz73PrrmWUk++y012777bjnrrvsAQEAOw==
+
+------=_NextPart_000_0000_01C7FA27.B4F2FB80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/Code%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing%20the%20LCD%20module%20to%20PC%20parallel%20port%20ElectroSOfts_com_files/Logo_25wht.gif
+
+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
+5JRXbvnlNAUEADs=
+
+------=_NextPart_000_0000_01C7FA27.B4F2FB80
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///D:/ICCC/Parallel%20and%20Serial%20Communication/Parallel/Code%20%26%20Tutorial%20Access%20LCD%20in%20VC/Interfacing the LCD module to PC parallel port ElectroSOfts_com_files/show_ads.js
+
+(function(){=0A=
+function m(b){return b!=3Dnull?'"'+b+'"':'""'}function B(b){if(typeof =
+encodeURIComponent=3D=3D"function"){return =
+encodeURIComponent(b)}else{return escape(b)}}function =
+c(b,a){if(a){window.google_ad_url+=3D"&"+b+"=3D"+a}}function =
+f(b,a){if(a){c(b,B(a))}}function l(b,a,d){if(a&&typeof =
+a=3D=3D"object"){a=3Da[d%a.length]}c("color_"+b,a)}function D(b,a){var =
+d=3Db.screen,g=3Dnavigator.javaEnabled(),e=3D-a.getTimezoneOffset();if(d)=
+{c("u_h",d.height);c("u_w",d.width);c("u_ah",d.availHeight);c("u_aw",d.av=
+ailWidth);c("u_cd",d.colorDepth)}c("u_tz",=0A=
+e);c("u_his",history.length);c("u_java",g);if(navigator.plugins){c("u_npl=
+ug",navigator.plugins.length)}if(navigator.mimeTypes){c("u_nmime",navigat=
+or.mimeTypes.length)}}function =
+y(b){b=3Db.toLowerCase();if(b.substring(0,3)!=3D"ca-"){b=3D"ca-"+b}return=
+ b}function =
+G(b,a,d){d=3Dd.substring(0,1000);d=3Dd.replace(/%\w?$/,"");if(b.google_ad=
+_output=3D=3D"js"&&(b.google_ad_request_done||b.google_radlink_request_do=
+ne)){a.write('<script language=3D"JavaScript1.1" =
+src=3D'+m(d)+"><\/script>")}else =
+if(b.google_ad_output=3D=3D"html"){if(b.name!=3D=0A=
+"google_ads_frame"){a.write('<iframe name=3D"google_ads_frame" =
+width=3D'+m(b.google_ad_width)+" height=3D"+m(b.google_ad_height)+" =
+frameborder=3D"+m(b.google_ad_frameborder)+" src=3D"+m(d)+' =
+marginwidth=3D"0" marginheight=3D"0" vspace=3D"0" hspace=3D"0" =
+allowtransparency=3D"true" =
+scrolling=3D"no">');a.write("</iframe>")}}else =
+if(b.google_ad_output=3D=3D"textlink"){a.write('<script =
+language=3D"JavaScript1.1" src=3D'+m(d)+"><\/script>")}}function =
+F(b){var =
+a=3Dnull;b.google_ad_frameborder=3Da;b.google_ad_format=3Da;b.google_page=
+_url=3Da;=0A=
+b.google_language=3Da;b.google_gl=3Da;b.google_country=3Da;b.google_regio=
+n=3Da;b.google_city=3Da;b.google_hints=3Da;b.google_safe=3Da;b.google_enc=
+oding=3Da;b.google_ad_output=3Da;b.google_max_num_ads=3Da;b.google_ad_cha=
+nnel=3Da;b.google_contents=3Da;b.google_alternate_ad_url=3Da;b.google_alt=
+ernate_color=3Da;b.google_color_bg=3Da;b.google_color_text=3Da;b.google_c=
+olor_link=3Da;b.google_color_url=3Da;b.google_color_border=3Da;b.google_c=
+olor_line=3Da;b.google_adtest=3Da;b.google_kw_type=3Da;b.google_kw=3Da;b.=
+google_num_radlinks=3Da;b.google_max_radlink_len=3D=0A=
+a;b.google_rl_filtering=3Da;b.google_rl_mode=3Da;b.google_rt=3Da;b.google=
+_ad_type=3Da;b.google_image_size=3Da;b.google_feedback=3Da;b.google_skip=3D=
+a;b.google_page_location=3Da;b.google_referrer_url=3Da;b.google_ad_region=
+=3Da;b.google_ad_section=3Da;b.google_bid=3Da;b.google_cpa_choice=3Da;b.g=
+oogle_cust_age=3Da;b.google_cust_gender=3Da;b.google_cust_interests=3Da;b=
+.google_cust_id=3Da;b.google_cust_job=3Da;b.google_cust_u_url=3Da;b.googl=
+e_cust_ch=3Da;b.google_ed=3Da;b.google_targeting=3Da;b.google_ad_host=3Da=
+}function A(){var b=3Dnull,a=3Dwindow,=0A=
+d=3Ddocument,g=3Dnew =
+Date,e=3Dg.getTime(),j=3Da.google_ad_format;if(a.google_cpa_choice){a.goo=
+gle_ad_url=3D"http://pagead2.googlesyndication.com/cpa/ads?";a.google_ad_=
+url+=3D"client=3D"+escape(y(a.google_ad_client));a.google_ad_region=3D"_g=
+oogle_cpa_region_";c("cpa_choice",a.google_cpa_choice);if(typeof =
+d.characterSet!=3D"undefined"){f("oe",d.characterSet)}else if(typeof =
+d.charset!=3D"undefined"){f("oe",d.charset)}}else{a.google_ad_url=3D"http=
+://pagead2.googlesyndication.com/pagead/ads?";a.google_ad_url+=3D"client=3D=
+"+escape(y(a.google_ad_client))}c("host",=0A=
+a.google_ad_host);var =
+k=3Da.google_num_slots_by_client,w=3Da.google_num_slots_by_channel,i=3Da.=
+google_prev_ad_formats_by_region;a.onerror=3Da.google_org_error_handler;i=
+f(a.google_ad_region=3D=3Db&&a.google_ad_section!=3Db){a.google_ad_region=
+=3Da.google_ad_section}var =
+h=3Da.google_ad_region=3D=3Db?"":a.google_ad_region,q=3Dfalse;if(j){q=3Dj=
+.indexOf("_0ads")>0}if(q){if(a.google_num_0ad_slots){a.google_num_0ad_slo=
+ts=3Da.google_num_0ad_slots+1}else{a.google_num_0ad_slots=3D1}if(a.google=
+_num_0ad_slots>1){return}}else =
+if(!a.google_cpa_choice){if(a.google_num_ad_slots){a.google_num_ad_slots=3D=0A=
+a.google_num_ad_slots+1}else{a.google_num_ad_slots=3D1}if(a.google_num_sl=
+ots_to_rotate){i[h]=3Db;if(a.google_num_slot_to_show=3D=3Db){a.google_num=
+_slot_to_show=3De%a.google_num_slots_to_rotate+1}if(a.google_num_slot_to_=
+show!=3Da.google_num_ad_slots){return}}else =
+if(a.google_num_ad_slots>3&&h=3D=3D""){return}}c("dt",g.getTime());c("hl"=
+,a.google_language);if(a.google_country){c("gl",a.google_country)}else{c(=
+"gl",a.google_gl)}c("gr",a.google_region);f("gcs",a.google_city);f("hints=
+",a.google_hints);c("adsafe",a.google_safe);=0A=
+c("oe",a.google_encoding);c("lmt",a.google_last_modified_time);f("alterna=
+te_ad_url",a.google_alternate_ad_url);c("alt_color",a.google_alternate_co=
+lor);c("skip",a.google_skip);c("targeting",a.google_targeting);var =
+n=3Da.google_ad_client;if(!k[n]){k[n]=3D1;k.length+=3D1}else{k[n]+=3D1}if=
+(i[h]){f("prev_fmts",i[h].toLowerCase());if(k.length>1){c("slot",k[n])}}i=
+f(j){f("format",j.toLowerCase());if(i[h]){i[h]=3Di[h]+","+j}else{i[h]=3Dj=
+}}c("num_ads",a.google_max_num_ads);c("output",a.google_ad_output);c("adt=
+est",a.google_adtest);=0A=
+if(a.google_ad_channel){var r=3Da.google_ad_channel;f("channel",r);var =
+s=3D"",t=3Dr.split("+");for(var o=3D0;o<t.length;o++){var =
+p=3Dt[o];if(!w[p]){w[p]=3D1}else{s+=3Dp+"+"}}f("pv_ch",s)}f("url",a.googl=
+e_page_url);l("bg",a.google_color_bg,e);l("text",a.google_color_text,e);l=
+("link",a.google_color_link,e);l("url",a.google_color_url,e);l("border",a=
+.google_color_border,e);l("line",a.google_color_line,e);c("kw_type",a.goo=
+gle_kw_type);f("kw",a.google_kw);f("contents",a.google_contents);c("num_r=
+adlinks",a.google_num_radlinks);=0A=
+c("max_radlink_len",a.google_max_radlink_len);c("rl_filtering",a.google_r=
+l_filtering);c("rl_mode",a.google_rl_mode);c("rt",a.google_rt);c("ad_type=
+",a.google_ad_type);c("image_size",a.google_image_size);c("region",a.goog=
+le_ad_region);c("feedback_link",a.google_feedback);f("ref",a.google_refer=
+rer_url);f("loc",a.google_page_location);c("bid",a.google_bid);c("cust_ag=
+e",a.google_cust_age);c("cust_gender",a.google_cust_gender);c("cust_inter=
+ests",a.google_cust_interests);c("cust_id",a.google_cust_id);c("cust_job"=
+,=0A=
+a.google_cust_job);c("cust_u_url",a.google_cust_u_url);c("cust_ch",a.goog=
+le_cust_ch);c("ed",a.google_ed);if(z(a,d)&&d.body){var =
+u=3Dd.body.scrollHeight,v=3Dd.body.clientHeight;if(v&&u){f("cc",Math.roun=
+d(v*100/u))}}D(a,g);G(a,d,a.google_ad_url);F(a)}function =
+C(b,a,d){A();return true}function z(b,a){return =
+b.top.location=3D=3Da.location}function x(b,a){var =
+d=3Da.documentElement;if(z(b,a))return =
+false;if(b.google_ad_width&&b.google_ad_height){var =
+g=3D1,e=3D1;if(b.innerHeight){g=3Db.innerWidth;e=3Db.innerHeight}else =
+if(d&&=0A=
+d.clientHeight){g=3Dd.clientWidth;e=3Dd.clientHeight}else =
+if(a.body){g=3Da.body.clientWidth;e=3Da.body.clientHeight}if(e>2*b.google=
+_ad_height||g>2*b.google_ad_width){return false}}return true}function =
+E(){var =
+b=3Dwindow,a=3Ddocument,d=3Da.location,g=3Da.referrer,e=3Dnull;b.google_o=
+rg_error_handler=3Db.onerror;b.onerror=3DC;if(b.google_ad_frameborder=3D=3D=
+e){b.google_ad_frameborder=3D0}if(b.google_ad_output=3D=3De){b.google_ad_=
+output=3D"html"}if(b.google_ad_format=3D=3De&&b.google_ad_output=3D=3D"ht=
+ml"){b.google_ad_format=3Db.google_ad_width+=0A=
+"x"+b.google_ad_height}if(b.google_page_url=3D=3De){b.google_page_url=3Dg=
+;if(!x(b,a)){b.google_page_url=3Dd;b.google_last_modified_time=3DDate.par=
+se(a.lastModified)/1000;b.google_referrer_url=3Dg}}else{b.google_page_loc=
+ation=3Dg;if(!x(b,a)){b.google_page_location=3Dd}}if(b.google_num_slots_b=
+y_channel=3D=3De){b.google_num_slots_by_channel=3D[]}if(b.google_num_slot=
+s_by_client=3D=3De){b.google_num_slots_by_client=3D[]}if(b.google_prev_ad=
+_formats_by_region=3D=3De){b.google_prev_ad_formats_by_region=3D[]}}E();A=
+();=0A=
+})()
+------=_NextPart_000_0000_01C7FA27.B4F2FB80--

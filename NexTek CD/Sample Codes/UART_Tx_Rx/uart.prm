@@ -1,0 +1,17 @@
+PROMGEN: Xilinx Prom Generator G.23
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+promgen -w -p mcs -c FF -o \\Nextek3\C\testing_FROM\UART_Tx_Rx//uart -u 0 \\nextek3\c\testing_FROM\UART_Tx_Rx\uart_top.bit -x xcf01s 
+
+PROM \\Nextek3\C\testing_FROM\UART_Tx_Rx//uart.prm map: Wed Dec 08 14:43:01 2004
+
+Calculating PROM checksum with fill value ff
+
+Format        Mcs86 (32-bit)
+Size          128K
+PROM start    0000:0000
+PROM end      0001:ffff
+PROM checksum 00875c11
+
+        Addr1        Addr2 File(s)
+    0000:0000    0001:fbdb //nextek3/c/testing_FROM/UART_Tx_Rx/uart_top.bit

@@ -1,0 +1,5 @@
+MO uar_sm NULL uar_sm.V vlg27/uar_sm.bin
+MO uart_top NULL uart_top.v vlg1A/uart_top.bin
+MO uat_top NULL uat_top.v vlg38/uat_top.bin
+MO uat_sm NULL uat_sm.v vlg21/uat_sm.bin
+MO uar_top NULL uar_top.v vlg56/uar_top.bin

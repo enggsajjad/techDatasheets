@@ -1,0 +1,56 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:31:21                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\writesda.c                    #
+#       List file     =  c:\projects\at17c8515\debug\list\writesda.lst       #
+#       Object file   =  c:\projects\at17c8515\debug\obj\writesda.r90        #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Debug\Obj\ -e -gA   #
+#                        -RCODE -r0e -LC:\Projects\at17c8515\Debug\List\ -q  #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -K                       #
+#                        C:\Projects\at17c8515\WriteSDA.c                    #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+   \                     	NAME	writesda(17)
+   \                     	RSEG	CODE(0)
+   \                     	PUBLIC	WriteSDA
+   \                     	EXTERN	?CL1S_1_30_L08
+   \                     	RSEG	CODE
+   \                     WriteSDA:
+      1          // WriteSDA.c
+      2          
+      3          #include "at17c.h"
+      4           
+      5          void WriteSDA(unsigned char state) {
+      6          
+      7              if (state)        
+   \   00000000   0023                       TST     R16
+   \   00000002   11F0                       BREQ    ?0003
+      8                  DDRB &= 0xfe; // input ... pullup will pull high or slave will drive low
+   \   00000004   B898                       CBI     LOW(23),LOW(0)
+      9              else
+   \   00000006   0895                       RET     
+   \                     ?0003:
+     10                  DDRB |= 0x01; // output ... port latch will drive low
+   \   00000008   B89A                       SBI     LOW(23),LOW(0)
+     11          
+     12          }
+   \   0000000A   0895                       RET     
+   \                     ;	state           	R16
+   \                     	END
+
+Source file: c:\projects\at17c8515\writesda.c
+Errors: none
+Warnings: none
+Code size: 12
+Constant size: 0
+Static variable size: 0
+

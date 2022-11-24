@@ -1,0 +1,5 @@
+NET "clk_16MHz" LOC = "p77";
+NET "clk_1200Hz" LOC = "p187";
+NET "clk_19200Hz" LOC = "p191";
+NET "rst_n" LOC = "p36";
+NET "ser_data_to_pc" LOC = "p69";

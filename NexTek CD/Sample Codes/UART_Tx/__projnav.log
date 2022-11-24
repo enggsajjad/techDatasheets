@@ -1,0 +1,4720 @@
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+Module <uat_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+No errors in compilation
+Analysis of file <uart_top.prj> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uart_top>.
+Module <uart_top> is correct for synthesis.
+ 
+Analyzing module <uat_top>.
+Module <uat_top> is correct for synthesis.
+ 
+Analyzing module <uat_sm>.
+Module <uat_sm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uat_sm>.
+    Related source file is uat_sm.v.
+    Found finite state machine <FSM_0> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 1000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit comparator greatequal for signal <$n0000> created at line 83.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Comparator(s).
+Unit <uat_sm> synthesized.
+
+
+Synthesizing Unit <uat_top>.
+    Related source file is uat_top.v.
+WARNING:Xst:1780 - Signal <din_rdy_reg> is never used or assigned.
+    Found 1-bit register for signal <ser_out>.
+    Found 3-bit adder for signal <$n0008> created at line 95.
+    Found 8-bit register for signal <data_buf>.
+    Found 3-bit register for signal <shift_count>.
+    Summary:
+	inferred  12 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <uat_top> synthesized.
+
+
+Synthesizing Unit <uart_top>.
+    Related source file is uart_top.v.
+WARNING:Xst:1780 - Signal <dout_rdy_wire> is never used or assigned.
+    Found 1-bit register for signal <clk_19200Hz>.
+    Found 4-bit up counter for signal <count_div>.
+    Found 10-bit up counter for signal <count_div_19200>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <uart_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                             : 1
+# Registers                        : 4
+  1-bit register                   : 2
+  8-bit register                   : 1
+  3-bit register                   : 1
+# Counters                         : 2
+  10-bit up counter                : 1
+  4-bit up counter                 : 1
+# Adders/Subtractors               : 1
+  3-bit adder                      : 1
+# Comparators                      : 1
+  3-bit comparator greatequal      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Selecting encoding for FSM_0 ...
+Optimizing FSM <FSM_0> on signal <current_state> with one-hot encoding.
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <uart_top> ...
+
+Optimizing unit <uat_top> ...
+Loading device for application Xst from file 'v150.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_top, actual ratio is 1.
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s150pq208-5 
+
+ Number of Slices:                      22  out of   1728     1%  
+ Number of Slice Flip Flops:            31  out of   3456     0%  
+ Number of 4 input LUTs:                31  out of   3456     0%  
+ Number of bonded IOBs:                  4  out of    144     2%  
+ Number of GCLKs:                        1  out of      4    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_16MHz                          | BUFGP                  | 11    |
+clk_19200Hz:Q                      | NONE                   | 4     |
+count_div_3:Q                      | NONE                   | 16    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 8.666ns (Maximum Frequency: 115.394MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 9.849ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+Completed process "Synthesize".
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+Started process "Translate".
+
+
+Command Line: ngdbuild -intstyle ise -dd
+c:\fpga_train\design\transmitter\uart/_ngo -i -p xc2s150-pq208-5 uart_top.ngc
+uart_top.ngd 
+
+Reading NGO file "c:/fpga_train/design/transmitter/uart/uart_top.ngc" ...
+Reading component libraries for design expansion...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 34480 kilobytes
+
+Writing NGD file "uart_top.ngd" ...
+
+Writing NGDBUILD log file "uart_top.bld"...
+
+NGDBUILD done.
+Completed process "Translate".
+
+
+
+Started process "Map".
+
+Using target part "2s150pq208-5".
+Removing unused or disabled logic...
+Running cover...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Logic Utilization:
+  Number of Slice Flip Flops:        30 out of  3,456    1%
+  Number of 4 input LUTs:            25 out of  3,456    1%
+Logic Distribution:
+    Number of occupied Slices:                          20 out of  1,728    1%
+    Number of Slices containing only related logic:     20 out of     20  100%
+    Number of Slices containing unrelated logic:         0 out of     20    0%
+        *See NOTES below for an explanation of the effects of unrelated logic
+Total Number 4 input LUTs:           35 out of  3,456    1%
+      Number used as logic:                        25
+      Number used as a route-thru:                 10
+   Number of bonded IOBs:             4 out of    140    2%
+      IOB Flip Flops:                               1
+   Number of GCLKs:                   1 out of      4   25%
+   Number of GCLKIOBs:                1 out of      4   25%
+
+Total equivalent gate count for design:  476
+Additional JTAG gate count for IOBs:  240
+Peak Memory Usage:  58 MB
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity -
+   e.g. two LUTs are "related" if they share common inputs.
+   When assembling slices, Map gives priority to combine logic that
+   is related.  Doing so results in the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin
+   packing unrelated logic into a slice once 99% of the slices are
+   occupied through related logic packing.
+
+   Note that once logic distribution reaches the 99% level through
+   related logic packing, this does not mean the device is completely
+   utilized.  Unrelated logic packing will then begin, continuing until
+   all usable LUTs and FFs are occupied.  Depending on your timing
+   budget, increased levels of unrelated logic packing may adversely
+   affect the overall timing performance of your design.
+
+
+Mapping completed.
+See MAP report file "uart_top_map.mrp" for details.
+Completed process "Map".
+
+Mapping Module uart_top . . .
+MAP command line:
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+Mapping Module uart_top: DONE
+
+
+
+Started process "Place & Route".
+
+
+
+
+
+Constraints file: uart_top.pcf
+
+Loading device database for application Par from file "uart_top_map.ncd".
+   "uart_top" is an NCD, version 2.38, device xc2s150, package pq208, speed -5
+Loading device for application Par from file 'v150.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-06-19.
+
+
+Resolving physical constraints.
+Finished resolving physical constraints.
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs             4 out of 140     2%
+      Number of LOCed External IOBs    0 out of 4       0%
+
+   Number of SLICEs                   20 out of 1728    1%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:9896f7) REAL time: 0 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 2 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 2 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 2 secs 
+
+Phase 5.8
+..
+Phase 5.8 (Checksum:98d57c) REAL time: 2 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 2 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 2 secs 
+
+Writing design to file uart_top.ncd.
+
+Total REAL time to Placer completion: 2 secs 
+Total CPU time to Placer completion: 1 secs 
+
+
+Phase 1: 137 unrouted;       REAL time: 2 secs 
+
+Phase 2: 121 unrouted;       REAL time: 2 secs 
+
+Phase 3: 29 unrouted;       REAL time: 3 secs 
+
+Phase 4: 0 unrouted;       REAL time: 3 secs 
+
+Total REAL time to Router completion: 3 secs 
+Total CPU time to Router completion: 2 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|   clk_16MHz_BUFGP          |  Global  |    7   |  0.089     |  0.731      |
++----------------------------+----------+--------+------------+-------------+
+|  clk_19200Hz_OBUF          |Low-Skew  |    4   |  0.057     |  4.552      |
++----------------------------+----------+--------+------------+-------------+
+|      count_div<3>          |   Local  |   11   |  0.067     |  4.743      |
++----------------------------+----------+--------+------------+-------------+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 3 secs 
+Total CPU time to PAR completion: 2 secs 
+
+Peak Memory Usage:  47 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file uart_top.ncd.
+
+
+PAR done.
+Completed process "Place & Route".
+
+
+Started process "Generate Post-Place & Route Static Timing".
+
+
+Analysis completed Sat Jul 10 16:56:15 2004
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Completed process "Generate Post-Place & Route Static Timing".
+
+Place & Route Module uart_top . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+PAR completed successfully
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+Started process "Translate".
+
+
+Command Line: ngdbuild -intstyle ise -dd
+c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf -p xc2s150-pq208-5
+uart_top.ngc uart_top.ngd 
+
+Reading NGO file "c:/fpga_train/design/transmitter/uart/uart_top.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "uart_top.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 35504 kilobytes
+
+Writing NGD file "uart_top.ngd" ...
+
+Writing NGDBUILD log file "uart_top.bld"...
+
+NGDBUILD done.
+Completed process "Translate".
+
+
+
+Started process "Map".
+
+Using target part "2s150pq208-5".
+Removing unused or disabled logic...
+Running cover...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Logic Utilization:
+  Number of Slice Flip Flops:        30 out of  3,456    1%
+  Number of 4 input LUTs:            25 out of  3,456    1%
+Logic Distribution:
+    Number of occupied Slices:                          20 out of  1,728    1%
+    Number of Slices containing only related logic:     20 out of     20  100%
+    Number of Slices containing unrelated logic:         0 out of     20    0%
+        *See NOTES below for an explanation of the effects of unrelated logic
+Total Number 4 input LUTs:           35 out of  3,456    1%
+      Number used as logic:                        25
+      Number used as a route-thru:                 10
+   Number of bonded IOBs:             4 out of    140    2%
+      IOB Flip Flops:                               1
+   Number of GCLKs:                   1 out of      4   25%
+   Number of GCLKIOBs:                1 out of      4   25%
+
+Total equivalent gate count for design:  476
+Additional JTAG gate count for IOBs:  240
+Peak Memory Usage:  58 MB
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity -
+   e.g. two LUTs are "related" if they share common inputs.
+   When assembling slices, Map gives priority to combine logic that
+   is related.  Doing so results in the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin
+   packing unrelated logic into a slice once 99% of the slices are
+   occupied through related logic packing.
+
+   Note that once logic distribution reaches the 99% level through
+   related logic packing, this does not mean the device is completely
+   utilized.  Unrelated logic packing will then begin, continuing until
+   all usable LUTs and FFs are occupied.  Depending on your timing
+   budget, increased levels of unrelated logic packing may adversely
+   affect the overall timing performance of your design.
+
+
+Mapping completed.
+See MAP report file "uart_top_map.mrp" for details.
+Completed process "Map".
+
+Mapping Module uart_top . . .
+MAP command line:
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+Mapping Module uart_top: DONE
+
+
+
+Started process "Place & Route".
+
+
+
+
+
+Constraints file: uart_top.pcf
+
+Loading device database for application Par from file "uart_top_map.ncd".
+   "uart_top" is an NCD, version 2.38, device xc2s150, package pq208, speed -5
+Loading device for application Par from file 'v150.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-06-19.
+
+
+Resolving physical constraints.
+Finished resolving physical constraints.
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs             4 out of 140     2%
+      Number of LOCed External IOBs    4 out of 4     100%
+
+   Number of SLICEs                   20 out of 1728    1%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:9896f7) REAL time: 2 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 2 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 2 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 2 secs 
+
+Phase 5.8
+.
+Phase 5.8 (Checksum:98e5e4) REAL time: 2 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 2 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 2 secs 
+
+Writing design to file uart_top.ncd.
+
+Total REAL time to Placer completion: 2 secs 
+Total CPU time to Placer completion: 1 secs 
+
+
+Phase 1: 137 unrouted;       REAL time: 2 secs 
+
+Phase 2: 123 unrouted;       REAL time: 2 secs 
+
+Phase 3: 27 unrouted;       REAL time: 3 secs 
+
+Phase 4: 0 unrouted;       REAL time: 3 secs 
+
+Total REAL time to Router completion: 3 secs 
+Total CPU time to Router completion: 2 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|   clk_16MHz_BUFGP          |  Global  |    7   |  0.000     |  0.719      |
++----------------------------+----------+--------+------------+-------------+
+|      count_div<3>          |   Local  |   11   |  1.717     |  3.594      |
++----------------------------+----------+--------+------------+-------------+
+|  clk_19200Hz_OBUF          |   Local  |    4   |  0.000     |  3.604      |
++----------------------------+----------+--------+------------+-------------+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 4 secs 
+Total CPU time to PAR completion: 3 secs 
+
+Peak Memory Usage:  47 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file uart_top.ncd.
+
+
+PAR done.
+Completed process "Place & Route".
+
+
+Started process "Generate Post-Place & Route Static Timing".
+
+
+Analysis completed Sat Jul 10 16:57:07 2004
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Completed process "Generate Post-Place & Route Static Timing".
+
+Place & Route Module uart_top . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+PAR completed successfully
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+Started process "Generate Programming File".
+
+Completed process "Generate Programming File".
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+Module <uat_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+No errors in compilation
+Analysis of file <uart_top.prj> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uart_top>.
+Module <uart_top> is correct for synthesis.
+ 
+Analyzing module <uat_top>.
+Module <uat_top> is correct for synthesis.
+ 
+Analyzing module <uat_sm>.
+Module <uat_sm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uat_sm>.
+    Related source file is uat_sm.v.
+    Found finite state machine <FSM_0> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 1000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit comparator greatequal for signal <$n0000> created at line 83.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Comparator(s).
+Unit <uat_sm> synthesized.
+
+
+Synthesizing Unit <uat_top>.
+    Related source file is uat_top.v.
+WARNING:Xst:1780 - Signal <din_rdy_reg> is never used or assigned.
+    Found 1-bit register for signal <ser_out>.
+    Found 3-bit adder for signal <$n0008> created at line 95.
+    Found 8-bit register for signal <data_buf>.
+    Found 3-bit register for signal <shift_count>.
+    Summary:
+	inferred  12 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <uat_top> synthesized.
+
+
+Synthesizing Unit <uart_top>.
+    Related source file is uart_top.v.
+WARNING:Xst:1780 - Signal <dout_rdy_wire> is never used or assigned.
+    Found 1-bit register for signal <clk_19200Hz>.
+    Found 4-bit up counter for signal <count_div>.
+    Found 10-bit up counter for signal <count_div_19200>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <uart_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                             : 1
+# Registers                        : 4
+  1-bit register                   : 2
+  8-bit register                   : 1
+  3-bit register                   : 1
+# Counters                         : 2
+  10-bit up counter                : 1
+  4-bit up counter                 : 1
+# Adders/Subtractors               : 1
+  3-bit adder                      : 1
+# Comparators                      : 1
+  3-bit comparator greatequal      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Selecting encoding for FSM_0 ...
+Optimizing FSM <FSM_0> on signal <current_state> with one-hot encoding.
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <uart_top> ...
+
+Optimizing unit <uat_top> ...
+Loading device for application Xst from file 'v150.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_top, actual ratio is 1.
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s150pq208-5 
+
+ Number of Slices:                      22  out of   1728     1%  
+ Number of Slice Flip Flops:            31  out of   3456     0%  
+ Number of 4 input LUTs:                31  out of   3456     0%  
+ Number of bonded IOBs:                  4  out of    144     2%  
+ Number of GCLKs:                        1  out of      4    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_16MHz                          | BUFGP                  | 11    |
+clk_19200Hz:Q                      | NONE                   | 4     |
+count_div_3:Q                      | NONE                   | 16    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 8.666ns (Maximum Frequency: 115.394MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 9.849ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+Completed process "Synthesize".
+
+
+
+Started process "Translate".
+
+
+Command Line: ngdbuild -intstyle ise -dd
+c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf -p xc2s150-pq208-5
+uart_top.ngc uart_top.ngd 
+
+Reading NGO file "C:/FPGA_Train/Design/transmitter/uart/uart_top.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "uart_top.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 35504 kilobytes
+
+Writing NGD file "uart_top.ngd" ...
+
+Writing NGDBUILD log file "uart_top.bld"...
+
+NGDBUILD done.
+Completed process "Translate".
+
+
+
+Started process "Map".
+
+Using target part "2s150pq208-5".
+Removing unused or disabled logic...
+Running cover...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Logic Utilization:
+  Number of Slice Flip Flops:        30 out of  3,456    1%
+  Number of 4 input LUTs:            25 out of  3,456    1%
+Logic Distribution:
+    Number of occupied Slices:                          20 out of  1,728    1%
+    Number of Slices containing only related logic:     20 out of     20  100%
+    Number of Slices containing unrelated logic:         0 out of     20    0%
+        *See NOTES below for an explanation of the effects of unrelated logic
+Total Number 4 input LUTs:           35 out of  3,456    1%
+      Number used as logic:                        25
+      Number used as a route-thru:                 10
+   Number of bonded IOBs:             4 out of    140    2%
+      IOB Flip Flops:                               1
+   Number of GCLKs:                   1 out of      4   25%
+   Number of GCLKIOBs:                1 out of      4   25%
+
+Total equivalent gate count for design:  476
+Additional JTAG gate count for IOBs:  240
+Peak Memory Usage:  58 MB
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity -
+   e.g. two LUTs are "related" if they share common inputs.
+   When assembling slices, Map gives priority to combine logic that
+   is related.  Doing so results in the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin
+   packing unrelated logic into a slice once 99% of the slices are
+   occupied through related logic packing.
+
+   Note that once logic distribution reaches the 99% level through
+   related logic packing, this does not mean the device is completely
+   utilized.  Unrelated logic packing will then begin, continuing until
+   all usable LUTs and FFs are occupied.  Depending on your timing
+   budget, increased levels of unrelated logic packing may adversely
+   affect the overall timing performance of your design.
+
+
+Mapping completed.
+See MAP report file "uart_top_map.mrp" for details.
+Completed process "Map".
+
+Mapping Module uart_top . . .
+MAP command line:
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+Mapping Module uart_top: DONE
+
+
+
+Started process "Place & Route".
+
+
+
+
+
+Constraints file: uart_top.pcf
+
+Loading device database for application Par from file "uart_top_map.ncd".
+   "uart_top" is an NCD, version 2.38, device xc2s150, package pq208, speed -5
+Loading device for application Par from file 'v150.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-06-19.
+
+
+Resolving physical constraints.
+Finished resolving physical constraints.
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs             4 out of 140     2%
+      Number of LOCed External IOBs    4 out of 4     100%
+
+   Number of SLICEs                   20 out of 1728    1%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:9896f7) REAL time: 0 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 0 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 0 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 0 secs 
+
+Phase 5.8
+.
+Phase 5.8 (Checksum:98e5e4) REAL time: 0 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 0 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 0 secs 
+
+Writing design to file uart_top.ncd.
+
+Total REAL time to Placer completion: 2 secs 
+Total CPU time to Placer completion: 1 secs 
+
+
+Phase 1: 137 unrouted;       REAL time: 2 secs 
+
+Phase 2: 123 unrouted;       REAL time: 2 secs 
+
+Phase 3: 26 unrouted;       REAL time: 2 secs 
+
+Phase 4: 0 unrouted;       REAL time: 3 secs 
+
+Total REAL time to Router completion: 3 secs 
+Total CPU time to Router completion: 2 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|   clk_16MHz_BUFGP          |  Global  |    7   |  0.000     |  0.719      |
++----------------------------+----------+--------+------------+-------------+
+|      count_div<3>          |   Local  |   11   |  1.848     |  3.641      |
++----------------------------+----------+--------+------------+-------------+
+|  clk_19200Hz_OBUF          |   Local  |    4   |  0.000     |  3.604      |
++----------------------------+----------+--------+------------+-------------+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 3 secs 
+Total CPU time to PAR completion: 2 secs 
+
+Peak Memory Usage:  47 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file uart_top.ncd.
+
+
+PAR done.
+Completed process "Place & Route".
+
+
+Started process "Generate Post-Place & Route Static Timing".
+
+
+Analysis completed Wed Jul 28 13:47:57 2004
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Completed process "Generate Post-Place & Route Static Timing".
+
+Place & Route Module uart_top . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+PAR completed successfully
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+Started process "Generate Programming File".
+
+Completed process "Generate Programming File".
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+Module <uat_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+No errors in compilation
+Analysis of file <uart_top.prj> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uart_top>.
+Module <uart_top> is correct for synthesis.
+ 
+Analyzing module <uat_top>.
+Module <uat_top> is correct for synthesis.
+ 
+Analyzing module <uat_sm>.
+Module <uat_sm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uat_sm>.
+    Related source file is uat_sm.v.
+    Found finite state machine <FSM_0> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 1000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit comparator greatequal for signal <$n0000> created at line 83.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Comparator(s).
+Unit <uat_sm> synthesized.
+
+
+Synthesizing Unit <uat_top>.
+    Related source file is uat_top.v.
+WARNING:Xst:646 - Signal <data_buf<15:8>> is assigned but never used.
+WARNING:Xst:1780 - Signal <din_rdy_reg> is never used or assigned.
+    Found 1-bit register for signal <ser_out>.
+    Found 3-bit adder for signal <$n0008> created at line 95.
+    Found 16-bit register for signal <data_buf>.
+    Found 3-bit register for signal <shift_count>.
+    Summary:
+	inferred  20 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <uat_top> synthesized.
+
+
+Synthesizing Unit <uart_top>.
+    Related source file is uart_top.v.
+WARNING:Xst:1780 - Signal <dout_rdy_wire> is never used or assigned.
+    Found 1-bit register for signal <clk_19200Hz>.
+    Found 4-bit up counter for signal <count_div>.
+    Found 10-bit up counter for signal <count_div_19200>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <uart_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                             : 1
+# Registers                        : 4
+  1-bit register                   : 2
+  16-bit register                  : 1
+  3-bit register                   : 1
+# Counters                         : 2
+  10-bit up counter                : 1
+  4-bit up counter                 : 1
+# Adders/Subtractors               : 1
+  3-bit adder                      : 1
+# Comparators                      : 1
+  3-bit comparator greatequal      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Selecting encoding for FSM_0 ...
+Optimizing FSM <FSM_0> on signal <current_state> with one-hot encoding.
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1291 - FF/Latch <data_buf_15> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_8> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_9> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_10> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_11> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_12> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_13> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_14> is unconnected in block <uat_top>.
+
+Optimizing unit <uart_top> ...
+
+Optimizing unit <uat_top> ...
+Loading device for application Xst from file 'v150.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_top, actual ratio is 1.
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s150pq208-5 
+
+ Number of Slices:                      22  out of   1728     1%  
+ Number of Slice Flip Flops:            31  out of   3456     0%  
+ Number of 4 input LUTs:                31  out of   3456     0%  
+ Number of bonded IOBs:                  4  out of    144     2%  
+ Number of GCLKs:                        1  out of      4    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_16MHz                          | BUFGP                  | 11    |
+clk_19200Hz:Q                      | NONE                   | 4     |
+count_div_3:Q                      | NONE                   | 16    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 8.666ns (Maximum Frequency: 115.394MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 9.849ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+Completed process "Synthesize".
+
+
+
+Started process "Translate".
+
+
+Command Line: ngdbuild -intstyle ise -dd
+c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf -p xc2s150-pq208-5
+uart_top.ngc uart_top.ngd 
+
+Reading NGO file "C:/FPGA_Train/Design/transmitter/uart/uart_top.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "uart_top.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 35504 kilobytes
+
+Writing NGD file "uart_top.ngd" ...
+
+Writing NGDBUILD log file "uart_top.bld"...
+
+NGDBUILD done.
+Completed process "Translate".
+
+
+
+Started process "Map".
+
+Using target part "2s150pq208-5".
+Removing unused or disabled logic...
+Running cover...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Logic Utilization:
+  Number of Slice Flip Flops:        30 out of  3,456    1%
+  Number of 4 input LUTs:            25 out of  3,456    1%
+Logic Distribution:
+    Number of occupied Slices:                          20 out of  1,728    1%
+    Number of Slices containing only related logic:     20 out of     20  100%
+    Number of Slices containing unrelated logic:         0 out of     20    0%
+        *See NOTES below for an explanation of the effects of unrelated logic
+Total Number 4 input LUTs:           35 out of  3,456    1%
+      Number used as logic:                        25
+      Number used as a route-thru:                 10
+   Number of bonded IOBs:             4 out of    140    2%
+      IOB Flip Flops:                               1
+   Number of GCLKs:                   1 out of      4   25%
+   Number of GCLKIOBs:                1 out of      4   25%
+
+Total equivalent gate count for design:  476
+Additional JTAG gate count for IOBs:  240
+Peak Memory Usage:  58 MB
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity -
+   e.g. two LUTs are "related" if they share common inputs.
+   When assembling slices, Map gives priority to combine logic that
+   is related.  Doing so results in the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin
+   packing unrelated logic into a slice once 99% of the slices are
+   occupied through related logic packing.
+
+   Note that once logic distribution reaches the 99% level through
+   related logic packing, this does not mean the device is completely
+   utilized.  Unrelated logic packing will then begin, continuing until
+   all usable LUTs and FFs are occupied.  Depending on your timing
+   budget, increased levels of unrelated logic packing may adversely
+   affect the overall timing performance of your design.
+
+
+Mapping completed.
+See MAP report file "uart_top_map.mrp" for details.
+Completed process "Map".
+
+Mapping Module uart_top . . .
+MAP command line:
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+Mapping Module uart_top: DONE
+
+
+
+Started process "Place & Route".
+
+
+
+
+
+Constraints file: uart_top.pcf
+
+Loading device database for application Par from file "uart_top_map.ncd".
+   "uart_top" is an NCD, version 2.38, device xc2s150, package pq208, speed -5
+Loading device for application Par from file 'v150.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-06-19.
+
+
+Resolving physical constraints.
+Finished resolving physical constraints.
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs             4 out of 140     2%
+      Number of LOCed External IOBs    4 out of 4     100%
+
+   Number of SLICEs                   20 out of 1728    1%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:9896f7) REAL time: 0 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 0 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 0 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 0 secs 
+
+Phase 5.8
+.
+Phase 5.8 (Checksum:98e5e4) REAL time: 0 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 0 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 0 secs 
+
+Writing design to file uart_top.ncd.
+
+Total REAL time to Placer completion: 0 secs 
+Total CPU time to Placer completion: 1 secs 
+
+
+Phase 1: 137 unrouted;       REAL time: 0 secs 
+
+Phase 2: 123 unrouted;       REAL time: 0 secs 
+
+Phase 3: 27 unrouted;       REAL time: 2 secs 
+
+Phase 4: 0 unrouted;       REAL time: 2 secs 
+
+Total REAL time to Router completion: 2 secs 
+Total CPU time to Router completion: 2 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|   clk_16MHz_BUFGP          |  Global  |    7   |  0.000     |  0.719      |
++----------------------------+----------+--------+------------+-------------+
+|      count_div<3>          |   Local  |   11   |  1.717     |  3.594      |
++----------------------------+----------+--------+------------+-------------+
+|  clk_19200Hz_OBUF          |   Local  |    4   |  0.000     |  3.604      |
++----------------------------+----------+--------+------------+-------------+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 3 secs 
+Total CPU time to PAR completion: 3 secs 
+
+Peak Memory Usage:  47 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file uart_top.ncd.
+
+
+PAR done.
+Completed process "Place & Route".
+
+
+Started process "Generate Post-Place & Route Static Timing".
+
+
+Analysis completed Wed Jul 28 14:00:13 2004
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Completed process "Generate Post-Place & Route Static Timing".
+
+Place & Route Module uart_top . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+PAR completed successfully
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+Started process "Generate Programming File".
+
+Completed process "Generate Programming File".
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+WARNING:HDLCompilers:301 - uat_top.v line 55 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 56 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 58 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 59 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 62 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 63 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 64 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 65 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 68 Too many digits specified in hex constant
+ERROR:HDLCompilers:26 - uat_top.v line 147 unexpected token: '5'
+Module <uat_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+Analysis of file <uart_top.prj> failed.
+--> 
+
+Total memory usage is 44504 kilobytes
+
+
+ERROR: XST failed
+Process "Synthesize" did not complete.
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+WARNING:HDLCompilers:301 - uat_top.v line 55 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 56 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 58 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 59 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 62 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 63 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 64 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 65 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 68 Too many digits specified in hex constant
+ERROR:HDLCompilers:26 - uat_top.v line 147 unexpected token: '5'
+Module <uat_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+Analysis of file <uart_top.prj> failed.
+--> 
+
+Total memory usage is 44504 kilobytes
+
+
+ERROR: XST failed
+Process "Synthesize" did not complete.
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+WARNING:HDLCompilers:301 - uat_top.v line 55 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 56 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 58 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 59 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 62 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 63 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 64 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 65 Too many digits specified in hex constant
+WARNING:HDLCompilers:301 - uat_top.v line 68 Too many digits specified in hex constant
+Module <uat_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+No errors in compilation
+Analysis of file <uart_top.prj> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uart_top>.
+Module <uart_top> is correct for synthesis.
+ 
+Analyzing module <uat_top>.
+Module <uat_top> is correct for synthesis.
+ 
+Analyzing module <uat_sm>.
+Module <uat_sm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uat_sm>.
+    Related source file is uat_sm.v.
+    Found finite state machine <FSM_0> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 1000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit comparator greatequal for signal <$n0000> created at line 83.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Comparator(s).
+Unit <uat_sm> synthesized.
+
+
+Synthesizing Unit <uat_top>.
+    Related source file is uat_top.v.
+WARNING:Xst:646 - Signal <data_buf<15:8>> is assigned but never used.
+WARNING:Xst:1780 - Signal <din_rdy_reg> is never used or assigned.
+    Found 1-bit register for signal <ser_out>.
+    Found 3-bit adder for signal <$n0041> created at line 164.
+    Found 5-bit up counter for signal <count>.
+    Found 16-bit register for signal <data_buf>.
+    Found 3-bit register for signal <shift_count>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  20 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <uat_top> synthesized.
+
+
+Synthesizing Unit <uart_top>.
+    Related source file is uart_top.v.
+WARNING:Xst:1780 - Signal <dout_rdy_wire> is never used or assigned.
+    Found 1-bit register for signal <clk_19200Hz>.
+    Found 4-bit up counter for signal <count_div>.
+    Found 10-bit up counter for signal <count_div_19200>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <uart_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                             : 1
+# Registers                        : 4
+  1-bit register                   : 2
+  16-bit register                  : 1
+  3-bit register                   : 1
+# Counters                         : 3
+  5-bit up counter                 : 1
+  10-bit up counter                : 1
+  4-bit up counter                 : 1
+# Adders/Subtractors               : 1
+  3-bit adder                      : 1
+# Comparators                      : 1
+  3-bit comparator greatequal      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Selecting encoding for FSM_0 ...
+Optimizing FSM <FSM_0> on signal <current_state> with one-hot encoding.
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1291 - FF/Latch <data_buf_15> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_8> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_9> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_10> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_11> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_12> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_13> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_14> is unconnected in block <uat_top>.
+
+Optimizing unit <uart_top> ...
+
+Optimizing unit <uat_top> ...
+Loading device for application Xst from file 'v150.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_top, actual ratio is 2.
+FlipFlop uat_top_inst_count_11 has been replicated 1 time(s)
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s150pq208-5 
+
+ Number of Slices:                      39  out of   1728     2%  
+ Number of Slice Flip Flops:            37  out of   3456     1%  
+ Number of 4 input LUTs:                62  out of   3456     1%  
+ Number of bonded IOBs:                  4  out of    144     2%  
+ Number of GCLKs:                        1  out of      4    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_16MHz                          | BUFGP                  | 11    |
+clk_19200Hz:Q                      | NONE                   | 4     |
+count_div_3:Q                      | NONE                   | 22    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 11.777ns (Maximum Frequency: 84.911MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 10.249ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+Completed process "Synthesize".
+
+
+
+Started process "Translate".
+
+
+Command Line: ngdbuild -intstyle ise -dd
+c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf -p xc2s150-pq208-5
+uart_top.ngc uart_top.ngd 
+
+Reading NGO file "C:/FPGA_Train/Design/transmitter/uart/uart_top.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "uart_top.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 35504 kilobytes
+
+Writing NGD file "uart_top.ngd" ...
+
+Writing NGDBUILD log file "uart_top.bld"...
+
+NGDBUILD done.
+Completed process "Translate".
+
+
+
+Started process "Map".
+
+Using target part "2s150pq208-5".
+Removing unused or disabled logic...
+Running cover...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Logic Utilization:
+  Number of Slice Flip Flops:        36 out of  3,456    1%
+  Number of 4 input LUTs:            57 out of  3,456    1%
+Logic Distribution:
+    Number of occupied Slices:                          38 out of  1,728    2%
+    Number of Slices containing only related logic:     38 out of     38  100%
+    Number of Slices containing unrelated logic:         0 out of     38    0%
+        *See NOTES below for an explanation of the effects of unrelated logic
+Total Number 4 input LUTs:           70 out of  3,456    2%
+      Number used as logic:                        57
+      Number used as a route-thru:                 13
+   Number of bonded IOBs:             4 out of    140    2%
+      IOB Flip Flops:                               1
+   Number of GCLKs:                   1 out of      4   25%
+   Number of GCLKIOBs:                1 out of      4   25%
+
+Total equivalent gate count for design:  755
+Additional JTAG gate count for IOBs:  240
+Peak Memory Usage:  58 MB
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity -
+   e.g. two LUTs are "related" if they share common inputs.
+   When assembling slices, Map gives priority to combine logic that
+   is related.  Doing so results in the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin
+   packing unrelated logic into a slice once 99% of the slices are
+   occupied through related logic packing.
+
+   Note that once logic distribution reaches the 99% level through
+   related logic packing, this does not mean the device is completely
+   utilized.  Unrelated logic packing will then begin, continuing until
+   all usable LUTs and FFs are occupied.  Depending on your timing
+   budget, increased levels of unrelated logic packing may adversely
+   affect the overall timing performance of your design.
+
+
+Mapping completed.
+See MAP report file "uart_top_map.mrp" for details.
+Completed process "Map".
+
+Mapping Module uart_top . . .
+MAP command line:
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+Mapping Module uart_top: DONE
+
+
+
+Started process "Place & Route".
+
+
+
+
+
+Constraints file: uart_top.pcf
+
+Loading device database for application Par from file "uart_top_map.ncd".
+   "uart_top" is an NCD, version 2.38, device xc2s150, package pq208, speed -5
+Loading device for application Par from file 'v150.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-06-19.
+
+
+Resolving physical constraints.
+Finished resolving physical constraints.
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs             4 out of 140     2%
+      Number of LOCed External IOBs    4 out of 4     100%
+
+   Number of SLICEs                   38 out of 1728    2%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:98977b) REAL time: 19 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 20 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 20 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 20 secs 
+
+Phase 5.8
+..
+Phase 5.8 (Checksum:991dd9) REAL time: 20 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 20 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 20 secs 
+
+Writing design to file uart_top.ncd.
+
+Total REAL time to Placer completion: 21 secs 
+Total CPU time to Placer completion: 1 secs 
+
+
+Phase 1: 294 unrouted;       REAL time: 23 secs 
+
+Phase 2: 276 unrouted;       REAL time: 23 secs 
+
+Phase 3: 79 unrouted;       REAL time: 24 secs 
+
+Phase 4: 0 unrouted;       REAL time: 24 secs 
+
+Total REAL time to Router completion: 24 secs 
+Total CPU time to Router completion: 2 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|   clk_16MHz_BUFGP          |  Global  |    7   |  0.002     |  0.724      |
++----------------------------+----------+--------+------------+-------------+
+|      count_div<3>          |   Local  |   19   |  2.529     |  4.044      |
++----------------------------+----------+--------+------------+-------------+
+|  clk_19200Hz_OBUF          |   Local  |    4   |  0.000     |  3.658      |
++----------------------------+----------+--------+------------+-------------+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 29 secs 
+Total CPU time to PAR completion: 2 secs 
+
+Peak Memory Usage:  47 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file uart_top.ncd.
+
+
+PAR done.
+Completed process "Place & Route".
+
+
+Started process "Generate Post-Place & Route Static Timing".
+
+
+Analysis completed Wed Jul 28 17:32:54 2004
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Completed process "Generate Post-Place & Route Static Timing".
+
+Place & Route Module uart_top . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+PAR completed successfully
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+Started process "Generate Programming File".
+
+Completed process "Generate Programming File".
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+Module <uat_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+No errors in compilation
+Analysis of file <uart_top.prj> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uart_top>.
+Module <uart_top> is correct for synthesis.
+ 
+Analyzing module <uat_top>.
+Module <uat_top> is correct for synthesis.
+ 
+Analyzing module <uat_sm>.
+Module <uat_sm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uat_sm>.
+    Related source file is uat_sm.v.
+    Found finite state machine <FSM_0> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 1000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit comparator greatequal for signal <$n0000> created at line 83.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Comparator(s).
+Unit <uat_sm> synthesized.
+
+
+Synthesizing Unit <uat_top>.
+    Related source file is uat_top.v.
+WARNING:Xst:646 - Signal <data_buf<15:8>> is assigned but never used.
+WARNING:Xst:1780 - Signal <din_rdy_reg> is never used or assigned.
+    Found 1-bit register for signal <ser_out>.
+    Found 3-bit adder for signal <$n0023> created at line 164.
+    Found 5-bit up counter for signal <count>.
+    Found 16-bit register for signal <data_buf>.
+    Found 3-bit register for signal <shift_count>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  20 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <uat_top> synthesized.
+
+
+Synthesizing Unit <uart_top>.
+    Related source file is uart_top.v.
+WARNING:Xst:1780 - Signal <dout_rdy_wire> is never used or assigned.
+    Found 1-bit register for signal <clk_19200Hz>.
+    Found 4-bit up counter for signal <count_div>.
+    Found 10-bit up counter for signal <count_div_19200>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <uart_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                             : 1
+# Registers                        : 4
+  1-bit register                   : 2
+  16-bit register                  : 1
+  3-bit register                   : 1
+# Counters                         : 3
+  5-bit up counter                 : 1
+  10-bit up counter                : 1
+  4-bit up counter                 : 1
+# Adders/Subtractors               : 1
+  3-bit adder                      : 1
+# Comparators                      : 1
+  3-bit comparator greatequal      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Selecting encoding for FSM_0 ...
+Optimizing FSM <FSM_0> on signal <current_state> with one-hot encoding.
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1291 - FF/Latch <data_buf_15> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_8> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_9> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_10> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_11> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_12> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_13> is unconnected in block <uat_top>.
+WARNING:Xst:1291 - FF/Latch <data_buf_14> is unconnected in block <uat_top>.
+
+Optimizing unit <uart_top> ...
+
+Optimizing unit <uat_top> ...
+Loading device for application Xst from file 'v150.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_top, actual ratio is 1.
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s150pq208-5 
+
+ Number of Slices:                      30  out of   1728     1%  
+ Number of Slice Flip Flops:            36  out of   3456     1%  
+ Number of 4 input LUTs:                46  out of   3456     1%  
+ Number of bonded IOBs:                  4  out of    144     2%  
+ Number of GCLKs:                        1  out of      4    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_16MHz                          | BUFGP                  | 11    |
+clk_19200Hz:Q                      | NONE                   | 4     |
+count_div_3:Q                      | NONE                   | 21    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 10.757ns (Maximum Frequency: 92.963MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 10.199ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+Completed process "Synthesize".
+
+
+
+Started process "Translate".
+
+
+Command Line: ngdbuild -intstyle ise -dd
+c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf -p xc2s150-pq208-5
+uart_top.ngc uart_top.ngd 
+
+Reading NGO file "C:/FPGA_Train/Design/transmitter/uart/uart_top.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "uart_top.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 35504 kilobytes
+
+Writing NGD file "uart_top.ngd" ...
+
+Writing NGDBUILD log file "uart_top.bld"...
+
+NGDBUILD done.
+Completed process "Translate".
+
+
+
+Started process "Map".
+
+Using target part "2s150pq208-5".
+Removing unused or disabled logic...
+Running cover...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Logic Utilization:
+  Number of Slice Flip Flops:        35 out of  3,456    1%
+  Number of 4 input LUTs:            40 out of  3,456    1%
+Logic Distribution:
+    Number of occupied Slices:                          29 out of  1,728    1%
+    Number of Slices containing only related logic:     29 out of     29  100%
+    Number of Slices containing unrelated logic:         0 out of     29    0%
+        *See NOTES below for an explanation of the effects of unrelated logic
+Total Number 4 input LUTs:           53 out of  3,456    1%
+      Number used as logic:                        40
+      Number used as a route-thru:                 13
+   Number of bonded IOBs:             4 out of    140    2%
+      IOB Flip Flops:                               1
+   Number of GCLKs:                   1 out of      4   25%
+   Number of GCLKIOBs:                1 out of      4   25%
+
+Total equivalent gate count for design:  636
+Additional JTAG gate count for IOBs:  240
+Peak Memory Usage:  58 MB
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity -
+   e.g. two LUTs are "related" if they share common inputs.
+   When assembling slices, Map gives priority to combine logic that
+   is related.  Doing so results in the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin
+   packing unrelated logic into a slice once 99% of the slices are
+   occupied through related logic packing.
+
+   Note that once logic distribution reaches the 99% level through
+   related logic packing, this does not mean the device is completely
+   utilized.  Unrelated logic packing will then begin, continuing until
+   all usable LUTs and FFs are occupied.  Depending on your timing
+   budget, increased levels of unrelated logic packing may adversely
+   affect the overall timing performance of your design.
+
+
+Mapping completed.
+See MAP report file "uart_top_map.mrp" for details.
+Completed process "Map".
+
+Mapping Module uart_top . . .
+MAP command line:
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+Mapping Module uart_top: DONE
+
+
+
+Started process "Place & Route".
+
+
+
+
+
+Constraints file: uart_top.pcf
+
+Loading device database for application Par from file "uart_top_map.ncd".
+   "uart_top" is an NCD, version 2.38, device xc2s150, package pq208, speed -5
+Loading device for application Par from file 'v150.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-06-19.
+
+
+Resolving physical constraints.
+Finished resolving physical constraints.
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs             4 out of 140     2%
+      Number of LOCed External IOBs    4 out of 4     100%
+
+   Number of SLICEs                   29 out of 1728    1%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:98973c) REAL time: 0 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 0 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 0 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 0 secs 
+
+Phase 5.8
+.
+Phase 5.8 (Checksum:98ff61) REAL time: 0 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 0 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 0 secs 
+
+Writing design to file uart_top.ncd.
+
+Total REAL time to Placer completion: 0 secs 
+Total CPU time to Placer completion: 1 secs 
+
+
+Phase 1: 229 unrouted;       REAL time: 2 secs 
+
+Phase 2: 208 unrouted;       REAL time: 2 secs 
+
+Phase 3: 56 unrouted;       REAL time: 2 secs 
+
+Phase 4: 0 unrouted;       REAL time: 2 secs 
+
+Total REAL time to Router completion: 2 secs 
+Total CPU time to Router completion: 2 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|   clk_16MHz_BUFGP          |  Global  |    7   |  0.002     |  0.724      |
++----------------------------+----------+--------+------------+-------------+
+|      count_div<3>          |   Local  |   17   |  0.260     |  3.832      |
++----------------------------+----------+--------+------------+-------------+
+|  clk_19200Hz_OBUF          |   Local  |    4   |  0.017     |  1.214      |
++----------------------------+----------+--------+------------+-------------+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 3 secs 
+Total CPU time to PAR completion: 3 secs 
+
+Peak Memory Usage:  47 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file uart_top.ncd.
+
+
+PAR done.
+Completed process "Place & Route".
+
+
+Started process "Generate Post-Place & Route Static Timing".
+
+
+Analysis completed Thu Jul 29 09:28:47 2004
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Completed process "Generate Post-Place & Route Static Timing".
+
+Place & Route Module uart_top . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+PAR completed successfully
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+Started process "Generate Programming File".
+
+Completed process "Generate Programming File".
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+ERROR:HDLCompilers:26 - uat_top.v line 95 expecting 'endcase', found ';'
+ERROR:HDLCompilers:26 - uat_top.v line 96 expecting 'end', found '5'
+ERROR:HDLCompilers:26 - uat_top.v line 96 expecting 'end', found ''d'
+ERROR:HDLCompilers:26 - uat_top.v line 96 unexpected token: '<='
+Module <uat_top> compiled
+ERROR:HDLCompilers:26 - uat_top.v line 96 expecting 'endmodule', found '8'
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+Analysis of file <uart_top.prj> failed.
+--> 
+
+Total memory usage is 44504 kilobytes
+
+
+ERROR: XST failed
+Process "Synthesize" did not complete.
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+Module <uat_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+No errors in compilation
+Analysis of file <uart_top.prj> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uart_top>.
+Module <uart_top> is correct for synthesis.
+ 
+Analyzing module <uat_top>.
+Module <uat_top> is correct for synthesis.
+ 
+Analyzing module <uat_sm>.
+Module <uat_sm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uat_sm>.
+    Related source file is uat_sm.v.
+    Found finite state machine <FSM_0> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 1000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit comparator greatequal for signal <$n0000> created at line 83.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Comparator(s).
+Unit <uat_sm> synthesized.
+
+
+Synthesizing Unit <uat_top>.
+    Related source file is uat_top.v.
+WARNING:Xst:1780 - Signal <din_rdy_reg> is never used or assigned.
+    Found 1-bit register for signal <ser_out>.
+    Found 3-bit adder for signal <$n0041> created at line 128.
+    Found 5-bit up counter for signal <count>.
+    Found 8-bit register for signal <data_buf>.
+    Found 3-bit register for signal <shift_count>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <uat_top> synthesized.
+
+
+Synthesizing Unit <uart_top>.
+    Related source file is uart_top.v.
+WARNING:Xst:1780 - Signal <dout_rdy_wire> is never used or assigned.
+    Found 1-bit register for signal <clk_19200Hz>.
+    Found 4-bit up counter for signal <count_div>.
+    Found 10-bit up counter for signal <count_div_19200>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <uart_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                             : 1
+# Registers                        : 4
+  1-bit register                   : 2
+  8-bit register                   : 1
+  3-bit register                   : 1
+# Counters                         : 3
+  5-bit up counter                 : 1
+  10-bit up counter                : 1
+  4-bit up counter                 : 1
+# Adders/Subtractors               : 1
+  3-bit adder                      : 1
+# Comparators                      : 1
+  3-bit comparator greatequal      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Selecting encoding for FSM_0 ...
+Optimizing FSM <FSM_0> on signal <current_state> with one-hot encoding.
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <uart_top> ...
+
+Optimizing unit <uat_top> ...
+Loading device for application Xst from file 'v150.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_top, actual ratio is 2.
+FlipFlop uat_top_inst_count_11 has been replicated 1 time(s)
+FlipFlop uat_top_inst_count_12 has been replicated 1 time(s)
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s150pq208-5 
+
+ Number of Slices:                      41  out of   1728     2%  
+ Number of Slice Flip Flops:            38  out of   3456     1%  
+ Number of 4 input LUTs:                66  out of   3456     1%  
+ Number of bonded IOBs:                  4  out of    144     2%  
+ Number of GCLKs:                        1  out of      4    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_16MHz                          | BUFGP                  | 11    |
+clk_19200Hz:Q                      | NONE                   | 4     |
+count_div_3:Q                      | NONE                   | 23    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 11.557ns (Maximum Frequency: 86.528MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 10.299ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+Completed process "Synthesize".
+
+
+
+Started process "Translate".
+
+
+Command Line: ngdbuild -intstyle ise -dd
+c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf -p xc2s150-pq208-5
+uart_top.ngc uart_top.ngd 
+
+Reading NGO file "C:/FPGA_Train/Design/transmitter/uart/uart_top.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "uart_top.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 35504 kilobytes
+
+Writing NGD file "uart_top.ngd" ...
+
+Writing NGDBUILD log file "uart_top.bld"...
+
+NGDBUILD done.
+Completed process "Translate".
+
+
+
+Started process "Map".
+
+Using target part "2s150pq208-5".
+Removing unused or disabled logic...
+Running cover...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Logic Utilization:
+  Number of Slice Flip Flops:        37 out of  3,456    1%
+  Number of 4 input LUTs:            60 out of  3,456    1%
+Logic Distribution:
+    Number of occupied Slices:                          41 out of  1,728    2%
+    Number of Slices containing only related logic:     41 out of     41  100%
+    Number of Slices containing unrelated logic:         0 out of     41    0%
+        *See NOTES below for an explanation of the effects of unrelated logic
+Total Number 4 input LUTs:           73 out of  3,456    2%
+      Number used as logic:                        60
+      Number used as a route-thru:                 13
+   Number of bonded IOBs:             4 out of    140    2%
+      IOB Flip Flops:                               1
+   Number of GCLKs:                   1 out of      4   25%
+   Number of GCLKIOBs:                1 out of      4   25%
+
+Total equivalent gate count for design:  778
+Additional JTAG gate count for IOBs:  240
+Peak Memory Usage:  58 MB
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity -
+   e.g. two LUTs are "related" if they share common inputs.
+   When assembling slices, Map gives priority to combine logic that
+   is related.  Doing so results in the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin
+   packing unrelated logic into a slice once 99% of the slices are
+   occupied through related logic packing.
+
+   Note that once logic distribution reaches the 99% level through
+   related logic packing, this does not mean the device is completely
+   utilized.  Unrelated logic packing will then begin, continuing until
+   all usable LUTs and FFs are occupied.  Depending on your timing
+   budget, increased levels of unrelated logic packing may adversely
+   affect the overall timing performance of your design.
+
+
+Mapping completed.
+See MAP report file "uart_top_map.mrp" for details.
+Completed process "Map".
+
+Mapping Module uart_top . . .
+MAP command line:
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+Mapping Module uart_top: DONE
+
+
+
+Started process "Place & Route".
+
+
+
+
+
+Constraints file: uart_top.pcf
+
+Loading device database for application Par from file "uart_top_map.ncd".
+   "uart_top" is an NCD, version 2.38, device xc2s150, package pq208, speed -5
+Loading device for application Par from file 'v150.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-06-19.
+
+
+Resolving physical constraints.
+Finished resolving physical constraints.
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs             4 out of 140     2%
+      Number of LOCed External IOBs    4 out of 4     100%
+
+   Number of SLICEs                   41 out of 1728    2%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:989790) REAL time: 0 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 0 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 0 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 0 secs 
+
+Phase 5.8
+......
+Phase 5.8 (Checksum:992c7f) REAL time: 0 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 0 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 0 secs 
+
+Writing design to file uart_top.ncd.
+
+Total REAL time to Placer completion: 0 secs 
+Total CPU time to Placer completion: 1 secs 
+
+
+Phase 1: 302 unrouted;       REAL time: 0 secs 
+
+Phase 2: 284 unrouted;       REAL time: 0 secs 
+
+Phase 3: 97 unrouted;       REAL time: 2 secs 
+
+Phase 4: 0 unrouted;       REAL time: 2 secs 
+
+Total REAL time to Router completion: 2 secs 
+Total CPU time to Router completion: 2 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|   clk_16MHz_BUFGP          |  Global  |    7   |  0.003     |  0.722      |
++----------------------------+----------+--------+------------+-------------+
+|      count_div<3>          |   Local  |   18   |  2.472     |  3.872      |
++----------------------------+----------+--------+------------+-------------+
+|  clk_19200Hz_OBUF          |   Local  |    4   |  0.033     |  3.669      |
++----------------------------+----------+--------+------------+-------------+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 2 secs 
+Total CPU time to PAR completion: 2 secs 
+
+Peak Memory Usage:  48 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file uart_top.ncd.
+
+
+PAR done.
+Completed process "Place & Route".
+
+
+Started process "Generate Post-Place & Route Static Timing".
+
+
+Analysis completed Thu Jul 29 10:12:18 2004
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Completed process "Generate Post-Place & Route Static Timing".
+
+Place & Route Module uart_top . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+PAR completed successfully
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+Started process "Generate Programming File".
+
+Completed process "Generate Programming File".
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+Module <uat_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+No errors in compilation
+Analysis of file <uart_top.prj> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uart_top>.
+Module <uart_top> is correct for synthesis.
+ 
+Analyzing module <uat_top>.
+Module <uat_top> is correct for synthesis.
+ 
+Analyzing module <uat_sm>.
+Module <uat_sm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uat_sm>.
+    Related source file is uat_sm.v.
+    Found finite state machine <FSM_0> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 1000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit comparator greatequal for signal <$n0000> created at line 83.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Comparator(s).
+Unit <uat_sm> synthesized.
+
+
+Synthesizing Unit <uat_top>.
+    Related source file is uat_top.v.
+WARNING:Xst:1780 - Signal <din_rdy_reg> is never used or assigned.
+    Found 1-bit register for signal <ser_out>.
+    Found 3-bit adder for signal <$n0041> created at line 129.
+    Found 5-bit up counter for signal <count>.
+    Found 8-bit register for signal <data_buf>.
+    Found 3-bit register for signal <shift_count>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <uat_top> synthesized.
+
+
+Synthesizing Unit <uart_top>.
+    Related source file is uart_top.v.
+WARNING:Xst:1780 - Signal <dout_rdy_wire> is never used or assigned.
+    Found 1-bit register for signal <clk_19200Hz>.
+    Found 4-bit up counter for signal <count_div>.
+    Found 10-bit up counter for signal <count_div_19200>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <uart_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                             : 1
+# Registers                        : 4
+  1-bit register                   : 2
+  8-bit register                   : 1
+  3-bit register                   : 1
+# Counters                         : 3
+  5-bit up counter                 : 1
+  10-bit up counter                : 1
+  4-bit up counter                 : 1
+# Adders/Subtractors               : 1
+  3-bit adder                      : 1
+# Comparators                      : 1
+  3-bit comparator greatequal      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Selecting encoding for FSM_0 ...
+Optimizing FSM <FSM_0> on signal <current_state> with one-hot encoding.
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <uart_top> ...
+
+Optimizing unit <uat_top> ...
+Loading device for application Xst from file 'v150.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_top, actual ratio is 2.
+FlipFlop uat_top_inst_count_13 has been replicated 1 time(s)
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s150pq208-5 
+
+ Number of Slices:                      40  out of   1728     2%  
+ Number of Slice Flip Flops:            37  out of   3456     1%  
+ Number of 4 input LUTs:                64  out of   3456     1%  
+ Number of bonded IOBs:                  4  out of    144     2%  
+ Number of GCLKs:                        1  out of      4    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_16MHz                          | BUFGP                  | 11    |
+clk_19200Hz:Q                      | NONE                   | 4     |
+count_div_3:Q                      | NONE                   | 22    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 11.367ns (Maximum Frequency: 87.974MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 10.249ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+Completed process "Synthesize".
+
+
+
+Started process "Translate".
+
+
+Command Line: ngdbuild -intstyle ise -dd
+c:\fpga_train\design\transmitter\uart/_ngo -uc uart_top.ucf -p xc2s150-pq208-5
+uart_top.ngc uart_top.ngd 
+
+Reading NGO file "C:/FPGA_Train/Design/transmitter/uart/uart_top.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "uart_top.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 35504 kilobytes
+
+Writing NGD file "uart_top.ngd" ...
+
+Writing NGDBUILD log file "uart_top.bld"...
+
+NGDBUILD done.
+Completed process "Translate".
+
+
+
+Started process "Map".
+
+Using target part "2s150pq208-5".
+Removing unused or disabled logic...
+Running cover...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Logic Utilization:
+  Number of Slice Flip Flops:        36 out of  3,456    1%
+  Number of 4 input LUTs:            58 out of  3,456    1%
+Logic Distribution:
+    Number of occupied Slices:                          39 out of  1,728    2%
+    Number of Slices containing only related logic:     39 out of     39  100%
+    Number of Slices containing unrelated logic:         0 out of     39    0%
+        *See NOTES below for an explanation of the effects of unrelated logic
+Total Number 4 input LUTs:           71 out of  3,456    2%
+      Number used as logic:                        58
+      Number used as a route-thru:                 13
+   Number of bonded IOBs:             4 out of    140    2%
+      IOB Flip Flops:                               1
+   Number of GCLKs:                   1 out of      4   25%
+   Number of GCLKIOBs:                1 out of      4   25%
+
+Total equivalent gate count for design:  761
+Additional JTAG gate count for IOBs:  240
+Peak Memory Usage:  58 MB
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity -
+   e.g. two LUTs are "related" if they share common inputs.
+   When assembling slices, Map gives priority to combine logic that
+   is related.  Doing so results in the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin
+   packing unrelated logic into a slice once 99% of the slices are
+   occupied through related logic packing.
+
+   Note that once logic distribution reaches the 99% level through
+   related logic packing, this does not mean the device is completely
+   utilized.  Unrelated logic packing will then begin, continuing until
+   all usable LUTs and FFs are occupied.  Depending on your timing
+   budget, increased levels of unrelated logic packing may adversely
+   affect the overall timing performance of your design.
+
+
+Mapping completed.
+See MAP report file "uart_top_map.mrp" for details.
+Completed process "Map".
+
+Mapping Module uart_top . . .
+MAP command line:
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+Mapping Module uart_top: DONE
+
+
+
+Started process "Place & Route".
+
+
+
+
+
+Constraints file: uart_top.pcf
+
+Loading device database for application Par from file "uart_top_map.ncd".
+   "uart_top" is an NCD, version 2.38, device xc2s150, package pq208, speed -5
+Loading device for application Par from file 'v150.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-06-19.
+
+
+Resolving physical constraints.
+Finished resolving physical constraints.
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs             4 out of 140     2%
+      Number of LOCed External IOBs    4 out of 4     100%
+
+   Number of SLICEs                   39 out of 1728    2%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:989782) REAL time: 0 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 0 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 0 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 0 secs 
+
+Phase 5.8
+...
+Phase 5.8 (Checksum:992c7f) REAL time: 0 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 0 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 0 secs 
+
+Writing design to file uart_top.ncd.
+
+Total REAL time to Placer completion: 0 secs 
+Total CPU time to Placer completion: 1 secs 
+
+
+Phase 1: 303 unrouted;       REAL time: 0 secs 
+
+Phase 2: 287 unrouted;       REAL time: 2 secs 
+
+Phase 3: 97 unrouted;       REAL time: 2 secs 
+
+Phase 4: 0 unrouted;       REAL time: 2 secs 
+
+Total REAL time to Router completion: 2 secs 
+Total CPU time to Router completion: 2 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|   clk_16MHz_BUFGP          |  Global  |    7   |  0.102     |  0.724      |
++----------------------------+----------+--------+------------+-------------+
+|      count_div<3>          |   Local  |   18   |  2.649     |  4.199      |
++----------------------------+----------+--------+------------+-------------+
+|  clk_19200Hz_OBUF          |   Local  |    4   |  0.011     |  3.681      |
++----------------------------+----------+--------+------------+-------------+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 3 secs 
+Total CPU time to PAR completion: 2 secs 
+
+Peak Memory Usage:  47 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file uart_top.ncd.
+
+
+PAR done.
+Completed process "Place & Route".
+
+
+Started process "Generate Post-Place & Route Static Timing".
+
+
+Analysis completed Thu Jul 29 10:26:38 2004
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Completed process "Generate Post-Place & Route Static Timing".
+
+Place & Route Module uart_top . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+PAR completed successfully
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+Started process "Generate Programming File".
+
+Completed process "Generate Programming File".
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+Module <uat_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+No errors in compilation
+Analysis of file <uart_top.prj> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uart_top>.
+Module <uart_top> is correct for synthesis.
+ 
+Analyzing module <uat_top>.
+Module <uat_top> is correct for synthesis.
+ 
+Analyzing module <uat_sm>.
+Module <uat_sm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uat_sm>.
+    Related source file is uat_sm.v.
+    Found finite state machine <FSM_0> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 1000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit comparator greatequal for signal <$n0000> created at line 81.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Comparator(s).
+Unit <uat_sm> synthesized.
+
+
+Synthesizing Unit <uat_top>.
+    Related source file is uat_top.v.
+WARNING:Xst:1780 - Signal <din_rdy_reg> is never used or assigned.
+    Found 1-bit register for signal <ser_out>.
+    Found 3-bit adder for signal <$n0041> created at line 116.
+    Found 5-bit up counter for signal <count>.
+    Found 8-bit register for signal <data_buf>.
+    Found 3-bit register for signal <shift_count>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <uat_top> synthesized.
+
+
+Synthesizing Unit <uart_top>.
+    Related source file is uart_top.v.
+WARNING:Xst:1780 - Signal <dout_rdy_wire> is never used or assigned.
+    Found 1-bit register for signal <clk_19200Hz>.
+    Found 4-bit up counter for signal <count_div>.
+    Found 10-bit up counter for signal <count_div_19200>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <uart_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                             : 1
+# Registers                        : 4
+  1-bit register                   : 2
+  8-bit register                   : 1
+  3-bit register                   : 1
+# Counters                         : 3
+  5-bit up counter                 : 1
+  10-bit up counter                : 1
+  4-bit up counter                 : 1
+
+Process interrupted by the user.
+# Adders/Subtractors               : 1
+  3-bit adder                      : 1
+# Comparators                      : 1
+  3-bit comparator greatequal      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+ERROR: XST failed
+Process "Synthesize" did not complete.
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+Module <uat_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+No errors in compilation
+Analysis of file <uart_top.prj> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uart_top>.
+Module <uart_top> is correct for synthesis.
+ 
+Analyzing module <uat_top>.
+Module <uat_top> is correct for synthesis.
+ 
+Analyzing module <uat_sm>.
+Module <uat_sm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uat_sm>.
+    Related source file is uat_sm.v.
+    Found finite state machine <FSM_0> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 1000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit comparator greatequal for signal <$n0000> created at line 81.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Comparator(s).
+Unit <uat_sm> synthesized.
+
+
+Synthesizing Unit <uat_top>.
+    Related source file is uat_top.v.
+WARNING:Xst:1780 - Signal <din_rdy_reg> is never used or assigned.
+    Found 1-bit register for signal <ser_out>.
+    Found 3-bit adder for signal <$n0041> created at line 116.
+    Found 5-bit up counter for signal <count>.
+    Found 8-bit register for signal <data_buf>.
+    Found 3-bit register for signal <shift_count>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <uat_top> synthesized.
+
+
+Synthesizing Unit <uart_top>.
+    Related source file is uart_top.v.
+WARNING:Xst:1780 - Signal <dout_rdy_wire> is never used or assigned.
+    Found 1-bit register for signal <clk_19200Hz>.
+    Found 4-bit up counter for signal <count_div>.
+    Found 10-bit up counter for signal <count_div_19200>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <uart_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                             : 1
+# Registers                        : 4
+  1-bit register                   : 2
+  8-bit register                   : 1
+  3-bit register                   : 1
+# Counters                         : 3
+  5-bit up counter                 : 1
+  10-bit up counter                : 1
+  4-bit up counter                 : 1
+# Adders/Subtractors               : 1
+  3-bit adder                      : 1
+# Comparators                      : 1
+  3-bit comparator greatequal      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Selecting encoding for FSM_0 ...
+Optimizing FSM <FSM_0> on signal <current_state> with one-hot encoding.
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <uart_top> ...
+
+Optimizing unit <uat_top> ...
+Loading device for application Xst from file 'v100.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_top, actual ratio is 3.
+FlipFlop uat_top_inst_count_13 has been replicated 1 time(s)
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s100pq208-5 
+
+ Number of Slices:                      40  out of   1200     3%  
+ Number of Slice Flip Flops:            37  out of   2400     1%  
+ Number of 4 input LUTs:                64  out of   2400     2%  
+ Number of bonded IOBs:                  3  out of    144     2%  
+ Number of GCLKs:                        1  out of      4    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_16MHz                          | BUFGP                  | 11    |
+clk_19200Hz:Q                      | NONE                   | 4     |
+count_div_3:Q                      | NONE                   | 22    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 11.367ns (Maximum Frequency: 87.974MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 10.249ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+Completed process "Synthesize".
+
+
+
+Started process "Translate".
+
+
+Command Line: ngdbuild -intstyle ise -dd c:\uart_tx/_ngo -uc uart_top.ucf -p
+xc2s100-pq208-5 uart_top.ngc uart_top.ngd 
+
+Reading NGO file "C:/UART_Tx/uart_top.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "uart_top.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+WARNING:NgdBuild:483 - Attribute "LOC" on "clk_19200Hz" is on the wrong type of
+   object.  Please see the Constraints Guide for more information on this
+   attribute.
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 35500 kilobytes
+
+Writing NGD file "uart_top.ngd" ...
+
+Writing NGDBUILD log file "uart_top.bld"...
+
+NGDBUILD done.
+Completed process "Translate".
+
+
+
+Started process "Map".
+
+Using target part "2s100pq208-5".
+Removing unused or disabled logic...
+Running cover...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Logic Utilization:
+  Number of Slice Flip Flops:        36 out of  2,400    1%
+  Number of 4 input LUTs:            58 out of  2,400    2%
+Logic Distribution:
+    Number of occupied Slices:                          39 out of  1,200    3%
+    Number of Slices containing only related logic:     39 out of     39  100%
+    Number of Slices containing unrelated logic:         0 out of     39    0%
+        *See NOTES below for an explanation of the effects of unrelated logic
+Total Number 4 input LUTs:           71 out of  2,400    2%
+      Number used as logic:                        58
+      Number used as a route-thru:                 13
+   Number of bonded IOBs:             3 out of    140    2%
+      IOB Flip Flops:                               1
+   Number of GCLKs:                   1 out of      4   25%
+   Number of GCLKIOBs:                1 out of      4   25%
+
+Total equivalent gate count for design:  761
+Additional JTAG gate count for IOBs:  192
+Peak Memory Usage:  56 MB
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity -
+   e.g. two LUTs are "related" if they share common inputs.
+   When assembling slices, Map gives priority to combine logic that
+   is related.  Doing so results in the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin
+   packing unrelated logic into a slice once 99% of the slices are
+   occupied through related logic packing.
+
+   Note that once logic distribution reaches the 99% level through
+   related logic packing, this does not mean the device is completely
+   utilized.  Unrelated logic packing will then begin, continuing until
+   all usable LUTs and FFs are occupied.  Depending on your timing
+   budget, increased levels of unrelated logic packing may adversely
+   affect the overall timing performance of your design.
+
+
+Mapping completed.
+See MAP report file "uart_top_map.mrp" for details.
+Completed process "Map".
+
+Mapping Module uart_top . . .
+MAP command line:
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+Mapping Module uart_top: DONE
+
+
+
+Started process "Place & Route".
+
+
+
+
+
+Constraints file: uart_top.pcf
+
+Loading device database for application Par from file "uart_top_map.ncd".
+   "uart_top" is an NCD, version 2.38, device xc2s100, package pq208, speed -5
+Loading device for application Par from file 'v100.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-06-19.
+
+
+Resolving physical constraints.
+Finished resolving physical constraints.
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs             3 out of 140     2%
+      Number of LOCed External IOBs    3 out of 3     100%
+
+   Number of SLICEs                   39 out of 1200    3%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:98977b) REAL time: 2 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 2 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 2 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 2 secs 
+
+Phase 5.8
+.....
+Phase 5.8 (Checksum:991cf8) REAL time: 2 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 2 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 2 secs 
+
+Writing design to file uart_top.ncd.
+
+Total REAL time to Placer completion: 2 secs 
+Total CPU time to Placer completion: 1 secs 
+
+
+Phase 1: 302 unrouted;       REAL time: 2 secs 
+
+Phase 2: 291 unrouted;       REAL time: 2 secs 
+
+Phase 3: 94 unrouted;       REAL time: 3 secs 
+
+Phase 4: 0 unrouted;       REAL time: 3 secs 
+
+Total REAL time to Router completion: 3 secs 
+Total CPU time to Router completion: 2 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|   clk_16MHz_BUFGP          |  Global  |    7   |  0.097     |  0.677      |
++----------------------------+----------+--------+------------+-------------+
+|      count_div<3>          |   Local  |   18   |  1.623     |  4.230      |
++----------------------------+----------+--------+------------+-------------+
+|       clk_19200Hz          |   Local  |    3   |  0.000     |  3.456      |
++----------------------------+----------+--------+------------+-------------+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 4 secs 
+Total CPU time to PAR completion: 3 secs 
+
+Peak Memory Usage:  45 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file uart_top.ncd.
+
+
+PAR done.
+Completed process "Place & Route".
+
+
+Started process "Generate Post-Place & Route Static Timing".
+
+
+Analysis completed Wed Nov 03 08:21:35 2004
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Completed process "Generate Post-Place & Route Static Timing".
+
+Place & Route Module uart_top . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+PAR completed successfully
+
+
+
+
+Started process "Generate Programming File".
+
+Completed process "Generate Programming File".
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+Started process "Translate".
+
+
+Command Line: ngdbuild -intstyle ise -dd c:\uart_tx/_ngo -uc uart_top.ucf -p
+xc2s100-pq208-5 uart_top.ngc uart_top.ngd 
+
+Reading NGO file "C:/UART_Tx/uart_top.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "uart_top.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+WARNING:NgdBuild:483 - Attribute "LOC" on "clk_19200Hz" is on the wrong type of
+   object.  Please see the Constraints Guide for more information on this
+   attribute.
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 35500 kilobytes
+
+Writing NGD file "uart_top.ngd" ...
+
+Writing NGDBUILD log file "uart_top.bld"...
+
+NGDBUILD done.
+Completed process "Translate".
+
+
+
+Started process "Map".
+
+Using target part "2s100pq208-5".
+Removing unused or disabled logic...
+Running cover...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Logic Utilization:
+  Number of Slice Flip Flops:        36 out of  2,400    1%
+  Number of 4 input LUTs:            58 out of  2,400    2%
+Logic Distribution:
+    Number of occupied Slices:                          39 out of  1,200    3%
+    Number of Slices containing only related logic:     39 out of     39  100%
+    Number of Slices containing unrelated logic:         0 out of     39    0%
+        *See NOTES below for an explanation of the effects of unrelated logic
+Total Number 4 input LUTs:           71 out of  2,400    2%
+      Number used as logic:                        58
+      Number used as a route-thru:                 13
+   Number of bonded IOBs:             3 out of    140    2%
+      IOB Flip Flops:                               1
+   Number of GCLKs:                   1 out of      4   25%
+   Number of GCLKIOBs:                1 out of      4   25%
+
+Total equivalent gate count for design:  761
+Additional JTAG gate count for IOBs:  192
+Peak Memory Usage:  56 MB
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity -
+   e.g. two LUTs are "related" if they share common inputs.
+   When assembling slices, Map gives priority to combine logic that
+   is related.  Doing so results in the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin
+   packing unrelated logic into a slice once 99% of the slices are
+   occupied through related logic packing.
+
+   Note that once logic distribution reaches the 99% level through
+   related logic packing, this does not mean the device is completely
+   utilized.  Unrelated logic packing will then begin, continuing until
+   all usable LUTs and FFs are occupied.  Depending on your timing
+   budget, increased levels of unrelated logic packing may adversely
+   affect the overall timing performance of your design.
+
+
+Mapping completed.
+See MAP report file "uart_top_map.mrp" for details.
+Completed process "Map".
+
+Mapping Module uart_top . . .
+MAP command line:
+map -intstyle ise -p xc2s100-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+Mapping Module uart_top: DONE
+
+
+
+Started process "Place & Route".
+
+
+
+
+
+Constraints file: uart_top.pcf
+
+Loading device database for application Par from file "uart_top_map.ncd".
+   "uart_top" is an NCD, version 2.38, device xc2s100, package pq208, speed -5
+Loading device for application Par from file 'v100.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-06-19.
+
+
+Resolving physical constraints.
+Finished resolving physical constraints.
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs             3 out of 140     2%
+      Number of LOCed External IOBs    3 out of 3     100%
+
+   Number of SLICEs                   39 out of 1200    3%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:98977b) REAL time: 0 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 0 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 0 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 0 secs 
+
+Phase 5.8
+.....
+Phase 5.8 (Checksum:990f7e) REAL time: 0 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 0 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 0 secs 
+
+Writing design to file uart_top.ncd.
+
+Total REAL time to Placer completion: 0 secs 
+Total CPU time to Placer completion: 1 secs 
+
+
+Phase 1: 302 unrouted;       REAL time: 0 secs 
+
+Phase 2: 279 unrouted;       REAL time: 2 secs 
+
+Phase 3: 80 unrouted;       REAL time: 2 secs 
+
+Phase 4: 0 unrouted;       REAL time: 2 secs 
+
+Total REAL time to Router completion: 2 secs 
+Total CPU time to Router completion: 2 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|   clk_16MHz_BUFGP          |  Global  |    7   |  0.094     |  0.677      |
++----------------------------+----------+--------+------------+-------------+
+|      count_div<3>          |   Local  |   18   |  0.994     |  6.019      |
++----------------------------+----------+--------+------------+-------------+
+|       clk_19200Hz          |   Local  |    3   |  0.000     |  3.504      |
++----------------------------+----------+--------+------------+-------------+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 3 secs 
+Total CPU time to PAR completion: 2 secs 
+
+Peak Memory Usage:  45 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file uart_top.ncd.
+
+
+PAR done.
+Completed process "Place & Route".
+
+
+Started process "Generate Post-Place & Route Static Timing".
+
+
+Analysis completed Wed Nov 03 10:08:35 2004
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Completed process "Generate Post-Place & Route Static Timing".
+
+Place & Route Module uart_top . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+PAR completed successfully
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+Started process "Generate Programming File".
+
+Completed process "Generate Programming File".
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+Module <uat_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+No errors in compilation
+Analysis of file <uart_top.prj> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uart_top>.
+Module <uart_top> is correct for synthesis.
+ 
+Analyzing module <uat_top>.
+Module <uat_top> is correct for synthesis.
+ 
+Analyzing module <uat_sm>.
+Module <uat_sm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uat_sm>.
+    Related source file is uat_sm.v.
+    Found finite state machine <FSM_0> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 1000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit comparator greatequal for signal <$n0000> created at line 81.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Comparator(s).
+Unit <uat_sm> synthesized.
+
+
+Synthesizing Unit <uat_top>.
+    Related source file is uat_top.v.
+WARNING:Xst:1780 - Signal <din_rdy_reg> is never used or assigned.
+    Found 1-bit register for signal <ser_out>.
+    Found 3-bit adder for signal <$n0041> created at line 116.
+    Found 5-bit up counter for signal <count>.
+    Found 8-bit register for signal <data_buf>.
+    Found 3-bit register for signal <shift_count>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <uat_top> synthesized.
+
+
+Synthesizing Unit <uart_top>.
+    Related source file is uart_top.v.
+WARNING:Xst:1780 - Signal <dout_rdy_wire> is never used or assigned.
+    Found 1-bit register for signal <clk_19200Hz>.
+    Found 4-bit up counter for signal <count_div>.
+    Found 10-bit up counter for signal <count_div_19200>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <uart_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                             : 1
+# Registers                        : 4
+  1-bit register                   : 2
+  8-bit register                   : 1
+  3-bit register                   : 1
+# Counters                         : 3
+  5-bit up counter                 : 1
+  10-bit up counter                : 1
+  4-bit up counter                 : 1
+# Adders/Subtractors               : 1
+  3-bit adder                      : 1
+# Comparators                      : 1
+  3-bit comparator greatequal      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Selecting encoding for FSM_0 ...
+Optimizing FSM <FSM_0> on signal <current_state> with one-hot encoding.
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <uart_top> ...
+
+Optimizing unit <uat_top> ...
+Loading device for application Xst from file 'v150.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_top, actual ratio is 2.
+FlipFlop uat_top_inst_count_13 has been replicated 1 time(s)
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s150pq208-5 
+
+ Number of Slices:                      40  out of   1728     2%  
+ Number of Slice Flip Flops:            37  out of   3456     1%  
+ Number of 4 input LUTs:                64  out of   3456     1%  
+ Number of bonded IOBs:                  3  out of    144     2%  
+ Number of GCLKs:                        1  out of      4    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_16MHz                          | BUFGP                  | 11    |
+clk_19200Hz:Q                      | NONE                   | 4     |
+count_div_3:Q                      | NONE                   | 22    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 11.367ns (Maximum Frequency: 87.974MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 10.249ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+Completed process "Synthesize".
+
+
+
+Started process "Translate".
+
+
+Command Line: ngdbuild -intstyle ise -dd c:\testing_from\uart_tx/_ngo -uc
+uart_top.ucf -p xc2s150-pq208-5 uart_top.ngc uart_top.ngd 
+
+Reading NGO file "C:/testing_FROM/UART_Tx/uart_top.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "uart_top.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+WARNING:NgdBuild:483 - Attribute "LOC" on "clk_19200Hz" is on the wrong type of
+   object.  Please see the Constraints Guide for more information on this
+   attribute.
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 35500 kilobytes
+
+Writing NGD file "uart_top.ngd" ...
+
+Writing NGDBUILD log file "uart_top.bld"...
+
+NGDBUILD done.
+Completed process "Translate".
+
+
+
+Started process "Map".
+
+Using target part "2s150pq208-5".
+Removing unused or disabled logic...
+Running cover...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Logic Utilization:
+  Number of Slice Flip Flops:        36 out of  3,456    1%
+  Number of 4 input LUTs:            58 out of  3,456    1%
+Logic Distribution:
+    Number of occupied Slices:                          39 out of  1,728    2%
+    Number of Slices containing only related logic:     39 out of     39  100%
+    Number of Slices containing unrelated logic:         0 out of     39    0%
+        *See NOTES below for an explanation of the effects of unrelated logic
+Total Number 4 input LUTs:           72 out of  3,456    2%
+      Number used as logic:                        58
+      Number used as a route-thru:                 14
+   Number of bonded IOBs:             3 out of    140    2%
+      IOB Flip Flops:                               1
+   Number of GCLKs:                   1 out of      4   25%
+   Number of GCLKIOBs:                1 out of      4   25%
+
+Total equivalent gate count for design:  761
+Additional JTAG gate count for IOBs:  192
+Peak Memory Usage:  58 MB
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity -
+   e.g. two LUTs are "related" if they share common inputs.
+   When assembling slices, Map gives priority to combine logic that
+   is related.  Doing so results in the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin
+   packing unrelated logic into a slice once 99% of the slices are
+   occupied through related logic packing.
+
+   Note that once logic distribution reaches the 99% level through
+   related logic packing, this does not mean the device is completely
+   utilized.  Unrelated logic packing will then begin, continuing until
+   all usable LUTs and FFs are occupied.  Depending on your timing
+   budget, increased levels of unrelated logic packing may adversely
+   affect the overall timing performance of your design.
+
+
+Mapping completed.
+See MAP report file "uart_top_map.mrp" for details.
+Completed process "Map".
+
+Mapping Module uart_top . . .
+MAP command line:
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+Mapping Module uart_top: DONE
+
+
+
+Started process "Place & Route".
+
+
+
+
+
+Constraints file: uart_top.pcf
+
+Loading device database for application Par from file "uart_top_map.ncd".
+   "uart_top" is an NCD, version 2.38, device xc2s150, package pq208, speed -5
+Loading device for application Par from file 'v150.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-06-19.
+
+
+Resolving physical constraints.
+Finished resolving physical constraints.
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs             3 out of 140     2%
+      Number of LOCed External IOBs    3 out of 3     100%
+
+   Number of SLICEs                   39 out of 1728    2%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:98977b) REAL time: 0 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 0 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 0 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 0 secs 
+
+Phase 5.8
+........
+Phase 5.8 (Checksum:991b36) REAL time: 0 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 0 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 0 secs 
+
+Writing design to file uart_top.ncd.
+
+Total REAL time to Placer completion: 0 secs 
+Total CPU time to Placer completion: 1 secs 
+
+
+Phase 1: 303 unrouted;       REAL time: 0 secs 
+
+Phase 2: 280 unrouted;       REAL time: 2 secs 
+
+Phase 3: 88 unrouted;       REAL time: 2 secs 
+
+Phase 4: 0 unrouted;       REAL time: 2 secs 
+
+Total REAL time to Router completion: 2 secs 
+Total CPU time to Router completion: 2 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|   clk_16MHz_BUFGP          |  Global  |    7   |  0.091     |  0.728      |
++----------------------------+----------+--------+------------+-------------+
+|      count_div<3>          |   Local  |   18   |  0.645     |  5.981      |
++----------------------------+----------+--------+------------+-------------+
+|       clk_19200Hz          |   Local  |    3   |  0.000     |  3.234      |
++----------------------------+----------+--------+------------+-------------+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 3 secs 
+Total CPU time to PAR completion: 2 secs 
+
+Peak Memory Usage:  47 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file uart_top.ncd.
+
+
+PAR done.
+Completed process "Place & Route".
+
+
+Started process "Generate Post-Place & Route Static Timing".
+
+
+Analysis completed Mon Dec 06 13:27:11 2004
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Completed process "Generate Post-Place & Route Static Timing".
+
+Place & Route Module uart_top . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+PAR completed successfully
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+
+Started process "Synthesize".
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+Module <uat_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+No errors in compilation
+Analysis of file <uart_top.prj> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uart_top>.
+Module <uart_top> is correct for synthesis.
+ 
+Analyzing module <uat_top>.
+Module <uat_top> is correct for synthesis.
+ 
+Analyzing module <uat_sm>.
+Module <uat_sm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uat_sm>.
+    Related source file is uat_sm.v.
+    Found finite state machine <FSM_0> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 1000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit comparator greatequal for signal <$n0000> created at line 81.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Comparator(s).
+Unit <uat_sm> synthesized.
+
+
+Synthesizing Unit <uat_top>.
+    Related source file is uat_top.v.
+WARNING:Xst:1780 - Signal <din_rdy_reg> is never used or assigned.
+    Found 1-bit register for signal <ser_out>.
+    Found 3-bit adder for signal <$n0041> created at line 116.
+    Found 5-bit up counter for signal <count>.
+    Found 8-bit register for signal <data_buf>.
+    Found 3-bit register for signal <shift_count>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <uat_top> synthesized.
+
+
+Synthesizing Unit <uart_top>.
+    Related source file is uart_top.v.
+WARNING:Xst:1780 - Signal <dout_rdy_wire> is never used or assigned.
+    Found 1-bit register for signal <clk_19200Hz>.
+    Found 4-bit up counter for signal <count_div>.
+    Found 10-bit up counter for signal <count_div_19200>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <uart_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                             : 1
+# Registers                        : 4
+  1-bit register                   : 2
+  8-bit register                   : 1
+  3-bit register                   : 1
+# Counters                         : 3
+  5-bit up counter                 : 1
+  10-bit up counter                : 1
+  4-bit up counter                 : 1
+# Adders/Subtractors               : 1
+  3-bit adder                      : 1
+# Comparators                      : 1
+  3-bit comparator greatequal      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Selecting encoding for FSM_0 ...
+Optimizing FSM <FSM_0> on signal <current_state> with one-hot encoding.
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <uart_top> ...
+
+Optimizing unit <uat_top> ...
+Loading device for application Xst from file 'v150.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_top, actual ratio is 2.
+FlipFlop uat_top_inst_count_13 has been replicated 1 time(s)
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s150pq208-5 
+
+ Number of Slices:                      40  out of   1728     2%  
+ Number of Slice Flip Flops:            37  out of   3456     1%  
+ Number of 4 input LUTs:                64  out of   3456     1%  
+ Number of bonded IOBs:                  3  out of    144     2%  
+ Number of GCLKs:                        1  out of      4    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_16MHz                          | BUFGP                  | 11    |
+clk_19200Hz:Q                      | NONE                   | 4     |
+count_div_3:Q                      | NONE                   | 22    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 11.367ns (Maximum Frequency: 87.974MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 10.249ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+Completed process "Synthesize".
+
+
+
+Started process "Translate".
+
+
+Command Line: ngdbuild -intstyle ise -dd c:\testing_from\uart_tx/_ngo -uc
+uart_top.ucf -p xc2s150-pq208-5 uart_top.ngc uart_top.ngd 
+
+Reading NGO file "C:/testing_FROM/UART_Tx/uart_top.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "uart_top.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+WARNING:NgdBuild:483 - Attribute "LOC" on "clk_19200Hz" is on the wrong type of
+   object.  Please see the Constraints Guide for more information on this
+   attribute.
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 35500 kilobytes
+
+Writing NGD file "uart_top.ngd" ...
+
+Writing NGDBUILD log file "uart_top.bld"...
+
+NGDBUILD done.
+Completed process "Translate".
+
+
+
+Started process "Map".
+
+Using target part "2s150pq208-5".
+Removing unused or disabled logic...
+Running cover...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Logic Utilization:
+  Number of Slice Flip Flops:        36 out of  3,456    1%
+  Number of 4 input LUTs:            58 out of  3,456    1%
+Logic Distribution:
+    Number of occupied Slices:                          39 out of  1,728    2%
+    Number of Slices containing only related logic:     39 out of     39  100%
+    Number of Slices containing unrelated logic:         0 out of     39    0%
+        *See NOTES below for an explanation of the effects of unrelated logic
+Total Number 4 input LUTs:           72 out of  3,456    2%
+      Number used as logic:                        58
+      Number used as a route-thru:                 14
+   Number of bonded IOBs:             3 out of    140    2%
+      IOB Flip Flops:                               1
+   Number of GCLKs:                   1 out of      4   25%
+   Number of GCLKIOBs:                1 out of      4   25%
+
+Total equivalent gate count for design:  761
+Additional JTAG gate count for IOBs:  192
+Peak Memory Usage:  58 MB
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity -
+   e.g. two LUTs are "related" if they share common inputs.
+   When assembling slices, Map gives priority to combine logic that
+   is related.  Doing so results in the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin
+   packing unrelated logic into a slice once 99% of the slices are
+   occupied through related logic packing.
+
+   Note that once logic distribution reaches the 99% level through
+   related logic packing, this does not mean the device is completely
+   utilized.  Unrelated logic packing will then begin, continuing until
+   all usable LUTs and FFs are occupied.  Depending on your timing
+   budget, increased levels of unrelated logic packing may adversely
+   affect the overall timing performance of your design.
+
+
+Mapping completed.
+See MAP report file "uart_top_map.mrp" for details.
+Completed process "Map".
+
+Mapping Module uart_top . . .
+MAP command line:
+map -intstyle ise -p xc2s150-pq208-5 -cm area -pr b -k 4 -c 100 -tx off -o uart_top_map.ncd uart_top.ngd uart_top.pcf
+Mapping Module uart_top: DONE
+
+
+
+Started process "Place & Route".
+
+
+
+
+
+Constraints file: uart_top.pcf
+
+Loading device database for application Par from file "uart_top_map.ncd".
+   "uart_top" is an NCD, version 2.38, device xc2s150, package pq208, speed -5
+Loading device for application Par from file 'v150.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-06-19.
+
+
+Resolving physical constraints.
+Finished resolving physical constraints.
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs             3 out of 140     2%
+      Number of LOCed External IOBs    3 out of 3     100%
+
+   Number of SLICEs                   39 out of 1728    2%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:98977b) REAL time: 0 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 0 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 0 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 0 secs 
+
+Phase 5.8
+........
+Phase 5.8 (Checksum:991b36) REAL time: 0 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 0 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 2 secs 
+
+Writing design to file uart_top.ncd.
+
+Total REAL time to Placer completion: 2 secs 
+Total CPU time to Placer completion: 1 secs 
+
+
+Phase 1: 303 unrouted;       REAL time: 2 secs 
+
+Phase 2: 280 unrouted;       REAL time: 2 secs 
+
+Phase 3: 88 unrouted;       REAL time: 2 secs 
+
+Phase 4: 0 unrouted;       REAL time: 3 secs 
+
+Total REAL time to Router completion: 3 secs 
+Total CPU time to Router completion: 2 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|   clk_16MHz_BUFGP          |  Global  |    7   |  0.091     |  0.728      |
++----------------------------+----------+--------+------------+-------------+
+|      count_div<3>          |   Local  |   18   |  0.645     |  5.981      |
++----------------------------+----------+--------+------------+-------------+
+|       clk_19200Hz          |   Local  |    3   |  0.000     |  3.234      |
++----------------------------+----------+--------+------------+-------------+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 3 secs 
+Total CPU time to PAR completion: 2 secs 
+
+Peak Memory Usage:  47 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file uart_top.ncd.
+
+
+PAR done.
+Completed process "Place & Route".
+
+
+Started process "Generate Post-Place & Route Static Timing".
+
+
+Analysis completed Mon Dec 06 14:35:08 2004
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Completed process "Generate Post-Place & Route Static Timing".
+
+Place & Route Module uart_top . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 uart_top_map.ncd uart_top.ncd uart_top.pcf
+PAR completed successfully
+
+
+
+Project Navigator Auto-Make Log File
+-------------------------------------
+
+
+
+Started process "Generate Programming File".
+
+Completed process "Generate Programming File".
+
+

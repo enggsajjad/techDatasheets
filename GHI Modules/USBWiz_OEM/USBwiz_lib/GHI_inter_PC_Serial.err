@@ -1,0 +1,4 @@
+Error[1027] E:\Office\Components and Datasheets\GHI Modules\USBWiz_OEM\USBwiz_lib\SPI.h 45 : unable to locate 'p32xxxx.h'
+Error[1027] E:\Office\Components and Datasheets\GHI Modules\USBWiz_OEM\USBwiz_lib\SPI.h 46 : unable to locate 'peripheral/int.h'
+Error[1027] E:\Office\Components and Datasheets\GHI Modules\USBWiz_OEM\USBwiz_lib\I2C.h 43 : unable to locate 'p32xxxx.h'
+Error[1027] E:\Office\Components and Datasheets\GHI Modules\USBWiz_OEM\USBwiz_lib\I2C.h 44 : unable to locate 'peripheral/int.h'

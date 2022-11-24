@@ -1,0 +1,131 @@
+C51 COMPILER V7.00  MAIN                                                                   05/03/2002 12:10:33 PAGE 1   
+
+
+C51 COMPILER V7.00, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND CODE SYMBOLS TABS(8)
+
+stmt level    source
+
+   1          /*-----------------------------------------------------------------------------
+   2          MAIN.C
+   3          
+   4          This program fills memory areas with stuff.
+   5          -----------------------------------------------------------------------------*/
+   6          #include <string.h>    // Include prototypes for memcpy function
+   7          
+   8          unsigned char idata idata_buffer [16] _at_ 0xB0;
+   9          unsigned char data  data_buffer  [16] _at_ 0x60;
+  10          unsigned char pdata pdata_buffer [16] _at_ 0xFF60;
+  11          unsigned char xdata xdata_buffer [16] _at_ 0x0200;
+  12          
+  13          void main (void)
+  14          {
+  15   1      /*---------------------------------------------------------
+  16   1      Fill idata_buffer with something.
+  17   1      ---------------------------------------------------------*/
+  18   1      memcpy (idata_buffer, "IDATA Buffer....", sizeof (idata_buffer));
+  19   1      
+  20   1      /*---------------------------------------------------------
+  21   1      Fill data_buffer with something.
+  22   1      ---------------------------------------------------------*/
+  23   1      memcpy (data_buffer, "DATA Buffer......", sizeof (data_buffer));
+  24   1      
+  25   1      /*---------------------------------------------------------
+  26   1      Fill pdata_buffer with something.
+  27   1      ---------------------------------------------------------*/
+  28   1      memcpy (pdata_buffer, "PDATA Buffer -- NEVER USE :-)", sizeof (pdata_buffer));
+  29   1      
+  30   1      /*---------------------------------------------------------
+  31   1      Fill xdata_buffer with something.
+  32   1      ---------------------------------------------------------*/
+  33   1      memcpy (xdata_buffer, "XDATA Buffer....", sizeof (xdata_buffer));
+  34   1      
+  35   1      /*---------------------------------------------------------
+  36   1      Delay Forever - Embedded Programs NEVER Return from Main!
+  37   1      ---------------------------------------------------------*/
+  38   1      while (1);
+  39   1      }
+  40          
+  41          /*-----------------------------------------------------------------------------
+  42          -----------------------------------------------------------------------------*/
+  43          
+C51 COMPILER V7.00  MAIN                                                                   05/03/2002 12:10:33 PAGE 2   
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION main (BEGIN)
+                                           ; SOURCE LINE # 13
+                                           ; SOURCE LINE # 14
+                                           ; SOURCE LINE # 18
+0000 78B0              MOV     R0,#LOW idata_buffer
+0002 7C00              MOV     R4,#HIGH idata_buffer
+0004 7D00              MOV     R5,#00H
+0006 7BFF              MOV     R3,#0FFH
+0008 7A00        R     MOV     R2,#HIGH ?SC_0
+000A 7900        R     MOV     R1,#LOW ?SC_0
+000C 7E00              MOV     R6,#00H
+000E 7F10              MOV     R7,#010H
+0010 120000      E     LCALL   ?C?COPY
+                                           ; SOURCE LINE # 23
+0013 7860              MOV     R0,#LOW data_buffer
+0015 7C00              MOV     R4,#HIGH data_buffer
+0017 7D00              MOV     R5,#00H
+0019 7BFF              MOV     R3,#0FFH
+001B 7A00        R     MOV     R2,#HIGH ?SC_17
+001D 7900        R     MOV     R1,#LOW ?SC_17
+001F 7E00              MOV     R6,#00H
+0021 7F10              MOV     R7,#010H
+0023 120000      E     LCALL   ?C?COPY
+                                           ; SOURCE LINE # 28
+0026 7860              MOV     R0,#LOW pdata_buffer
+0028 7CFF              MOV     R4,#HIGH pdata_buffer
+002A 7DFE              MOV     R5,#0FEH
+002C 7BFF              MOV     R3,#0FFH
+002E 7A00        R     MOV     R2,#HIGH ?SC_35
+0030 7900        R     MOV     R1,#LOW ?SC_35
+0032 7E00              MOV     R6,#00H
+0034 7F10              MOV     R7,#010H
+0036 120000      E     LCALL   ?C?COPY
+                                           ; SOURCE LINE # 33
+0039 7800              MOV     R0,#LOW xdata_buffer
+003B 7C02              MOV     R4,#HIGH xdata_buffer
+003D 7D01              MOV     R5,#01H
+003F 7BFF              MOV     R3,#0FFH
+0041 7A00        R     MOV     R2,#HIGH ?SC_65
+0043 7900        R     MOV     R1,#LOW ?SC_65
+0045 7E00              MOV     R6,#00H
+0047 7F10              MOV     R7,#010H
+0049 120000      E     LCALL   ?C?COPY
+004C         ?C0001:
+                                           ; SOURCE LINE # 38
+004C 80FE              SJMP    ?C0001
+             ; FUNCTION main (END)
+
+C51 COMPILER V7.00  MAIN                                                                   05/03/2002 12:10:33 PAGE 3   
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+
+size_t . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
+main . . . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+idata_buffer . . . . . . . . . . . . .  PUBLIC   IDATA  ARRAY    00B0H  16
+pdata_buffer . . . . . . . . . . . . .  PUBLIC   PDATA  ARRAY    FF60H  16
+xdata_buffer . . . . . . . . . . . . .  PUBLIC   XDATA  ARRAY    0200H  16
+data_buffer. . . . . . . . . . . . . .  PUBLIC   DATA   ARRAY    0060H  16
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     78    ----
+   CONSTANT SIZE    =     82    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

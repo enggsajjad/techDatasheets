@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>0</fileVersion>
+  <configuration>
+    <name>Debug</name>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\eeprom.dbg</name>
+      <inputs>
+        <name>$TOOLKIT_DIR$\src\template\cfgm48.xcl</name>
+        <name>$TOOLKIT_DIR$\src\template\cfg1s.xcl</name>
+        <name>$PROJ_DIR$\Debug\Obj\eeprom.r90</name>
+        <name>$TOOLKIT_DIR$\lib\clib\cl1s-ec.r90</name>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\eeprom.c</name>
+      <outputs>
+        <name>$PROJ_DIR$\Debug\Obj\eeprom.r90</name>
+      </outputs>
+      <inputs>
+        <name>$TOOLKIT_DIR$\INC\ioavr.h</name>
+        <name>$TOOLKIT_DIR$\INC\iom48.h</name>
+        <name>$TOOLKIT_DIR$\INC\iomacro.h</name>
+        <name>$TOOLKIT_DIR$\INC\inavr.h</name>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <file>
+      <name>$PROJ_DIR$\Release\Exe\eeprom.a90</name>
+      <inputs>
+        <name>$TOOLKIT_DIR$\src\template\cfgm48.xcl</name>
+        <name>$TOOLKIT_DIR$\src\template\cfg1s.xcl</name>
+        <name>$PROJ_DIR$\Release\Obj\eeprom.r90</name>
+        <name>$TOOLKIT_DIR$\lib\clib\cl1s-ec.r90</name>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\eeprom.c</name>
+      <outputs>
+        <name>$PROJ_DIR$\Release\Obj\eeprom.r90</name>
+      </outputs>
+      <inputs>
+        <name>$TOOLKIT_DIR$\INC\ioavr.h</name>
+        <name>$TOOLKIT_DIR$\INC\iom48.h</name>
+        <name>$TOOLKIT_DIR$\INC\iomacro.h</name>
+        <name>$TOOLKIT_DIR$\INC\inavr.h</name>
+      </inputs>
+    </file>
+  </configuration>
+</project>
+
+

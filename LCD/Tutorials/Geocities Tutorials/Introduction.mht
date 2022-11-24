@@ -1,0 +1,1839 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Introduction
+Date: Wed, 25 Jul 2007 00:04:23 +0500
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C7CE4F.5BB05710"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C7CE4F.5BB05710
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file://J:\LCD Docs\Tutorials\Geocities Tutorials\Introduction.htm
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from =
+url=3D(0050)http://www.geocities.com/dinceraydin/lcd/intro.htm =
+--><HTML><HEAD><TITLE>Introduction</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<SCRIPT=20
+src=3D"file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction=
+_files/urchin.js"=20
+type=3Dtext/javascript>=0A=
+</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript>=0A=
+_uacct =3D "UA-329996-1";=0A=
+urchinTracker();=0A=
+</SCRIPT>
+
+<META content=3D"MSHTML 6.00.2900.2180" name=3DGENERATOR></HEAD>
+<BODY vLink=3D#ffcc99 aLink=3D#ffff66 link=3D#ffffff =
+bgColor=3D#6495ed><!-- following code added by server. PLEASE REMOVE =
+--><!-- preceding code added by server. PLEASE REMOVE -->
+<TABLE height=3D"100%" cellSpacing=3D2 cellPadding=3D2 width=3D"100%" =
+border=3D0>
+  <TBODY>
+  <TR>
+    <TD vAlign=3Dtop width=3D"9%" bgColor=3D#00009f height=3D704>
+      <TABLE width=3D"100%" border=3D0>
+        <TBODY>
+        <TR vAlign=3Dtop bgColor=3D#ffffff>
+          <TD>
+            <DIV align=3Dcenter><FONT face=3Dsans-serif size=3D6><A=20
+            =
+href=3D"http://www.geocities.com/dinceraydin/index.html"><B><FONT=20
+            =
+color=3D#3366ff>HOME</FONT></B></A></FONT></DIV></TD></TR></TBODY></TABLE=
+>
+      <DIV align=3Dleft><PRE><FONT face=3Dsans-serif size=3D3><A =
+href=3D"http://www.geocities.com/dinceraydin/z80/index.html"><FONT =
+size=3D4>Z80</FONT></A>
+<FONT size=3D4><A =
+href=3D"http://www.geocities.com/dinceraydin/lcd/index.html">LCD
+PIC
+</A><A =
+href=3D"http://www.geocities.com/dinceraydin/8051/index.html">8051
+</A><A href=3D"http://www.geocities.com/dinceraydin/opera.htm">Opera</A>
+<A href=3D"http://www.geocities.com/dinceraydin/soft.htm">Software</A>
+<A =
+href=3D"http://www.geocities.com/dinceraydin/files/index.html">Files</A>
+<A href=3D"http://www.geocities.com/dinceraydin/books.htm">Bookstore</A>
+<A href=3D"http://www.geocities.com/dinceraydin/links.htm">Links</A>
+<A href=3D"http://www.geocities.com/dinceraydin/me.htm">About =
+me</A></FONT></FONT></PRE></DIV>
+      <P><!-- #BeginLibraryItem =
+"/Library/google_blue_120_vertADsense.lbi" -->
+      <SCRIPT type=3Dtext/javascript><!--=0A=
+google_ad_client =3D "pub-5120552571919249";=0A=
+google_ad_width =3D 120;=0A=
+google_ad_height =3D 600;=0A=
+google_ad_format =3D "120x600_as";=0A=
+google_ad_type =3D "text";=0A=
+google_ad_channel =3D"";=0A=
+google_page_url =3D document.location;=0A=
+google_color_border =3D "00009F";=0A=
+google_color_link =3D "FFFFFF";=0A=
+google_color_bg =3D "00009F";=0A=
+google_color_text =3D "CCCCCC";=0A=
+google_color_url =3D "999999";=0A=
+//--></SCRIPT>
+
+      <SCRIPT=20
+      =
+src=3D"file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction=
+_files/show_ads.js"=20
+      type=3Dtext/javascript>=0A=
+        </SCRIPT>
+<!-- #EndLibraryItem --></P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <H1>&nbsp;</H1>
+      <P>&nbsp;</P></TD>
+    <TD vAlign=3Dtop borderColor=3D#ff0066 width=3D"91%" height=3D1408>
+      <BLOCKQUOTE>
+        <DIV align=3Dcenter>
+        <P>&nbsp;</P>
+        <P><FONT face=3D"Copperplate Gothic Bold" color=3D#ffffff=20
+        size=3D7><I>INTRODUCTION</I></FONT></P></DIV></BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <DIV align=3Dcenter>
+        <DIV align=3Dleft>
+        <DIV align=3Dcenter>
+        <BLOCKQUOTE>
+          <DIV align=3Dcenter>
+          <DIV align=3Dleft>
+          <P><FONT face=3Dsans-serif size=3D3>Any parallelly interfaced =
+character=20
+          LCD you get these days will have a Hitachi HD44780 chip or a =
+different=20
+          one compatible with the HD44780. These usually have 14 pins as =
+shown=20
+          below. </FONT></P>
+          <P align=3Dcenter><FONT face=3Dsans-serif size=3D3><IMG =
+height=3D188=20
+          =
+src=3D"file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction=
+_files/ldc1.gif"=20
+          width=3D314></FONT></P></DIV></DIV></BLOCKQUOTE>
+        <UL>
+          <LI>
+          <DIV align=3Dcenter>
+          <DIV align=3Dleft><FONT face=3Dsans-serif size=3D3>D0-D7 is =
+the=20
+          bi-directional data bus</FONT></DIV></DIV>
+          <LI>
+          <DIV align=3Dcenter>
+          <DIV align=3Dleft><FONT face=3Dsans-serif size=3D3>R/W =
+determines if we read=20
+          from or write to the LCD</FONT></DIV></DIV>
+          <LI>
+          <DIV align=3Dcenter>
+          <DIV align=3Dleft><FONT face=3Dsans-serif size=3D3>RS stands =
+for "register=20
+          select".RS=3D0 means that the<B><FONT color=3D#000099> =
+instruction=20
+          register</FONT></B> is selected. RS=3D1 means that the<FONT=20
+          color=3D#000099> <B>data register</B></FONT> is selected. In =
+other=20
+          words, according to the status of RS pin, the data on the data =
+bus is=20
+          treated either as a command or character =
+data.</FONT></DIV></DIV>
+          <LI>
+          <DIV align=3Dcenter>
+          <DIV align=3Dleft><FONT face=3Dsans-serif size=3D3>E pin =
+enables or disables=20
+          the LCD module. When Enable is low the LCD is disabled and the =
+status=20
+          of RS,R/W and the data bus will be ignored. When Enable pin is =
+high=20
+          the LCD is enabled and the status of the other control pins =
+and data=20
+          bus will be processed by the LCD.</FONT><FONT =
+face=3Dsans-serif=20
+          color=3D#cc3300 size=3D3><B><FONT color=3D#ffffff> NOTE: When =
+writing to the=20
+          display, data is transferred only on the high to low =
+transition of=20
+          this signal. However, when reading from the display, data will =
+become=20
+          available shortly after the low to high transition and remain=20
+          available until the signal falls low=20
+          again.</FONT></B></FONT></DIV></DIV>
+          <LI>
+          <DIV align=3Dcenter>
+          <DIV align=3Dleft><FONT face=3Dsans-serif size=3D3>Vo pin is =
+for adjusting=20
+          the contrast of the display. Usually, when this pin is =
+grounded the=20
+          pixels will be the darkest.</FONT></DIV></DIV>
+          <LI>
+          <DIV align=3Dcenter>
+          <DIV align=3Dleft><FONT face=3Dsans-serif size=3D3>Vdd and Vss =
+are the power=20
+          supply pins</FONT></DIV></DIV></LI></UL>
+        <BLOCKQUOTE>
+          <DIV align=3Dcenter>
+          <DIV align=3Dleft>
+          <P><FONT face=3Dsans-serif =
+size=3D5><B>Essentials:</B></FONT></P>
+          <P><B><FONT face=3Dsans-serif size=3D3>Display Data RAM=20
+          (DDRAM)</FONT></B></P>
+          <P align=3Dleft><FONT face=3Dsans-serif size=3D3>Display data =
+RAM (DDRAM) is=20
+          where you send the characters (ASCII code) you want to see on =
+the LCD=20
+          screen. It stores display data represented in 8-bit character =
+codes.=20
+          Its capacity is 80 characters (bytes).<FONT color=3D#ff0000> =
+Bonus: The=20
+          area in display data RAM (DDRAM) that is not used for display =
+can be=20
+          used as general data RAM. <FONT color=3D#000000>DD RAM address =
+is the=20
+          position of the cursor (i.e. where the data you sent will be=20
+          displayed). Below you see DD RAM address layout of a 2*16=20
+          LCD.</FONT></FONT></FONT></P>
+          <P align=3Dcenter><FONT face=3Dsans-serif color=3D#000000 =
+size=3D3><IMG=20
+          height=3D82 alt=3D"DD RAM address for a 2*16 LCD"=20
+          =
+src=3D"file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction=
+_files/ddramaddress.gif"=20
+          width=3D446 align=3DabsMiddle></FONT></P>
+          <P><B><FONT face=3Dsans-serif size=3D3>Character Generator RAM =
+
+          (CGRAM)</FONT></B></P>
+          <P><FONT face=3Dsans-serif size=3D3>In the character generator =
+RAM, the=20
+          user can define his/her own character patterns by program. CG =
+RAM is=20
+          64 bytes ,allowing for eight 5*8 pixel,character patterns to =
+be=20
+          defined. See my "<A=20
+          =
+href=3D"http://www.geocities.com/dinceraydin/lcd/custom.htm">Defining=20
+          custom characters</A>" and "<A=20
+          =
+href=3D"http://www.geocities.com/dinceraydin/lcd/animations.htm">Creating=
+=20
+          Animations</A>" pages for more info on CG RAM.</FONT></P>
+          <P><FONT face=3Dsans-serif size=3D3><B>Registers =
+</B></FONT></P>
+          <P><FONT face=3Dsans-serif size=3D3>The HD44780 has two 8-bit =
+registers,=20
+          an instruction register (IR) and a data register (DR). The IR =
+stores=20
+          instruction codes, such as display clear and cursor shift, and =
+address=20
+          information for display data RAM (DDRAM) and character =
+generator RAM=20
+          (CGRAM). The DR temporarily stores data to be written into =
+DDRAM or=20
+          CGRAM and temporarily stores data to be read from DDRAM or =
+CGRAM. Data=20
+          written into the DR is automatically written into DDRAM or =
+CGRAM by an=20
+          internal operation. The DR is also used for data storage when =
+reading=20
+          data from DDRAM or CGRAM. These two registers can be selected =
+by the=20
+          register selector (RS) signal. See the table below:</FONT></P>
+          <TABLE borderColor=3D#003333 width=3D517 align=3Dcenter =
+border=3D1>
+            <TBODY>
+            <TR bgColor=3D#99ccff>
+              <TD colSpan=3D3>
+                <DIV align=3Dcenter><FONT face=3D"Lucida Console" =
+size=3D3><B>Register=20
+                Selection </B></FONT></DIV></TD></TR>
+            <TR bgColor=3D#339966>
+              <TD width=3D"7%" bgColor=3D#ffcc99>
+                <DIV align=3Dcenter><B><FONT=20
+face=3Dsans-serif>RS</FONT></B></DIV></TD>
+              <TD width=3D"6%" bgColor=3D#ffcc99>
+                <DIV align=3Dcenter><B><FONT=20
+              face=3Dsans-serif>R/W</FONT></B></DIV></TD>
+              <TD width=3D"87%" bgColor=3D#00cc33><FONT =
+face=3Dsans-serif=20
+                size=3D3>Operation</FONT></TD></TR>
+            <TR>
+              <TD width=3D"7%" bgColor=3D#cccc99>
+                <DIV align=3Dcenter><B><FONT =
+face=3Dsans-serif>0</FONT></B></DIV></TD>
+              <TD width=3D"6%" bgColor=3D#cccc99>
+                <DIV align=3Dcenter><B><FONT face=3Dsans-serif=20
+                size=3D3>0</FONT></B></DIV></TD>
+              <TD width=3D"87%" bgColor=3D#00cc33><FONT =
+face=3Dsans-serif size=3D3>IR=20
+                write as an internal operation (display clear,=20
+etc.)</FONT></TD></TR>
+            <TR>
+              <TD width=3D"7%" bgColor=3D#cccc99>
+                <DIV align=3Dcenter><B><FONT =
+face=3Dsans-serif>0</FONT></B></DIV></TD>
+              <TD width=3D"6%" bgColor=3D#cccc99>
+                <DIV align=3Dcenter><B><FONT face=3Dsans-serif=20
+                size=3D3>1</FONT></B></DIV></TD>
+              <TD width=3D"87%" bgColor=3D#00cc33><FONT =
+face=3Dsans-serif=20
+                size=3D3>Read busy flag (DB7) and address counter (DB0 =
+to=20
+                DB6)</FONT></TD></TR>
+            <TR>
+              <TD width=3D"7%" bgColor=3D#cccc99>
+                <DIV align=3Dcenter><B><FONT =
+face=3Dsans-serif>1</FONT></B></DIV></TD>
+              <TD width=3D"6%" bgColor=3D#cccc99>
+                <DIV align=3Dcenter><B><FONT face=3Dsans-serif=20
+                size=3D3>0</FONT></B></DIV></TD>
+              <TD width=3D"87%" bgColor=3D#00cc33><FONT =
+face=3Dsans-serif size=3D3>DR=20
+                write as an internal operation (DR to DDRAM or=20
+            CGRAM)</FONT></TD></TR>
+            <TR>
+              <TD width=3D"7%" bgColor=3D#cccc99>
+                <DIV align=3Dcenter><B><FONT =
+face=3Dsans-serif>1</FONT></B></DIV></TD>
+              <TD width=3D"6%" bgColor=3D#cccc99>
+                <DIV align=3Dcenter><B><FONT face=3Dsans-serif=20
+                size=3D3>1</FONT></B></DIV></TD>
+              <TD width=3D"87%" bgColor=3D#00cc33><FONT =
+face=3Dsans-serif size=3D3>DR=20
+                read as an internal operation (DDRAM or CGRAM to=20
+            DR)</FONT></TD></TR></TBODY></TABLE>
+          <P>&nbsp;</P>
+          <P><FONT face=3Dsans-serif size=3D3><B>Busy Flag =
+(BF)</B></FONT></P>
+          <P><FONT face=3Dsans-serif size=3D3>When the busy flag is 1, =
+the HD44780U=20
+          is in the internal operation mode, and the next instruction =
+will not=20
+          be accepted. When RS =3D 0 and R/W =3D 1 (see the table =
+above), the busy=20
+          flag is output to DB7 (MSB of LCD data bus). The next =
+instruction must=20
+          be written after ensuring that the busy flag is 0. </FONT></P>
+          <TABLE cellSpacing=3D4 cellPadding=3D4 width=3D200 =
+align=3Dright border=3D0>
+            <TBODY>
+            <TR>
+              <TD><FONT face=3Dsans-serif size=3D3><B>
+                <SCRIPT type=3Dtext/javascript><!--=0A=
+google_ad_client =3D "pub-5120552571919249";=0A=
+google_ad_width =3D 336;=0A=
+google_ad_height =3D 280;=0A=
+google_ad_format =3D "336x280_as";=0A=
+google_ad_type =3D "text";=0A=
+google_ad_channel =3D"";=0A=
+google_color_border =3D "6495ED";=0A=
+google_color_bg =3D "6495ED";=0A=
+google_color_link =3D "FFFFFF";=0A=
+google_color_text =3D "000000";=0A=
+google_color_url =3D "FFFFFF";=0A=
+//--></SCRIPT>
+
+                <SCRIPT=20
+                =
+src=3D"file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction=
+_files/show_ads.js"=20
+                type=3Dtext/javascript>=0A=
+                    </SCRIPT>
+                </B></FONT></TD></TR></TBODY></TABLE>
+          <P><FONT face=3Dsans-serif size=3D3><B>Address Counter =
+(AC)</B></FONT></P>
+          <P><FONT face=3Dsans-serif size=3D3>The address counter (AC) =
+assigns=20
+          addresses to both DDRAM and CGRAM. When a "set DD RAM/CG RAM =
+address"=20
+          instruction is written into the IR, the address information is =
+sent=20
+          from the IR to the AC. Selection of either DDRAM or CGRAM is =
+also=20
+          determined concurrently by the instruction. After writing into =
+(or=20
+          reading from) DDRAM or CGRAM, the AC is automatically =
+incremented (or=20
+          decremented) by 1 . The AC contents are output to DB0 to DB6 =
+when RS =3D=20
+          0 and R/W =3D 1 (see the table above). To see the effects of =
+setting the=20
+          address counter to increment or decrement , <A=20
+          =
+href=3D"http://www.geocities.com/dinceraydin/lcd/commands.htm">see the=20
+          HD44780 commands page.</A></FONT></P>
+          <P><FONT face=3Dsans-serif size=3D3><B>To display a=20
+          character</B>,</FONT></P>
+          <P><FONT face=3Dsans-serif size=3D3>positional data is written =
+into IR=20
+          (DDRAM address). A character code is then written into DR and =
+the LCD=20
+          unit displays the corresponding pattern at the specified =
+location. The=20
+          LCD unit can either increment or decrement the display =
+position after=20
+          each character entry (see the <A=20
+          =
+href=3D"http://www.geocities.com/dinceraydin/lcd/commands.htm#entry">entr=
+y=20
+          mode set command</A>), so that only successive character codes =
+need to=20
+          be entered to display a continuos character string. See the <A =
+
+          =
+href=3D"http://www.geocities.com/dinceraydin/lcd/z80example.htm">Z80=20
+          Examples</A> page for examples in Z80 assembly.</FONT> </P>
+          <P><FONT face=3Dsans-serif size=3D3>Prior to writing =
+characters to the=20
+          display, it must be initialized. To initialize the display you =
+must=20
+          learn about the commands first.</FONT></P>
+          <DIV align=3Dcenter>
+          <DIV align=3Dcenter>
+          <TABLE cellSpacing=3D3 width=3D528 align=3Dcenter border=3D0>
+            <TBODY>
+            <TR bgColor=3D#ffffff>
+              <TD colSpan=3D2>
+                <DIV align=3Dcenter>
+                <DIV align=3Dcenter></DIV>
+                <DIV align=3Dcenter><FONT face=3DSystem color=3Dnavy =
+size=3D3><B>Follow=20
+                these links to navigate through my LCD related =
+pages:</B></FONT>=20
+                </DIV></DIV></TD></TR>
+            <TR>
+              <TD width=3D"39%" height=3D212>
+                <DIV align=3Dcenter>
+                <DIV align=3Dleft>
+                <P align=3Dleft><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                color=3D#ffff00 size=3D1>Character Type =
+LCD:</FONT></P></DIV></DIV>
+                <DIV align=3Dcenter>
+                <DIV align=3Dleft>
+                <UL>
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/intro.htm">Introduction<=
+/A></FONT>=20
+
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/commands.htm">Commands</=
+A></FONT>=20
+
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/initalization.htm">Initi=
+alization</A></FONT>=20
+
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/custom.htm">Defining=20
+                  custom characters</A></FONT>=20
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/animations.htm">Creating=
+=20
+                  animations</A></FONT>=20
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/z80example.htm">Z80=20
+                  Examples</A></FONT>=20
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/charcalc.htm">Custom-Cha=
+racter=20
+                  Calculator</A></FONT>=20
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/djlcdsim/djlcdsim.html">LCD =
+
+                  simulator </A></FONT>
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/fin.htm">Final=20
+                  words</A><BR></FONT></LI></UL></DIV></DIV></TD>
+              <TD vAlign=3Dtop width=3D"61%" height=3D212>
+                <DIV align=3Dcenter>
+                <DIV align=3Dleft>
+                <DIV align=3Dleft>
+                <P><FONT face=3D"Verdana, Arial, Helvetica, sans-serif"=20
+                color=3D#ffff00 size=3D1>Graphics LCD: (Based on: =
+KS0108, HD61202=20
+                and similars...)</FONT></P></DIV></DIV></DIV>
+                <UL>
+                  <LI>
+                  <DIV align=3Dcenter>
+                  <DIV align=3Dleft>
+                  <DIV align=3Dleft><FONT=20
+                  face=3D"Verdana, Arial, Helvetica, sans-serif" =
+size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/gfxintro.htm">Introducti=
+on</A></FONT></DIV></DIV></DIV>
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/pg12864d.htm">Powertip=20
+                  PG12864D</A></FONT>=20
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/gfxhowto.htm">Graphics=20
+                  How To</A></FONT>=20
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/gfxz80example.htm">Z80=20
+                  Examples</A></FONT>=20
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/gfxcalc.htm">Custom-Char=
+acter=20
+                  Calculator for KS0108 and compatibles</A>(5*7 =
+Font)</FONT>=20
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/gfxcalc88.htm">Custom-Ch=
+aracter=20
+                  Calculator for KS0108 and compatibles</A>(8*8 =
+Font)</FONT>=20
+                  <LI><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/djgfxlcdsim/djgfxlcdsim.html=
+"><FONT=20
+                  face=3D"Verdana, Arial, Helvetica, sans-serif" =
+size=3D1>Graphic=20
+                  LCD simulator</FONT></A>=20
+                  <LI><FONT face=3D"Verdana, Arial, Helvetica, =
+sans-serif"=20
+                  size=3D1><A=20
+                  =
+href=3D"http://www.geocities.com/dinceraydin/lcd/gfxfin.htm">Final=20
+                  =
+words</A><BR></FONT></LI></UL></TD></TR></TBODY></TABLE></DIV>
+          <DIV align=3Dcenter>
+          <DIV align=3Dleft>
+          <DIV align=3Dleft>
+          <DIV align=3Dcenter></DIV></DIV></DIV></DIV></DIV>
+          <DIV align=3Dcenter>
+          <DIV align=3Dleft>
+          <DIV align=3Dleft>
+          <DIV align=3Dcenter>
+          <DIV align=3Dleft>
+          <DIV align=3Dcenter></DIV>
+          <P align=3Dcenter><!-- #BeginLibraryItem =
+"/Library/google_lb_body_leaderborad.lbi" -->
+          <SCRIPT type=3Dtext/javascript><!--=0A=
+google_ad_client =3D "pub-5120552571919249";=0A=
+google_ad_width =3D 728;=0A=
+google_ad_height =3D 90;=0A=
+google_ad_format =3D "728x90_as";=0A=
+google_ad_type =3D "text";=0A=
+google_ad_channel =3D"";=0A=
+google_color_border =3D "6495ED";=0A=
+google_color_bg =3D "6495ED";=0A=
+google_color_link =3D "FFFFFF";=0A=
+google_color_text =3D "000000";=0A=
+google_color_url =3D "000000";=0A=
+//--></SCRIPT>
+
+          <SCRIPT=20
+          =
+src=3D"file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction=
+_files/show_ads.js"=20
+          type=3Dtext/javascript>=0A=
+                                </SCRIPT>
+<!-- #EndLibraryItem --></P></DIV></DIV>
+          <DIV align=3Dcenter>
+          <DIV align=3Dleft></DIV></DIV>
+          <P>&nbsp;</P></DIV></DIV></DIV>
+          <DIV align=3Dcenter>
+          <DIV align=3Dleft>
+          <DIV align=3Dleft>
+          <P>&nbsp;</P></DIV></DIV></DIV>
+          <P>&nbsp;</P>
+          =
+<P>&nbsp;</P></DIV></DIV></BLOCKQUOTE></DIV></DIV></DIV></BLOCKQUOTE></TD=
+></TR></TBODY></TABLE>
+<P=20
+align=3Dcenter></P><!-- text below generated by server. PLEASE REMOVE =
+--></OBJECT></LAYER>
+<DIV></DIV></SPAN></STYLE></NOSCRIPT></TABLE></SCRIPT></APPLET>
+<SCRIPT language=3DJavaScript=20
+src=3D"file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction=
+_files/mc.js"></SCRIPT>
+
+<SCRIPT language=3DJavaScript=20
+src=3D"file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction=
+_files/geov2.js"></SCRIPT>
+
+<SCRIPT language=3Djavascript>geovisit();</SCRIPT>
+<NOSCRIPT><IMG height=3D1 alt=3Dsetstats=20
+src=3D"file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction=
+_files/visit.gif"=20
+width=3D1 border=3D0></NOSCRIPT> <IMG height=3D1 alt=3D1=20
+src=3D"file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction=
+_files/serv.gif"=20
+width=3D1> </BODY></HTML>
+
+------=_NextPart_000_0000_01C7CE4F.5BB05710
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction_files/ldc1.gif
+
+R0lGODlhOgG8APcAAAAAAAAACAAIAAgAEAgAGAgIAAgICAgIEAgIGAgIIQgQCBAIEBAIGBAIIRAQ
+CBAQEBAQGBAQIRAQKRAYEBgQIRgQKRgYEBgYGBgYIRgYKRghGCEYMSEhGCEhISEhMSkhMSkpISkp
+KSkxKTExKSkpMTEpMTExMTE5MTk5MSkpOTEpOTExOTkxOTk5OTlCOUJCOTExQjkxQjkxSjk5Qjk5
+SkJCQkJKQkpCUkpKQkpKSkpSSlJSSkpKUlJKWlJSUlRXVAAYjBgIhDkhlDkpjDkplDkxhDkxjDkx
+lEIplEIxjEIxlEIxnEI5hEI5jEI5lEI5nFJKY0pCe0pGf0pKhFJKhEo5jEpCjFJCjFJKjEo5lEpC
+lFJClEoxnEo5nFJCnFJCpVpSWlpaWlpjWmNjWlJSY1pSY1paY15ab2NjY1pjc2NrY2trY2tra2tz
+a3Nza3N7a1JSe1JOjFdUg2tge2Nrc3Nrc2tre3Nzc1pKnFpOoF5SpWVXp2tjnHNrpHNjtXNrtaXO
+Oa3OSq3WUrXWWrXea3t7c3tze3t7e4SEe4SMe4yMe4SEhISMhIyMhJSUhMbehHt7jIR7jISEjIyM
+jIyUjJSUjJSljJycjIR7lISElIyElJSUlJSclJyclIyEnJSMnHtzvYyEtZSUnI6JspyUnJSUpZyU
+pZycnJycpaWcpaWcrZylnKWlnKWlpaWlraWlta2lta2lva2tpa2tra2ttbWtva21rbW1rbW1tbW9
+rb29rbW9tb29tb3Gtc7nnNbvrbW1vb21vb29vb3GvcbGvYyExpSMxpycxqWcxrWtxr21xr29xsbG
+xsbOxs7OxqWczq2lzr29zsa9zsbGzs7Ozs7WztbWzuf3zq2l1sbG1s7G1tbW1tbe1t7e1s7G3tbO
+3tbW3t7e3t7n3ufn3sbG59bO59bW597W597e5+fn5+fv5+/v59bW797e7+fe7+fn7+/n7+/v7+/3
+7/f37+fn9+/n9+/v9/fv9/f39/f/9///9+fn//fv//f3///3/////ywAAAAAOgG8AAAI/gD/CRxI
+sKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzYUJ9Ajx7/AXAYEiRBfCIzjuTIsqXLlzBjygz5L+TK
+jgNpDrxpkafMn0CDCh2KseTOh0ZrCuyXEqNPolCjSp0Kk6ZNpDkJenw6kSvVr2DDijWYtClOpWiZ
+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
+
+------=_NextPart_000_0000_01C7CE4F.5BB05710
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction_files/ddramaddress.gif
+
+R0lGODlhvgFSAPcAAAAAAAEBAQICAgMDAwQEBAUFBQYGBgcHBwgICAkJCQoKCgsLCwwMDA0NDQ4O
+Dg8PDxAQEBERERISEhMTExQUFBUVFRYWFhcXFxgYGBkZGRoaGhsbGxwcHB0dHR4eHh8fHyAgICEh
+ISIiIiMjIyQkJCUlJSYmJicnJygoKCkpKSoqKisrKywsLC0tLS4uLi8vLzAwMDExMTIyMjMzMzQ0
+NDU1NTY2Njc3Nzg4ODk5OTo6Ojs7Ozw8PD09PT4+Pj8/P0BAQEFBQUJCQkNDQ0REREVFRUZGRkdH
+R0hISElJSUpKSktLS0xMTE1NTU5OTk9PT1BQUFFRUVJSUlNTU1RUVFVVVVZWVldXV1hYWFlZWVpa
+WltbW1xcXF1dXV5eXl9fX2BgYGFhYWJiYmNjY2RkZGVlZWZmZmdnZ2hoaGlpaWpqamtra2xsbG1t
+bW5ubm9vb3BwcHFxcXJycnNzc3R0dHV1dXZ2dnd3d3h4eHl5eXp6ent7e3x8fH19fX5+fn9/f4CA
+gIGBgYKCgoODg4SEhIWFhYaGhoeHh4iIiImJiYqKiouLi4yMjI2NjY6Ojo+Pj5CQkJGRkZKSkpOT
+k5SUlJWVlZaWlpeXl5iYmJmZmZqampubm5ycnJ2dnZ6enp+fn6CgoKGhoaKioqOjo6SkpKWlpaam
+pqenp6ioqKmpqaqqqqurq6ysrK2tra6urq+vr7CwsLGxsbKysrOzs7S0tLW1tba2tre3t7i4uLm5
+ubq6uru7u7y8vL29vb6+vr+/v8DAwMHBwcLCwsPDw8TExMXFxcbGxsfHx8jIyMnJycrKysvLy8zM
+zM3Nzc7Ozs/Pz9DQ0NHR0dLS0tPT09TU1NXV1dbW1tfX19jY2NnZ2dra2tvb29zc3N3d3d7e3t/f
+3+Dg4OHh4eLi4uPj4+Tk5OXl5ebm5ufn5+jo6Onp6erq6uvr6+zs7O3t7e7u7u/v7/Dw8PHx8fLy
+8vPz8/T09PX19fb29vf39/j4+Pn5+fr6+vv7+/z8/P39/f7+/v///ywAAAAAvgFSAAAI/gD/CRxI
+sKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatw4sR++e/n8CeSn75/Hfv743cPH7x+/fSIF9tPXzyVM
+f/tqctzJs6fPn0CDCh1KtCjCcbNe6Zrm7h+2Y/Wu4XJWD9uoWsbWcXOGbyC4V93+dQvWb14xckbT
+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
+
+------=_NextPart_000_0000_01C7CE4F.5BB05710
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction_files/visit.gif
+
+R0lGODlhAQABAOMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAAALAAAAAABAAEAAAQCEEQAOw==
+
+------=_NextPart_000_0000_01C7CE4F.5BB05710
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction_files/serv.gif
+
+R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==
+
+------=_NextPart_000_0000_01C7CE4F.5BB05710
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction_files/urchin.js
+
+//-- Google Analytics Urchin Module=0A=
+//-- Copyright 2005 Google, All Rights Reserved.=0A=
+=0A=
+//-- Urchin On Demand Settings ONLY=0A=
+var _uacct=3D"";			// set up the Urchin Account=0A=
+var _userv=3D1;			// service mode (0=3Dlocal,1=3Dremote,2=3Dboth)=0A=
+=0A=
+//-- UTM User Settings=0A=
+var _ufsc=3D1;			// set client info flag (1=3Don|0=3Doff)=0A=
+var _udn=3D"auto";		// (auto|none|domain) set the domain name for cookies=0A=
+var _uhash=3D"on";		// (on|off) unique domain hash for cookies=0A=
+var _utimeout=3D"1800";   	// set the inactive session timeout in seconds=0A=
+var _ugifpath=3D"/__utm.gif";	// set the web path to the __utm.gif file=0A=
+var _utsp=3D"|";			// transaction field separator=0A=
+var _uflash=3D1;			// set flash version detect option (1=3Don|0=3Doff)=0A=
+var _utitle=3D1;			// set the document title detect option =
+(1=3Don|0=3Doff)=0A=
+var _ulink=3D0;			// enable linker functionality (1=3Don|0=3Doff)=0A=
+var _uanchor=3D0;			// enable use of anchors for campaign =
+(1=3Don|0=3Doff)=0A=
+var _utcp=3D"/";			// the cookie path for tracking=0A=
+var _usample=3D100;		// The sampling % of visitors to track (1-100).=0A=
+=0A=
+//-- UTM Campaign Tracking Settings=0A=
+var _uctm=3D1;			// set campaign tracking module (1=3Don|0=3Doff)=0A=
+var _ucto=3D"15768000";		// set timeout in seconds (6 month default)=0A=
+var _uccn=3D"utm_campaign";	// name=0A=
+var _ucmd=3D"utm_medium";		// medium (cpc|cpm|link|email|organic)=0A=
+var _ucsr=3D"utm_source";		// source=0A=
+var _uctr=3D"utm_term";		// term/keyword=0A=
+var _ucct=3D"utm_content";	// content=0A=
+var _ucid=3D"utm_id";		// id number=0A=
+var _ucno=3D"utm_nooverride";	// don't override=0A=
+=0A=
+//-- Auto/Organic Sources and Keywords=0A=
+var _uOsr=3Dnew Array();=0A=
+var _uOkw=3Dnew Array();=0A=
+_uOsr[0]=3D"google";	_uOkw[0]=3D"q";=0A=
+_uOsr[1]=3D"yahoo";	_uOkw[1]=3D"p";=0A=
+_uOsr[2]=3D"msn";		_uOkw[2]=3D"q";=0A=
+_uOsr[3]=3D"aol";		_uOkw[3]=3D"query";=0A=
+_uOsr[4]=3D"aol";		_uOkw[4]=3D"encquery";=0A=
+_uOsr[5]=3D"lycos";	_uOkw[5]=3D"query";=0A=
+_uOsr[6]=3D"ask";		_uOkw[6]=3D"q";=0A=
+_uOsr[7]=3D"altavista";	_uOkw[7]=3D"q";=0A=
+_uOsr[8]=3D"search";	_uOkw[8]=3D"q";=0A=
+_uOsr[9]=3D"netscape";	_uOkw[9]=3D"s";=0A=
+_uOsr[10]=3D"cnn";	_uOkw[10]=3D"query";=0A=
+_uOsr[11]=3D"looksmart";	_uOkw[11]=3D"qt";=0A=
+_uOsr[12]=3D"about";	_uOkw[12]=3D"terms";=0A=
+_uOsr[13]=3D"mamma";	_uOkw[13]=3D"query";=0A=
+_uOsr[14]=3D"alltheweb";	_uOkw[14]=3D"q";=0A=
+_uOsr[15]=3D"gigablast";	_uOkw[15]=3D"q";=0A=
+_uOsr[16]=3D"voila";	_uOkw[16]=3D"kw";=0A=
+_uOsr[17]=3D"virgilio";	_uOkw[17]=3D"qs";=0A=
+_uOsr[18]=3D"live";	_uOkw[18]=3D"q";=0A=
+_uOsr[19]=3D"baidu";	_uOkw[19]=3D"wd";=0A=
+_uOsr[20]=3D"alice";	_uOkw[20]=3D"qs";=0A=
+_uOsr[21]=3D"seznam";	_uOkw[21]=3D"w";=0A=
+_uOsr[22]=3D"yandex";	_uOkw[22]=3D"text";=0A=
+_uOsr[23]=3D"najdi";	_uOkw[23]=3D"q";=0A=
+=0A=
+//-- Auto/Organic Keywords to Ignore=0A=
+var _uOno=3Dnew Array();=0A=
+//_uOno[0]=3D"urchin";=0A=
+//_uOno[1]=3D"urchin.com";=0A=
+//_uOno[2]=3D"www.urchin.com";=0A=
+=0A=
+//-- Referral domains to Ignore=0A=
+var _uRno=3Dnew Array();=0A=
+//_uRno[0]=3D".urchin.com";=0A=
+=0A=
+//-- **** Don't modify below this point ***=0A=
+var =
+_uff,_udh,_udt,_ubl=3D0,_udo=3D"",_uu,_ufns=3D0,_uns=3D0,_ur=3D"-",_ufno=3D=
+0,_ust=3D0,_ubd=3Ddocument,_udl=3D_ubd.location,_udlh=3D"",_uwv=3D"1";=0A=
+var _ugifpath2=3D"http://www.google-analytics.com/__utm.gif";=0A=
+if (_udl.hash) _udlh=3D_udl.href.substring(_udl.href.indexOf('#'));=0A=
+if (_udl.protocol=3D=3D"https:") =
+_ugifpath2=3D"https://ssl.google-analytics.com/__utm.gif";=0A=
+if (!_utcp || _utcp=3D=3D"") _utcp=3D"/";=0A=
+function urchinTracker(page) {=0A=
+ if (_udl.protocol=3D=3D"file:") return;=0A=
+ if (_uff && (!page || page=3D=3D"")) return;=0A=
+ var a,b,c,xx,v,z,k,x=3D"",s=3D"",f=3D0;=0A=
+ var nx=3D" expires=3DSun, 18 Jan 2038 00:00:00 GMT;";=0A=
+ var dc=3D_ubd.cookie;=0A=
+ _udh=3D_uDomain();=0A=
+ if (!_uVG()) return;=0A=
+ _uu=3DMath.round(Math.random()*2147483647);=0A=
+ _udt=3Dnew Date();=0A=
+ _ust=3DMath.round(_udt.getTime()/1000);=0A=
+ a=3Ddc.indexOf("__utma=3D"+_udh);=0A=
+ b=3Ddc.indexOf("__utmb=3D"+_udh);=0A=
+ c=3Ddc.indexOf("__utmc=3D"+_udh);=0A=
+ if (_udn && _udn!=3D"") { _udo=3D" domain=3D"+_udn+";"; }=0A=
+ if (_utimeout && _utimeout!=3D"") {=0A=
+  x=3Dnew Date(_udt.getTime()+(_utimeout*1000));=0A=
+  x=3D" expires=3D"+x.toGMTString()+";";=0A=
+ }=0A=
+ if (_ulink) {=0A=
+  if (_uanchor && _udlh && _udlh!=3D"") s=3D_udlh+"&";=0A=
+  s+=3D_udl.search;=0A=
+  if(s && s!=3D"" && s.indexOf("__utma=3D")>=3D0) {=0A=
+   if (!(_uIN(a=3D_uGC(s,"__utma=3D","&")))) a=3D"-";=0A=
+   if (!(_uIN(b=3D_uGC(s,"__utmb=3D","&")))) b=3D"-";=0A=
+   if (!(_uIN(c=3D_uGC(s,"__utmc=3D","&")))) c=3D"-";=0A=
+   v=3D_uGC(s,"__utmv=3D","&");=0A=
+   z=3D_uGC(s,"__utmz=3D","&");=0A=
+   k=3D_uGC(s,"__utmk=3D","&");=0A=
+   xx=3D_uGC(s,"__utmx=3D","&");=0A=
+   if ((k*1) !=3D ((_uHash(a+b+c+xx+z+v)*1)+(_udh*1))) =
+{_ubl=3D1;a=3D"-";b=3D"-";c=3D"-";xx=3D"-";z=3D"-";v=3D"-";}=0A=
+   if (a!=3D"-" && b!=3D"-" && c!=3D"-") f=3D1;=0A=
+   else if(a!=3D"-") f=3D2;=0A=
+  }=0A=
+ }=0A=
+ if(f=3D=3D1) {=0A=
+  _ubd.cookie=3D"__utma=3D"+a+"; path=3D"+_utcp+";"+nx+_udo;=0A=
+  _ubd.cookie=3D"__utmb=3D"+b+"; path=3D"+_utcp+";"+x+_udo;=0A=
+  _ubd.cookie=3D"__utmc=3D"+c+"; path=3D"+_utcp+";"+_udo;=0A=
+ } else if (f=3D=3D2) {=0A=
+  a=3D_uFixA(s,"&",_ust);=0A=
+  _ubd.cookie=3D"__utma=3D"+a+"; path=3D"+_utcp+";"+nx+_udo;=0A=
+  _ubd.cookie=3D"__utmb=3D"+_udh+"; path=3D"+_utcp+";"+x+_udo;=0A=
+  _ubd.cookie=3D"__utmc=3D"+_udh+"; path=3D"+_utcp+";"+_udo;=0A=
+  _ufns=3D1;=0A=
+ } else if (a>=3D0 && b>=3D0 && c>=3D0) {=0A=
+  _ubd.cookie=3D"__utmb=3D"+_udh+"; path=3D"+_utcp+";"+x+_udo;=0A=
+ } else {=0A=
+  if (a>=3D0) a=3D_uFixA(_ubd.cookie,";",_ust);=0A=
+  else a=3D_udh+"."+_uu+"."+_ust+"."+_ust+"."+_ust+".1";=0A=
+  _ubd.cookie=3D"__utma=3D"+a+"; path=3D"+_utcp+";"+nx+_udo;=0A=
+  _ubd.cookie=3D"__utmb=3D"+_udh+"; path=3D"+_utcp+";"+x+_udo;=0A=
+  _ubd.cookie=3D"__utmc=3D"+_udh+"; path=3D"+_utcp+";"+_udo;=0A=
+  _ufns=3D1;=0A=
+ }=0A=
+ if (_ulink && xx && xx!=3D"" && xx!=3D"-") {=0A=
+   xx=3D_uUES(xx);=0A=
+   if (xx.indexOf(";")=3D=3D-1) _ubd.cookie=3D"__utmx=3D"+xx+"; =
+path=3D"+_utcp+";"+nx+_udo;=0A=
+ }=0A=
+ if (_ulink && v && v!=3D"" && v!=3D"-") {=0A=
+  v=3D_uUES(v);=0A=
+  if (v.indexOf(";")=3D=3D-1) _ubd.cookie=3D"__utmv=3D"+v+"; =
+path=3D"+_utcp+";"+nx+_udo;=0A=
+ }=0A=
+ _uInfo(page);=0A=
+ _ufns=3D0;=0A=
+ _ufno=3D0;=0A=
+ _uff=3D1;=0A=
+}=0A=
+function _uInfo(page) {=0A=
+ var p,s=3D"",dm=3D"",pg=3D_udl.pathname+_udl.search;=0A=
+ if (page && page!=3D"") pg=3D_uES(page,1);=0A=
+ _ur=3D_ubd.referrer;=0A=
+ if (!_ur || _ur=3D=3D"") { _ur=3D"-"; }=0A=
+ else {=0A=
+  dm=3D_ubd.domain;=0A=
+  if(_utcp && _utcp!=3D"/") dm+=3D_utcp;=0A=
+  p=3D_ur.indexOf(dm);=0A=
+  if ((p>=3D0) && (p<=3D8)) { _ur=3D"0"; }=0A=
+  if (_ur.indexOf("[")=3D=3D0 && =
+_ur.lastIndexOf("]")=3D=3D(_ur.length-1)) { _ur=3D"-"; }=0A=
+ }=0A=
+ s+=3D"&utmn=3D"+_uu;=0A=
+ if (_ufsc) s+=3D_uBInfo();=0A=
+ if (_uctm) s+=3D_uCInfo();=0A=
+ if (_utitle && _ubd.title && _ubd.title!=3D"") =
+s+=3D"&utmdt=3D"+_uES(_ubd.title);=0A=
+ if (_udl.hostname && _udl.hostname!=3D"") =
+s+=3D"&utmhn=3D"+_uES(_udl.hostname);=0A=
+ s+=3D"&utmr=3D"+_ur;=0A=
+ s+=3D"&utmp=3D"+pg;=0A=
+ if ((_userv=3D=3D0 || _userv=3D=3D2) && _uSP()) {=0A=
+  var i=3Dnew Image(1,1);=0A=
+  i.src=3D_ugifpath+"?"+"utmwv=3D"+_uwv+s;=0A=
+  i.onload=3Dfunction() {_uVoid();}=0A=
+ }=0A=
+ if ((_userv=3D=3D1 || _userv=3D=3D2) && _uSP()) {=0A=
+  var i2=3Dnew Image(1,1);=0A=
+  =
+i2.src=3D_ugifpath2+"?"+"utmwv=3D"+_uwv+s+"&utmac=3D"+_uacct+"&utmcc=3D"+=
+_uGCS();=0A=
+  i2.onload=3Dfunction() { _uVoid(); }=0A=
+ }=0A=
+ return;=0A=
+}=0A=
+function _uVoid() { return; }=0A=
+function _uCInfo() {=0A=
+ if (!_ucto || _ucto=3D=3D"") { _ucto=3D"15768000"; }=0A=
+ if (!_uVG()) return;=0A=
+ var =
+c=3D"",t=3D"-",t2=3D"-",t3=3D"-",o=3D0,cs=3D0,cn=3D0,i=3D0,z=3D"-",s=3D""=
+;=0A=
+ if (_uanchor && _udlh && _udlh!=3D"") s=3D_udlh+"&";=0A=
+ s+=3D_udl.search;=0A=
+ var x=3Dnew Date(_udt.getTime()+(_ucto*1000));=0A=
+ var dc=3D_ubd.cookie;=0A=
+ x=3D" expires=3D"+x.toGMTString()+";";=0A=
+ if (_ulink && !_ubl) {=0A=
+  z=3D_uUES(_uGC(s,"__utmz=3D","&"));=0A=
+  if (z!=3D"-" && z.indexOf(";")=3D=3D-1) { =
+_ubd.cookie=3D"__utmz=3D"+z+"; path=3D"+_utcp+";"+x+_udo; return ""; }=0A=
+ }=0A=
+ z=3Ddc.indexOf("__utmz=3D"+_udh);=0A=
+ if (z>-1) { z=3D_uGC(dc,"__utmz=3D"+_udh,";"); }=0A=
+ else { z=3D"-"; }=0A=
+ t=3D_uGC(s,_ucid+"=3D","&");=0A=
+ t2=3D_uGC(s,_ucsr+"=3D","&");=0A=
+ t3=3D_uGC(s,"gclid=3D","&");=0A=
+ if ((t!=3D"-" && t!=3D"") || (t2!=3D"-" && t2!=3D"") || (t3!=3D"-" && =
+t3!=3D"")) {=0A=
+  if (t!=3D"-" && t!=3D"") c+=3D"utmcid=3D"+_uEC(t);=0A=
+  if (t2!=3D"-" && t2!=3D"") { if (c !=3D "") c+=3D"|"; =
+c+=3D"utmcsr=3D"+_uEC(t2); }=0A=
+  if (t3!=3D"-" && t3!=3D"") { if (c !=3D "") c+=3D"|"; =
+c+=3D"utmgclid=3D"+_uEC(t3); }=0A=
+  t=3D_uGC(s,_uccn+"=3D","&");=0A=
+  if (t!=3D"-" && t!=3D"") c+=3D"|utmccn=3D"+_uEC(t);=0A=
+  else c+=3D"|utmccn=3D(not+set)";=0A=
+  t=3D_uGC(s,_ucmd+"=3D","&");=0A=
+  if (t!=3D"-" && t!=3D"") c+=3D"|utmcmd=3D"+_uEC(t);=0A=
+  else  c+=3D"|utmcmd=3D(not+set)";=0A=
+  t=3D_uGC(s,_uctr+"=3D","&");=0A=
+  if (t!=3D"-" && t!=3D"") c+=3D"|utmctr=3D"+_uEC(t);=0A=
+  else { t=3D_uOrg(1); if (t!=3D"-" && t!=3D"") =
+c+=3D"|utmctr=3D"+_uEC(t); }=0A=
+  t=3D_uGC(s,_ucct+"=3D","&");=0A=
+  if (t!=3D"-" && t!=3D"") c+=3D"|utmcct=3D"+_uEC(t);=0A=
+  t=3D_uGC(s,_ucno+"=3D","&");=0A=
+  if (t=3D=3D"1") o=3D1;=0A=
+  if (z!=3D"-" && o=3D=3D1) return "";=0A=
+ }=0A=
+ if (c=3D=3D"-" || c=3D=3D"") { c=3D_uOrg(); if (z!=3D"-" && =
+_ufno=3D=3D1)  return ""; }=0A=
+ if (c=3D=3D"-" || c=3D=3D"") { if (_ufns=3D=3D1)  c=3D_uRef(); if =
+(z!=3D"-" && _ufno=3D=3D1)  return ""; }=0A=
+ if (c=3D=3D"-" || c=3D=3D"") {=0A=
+  if (z=3D=3D"-" && _ufns=3D=3D1) { =
+c=3D"utmccn=3D(direct)|utmcsr=3D(direct)|utmcmd=3D(none)"; }=0A=
+  if (c=3D=3D"-" || c=3D=3D"") return "";=0A=
+ }=0A=
+ if (z!=3D"-") {=0A=
+  i=3Dz.indexOf(".");=0A=
+  if (i>-1) i=3Dz.indexOf(".",i+1);=0A=
+  if (i>-1) i=3Dz.indexOf(".",i+1);=0A=
+  if (i>-1) i=3Dz.indexOf(".",i+1);=0A=
+  t=3Dz.substring(i+1,z.length);=0A=
+  if (t.toLowerCase()=3D=3Dc.toLowerCase()) cs=3D1;=0A=
+  t=3Dz.substring(0,i);=0A=
+  if ((i=3Dt.lastIndexOf(".")) > -1) {=0A=
+   t=3Dt.substring(i+1,t.length);=0A=
+   cn=3D(t*1);=0A=
+  }=0A=
+ }=0A=
+ if (cs=3D=3D0 || _ufns=3D=3D1) {=0A=
+  t=3D_uGC(dc,"__utma=3D"+_udh,";");=0A=
+  if ((i=3Dt.lastIndexOf(".")) > 9) {=0A=
+   _uns=3Dt.substring(i+1,t.length);=0A=
+   _uns=3D(_uns*1);=0A=
+  }=0A=
+  cn++;=0A=
+  if (_uns=3D=3D0) _uns=3D1;=0A=
+  _ubd.cookie=3D"__utmz=3D"+_udh+"."+_ust+"."+_uns+"."+cn+"."+c+"; =
+path=3D"+_utcp+"; "+x+_udo;=0A=
+ }=0A=
+ if (cs=3D=3D0 || _ufns=3D=3D1) return "&utmcn=3D1";=0A=
+ else return "&utmcr=3D1";=0A=
+}=0A=
+function _uRef() {=0A=
+ if (_ur=3D=3D"0" || _ur=3D=3D"" || _ur=3D=3D"-") return "";=0A=
+ var i=3D0,h,k,n;=0A=
+ if ((i=3D_ur.indexOf("://"))<0) return "";=0A=
+ h=3D_ur.substring(i+3,_ur.length);=0A=
+ if (h.indexOf("/") > -1) {=0A=
+  k=3Dh.substring(h.indexOf("/"),h.length);=0A=
+  if (k.indexOf("?") > -1) k=3Dk.substring(0,k.indexOf("?"));=0A=
+  h=3Dh.substring(0,h.indexOf("/"));=0A=
+ }=0A=
+ h=3Dh.toLowerCase();=0A=
+ n=3Dh;=0A=
+ if ((i=3Dn.indexOf(":")) > -1) n=3Dn.substring(0,i);=0A=
+ for (var ii=3D0;ii<_uRno.length;ii++) {=0A=
+  if ((i=3Dn.indexOf(_uRno[ii].toLowerCase())) > -1 && =
+n.length=3D=3D(i+_uRno[ii].length)) { _ufno=3D1; break; }=0A=
+ }=0A=
+ if (h.indexOf("www.")=3D=3D0) h=3Dh.substring(4,h.length);=0A=
+ return =
+"utmccn=3D(referral)|utmcsr=3D"+_uEC(h)+"|"+"utmcct=3D"+_uEC(k)+"|utmcmd=3D=
+referral";=0A=
+}=0A=
+function _uOrg(t) {=0A=
+ if (_ur=3D=3D"0" || _ur=3D=3D"" || _ur=3D=3D"-") return "";=0A=
+ var i=3D0,h,k;=0A=
+ if ((i=3D_ur.indexOf("://")) < 0) return "";=0A=
+ h=3D_ur.substring(i+3,_ur.length);=0A=
+ if (h.indexOf("/") > -1) {=0A=
+  h=3Dh.substring(0,h.indexOf("/"));=0A=
+ }=0A=
+ for (var ii=3D0;ii<_uOsr.length;ii++) {=0A=
+  if (h.toLowerCase().indexOf(_uOsr[ii].toLowerCase()) > -1) {=0A=
+   if ((i=3D_ur.indexOf("?"+_uOkw[ii]+"=3D")) > -1 || =
+(i=3D_ur.indexOf("&"+_uOkw[ii]+"=3D")) > -1) {=0A=
+    k=3D_ur.substring(i+_uOkw[ii].length+2,_ur.length);=0A=
+    if ((i=3Dk.indexOf("&")) > -1) k=3Dk.substring(0,i);=0A=
+    for (var yy=3D0;yy<_uOno.length;yy++) {=0A=
+     if (_uOno[yy].toLowerCase()=3D=3Dk.toLowerCase()) { _ufno=3D1; =
+break; }=0A=
+    }=0A=
+    if (t) return _uEC(k);=0A=
+    else return =
+"utmccn=3D(organic)|utmcsr=3D"+_uEC(_uOsr[ii])+"|"+"utmctr=3D"+_uEC(k)+"|=
+utmcmd=3Dorganic";=0A=
+   }=0A=
+  }=0A=
+ }=0A=
+ return "";=0A=
+}=0A=
+function _uBInfo() {=0A=
+ var sr=3D"-",sc=3D"-",ul=3D"-",fl=3D"-",cs=3D"-",je=3D1;=0A=
+ var n=3Dnavigator;=0A=
+ if (self.screen) {=0A=
+  sr=3Dscreen.width+"x"+screen.height;=0A=
+  sc=3Dscreen.colorDepth+"-bit";=0A=
+ } else if (self.java) {=0A=
+  var j=3Djava.awt.Toolkit.getDefaultToolkit();=0A=
+  var s=3Dj.getScreenSize();=0A=
+  sr=3Ds.width+"x"+s.height;=0A=
+ }=0A=
+ if (n.language) { ul=3Dn.language.toLowerCase(); }=0A=
+ else if (n.browserLanguage) { ul=3Dn.browserLanguage.toLowerCase(); }=0A=
+ je=3Dn.javaEnabled()?1:0;=0A=
+ if (_uflash) fl=3D_uFlash();=0A=
+ if (_ubd.characterSet) cs=3D_uES(_ubd.characterSet);=0A=
+ else if (_ubd.charset) cs=3D_uES(_ubd.charset);=0A=
+ return =
+"&utmcs=3D"+cs+"&utmsr=3D"+sr+"&utmsc=3D"+sc+"&utmul=3D"+ul+"&utmje=3D"+j=
+e+"&utmfl=3D"+fl;=0A=
+}=0A=
+function __utmSetTrans() {=0A=
+ var e;=0A=
+ if (_ubd.getElementById) e=3D_ubd.getElementById("utmtrans");=0A=
+ else if (_ubd.utmform && _ubd.utmform.utmtrans) =
+e=3D_ubd.utmform.utmtrans;=0A=
+ if (!e) return;=0A=
+ var l=3De.value.split("UTM:");=0A=
+ var i,i2,c;=0A=
+ if (_userv=3D=3D0 || _userv=3D=3D2) i=3Dnew Array();=0A=
+ if (_userv=3D=3D1 || _userv=3D=3D2) { i2=3Dnew Array(); c=3D_uGCS(); }=0A=
+=0A=
+ for (var ii=3D0;ii<l.length;ii++) {=0A=
+  l[ii]=3D_uTrim(l[ii]);=0A=
+  if (l[ii].charAt(0)!=3D'T' && l[ii].charAt(0)!=3D'I') continue;=0A=
+  var r=3DMath.round(Math.random()*2147483647);=0A=
+  if (!_utsp || _utsp=3D=3D"") _utsp=3D"|";=0A=
+  var f=3Dl[ii].split(_utsp),s=3D"";=0A=
+  if (f[0].charAt(0)=3D=3D'T') {=0A=
+   s=3D"&utmt=3Dtran"+"&utmn=3D"+r;=0A=
+   f[1]=3D_uTrim(f[1]); if(f[1]&&f[1]!=3D"") =
+s+=3D"&utmtid=3D"+_uES(f[1]);=0A=
+   f[2]=3D_uTrim(f[2]); if(f[2]&&f[2]!=3D"") =
+s+=3D"&utmtst=3D"+_uES(f[2]);=0A=
+   f[3]=3D_uTrim(f[3]); if(f[3]&&f[3]!=3D"") =
+s+=3D"&utmtto=3D"+_uES(f[3]);=0A=
+   f[4]=3D_uTrim(f[4]); if(f[4]&&f[4]!=3D"") =
+s+=3D"&utmttx=3D"+_uES(f[4]);=0A=
+   f[5]=3D_uTrim(f[5]); if(f[5]&&f[5]!=3D"") =
+s+=3D"&utmtsp=3D"+_uES(f[5]);=0A=
+   f[6]=3D_uTrim(f[6]); if(f[6]&&f[6]!=3D"") =
+s+=3D"&utmtci=3D"+_uES(f[6]);=0A=
+   f[7]=3D_uTrim(f[7]); if(f[7]&&f[7]!=3D"") =
+s+=3D"&utmtrg=3D"+_uES(f[7]);=0A=
+   f[8]=3D_uTrim(f[8]); if(f[8]&&f[8]!=3D"") =
+s+=3D"&utmtco=3D"+_uES(f[8]);=0A=
+  } else {=0A=
+   s=3D"&utmt=3Ditem"+"&utmn=3D"+r;=0A=
+   f[1]=3D_uTrim(f[1]); if(f[1]&&f[1]!=3D"") =
+s+=3D"&utmtid=3D"+_uES(f[1]);=0A=
+   f[2]=3D_uTrim(f[2]); if(f[2]&&f[2]!=3D"") =
+s+=3D"&utmipc=3D"+_uES(f[2]);=0A=
+   f[3]=3D_uTrim(f[3]); if(f[3]&&f[3]!=3D"") =
+s+=3D"&utmipn=3D"+_uES(f[3]);=0A=
+   f[4]=3D_uTrim(f[4]); if(f[4]&&f[4]!=3D"") =
+s+=3D"&utmiva=3D"+_uES(f[4]);=0A=
+   f[5]=3D_uTrim(f[5]); if(f[5]&&f[5]!=3D"") =
+s+=3D"&utmipr=3D"+_uES(f[5]);=0A=
+   f[6]=3D_uTrim(f[6]); if(f[6]&&f[6]!=3D"") =
+s+=3D"&utmiqt=3D"+_uES(f[6]);=0A=
+  }=0A=
+  if ((_userv=3D=3D0 || _userv=3D=3D2) && _uSP()) {=0A=
+   i[ii]=3Dnew Image(1,1);=0A=
+   i[ii].src=3D_ugifpath+"?"+"utmwv=3D"+_uwv+s;=0A=
+   i[ii].onload=3Dfunction() { _uVoid(); }=0A=
+  }=0A=
+  if ((_userv=3D=3D1 || _userv=3D=3D2) && _uSP()) {=0A=
+   i2[ii]=3Dnew Image(1,1);=0A=
+   =
+i2[ii].src=3D_ugifpath2+"?"+"utmwv=3D"+_uwv+s+"&utmac=3D"+_uacct+"&utmcc=3D=
+"+c;=0A=
+   i2[ii].onload=3Dfunction() { _uVoid(); }=0A=
+  }=0A=
+ }=0A=
+ return;=0A=
+}=0A=
+function _uFlash() {=0A=
+ var f=3D"-",n=3Dnavigator;=0A=
+ if (n.plugins && n.plugins.length) {=0A=
+  for (var ii=3D0;ii<n.plugins.length;ii++) {=0A=
+   if (n.plugins[ii].name.indexOf('Shockwave Flash')!=3D-1) {=0A=
+    f=3Dn.plugins[ii].description.split('Shockwave Flash ')[1];=0A=
+    break;=0A=
+   }=0A=
+  }=0A=
+ } else if (window.ActiveXObject) {=0A=
+  for (var ii=3D10;ii>=3D2;ii--) {=0A=
+   try {=0A=
+    var fl=3Deval("new =
+ActiveXObject('ShockwaveFlash.ShockwaveFlash."+ii+"');");=0A=
+    if (fl) { f=3Dii + '.0'; break; }=0A=
+   }=0A=
+   catch(e) {}=0A=
+  }=0A=
+ }=0A=
+ return f;=0A=
+}=0A=
+function __utmLinker(l,h) {=0A=
+ if (!_ulink) return;=0A=
+ var p,k,a=3D"-",b=3D"-",c=3D"-",x=3D"-",z=3D"-",v=3D"-";=0A=
+ var dc=3D_ubd.cookie;=0A=
+ if (!l || l=3D=3D"") return;=0A=
+ var iq =3D l.indexOf("?"); =0A=
+ var ih =3D l.indexOf("#"); =0A=
+ if (dc) {=0A=
+  a=3D_uES(_uGC(dc,"__utma=3D"+_udh,";"));=0A=
+  b=3D_uES(_uGC(dc,"__utmb=3D"+_udh,";"));=0A=
+  c=3D_uES(_uGC(dc,"__utmc=3D"+_udh,";"));=0A=
+  x=3D_uES(_uGC(dc,"__utmx=3D"+_udh,";"));=0A=
+  z=3D_uES(_uGC(dc,"__utmz=3D"+_udh,";"));=0A=
+  v=3D_uES(_uGC(dc,"__utmv=3D"+_udh,";"));=0A=
+  k=3D(_uHash(a+b+c+x+z+v)*1)+(_udh*1);=0A=
+  =
+p=3D"__utma=3D"+a+"&__utmb=3D"+b+"&__utmc=3D"+c+"&__utmx=3D"+x+"&__utmz=3D=
+"+z+"&__utmv=3D"+v+"&__utmk=3D"+k;=0A=
+ }=0A=
+ if (p) {=0A=
+  if (h && ih>-1) return;=0A=
+  if (h) { _udl.href=3Dl+"#"+p; }=0A=
+  else {=0A=
+   if (iq=3D=3D-1 && ih=3D=3D-1) _udl.href=3Dl+"?"+p;=0A=
+   else if (ih=3D=3D-1) _udl.href=3Dl+"&"+p;=0A=
+   else if (iq=3D=3D-1) =
+_udl.href=3Dl.substring(0,ih-1)+"?"+p+l.substring(ih);=0A=
+   else _udl.href=3Dl.substring(0,ih-1)+"&"+p+l.substring(ih);=0A=
+  }=0A=
+ } else { _udl.href=3Dl; }=0A=
+}=0A=
+function __utmLinkPost(f,h) {=0A=
+ if (!_ulink) return;=0A=
+ var p,k,a=3D"-",b=3D"-",c=3D"-",x=3D"-",z=3D"-",v=3D"-";=0A=
+ var dc=3D_ubd.cookie;=0A=
+ if (!f || !f.action) return;=0A=
+ var iq =3D f.action.indexOf("?"); =0A=
+ var ih =3D f.action.indexOf("#"); =0A=
+ if (dc) {=0A=
+  a=3D_uES(_uGC(dc,"__utma=3D"+_udh,";"));=0A=
+  b=3D_uES(_uGC(dc,"__utmb=3D"+_udh,";"));=0A=
+  c=3D_uES(_uGC(dc,"__utmc=3D"+_udh,";"));=0A=
+  x=3D_uES(_uGC(dc,"__utmx=3D"+_udh,";"));=0A=
+  z=3D_uES(_uGC(dc,"__utmz=3D"+_udh,";"));=0A=
+  v=3D_uES(_uGC(dc,"__utmv=3D"+_udh,";"));=0A=
+  k=3D(_uHash(a+b+c+x+z+v)*1)+(_udh*1);=0A=
+  =
+p=3D"__utma=3D"+a+"&__utmb=3D"+b+"&__utmc=3D"+c+"&__utmx=3D"+x+"&__utmz=3D=
+"+z+"&__utmv=3D"+v+"&__utmk=3D"+k;=0A=
+ }=0A=
+ if (p) {=0A=
+  if (h && ih>-1) return;=0A=
+  if (h) { f.action+=3D"#"+p; }=0A=
+  else {=0A=
+   if (iq=3D=3D-1 && ih=3D=3D-1) f.action+=3D"?"+p;=0A=
+   else if (ih=3D=3D-1) f.action+=3D"&"+p;=0A=
+   else if (iq=3D=3D-1) =
+f.action=3Df.action.substring(0,ih-1)+"?"+p+f.action.substring(ih);=0A=
+   else =
+f.action=3Df.action.substring(0,ih-1)+"&"+p+f.action.substring(ih);=0A=
+  }=0A=
+ }=0A=
+ return;=0A=
+}=0A=
+function __utmSetVar(v) {=0A=
+ if (!v || v=3D=3D"") return;=0A=
+ if (!_udo || _udo =3D=3D "") {=0A=
+  _udh=3D_uDomain();=0A=
+  if (_udn && _udn!=3D"") { _udo=3D" domain=3D"+_udn+";"; }=0A=
+ }=0A=
+ if (!_uVG()) return;=0A=
+ var r=3DMath.round(Math.random() * 2147483647);=0A=
+ _ubd.cookie=3D"__utmv=3D"+_udh+"."+_uES(v)+"; path=3D"+_utcp+"; =
+expires=3DSun, 18 Jan 2038 00:00:00 GMT;"+_udo;=0A=
+ var s=3D"&utmt=3Dvar&utmn=3D"+r;=0A=
+ if ((_userv=3D=3D0 || _userv=3D=3D2) && _uSP()) {=0A=
+  var i=3Dnew Image(1,1);=0A=
+  i.src=3D_ugifpath+"?"+"utmwv=3D"+_uwv+s;=0A=
+  i.onload=3Dfunction() { _uVoid(); }=0A=
+ }=0A=
+ if ((_userv=3D=3D1 || _userv=3D=3D2) && _uSP()) {=0A=
+  var i2=3Dnew Image(1,1);=0A=
+  =
+i2.src=3D_ugifpath2+"?"+"utmwv=3D"+_uwv+s+"&utmac=3D"+_uacct+"&utmcc=3D"+=
+_uGCS();=0A=
+  i2.onload=3Dfunction() { _uVoid(); }=0A=
+ }=0A=
+}=0A=
+function _uGCS() {=0A=
+ var t,c=3D"",dc=3D_ubd.cookie;=0A=
+ if ((t=3D_uGC(dc,"__utma=3D"+_udh,";"))!=3D"-") =
+c+=3D_uES("__utma=3D"+t+";+");=0A=
+ if ((t=3D_uGC(dc,"__utmb=3D"+_udh,";"))!=3D"-") =
+c+=3D_uES("__utmb=3D"+t+";+");=0A=
+ if ((t=3D_uGC(dc,"__utmc=3D"+_udh,";"))!=3D"-") =
+c+=3D_uES("__utmc=3D"+t+";+");=0A=
+ if ((t=3D_uGC(dc,"__utmx=3D"+_udh,";"))!=3D"-") =
+c+=3D_uES("__utmx=3D"+t+";+");=0A=
+ if ((t=3D_uGC(dc,"__utmz=3D"+_udh,";"))!=3D"-") =
+c+=3D_uES("__utmz=3D"+t+";+");=0A=
+ if ((t=3D_uGC(dc,"__utmv=3D"+_udh,";"))!=3D"-") =
+c+=3D_uES("__utmv=3D"+t+";");=0A=
+ if (c.charAt(c.length-1)=3D=3D"+") c=3Dc.substring(0,c.length-1);=0A=
+ return c;=0A=
+}=0A=
+function _uGC(l,n,s) {=0A=
+ if (!l || l=3D=3D"" || !n || n=3D=3D"" || !s || s=3D=3D"") return "-";=0A=
+ var i,i2,i3,c=3D"-";=0A=
+ i=3Dl.indexOf(n);=0A=
+ i3=3Dn.indexOf("=3D")+1;=0A=
+ if (i > -1) {=0A=
+  i2=3Dl.indexOf(s,i); if (i2 < 0) { i2=3Dl.length; }=0A=
+  c=3Dl.substring((i+i3),i2);=0A=
+ }=0A=
+ return c;=0A=
+}=0A=
+function _uDomain() {=0A=
+ if (!_udn || _udn=3D=3D"" || _udn=3D=3D"none") { _udn=3D""; return 1; }=0A=
+ if (_udn=3D=3D"auto") {=0A=
+  var d=3D_ubd.domain;=0A=
+  if (d.substring(0,4)=3D=3D"www.") {=0A=
+   d=3Dd.substring(4,d.length);=0A=
+  }=0A=
+  _udn=3Dd;=0A=
+ }=0A=
+ if (_uhash=3D=3D"off") return 1;=0A=
+ return _uHash(_udn);=0A=
+}=0A=
+function _uHash(d) {=0A=
+ if (!d || d=3D=3D"") return 1;=0A=
+ var h=3D0,g=3D0;=0A=
+ for (var i=3Dd.length-1;i>=3D0;i--) {=0A=
+  var c=3DparseInt(d.charCodeAt(i));=0A=
+  h=3D((h << 6) & 0xfffffff) + c + (c << 14);=0A=
+  if ((g=3Dh & 0xfe00000)!=3D0) h=3D(h ^ (g >> 21));=0A=
+ }=0A=
+ return h;=0A=
+}=0A=
+function _uFixA(c,s,t) {=0A=
+ if (!c || c=3D=3D"" || !s || s=3D=3D"" || !t || t=3D=3D"") return "-";=0A=
+ var a=3D_uGC(c,"__utma=3D"+_udh,s);=0A=
+ var lt=3D0,i=3D0;=0A=
+ if ((i=3Da.lastIndexOf(".")) > 9) {=0A=
+  _uns=3Da.substring(i+1,a.length);=0A=
+  _uns=3D(_uns*1)+1;=0A=
+  a=3Da.substring(0,i);=0A=
+  if ((i=3Da.lastIndexOf(".")) > 7) {=0A=
+   lt=3Da.substring(i+1,a.length);=0A=
+   a=3Da.substring(0,i);=0A=
+  }=0A=
+  if ((i=3Da.lastIndexOf(".")) > 5) {=0A=
+   a=3Da.substring(0,i);=0A=
+  }=0A=
+  a+=3D"."+lt+"."+t+"."+_uns;=0A=
+ }=0A=
+ return a;=0A=
+}=0A=
+function _uTrim(s) {=0A=
+  if (!s || s=3D=3D"") return "";=0A=
+  while ((s.charAt(0)=3D=3D' ') || (s.charAt(0)=3D=3D'\n') || =
+(s.charAt(0,1)=3D=3D'\r')) s=3Ds.substring(1,s.length);=0A=
+  while ((s.charAt(s.length-1)=3D=3D' ') || =
+(s.charAt(s.length-1)=3D=3D'\n') || (s.charAt(s.length-1)=3D=3D'\r')) =
+s=3Ds.substring(0,s.length-1);=0A=
+  return s;=0A=
+}=0A=
+function _uEC(s) {=0A=
+  var n=3D"";=0A=
+  if (!s || s=3D=3D"") return "";=0A=
+  for (var i=3D0;i<s.length;i++) {if (s.charAt(i)=3D=3D" ") n+=3D"+"; =
+else n+=3Ds.charAt(i);}=0A=
+  return n;=0A=
+}=0A=
+function __utmVisitorCode(f) {=0A=
+ var r=3D0,t=3D0,i=3D0,i2=3D0,m=3D31;=0A=
+ var a=3D_uGC(_ubd.cookie,"__utma=3D"+_udh,";");=0A=
+ if ((i=3Da.indexOf(".",0))<0) return;=0A=
+ if ((i2=3Da.indexOf(".",i+1))>0) r=3Da.substring(i+1,i2); else return =
+"";  =0A=
+ if ((i=3Da.indexOf(".",i2+1))>0) t=3Da.substring(i2+1,i); else return =
+"";  =0A=
+ if (f) {=0A=
+  return r;=0A=
+ } else {=0A=
+  var c=3Dnew =
+Array('A','B','C','D','E','F','G','H','J','K','L','M','N','P','R','S','T'=
+,'U','V','W','X','Y','Z','1','2','3','4','5','6','7','8','9');=0A=
+  return =
+c[r>>28&m]+c[r>>23&m]+c[r>>18&m]+c[r>>13&m]+"-"+c[r>>8&m]+c[r>>3&m]+c[((r=
+&7)<<2)+(t>>30&3)]+c[t>>25&m]+c[t>>20&m]+"-"+c[t>>15&m]+c[t>>10&m]+c[t>>5=
+&m]+c[t&m];=0A=
+ }=0A=
+}=0A=
+function _uIN(n) {=0A=
+ if (!n) return false;=0A=
+ for (var i=3D0;i<n.length;i++) {=0A=
+  var c=3Dn.charAt(i);=0A=
+  if ((c<"0" || c>"9") && (c!=3D".")) return false;=0A=
+ }=0A=
+ return true;=0A=
+}=0A=
+function _uES(s,u) {=0A=
+ if (typeof(encodeURIComponent) =3D=3D 'function') {=0A=
+  if (u) return encodeURI(s);=0A=
+  else return encodeURIComponent(s);=0A=
+ } else {=0A=
+  return escape(s);=0A=
+ }=0A=
+}=0A=
+function _uUES(s) {=0A=
+ if (typeof(decodeURIComponent) =3D=3D 'function') {=0A=
+  return decodeURIComponent(s);=0A=
+ } else {=0A=
+  return unescape(s);=0A=
+ }=0A=
+}=0A=
+function _uVG() {=0A=
+ if((_udn.indexOf("www.google.") =3D=3D 0 || _udn.indexOf(".google.") =
+=3D=3D 0 || _udn.indexOf("google.") =3D=3D 0) && _utcp=3D=3D'/') {=0A=
+  return false;=0A=
+ }=0A=
+ return true;=0A=
+}=0A=
+function _uSP() {=0A=
+ var s=3D100;=0A=
+ if (_usample) s=3D_usample;=0A=
+ if(s>=3D100 || s<=3D0) return true;=0A=
+ return ((__utmVisitorCode(1)%10000)<(s*100));=0A=
+}=0A=
+
+------=_NextPart_000_0000_01C7CE4F.5BB05710
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction_files/show_ads.js
+
+(function(){=0A=
+function m(b){return b!=3Dnull?'"'+b+'"':'""'}function B(b){if(typeof =
+encodeURIComponent=3D=3D"function"){return =
+encodeURIComponent(b)}else{return escape(b)}}function =
+c(b,a){if(a){window.google_ad_url+=3D"&"+b+"=3D"+a}}function =
+f(b,a){if(a){c(b,B(a))}}function l(b,a,d){if(a&&typeof =
+a=3D=3D"object"){a=3Da[d%a.length]}c("color_"+b,a)}function D(b,a){var =
+d=3Db.screen,g=3Dnavigator.javaEnabled(),e=3D-a.getTimezoneOffset();if(d)=
+{c("u_h",d.height);c("u_w",d.width);c("u_ah",d.availHeight);c("u_aw",d.av=
+ailWidth);c("u_cd",d.colorDepth)}c("u_tz",=0A=
+e);c("u_his",history.length);c("u_java",g);if(navigator.plugins){c("u_npl=
+ug",navigator.plugins.length)}if(navigator.mimeTypes){c("u_nmime",navigat=
+or.mimeTypes.length)}}function =
+y(b){b=3Db.toLowerCase();if(b.substring(0,3)!=3D"ca-"){b=3D"ca-"+b}return=
+ b}function =
+G(b,a,d){d=3Dd.substring(0,1000);d=3Dd.replace(/%\w?$/,"");if(b.google_ad=
+_output=3D=3D"js"&&(b.google_ad_request_done||b.google_radlink_request_do=
+ne)){a.write('<script language=3D"JavaScript1.1" =
+src=3D'+m(d)+"><\/script>")}else =
+if(b.google_ad_output=3D=3D"html"){if(b.name!=3D=0A=
+"google_ads_frame"){a.write('<iframe name=3D"google_ads_frame" =
+width=3D'+m(b.google_ad_width)+" height=3D"+m(b.google_ad_height)+" =
+frameborder=3D"+m(b.google_ad_frameborder)+" src=3D"+m(d)+' =
+marginwidth=3D"0" marginheight=3D"0" vspace=3D"0" hspace=3D"0" =
+allowtransparency=3D"true" =
+scrolling=3D"no">');a.write("</iframe>")}}else =
+if(b.google_ad_output=3D=3D"textlink"){a.write('<script =
+language=3D"JavaScript1.1" src=3D'+m(d)+"><\/script>")}}function =
+F(b){var =
+a=3Dnull;b.google_ad_frameborder=3Da;b.google_ad_format=3Da;b.google_page=
+_url=3Da;=0A=
+b.google_language=3Da;b.google_gl=3Da;b.google_country=3Da;b.google_regio=
+n=3Da;b.google_city=3Da;b.google_hints=3Da;b.google_safe=3Da;b.google_enc=
+oding=3Da;b.google_ad_output=3Da;b.google_max_num_ads=3Da;b.google_ad_cha=
+nnel=3Da;b.google_contents=3Da;b.google_alternate_ad_url=3Da;b.google_alt=
+ernate_color=3Da;b.google_color_bg=3Da;b.google_color_text=3Da;b.google_c=
+olor_link=3Da;b.google_color_url=3Da;b.google_color_border=3Da;b.google_c=
+olor_line=3Da;b.google_adtest=3Da;b.google_kw_type=3Da;b.google_kw=3Da;b.=
+google_num_radlinks=3Da;b.google_max_radlink_len=3D=0A=
+a;b.google_rl_filtering=3Da;b.google_rl_mode=3Da;b.google_rt=3Da;b.google=
+_ad_type=3Da;b.google_image_size=3Da;b.google_feedback=3Da;b.google_skip=3D=
+a;b.google_page_location=3Da;b.google_referrer_url=3Da;b.google_ad_region=
+=3Da;b.google_ad_section=3Da;b.google_bid=3Da;b.google_cpa_choice=3Da;b.g=
+oogle_cust_age=3Da;b.google_cust_gender=3Da;b.google_cust_interests=3Da;b=
+.google_cust_id=3Da;b.google_cust_job=3Da;b.google_cust_u_url=3Da}functio=
+n A(){var b=3Dnull,a=3Dwindow,d=3Ddocument,g=3Dnew =
+Date,e=3Dg.getTime(),j=3Da.google_ad_format;if(a.google_cpa_choice){a.goo=
+gle_ad_url=3D=0A=
+"http://pagead2.googlesyndication.com/cpa/ads?";a.google_ad_url+=3D"clien=
+t=3D"+escape(y(a.google_ad_client));a.google_ad_region=3D"_google_cpa_reg=
+ion_";c("cpa_choice",a.google_cpa_choice);if(typeof =
+d.characterSet!=3D"undefined"){f("oe",d.characterSet)}else if(typeof =
+d.charset!=3D"undefined"){f("oe",d.charset)}}else{a.google_ad_url=3D"http=
+://pagead2.googlesyndication.com/pagead/ads?";a.google_ad_url+=3D"client=3D=
+"+escape(y(a.google_ad_client))}var =
+k=3Da.google_num_slots_by_client,w=3Da.google_num_slots_by_channel,i=3Da.=
+google_prev_ad_formats_by_region;=0A=
+a.onerror=3Da.google_org_error_handler;if(a.google_ad_region=3D=3Db&&a.go=
+ogle_ad_section!=3Db){a.google_ad_region=3Da.google_ad_section}var =
+h=3Da.google_ad_region=3D=3Db?"":a.google_ad_region,q=3Dfalse;if(j){q=3Dj=
+.indexOf("_0ads")>0}if(q){if(a.google_num_0ad_slots){a.google_num_0ad_slo=
+ts=3Da.google_num_0ad_slots+1}else{a.google_num_0ad_slots=3D1}if(a.google=
+_num_0ad_slots>3){return}}else =
+if(!a.google_cpa_choice){if(a.google_num_ad_slots){a.google_num_ad_slots=3D=
+a.google_num_ad_slots+1}else{a.google_num_ad_slots=3D1}if(a.google_num_sl=
+ots_to_rotate){i[h]=3D=0A=
+b;if(a.google_num_slot_to_show=3D=3Db){a.google_num_slot_to_show=3De%a.go=
+ogle_num_slots_to_rotate+1}if(a.google_num_slot_to_show!=3Da.google_num_a=
+d_slots){return}}else =
+if(a.google_num_ad_slots>3&&h=3D=3D""){return}}c("dt",g.getTime());c("hl"=
+,a.google_language);if(a.google_country){c("gl",a.google_country)}else{c(=
+"gl",a.google_gl)}c("gr",a.google_region);f("gcs",a.google_city);f("hints=
+",a.google_hints);c("adsafe",a.google_safe);c("oe",a.google_encoding);c("=
+lmt",a.google_last_modified_time);f("alternate_ad_url",=0A=
+a.google_alternate_ad_url);c("alt_color",a.google_alternate_color);c("ski=
+p",a.google_skip);var =
+n=3Da.google_ad_client;if(!k[n]){k[n]=3D1;k.length+=3D1}else{k[n]+=3D1}if=
+(i[h]){f("prev_fmts",i[h].toLowerCase());if(k.length>1){c("slot",k[n])}}i=
+f(j){f("format",j.toLowerCase());if(i[h]){i[h]=3Di[h]+","+j}else{i[h]=3Dj=
+}}c("num_ads",a.google_max_num_ads);c("output",a.google_ad_output);c("adt=
+est",a.google_adtest);if(a.google_ad_channel){var =
+r=3Da.google_ad_channel.toLowerCase();f("channel",r);var =
+s=3D"",t=3Dr.split("+");for(var o=3D=0A=
+0;o<t.length;o++){var =
+p=3Dt[o];if(!w[p]){w[p]=3D1}else{s+=3Dp+"+"}}f("pv_ch",s)}f("url",a.googl=
+e_page_url);l("bg",a.google_color_bg,e);l("text",a.google_color_text,e);l=
+("link",a.google_color_link,e);l("url",a.google_color_url,e);l("border",a=
+.google_color_border,e);l("line",a.google_color_line,e);c("kw_type",a.goo=
+gle_kw_type);f("kw",a.google_kw);f("contents",a.google_contents);c("num_r=
+adlinks",a.google_num_radlinks);c("max_radlink_len",a.google_max_radlink_=
+len);c("rl_filtering",a.google_rl_filtering);c("rl_mode",=0A=
+a.google_rl_mode);c("rt",a.google_rt);c("ad_type",a.google_ad_type);c("im=
+age_size",a.google_image_size);c("region",a.google_ad_region);c("feedback=
+_link",a.google_feedback);f("ref",a.google_referrer_url);f("loc",a.google=
+_page_location);c("bid",a.google_bid);c("cust_age",a.google_cust_age);c("=
+cust_gender",a.google_cust_gender);c("cust_interests",a.google_cust_inter=
+ests);c("cust_id",a.google_cust_id);c("cust_job",a.google_cust_job);c("cu=
+st_u_url",a.google_cust_u_url);if(z(a,d)&&d.body){var =
+u=3Dd.body.scrollHeight,=0A=
+v=3Dd.body.clientHeight;if(v&&u){f("cc",Math.round(v*100/u))}}D(a,g);G(a,=
+d,a.google_ad_url);F(a)}function C(b,a,d){A();return true}function =
+z(b,a){return b.top.location=3D=3Da.location}function x(b,a){var =
+d=3Da.documentElement;if(z(b,a))return =
+false;if(b.google_ad_width&&b.google_ad_height){var =
+g=3D1,e=3D1;if(b.innerHeight){g=3Db.innerWidth;e=3Db.innerHeight}else =
+if(d&&d.clientHeight){g=3Dd.clientWidth;e=3Dd.clientHeight}else =
+if(a.body){g=3Da.body.clientWidth;e=3Da.body.clientHeight}if(e>2*b.google=
+_ad_height||g>2*b.google_ad_width){return false}}return true}=0A=
+function E(){var =
+b=3Dwindow,a=3Ddocument,d=3Da.location,g=3Da.referrer,e=3Dnull;b.google_o=
+rg_error_handler=3Db.onerror;b.onerror=3DC;if(b.google_ad_frameborder=3D=3D=
+e){b.google_ad_frameborder=3D0}if(b.google_ad_output=3D=3De){b.google_ad_=
+output=3D"html"}if(b.google_ad_format=3D=3De&&b.google_ad_output=3D=3D"ht=
+ml"){b.google_ad_format=3Db.google_ad_width+"x"+b.google_ad_height}if(b.g=
+oogle_page_url=3D=3De){b.google_page_url=3Dg;if(!x(b,a)){b.google_page_ur=
+l=3Dd;b.google_last_modified_time=3DDate.parse(a.lastModified)/1000;b.goo=
+gle_referrer_url=3D=0A=
+g}}else{b.google_page_location=3Dg;if(!x(b,a)){b.google_page_location=3Dd=
+}}if(b.google_num_slots_by_channel=3D=3De){b.google_num_slots_by_channel=3D=
+[]}if(b.google_num_slots_by_client=3D=3De){b.google_num_slots_by_client=3D=
+[]}if(b.google_prev_ad_formats_by_region=3D=3De){b.google_prev_ad_formats=
+_by_region=3D[]}}E();A();=0A=
+})()
+------=_NextPart_000_0000_01C7CE4F.5BB05710
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction_files/mc.js
+
+var ap =3D window.navigator.appVersion.toLowerCase();=0A=
+var i =3D ap.indexOf("msie");=0A=
+if (ap.indexOf("windows") >=3D 0 && i >=3D 0 && ((i + 5) < ap.length)) {=0A=
+  var v =3D ap.charAt(i + 5);=0A=
+  if (v >=3D 5 ) {=0A=
+    document.write('<scr' + 'ipt =
+src=3D"http://us.i1.yimg.com/us.yimg.com/i/mc/mc1.js"></scr' + 'ipt>');=0A=
+    document.write('<scr' + 'ipt =
+src=3D"http://us.i1.yimg.com/us.yimg.com/i/mc/mc2.js"></scr' + 'ipt>');=0A=
+  }=0A=
+}=0A=
+=0A=
+
+------=_NextPart_000_0000_01C7CE4F.5BB05710
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///J:/LCD%20Docs/Tutorials/Geocities%20Tutorials/Introduction_files/geov2.js
+
+var ycsdone;=0A=
+function geovisit()=0A=
+{=0A=
+  var z;=0A=
+  if (ycsdone)=0A=
+    return;=0A=
+  z=3D"&r=3D"+escape(document.referrer);=0A=
+  z=3Dz+"&b=3D"+escape(navigator.appName+" "+navigator.appVersion);=0A=
+  w=3DparseFloat(navigator.appVersion);=0A=
+  if (w > 2.0) {=0A=
+    z=3Dz+"&s=3D"+screen.width+"x"+screen.height;=0A=
+    z=3Dz+"&o=3D"+navigator.platform;=0A=
+    v=3D"1.2";=0A=
+    if (navigator.appName !=3D "Netscape") {=0A=
+      z=3Dz+"&c=3D"+screen.colorDepth;=0A=
+    } else {=0A=
+      z=3Dz+"&c=3D"+screen.pixelDepth=0A=
+    }=0A=
+    z=3Dz+"&j=3D"+navigator.javaEnabled();=0A=
+  } else {=0A=
+    v=3D1.0;=0A=
+  }=0A=
+  z=3Dz+"&v=3D"+v;=0A=
+  document.writeln("<IMG BORDER=3D0 =
+SRC=3D\"http://visit.geocities.com/visit.gif?"+z+"\">");=0A=
+  ycsdone=3D1;=0A=
+}=0A=
+
+------=_NextPart_000_0000_01C7CE4F.5BB05710--

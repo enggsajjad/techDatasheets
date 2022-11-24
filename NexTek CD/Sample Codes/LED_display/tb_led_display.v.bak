@@ -1,0 +1,53 @@
+
+//*****************************************************************************************************//    
+//    Project      : Test Bench For LED_DISPLAY                                                                             
+//    File         : tb_led_display.v                                                                           
+//    Author       : NexTek Service                                                                              
+//    Company      : NexTek Service                                                                          
+//    Start Date   : June 6, 2004                                                                            
+//    Last Updated : June 6, 2004                                                                            
+//    Version      : 1.0                                                                                     
+//    Abstract     : The output of this program is just blink two LEDs (one at a time) continuosly           
+//                   and the delay between each state is 12.55 msec (with 16 MHz oscillator).                
+//    Modification History:                                                                                  
+//=====================================================================================================      
+//    Date                       By                         Version                Change Description        
+//=====================================================================================================      
+//  June 6, 2004.          NexTek Service                     1.0                   Original Version         
+//*****************************************************************************************************//    
+                                       
+module    tb_led_display();     
+                             
+reg          clk;                    //inputs declared as reg in test bench
+reg          rst_n;                                                                                     
+
+wire         LED_1;                  //outputs declared as wire in test bench 
+wire         LED_2;                  
+ 
+//initialize inputs
+initial
+begin
+  //initialize clock 
+    clk =1'b0;         
+  // Generate  reset     
+    rst_n =1'b0 ;      
+    # 50 rst_n =1'b1;  
+  // display output LED's
+    $monitor(" LED_1=%b ,LED_2=%b" ,LED_1,LED_2);    
+    # 1000000 $stop; 
+end  
+ 
+// Generate Clock 20MHz only for testing
+always 
+   # 25  clk = ~clk ;
+       
+ // INSTANCIATE DESIGN BLOCK HERE
+  led_display led_display_inst(//Inputs                                                                                                                       
+                               clk,        //  16M
+                               rst_n,             
+                               //Outputs          
+                               LED_1,             
+                               LED_2              
+                              );                  
+
+endmodule

@@ -1,0 +1,280 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0037)http://www.8052.com/users/aspdigital/ -->
+<HTML><HEAD><TITLE>8051-to-LCD Interface</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="" name=description>
+<META content="" name=keywords>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY>
+<STYLE type=text/css>.linkTextWhite {
+	COLOR: white; TEXT-DECORATION: none
+}
+.linkTextBlue {
+	COLOR: blue; TEXT-DECORATION: none
+}
+.linkTextBlack {
+	COLOR: black; TEXT-DECORATION: none
+}
+</STYLE>
+<XBODY BGCOLOR="#FFFFFF">
+<TABLE cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top bgColor=#d0d0d0>
+      <TABLE cellSpacing=0 cellPadding=3 width=100 align=left border=0 
+      VALIGN="TOP">
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=middle BORDER="0"><A 
+            href="http://www.8052.com/"><IMG 
+            src="8051-to-LCD Interface_files/8052bubble5.gif" 
+            border=0></A><BR><FONT size=2>
+            <HR>
+            </FONT></TD></TR>
+        <FORM action=/search.phtml method=get>
+        <TR>
+          <TD align=middle><FONT size=2 xCOLOR="#FFFFFF"><B>Search 
+            8052.com...</B><BR><INPUT maxLength=40 size=8 name=TERMS> <INPUT type=submit value=Search!><BR></FORM>
+            <HR>
+
+            <FORM action=/login.phtml method=post><INPUT type=hidden 
+            value=/users/aspdigital/index.phtml name=LOGINPAGE><B>User 
+            (Email)</B><BR><INPUT maxLength=40 size=14 
+            name=EMAIL><BR><B>Password</B><BR><INPUT type=password maxLength=10 
+            size=14 name=PASSWORD><BR><INPUT type=checkbox 
+            name=REMEMBER>Remember 
+            Logon<BR><INPUT type=submit value=Login></FORM>
+            <P><A href="http://www.8052.com/forget.phtml">Forgot 
+            password?</A><BR><A href="http://www.8052.com/newacct.phtml">Create 
+            Account</A>
+            <P></P></FONT></TD></TR>
+        <TR>
+          <TD align=middle BORDER="0">
+            <HR>
+            <A href="http://www.8052.com/store/"><IMG height=20 
+            alt="8052.com Online Store" 
+            src="8051-to-LCD Interface_files/estore.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/"><IMG height=20 
+            alt="Back to 8052.com Main Page" 
+            src="8051-to-LCD Interface_files/main.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/forum"><IMG height=20 
+            src="8051-to-LCD Interface_files/msgbrd.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/tutorial.phtml"><IMG 
+            height=20 src="8051-to-LCD Interface_files/tutorial.gif" width=100 
+            vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/faqs.phtml"><IMG height=20 
+            src="8051-to-LCD Interface_files/faq.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/book"><IMG height=20 
+            src="8051-to-LCD Interface_files/8052book.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/news.phtml"><IMG 
+            height=20 src="8051-to-LCD Interface_files/news.gif" width=100 
+            vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/codelib.phtml"><IMG height=20 
+            src="8051-to-LCD Interface_files/codelib.gif" width=100 vspace=2 
+            border=0><BR><A href="http://www.8052.com/chips.phtml"><IMG 
+            height=20 src="8051-to-LCD Interface_files/chips.gif" width=100 
+            vspace=2 border=0><BR><A 
+            href="http://www.8052.com/challenge.phtml"><IMG height=20 
+            src="8051-to-LCD Interface_files/challenge.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/links.phtml"><IMG 
+            height=20 src="8051-to-LCD Interface_files/links.gif" width=100 
+            vspace=2 border=0><BR><A href="http://www.8052.com/books.phtml"><IMG 
+            height=20 src="8051-to-LCD Interface_files/books.gif" width=100 
+            vspace=2 border=0><BR><A 
+            href="http://www.8052.com/services.phtml"><IMG height=20 
+            src="8051-to-LCD Interface_files/service.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/homepages.phtml"><IMG 
+            height=20 src="8051-to-LCD Interface_files/upages.gif" width=100 
+            vspace=2 border=0></A><BR><A href="http://www.8052.com/sbc"><IMG 
+            height=20 src="8051-to-LCD Interface_files/sbc.gif" width=100 
+            vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/users/phillipmgallo"><IMG height=20 
+            src="8051-to-LCD Interface_files/video.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/tcpip"><IMG height=20 
+            src="8051-to-LCD Interface_files/tcpip.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/users/jsno"><IMG 
+            height=20 src="8051-to-LCD Interface_files/cdrom.gif" width=100 
+            vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/users/disasm/"><IMG height=20 
+            src="8051-to-LCD Interface_files/disassembler.gif" width=100 
+            vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/members.phtml"><IMG height=20 
+            src="8051-to-LCD Interface_files/members.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/contact.phtml"><IMG 
+            height=20 src="8051-to-LCD Interface_files/contact.gif" width=100 
+            vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/aboutvis.phtml"><IMG height=20 
+            src="8051-to-LCD Interface_files/about.gif" width=100 vspace=2 
+            border=0></A><BR><A href="http://www.8052.com/disclaim.phtml"><IMG 
+            height=20 src="8051-to-LCD Interface_files/disclaim.gif" width=100 
+            vspace=2 border=0></A><BR><A 
+            href="http://www.8052.com/privacy.phtml"><IMG height=20 
+            src="8051-to-LCD Interface_files/privacy.gif" width=100 vspace=2 
+            border=0></A><BR></TD></TR>
+        <TR>
+          <TD align=middle BORDER="0"></TD></TR>
+        <TR>
+          <TD align=middle BORDER="0">
+            <HR>
+
+            <CENTER><A href="http://www.8052.com/redirlnk.phtml?ID=96"><IMG 
+            src="8051-to-LCD Interface_files/pinico.gif" vspace=2 
+            border=0></A><BR><A 
+            href="http://www.8052.com/redirlnk.phtml?ID=98"><IMG 
+            src="8051-to-LCD Interface_files/SLAB_icon.gif" border=0></A><BR><A 
+            href="http://www.8052.com/redirlnk.phtml?ID=157"><IMG 
+            src="8051-to-LCD Interface_files/raisonancesidebar.gif" vspace=2 
+            border=0></A><BR><A 
+            href="http://www.8052.com/redirlnk.phtml?ID=149"><IMG 
+            src="8051-to-LCD Interface_files/analogdevices_sb.gif" vspace=2 
+            border=0></A><BR></CENTER></TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top><FONT size=2>
+      <CENTER><A href="http://www.8052.com/redirlnk.phtml?ID=215"><IMG height=60 
+      src="8051-to-LCD Interface_files/keilstore.gif" width=468 
+      border=0></A></CENTER>
+      <CENTER><FONT size=1>A D V E R T I S E M E N T - Please visit our sponsors 
+      to support this site</FONT></CENTER>
+      <P>
+      <TABLE cellPadding=10 width="100%">
+        <TBODY>
+        <TR>
+          <TD><FONT size=2>8051-to-LCD Interface 
+            <H1 align=center>Yet Another 8051-to-LCD Interface</H1>
+            <HR>
+
+            <P>The Web is littered with examples of how to control the standard 
+            Hitachi-44780 LCD using an 8051 micro. So, you may ask, “Why bother 
+            doing another?”</P>
+            <P>A bunch of reasons:</P>
+            <OL>
+              <LI>
+              <P style="MARGIN-BOTTOM: 0cm">I hate everybody else's code. Call 
+              it “NIH.” I don't care. There. I've said it. (You'll probably hate 
+              <I>my</I> code, too. I understand and accept your judgment.) </P>
+              <LI>
+              <P style="MARGIN-BOTTOM: 0cm">Most of the examples I've seen are 
+              written in assembly, and quite frankly, I would rather not deal 
+              with assembly language if at all possible. </P>
+              <LI>
+              <P style="MARGIN-BOTTOM: 0cm">Some of the examples used the nybble 
+              interface to the LCD; I wanted to use the byte-wide interface. 
+</P>
+              <LI>
+              <P>Some examples had various latches or other logic between the 
+              micro and the LCD; I wanted a glueless interface (at the cost of 
+              extra micro port I/O pins). </P></LI></OL>
+            <P>So, here is my LCD interface code. I compiled this using the <A 
+            href="http://www.keil.com/" name="Keil C51">Keil C51</A> compiler, 
+            v7.04. My target is the <A href="http://www.silabs.com/">Silicon 
+            Labs (Cygnal)</A> <A 
+            href="http://www.silabs.com/products/microcontroller/genpurpose_matrix.asp">C8051F231</A> 
+            micro, but I suppose any 8051 variant with enough free port pins 
+            (all eight bits of Port 1 for the data I/O bus plus three control 
+            signals) will work. No glue logic between the micro and the LCD is 
+            required. I like the Cygnal parts because they have built-in flash 
+            and in-circuit emulator support via JTAG, and the <A 
+            href="http://www.silabs.com/products/microcontroller/EC2.asp">RS-232-to-JTAG 
+            emulator dongle</A> costs only $65! (Buy the <A 
+            href="http://www.silabs.com/products/microcontroller/C8051F226DK.asp">prototyping 
+            board</A> for only $99!) I mean, that's a screeeeeeaming deal, 
+            especially if you remember having to pay five large for the old 
+            ISA-bus Nohau emulator with the bond-out chip. (And you probably 
+            also remember blowing up the bondout chip just as a deadline was 
+            approaching!)</P>
+            <P>I used an Optrex <A 
+            href="http://www.optrex.com/SiteImages/PartList/SPEC/16202aze.pdf">DMC-16202NY-LY-AGE</A> 
+            (pdf) 16-character by 2-line LCD module, mainly because DigiKey had 
+            them in stock and they weren't all that expensive.</P>
+            <P>The only bit in the code that is Cygnal-specific is in the 
+            private <CODE>isLcdBusy()</CODE> function in <CODE>lcd.c</CODE>. The 
+            register <CODE>PRT1CF</CODE> is manipulated to allow port 1 to be 
+            read as an input.</P>
+            <P><B>Sources</B></P>
+            <UL>
+              <LI>
+              <P><CODE><A href="http://www.8052.com/users/aspdigital/lcd.h.html" 
+              name=lcd.h>lcd.h</A></CODE>: header file that holds the function 
+              prototypes. </P>
+              <LI>
+              <P><CODE><A href="http://www.8052.com/users/aspdigital/lcd.c.html" 
+              name=lcd.c>lcd.c</A></CODE>: C source for LCD interface functions. 
+              </P>
+              <LI>
+              <P><CODE><A 
+              href="http://www.8052.com/users/aspdigital/lcdcmd.h.html" 
+              name=lcdcmd.h>lcdcmd.h</A></CODE>: header file that holds some 
+              convenient constant definitions (used by <CODE>lcd.c</CODE> and 
+              not needed by "the outside world") </P></LI></UL>
+            <P>To use, simply add <CODE>lcd.c</CODE> to your Keil project, add 
+            <CODE>lcd.h</CODE> to whatever sources may call the functions in 
+            <CODE>lcd.c</CODE> and off you go. Be sure to call the 
+            <CODE>LcdInit()</CODE> function before calling anything else.</P>
+            <P><B>Pin Assignments</B></P>
+            <P>My code specifies the following micro port pin-to-LCD-signal 
+            assignments:</P>
+            <UL>
+              <LI>
+              <P><CODE>P1.7</CODE> through <CODE>P1.0</CODE>: LCD 
+              <CODE>DB[7:0]</CODE> (bidirectional data bus)</P>
+              <LI>
+              <P><CODE>P0.7</CODE>: LCD <CODE>R/W</CODE></P>
+              <LI>
+              <P><CODE>P0.6</CODE>: LCD <CODE>E</CODE></P>
+              <LI>
+              <P><CODE>P0.5</CODE>: LCD <CODE>RS</CODE></P></LI></UL>
+            <P>Oh, yeah, don't forget to wire the micro to the LCD pins, and 
+            make sure the LCD bias is set to something that will actually 
+            display the characters. Powering the LCD helps, too.</P>
+            <P><B>Technical Support</B></P>
+            <P>I can probably help you get this code working on your particular 
+            8051 flavor. Send me a note at devel@latke.net. I've built things 
+            using the original <A 
+            href="http://www.intel.com/design/mcs51/cf_51.htm">Intel 87C51</A>, 
+            the Dallas Semiconductor (now Maxim) <A 
+            href="http://www.maxim-ic.com/quick_view2.cfm/qv_pk/2946">DS5000T</A>, 
+            the TI <A 
+            href="http://focus.ti.com/docs/prod/folders/print/tusb3200a.html">TUSB3200A</A> 
+            and the aforementioned Cygnal chip. Sorry, can't help you with Moto 
+            HC05/08/11 or PIC or any other microcontroller family, but hey, a 
+            micro is a micro, so porting the code oughta be fairly obvious.</P>
+            <P>Some real good LCD interfacing info is available at Myke Predko's 
+            <A href="http://www.myke.com/lcd.htm">LCD Interfacing Reference 
+            Page</A>.</P>
+            <P>The good folks at <A href="http://www.8052.com/" 
+            name=8052.com>8052.com</A> have a really good <A 
+            href="http://www.8052.com/tutlcd.phtml" 
+            name="8052 LCD tutorial">tutorial</A> you might like to read.</P>
+            <P>Also, see <A 
+            href="http://home.iae.nl/users/pouweha/lcd/lcd.shtml">Peer's LCD 
+            Pages</A>.</P>
+            <P><A href="http://www.8052.com/">I've played with the </A><A 
+            href="http://sdcc.sourceforge.net/">Small Device C Compiler 
+            (sdcc)</A> but its syntax is not (or at least wasn't, last time I 
+            looked) compatible with Keil. Good luck if you choose to use it.</P>
+            <P>I cannot help you do your homework assignment, so please don't 
+            ask. Pester the people at <A 
+            href="news://comp.arch.embedded/">news://comp.arch.embedded/</A> 
+            instead.</P>
+            <P><B>Disclaimer and copyright.</B></P>
+            <P>This code is <FONT face="Courier New, monospace">©</FONT> 2004 by 
+            Andy Peters, ASP Digital. All rights reserved. I suppose that this 
+            code is now officially Open Source, and while I am not up-to-date on 
+            the differences between the GPL, the LGPL, the BSD and other 
+            open-source licenses, I'm sure that at least one of them applies. 
+            You may use this code as you see fit. If you use it, please drop me 
+            a note at devel@latke.net and tell me! If you publish it, make sure 
+            to include my copyright information.</P>
+            <P>I make no guarantees or warranties whatsoever about this code. 
+            (In other words, if you use it as part of a flight-control system 
+            and the plane crashes, it is not my fault. You should have done your 
+            due diligence and some proper testing.) I also do not warrant that 
+            this code is free of anyone's intellectual property claims.</P>
+            <HR>
+
+            <CENTER><FONT size=1>(C) Copyright 1997 - 2006 by <A 
+            href="http://www.vaultbbs.com/">Vault Information Services LLC</A>. 
+            All Rights Reserved.<BR>Information provided "as-is" without 
+            warranty. Please <A href="http://www.8052.com/disclaim.phtml">see 
+            details</A>.<BR><A href="http://www.8052.com/contact.phtml">Contact 
+            us</A> for usage and copy permission.<BR>
+            <H6></H6></CENTER><BR></FONT></FONT></TD></TR></TBODY></TABLE></P></FONT></TD></TR></TBODY></TABLE></TD></TR></TABLE></BODY></HTML>

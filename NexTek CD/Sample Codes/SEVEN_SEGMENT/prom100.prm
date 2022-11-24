@@ -1,0 +1,17 @@
+PROMGEN: Xilinx Prom Generator G.23
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+promgen -w -p mcs -c FF -o C:\testing_FROM\SEVEN_SEGMENT//prom100 -u 0 C:\testing_FROM\SEVEN_SEGMENT\seg_display.bit -x xcf01s 
+
+PROM C:\testing_FROM\SEVEN_SEGMENT//prom100.prm map: Thu Oct 21 10:46:42 2004
+
+Calculating PROM checksum with fill value ff
+
+Format        Mcs86 (32-bit)
+Size          128K
+PROM start    0000:0000
+PROM end      0001:ffff
+PROM checksum 0087d38d
+
+        Addr1        Addr2 File(s)
+    0000:0000    0001:fbdb C:/testing_FROM/SEVEN_SEGMENT/seg_display.bit

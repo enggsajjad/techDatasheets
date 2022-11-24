@@ -1,0 +1,86 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:31:18                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\setsclhigh.c                  #
+#       List file     =  c:\projects\at17c8515\debug\list\setsclhigh.lst     #
+#       Object file   =  c:\projects\at17c8515\debug\obj\setsclhigh.r90      #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Debug\Obj\ -e -gA   #
+#                        -RCODE -r0e -LC:\Projects\at17c8515\Debug\List\ -q  #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -K                       #
+#                        C:\Projects\at17c8515\SetSCLHigh.c                  #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+   \                     	NAME	setsclhigh(17)
+   \                     	RSEG	CODE(0)
+   \                     	PUBLIC	SetSCLHigh
+   \                     	EXTERN	WriteSCL
+   \                     	EXTERN	t0_timed_out
+   \                     	EXTERN	?CL1S_1_30_L08
+   \                     	RSEG	CODE
+   \                     SetSCLHigh:
+      1          // SetSCLHigh.c
+      2          // Det SCL high, and wait for it to go high.
+      3          // Returns the value of t0_timed_out. If 0xff then we timed out before SCL went high and
+      4          // should be used to indicate an error to the caller
+      5          // Crystal frequency is 7.3728 MHz
+      6          
+      7          #include "at17c.h"
+      8          
+      9          extern volatile unsigned char t0_timed_out;
+     10          
+     11          extern void WriteSCL(unsigned char state);
+     12          
+     13          unsigned char SetSCLHigh(void) {
+     14          
+     15              WriteSCL(1); // release SCL
+   \   00000000   01E0                       LDI     R16,1
+   \   00000002   ....                       RCALL   WriteSCL
+     16          
+     17              // set up timer counter 0 for timeout
+     18              t0_timed_out = FALSE; // will be set after approximately 34 us
+   \   00000004   0027                       CLR     R16
+   \   00000006   0093....                   STS     LWRD(t0_timed_out),R16
+     19              TCNT0 = 0; // clear counter
+   \   0000000A   0027                       CLR     R16
+   \   0000000C   02BF                       OUT     LOW(50),R16
+     20              TCCR0 = 1; // ck/1 ..  enable counting
+   \   0000000E   01E0                       LDI     R16,1
+   \   00000010   03BF                       OUT     LOW(51),R16
+   \                     ?0003:
+     21          
+     22              // wait till SCL goes to a 1
+     23              while (!(PINB & 0x02) && !t0_timed_out);
+   \   00000012   B199                       SBIC    LOW(22),LOW(1)
+   \   00000014   04C0                       RJMP    ?0002
+   \   00000016   0091....                   LDS     R16,LWRD(t0_timed_out)
+   \   0000001A   0023                       TST     R16
+   \   0000001C   D1F3                       BREQ    ?0003
+   \                     ?0002:
+     24          
+     25              TCCR0 = 0; // stop the counter clock
+   \   0000001E   0027                       CLR     R16
+   \   00000020   03BF                       OUT     LOW(51),R16
+     26          
+     27              return(t0_timed_out);
+   \   00000022   0091....                   LDS     R16,LWRD(t0_timed_out)
+     28          
+     29          }
+   \   00000026   0895                       RET     
+   \                     	END
+
+Source file: c:\projects\at17c8515\setsclhigh.c
+Errors: none
+Warnings: none
+Code size: 40
+Constant size: 0
+Static variable size: 0
+

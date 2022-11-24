@@ -1,0 +1,21 @@
+# Xilinx CORE Generator 6.1i
+# User = haroon
+Initializing default project...
+Loading plug-ins...
+All runtime messages will be recorded in C:\testing_FROM\16_MHz\SEVEN_SEGMENT\coregen.log
+# busformat=BusFormatAngleBracketNotRipped
+# designflow=VHDL
+# expandedprojectpath=C:\testing_FROM\16_MHz\SEVEN_SEGMENT
+# flowvendor=Foundation_iSE
+# formalverification=None
+# simulationoutputproducts=VHDL
+# xilinxfamily=Virtex2
+# outputoption=DesignFlow
+# overwritefiles=Default
+# simvendor=ModelSim
+# expandedprojectpath=C:\testing_FROM\16_MHz\SEVEN_SEGMENT
+SETPROJECT .
+Set current Project to C:\testing_FROM\16_MHz\SEVEN_SEGMENT
+SET BusFormat = BusFormatAngleBracketNotRipped
+SETXIPCPORTHOST 2022
+XIPCPJSENDCORES spartan2

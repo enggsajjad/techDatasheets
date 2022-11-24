@@ -1,0 +1,158 @@
+/*
+ *	LCD interface example
+ *	Uses routines from delay.c
+ *	This code will interface to a standard LCD controller
+ *	like the Hitachi HD44780. It uses it in 4 bit mode, with
+ *	the hardware connected as follows (the standard 14 pin 
+ *	LCD connector is used):
+ *	
+ *	PORTB bits 0-3 are connected to the LCD data bits 4-7 (high nibble)
+ *	PORTA bit 2 is connected to the LCD RS input (register select)
+ *	PORTA bit 3 is connected to the LCD EN bit (enable)
+ *	
+ *	To use these routines, set up the port I/O (TRISA, TRISB) then
+ *	call lcd_init(), then other routines as required.
+ *	
+ */
+
+#include	<pic.h>
+#include	"lcd.h"
+#include	"delay.h"
+
+/* To Set The LCD Control Bits8*/
+static bit LCD_RS	@ ((unsigned)&PORTE*8+0);	// Register select
+static bit LCD_RW       @ ((unsigned)&PORTE*8+1);	// Read/Write select 
+static bit LCD_EN	@ ((unsigned)&PORTE*8+2);		// Enable signal
+
+/*Defining Control Settings Words  for LCD */
+#define Config 0x38 		//function set(8-bit,2line,5*7matrix)
+#define EntryMode 0x6		//Cursor Right, No Display
+#define BOf_DOf_COf 0x08	//blink off, display off,cursor off
+#define BOf_DOn_COf 0x0C 	//cursor off
+#define BOf_DOn_COn 0x0E 	//blink off,display on , cursor on	
+#define BOn_DOn_COf 0x0D 	//blink on,display on,cursor off
+#define BOn_DOn_COn 0x0F 	//all, blink display,cursor on
+#define CHome 0x02		//cursor home
+#define CShiftL 0x10		//cursor shift left
+#define CShiftR 0x14		//cursor shift right
+#define DClear 0x01		//clear display , go home
+#define DOf 0x0A
+#define DShiftL 0x18		//display shift left
+#define DShiftR 0x1C		//display shift right
+
+#define	LCD_STROBE	((LCD_EN = 1),(LCD_EN=0))
+
+
+/* write a byte to the LCD in 4 bit mode */
+
+void
+lcd_write(unsigned char c)
+{
+	PORTB = (PORTB & 0xF0) |  (c >> 4);
+	LCD_STROBE;
+	PORTB = (PORTB & 0xF0) |  (c & 0x0F);
+	LCD_STROBE;
+	DelayUs(40);
+}
+
+/*
+ * 	Clear and home the LCD
+ */
+
+void
+lcd_clear(void)
+{
+	LCD_RS = 0;
+	lcd_write(0x1);
+	//DelayMs(2);
+}
+
+/* write a string of chars to the LCD */
+
+void
+lcd_puts(const char * s)
+{
+	LCD_RS = 1;	// write characters
+	while(*s)
+		lcd_write(*s++);
+}
+
+/* write one character to the LCD */
+
+void
+lcd_putch(char c)
+{
+	LCD_RS = 1;	// write characters
+	PORTB = (PORTB & 0xF0) |  (c >> 4);
+	LCD_STROBE;
+	PORTB = (PORTB & 0xF0) |  (c & 0x0F);
+	LCD_STROBE;
+	DelayUs(40);
+}
+
+
+/*
+ * Go to the specified position
+ */
+
+void
+lcd_goto(unsigned char pos)
+{
+	LCD_RS = 0;
+	lcd_write(0x80+pos);
+}
+	
+/* initialise the LCD - put into 4 bit mode */
+
+void
+lcd_init(void)
+{
+	LCD_RS = 0;	// write control bytes
+	LCD_RW = 0;	// write LCD module
+	LCD_EN = 0;
+	DelayUs(100);	// power on delay
+
+	PORTC = Config;	// function set
+	LCD_STROBE;
+	DelayUs(40);
+
+	PORTC = BOf_DOf_COf;
+	LCD_STROBE;
+	DelayUs(40);
+
+	PORTC = DClear;
+	LCD_STROBE;
+	DelayUs(40);
+
+	PORTC = BOf_DOn_COn;
+	LCD_STROBE;
+	DelayUs(40);
+
+	PORTC = EntryMode;
+	LCD_STROBE;
+	DelayUs(40);
+
+	PORTC = 0x42;
+	LCD_STROBE;
+	DelayUs(40);
+	
+	
+	//LCD_STROBE;
+	//DelayUs(100);
+	//LCD_STROBE;
+	//DelayMs(5);
+	//PORTB = 0x2;	// set 4 bit mode
+	//LCD_STROBE;
+	//DelayUs(40);
+	//lcd_write(0x28);	// 4 bit mode, 1/16 duty, 5x8 font
+	//lcd_write(0x08);	// display off
+	//lcd_write(0x0F);	// display on, blink curson on
+	//lcd_write(0x06);	// entry mode
+}
+
+void main(void)
+{
+	
+	lcd_init();
+
+}

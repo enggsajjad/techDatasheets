@@ -1,0 +1,183 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: lcd.c
+Date: Wed, 12 Nov 2008 09:28:26 +0500
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.latke.net/lcd/lcd.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>lcd.c</TITLE>
+<META http-equiv=3DCONTENT-TYPE content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.2900.2180" name=3DGENERATOR>
+<META content=3D"Andy Peters" name=3DAUTHOR>
+<META content=3D20040726;16532250 name=3DCREATED>
+<META content=3D"Andy Peters" name=3DCHANGEDBY>
+<META content=3D20040726;17092798 name=3DCHANGED></HEAD>
+<BODY =
+lang=3Den-US><PRE>/******************************************************=
+***********************
+ * LCD control functions.
+ * lcd.c
+ * <FONT face=3D"Courier New, monospace">=A9</FONT> 2004,2006 ASP =
+Digital.  All rights reserved. * Andy Peters, ASP Digital
+ * devel@latke.net
+ *=20
+ * various functions to support the usual sort of LCD display.
+ * Created: 19 Jul 2004
+ * Modified:
+ *  11 Dec 2006: Add LcdWriteCGRAM().
+ =
+*************************************************************************=
+***/
+#include <C8051F200.H>
+#include "lcd.h"
+#include "lcdcmd.h"
+
+/*
+ * Private prototypes:
+ */
+void LcdWriteCmd(unsigned char cmd);
+bit isLcdBusy(void);
+void waitUntilDone(void);
+
+
+sbit LCD_E =3D P0^6;
+sbit LCD_RW =3D P0^7;
+sbit LCD_RS =3D P0^5;
+
+sbit BUSY =3D P1^7;
+
+/*
+ * Fetch LCD's busy flag.
+ * Put P1 into read mode before attempting to read!
+ */
+bit isLcdBusy(void) {
+	bit retbit;
+
+	retbit =3D 0;
+
+	PRT1CF =3D 0x00;
+	LCD_RW =3D 1;
+	LCD_RS =3D 0;
+	LCD_E =3D 1;
+	P1 =3D 0xFF;
+	retbit =3D P1^7;
+	LCD_E =3D 0;
+	PRT1CF =3D 0xFF;
+	LCD_RW =3D 0;
+	return (retbit);
+} // isLcdBusy
+
+void waitUntilDone(void)
+{                      =20
+    bit retbit =3D 1;
+	PRT1CF =3D 0x00;
+	P1 =3D 0xFF;
+	LCD_RW =3D 1;
+	LCD_RS =3D 0;
+    while (retbit =3D=3D 1)
+    {
+	   LCD_E =3D 1;
+	   retbit =3D BUSY;
+	   LCD_E =3D 0;
+    } //while retbit =3D=3D 1
+	PRT1CF =3D 0xFF;
+	LCD_RW =3D 0;
+} // waitUntilDone()
+
+/*
+ * Write a character to the display at the current cursor position.
+ */
+void LcdWriteChar(unsigned char dval)=20
+{
+	LCD_RW =3D 0;
+	LCD_RS =3D 1;
+	LCD_E  =3D 1;=09
+	P1 =3D dval;
+	LCD_E  =3D 0;
+    waitUntilDone();
+} // LcdWriteChar()
+
+/*
+ * Write a string to the display, starting at the current cursor =
+position.
+ */
+void LcdWriteString(unsigned char *str)
+{
+	while (*str !=3D '\0')
+	{
+		LcdWriteChar(*str);
+		++str;
+	}
+} // LcdWriteString
+
+/*
+ * Move the cursor to the specified row and column.
+ */
+void LcdMoveCursor(unsigned char row, unsigned char col)
+{
+	LcdWriteCmd(LCD_MOVEDISPLAY | (row &lt;&lt; 6) | col);
+} // LcdMoveCursor
+
+/*
+ * Write a command to the LCD.
+ */
+void LcdWriteCmd(unsigned char cmd)=20
+{
+	LCD_RW =3D 0;
+	LCD_RS =3D 0;
+	LCD_E =3D 1;
+	P1 =3D cmd;
+	LCD_E =3D 0;
+    waitUntilDone();
+} // LcdWriteCmd
+
+
+/*
+ * Initialize the LCD.
+ */
+
+void LcdInit(void)
+{
+    P1MODE =3D 0xFF;	// enable port 1 digital inputs, needed for BUSY.
+	LCD_RW =3D 0;
+	LCD_RS =3D 0;
+	LCD_E  =3D 0;
+
+	LcdWriteCmd(0x30);
+	LcdWriteCmd(0x30);
+	LcdWriteCmd(0x30);
+	LcdWriteCmd(LCD_SETIFLEN | LCD_SETIFLEN_N | LCD_SETIFLEN_DL);=20
+
+	// should be initialized here.
+
+	LcdWriteCmd(LCD_DISPEN); // display off, cursor off, no blink
+	LcdWriteCmd(LCD_CLEAR);
+	LcdWriteCmd(LCD_DISPEN | LCD_DISPEN_DISP); // | LCD_DISPEN_CURSOR);
+	LcdWriteCmd(LCD_MOVEDIR | LCD_MOVEDIR_ID);=20
+} // LcdInit
+
+/*
+ * Clear the LCD.
+ */
+void LcdClear(void)
+{
+	LcdWriteCmd(LCD_CLEAR);
+} // LcdClear()
+
+/*
+ * Write the given pattern to the CGRAM at the given address.
+ */
+void LcdWriteCGRAM(unsigned char addr, unsigned char pattern)
+{
+    // First, move the cursor into the CGRAM area:
+    LcdWriteCmd(LCD_MOVERAM | addr);
+    // Then write the pattern to that location:
+    LcdWriteChar(pattern);
+} // LcdWriteCGRAM())</PRE>
+<P>[<A href=3D"http://www.latke.net/lcd/index.html">Back to main LCD=20
+page</A>]</P></BODY></HTML>

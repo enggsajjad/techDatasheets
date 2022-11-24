@@ -1,0 +1,4 @@
+base referer
+rect $device__specific_8h.html 119,108 244,135
+rect $SMBExample_8h.html 124,159 239,186
+rect $SMBSlave_8h.html 293,184 389,211

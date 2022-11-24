@@ -1,0 +1,396 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0043)http://www.pjrc.com/tech/8051/autobaud.html -->
+<HTML><HEAD><TITLE>Paul's 8051 Code Library, Auto Baud Detection</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1"><LINK 
+href="/favicon.ico" rel="shortcut icon"><LINK 
+href="Paul's 8051 Code Library, Auto Baud Detection_files/style.css" 
+type=text/css rel=stylesheet>
+<META 
+content="8051, firmware, code, free, baud, baud rate, open source, uart, serial port, buffer, rs232, rs-232, subroutine, function, mcs-51, 8031, 87c51, 80c51, 80c31" 
+name=keywords>
+<META content="Free 8051 source code: Automatic baud rate detection" 
+name=description>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#202080 link=#0000d0 bgColor=#ffffff><!--nav begin--><!--htdig_noindex-->
+<TABLE cellSpacing=2 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD align=left rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 width=312>
+        <TBODY>
+        <TR>
+          <TD align=right><A 
+            href="http://www.pjrc.com/tech/8051/autobaud.html#navend"><IMG 
+            height=10 alt="skip navigational links" hspace=0 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/1x1.gif" 
+            width=1 border=0></A><A href="http://www.pjrc.com/"><IMG height=31 
+            alt=PJRC 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/logo.gif" 
+            width=276 border=0></A></TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top align=right></TD></TR>
+  <TR>
+    <TD vAlign=bottom align=right><SMALL><A 
+      href="https://www.pjrc.com/cgi-bin/store/step1">Shopping&nbsp;Cart</A> 
+      <IMG height=10 alt="" 
+      src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" width=10 
+      align=middle> <A 
+      href="https://www.pjrc.com/cgi-bin/store/step2">Checkout</A> <IMG 
+      height=10 alt="" 
+      src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" width=10 
+      align=middle> <A 
+      href="http://www.pjrc.com/cgi-bin/store/shipcost">Shipping&nbsp;Cost</A> 
+      <IMG height=10 alt="" 
+      src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" width=10 
+      align=middle> <A 
+      href="http://www.pjrc.com/cgi-bin/archive/summary">Download&nbsp;Website</A> 
+      </SMALL></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=6 width="100%" border=0>
+  <TBODY>
+  <TR bgColor=#d0e0ff>
+    <TD align=middle><A href="http://www.pjrc.com/">Home</A></TD>
+    <TD align=middle><A href="http://www.pjrc.com/tech/mp3/">MP3 Player</A></TD>
+    <TD align=middle>8051 Tools</TD>
+    <TD align=middle><A href="http://www.pjrc.com/tech/">All Projects</A></TD>
+    <TD align=middle><A href="http://www.pjrc.com/store/">PJRC Store</A></TD>
+    <TD align=middle><A href="http://www.pjrc.com/map.html">Site 
+  Map</A></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=2 width="100%">
+  <TBODY>
+  <TR bgColor=#f0f0f0>
+    <TD align=left><SMALL>You are here: <A 
+      href="http://www.pjrc.com/tech/8051/">8051 Tools</A> <IMG height=10 alt="" 
+      src="Paul's 8051 Code Library, Auto Baud Detection_files/b.gif" width=10> 
+      <A href="http://www.pjrc.com/tech/8051/serial_io.html">Code Library</A> 
+      <IMG height=10 alt="" 
+      src="Paul's 8051 Code Library, Auto Baud Detection_files/b.gif" width=10> 
+      <SPAN style="BACKGROUND-COLOR: #b0e4a8">Automatic Baud Rate</SPAN> 
+    </SMALL></TD>
+    <TD align=right><SMALL><A href="http://www.pjrc.com/search/">Search 
+      PJRC</A></SMALL> </TD></TR></TBODY></TABLE>
+<P>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=172>
+      <TABLE cellSpacing=0 cellPadding=6 width=172 border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle bgColor=#d0e0ff><BIG><B>PJRC Store</B></BIG> </TD></TR>
+        <TR>
+          <TD bgColor=#f0f0f0><SMALL><IMG height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10 align=middle> <A 
+            href="http://www.pjrc.com/store/dev_pcb_assem.html">8051 Dev Board, 
+            $79</A><BR><IMG height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10 align=middle> <A 
+            href="http://www.pjrc.com/store/dev_display_20x2.html">LCD 20x2 
+            Display, $11</A><BR><IMG height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10 align=middle> <A 
+            href="http://www.pjrc.com/store/cable_serial.html">Serial Cable, 
+            $5</A><BR><IMG height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10 align=middle> <A 
+            href="http://www.pjrc.com/store/pwr_9vdc.html">9 Volt Power, 
+            $6</A><BR><IMG height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10 align=middle> <A 
+            href="http://www.pjrc.com/store/index.html">More 
+            Components...</A><BR></SMALL></TD></TR>
+        <TR>
+          <TD height=15></TD></TR>
+        <TR>
+          <TD align=middle bgColor=#d0e0ff><BIG><B>8051 Tools</B></BIG> </TD></TR>
+        <TR>
+          <TD bgColor=#f0f0f0><SMALL><IMG height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10> <A href="http://www.pjrc.com/tech/8051/index.html">Main 
+            Page</A><BR><A 
+            href="http://www.pjrc.com/tech/8051/tools/index.html"><IMG height=10 
+            alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/c.gif" 
+            width=10 border=0> <B>Software</B></A><BR><A 
+            href="http://www.pjrc.com/tech/8051/paulmon2.html"><IMG height=10 
+            alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/c.gif" 
+            width=10 border=0> <B>PAULMON Monitor</B></A><BR><A 
+            href="http://www.pjrc.com/tech/8051/board5/index.html"><IMG 
+            height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/c.gif" 
+            width=10 border=0> <B>Development Board</B></A><BR><IMG height=10 
+            alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/b.gif" 
+            width=10> <B>Code Library</B><BR></SMALL>
+            <DIV style="PADDING-LEFT: 1.2em"><SMALL><IMG height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10> <A 
+            href="http://www.pjrc.com/tech/8051/serial_io.html">Serial I/O, 
+            Polled</A><BR><IMG height=10 alt=selected 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/b.gif" 
+            width=10> <SPAN style="BACKGROUND-COLOR: #b0e4a8">Automatic Baud 
+            Rate</SPAN><BR><IMG height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10> <A 
+            href="http://www.pjrc.com/tech/8051/uartintr.html">Serial I/O, 
+            Intr.</A><BR><IMG height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10> <A 
+            href="http://www.pjrc.com/tech/8051/lexer-fixed-string.html">Lexer</A><BR><IMG 
+            height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10> <A href="http://www.pjrc.com/tech/8051/rand.html">Random 
+            Numbers</A><BR><IMG height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10> <A 
+            href="http://www.pjrc.com/tech/8051/serial-eeprom.html">Serial 
+            EEPROM</A><BR><IMG height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10> <A 
+            href="http://www.pjrc.com/tech/8051/amd-flash-rom.html">AMD 28F256 
+            Flash</A><BR><IMG height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10> <A 
+            href="http://www.pjrc.com/tech/8051/xilinx-program.html">Xilinx 
+            3000</A><BR><A 
+            href="http://www.pjrc.com/tech/8051/ide/index.html"><IMG height=10 
+            alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/c.gif" 
+            width=10 border=0> <B>IDE Hard Drive</B></A><BR><IMG height=10 
+            alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/a.gif" 
+            width=10> <A 
+            href="http://www.pjrc.com/tech/8051/contrib/tb51/index.html">Tiny 
+            Basic</A><BR></SMALL></DIV><SMALL><A 
+            href="http://www.pjrc.com/tech/8051/aicp-schematic.html"><IMG 
+            height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/c.gif" 
+            width=10 border=0> <B>89C2051 Programmer</B></A><BR><A 
+            href="http://www.pjrc.com/tech/8051/free.html"><IMG height=10 alt="" 
+            src="Paul's 8051 Code Library, Auto Baud Detection_files/c.gif" 
+            width=10 border=0> <B>Other Resources</B></A><BR></SMALL></TD></TR>
+        <TR>
+          <TD height=60></TD></TR></TBODY></TABLE><BR><A name=navend></A></TD>
+    <TD width=18></TD>
+    <TD vAlign=top><!--/htdig_noindex--><!--nav end-->
+      <H1>Automatic Baud Rate Detection</H1><EM>Don't like reading docs, why not 
+      just <A href="http://www.pjrc.com/tech/8051/autobaud.html#the_code">Skip 
+      Down to the Code</A>?</EM> 
+      <H3>Overview</H3>This code attempts to automatically detect the user's 
+      baud rate and initialize the 8051's built-in uart. More specifically, 
+      these steps are taken: 
+      <OL>
+        <LI>If the code was assembled with the correct baud rate, skip to step 
+        5. 
+        <LI>If we have previously detected the baud rate, skip to step 5. 
+        <LI>Wait for the user to press Enter (aka Carriage Return) and count how 
+        long it takes for the bits to arrive. 
+        <LI>Calculate the required timer1 reload value for the user's baud rate. 
+
+        <LI>Store the result so that we can (hopefully) skip having to detect 
+        the baud rate if this code is called again. 
+        <LI>Initialize the various special function registers. </LI></OL>
+      <H3>How it works</H3>When the user presses Enter, their terminal emulation 
+      program should send the byte 13, which will be transmitted as shown here: <PRE>               0  1  0  1  1  0  0  0  0  1
+               |  |                    |  |
+  start bit----+  +--lsb          msb--+  +----stop bit
+</PRE><FONT size=-2>Note: someday I'll draw a nice picture of this to 
+      replace the cheezy ascii art.</FONT> 
+      <P>The code reads <B>P3.0</B>, which is the <B>RXD</B> pin, and waits for 
+      it to become low, which is assumed to be the start bit. When it becomes 
+      high again, timer1 is started in 16 bit mode. The code waits for the 
+      remaining transitions shown above. At the beginning of the stop bit, 
+      timer1 is halted. If everything went well, the 16 bit value in timer1 
+      should indicate how many CPU cycles passed while the code waited for the 
+      eight data bits. 
+      <P>The 8051 uses timer1 to generate the clock for its built-in UART. 
+      Though it is possible to use timer1 in any of its modes, using the 8-bit 
+      auto-reload makes the most sense unless an extreemly slow baud rate is 
+      needed. This code only configures the timer1 in 8-bit auto-reload mode. 
+      Though this code makes configuring the built-in UART easy, it should be 
+      noted that the 8051's UART requires timer1 to generate the baud rate clock 
+      and can't be changed without affecting the UART. 
+      <P>The built-in UART requires 16 clock cycles (from timer1) for each bit. 
+      Because the code timed all 8 bits, the value that will be needed for 
+      initializing the timer in auto-reload mode is calculated by dividing the 
+      CPU cycle count by 128. Care must be taken to avoid a round-off error that 
+      will yield an inaccurate baud rate value. This bug appeared in <A 
+      href="http://www.pjrc.com/tech/8051/paulmon1.html">PAULMON1</A>. The code 
+      presented here fixes that bug and is identical to the automatic baud rate 
+      detection code in <A 
+      href="http://www.pjrc.com/tech/8051/paulmon2.html">PAULMON2</A>. 
+      <H3>Available Baud Rates</H3>Because the 8051's UART requires timer1, 
+      which is clocked by the crystal (divided by 12), the only baud rates which 
+      the 8051's hardware can produce are: 
+      <P>Baud = Crystal / ( 12 * 16 * N ) 
+      <P>where "N" is an integer from 1 to 255. This code will select the 
+      available baud rate which is the closest to what was received. Usually, an 
+      error of about 2.5% will still manage to communicate without trouble, but 
+      much beyond that will be problematic, if it works at all. Many crystals 
+      are available which are exact multiples of the standard baud rates. 
+      Usually these crystals provide faster baud rates than simply switching to 
+      a faster crystal. For example, a 4 MHz crystal provides 1200 baud. 
+      Switching to 8 MHz only increases the maximum to 2400 baud, but switching 
+      to a 3.6864 MHz crystal will allow 19200 baud! 
+      <P>Here is a summary of some standard crystals and the maximum standard 
+      baud rates which should work with them: 
+      <P align=center>
+      <CENTER>
+      <TABLE border=1>
+        <TBODY>
+        <TR>
+          <TH>Crystal (MHz)</TH>
+          <TH>Max Baud Rate</TH>
+          <TH>Error</TH></TR>
+        <TR>
+          <TD>1.00</TD>
+          <TD>300</TD>
+          <TD>2.12%</TD></TR>
+        <TR>
+          <TD>1.8432</TD>
+          <TD>9600</TD>
+          <TD>0.00%</TD></TR>
+        <TR>
+          <TD>2.00</TD>
+          <TD>300</TD>
+          <TD>0.79%</TD></TR>
+        <TR>
+          <TD>2.4576</TD>
+          <TD>300</TD>
+          <TD>0.78%</TD></TR>
+        <TR>
+          <TD>3.00</TD>
+          <TD>1200</TD>
+          <TD>0.16%</TD></TR>
+        <TR>
+          <TD>3.579545</TD>
+          <TD>300</TD>
+          <TD>0.23%</TD></TR>
+        <TR>
+          <TD>3.6864</TD>
+          <TD>19200</TD>
+          <TD>0.00%</TD></TR>
+        <TR>
+          <TD>4.00</TD>
+          <TD>1200</TD>
+          <TD>2.12%</TD></TR>
+        <TR>
+          <TD>4.194304</TD>
+          <TD>2400</TD>
+          <TD>1.14%</TD></TR>
+        <TR>
+          <TD>4.91520</TD>
+          <TD>1200</TD>
+          <TD>1.59%</TD></TR>
+        <TR>
+          <TD>5.00</TD>
+          <TD>2400</TD>
+          <TD>1.36%</TD></TR>
+        <TR>
+          <TD>5.0688</TD>
+          <TD>2400</TD>
+          <TD>0.00%</TD></TR>
+        <TR>
+          <TD>6.00</TD>
+          <TD>2400</TD>
+          <TD>0.16%</TD></TR>
+        <TR>
+          <TD>6.144</TD>
+          <TD>1200</TD>
+          <TD>1.23%</TD></TR>
+        <TR>
+          <TD>7.3728</TD>
+          <TD>38400</TD>
+          <TD>0.00%</TD></TR>
+        <TR>
+          <TD>8.00</TD>
+          <TD>2400</TD>
+          <TD>2.12%</TD></TR>
+        <TR>
+          <TD>10.00</TD>
+          <TD>4800</TD>
+          <TD>1.36%</TD></TR>
+        <TR>
+          <TD>10.738635</TD>
+          <TD>2400</TD>
+          <TD>1.32%</TD></TR>
+        <TR>
+          <TD>11.00</TD>
+          <TD>57600</TD>
+          <TD>0.54%</TD></TR>
+        <TR>
+          <TD>11.0592</TD>
+          <TD>57600</TD>
+          <TD>0.00%</TD></TR>
+        <TR>
+          <TD>12.00</TD>
+          <TD>4800</TD>
+          <TD>0.16%</TD></TR>
+        <TR>
+          <TD>12.288</TD>
+          <TD>2400</TD>
+          <TD>1.23%</TD></TR>
+        <TR>
+          <TD>14.31818</TD>
+          <TD>2400</TD>
+          <TD>0.23%</TD></TR>
+        <TR>
+          <TD>14.7456</TD>
+          <TD>38400</TD>
+          <TD>0.00%</TD></TR>
+        <TR>
+          <TD>15.00</TD>
+          <TD>38400</TD>
+          <TD>1.73%</TD></TR>
+        <TR>
+          <TD>16.00</TD>
+          <TD>4800</TD>
+          <TD>2.12%</TD></TR>
+        <TR>
+          <TD>18.432</TD>
+          <TD>19200</TD>
+          <TD>0.00%</TD></TR>
+        <TR>
+          <TD>20.00</TD>
+          <TD>9600</TD>
+          <TD>1.36%</TD></TR>
+        <TR>
+          <TD>22.1184</TD>
+          <TD>115200</TD>
+          <TD>0.00%</TD></TR>
+        <TR>
+          <TD>24.00</TD>
+          <TD>9600</TD>
+          <TD>0.16%</TD></TR>
+        <TR>
+          <TD>24.576</TD>
+          <TD>4800</TD>
+          <TD>1.23%</TD></TR>
+        <TR>
+          <TD>25.00</TD>
+          <TD>4800</TD>
+          <TD>0.47%</TD></TR>
+        <TR>
+          <TD>28.00</TD>
+          <TD>9600</TD>
+          <TD>1.27%</TD></TR>
+        <TR>
+          <TD>32.00</TD>
+          <TD>9600</TD>
+          <TD>2.12%</TD></TR></TBODY></TABLE><FONT size=-1>A bit of <A 
+      href="http://www.pjrc.com/tech/8051/crystals.zip">Perl code</A> generated 
+      this table...</FONT> </CENTER>
+      <P>In applications where the speed is limited by the baud rate (such as 
+      development with PAULMON), using a crystal which provides a faster baud 
+      rate can be a big improvement, even if it is a lower frequency. 
+      <H3><A name=the_code>The Code</A></H3>
+      <P>This code is available as <A 
+      href="http://www.pjrc.com/tech/8051/autobaud.asm">plain text</A> or in a 
+      <A href="http://www.pjrc.com/tech/8051/autobaud.zip">zip file</A>. 
+  </P></TD></TR></TBODY></TABLE>
+<P>
+<HR>
+Paul's 8051 Code Library, Paul Stoffregen 
+<BR><!--url-->http://www.pjrc.com/tech/8051/autobaud.html <BR>Last updated: <!--date-->February 24, 2005 <BR>Status: complete <BR>Suggestions, comments, 
+criticisms: <A href="mailto:paul@pjrc.com">mailto:paul@pjrc.com</A> 
+</BODY></HTML>

@@ -1,0 +1,70 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:30:51                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\getbyte.c                     #
+#       List file     =  c:\projects\at17c8515\release\list\getbyte.lst      #
+#       Object file   =  c:\projects\at17c8515\release\obj\getbyte.r90       #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Release\Obj\ -e     #
+#                        -gA -RCODE -LC:\Projects\at17c8515\Release\List\    #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -z9 -K                   #
+#                        C:\Projects\at17c8515\GetByte.c                     #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+      1            // GetByte.c
+      2            // reads a byte from the slave, lastbyte is used to tell slave that the read is over
+      3            
+      4            #include "at17c.h"
+      5             
+      6            extern void WriteSCL(unsigned char state);
+      7            extern void WriteSDA(unsigned char state);
+      8            extern void BitDelay(void);
+      9            extern unsigned char SetSCLHigh(void);
+     10            
+     11            unsigned char GetByte(unsigned char lastbyte) {
+     12            
+     13            // lastbyte == 1 for last byte
+     14             
+     15            unsigned char i, bit;
+     16            unsigned char result = 0;
+     17                
+     18                DDRB &= 0xfe; // SDA to input
+     19            
+     20                for (i = 0;i < 8;i++) { // each bit at a time, LSB first
+     21                    SetSCLHigh();
+     22                    BitDelay();
+     23                    bit = (PINB & 0x01);
+     24                    result = (bit << (i)) | result;
+     25                    WriteSCL(0);
+     26                    BitDelay();
+     27                }
+     28                                   
+     29                // send ACK
+     30                WriteSDA(lastbyte); // no ack on last byte ... lastbyte = 1 for the last byte
+     31                BitDelay();
+     32                SetSCLHigh();
+     33                BitDelay();
+     34                WriteSCL(0);
+     35                BitDelay();
+     36                WriteSDA(1);
+     37                BitDelay();
+     38                
+     39                return(result);
+     40            
+     41            }
+
+Source file: c:\projects\at17c8515\getbyte.c
+Errors: none
+Warnings: none
+Code size: 66
+Constant size: 0
+Static variable size: 0
+

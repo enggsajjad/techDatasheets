@@ -1,0 +1,1022 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0047)http://home.iae.nl/users/pouweha/lcd/lcd0.shtml -->
+<HTML lang=en><HEAD><TITLE>How to control a HD44780-based Character-LCD</TITLE><!-- No "Redirect" defined -->
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META http-equiv=Content-Style-Type content=text/css>
+<META http-equiv=Content-Script-Type content=text/javascript>
+<META http-equiv=expires content=now>
+<META http-equiv=pragma content=no-cache>
+<META content="© 1995-2004 Peter Ouwehand. All Rights Reserved" name=Copyright>
+<META content="Peter Ouwehand" name=Author>
+<META content=info-hd.44780@iae.nl name=E-mail>
+<META content="How to control a HD44780-based Character-LCD" name=Description>
+<META 
+content="HD44780, LCD, Liquid Crystal Display, Character LCD, Industry Standard Character LCD, Hitachi, Optrex, Intel, Philips, 8051, PIC, MicroChip, 16C84, Atmel, AT90S2313" 
+name=KeyWords>
+<META content="index, follow" name=robots><!-- <base target="main"> --><!-- <base target="_top"> --><!-- <base target="_blank"> --><LINK 
+href="How to control a HD44780-based Character-LCD_files/lcd.css" type=text/css 
+rel=stylesheet>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY>
+<DIV class=pagename>How to control a HD44780-based Character-LCD </DIV>
+<CENTER><FONT size=+2>(Industry-Standard-Character-LCD)<BR>General info and 
+code-examples<BR></FONT>Visitor # <IMG alt=counter 
+src="How to control a HD44780-based Character-LCD_files/pouweha7.gif" 
+align=bottom><BR><BR><IMG height=1 alt=line 
+src="How to control a HD44780-based Character-LCD_files/line013.gif" 
+width="100%"> 
+<DIV class=copy><A 
+href="mailto:info-hd.44780@iae.nl?subject=How to control a HD44780-based Character-LCD">© 
+1995-2004 Peter Ouwehand.</A><BR>Last updated on 2004-04-29<BR></DIV>
+<DIV class=breakout>If these pages are stuck in someone elses frame,<BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd.shtml" target=_blank>click here 
+to open them in a new browser window</A><BR>Best viewed using at least a 
+1024x768x256 display mode.<BR></DIV><IMG height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> </CENTER><A name=TOC></A>
+<H2>0. Table Of Contents</H2>
+<UL>
+  <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#general">1. 
+  General</A> 
+  <UL>
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#disclaimer">1.1. 
+    Disclaimer</A> 
+    <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#usage">1.2. 
+    Usage</A> 
+    <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#purpose">1.3. 
+    Purpose</A> </LI></UL></LI></UL>
+<UL>
+  <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#hd44780">2. 
+  HD44780-based LCD modules</A> 
+  <UL>
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#pin_assignment">2.1. 
+    Pin assignment</A> 
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#instruction_set">2.2. 
+    Instruction set</A> 
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#visible_ddram">2.3. 
+    Visible DDRAM addresses</A> 
+    <UL>
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#1_line_displays">2.3.1. 
+      1-line displays</A> 
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#2_line_displays">2.3.2. 
+      2-line displays</A> 
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#4_line_displays">2.3.3. 
+      4-line displays</A> </LI></UL>
+    <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#transfer">2.4. 
+    Interfacing</A> 
+    <UL>
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#8bit-transfer">2.4.1. 
+      8-bit interface</A> 
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#4bit-transfer">2.4.2. 
+      4-bit interface</A> </LI></UL>
+    <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#charset">2.5. 
+    Character set</A> 
+    <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#related">2.6. 
+    Related pages</A> </LI></UL></LI></UL>
+<UL>
+  <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_example">3. 
+  8051 example</A> 
+  <UL>
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_basic_software">3.1. 
+    Basic control software</A> 
+    <UL>
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_requirments">3.1.1. 
+      Requirements / features</A> 
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_basic_globals">3.1.2. 
+      Global declarations</A> 
+      <UL>
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_basic_regs">3.1.2.1. 
+        Register declarations</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_basic_lits">3.1.2.2. 
+        Literal declarations</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_basic_proc">3.1.2.3. 
+        Procedure declarations / library interface</A> </LI></UL>
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_basic_code">3.1.3. 
+      Code</A> 
+      <UL>
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_init">3.1.3.1. 
+        LCD initialisation</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_busy">3.1.3.2. 
+        Busy flag</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_clear">3.1.3.3. 
+        Clear display</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_home">3.1.3.4. 
+        Cursor home</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_entry">3.1.3.5. 
+        Entry mode</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_dmode">3.1.3.6. 
+        Display mode</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_scga">3.1.3.7. 
+        Set character generator RAM address</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_sdda">3.1.3.8. 
+        Set display data RAM address</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_gaddr">3.1.3.9. 
+        Get address counter contents</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_lcdwc">3.1.3.10. 
+        Write character</A> </LI></UL></LI></UL>
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_advanced_software">3.2. 
+    Advanced control software</A> 
+    <UL>
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_advanced_requirments">3.2.1. 
+      Requirements / features</A> 
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_advanced_globals">3.2.2. 
+      Global declarations</A> 
+      <UL>
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_advanced_proc">3.2.2.1. 
+        Procedure declarations / library interface</A> </LI></UL>
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_advanced_code">3.2.3. 
+      Code</A> 
+      <UL>
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_userchar">3.2.3.1. 
+        User defined characters</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_scp">3.2.3.2. 
+        Set cursor position</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_wc">3.2.3.3. 
+        Write character</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_wsa">3.2.3.4. 
+        Write string</A> <!--
+ write string code / ext.ram
+
+-->
+        <LI>... </LI></UL></LI></UL>
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_availability">3.3. 
+    Availability</A> 
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_target_hardware">3.4. 
+    Target hardware</A> 
+    <UL>
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_controller">3.4.1. 
+      Controller</A> 
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_interface">3.4.2. 
+      Interface</A> 
+      <UL>
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_lcd_sch">3.4.2.1. 
+        LCD interface</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_address_sch">3.4.2.2. 
+        Address decoder example</A> </LI></UL></LI></UL>
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_development_environment">3.5. 
+    Development environment</A> 
+    <UL>
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_dev_software">3.5.1. 
+      Software</A> 
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml#8051_dev_hardware">3.5.2. 
+      Hardware</A> </LI></UL></LI></UL></LI></UL>
+<UL>
+  <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_example">4. 
+  PIC example</A> 
+  <UL>
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_basic_software">4.1. 
+    Basic control software</A> 
+    <UL>
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_requirments">4.1.1. 
+      Requirements / features</A> 
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_basic_globals">4.1.2. 
+      Global declarations</A> 
+      <UL>
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_basic_regs">4.1.2.1. 
+        Register declarations</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_basic_lits">4.1.2.2. 
+        Literal declarations</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_basic_proc">4.1.2.3. 
+        Procedure declarations / library interface</A> </LI></UL>
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_basic_code">4.1.3. 
+      Code</A> 
+      <UL>
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_lcd_init">4.1.3.1. 
+        LCD initialisation</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_lcd_busy">4.1.3.2. 
+        Busy flag</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_lcd_clear">4.1.3.3. 
+        Clear display</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_lcd_home">4.1.3.4. 
+        Cursor home</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_lcd_entry">4.1.3.5. 
+        Entry mode</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_lcd_dmode">4.1.3.6. 
+        Display mode</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_lcd_scga">4.1.3.7. 
+        Set character generator RAM address</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_lcd_sdda">4.1.3.8. 
+        Set display data RAM address</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_lcd_gaddr">4.1.3.9. 
+        Get address counter contents</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_lcd_putchar">4.1.3.10. 
+        Write character</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_lcd_putcmd">4.1.3.11. 
+        Write command</A> 
+        <LI><A 
+        href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_delay">4.1.3.12. 
+        Delay loops</A> </LI></UL></LI></UL>
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_advanced_software">4.2. 
+    Advanced control software</A> 
+    <UL>
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_userchar">4.2.1. 
+      User defined characters</A> 
+      <LI>... </LI></UL>
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_availability">4.3. 
+    Availability</A> 
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_used_hardware">4.4. 
+    Target hardware</A> 
+    <UL>
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_controller">4.4.1 
+      Controller</A> 
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_interface">4.4.2 
+      Interface</A> </LI></UL>
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_development_environment">4.5. 
+    Development environment</A> 
+    <UL>
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_dev_software">4.5.1. 
+      Software</A> 
+      <LI><A 
+      href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml#PIC_dev_hardware">4.5.2. 
+      Hardware</A> </LI></UL></LI></UL></LI></UL>
+<UL>
+  <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd_examp.shtml#start">5. 
+  Miscellaneous examples</A> 
+  <UL>
+    <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd_examp.shtml#1">5.1. 
+    PIC16C54 using only 3 lines</A> 
+    <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd_examp.shtml#2">5.2. 
+    ATMEL AT90S2313-10PI C-demo</A> 
+    <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd_examp.shtml#3">5.3. 
+    Variant on PIC16C54 using only 3 lines</A> 
+    <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd_examp.shtml#4">5.4. 
+    Other information sources</A> </LI></UL></LI></UL>
+<UL>
+  <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd_md.shtml#start">6. 
+  Manufacturers and Distributors</A> 
+  <UL>
+    <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd_md.shtml#Europe">6.1. 
+    Europe</A> 
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd_md.shtml#North_Am">6.2. North 
+    America</A> 
+    <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd_md.shtml#Asia">6.3. 
+    Asia</A> 
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd_md.shtml#Australia">6.4. 
+    Australia</A> 
+    <LI><A 
+    href="http://home.iae.nl/users/pouweha/lcd/lcd_md.shtml#South_Am">6.5. South 
+    America</A> 
+    <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd_md.shtml#Africa">6.6. 
+    Africa</A> 
+    <LI><A href="http://home.iae.nl/users/pouweha/lcd/lcd_md.shtml#Others">6.7. 
+    Others</A> </LI></UL></LI></UL><IMG height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=general></A>
+<H2>1. General</H2><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=disclaimer></A>
+<H3>1.1. Disclaimer</H3>THIS DOCUMENT IS PROVIDED TO THE USER ''AS IS''. 
+Etc.etc.<BR><BR>All information in this document is to the best of my 
+knowledge.<BR>The 8051 PL/M51 software is used in applications using 2*16, 2*20, 
+4*20 and 2*40 LC-Displays.<BR>The PIC ASM software is used in applications using 
+2*20, 4*20 and 2*40 LC-Displays.<BR>So there should be no risk, but there's 
+still Murphy.<BR><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=usage></A>
+<H3>1.2. Usage</H3><A 
+href="mailto:info-hd.44780@iae.nl?subject=How to control a HD44780-based Character-LCD">Tell 
+me about your applications.</A><BR><A 
+href="http://postcards.www.media.mit.edu/Postcards/Welcome.html">Send a 
+postcard</A><BR><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=purpose></A>
+<H3>1.3. Purpose</H3>Uuuhm..<BR><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=hd44780></A>
+<H2>2. HD44780-based LCD modules</H2>Data from <CITE>HITACHI LIQUID CRYSTAL 
+CHARACTER DISPLAY MODULE</CITE> and <CITE>OPTREX DOT MATRIX LCD MODULE</CITE> 
+databooks.<BR><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=pin_assignment></A>
+<H3>2.1. Pin assignment</H3>The pin assignment shown in <I>Table 2.1.</I> is the 
+industry standard for character LCD-modules with a <I>maximum of</I> 80 
+characters.<BR>The pin assignment shown in <I>Table 2.2.</I> is the industry 
+standard for character LCD-modules with <I>more than</I> 80 
+characters.<BR><BR>To be sure <B>always</B> check the manufacturers 
+datasheet!<BR>To locate pin 1 on a module check the manufacturers datasheet!<BR>
+<P>
+<TABLE width="80%" border=1>
+  <CAPTION><I>Table 2.1., Pin assignment for &lt;= 80 character displays</I> 
+  </CAPTION>
+  <THEAD>
+  <TR>
+    <TH vAlign=center width="5%">Pin number</TH>
+    <TH vAlign=center width="10%">Symbol</TH>
+    <TH vAlign=center width="10%">&nbsp;Level&nbsp;&nbsp;</TH>
+    <TH vAlign=center width="10%">I/O</TH>
+    <TH vAlign=center width="65%">Function</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD align=middle>1</TD>
+    <TD align=middle>Vss</TD>
+    <TD align=middle>-</TD>
+    <TD align=middle>-</TD>
+    <TD>Power supply (GND)</TD></TR>
+  <TR>
+    <TD align=middle>2</TD>
+    <TD align=middle>Vcc</TD>
+    <TD align=middle>-</TD>
+    <TD align=middle>-</TD>
+    <TD>Power supply (+5V)</TD></TR>
+  <TR>
+    <TD align=middle>3</TD>
+    <TD align=middle>Vee</TD>
+    <TD align=middle>-</TD>
+    <TD align=middle>-</TD>
+    <TD>Contrast adjust</TD></TR>
+  <TR>
+    <TD align=middle>4</TD>
+    <TD align=middle>RS</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I</TD>
+    <TD>0 = Instruction input<BR>1 = Data input</TD></TR>
+  <TR>
+    <TD align=middle>5</TD>
+    <TD align=middle>R/W</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I</TD>
+    <TD>0 = Write to LCD module<BR>1 = Read from LCD module</TD></TR>
+  <TR>
+    <TD align=middle>6</TD>
+    <TD align=middle>E</TD>
+    <TD align=middle>1, 1-&gt;0</TD>
+    <TD align=middle>I</TD>
+    <TD>Enable signal</TD></TR>
+  <TR>
+    <TD align=middle>7</TD>
+    <TD align=middle>DB0</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 0 (LSB)</TD></TR>
+  <TR>
+    <TD align=middle>8</TD>
+    <TD align=middle>DB1</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 1</TD></TR>
+  <TR>
+    <TD align=middle>9</TD>
+    <TD align=middle>DB2</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 2</TD></TR>
+  <TR>
+    <TD align=middle>10</TD>
+    <TD align=middle>DB3</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 3</TD></TR>
+  <TR>
+    <TD align=middle>11</TD>
+    <TD align=middle>DB4</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 4</TD></TR>
+  <TR>
+    <TD align=middle>12</TD>
+    <TD align=middle>DB5</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 5</TD></TR>
+  <TR>
+    <TD align=middle>13</TD>
+    <TD align=middle>DB6</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 6</TD></TR>
+  <TR>
+    <TD align=middle>14</TD>
+    <TD align=middle>DB7</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 7 (MSB)</TD></TR></TBODY></TABLE>
+<P>
+<TABLE width="80%" border=1>
+  <CAPTION><I>Table 2.2., Pin assignment for &gt; 80 character displays</I> 
+  </CAPTION>
+  <THEAD>
+  <TR>
+    <TH vAlign=center width="5%">Pin number</TH>
+    <TH vAlign=center width="10%">Symbol</TH>
+    <TH vAlign=center width="10%">&nbsp;Level&nbsp;&nbsp;</TH>
+    <TH vAlign=center width="10%">I/O</TH>
+    <TH vAlign=center width="65%">Function</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD align=middle>1</TD>
+    <TD align=middle>DB7</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 7 (MSB)</TD></TR>
+  <TR>
+    <TD align=middle>2</TD>
+    <TD align=middle>DB6</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 6</TD></TR>
+  <TR>
+    <TD align=middle>3</TD>
+    <TD align=middle>DB5</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 5</TD></TR>
+  <TR>
+    <TD align=middle>4</TD>
+    <TD align=middle>DB4</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 4</TD></TR>
+  <TR>
+    <TD align=middle>5</TD>
+    <TD align=middle>DB3</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 3</TD></TR>
+  <TR>
+    <TD align=middle>6</TD>
+    <TD align=middle>DB2</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 2</TD></TR>
+  <TR>
+    <TD align=middle>7</TD>
+    <TD align=middle>DB1</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 1</TD></TR>
+  <TR>
+    <TD align=middle>8</TD>
+    <TD align=middle>DB0</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I/O</TD>
+    <TD>Data bus line 0 (LSB)</TD></TR>
+  <TR>
+    <TD align=middle>9</TD>
+    <TD align=middle>E1</TD>
+    <TD align=middle>1, 1-&gt;0</TD>
+    <TD align=middle>I</TD>
+    <TD>Enable signal row 0 &amp; 1 (1<SUP>st</SUP>controller)</TD></TR>
+  <TR>
+    <TD align=middle>10</TD>
+    <TD align=middle>R/W</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I</TD>
+    <TD>0 = Write to LCD module<BR>1 = Read from LCD module</TD></TR>
+  <TR>
+    <TD align=middle>11</TD>
+    <TD align=middle>RS</TD>
+    <TD align=middle>0/1</TD>
+    <TD align=middle>I</TD>
+    <TD>0 = Instruction input<BR>1 = Data input</TD></TR>
+  <TR>
+    <TD align=middle>12</TD>
+    <TD align=middle>Vee</TD>
+    <TD align=middle>-</TD>
+    <TD align=middle>-</TD>
+    <TD>Contrast adjust</TD></TR>
+  <TR>
+    <TD align=middle>13</TD>
+    <TD align=middle>Vss</TD>
+    <TD align=middle>-</TD>
+    <TD align=middle>-</TD>
+    <TD>Power supply (GND)</TD></TR>
+  <TR>
+    <TD align=middle>14</TD>
+    <TD align=middle>Vcc</TD>
+    <TD align=middle>-</TD>
+    <TD align=middle>-</TD>
+    <TD>Power supply (+5V)</TD></TR>
+  <TR>
+    <TD align=middle>15</TD>
+    <TD align=middle>E2</TD>
+    <TD align=middle>1, 1-&gt;0</TD>
+    <TD align=middle>I</TD>
+    <TD>Enable signal row 2 &amp; 3 (2<SUP>nd</SUP>controller)</TD></TR>
+  <TR>
+    <TD align=middle>16</TD>
+    <TD align=middle>n.c.</TD>
+    <TD align=middle>&nbsp;</TD>
+    <TD align=middle>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR></TBODY></TABLE><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=instruction_set></A>
+<H3>2.2. Instruction set</H3>
+<TABLE width="100%" border=1>
+  <CAPTION><I>Table 2.3. HD44780 instruction set</I> </CAPTION>
+  <THEAD>
+  <TR>
+    <TH vAlign=center width="10%" rowSpan=2>Instruction</TH>
+    <TH vAlign=top width="30%" colSpan=10>Code</TH>
+    <TH vAlign=center width="50%" rowSpan=2>Description</TH>
+    <TH vAlign=top width="3%" rowSpan=2>Execution time**</TH></TR>
+  <TR>
+    <TH>RS</TH>
+    <TH>R/W</TH>
+    <TH>DB7</TH>
+    <TH>DB6</TH>
+    <TH>DB5</TH>
+    <TH>DB4</TH>
+    <TH>DB3</TH>
+    <TH>DB2</TH>
+    <TH>DB1</TH>
+    <TH>DB0</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD>Clear display</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>1</TD>
+    <TD>Clears display and returns cursor to the home position (address 0).</TD>
+    <TD align=middle>1.64mS</TD></TR>
+  <TR>
+    <TD>Cursor home</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle>*</TD>
+    <TD>Returns cursor to home position (address 0). Also returns display 
+      being shifted to the original position. DDRAM contents remains 
+    unchanged.</TD>
+    <TD align=middle>1.64mS</TD></TR>
+  <TR>
+    <TD>Entry mode set</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle>I/D</TD>
+    <TD align=middle>S</TD>
+    <TD>Sets cursor move direction (I/D), specifies to shift the display (S). 
+      These operations are performed during data read/write.</TD>
+    <TD align=middle>40uS</TD></TR>
+  <TR>
+    <TD>Display On/Off control</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle>D</TD>
+    <TD align=middle>C</TD>
+    <TD align=middle>B</TD>
+    <TD>Sets On/Off of all display (D), cursor On/Off (C) and blink of cursor 
+      position character (B).</TD>
+    <TD align=middle>40uS</TD></TR>
+  <TR>
+    <TD>Cursor/display shift</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle>S/C</TD>
+    <TD align=middle>R/L</TD>
+    <TD align=middle>*</TD>
+    <TD align=middle>*</TD>
+    <TD>Sets cursor-move or display-shift (S/C), shift direction (R/L). DDRAM 
+      contents remains unchanged.</TD>
+    <TD align=middle>40uS</TD></TR>
+  <TR>
+    <TD>Function set</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle>DL</TD>
+    <TD align=middle>N</TD>
+    <TD align=middle>F</TD>
+    <TD align=middle>*</TD>
+    <TD align=middle>*</TD>
+    <TD>Sets interface data length (DL), number of display line (N) and 
+      character font(F).</TD>
+    <TD align=middle>40uS</TD></TR>
+  <TR>
+    <TD>Set CGRAM address</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle colSpan=6>CGRAM address</TD>
+    <TD>Sets the CGRAM address. CGRAM data is sent and received after this 
+      setting.</TD>
+    <TD align=middle>40uS</TD></TR>
+  <TR>
+    <TD>Set DDRAM address</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle colSpan=7>DDRAM address</TD>
+    <TD>Sets the DDRAM address. DDRAM data is sent and received after this 
+      setting.</TD>
+    <TD align=middle>40uS</TD></TR>
+  <TR>
+    <TD>Read busy-flag and address counter</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle>BF</TD>
+    <TD align=middle colSpan=7>CGRAM / DDRAM address</TD>
+    <TD>Reads Busy-flag (BF) indicating internal operation is being performed 
+      and reads CGRAM or DDRAM address counter contents (depending on previous 
+      instruction).</TD>
+    <TD align=middle>0uS</TD></TR>
+  <TR>
+    <TD>Write to CGRAM or DDRAM</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle>0</TD>
+    <TD align=middle colSpan=8>write data</TD>
+    <TD>Writes data to CGRAM or DDRAM.</TD>
+    <TD align=middle>40uS</TD></TR>
+  <TR>
+    <TD>Read from CGRAM or DDRAM</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle colSpan=8>read data</TD>
+    <TD>Reads data from CGRAM or DDRAM.</TD>
+    <TD align=middle>40uS</TD></TR></TBODY></TABLE><B>Remarks:</B><BR>- DDRAM = 
+Display Data RAM.<BR>- CGRAM = Character Generator RAM.<BR>- DDRAM address 
+corresponds to cursor position.<BR>- * = Don't care.<BR>- ** = Based on 
+F<SUB>osc</SUB> = 250kHz. 
+<P>
+<TABLE width="80%" border=1>
+  <CAPTION><I>Table 2.4. Bit names</I> </CAPTION>
+  <THEAD>
+  <TR>
+    <TH width="10%">Bit name</TH>
+    <TH width="90%" colSpan=2>Setting / Status</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD align=middle>I/D</TD>
+    <TD>0 = Decrement cursor position</TD>
+    <TD>1 = Increment cursor position</TD></TR>
+  <TR>
+    <TD align=middle>S</TD>
+    <TD>0 = No display shift</TD>
+    <TD>1 = Display shift</TD></TR>
+  <TR>
+    <TD align=middle>D</TD>
+    <TD>0 = Display off</TD>
+    <TD>1 = Display on</TD></TR>
+  <TR>
+    <TD align=middle>C</TD>
+    <TD>0 = Cursor off</TD>
+    <TD>1 = Cursor on</TD></TR>
+  <TR>
+    <TD align=middle>B</TD>
+    <TD>0 = Cursor blink off</TD>
+    <TD>1 = Cursor blink on</TD></TR>
+  <TR>
+    <TD align=middle>S/C</TD>
+    <TD>0 = Move cursor</TD>
+    <TD>1 = Shift display</TD></TR>
+  <TR>
+    <TD align=middle>R/L</TD>
+    <TD>0 = Shift left</TD>
+    <TD>1 = Shift right</TD></TR>
+  <TR>
+    <TD align=middle>DL</TD>
+    <TD>0 = 4-bit interface</TD>
+    <TD>1 = 8-bit interface</TD></TR>
+  <TR>
+    <TD align=middle>N</TD>
+    <TD>0 = 1/8 or 1/11 Duty (1 line)</TD>
+    <TD>1 = 1/16 Duty (2 lines)</TD></TR>
+  <TR>
+    <TD align=middle>F</TD>
+    <TD>0 = 5x7 dots</TD>
+    <TD>1 = 5x10 dots</TD></TR>
+  <TR>
+    <TD align=middle>BF</TD>
+    <TD>0 = Can accept instruction</TD>
+    <TD>1 = Internal operation in progress</TD></TR></TBODY></TABLE><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=visible_ddram></A>
+<H3>2.3. Visible DDRAM addresses</H3><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=1_line_displays></A>
+<H4>2.3.1. 1-line displays</H4>Shown after reset (with N=0).<BR><IMG height=40 
+alt="1-line LCD" 
+src="How to control a HD44780-based Character-LCD_files/lcd-1l.gif" width=970> 
+<TABLE width="80%" border=1>
+  <CAPTION><I>Table 2.5. DDRAM address usage for a 1-line LCD</I> </CAPTION>
+  <THEAD>
+  <TR>
+    <TH rowSpan=2>Display size</TH>
+    <TH colSpan=2>Visible</TH></TR>
+  <TR>
+    <TH>Character positions</TH>
+    <TH>DDRAM addresses</TH></TR></THEAD>
+  <TBODY align=middle>
+  <TR>
+    <TD>1*8</TD>
+    <TD>00..07</TD>
+    <TD>0x00..0x07</TD></TR>
+  <TR>
+    <TD>1*16</TD>
+    <TD>00..15</TD>
+    <TD>0x00..0x0F <SPAN class=usercomment>[1] [2] [3] [4]</SPAN></TD></TR>
+  <TR>
+    <TD>1*20</TD>
+    <TD>00..19</TD>
+    <TD>0x00..0x13</TD></TR>
+  <TR>
+    <TD>1*24</TD>
+    <TD>00..23</TD>
+    <TD>0x00..0x17</TD></TR>
+  <TR>
+    <TD>1*32</TD>
+    <TD>00..31</TD>
+    <TD>0x00..0x1F</TD></TR>
+  <TR>
+    <TD>1*40</TD>
+    <TD>00..39</TD>
+    <TD>0x00..0x27</TD></TR></TBODY></TABLE><BR>
+<DIV class=usercomment>[1] Peter Bozzay:<BR>Found DDRAM addresses 0x00..0x07 + 
+0x40..0x47 to be functional for a 1*16 display size.<BR>Make/model: not 
+mentioned / SC1601AS*B.<BR>[2] Hendrik Abma:<BR>Found DDRAM addresses 0x00..0x07 
++ 0x40..0x47 to be functional for a 1*16 display size.<BR>Make/model: Samtron / 
+KP-03.<BR><!-- Make/model: <a href="http://www.samtron.com/">Samtron</a> / KP-03.<br> -->[3] 
+Luigi Candurro:<BR>Found DDRAM addresses 0x00..0x07 + 0x40..0x47 to be 
+functional for a 1*16 display size.<BR>Make/model: <A 
+href="http://www.cct.com.my/">Crystal Clear Technology</A> / CMC116-01.<BR><!-- No further information available in CMC116-01.zip -->[4] 
+Thierry Giorgetti:<BR>Found DDRAM addresses 0x00..0x07 + 0x40..0x47 to be 
+functional for a 1*16 display size.<BR>Make/model: <A 
+href="http://www.lcdchina.com/eindex.asp">Xiamen Ocular</A> / GDM1601c (Local 
+copy available as <A 
+href="http://home.iae.nl/users/pouweha/lcd/zips/GDM1601C.zip">zipped file</A>, 
+approx 278kB).<BR></DIV><BR><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=2_line_displays></A>
+<H4>2.3.2. 2-line displays</H4>Shown after reset (with N=1).<BR><IMG height=50 
+alt="2-line LCD" 
+src="How to control a HD44780-based Character-LCD_files/lcd-2l.gif" width=971> 
+<TABLE width="80%" border=1>
+  <CAPTION><I>Table 2.6. DDRAM address usage for a 2-line LCD</I> </CAPTION>
+  <THEAD>
+  <TR>
+    <TH rowSpan=2>Display size</TH>
+    <TH colSpan=2>Visible</TH></TR>
+  <TR>
+    <TH>Character positions</TH>
+    <TH>DDRAM addresses</TH></TR></THEAD>
+  <TBODY align=middle>
+  <TR>
+    <TD>2*16</TD>
+    <TD>00..15</TD>
+    <TD>0x00..0x0F + 0x40..0x4F <SPAN class=usercomment>[1]</SPAN></TD></TR>
+  <TR>
+    <TD>2*20</TD>
+    <TD>00..19</TD>
+    <TD>0x00..0x13 + 0x40..0x53</TD></TR>
+  <TR>
+    <TD>2*24</TD>
+    <TD>00..23</TD>
+    <TD>0x00..0x17 + 0x40..0x57</TD></TR>
+  <TR>
+    <TD>2*32</TD>
+    <TD>00..31</TD>
+    <TD>0x00..0x1F + 0x40..0x5F</TD></TR>
+  <TR>
+    <TD>2*40</TD>
+    <TD>00..39</TD>
+    <TD>0x00..0x27 + 0x40..0x67</TD></TR></TBODY></TABLE><BR>
+<DIV class=usercomment>[1] Author:<BR>According to their datasheets DDRAM 
+addresses 0x80..0x8F + 0xC0..0xCF are used.<BR>Make/model: <A 
+href="http://www.edtc.com/">Emerging Display Technologies</A> / EW162G0YMY 
+&nbsp;&nbsp;(Local copy available as <A 
+href="http://home.iae.nl/users/pouweha/lcd/zips/162G0LED.zip">zipped file</A>, 
+approx 85kB).<BR>Make/model: <A 
+href="http://www.mitsutech.com.tw/edt_character.htm">Mitsutech</A> / EW162G0YMY 
+&nbsp;&nbsp;(Local copy available as <A 
+href="http://home.iae.nl/users/pouweha/lcd/zips/ew162g0led.zip">zipped file</A>, 
+approx 86kB).<BR></DIV><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=4_line_displays></A>
+<H4>2.3.3. 4-line displays</H4>Shown after reset (with N=1).<BR><IMG height=80 
+alt="4-line LCD" 
+src="How to control a HD44780-based Character-LCD_files/lcd-4l.gif" width=570> 
+<TABLE border=1>
+  <CAPTION><I>Table 2.7. DDRAM address usage for a 4-line LCD</I> </CAPTION>
+  <THEAD>
+  <TR>
+    <TH rowSpan=2>Display size</TH>
+    <TH colSpan=2>Visible</TH></TR>
+  <TR>
+    <TH>Character positions</TH>
+    <TH>DDRAM addresses</TH></TR></THEAD>
+  <TBODY align=middle>
+  <TR>
+    <TD>4*16</TD>
+    <TD>00..15</TD>
+    <TD>0x00..0x0F + 0x40..0x4F + 0x14..0x23 + 0x54..0x63 <SPAN 
+      class=usercomment>[1] [2]</SPAN></TD></TR>
+  <TR>
+    <TD>4*20</TD>
+    <TD>00..19</TD>
+    <TD>0x00..0x13 + 0x40..0x53 + 0x14..0x27 + 0x54..0x67</TD></TR>
+  <TR>
+    <TD>4*40</TD>
+    <TD>(00..39) on 1<SUP>st</SUP> controller and<BR>(00..39) on 
+      2<SUP>nd</SUP> controller</TD>
+    <TD>(0x00..0x27 + 0x40..0x67) on 1<SUP>st</SUP> controller 
+      and<BR>(0x00..0x27 + 0x40..0x67) on 2<SUP>nd</SUP> 
+controller</TD></TR></TBODY></TABLE><BR>
+<DIV class=usercomment>[1] Rick Mann:<BR>Found DDRAM addresses 0x00..0x0F + 
+0x40..0x4F + 0x10..0x1F + 0x50..0x5F to be functional for a 4*16 display 
+size.<BR>Make/model: <A href="http://www.optrex.com/">Optrex</A> / 
+DMC16433.<BR>Author:<BR>This matches with the information mentioned in <A 
+href="http://www.optrex.com/pdfs/Dmcman_full.pdf">Dmcman_full.pdf</A> paragraph 
+1.7.6.4. Local copy available as <A 
+href="http://home.iae.nl/users/pouweha/lcd/zips/Dmcman_full.pdf.zip">zipped 
+file</A>, approx 176kB.<BR>[2] Tushar Rane:<BR>Found DDRAM addresses 0x00..0x0F 
++ 0x40..0x4F + 0x10..0x1F + 0x50..0x5F to be functional for a 4*16 display 
+size.<BR>Make/model: not mentioned / not mentioned.<BR></DIV><BR><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=transfer></A>
+<H3>2.4. Interfacing</H3><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=8bit-transfer></A>
+<H4>2.4.1. 8-bit interface</H4>Example of busy flag testing using an 8-bit 
+interface.<BR><IMG alt="8-bit interface" 
+src="How to control a HD44780-based Character-LCD_files/8bit-interface.gif"><BR><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=4bit-transfer></A>
+<H4>2.4.2. 4-bit interface</H4>Example of busy flag testing using a 4-bit 
+interface.<BR><IMG alt="4-bit interface" 
+src="How to control a HD44780-based Character-LCD_files/4bit-interface.gif"><BR><BR><BR><BR>Example 
+of data transfer using a 4-bit interface.<BR><IMG alt="4-bit interface" 
+src="How to control a HD44780-based Character-LCD_files/4bit-transfer.gif"><BR><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=charset></A>
+<H3>2.5. Character set</H3>Characterset for 5x7 dot font (to be 
+completed..)<BR><IMG height=500 alt="LCD character set" 
+src="How to control a HD44780-based Character-LCD_files/lcd-ch1a.gif" width=400 
+align=middle> <A 
+href="How to control a HD44780-based Character-LCD_files/lcd-ch1a.gif" 
+target="">Shift-Click to download gif.</A><BR><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><IMG 
+height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"> <A name=related></A>
+<H3>2.6. Related pages</H3>Private sites:<BR>- <A 
+href="http://www.repairfaq.org/filipg/LINK/F_Tech_LCD.html">Fil's FAQ-Link-In 
+Corner: LCD Technology FAQ</A><BR>- <A 
+href="http://www.repairfaq.org/filipg/LINK/F_LCD_HD44780.html">Fil's FAQ-Link-In 
+Corner: HD44780-based LCD</A><BR>- <A 
+href="http://www.doc.ic.ac.uk/~ih/doc/lcd/pc_example/">LCD Module to PC 
+Interfacing Example</A><BR>- <A 
+href="http://www.doc.ic.ac.uk/~ih/doc/lcd/">HD44780-based LCD 
+Modules</A><BR><BR>Commercial sites:<BR>- <A 
+href="http://www.eio.com/lcdintro.htm">LCD Intro</A><BR>- <A 
+href="http://www.hantronix.com/">HANTRONIX, Inc. Home Page</A><BR>- <A 
+href="http://www.shellyinc.com/eanmenu.htm">Shelly, Inc. - LCD Engineering 
+Application Notes</A><BR><BR><BR><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml#TOC">TOC</A><BR><!--
+	timing ?
+	display-address layout
+	CG address layout (example?)
+--><!--   empty paragraph entry
+<hr height=5>
+<a name="....">
+<h4>3.3.x. ....</h4>
+<pre>
+<b><i>Purpose:</i></b>
+....
+<b><i>Code:</i></b>
+....
+</pre>
+-->
+<P><IMG height=1 alt=line 
+src="D:\8051\How to control a HD44780-based Character-LCD_files\line013(1).gif" 
+width="100%"><BR>
+<DIV class=navigators><A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd0.shtml">General info</A> | <A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd1.shtml">8051 example</A> | <A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd2.shtml">PIC example</A> | <A 
+href="http://home.iae.nl/users/pouweha/lcd/lcd_examp.shtml">Misc. examples</A> | 
+<A href="http://home.iae.nl/users/pouweha/lcd/lcd_md.shtml">Manuf./Distrib.</A> 
+| <A href="http://home.iae.nl/users/pouweha/index.shtml" target=_top>Home</A> | 
+<A href="http://ouwehand.net/~peter/lcd/guestbook/gb_func.php?action=add" 
+target=main>Sign Guestbook</A><BR><A 
+href="http://ouwehand.net/~peter/lcd/guestbook/gb_func.php?action=view" 
+target=main>View Guestbook</A> </DIV><BR></BODY></HTML>

@@ -1,0 +1,108 @@
+
+//*********************************************************************************************************************//
+//    Project      : NexTek Service
+//    Author       : NexTek Service
+//    Company      : NexTek Service
+//    Start Date   : Nov 06th, 2003.
+//    Last Updated : Feb 17th, 2004.
+//    Version      : Final
+//    Device	   : xc2s150-5pq208 
+//    PROM	   : xcf01s
+//    Abstract     : 
+//
+//    Modification History:
+//======================================================================================================================
+//    Date                            By                       Version                Change Description
+//======================================================================================================================
+//    Feb 17th 2004             NexTek Service                  Final                   Original Version
+
+//*********************************************************************************************************************//
+module uart_top(// Inputs
+                clk_16MHz,
+                rst_n,
+                ser_data_frm_pc,
+                // Outputs
+                ser_data_to_pc,                             
+                //Monitoring Signals
+                clk_1200Hz,
+                clk_19200Hz
+               );
+//Inputs
+input     clk_16MHz ;
+input     rst_n ;
+input     ser_data_frm_pc ;
+
+//output
+output    clk_1200Hz ;
+output    clk_19200Hz ;
+output    ser_data_to_pc ;
+
+// Register ,Wire Declaration 
+reg [3:0]  count_div ;
+reg [9:0]  count_div_19200 ;
+reg        clk_19200Hz ;
+
+wire [7:0] dout_byte_wire ;
+wire       dout_rdy_wire ;
+wire       clk_1200Hz ;
+
+/////////////////////////////////////////////////////
+//////////////  CLOCK DIVIDER BLOCK /////////////////
+/////////////////////////////////////////////////////
+always @(posedge clk_16MHz or negedge rst_n)
+begin
+  if(~rst_n) 
+  begin
+    count_div_19200 <= 10'd0 ;
+    clk_19200Hz     <= 1'b0 ;
+  end
+//  else if(count_div_19200 == 10'd416) //for 16MHz divisor 
+ 
+  else if(count_div_19200 == 10'd519) //for 20MHz divisor is 519
+  begin
+    count_div_19200 <= 10'd0 ;
+    clk_19200Hz     <= ~clk_19200Hz;
+  end  
+  else 
+  begin
+    count_div_19200 <= count_div_19200 + 1;
+    clk_19200Hz     <= clk_19200Hz;
+  end   
+end
+
+always @(posedge clk_19200Hz or negedge rst_n) // This clock must be for 20 MHz
+begin
+  if(~rst_n)
+    count_div <= 4'd0 ;
+  else
+    count_div <= count_div + 1;
+end 
+
+assign clk_1200Hz = count_div[3];
+
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+
+// Uart Transmitter Module
+uat_top uat_top_inst(//Inputs
+                     .clk        (clk_1200Hz),      //1-bit System Clock input
+                     .rst_n      (rst_n),           //1-bit Asyncronous Active Low Reset input
+                     .din_rdy    (dout_rdy_wire),   
+                     .din_byte   (dout_byte_wire),  //8-bit data input in UART for Tx
+                     // Output
+                     .ser_out    (ser_data_to_pc),  //1-bit Tx data output from UART
+                     .uart_ready ()                 
+                    );
+              
+// Uart Reciever Module
+ uar_top uar_top_inst(// Inputs
+                     .clk            (clk_19200Hz),
+                     .rst_n          (rst_n),
+                     .ser_in         (ser_data_frm_pc),
+                     // Outputs
+                     .dout_rdy       (dout_rdy_wire),
+                     .dout_byte      (dout_byte_wire)
+                    );              
+                    
+endmodule

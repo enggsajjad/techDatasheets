@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0038)http://www.latke.net/lcd/lcdcmd.h.html -->
+<HTML><HEAD><TITLE>lcdcmd.h</TITLE>
+<META http-equiv=CONTENT-TYPE content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR>
+<META content="Andy Peters" name=AUTHOR>
+<META content=20040726;16232689 name=CREATED>
+<META content="Andy Peters" name=CHANGEDBY>
+<META content=20070109;16513160 name=CHANGED></HEAD>
+<BODY lang=en-US><PRE>/*
+ * lcdcmd.h: Convenient constants used by the LCD controller interface, lcd.c
+ *
+ * <FONT face="Courier New, monospace">©</FONT> 2004 ASP Digital.  All rights reserved.
+ * Andy Peters, devel@latke.net
+ */
+#ifndef _LCDCMD_H
+#define _LCDCMD_H
+
+/*
+ * LCD commands.
+ */
+// Clear display:
+const unsigned char	LCD_CLEAR = (1 &lt;&lt; 0);
+
+// return cursor and LCD to home position:
+const unsigned char LCD_HOME = (1 &lt;&lt; 1);
+
+// set cursor move direction:
+const unsigned char LCD_MOVEDIR = (1 &lt;&lt; 2);
+// shift display when byte written to display
+const unsigned char LCD_MOVEDIR_SHIFT = (1 &lt;&lt; 0);
+// increment the cursor after each byte written:
+const unsigned char LCD_MOVEDIR_ID = (1 &lt;&lt; 1);
+
+// Enable display/cursor:
+const unsigned char LCD_DISPEN = (1 &lt;&lt; 3);
+// turn cursor blink on:
+const unsigned char LCD_DISPEN_BLINK = (1 &lt;&lt; 0);
+// turn cursor on:
+const unsigned char LCD_DISPEN_CURSOR = (1 &lt;&lt; 1);
+// turn display on:
+const unsigned char LCD_DISPEN_DISP = (1 &lt;&lt; 2);
+
+// move cursor/shift display:
+const unsigned char LCD_MCSD = (1 &lt;&lt; 4);
+// direction of shift (right if set):
+const unsigned char LCD_MCSD_RL = (1 &lt;&lt; 2);
+// turn on display shift:
+const unsigned char LCD_MCSD_SC = (1 &lt;&lt; 3);
+
+// set interface length:
+const unsigned char LCD_SETIFLEN = (1 &lt;&lt; 5);
+// set character font 5x10 (1) or 5x7 (0)
+const unsigned char LCD_SETIFLEN_F = (1 &lt;&lt; 2);
+// set # of display lines 1 if 0, 2 if 1:
+const unsigned char LCD_SETIFLEN_N = (1 &lt;&lt; 3);
+// set interface length 8 bits if 1, 4 bits if 0
+const unsigned char LCD_SETIFLEN_DL = (1 &lt;&lt; 4);
+
+// move cursor into CGRAM:
+const unsigned char LCD_MOVERAM = (1 &lt;&lt; 6);
+
+// Move cursor to display:
+const unsigned char LCD_MOVEDISPLAY = (1 &lt;&lt; 7);
+
+#endif</PRE>
+<P>[<A href="http://www.latke.net/lcd/index.html">Back to main LCD 
+page</A>]</P></BODY></HTML>

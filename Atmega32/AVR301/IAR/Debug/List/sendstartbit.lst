@@ -1,0 +1,84 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:31:17                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\sendstartbit.c                #
+#       List file     =  c:\projects\at17c8515\debug\list\sendstartbit.lst   #
+#       Object file   =  c:\projects\at17c8515\debug\obj\sendstartbit.r90    #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Debug\Obj\ -e -gA   #
+#                        -RCODE -r0e -LC:\Projects\at17c8515\Debug\List\ -q  #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -K                       #
+#                        C:\Projects\at17c8515\SendStartBit.c                #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+   \                     	NAME	sendstartbit(17)
+   \                     	RSEG	CODE(0)
+   \                     	EXTERN	BitDelay
+   \                     	PUBLIC	SendStartBit
+   \                     	EXTERN	SetSCLHigh
+   \                     	EXTERN	WriteSCL
+   \                     	EXTERN	WriteSDA
+   \                     	EXTERN	?CL1S_1_30_L08
+   \                     	RSEG	CODE
+   \                     SendStartBit:
+      1          // SendStartBit.c
+      2          // generates a start bit
+      3          // start bit is a 1 to 0 transition on SDA while SCL is high
+      4          /*
+      5                   ____________
+      6                  /
+      7          SCL ___/
+      8              
+      9              __________
+     10                        \
+     11          SDA            \_____
+     12          
+     13          */
+     14           
+     15          #include "at17c.h"
+     16           
+     17          extern void WriteSCL(unsigned char state);
+     18          extern void WriteSDA(unsigned char state);
+     19          extern void BitDelay(void);
+     20          extern unsigned char SetSCLHigh(void);
+     21          
+     22          void SendStartBit(void) {
+     23              
+     24              WriteSDA(1);
+   \   00000000   01E0                       LDI     R16,1
+   \   00000002   ....                       RCALL   WriteSDA
+     25              BitDelay();
+   \   00000004   ....                       RCALL   BitDelay
+     26              SetSCLHigh();
+   \   00000006   ....                       RCALL   SetSCLHigh
+     27              BitDelay();
+   \   00000008   ....                       RCALL   BitDelay
+     28              WriteSDA(0);
+   \   0000000A   0027                       CLR     R16
+   \   0000000C   ....                       RCALL   WriteSDA
+     29              BitDelay();
+   \   0000000E   ....                       RCALL   BitDelay
+     30              WriteSCL(0);
+   \   00000010   0027                       CLR     R16
+   \   00000012   ....                       RCALL   WriteSCL
+     31              BitDelay();
+   \   00000014   ....                       RCALL   BitDelay
+     32          }
+   \   00000016   0895                       RET     
+   \                     	END
+
+Source file: c:\projects\at17c8515\sendstartbit.c
+Errors: none
+Warnings: none
+Code size: 24
+Constant size: 0
+Static variable size: 0
+

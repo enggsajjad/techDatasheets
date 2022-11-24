@@ -1,0 +1,115 @@
+//*****************************************************************************************//
+//    Project      : FIFO
+//    File         : fifo_ctrl.v
+//    Author       : NexTek Service
+//    Company      : NexTek Service
+//    Start Date   : Jan 06th, 2004.
+//    Last Updated : Feb 17th, 2004.
+//    Version      : Final
+//    Abstract     : This module implements the top level of FIFO (Dual Port Single Clock)
+//                   Including fifo Controller  and fifo RAM_80x8 
+//                   This is real time tested  Fifo (fifo Controller && fifo Ram_80x8)
+//    Modification History:
+//==========================================================================================
+//    Date                       By                 Version              Change Description
+//==========================================================================================
+//    Feb 17th, 2004      NexTek Service             Final                Original Version
+//******************************************************************************************//
+//      Design Block
+module   fifo_ctrl(// Inputs
+                    clk,                 // input clock signal 
+                    rst_n,               // input reset signal
+                    wrt_fifo_sig,        // input fifo write signal
+                    rd_fifo_sig,         // input fifo read signal
+                    din_fifo,            // input 8 bit data to Fifo
+                    // Outputs
+                    fifo_full,           // output fifo full signal
+                    fifo_empty,          // output fifo empty signal
+                    dout_frm_fifo        // output 8 bit data From Fifo
+                   );
+// I/O Ports Declarations                   
+// Inputs            
+input        clk ;
+input        rst_n ;
+input        wrt_fifo_sig ;
+input        rd_fifo_sig ;
+input [7:0]  din_fifo ;
+// Outputs
+output       fifo_full ;
+output       fifo_empty ;				   
+output [7:0] dout_frm_fifo ;
+
+// Intermediate Signal Declaration
+reg [7:0]  dout_frm_fifo ;
+reg [6:0]  wrt_ptr ;
+reg [6:0]  rd_ptr ;
+reg [6:0]  diff_ptr ;
+
+wire [7:0] dout_fifo ;
+wire       fifo_empty ;
+wire       fifo_full ;
+
+parameter  [6:0] DEPTH = 7'd80 ;
+
+// Registered Data Out from RAM Block
+always @(posedge clk or negedge rst_n)
+begin
+   if(~rst_n)
+      dout_frm_fifo <= #1 8'd0 ;
+   else
+      dout_frm_fifo <= #1 dout_fifo ;
+end
+
+// Write address for Ram (Writer Pointer)
+always @(posedge clk or negedge rst_n)
+begin
+   if(~rst_n)
+      wrt_ptr <= #1 7'd0 ;
+   else if(wrt_fifo_sig && wrt_ptr == DEPTH - 1)
+      wrt_ptr <= #1 7'd0 ;
+   else if(wrt_fifo_sig)
+      wrt_ptr <= #1 wrt_ptr + 1 ;
+   else
+      wrt_ptr <= #1 wrt_ptr ;
+end
+ 
+// Read address for Ram (Read Pointer)
+always @(posedge clk or negedge rst_n)
+begin
+   if(~rst_n) 
+      rd_ptr <= #1 7'd0 ;
+   else if(rd_fifo_sig && rd_ptr == DEPTH - 1) 
+      rd_ptr <= #1 7'd0 ;
+   else if(rd_fifo_sig) 
+      rd_ptr <= #1 rd_ptr + 1 ;
+   else 
+      rd_ptr <= #1 rd_ptr;
+end
+
+// Difference Pointer between Read And Write Pointer(Address)
+always @(posedge clk or negedge rst_n)
+begin
+   if(~rst_n)
+      diff_ptr <= #1 7'd0;
+   else if(wrt_ptr >= rd_ptr)
+      diff_ptr <= #1 wrt_ptr - rd_ptr;
+   else if(wrt_ptr < rd_ptr)
+      diff_ptr <= #1 DEPTH - rd_ptr + wrt_ptr;    
+   else
+      diff_ptr <= #1 diff_ptr;
+end
+//      Fifo Status Signals 
+assign fifo_full  = (diff_ptr == DEPTH - 1) ;   // indicate either Fifo is Full  Or Not
+assign fifo_empty = (diff_ptr == 7'd0) ;        // indicate either Fifo is Empty Or Not
+
+//  Instanciate RAM Block
+ram_80x8 ram_80x8_inst(// Inputs
+                       .clk                 (clk),
+                       .wrt_sig             (wrt_fifo_sig),
+                       .addr_w              (wrt_ptr),
+                       .addr_r              (rd_ptr),
+                       .din_ram             (din_fifo),
+                       // Output
+                       .dout_ram            (dout_fifo)   
+                      );
+endmodule

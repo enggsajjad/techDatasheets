@@ -1,0 +1,81 @@
+BODY {
+	BACKGROUND: #ffffcc; COLOR: black; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+A {
+	TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #0000ff
+}
+A:active {
+	COLOR: #ff0000
+}
+A:visited {
+	COLOR: #006600
+}
+H1 {
+	COLOR: blue; TEXT-ALIGN: center
+}
+H2 {
+	COLOR: red; TEXT-ALIGN: left
+}
+H3 {
+	COLOR: red; TEXT-ALIGN: left
+}
+H4 {
+	COLOR: red; TEXT-ALIGN: left
+}
+LI {
+	LIST-STYLE-POSITION: inside; LIST-STYLE-TYPE: none
+}
+.sitename {
+	MARGIN-TOP: 20px; FONT-WEIGHT: bold; FONT-SIZE: x-large; MARGIN-BOTTOM: 10px; COLOR: blue; FONT-STYLE: italic; TEXT-ALIGN: center
+}
+.pagename {
+	MARGIN-TOP: 20px; FONT-WEIGHT: bold; FONT-SIZE: x-large; MARGIN-BOTTOM: 10px; COLOR: blue; FONT-STYLE: italic; TEXT-ALIGN: center
+}
+.copy {
+	FONT-SIZE: x-small; TEXT-ALIGN: center
+}
+.breakout {
+	MARGIN-TOP: 10px; FONT-SIZE: x-small; TEXT-ALIGN: center
+}
+.navigators {
+	MARGIN-TOP: 10px; FONT-SIZE: x-small; MARGIN-BOTTOM: 20px; TEXT-ALIGN: center
+}
+.availability {
+	FONT-SIZE: x-small; COLOR: blue; TEXT-ALIGN: center
+}
+.usercomment {
+	FONT-SIZE: x-small; COLOR: purple; TEXT-ALIGN: left
+}
+SPAN.purpose {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; FONT-STYLE: italic
+}
+SPAN.code {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; FONT-STYLE: italic
+}
+DIV.code-purpose {
+	WIDTH: 100%; BORDER-TOP-STYLE: none; FONT-FAMILY: "Courier", monospace; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+UNKNOWN {
+	BORDER-LEFT-COLOR: #e0e0e0; BORDER-BOTTOM-COLOR: #e0e0e0; WIDTH: 100%; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #e0e0e0; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; BACKGROUND-COLOR: #e0e0e0; BORDER-RIGHT-COLOR: #e0e0e0; BORDER-BOTTOM-STYLE: solid
+}
+DIV.code-fragment {
+	BORDER-LEFT-COLOR: #e0e0e0; BORDER-BOTTOM-COLOR: #e0e0e0; WIDTH: 100%; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #e0e0e0; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; BACKGROUND-COLOR: #e0e0e0; BORDER-RIGHT-COLOR: #e0e0e0; BORDER-BOTTOM-STYLE: solid
+}
+DIV.remark {
+	FONT-SIZE: x-small; COLOR: red
+}
+PRE.code-purpose {
+	MARGIN-LEFT: 0px
+}
+PRE.code-fragment {
+	MARGIN-LEFT: 0px; WIDTH: 100%; BACKGROUND-COLOR: #cccccc
+}
+DIV.screen-fragment {
+	BORDER-LEFT-COLOR: #c0c0c0; BORDER-BOTTOM-COLOR: #e0e0e0; WIDTH: 100%; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #e0e0e0; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; BACKGROUND-COLOR: #e0e0e0; BORDER-RIGHT-COLOR: #c0c0c0; BORDER-BOTTOM-STYLE: solid
+}
+PRE.screen-fragment {
+	MARGIN-LEFT: 0px
+}

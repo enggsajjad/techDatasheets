@@ -1,0 +1,2778 @@
+; lcd106x56.SRC generated from: lcd106x56.c
+; COMPILER INVOKED BY:
+;        C:\Keil\C51\BIN\c51.exe lcd106x56.c DB OE SB ROM(COMPACT)
+
+$NOMOD51
+
+NAME	LCD106X56
+
+CCF2	BIT	0D8H.2
+TB80	BIT	098H.3
+SPI0CKR	DATA	09DH
+CCF3	BIT	0D8H.3
+P0	DATA	080H
+SPIEN	BIT	0F8H.0
+CCF4	BIT	0D8H.4
+SM00	BIT	098H.7
+P1	DATA	090H
+AA	BIT	0C0H.2
+SM10	BIT	098H.6
+WDTCN	DATA	0FFH
+P2	DATA	0A0H
+SM20	BIT	098H.5
+ADC0CF	DATA	0BCH
+P3	DATA	0B0H
+AC	BIT	0D0H.6
+ADC1CF	DATA	0ABH
+P4	DATA	084H
+EIE1	DATA	0E6H
+P5	DATA	085H
+EA	BIT	0A8H.7
+EIE2	DATA	0E7H
+P6	DATA	086H
+P7	DATA	096H
+PSCTL	DATA	08FH
+MSTEN	BIT	0F8H.1
+CF	BIT	0D8H.7
+ADC0CN	DATA	0E8H
+DAC0CN	DATA	0D4H
+DAC1CN	DATA	0D7H
+ADC1CN	DATA	0AAH
+P0MDOUT	DATA	0A4H
+P1MDOUT	DATA	0A5H
+IE	DATA	0A8H
+P2MDOUT	DATA	0A6H
+P3MDOUT	DATA	0A7H
+TMR3RLH	DATA	093H
+EIP1	DATA	0F6H
+EIP2	DATA	0F7H
+PCA0CPH0	DATA	0FAH
+PCA0CPH1	DATA	0FBH
+P3IF	DATA	0ADH
+TMR3RLL	DATA	092H
+PCA0CPH2	DATA	0FCH
+CR	BIT	0D8H.6
+PCA0CPH3	DATA	0FDH
+EXF2	BIT	0C8H.6
+REN0	BIT	098H.4
+PCA0CPH4	DATA	0FEH
+PCA0CPL0	DATA	0EAH
+EMI0CF	DATA	0A3H
+PCA0CPL1	DATA	0EBH
+PCA0CPM0	DATA	0DAH
+PCA0MD	DATA	0D9H
+PCA0CN	DATA	0D8H
+PCA0CPL2	DATA	0ECH
+PCA0CPM1	DATA	0DBH
+PCA0CPL3	DATA	0EDH
+PCA0CPM2	DATA	0DCH
+IP	DATA	0B8H
+PCA0CPL4	DATA	0EEH
+PCA0CPM3	DATA	0DDH
+PCA0CPM4	DATA	0DEH
+TXBSY	BIT	0F8H.3
+CY	BIT	0D0H.7
+SI	BIT	0C0H.3
+XBR0	DATA	0E1H
+SADEN0	DATA	0B9H
+XBR1	DATA	0E2H
+EMI0CN	DATA	0AFH
+SADEN1	DATA	0AEH
+XBR2	DATA	0E3H
+REF0CN	DATA	0D1H
+SADDR0	DATA	0A9H
+SADDR1	DATA	0F3H
+AMX0CF	DATA	0BAH
+AD0INT	BIT	0E8H.5
+RCAP2H	DATA	0CBH
+PS	BIT	0B8H.4
+SP	DATA	081H
+RCAP4H	DATA	0E5H
+EMI0TC	DATA	0A1H
+OV	BIT	0D0H.2
+SMB0CN	DATA	0C0H
+RCAP2L	DATA	0CAH
+MODF	BIT	0F8H.5
+RCAP4L	DATA	0E4H
+SMB0CR	DATA	0CFH
+CPT0CN	DATA	09EH
+P1MDIN	DATA	0BDH
+CPT1CN	DATA	09FH
+LCD_RST	BIT	0B0H.0
+SPI0CN	DATA	0F8H
+PCON	DATA	087H
+SPIF	BIT	0F8H.7
+P74OUT	DATA	0B5H
+TMOD	DATA	089H
+TCON	DATA	088H
+WCOL	BIT	0F8H.6
+AMX0SL	DATA	0BBH
+AMX1SL	DATA	0ACH
+TMR3CN	DATA	091H
+LCD_CD	BIT	0B0H.2
+IE0	BIT	088H.1
+IE1	BIT	088H.3
+B	DATA	0F0H
+DAC0H	DATA	0D3H
+ADC0H	DATA	0BFH
+OSCICN	DATA	0B2H
+DAC1H	DATA	0D6H
+SMBFTE	BIT	0C0H.1
+BUSY	BIT	0C0H.7
+DAC0L	DATA	0D2H
+ADC0L	DATA	0BEH
+DAC1L	DATA	0D5H
+ACC	DATA	0E0H
+ES0	BIT	0A8H.4
+AD0EN	BIT	0E8H.7
+CT2	BIT	0C8H.1
+ET0	BIT	0A8H.1
+LCD_CS	BIT	0B0H.1
+ET1	BIT	0A8H.3
+TF0	BIT	088H.5
+ET2	BIT	0A8H.5
+RI0	BIT	098H.0
+TF1	BIT	088H.7
+TF2	BIT	0C8H.7
+SMBTOE	BIT	0C0H.0
+TH0	DATA	08CH
+EX0	BIT	0A8H.0
+TI0	BIT	098H.1
+IT0	BIT	088H.0
+PCA0H	DATA	0F9H
+TH1	DATA	08DH
+EX1	BIT	0A8H.2
+IT1	BIT	088H.2
+TH2	DATA	0CDH
+P	BIT	0D0H.0
+TH4	DATA	0F5H
+OSCXCN	DATA	0B1H
+TL0	DATA	08AH
+PCA0L	DATA	0E9H
+TL1	DATA	08BH
+TL2	DATA	0CCH
+PT0	BIT	0B8H.1
+TL4	DATA	0F4H
+RS0	BIT	0D0H.3
+PT1	BIT	0B8H.3
+RS1	BIT	0D0H.4
+PT2	BIT	0B8H.5
+TR0	BIT	088H.4
+AD0TM	BIT	0E8H.6
+TR1	BIT	088H.6
+TR2	BIT	0C8H.2
+PX0	BIT	0B8H.0
+PX1	BIT	0B8H.2
+SLVSEL	BIT	0F8H.2
+DPH	DATA	083H
+RCLK0	BIT	0C8H.5
+ADC0GTH	DATA	0C5H
+TCLK0	BIT	0C8H.4
+DPL	DATA	082H
+LCD_SDAT	BIT	0B0H.6
+ADC0GTL	DATA	0C4H
+SBUF0	DATA	099H
+LCD_SCLK	BIT	0B0H.4
+SBUF1	DATA	0F2H
+ADC0LTH	DATA	0C7H
+EXEN2	BIT	0C8H.3
+RSTSRC	DATA	0EFH
+FLACL	DATA	0B7H
+CPRL2	BIT	0C8H.0
+SCON0	DATA	098H
+SCON1	DATA	0F1H
+ADC0LTL	DATA	0C6H
+T2CON	DATA	0C8H
+STA	BIT	0C0H.5
+T4CON	DATA	0C9H
+SMB0ADR	DATA	0C3H
+SMB0DAT	DATA	0C2H
+SPI0CFG	DATA	09AH
+TMR3H	DATA	095H
+CKCON	DATA	08EH
+RXOVRN	BIT	0F8H.4
+TMR3L	DATA	094H
+AD0LJST	BIT	0E8H.0
+F0	BIT	0D0H.5
+FLSCL	DATA	0B6H
+AD0CM0	BIT	0E8H.2
+F1	BIT	0D0H.1
+STO	BIT	0C0H.4
+ENSMB	BIT	0C0H.6
+AD0CM1	BIT	0E8H.3
+SPI0DAT	DATA	09BH
+AD0WINT	BIT	0E8H.1
+ADC1	DATA	09CH
+AD0BUSY	BIT	0E8H.4
+PSW	DATA	0D0H
+CCF0	BIT	0D8H.0
+RB80	BIT	098H.2
+SMB0STA	DATA	0C1H
+CCF1	BIT	0D8H.1
+?PR?lcd_init?LCD106X56                   SEGMENT CODE INBLOCK 
+?PR?_lcd_out_dat?LCD106X56               SEGMENT CODE INBLOCK 
+?PR?_lcd_out_ctl?LCD106X56               SEGMENT CODE INBLOCK 
+?PR?lcd_erase?LCD106X56                  SEGMENT CODE INBLOCK 
+?PR?_lcd_test?LCD106X56                  SEGMENT CODE INBLOCK 
+?PR?_lcd_clear_area?LCD106X56            SEGMENT CODE INBLOCK 
+?DT?_lcd_clear_area?LCD106X56            SEGMENT DATA OVERLAYABLE 
+?PR?_lcd_invert_area?LCD106X56           SEGMENT CODE INBLOCK 
+?DT?_lcd_invert_area?LCD106X56           SEGMENT DATA OVERLAYABLE 
+?PR?_lcd_horz_line?LCD106X56             SEGMENT CODE INBLOCK 
+?PR?_lcd_vert_line?LCD106X56             SEGMENT CODE INBLOCK 
+?PR?_lcd_clr_horz_line?LCD106X56         SEGMENT CODE INBLOCK 
+?PR?_lcd_clr_vert_line?LCD106X56         SEGMENT CODE INBLOCK 
+?PR?_lcd_box?LCD106X56                   SEGMENT CODE INBLOCK 
+?DT?_lcd_box?LCD106X56                   SEGMENT DATA OVERLAYABLE 
+?PR?_lcd_clr_box?LCD106X56               SEGMENT CODE INBLOCK 
+?DT?_lcd_clr_box?LCD106X56               SEGMENT DATA OVERLAYABLE 
+?PR?_lcd_glyph?LCD106X56                 SEGMENT CODE INBLOCK 
+?DT?_lcd_glyph?LCD106X56                 SEGMENT DATA OVERLAYABLE 
+?PR?_lcd_text?LCD106X56                  SEGMENT CODE INBLOCK 
+?DT?_lcd_text?LCD106X56                  SEGMENT DATA OVERLAYABLE 
+?PR?_lcd_update?LCD106X56                SEGMENT CODE INBLOCK 
+?DT?_lcd_update?LCD106X56                SEGMENT DATA OVERLAYABLE 
+?CO?LCD106X56        SEGMENT CODE 
+?XD?LCD106X56        SEGMENT XDATA 
+	EXTRN	CODE (fonts)
+	EXTRN	CODE (?C?CLDPTR)
+	PUBLIC	l_display_array
+	PUBLIC	testpat
+	PUBLIC	l_mask_array
+	PUBLIC	_lcd_update
+	PUBLIC	?_lcd_text?BYTE
+	PUBLIC	_lcd_text
+	PUBLIC	?_lcd_glyph?BYTE
+	PUBLIC	_lcd_glyph
+	PUBLIC	?_lcd_clr_box?BYTE
+	PUBLIC	_lcd_clr_box
+	PUBLIC	?_lcd_box?BYTE
+	PUBLIC	_lcd_box
+	PUBLIC	_lcd_clr_vert_line
+	PUBLIC	_lcd_clr_horz_line
+	PUBLIC	_lcd_vert_line
+	PUBLIC	_lcd_horz_line
+	PUBLIC	?_lcd_invert_area?BYTE
+	PUBLIC	_lcd_invert_area
+	PUBLIC	?_lcd_clear_area?BYTE
+	PUBLIC	_lcd_clear_area
+	PUBLIC	_lcd_test
+	PUBLIC	lcd_erase
+	PUBLIC	_lcd_out_ctl
+	PUBLIC	_lcd_out_dat
+	PUBLIC	lcd_init
+
+	RSEG  ?DT?_lcd_invert_area?LCD106X56
+?_lcd_invert_area?BYTE:
+       left?660:   DS   1
+        top?661:   DS   1
+      right?662:   DS   1
+     bottom?663:   DS   1
+	ORG  4
+    bit_pos?664:   DS   1
+
+	RSEG  ?DT?_lcd_glyph?LCD106X56
+?_lcd_glyph?BYTE:
+     left?13108:   DS   1
+      top?13109:   DS   1
+    width?13110:   DS   1
+   height?13111:   DS   1
+    glyph?13112:   DS   3
+store_width?13113:   DS   1
+	ORG  8
+  bit_pos?13114:   DS   1
+   y_bits?13116:   DS   1
+remaining_bits?13117:   DS   1
+char_mask?13119:   DS   1
+        x?13120:   DS   1
+glyph_offset?13122:   DS   1
+
+	RSEG  ?DT?_lcd_text?LCD106X56
+?_lcd_text?BYTE:
+     left?14123:   DS   1
+      top?14124:   DS   1
+     font?14125:   DS   1
+      str?14126:   DS   3
+	ORG  6
+        x?14127:   DS   1
+    glyph?14128:   DS   1
+    width?14129:   DS   1
+   height?14130:   DS   1
+store_width?14131:   DS   1
+glyph_ptr?14132:   DS   2
+
+	RSEG  ?DT?_lcd_box?LCD106X56
+?_lcd_box?BYTE:
+     left?11100:   DS   1
+      top?11101:   DS   1
+    right?11102:   DS   1
+   bottom?11103:   DS   1
+
+	RSEG  ?DT?_lcd_clr_box?LCD106X56
+?_lcd_clr_box?BYTE:
+     left?12104:   DS   1
+      top?12105:   DS   1
+    right?12106:   DS   1
+   bottom?12107:   DS   1
+
+	RSEG  ?DT?_lcd_clear_area?LCD106X56
+?_lcd_clear_area?BYTE:
+       left?550:   DS   1
+        top?551:   DS   1
+      right?552:   DS   1
+     bottom?553:   DS   1
+	ORG  4
+    bit_pos?554:   DS   1
+
+	RSEG  ?DT?_lcd_update?LCD106X56
+?_lcd_update?BYTE:
+        y?15136:   DS   1
+       yb?15138:   DS   1
+   colptr?15139:   DS   3
+
+	RSEG  ?XD?LCD106X56
+l_display_array:   DS   848
+
+	RSEG  ?CO?LCD106X56
+l_mask_array:
+	DB	001H
+	DB	002H
+	DB	004H
+	DB	008H
+	DB	010H
+	DB	020H
+	DB	040H
+	DB	080H
+
+testpat:
+	DB	00FH
+	DB	00FH
+	DB	00FH
+	DB	00FH
+	DB	0F0H
+	DB	0F0H
+	DB	0F0H
+	DB	0F0H
+	DB	0F0H
+	DB	0F0H
+	DB	0F0H
+	DB	0F0H
+	DB	00FH
+	DB	00FH
+	DB	00FH
+	DB	00FH
+	DB	0FFH
+	DB	081H
+	DB	0BDH
+	DB	0BDH
+	DB	0BDH
+	DB	0BDH
+	DB	081H
+	DB	0FFH
+	DB	000H
+	DB	07EH
+	DB	042H
+	DB	042H
+	DB	042H
+	DB	042H
+	DB	07EH
+	DB	000H
+
+; #pragma SRC
+; /***************************************************************************
+;  *                                                                         *
+;  *	 FILE: LCD106x56.C                                                     *
+;  *   LCD Display Controller Interface Routines for use with Tian-ma        *
+;  *   106x56 Graphics module with onboard S6B0724X01-B0CY controller        *
+;  *                                                                         *
+;  *   Copyright (C) 2003 by Carousel Design Solutions                       *
+;  *                                                                         *
+;  *									Written by:                            *
+;  *									Michael J. Karas                       *
+;  *									Carousel Design Solutions              *
+;  *									4217 Grimes Ave South                  *
+;  *									Edina MN 55416                         *
+;  *									(952) 929-7537                         *
+;  *                                                                         *
+;  ***************************************************************************/
+; 
+; #pragma CODE
+; 
+; #include <c8051f020.h>                 // SFR declarations
+; #include "lcd106x56.h"
+; #include "fonts.h"
+; 
+; /* pixel level bit masks for display */
+; /* this array is setup to map the order */
+; /* of bits in a byte to the vertical order */
+; /* of bits at the LCD controller */
+; const unsigned char code l_mask_array[8] =
+;          {0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80};
+; 
+; /* the LCD display image memory */
+; /* buffer arranged so page memory is sequential in RAM */
+; unsigned char xdata l_display_array[Y_BYTES][X_BYTES];
+; 
+; /* 
+; **
+; ** Low level LCD Controller Interface Support Routines
+; ** The LCD Controller interfaces to the microcontroller
+; ** using the connections as shown below. 
+; **
+; **		P3^0  LCD Controller Reset (RST/) signal
+; **		P3^1  LCD Controller Chip Select (CS/) signal
+; **		P3^2  LCD Controller Ctl/Data Select (C/D) signal
+; **		P3^2  LCD Controller Serial Clcok (SCLK) signal
+; **		P3^3  LCD Controller Serial Data (SDAT) signal
+; **
+; **
+; */
+; 
+; /*
+; ** 
+; ** routine to initialize the operation of the LCD display subsystem
+; **
+; */
+; 
+; void lcd_init(void)
+
+	RSEG  ?PR?lcd_init?LCD106X56
+lcd_init:
+	USING	0
+			; SOURCE LINE # 57
+; {
+			; SOURCE LINE # 58
+; 	int i;
+; 
+; 	/* initialize the port control lines to the LCD module */
+; 	LCD_RST = 1;					/* set RST signal high off output */
+			; SOURCE LINE # 62
+	SETB 	LCD_RST
+; 
+; 	LCD_CS = 1;						/* set chip select high off output */
+			; SOURCE LINE # 64
+	SETB 	LCD_CS
+; 	
+; 	LCD_CD = 0;						/* set the CD line low as output */
+			; SOURCE LINE # 66
+	CLR  	LCD_CD
+; 	
+; 	LCD_SCLK = 1;					/* set SCLK line high */
+			; SOURCE LINE # 68
+	SETB 	LCD_SCLK
+; 
+; 	LCD_SDAT = 0;		   			/* set SDAT line low */
+			; SOURCE LINE # 70
+	CLR  	LCD_SDAT
+; 
+; 	/* reset the LCD controller chip */
+; 	LCD_RST = 0;					/* set the reset line low */
+			; SOURCE LINE # 73
+	CLR  	LCD_RST
+; 	for(i=0; i<1000; i++)			/* delay for the reset time */
+			; SOURCE LINE # 74
+;---- Variable 'i?040' assigned to Register 'R6/R7' ----
+	CLR  	A
+	MOV  	R7,A
+	MOV  	R6,A
+?C0001:
+; 	{
+			; SOURCE LINE # 75
+; 	}
+			; SOURCE LINE # 76
+	INC  	R7
+	CJNE 	R7,#00H,?C0119
+	INC  	R6
+?C0119:
+	CJNE 	R6,#03H,?C0001
+	CJNE 	R7,#0E8H,?C0001
+?C0002:
+; 	LCD_RST = 1;					/* release reset to back high */
+			; SOURCE LINE # 77
+	SETB 	LCD_RST
+; 
+; 	/* program the controller operational state */
+; 	lcd_out_ctl(LCD_SET_ADC_REV);	/* set ADC reverse */
+			; SOURCE LINE # 80
+	MOV  	R7,#0A1H
+	LCALL	_lcd_out_ctl
+; 	lcd_out_ctl(LCD_SET_SHL_NOR);	/* set SHL normal */
+			; SOURCE LINE # 81
+	MOV  	R7,#0C0H
+	LCALL	_lcd_out_ctl
+; 	lcd_out_ctl(LCD_SET_BIAS_0);	/* set for the low bias mode */
+			; SOURCE LINE # 82
+	MOV  	R7,#0A2H
+	LCALL	_lcd_out_ctl
+; 	lcd_out_ctl(LCD_PWR_CTL+5);		/* turn on the VC bit */
+			; SOURCE LINE # 83
+	MOV  	R7,#02DH
+	LCALL	_lcd_out_ctl
+; 	for(i=0; i<1000; i++)			/* delay for the converter on */
+			; SOURCE LINE # 84
+	CLR  	A
+	MOV  	R6,A
+	MOV  	R7,A
+?C0004:
+; 	{
+			; SOURCE LINE # 85
+; 	}
+			; SOURCE LINE # 86
+	INC  	R7
+	CJNE 	R7,#00H,?C0120
+	INC  	R6
+?C0120:
+	CJNE 	R6,#03H,?C0004
+	CJNE 	R7,#0E8H,?C0004
+?C0005:
+; 	lcd_out_ctl(LCD_PWR_CTL+6);		/* now turn on VC+VR bits */
+			; SOURCE LINE # 87
+	MOV  	R7,#02EH
+	LCALL	_lcd_out_ctl
+; 	for(i=0; i<1000; i++)			/* delay for the regulator on */
+			; SOURCE LINE # 88
+	CLR  	A
+	MOV  	R6,A
+	MOV  	R7,A
+?C0007:
+; 	{
+			; SOURCE LINE # 89
+; 	}
+			; SOURCE LINE # 90
+	INC  	R7
+	CJNE 	R7,#00H,?C0121
+	INC  	R6
+?C0121:
+	CJNE 	R6,#03H,?C0007
+	CJNE 	R7,#0E8H,?C0007
+?C0008:
+; 	lcd_out_ctl(LCD_PWR_CTL+7);		/* now turn on the VC+VR+VF */
+			; SOURCE LINE # 91
+	MOV  	R7,#02FH
+	LCALL	_lcd_out_ctl
+; 	lcd_out_ctl(LCD_REG_RESISTOR+4); /* set default resistor ratio */
+			; SOURCE LINE # 92
+	MOV  	R7,#024H
+	LCALL	_lcd_out_ctl
+; 	lcd_out_ctl(LCD_REF_VOLT_MODE);	 /* prime for the reference voltage */
+			; SOURCE LINE # 93
+	MOV  	R7,#081H
+	LCALL	_lcd_out_ctl
+; 	lcd_out_ctl(LCD_REF_VOLT_REG+42);	 /* set default reference voltage select */
+			; SOURCE LINE # 94
+	MOV  	R7,#02AH
+	LCALL	_lcd_out_ctl
+; 	for(i=0; i<1000; i++)			 /* delay for power stabilize */
+			; SOURCE LINE # 95
+	CLR  	A
+	MOV  	R6,A
+	MOV  	R7,A
+?C0010:
+; 	{
+			; SOURCE LINE # 96
+; 	}
+			; SOURCE LINE # 97
+	INC  	R7
+	CJNE 	R7,#00H,?C0122
+	INC  	R6
+?C0122:
+	CJNE 	R6,#03H,?C0010
+	CJNE 	R7,#0E8H,?C0010
+?C0011:
+; 	lcd_out_ctl(LCD_DISP_ON);		/* put the display on */
+			; SOURCE LINE # 98
+	MOV  	R7,#0AFH
+	LCALL	_lcd_out_ctl
+; 
+; 	lcd_out_ctl(LCD_SET_LINE+56);	/* set line for row 0 of display */
+			; SOURCE LINE # 100
+	MOV  	R7,#078H
+	LCALL	_lcd_out_ctl
+; 	lcd_out_ctl(LCD_SET_PAGE+0);	/* set page 0 */
+			; SOURCE LINE # 101
+	MOV  	R7,#0B0H
+	LCALL	_lcd_out_ctl
+; 	lcd_out_ctl(LCD_SET_COL_HI+0);	/* set column 0 */
+			; SOURCE LINE # 102
+	MOV  	R7,#010H
+	LCALL	_lcd_out_ctl
+; 	lcd_out_ctl(LCD_SET_COL_LO+0);
+			; SOURCE LINE # 103
+	CLR  	A
+	MOV  	R7,A
+	LJMP 	_lcd_out_ctl
+; END OF lcd_init
+
+; /*
+; ** 
+; ** program test loop to find right resistor ratio 0-8
+; ** (use by break pointing at each loop step)
+; **
+; */
+; 
+; #if 0
+; 	for(p=0; p<7; p++)
+; 	{
+; 		lcd_out_ctl(LCD_REG_RESISTOR+p); /* set resistor ratio */
+; 	}
+; #endif
+; 
+; /*
+; ** 
+; ** program test loop to find reference voltage setting 0-63
+; ** (use by break pointing at each loop step)
+; **
+; */
+; 
+; #if 0
+; 	for(p=0; p<63; p++)
+; 	{
+; 		lcd_out_ctl(LCD_REF_VOLT_MODE);	 	 /* prime for the reference voltage */
+; 		lcd_out_ctl(LCD_REF_VOLT_REG+p);	 /* set reference voltage select */
+; 	}
+; #endif
+; } 
+; 
+; /* 
+; **
+; ** low level routine to send a byte value out the serial bus
+; ** to the LCD controller data register. entry argument
+; ** is the data to output.
+; **
+; */
+; 
+; void lcd_out_dat(char dat)
+
+	RSEG  ?PR?_lcd_out_dat?LCD106X56
+_lcd_out_dat:
+	USING	0
+			; SOURCE LINE # 142
+;---- Variable 'dat?141' assigned to Register 'R7' ----
+; {
+			; SOURCE LINE # 143
+; 	unsigned char i=8;				/* serial bit counter */
+			; SOURCE LINE # 144
+;---- Variable 'i?142' assigned to Register 'R6' ----
+	MOV  	R6,#08H
+; 
+; 	EA = 0;							/* disable interrupts */
+			; SOURCE LINE # 146
+	CLR  	EA
+; 	
+; 	LCD_CD = 1;						/* select register for data port */
+			; SOURCE LINE # 148
+	SETB 	LCD_CD
+; 	LCD_CS = 0;						/* enable interface via chip select */
+			; SOURCE LINE # 149
+	CLR  	LCD_CS
+?C0014:
+; 
+; 	while(i--)
+			; SOURCE LINE # 151
+	MOV  	R5,AR6
+	DEC  	R6
+	MOV  	A,R5
+	JZ   	?C0015
+; 	{
+			; SOURCE LINE # 152
+; 		LCD_SDAT = (dat & 0x80 ? 1 : 0);  /* transmit data from MSB */
+			; SOURCE LINE # 153
+	MOV  	A,R7
+	ANL  	A,#080H
+	MOV  	R5,A
+	RLC  	A
+	SUBB 	A,ACC
+	ORL  	A,R5
+	JZ   	?C0016
+	SETB 	C
+	SJMP 	?C0017
+?C0016:
+	CLR  	C
+?C0017:
+	MOV  	LCD_SDAT,C
+; 		LCD_SCLK = 0;				/* turn the clock on */
+			; SOURCE LINE # 154
+	CLR  	LCD_SCLK
+; 		dat <<= 1;					/* shift data left 1 place */
+			; SOURCE LINE # 155
+	MOV  	A,R7
+	ADD  	A,ACC
+	MOV  	R7,A
+; 		LCD_SCLK = 1;				/* clock back off */	
+			; SOURCE LINE # 156
+	SETB 	LCD_SCLK
+; 	}
+			; SOURCE LINE # 157
+	SJMP 	?C0014
+?C0015:
+; 
+; 	LCD_CD = 1;						/* force chip select back off */
+			; SOURCE LINE # 159
+	SETB 	LCD_CD
+; 
+; 	/* re-establish the exit interrupt state */
+; 	EA = 1;
+			; SOURCE LINE # 162
+	SETB 	EA
+; } 
+			; SOURCE LINE # 163
+	RET  	
+; END OF _lcd_out_dat
+
+; 
+; /* 
+; **
+; ** low level routine to send a byte value out the serial bus
+; ** to the LCD controller control register. entry argument is
+; ** the data to output.
+; **
+; */
+; 
+; void lcd_out_ctl(char dat)
+
+	RSEG  ?PR?_lcd_out_ctl?LCD106X56
+L?0124:
+	USING	0
+	ADD  	A,#0B0H
+	MOV  	R7,A
+	LCALL	_lcd_out_ctl
+	MOV  	R7,#011H
+	LCALL	_lcd_out_ctl
+	MOV  	R7,#0AH
+_lcd_out_ctl:
+	USING	0
+			; SOURCE LINE # 173
+;---- Variable 'dat?243' assigned to Register 'R7' ----
+; {
+			; SOURCE LINE # 174
+; 	unsigned char i=8;				/* serial bit counter */
+			; SOURCE LINE # 175
+;---- Variable 'i?244' assigned to Register 'R6' ----
+	MOV  	R6,#08H
+; 
+; 	EA = 0;							/* disable interrupts */
+			; SOURCE LINE # 177
+	CLR  	EA
+; 	
+; 	LCD_CD = 0;						/* select register for command port */
+			; SOURCE LINE # 179
+	CLR  	LCD_CD
+; 	LCD_CS = 0;						/* enable interface via chip select */
+			; SOURCE LINE # 180
+	CLR  	LCD_CS
+?C0019:
+; 
+; 	while(i--)
+			; SOURCE LINE # 182
+	MOV  	R5,AR6
+	DEC  	R6
+	MOV  	A,R5
+	JZ   	?C0020
+; 	{
+			; SOURCE LINE # 183
+; 		LCD_SDAT = (dat & 0x80 ? 1 : 0);  /* transmit data from MSB */
+			; SOURCE LINE # 184
+	MOV  	A,R7
+	ANL  	A,#080H
+	MOV  	R5,A
+	RLC  	A
+	SUBB 	A,ACC
+	ORL  	A,R5
+	JZ   	?C0021
+	SETB 	C
+	SJMP 	?C0022
+?C0021:
+	CLR  	C
+?C0022:
+	MOV  	LCD_SDAT,C
+; 		LCD_SCLK = 0;				/* turn the clock on */
+			; SOURCE LINE # 185
+	CLR  	LCD_SCLK
+; 		dat <<= 1;					/* shift data left 1 place */
+			; SOURCE LINE # 186
+	MOV  	A,R7
+	ADD  	A,ACC
+	MOV  	R7,A
+; 		LCD_SCLK = 1;				/* clock back off */	
+			; SOURCE LINE # 187
+	SETB 	LCD_SCLK
+; 	}
+			; SOURCE LINE # 188
+	SJMP 	?C0019
+?C0020:
+; 
+; 	LCD_CD = 1;						/* force chip select back off */
+			; SOURCE LINE # 190
+	SETB 	LCD_CD
+; 
+; 	/* re-establish the exit interrupt state */
+; 	EA = 1;
+			; SOURCE LINE # 193
+	SETB 	EA
+; } 
+			; SOURCE LINE # 194
+	RET  	
+; END OF _lcd_out_ctl
+
+;  
+; /* 
+; **
+; ** routine to erase the LCD screen, This erases whole
+; ** display memory of the S6B0724 LCD controller.
+; **
+; */
+; 
+; void lcd_erase(void)
+
+	RSEG  ?PR?lcd_erase?LCD106X56
+lcd_erase:
+	USING	0
+			; SOURCE LINE # 203
+; {
+			; SOURCE LINE # 204
+; 	unsigned char p;
+; 	unsigned char i;
+; 
+; 	for(p=0; p<9; p++)
+			; SOURCE LINE # 208
+;---- Variable 'p?345' assigned to Register 'R4' ----
+	CLR  	A
+	MOV  	R4,A
+?C0024:
+; 	{
+			; SOURCE LINE # 209
+; 		lcd_out_ctl(LCD_SET_PAGE+p);	/* set page */
+			; SOURCE LINE # 210
+	MOV  	A,R4
+	ADD  	A,#0B0H
+	MOV  	R7,A
+	LCALL	_lcd_out_ctl
+; 		lcd_out_ctl(LCD_SET_COL_HI+0);	/* set column 0 */
+			; SOURCE LINE # 211
+	MOV  	R7,#010H
+	LCALL	_lcd_out_ctl
+; 		lcd_out_ctl(LCD_SET_COL_LO+0);
+			; SOURCE LINE # 212
+	CLR  	A
+	MOV  	R7,A
+	LCALL	_lcd_out_ctl
+; 		for(i=0; i<132; i++)
+			; SOURCE LINE # 213
+;---- Variable 'i?346' assigned to Register 'R3' ----
+	CLR  	A
+	MOV  	R3,A
+?C0027:
+; 		{
+			; SOURCE LINE # 214
+; 			lcd_out_dat(0);				/* clear the data */
+			; SOURCE LINE # 215
+	CLR  	A
+	MOV  	R7,A
+	LCALL	_lcd_out_dat
+; 		}
+			; SOURCE LINE # 216
+	INC  	R3
+	CJNE 	R3,#084H,?C0027
+; 	}
+			; SOURCE LINE # 217
+?C0026:
+	INC  	R4
+	CJNE 	R4,#09H,?C0024
+; }
+			; SOURCE LINE # 218
+?C0030:
+	RET  	
+; END OF lcd_erase
+
+; 
+; /* 
+; **
+; ** routine to display a test pattern on the LCD screen,
+; **
+; */
+; 
+; unsigned char code testpat[4][8]={
+; 				   {0x0F,0x0F,0x0F,0x0F,0xF0,0xF0,0xF0,0xF0},
+; 				   {0xF0,0xF0,0xF0,0xF0,0x0F,0x0F,0x0F,0x0F},
+; 	               {0xFF,0x81,0xBD,0xBD,0xBD,0xBD,0x81,0xFF},
+; 				   {0x00,0x7E,0x42,0x42,0x42,0x42,0x7E,0x00}
+; 				  };
+; 
+; void lcd_test(unsigned char pattern)
+
+	RSEG  ?PR?_lcd_test?LCD106X56
+_lcd_test:
+	USING	0
+			; SOURCE LINE # 233
+;---- Variable 'pattern?447' assigned to Register 'R4' ----
+	MOV  	R4,AR7
+; {
+			; SOURCE LINE # 234
+; 	unsigned char p;
+; 	unsigned char i;
+; 
+; 	for(p=0; p<7; p++)
+			; SOURCE LINE # 238
+;---- Variable 'p?448' assigned to Register 'R3' ----
+	CLR  	A
+	MOV  	R3,A
+?C0031:
+; 	{
+			; SOURCE LINE # 239
+; 		lcd_out_ctl(LCD_SET_PAGE+p);	/* set page */
+			; SOURCE LINE # 240
+	MOV  	A,R3
+; 		lcd_out_ctl(LCD_SET_COL_HI+26/16);	/* set column 0 */
+			; SOURCE LINE # 241
+; 		lcd_out_ctl(LCD_SET_COL_LO+26%16);
+			; SOURCE LINE # 242
+	LCALL	L?0124
+; 		for(i=0; i<106; i++)
+			; SOURCE LINE # 243
+;---- Variable 'i?449' assigned to Register 'R2' ----
+	CLR  	A
+	MOV  	R2,A
+?C0034:
+; 		{
+			; SOURCE LINE # 244
+; 			lcd_out_dat(testpat[pattern][i%8]);
+			; SOURCE LINE # 245
+	MOV  	A,R2
+	ANL  	A,#07H
+	MOV  	R7,A
+	MOV  	A,R4
+	MOV  	B,#08H
+	MUL  	AB
+	ADD  	A,#LOW (testpat)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (testpat)
+	MOV  	DPH,A
+	MOV  	A,DPL
+	ADD  	A,R7
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,DPH
+	MOV  	DPH,A
+	CLR  	A
+	MOVC 	A,@A+DPTR
+	MOV  	R7,A
+	LCALL	_lcd_out_dat
+; 		}
+			; SOURCE LINE # 246
+	INC  	R2
+	CJNE 	R2,#06AH,?C0034
+; 	}
+			; SOURCE LINE # 247
+?C0033:
+	INC  	R3
+	CJNE 	R3,#07H,?C0031
+; }
+			; SOURCE LINE # 248
+?C0037:
+	RET  	
+; END OF _lcd_test
+
+; 
+; /*
+; **
+; ** 	Clears the display memory starting at the left/top  and going to
+; **  the right/bottom . No runtime error checking is performed. It is 
+; **  assumed that left is less than right and that top is less than 
+; **  bottom
+; **
+; */
+; 
+; void lcd_clear_area(unsigned char left,  unsigned char top,    
+
+	RSEG  ?PR?_lcd_clear_area?LCD106X56
+_lcd_clear_area:
+	USING	0
+			; SOURCE LINE # 259
+	MOV  	top?551,R5
+	MOV  	right?552,R3
+;---- Variable 'left?550' assigned to Register 'R7' ----
+; 			        unsigned char right, unsigned char bottom)
+; {
+			; SOURCE LINE # 261
+; 	unsigned char bit_pos;
+; 	unsigned char x;
+; 	unsigned char byte_offset;
+; 	unsigned char y_bits;
+; 	unsigned char remaining_bits;
+; 	unsigned char mask;
+; 
+; 	bit_pos = top & 0x07;					/* get starting bit offset into byte */
+			; SOURCE LINE # 269
+	MOV  	A,top?551
+	ANL  	A,#07H
+	MOV  	bit_pos?554,A
+; 
+; 	for(x = left; x <= right; x++)
+			; SOURCE LINE # 271
+;---- Variable 'x?555' assigned to Register 'R7' ----
+?C0038:
+	MOV  	A,R7
+	SETB 	C
+	SUBB 	A,right?552
+	JC   	$ + 4H
+	AJMP 	?C0050
+; 	{
+			; SOURCE LINE # 272
+; 		byte_offset = top >> 3;				/* get byte offset into y direction */
+			; SOURCE LINE # 273
+	MOV  	A,top?551
+	RRC  	A
+	RRC  	A
+	RRC  	A
+	ANL  	A,#01FH
+;---- Variable 'byte_offset?556' assigned to Register 'R1' ----
+	MOV  	R1,A
+; 		y_bits = (bottom - top) + 1;		/* get length in the y direction to write */
+			; SOURCE LINE # 274
+	CLR  	C
+	MOV  	A,bottom?553
+	SUBB 	A,top?551
+	INC  	A
+	MOV  	R6,A
+;---- Variable 'y_bits?557' assigned to Register 'R6' ----
+; 		remaining_bits = 8 - bit_pos;		/* number of bits left in byte */
+			; SOURCE LINE # 275
+	CLR  	C
+	MOV  	A,#08H
+	SUBB 	A,bit_pos?554
+	MOV  	R5,A
+;---- Variable 'remaining_bits?558' assigned to Register 'R5' ----
+; 		mask = l_mask_array[bit_pos];		/* get mask for this bit */
+			; SOURCE LINE # 276
+	MOV  	A,bit_pos?554
+	MOV  	DPTR,#l_mask_array
+	MOVC 	A,@A+DPTR
+	MOV  	R4,A
+;---- Variable 'mask?559' assigned to Register 'R4' ----
+?C0041:
+; 
+; 		while(y_bits)						/* while there are still bits to write */
+			; SOURCE LINE # 278
+	MOV  	A,R6
+	JZ   	?C0040
+; 		{
+			; SOURCE LINE # 279
+; 			if((remaining_bits == 8) && (y_bits > 7))
+			; SOURCE LINE # 280
+	CJNE 	R5,#08H,?C0043
+	SETB 	C
+	SUBB 	A,#07H
+	JC   	?C0043
+; 			{
+			; SOURCE LINE # 281
+?C0044:
+; 				/* here if we are byte aligned and have at least 1 byte to write */
+; 				/* do the entire byte at once instead of bit by bit */
+; 				while(y_bits > 7)			/* while there are at least 8 more bits to do */
+			; SOURCE LINE # 284
+	MOV  	A,R6
+	SETB 	C
+	SUBB 	A,#07H
+	JC   	?C0041
+; 				{
+			; SOURCE LINE # 285
+; 					l_display_array[byte_offset][x] = 0x00;
+			; SOURCE LINE # 286
+	MOV  	B,#06AH
+	MOV  	A,R1
+	MUL  	AB
+	ADD  	A,#LOW (l_display_array)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (l_display_array)
+	MOV  	DPH,A
+	MOV  	A,DPL
+	ADD  	A,R7
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,DPH
+	MOV  	DPH,A
+	CLR  	A
+	MOVX 	@DPTR,A
+; 					byte_offset++;
+			; SOURCE LINE # 287
+	INC  	R1
+; 					y_bits -= 8;
+			; SOURCE LINE # 288
+	MOV  	A,#0F8H
+	ADD  	A,R6
+	MOV  	R6,A
+; 				}
+			; SOURCE LINE # 289
+	SJMP 	?C0044
+; 			}
+			; SOURCE LINE # 290
+?C0043:
+; 			else
+; 			{
+			; SOURCE LINE # 292
+; 				/* here if not byte aligned or an entire byte does not need written */
+; 				/* thus do bit by bit */
+; 				l_display_array[byte_offset][x] &= ~mask;
+			; SOURCE LINE # 295
+	MOV  	B,#06AH
+	MOV  	A,R1
+	MUL  	AB
+	ADD  	A,#LOW (l_display_array)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (l_display_array)
+	MOV  	DPH,A
+	MOV  	A,DPL
+	ADD  	A,R7
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R3,A
+	MOV  	A,R4
+	CPL  	A
+	MOV  	R2,A
+	MOV  	A,R3
+	ANL  	A,R2
+	MOVX 	@DPTR,A
+; 				if(l_mask_array[0] & 0x80)
+			; SOURCE LINE # 296
+	MOV  	DPTR,#l_mask_array
+	CLR  	A
+	MOVC 	A,@A+DPTR
+	MOV  	R3,A
+	JNB  	ACC.7,?C0047
+; 				{
+			; SOURCE LINE # 297
+; 					mask >>= 1;
+			; SOURCE LINE # 298
+	MOV  	A,R4
+	CLR  	C
+	RRC  	A
+	MOV  	R4,A
+; 				}
+			; SOURCE LINE # 299
+	SJMP 	?C0048
+?C0047:
+; 				else
+; 				{
+			; SOURCE LINE # 301
+; 					mask <<= 1;
+			; SOURCE LINE # 302
+	MOV  	A,R4
+	ADD  	A,ACC
+	MOV  	R4,A
+; 				}
+			; SOURCE LINE # 303
+?C0048:
+; 				y_bits--;
+			; SOURCE LINE # 304
+	DEC  	R6
+; 				remaining_bits--;
+			; SOURCE LINE # 305
+	DEC  	R5
+; 				if(remaining_bits == 0)
+			; SOURCE LINE # 306
+	MOV  	A,R5
+	JNZ  	?C0041
+; 				{
+			; SOURCE LINE # 307
+; 					/* might have bust gotton byte aligned */
+; 					/* so reset for beginning of a byte */
+; 					remaining_bits = 8;
+			; SOURCE LINE # 310
+	MOV  	R5,#08H
+; 					byte_offset++;
+			; SOURCE LINE # 311
+	INC  	R1
+; 					mask = l_mask_array[0];
+			; SOURCE LINE # 312
+	MOV  	R4,AR3
+; 				}
+			; SOURCE LINE # 313
+; 			}
+			; SOURCE LINE # 314
+; 		}
+			; SOURCE LINE # 315
+	SJMP 	?C0041
+; 	}
+			; SOURCE LINE # 316
+?C0040:
+	INC  	R7
+	AJMP 	?C0038
+; }
+			; SOURCE LINE # 317
+?C0050:
+	RET  	
+; END OF _lcd_clear_area
+
+; 
+; /*
+; **
+; ** Inverts the display memory starting at the left/top and going to
+; ** the right/bottom. No runtime error checking is performed. It is 
+; ** assumed that left is less than right and that top is less than 
+; ** bottom 
+; ** 
+; */
+; 
+; void lcd_invert_area(unsigned char left,  unsigned char top,    
+
+	RSEG  ?PR?_lcd_invert_area?LCD106X56
+_lcd_invert_area:
+	USING	0
+			; SOURCE LINE # 328
+	MOV  	right?662,R3
+;---- Variable 'top?661' assigned to Register 'R1' ----
+	MOV  	R1,AR5
+;---- Variable 'left?660' assigned to Register 'R7' ----
+; 			         unsigned char right, unsigned char bottom)
+; {
+			; SOURCE LINE # 330
+; 	unsigned char bit_pos;
+; 	unsigned char x;
+; 	unsigned char byte_offset;
+; 	unsigned char y_bits;
+; 	unsigned char remaining_bits;
+; 	unsigned char mask;
+; 
+; 	bit_pos = top & 0x07;					/* get starting bit offset into byte */
+			; SOURCE LINE # 338
+	MOV  	A,R1
+	ANL  	A,#07H
+	MOV  	bit_pos?664,A
+; 
+; 	for(x = left; x <= right; x++)
+			; SOURCE LINE # 340
+;---- Variable 'x?665' assigned to Register 'R7' ----
+?C0051:
+	MOV  	A,R7
+	SETB 	C
+	SUBB 	A,right?662
+	JC   	$ + 4H
+	AJMP 	?C0063
+;   	{
+			; SOURCE LINE # 341
+; 		byte_offset = top >> 3;				/* get byte offset into y direction */
+			; SOURCE LINE # 342
+	MOV  	A,R1
+	RRC  	A
+	RRC  	A
+	RRC  	A
+	ANL  	A,#01FH
+	MOV  	R6,A
+;---- Variable 'byte_offset?666' assigned to Register 'R6' ----
+; 		y_bits = (bottom - top) + 1;		/* get length in the x direction to write */
+			; SOURCE LINE # 343
+	CLR  	C
+	MOV  	A,bottom?663
+	SUBB 	A,R1
+	INC  	A
+	MOV  	R5,A
+;---- Variable 'y_bits?667' assigned to Register 'R5' ----
+; 		remaining_bits = 8 - bit_pos;		/* number of bits left in byte */
+			; SOURCE LINE # 344
+	CLR  	C
+	MOV  	A,#08H
+	SUBB 	A,bit_pos?664
+	MOV  	R4,A
+;---- Variable 'remaining_bits?668' assigned to Register 'R4' ----
+; 		mask = l_mask_array[bit_pos];		/* get mask for this bit */
+			; SOURCE LINE # 345
+	MOV  	A,bit_pos?664
+	MOV  	DPTR,#l_mask_array
+	MOVC 	A,@A+DPTR
+	MOV  	R3,A
+;---- Variable 'mask?669' assigned to Register 'R3' ----
+?C0054:
+; 
+; 		while(y_bits)						/* while there are still bits to write */
+			; SOURCE LINE # 347
+	MOV  	A,R5
+	JZ   	?C0053
+;     	{
+			; SOURCE LINE # 348
+; 			if((remaining_bits == 8) && (y_bits > 7))
+			; SOURCE LINE # 349
+	MOV  	A,R4
+	XRL  	A,#08H
+	JNZ  	?C0056
+	MOV  	A,R5
+	SETB 	C
+	SUBB 	A,#07H
+	JC   	?C0056
+; 			{
+			; SOURCE LINE # 350
+?C0057:
+; 				/* here if we are byte aligned and have at least 1 byte to write */
+; 				/* do the entire byte at once instead of bit by bit */
+; 				while(y_bits > 7)			/* while there are at least 8 more bits to do */
+			; SOURCE LINE # 353
+	MOV  	A,R5
+	SETB 	C
+	SUBB 	A,#07H
+	JC   	?C0054
+; 				{
+			; SOURCE LINE # 354
+; 					l_display_array[byte_offset][x] ^= 0xFF;
+			; SOURCE LINE # 355
+	MOV  	B,#06AH
+	MOV  	A,R6
+	MUL  	AB
+	ADD  	A,#LOW (l_display_array)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (l_display_array)
+	MOV  	DPH,A
+	MOV  	A,DPL
+	ADD  	A,R7
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	CPL  	A
+	MOVX 	@DPTR,A
+; 					byte_offset++;
+			; SOURCE LINE # 356
+	INC  	R6
+; 					y_bits -= 8;
+			; SOURCE LINE # 357
+	MOV  	A,#0F8H
+	ADD  	A,R5
+	MOV  	R5,A
+; 				}
+			; SOURCE LINE # 358
+	SJMP 	?C0057
+;       		}
+			; SOURCE LINE # 359
+?C0056:
+;       		else
+;       		{
+			; SOURCE LINE # 361
+; 				/* here if not byte aligned or an entire byte does not need written */
+; 				/* thus do bit by bit */
+; 				l_display_array[byte_offset][x] ^= mask;
+			; SOURCE LINE # 364
+	MOV  	B,#06AH
+	MOV  	A,R6
+	MUL  	AB
+	ADD  	A,#LOW (l_display_array)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (l_display_array)
+	MOV  	DPH,A
+	MOV  	A,DPL
+	ADD  	A,R7
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	XRL  	A,R3
+	MOVX 	@DPTR,A
+; 				if(l_mask_array[0] & 0x80)
+			; SOURCE LINE # 365
+	MOV  	DPTR,#l_mask_array
+	CLR  	A
+	MOVC 	A,@A+DPTR
+	MOV  	R2,A
+	JNB  	ACC.7,?C0060
+; 				{
+			; SOURCE LINE # 366
+; 					mask >>= 1;
+			; SOURCE LINE # 367
+	MOV  	A,R3
+	CLR  	C
+	RRC  	A
+	MOV  	R3,A
+; 				}
+			; SOURCE LINE # 368
+	SJMP 	?C0061
+?C0060:
+; 				else
+; 				{
+			; SOURCE LINE # 370
+; 					mask <<= 1;
+			; SOURCE LINE # 371
+	MOV  	A,R3
+	ADD  	A,ACC
+	MOV  	R3,A
+; 				}
+			; SOURCE LINE # 372
+?C0061:
+; 				y_bits--;
+			; SOURCE LINE # 373
+	DEC  	R5
+; 				remaining_bits--;
+			; SOURCE LINE # 374
+	DJNZ 	R4,?C0054
+; 				if(remaining_bits == 0)
+			; SOURCE LINE # 375
+; 				{
+			; SOURCE LINE # 376
+; 					/* might have bust gotton byte aligned */
+; 					/* so reset for beginning of a byte */
+; 					remaining_bits = 8;
+			; SOURCE LINE # 379
+	MOV  	R4,#08H
+; 					byte_offset++;
+			; SOURCE LINE # 380
+	INC  	R6
+; 					mask = l_mask_array[0];
+			; SOURCE LINE # 381
+	MOV  	R3,AR2
+; 				}
+			; SOURCE LINE # 382
+; 			}
+			; SOURCE LINE # 383
+; 		}
+			; SOURCE LINE # 384
+	SJMP 	?C0054
+; 	}
+			; SOURCE LINE # 385
+?C0053:
+	INC  	R7
+	AJMP 	?C0051
+; }
+			; SOURCE LINE # 386
+?C0063:
+	RET  	
+; END OF _lcd_invert_area
+
+; 
+; /*
+; **
+; ** Draws a line into the display memory starting at left going to
+; ** right, on the given row. No runtime error checking is performed.  
+; ** It is assumed that left is less than right.
+; **
+; */
+; 
+; void lcd_horz_line(unsigned char left, unsigned char right,
+
+	RSEG  ?PR?_lcd_horz_line?LCD106X56
+_lcd_horz_line:
+	USING	0
+			; SOURCE LINE # 396
+;---- Variable 'left?770' assigned to Register 'R7' ----
+;---- Variable 'row?772' assigned to Register 'R3' ----
+;---- Variable 'right?771' assigned to Register 'R5' ----
+; 		           unsigned char row)
+; {
+			; SOURCE LINE # 398
+; 	unsigned char bit_pos;
+; 	unsigned char byte_offset;
+; 	unsigned char mask;
+; 	unsigned char col;
+; 
+;   	bit_pos = row & 0x07;			/* get the bit offset into a byte */
+			; SOURCE LINE # 404
+	MOV  	A,R3
+	ANL  	A,#07H
+	MOV  	R6,A
+;---- Variable 'bit_pos?773' assigned to Register 'R6' ----
+;   	byte_offset = row >> 3;		    /* get the byte offset into x array */
+			; SOURCE LINE # 405
+	MOV  	A,R3
+	RRC  	A
+	RRC  	A
+	RRC  	A
+	ANL  	A,#01FH
+	MOV  	R4,A
+;---- Variable 'byte_offset?774' assigned to Register 'R4' ----
+;   	mask = l_mask_array[bit_pos]; 	/* get the mask for this bit */
+			; SOURCE LINE # 406
+	MOV  	A,R6
+	MOV  	DPTR,#l_mask_array
+	MOVC 	A,@A+DPTR
+	MOV  	R6,A
+;---- Variable 'mask?775' assigned to Register 'R6' ----
+; 
+;   	for(col = left; col <= right; col++)
+			; SOURCE LINE # 408
+;---- Variable 'col?776' assigned to Register 'R7' ----
+?C0064:
+	MOV  	A,R7
+	SETB 	C
+	SUBB 	A,R5
+	JNC  	?C0067
+;   	{
+			; SOURCE LINE # 409
+;     	l_display_array[byte_offset][col] |= mask;
+			; SOURCE LINE # 410
+	MOV  	B,#06AH
+	MOV  	A,R4
+	MUL  	AB
+	ADD  	A,#LOW (l_display_array)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (l_display_array)
+	MOV  	DPH,A
+	MOV  	A,DPL
+	ADD  	A,R7
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	ORL  	A,R6
+	MOVX 	@DPTR,A
+;   	}
+			; SOURCE LINE # 411
+	INC  	R7
+	SJMP 	?C0064
+; }
+			; SOURCE LINE # 412
+?C0067:
+	RET  	
+; END OF _lcd_horz_line
+
+; 
+; /*
+; **
+; ** Draws a vertical line into display memory starting at the top
+; ** going to the bottom in the given column. No runtime error checking 
+; ** is performed. It is assumed that top is less than bottom and that 
+; ** the column is in range.
+; **
+; */
+; 
+; void lcd_vert_line(unsigned char top, unsigned char bottom,
+
+	RSEG  ?PR?_lcd_vert_line?LCD106X56
+_lcd_vert_line:
+	USING	0
+			; SOURCE LINE # 423
+;---- Variable 'top?877' assigned to Register 'R7' ----
+;---- Variable 'column?879' assigned to Register 'R3' ----
+;---- Variable 'bottom?878' assigned to Register 'R5' ----
+; 		           unsigned char column)
+; {
+			; SOURCE LINE # 425
+; 	unsigned char bit_pos;
+; 	unsigned char byte_offset;
+; 	unsigned char y_bits;
+; 	unsigned char remaining_bits;
+; 	unsigned char mask;
+; 
+; 	bit_pos = top & 0x07;		   /* get starting bit offset into byte */
+			; SOURCE LINE # 432
+	MOV  	A,R7
+	ANL  	A,#07H
+	MOV  	R6,A
+;---- Variable 'bit_pos?880' assigned to Register 'R6' ----
+; 
+; 	byte_offset = top >> 3;		   /* get byte offset into y direction */
+			; SOURCE LINE # 434
+	MOV  	A,R7
+	RRC  	A
+	RRC  	A
+	RRC  	A
+	ANL  	A,#01FH
+	MOV  	R4,A
+;---- Variable 'byte_offset?881' assigned to Register 'R4' ----
+; 	y_bits = (bottom - top) + 1;   /* get length in the x direction to write */
+			; SOURCE LINE # 435
+	CLR  	C
+	MOV  	A,R5
+	SUBB 	A,R7
+	INC  	A
+	MOV  	R7,A
+;---- Variable 'y_bits?882' assigned to Register 'R7' ----
+; 	remaining_bits = 8 - bit_pos;  /* number of bits left in byte */
+			; SOURCE LINE # 436
+	CLR  	C
+	MOV  	A,#08H
+	SUBB 	A,R6
+	MOV  	R5,A
+;---- Variable 'remaining_bits?883' assigned to Register 'R5' ----
+; 	mask = l_mask_array[bit_pos];  /* get mask for this bit */
+			; SOURCE LINE # 437
+	MOV  	A,R6
+	MOV  	DPTR,#l_mask_array
+	MOVC 	A,@A+DPTR
+	MOV  	R6,A
+;---- Variable 'mask?884' assigned to Register 'R6' ----
+?C0068:
+; 
+; 	while(y_bits)				   /* while there are still bits to write */
+			; SOURCE LINE # 439
+	MOV  	A,R7
+	JZ   	?C0077
+; 	{
+			; SOURCE LINE # 440
+; 		if((remaining_bits == 8) && (y_bits > 7))
+			; SOURCE LINE # 441
+	CJNE 	R5,#08H,?C0070
+	SETB 	C
+	SUBB 	A,#07H
+	JC   	?C0070
+; 		{
+			; SOURCE LINE # 442
+?C0071:
+; 			/* here if we are byte aligned and have at least 1 byte to write */
+; 			/* do the entire byte at once instead of bit by bit */
+; 			while(y_bits > 7)			/* while there are at least 8 more bits to do */
+			; SOURCE LINE # 445
+	MOV  	A,R7
+	SETB 	C
+	SUBB 	A,#07H
+	JC   	?C0068
+; 			{
+			; SOURCE LINE # 446
+; 				l_display_array[byte_offset][column] = 0xFF;
+			; SOURCE LINE # 447
+	MOV  	B,#06AH
+	MOV  	A,R4
+	MUL  	AB
+	ADD  	A,#LOW (l_display_array)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (l_display_array)
+	MOV  	DPH,A
+	MOV  	A,DPL
+	ADD  	A,R3
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,DPH
+	MOV  	DPH,A
+	MOV  	A,#0FFH
+	MOVX 	@DPTR,A
+; 				byte_offset++;
+			; SOURCE LINE # 448
+	INC  	R4
+; 				y_bits -= 8;
+			; SOURCE LINE # 449
+	MOV  	A,#0F8H
+	ADD  	A,R7
+	MOV  	R7,A
+; 			}
+			; SOURCE LINE # 450
+	SJMP 	?C0071
+; 		}
+			; SOURCE LINE # 451
+?C0070:
+; 		else
+; 		{
+			; SOURCE LINE # 453
+;       		/* we are not byte aligned or an entire byte does not need written */
+;       		/* do each individual bit                                          */
+; 			l_display_array[byte_offset][column] |= mask;
+			; SOURCE LINE # 456
+	MOV  	B,#06AH
+	MOV  	A,R4
+	MUL  	AB
+	ADD  	A,#LOW (l_display_array)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (l_display_array)
+	MOV  	DPH,A
+	MOV  	A,DPL
+	ADD  	A,R3
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	ORL  	A,R6
+	MOVX 	@DPTR,A
+; 			if(l_mask_array[0] & 0x80)
+			; SOURCE LINE # 457
+	MOV  	DPTR,#l_mask_array
+	CLR  	A
+	MOVC 	A,@A+DPTR
+	MOV  	R2,A
+	JNB  	ACC.7,?C0074
+; 			{
+			; SOURCE LINE # 458
+; 				mask >>= 1;
+			; SOURCE LINE # 459
+	MOV  	A,R6
+	CLR  	C
+	RRC  	A
+	MOV  	R6,A
+; 			}
+			; SOURCE LINE # 460
+	SJMP 	?C0075
+?C0074:
+; 			else
+; 			{
+			; SOURCE LINE # 462
+; 				mask <<= 1;
+			; SOURCE LINE # 463
+	MOV  	A,R6
+	ADD  	A,ACC
+	MOV  	R6,A
+; 			}
+			; SOURCE LINE # 464
+?C0075:
+; 			y_bits--;
+			; SOURCE LINE # 465
+	DEC  	R7
+; 			remaining_bits--;
+			; SOURCE LINE # 466
+	DJNZ 	R5,?C0068
+; 			if(remaining_bits == 0)
+			; SOURCE LINE # 467
+; 			{
+			; SOURCE LINE # 468
+; 				/* might have bust gotton byte aligned */
+; 				/* so reset for beginning of a byte */
+; 				remaining_bits = 8;
+			; SOURCE LINE # 471
+	MOV  	R5,#08H
+; 				byte_offset++;
+			; SOURCE LINE # 472
+	INC  	R4
+; 				mask = l_mask_array[0];
+			; SOURCE LINE # 473
+	MOV  	R6,AR2
+; 			}
+			; SOURCE LINE # 474
+; 		}
+			; SOURCE LINE # 475
+; 	}
+			; SOURCE LINE # 476
+	SJMP 	?C0068
+; }
+			; SOURCE LINE # 477
+?C0077:
+	RET  	
+; END OF _lcd_vert_line
+
+; 
+; /*
+; **
+; ** Clears a line into the display memory starting at left going to
+; ** right, on the given row. No runtime error checking is performed.  
+; ** It is assumed that left is less than right.
+; **
+; */
+; 
+; void lcd_clr_horz_line(unsigned char left, unsigned char right,
+
+	RSEG  ?PR?_lcd_clr_horz_line?LCD106X56
+_lcd_clr_horz_line:
+	USING	0
+			; SOURCE LINE # 487
+;---- Variable 'left?985' assigned to Register 'R7' ----
+;---- Variable 'row?987' assigned to Register 'R3' ----
+;---- Variable 'right?986' assigned to Register 'R5' ----
+; 		               unsigned char row)
+; {
+			; SOURCE LINE # 489
+; 	unsigned char bit_pos;
+; 	unsigned char byte_offset;
+; 	unsigned char mask;
+; 	unsigned char col;
+; 
+;   	bit_pos = row & 0x07;			/* get the bit offset into a byte */
+			; SOURCE LINE # 495
+	MOV  	A,R3
+	ANL  	A,#07H
+	MOV  	R6,A
+;---- Variable 'bit_pos?988' assigned to Register 'R6' ----
+;   	byte_offset = row >> 3;		    /* get the byte offset into x array */
+			; SOURCE LINE # 496
+	MOV  	A,R3
+	RRC  	A
+	RRC  	A
+	RRC  	A
+	ANL  	A,#01FH
+	MOV  	R4,A
+;---- Variable 'byte_offset?989' assigned to Register 'R4' ----
+;   	mask = l_mask_array[bit_pos]; 	/* get the mask for this bit */
+			; SOURCE LINE # 497
+	MOV  	A,R6
+	MOV  	DPTR,#l_mask_array
+	MOVC 	A,@A+DPTR
+	MOV  	R6,A
+;---- Variable 'mask?990' assigned to Register 'R6' ----
+; 
+;   	for(col = left; col <= right; col++)
+			; SOURCE LINE # 499
+;---- Variable 'col?991' assigned to Register 'R7' ----
+?C0078:
+	MOV  	A,R7
+	SETB 	C
+	SUBB 	A,R5
+	JNC  	?C0081
+;   	{
+			; SOURCE LINE # 500
+;     	l_display_array[byte_offset][col] &= ~mask;
+			; SOURCE LINE # 501
+	MOV  	B,#06AH
+	MOV  	A,R4
+	MUL  	AB
+	ADD  	A,#LOW (l_display_array)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (l_display_array)
+	MOV  	DPH,A
+	MOV  	A,DPL
+	ADD  	A,R7
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R3,A
+	MOV  	A,R6
+	CPL  	A
+	MOV  	R2,A
+	MOV  	A,R3
+	ANL  	A,R2
+	MOVX 	@DPTR,A
+;   	}
+			; SOURCE LINE # 502
+	INC  	R7
+	SJMP 	?C0078
+; }
+			; SOURCE LINE # 503
+?C0081:
+	RET  	
+; END OF _lcd_clr_horz_line
+
+; 
+; 
+; /*
+; **
+; ** Clears a vertical line into display memory starting at the top
+; ** going to the bottom in the given column. No runtime error checking 
+; ** is performed. It is assumed that top is less than bottom and that 
+; ** the column is in range.
+; **
+; */
+; 
+; void lcd_clr_vert_line(unsigned char top, unsigned char bottom,
+
+	RSEG  ?PR?_lcd_clr_vert_line?LCD106X56
+_lcd_clr_vert_line:
+	USING	0
+			; SOURCE LINE # 515
+;---- Variable 'top?1092' assigned to Register 'R7' ----
+;---- Variable 'column?1094' assigned to Register 'R1' ----
+	MOV  	R1,AR3
+;---- Variable 'bottom?1093' assigned to Register 'R5' ----
+; 		               unsigned char column)
+; {
+			; SOURCE LINE # 517
+; 	unsigned char bit_pos;
+; 	unsigned char byte_offset;
+; 	unsigned char y_bits;
+; 	unsigned char remaining_bits;
+; 	unsigned char mask;
+; 
+; 	bit_pos = top & 0x07;		   /* get starting bit offset into byte */
+			; SOURCE LINE # 524
+	MOV  	A,R7
+	ANL  	A,#07H
+	MOV  	R6,A
+;---- Variable 'bit_pos?1095' assigned to Register 'R6' ----
+; 
+; 	byte_offset = top >> 3;		   /* get byte offset into y direction */
+			; SOURCE LINE # 526
+	MOV  	A,R7
+	RRC  	A
+	RRC  	A
+	RRC  	A
+	ANL  	A,#01FH
+	MOV  	R4,A
+;---- Variable 'byte_offset?1096' assigned to Register 'R4' ----
+; 	y_bits = (bottom - top) + 1;   /* get length in the x direction to write */
+			; SOURCE LINE # 527
+	CLR  	C
+	MOV  	A,R5
+	SUBB 	A,R7
+	INC  	A
+	MOV  	R7,A
+;---- Variable 'y_bits?1097' assigned to Register 'R7' ----
+; 	remaining_bits = 8 - bit_pos;  /* number of bits left in byte */
+			; SOURCE LINE # 528
+	CLR  	C
+	MOV  	A,#08H
+	SUBB 	A,R6
+	MOV  	R5,A
+;---- Variable 'remaining_bits?1098' assigned to Register 'R5' ----
+; 	mask = l_mask_array[bit_pos];  /* get mask for this bit */
+			; SOURCE LINE # 529
+	MOV  	A,R6
+	MOV  	DPTR,#l_mask_array
+	MOVC 	A,@A+DPTR
+	MOV  	R6,A
+;---- Variable 'mask?1099' assigned to Register 'R6' ----
+?C0082:
+; 
+; 	while(y_bits)				   /* while there are still bits to write */
+			; SOURCE LINE # 531
+	MOV  	A,R7
+	JZ   	?C0091
+; 	{
+			; SOURCE LINE # 532
+; 		if((remaining_bits == 8) && (y_bits > 7))
+			; SOURCE LINE # 533
+	CJNE 	R5,#08H,?C0084
+	SETB 	C
+	SUBB 	A,#07H
+	JC   	?C0084
+; 		{
+			; SOURCE LINE # 534
+?C0085:
+; 			/* here if we are byte aligned and have at least 1 byte to write */
+; 			/* do the entire byte at once instead of bit by bit */
+; 			while(y_bits > 7)			/* while there are at least 8 more bits to do */
+			; SOURCE LINE # 537
+	MOV  	A,R7
+	SETB 	C
+	SUBB 	A,#07H
+	JC   	?C0082
+; 			{
+			; SOURCE LINE # 538
+; 				l_display_array[byte_offset][column] = 0x00;
+			; SOURCE LINE # 539
+	MOV  	B,#06AH
+	MOV  	A,R4
+	MUL  	AB
+	ADD  	A,#LOW (l_display_array)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (l_display_array)
+	MOV  	DPH,A
+	MOV  	A,DPL
+	ADD  	A,R1
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,DPH
+	MOV  	DPH,A
+	CLR  	A
+	MOVX 	@DPTR,A
+; 				byte_offset++;
+			; SOURCE LINE # 540
+	INC  	R4
+; 				y_bits -= 8;
+			; SOURCE LINE # 541
+	MOV  	A,#0F8H
+	ADD  	A,R7
+	MOV  	R7,A
+; 			}
+			; SOURCE LINE # 542
+	SJMP 	?C0085
+; 		}
+			; SOURCE LINE # 543
+?C0084:
+; 		else
+; 		{
+			; SOURCE LINE # 545
+;       		/* we are not byte aligned or an entire byte does not need written */
+;       		/* do each individual bit                                          */
+; 			l_display_array[byte_offset][column] &= ~mask;
+			; SOURCE LINE # 548
+	MOV  	B,#06AH
+	MOV  	A,R4
+	MUL  	AB
+	ADD  	A,#LOW (l_display_array)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (l_display_array)
+	MOV  	DPH,A
+	MOV  	A,DPL
+	ADD  	A,R1
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R3,A
+	MOV  	A,R6
+	CPL  	A
+	MOV  	R2,A
+	MOV  	A,R3
+	ANL  	A,R2
+	MOVX 	@DPTR,A
+; 			if(l_mask_array[0] & 0x80)
+			; SOURCE LINE # 549
+	MOV  	DPTR,#l_mask_array
+	CLR  	A
+	MOVC 	A,@A+DPTR
+	MOV  	R3,A
+	JNB  	ACC.7,?C0088
+; 			{
+			; SOURCE LINE # 550
+; 				mask >>= 1;
+			; SOURCE LINE # 551
+	MOV  	A,R6
+	CLR  	C
+	RRC  	A
+	MOV  	R6,A
+; 			}
+			; SOURCE LINE # 552
+	SJMP 	?C0089
+?C0088:
+; 			else
+; 			{
+			; SOURCE LINE # 554
+; 				mask <<= 1;
+			; SOURCE LINE # 555
+	MOV  	A,R6
+	ADD  	A,ACC
+	MOV  	R6,A
+; 			}
+			; SOURCE LINE # 556
+?C0089:
+; 			y_bits--;
+			; SOURCE LINE # 557
+	DEC  	R7
+; 			remaining_bits--;
+			; SOURCE LINE # 558
+	DEC  	R5
+; 			if(remaining_bits == 0)
+			; SOURCE LINE # 559
+	MOV  	A,R5
+	JNZ  	?C0082
+; 			{
+			; SOURCE LINE # 560
+; 				/* might have bust gotton byte aligned */
+; 				/* so reset for beginning of a byte */
+; 				remaining_bits = 8;
+			; SOURCE LINE # 563
+	MOV  	R5,#08H
+; 				byte_offset++;
+			; SOURCE LINE # 564
+	INC  	R4
+; 				mask = l_mask_array[0];
+			; SOURCE LINE # 565
+	MOV  	R6,AR3
+; 			}
+			; SOURCE LINE # 566
+; 		}
+			; SOURCE LINE # 567
+; 	}
+			; SOURCE LINE # 568
+	SJMP 	?C0082
+; }
+			; SOURCE LINE # 569
+?C0091:
+	RET  	
+; END OF _lcd_clr_vert_line
+
+; 
+; /*
+; **
+; ** 	Draws a box in display memory starting at the left/top and going
+; **  to the right/bottom. No runtime error checking is performed.
+; **  It is assumed that left is less than right and that top is less 
+; **  than bottom.
+; ** 
+; */
+; 
+; void lcd_box(unsigned char left, unsigned char top,
+
+	RSEG  ?PR?_lcd_box?LCD106X56
+_lcd_box:
+	USING	0
+			; SOURCE LINE # 580
+	MOV  	left?11100,R7
+	MOV  	top?11101,R5
+;---- Variable 'right?11102' assigned to Register 'R1' ----
+	MOV  	R1,AR3
+;              unsigned char right, unsigned char bottom)
+; {
+			; SOURCE LINE # 582
+;   	/* to draw a box requires two vertical lines */
+;   	lcd_vert_line(top,bottom,left);
+			; SOURCE LINE # 584
+	MOV  	R3,left?11100
+	MOV  	R5,bottom?11103
+	MOV  	R7,top?11101
+	LCALL	_lcd_vert_line
+;   	lcd_vert_line(top,bottom,right);
+			; SOURCE LINE # 585
+	MOV  	R3,AR1
+	MOV  	R5,bottom?11103
+	MOV  	R7,top?11101
+	LCALL	_lcd_vert_line
+; 
+;   	/* and two horizonal lines */
+;   	lcd_horz_line(left,right,top);
+			; SOURCE LINE # 588
+	MOV  	R5,AR1
+	MOV  	R3,top?11101
+	MOV  	R7,left?11100
+	LCALL	_lcd_horz_line
+;   	lcd_horz_line(left,right,bottom);
+			; SOURCE LINE # 589
+	MOV  	R3,bottom?11103
+	MOV  	R7,left?11100
+	LJMP 	_lcd_horz_line
+; END OF _lcd_box
+
+; }
+; 
+; /*
+; **
+; ** Clears a box in display memory starting at the Top left and going
+; ** to the bottom right. No runtime error checking is performed and
+; ** it is assumed that Left is less than Right and that Top is less 
+; ** than Bottom.
+; **
+; */
+; 
+; void lcd_clr_box(unsigned char left, unsigned char top,
+
+	RSEG  ?PR?_lcd_clr_box?LCD106X56
+_lcd_clr_box:
+	USING	0
+			; SOURCE LINE # 601
+	MOV  	left?12104,R7
+	MOV  	top?12105,R5
+	MOV  	right?12106,R3
+;              unsigned char right, unsigned char bottom)
+; {
+			; SOURCE LINE # 603
+;   	/* to undraw the box undraw the two vertical lines */
+;   	lcd_clr_vert_line(top,bottom,left);
+			; SOURCE LINE # 605
+	MOV  	R3,left?12104
+	MOV  	R5,bottom?12107
+	MOV  	R7,top?12105
+	LCALL	_lcd_clr_vert_line
+;   	lcd_clr_vert_line(top,bottom,right);
+			; SOURCE LINE # 606
+	MOV  	R3,right?12106
+	MOV  	R5,bottom?12107
+	MOV  	R7,top?12105
+	LCALL	_lcd_clr_vert_line
+; 
+;   	/* and the two horizonal lines that comprise it */
+;   	lcd_clr_horz_line(left,right,top);
+			; SOURCE LINE # 609
+	MOV  	R3,top?12105
+	MOV  	R5,right?12106
+	MOV  	R7,left?12104
+	LCALL	_lcd_clr_horz_line
+;     lcd_clr_horz_line(left,right,bottom);
+			; SOURCE LINE # 610
+	MOV  	R3,bottom?12107
+	MOV  	R5,right?12106
+	MOV  	R7,left?12104
+	LJMP 	_lcd_clr_horz_line
+; END OF _lcd_clr_box
+
+; }
+; 
+; /*
+; **
+; ** Writes a glyph to the display at location x,y
+; **
+; ** Arguments are:
+; **    column     - x corrdinate of the left part of glyph          
+; **    row        - y coordinate of the top part of glyph       
+; **    width  	 - size in pixels of the width of the glyph    
+; **    height 	 - size in pixels of the height of the glyph   
+; **    glyph      - an unsigned char pointer to the glyph pixels 
+; **                 to write assumed to be of length "width"
+; **
+; */
+; 
+; void lcd_glyph(unsigned char left, unsigned char top,
+
+	RSEG  ?PR?_lcd_glyph?LCD106X56
+_lcd_glyph:
+	USING	0
+			; SOURCE LINE # 627
+	MOV  	left?13108,R7
+	MOV  	top?13109,R5
+	MOV  	width?13110,R3
+; 			   unsigned char width, unsigned char height,
+; 			   unsigned char *glyph, unsigned char store_width)
+; {
+			; SOURCE LINE # 630
+; 	unsigned char bit_pos;
+; 	unsigned char byte_offset;
+; 	unsigned char y_bits;
+; 	unsigned char remaining_bits;
+; 	unsigned char mask;
+; 	unsigned char char_mask;
+; 	unsigned char x;
+; 	unsigned char *glyph_scan;
+; 	unsigned char glyph_offset;
+; 
+;   	bit_pos = top & 0x07;		/* get the bit offset into a byte */
+			; SOURCE LINE # 641
+	MOV  	A,top?13109
+	ANL  	A,#07H
+	MOV  	bit_pos?13114,A
+; 
+; 	glyph_offset = 0;			/* start at left side of the glyph rasters */
+			; SOURCE LINE # 643
+	CLR  	A
+	MOV  	glyph_offset?13122,A
+;     char_mask = 0x80;			/* initial character glyph mask */
+			; SOURCE LINE # 644
+	MOV  	char_mask?13119,#080H
+; 
+;   	for (x = left; x < (left + width); x++)
+			; SOURCE LINE # 646
+	MOV  	x?13120,left?13108
+?C0094:
+	MOV  	A,left?13108
+	ADD  	A,width?13110
+	MOV  	R7,A
+	CLR  	A
+	RLC  	A
+	MOV  	R6,A
+	CLR  	C
+	MOV  	A,x?13120
+	SUBB 	A,R7
+	MOV  	A,R6
+	XRL  	A,#080H
+	MOV  	R0,A
+	MOV  	A,#080H
+	SUBB 	A,R0
+	JC   	$ + 4H
+	AJMP 	?C0105
+;   	{
+			; SOURCE LINE # 647
+;     	byte_offset = top >> 3;        	/* get the byte offset into y direction */
+			; SOURCE LINE # 648
+	MOV  	A,top?13109
+	RRC  	A
+	RRC  	A
+	RRC  	A
+	ANL  	A,#01FH
+	MOV  	R7,A
+;---- Variable 'byte_offset?13115' assigned to Register 'R7' ----
+; 		y_bits = height;				/* get length in y direction to write */
+			; SOURCE LINE # 649
+	MOV  	y_bits?13116,height?13111
+; 		remaining_bits = 8 - bit_pos;	/* number of bits left in byte */
+			; SOURCE LINE # 650
+	CLR  	C
+	MOV  	A,#08H
+	SUBB 	A,bit_pos?13114
+	MOV  	remaining_bits?13117,A
+; 		mask = l_mask_array[bit_pos];	/* get mask for this bit */
+			; SOURCE LINE # 651
+	MOV  	A,bit_pos?13114
+	MOV  	DPTR,#l_mask_array
+	MOVC 	A,@A+DPTR
+	MOV  	R6,A
+;---- Variable 'mask?13118' assigned to Register 'R6' ----
+; 		glyph_scan = glyph + glyph_offset;	 /* point to base of the glyph */
+			; SOURCE LINE # 652
+	MOV  	R3,glyph?13112
+	MOV  	R4,#00H
+	MOV  	A,glyph?13112+02H
+	ADD  	A,glyph_offset?13122
+	MOV  	R1,A
+	MOV  	A,R4
+	ADDC 	A,glyph?13112+01H
+	MOV  	R2,A
+;---- Variable 'glyph_scan?13121' assigned to Register 'R1/R2/R3' ----
+?C0097:
+; 
+;     	/* boundary checking here to account for the possibility of  */
+;     	/* write past the bottom of the screen.                        */
+;     	while((y_bits) && (byte_offset < Y_BYTES)) /* while there are bits still to write */
+			; SOURCE LINE # 656
+	MOV  	A,y_bits?13116
+	JZ   	?C0098
+	MOV  	A,R7
+	CLR  	C
+	SUBB 	A,#08H
+	JNC  	?C0098
+;     	{
+			; SOURCE LINE # 657
+; 			/* check if the character pixel is set or not */
+; 			if(*glyph_scan & char_mask)
+			; SOURCE LINE # 659
+	LCALL	?C?CLDPTR
+	ANL  	A,char_mask?13119
+	MOV  	B,#06AH
+	JZ   	?C0099
+; 			{
+			; SOURCE LINE # 660
+; 				l_display_array[byte_offset][x] |= mask;	/* set image pixel */
+			; SOURCE LINE # 661
+	MOV  	A,R7
+	MUL  	AB
+	ADD  	A,#LOW (l_display_array)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (l_display_array)
+	MOV  	DPH,A
+	MOV  	A,DPL
+	ADD  	A,x?13120
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	ORL  	A,R6
+	MOVX 	@DPTR,A
+; 			}
+			; SOURCE LINE # 662
+	SJMP 	?C0100
+?C0099:
+; 			else
+; 			{
+			; SOURCE LINE # 664
+;       			l_display_array[byte_offset][x] &= ~mask;	/* clear the image pixel */
+			; SOURCE LINE # 665
+	MOV  	A,R7
+	MUL  	AB
+	ADD  	A,#LOW (l_display_array)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (l_display_array)
+	MOV  	DPH,A
+	MOV  	A,DPL
+	ADD  	A,x?13120
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R5,A
+	MOV  	A,R6
+	CPL  	A
+	MOV  	R4,A
+	MOV  	A,R5
+	ANL  	A,R4
+	MOVX 	@DPTR,A
+; 			}
+			; SOURCE LINE # 666
+?C0100:
+; 
+; 			if(l_mask_array[0] & 0x80)
+			; SOURCE LINE # 668
+	MOV  	DPTR,#l_mask_array
+	CLR  	A
+	MOVC 	A,@A+DPTR
+	MOV  	R5,A
+	JNB  	ACC.7,?C0101
+; 			{
+			; SOURCE LINE # 669
+; 				mask >>= 1;
+			; SOURCE LINE # 670
+	MOV  	A,R6
+	CLR  	C
+	RRC  	A
+	MOV  	R6,A
+; 			}
+			; SOURCE LINE # 671
+	SJMP 	?C0102
+?C0101:
+; 			else
+; 			{
+			; SOURCE LINE # 673
+; 				mask <<= 1;
+			; SOURCE LINE # 674
+	MOV  	A,R6
+	ADD  	A,ACC
+	MOV  	R6,A
+; 			}
+			; SOURCE LINE # 675
+?C0102:
+; 			
+; 			y_bits--;
+			; SOURCE LINE # 677
+	DEC  	y_bits?13116
+; 			remaining_bits--;
+			; SOURCE LINE # 678
+	DJNZ 	remaining_bits?13117,?C0103
+;       		if(remaining_bits == 0)
+			; SOURCE LINE # 679
+;       		{
+			; SOURCE LINE # 680
+; 				/* just crossed over a byte boundry, reset byte counts */
+; 				remaining_bits = 8;
+			; SOURCE LINE # 682
+	MOV  	remaining_bits?13117,#08H
+; 				byte_offset++;
+			; SOURCE LINE # 683
+	INC  	R7
+; 				mask = l_mask_array[0];
+			; SOURCE LINE # 684
+	MOV  	R6,AR5
+;       		}
+			; SOURCE LINE # 685
+?C0103:
+; 
+; 			/* bump the glyph scan to next raster */
+; 			glyph_scan += store_width;
+			; SOURCE LINE # 688
+	MOV  	A,store_width?13113
+	ADD  	A,R1
+	MOV  	R1,A
+	CLR  	A
+	ADDC 	A,R2
+	MOV  	R2,A
+; 		}
+			; SOURCE LINE # 689
+	SJMP 	?C0097
+?C0098:
+; 
+; 		/* shift over to next glyph bit */
+; 		char_mask >>= 1;
+			; SOURCE LINE # 692
+	MOV  	A,char_mask?13119
+	CLR  	C
+	RRC  	A
+	MOV  	char_mask?13119,A
+; 		if(char_mask == 0)				/* reset for next byte in raster */
+			; SOURCE LINE # 693
+	JNZ  	?C0096
+; 		{
+			; SOURCE LINE # 694
+; 			char_mask = 0x80;
+			; SOURCE LINE # 695
+	MOV  	char_mask?13119,#080H
+; 			glyph_offset++;
+			; SOURCE LINE # 696
+	INC  	glyph_offset?13122
+; 	    }
+			; SOURCE LINE # 697
+; 	}
+			; SOURCE LINE # 698
+?C0096:
+	INC  	x?13120
+	AJMP 	?C0094
+; }
+			; SOURCE LINE # 699
+?C0105:
+	RET  	
+; END OF _lcd_glyph
+
+; 
+; /*
+; **
+; **	Prints the given string at location x,y in the specified font.
+; **  Prints each character given via calls to lcd_glyph. The entry string
+; **  is null terminated and non 0x20->0x7e characters are ignored.
+; **
+; **  Arguments are:                                                   
+; **      left       coordinate of left start of string.                
+; **      top        coordinate of top of string.
+; **      font       font number to use for display                
+; **      str   	   text string to display
+; **
+; */
+; 
+; void lcd_text(unsigned char left, unsigned char top, unsigned char font, char *str)
+
+	RSEG  ?PR?_lcd_text?LCD106X56
+_lcd_text:
+	USING	0
+			; SOURCE LINE # 715
+	MOV  	top?14124,R5
+	MOV  	font?14125,R3
+;---- Variable 'left?14123' assigned to Register 'R7' ----
+; {
+			; SOURCE LINE # 716
+;   	unsigned char x = left;
+			; SOURCE LINE # 717
+	MOV  	x?14127,R7
+?C0106:
+;   	unsigned char glyph;
+;   	unsigned char width;
+; 	unsigned char height;
+; 	unsigned char store_width;
+; 	unsigned char code *glyph_ptr;
+; 
+;   	while(*str != 0x00)
+			; SOURCE LINE # 724
+	MOV  	R3,str?14126
+	MOV  	R2,str?14126+01H
+	MOV  	R1,str?14126+02H
+	LCALL	?C?CLDPTR
+	JNZ  	$ + 4H
+	AJMP 	?C0111
+;   	{
+			; SOURCE LINE # 725
+;     	glyph = (unsigned char)*str;
+			; SOURCE LINE # 726
+	MOV  	glyph?14128,A
+; 
+; 		/* check to make sure the symbol is a legal one */
+; 		/* if not then just replace it with a "." character */
+; 		if((glyph < ASCII_BOT) || (glyph > ASCII_TOP))
+			; SOURCE LINE # 730
+	CLR  	C
+	SUBB 	A,#020H
+	JC   	?C0109
+	MOV  	A,glyph?14128
+	SETB 	C
+	SUBB 	A,#07EH
+	JC   	?C0108
+?C0109:
+; 		{
+			; SOURCE LINE # 731
+; 			glyph = '.';
+			; SOURCE LINE # 732
+	MOV  	glyph?14128,#02EH
+; 		}
+			; SOURCE LINE # 733
+?C0108:
+; 
+;     	/* the fonts start at ASCII_BOT, so to get the index into the font array */
+;     	/* subtract ASCII_BOT from the glyph                  */
+;     	glyph -= ASCII_BOT;
+			; SOURCE LINE # 737
+	MOV  	A,#0E0H
+	ADD  	A,glyph?14128
+	MOV  	glyph?14128,A
+;     	width = fonts[font].fixed_width;	/* check if it is a fixed width */
+			; SOURCE LINE # 738
+	MOV  	B,#07H
+	MOV  	A,font?14125
+	MUL  	AB
+	ADD  	A,#LOW (fonts+04H)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (fonts+04H)
+	MOV  	DPH,A
+	CLR  	A
+	MOVC 	A,@A+DPTR
+	MOV  	width?14129,A
+; 		if(width == 0)
+			; SOURCE LINE # 739
+	JNZ  	?C0110
+; 		{
+			; SOURCE LINE # 740
+; 			width=fonts[font].width_table[glyph];	/* get the variable width instead */
+			; SOURCE LINE # 741
+	MOV  	B,#07H
+	MOV  	A,font?14125
+	MUL  	AB
+	ADD  	A,#LOW (fonts+05H)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (fonts+05H)
+	MOV  	DPH,A
+	CLR  	A
+	MOVC 	A,@A+DPTR
+	MOV  	R6,A
+	MOV  	A,#01H
+	MOVC 	A,@A+DPTR
+	ADD  	A,glyph?14128
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,R6
+	MOV  	DPH,A
+	CLR  	A
+	MOVC 	A,@A+DPTR
+	MOV  	width?14129,A
+; 		}
+			; SOURCE LINE # 742
+?C0110:
+; 
+; 		height = fonts[font].glyph_height;
+			; SOURCE LINE # 744
+	MOV  	B,#07H
+	MOV  	A,font?14125
+	MUL  	AB
+	ADD  	A,#LOW (fonts+01H)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (fonts+01H)
+	MOV  	DPH,A
+	CLR  	A
+	MOVC 	A,@A+DPTR
+	MOV  	height?14130,A
+; 		store_width = fonts[font].store_width;
+			; SOURCE LINE # 745
+	MOV  	B,#07H
+	MOV  	A,font?14125
+	MUL  	AB
+	ADD  	A,#LOW (fonts)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (fonts)
+	MOV  	DPH,A
+	CLR  	A
+	MOVC 	A,@A+DPTR
+	MOV  	store_width?14131,A
+; 
+; 		glyph_ptr = fonts[font].glyph_table + (glyph * store_width * height);
+			; SOURCE LINE # 747
+	MOV  	B,#07H
+	MOV  	A,font?14125
+	MUL  	AB
+	ADD  	A,#LOW (fonts+02H)
+	MOV  	DPL,A
+	MOV  	A,B
+	ADDC 	A,#HIGH (fonts+02H)
+	MOV  	DPH,A
+	MOV  	A,glyph?14128
+	MOV  	B,store_width?14131
+	MUL  	AB
+	MOV  	B,height?14130
+	MUL  	AB
+	MOV  	R7,A
+	MOV  	R6,B
+	MOV  	A,#01H
+	MOVC 	A,@A+DPTR
+	ADD  	A,R7
+	MOV  	glyph_ptr?14132+01H,A
+	CLR  	A
+	MOVC 	A,@A+DPTR
+	ADDC 	A,R6
+	MOV  	glyph_ptr?14132,A
+; 
+; 		lcd_glyph(x,top,width,height,glyph_ptr,store_width);  /* plug symbol into buffer */
+			; SOURCE LINE # 749
+	MOV  	?_lcd_glyph?BYTE+03H,height?14130
+	MOV  	?_lcd_glyph?BYTE+04H,#0FFH
+	MOV  	?_lcd_glyph?BYTE+05H,A
+	MOV  	?_lcd_glyph?BYTE+06H,glyph_ptr?14132+01H
+	MOV  	?_lcd_glyph?BYTE+07H,store_width?14131
+	MOV  	R3,width?14129
+	MOV  	R5,top?14124
+	MOV  	R7,x?14127
+	LCALL	_lcd_glyph
+; 
+; 		x += width;							/* move right for next character */
+			; SOURCE LINE # 751
+	MOV  	A,width?14129
+	ADD  	A,x?14127
+	MOV  	x?14127,A
+; 		str++;								/* point to next character in string */
+			; SOURCE LINE # 752
+	MOV  	A,#01H
+	ADD  	A,str?14126+02H
+	MOV  	str?14126+02H,A
+	CLR  	A
+	ADDC 	A,str?14126+01H
+	MOV  	str?14126+01H,A
+; 	}
+			; SOURCE LINE # 753
+	AJMP 	?C0106
+; }
+			; SOURCE LINE # 754
+?C0111:
+	RET  	
+; END OF _lcd_text
+
+; 
+; /*
+; **
+; ** Updates area of the display. Writes data from display 
+; ** RAM to the lcd display controller.
+; ** 
+; ** Arguments Used:                                      
+; **    top     top line of area to update.         
+; **    bottom  bottom line of area to update.
+; **
+; */
+; 
+; void lcd_update(unsigned char top, unsigned char bottom)
+
+	RSEG  ?PR?_lcd_update?LCD106X56
+_lcd_update:
+	USING	0
+			; SOURCE LINE # 767
+;---- Variable 'bottom?15134' assigned to Register 'R5' ----
+;---- Variable 'top?15133' assigned to Register 'R7' ----
+; {
+			; SOURCE LINE # 768
+; 	unsigned char x;
+; 	unsigned char y;
+; 	unsigned char yt;
+; 	unsigned char yb;
+; 	unsigned char *colptr;
+; 
+; 	yt = top >> 3;				/* setup bytes of range */
+			; SOURCE LINE # 775
+	MOV  	A,R7
+	RRC  	A
+	RRC  	A
+	RRC  	A
+	ANL  	A,#01FH
+	MOV  	R7,A
+;---- Variable 'yt?15137' assigned to Register 'R7' ----
+; 	yb = bottom >> 3;
+			; SOURCE LINE # 776
+	MOV  	A,R5
+	RRC  	A
+	RRC  	A
+	RRC  	A
+	ANL  	A,#01FH
+	MOV  	yb?15138,A
+; 
+; 	for(y = yt; y <= yb; y++)
+			; SOURCE LINE # 778
+	MOV  	y?15136,R7
+?C0112:
+	MOV  	A,y?15136
+	SETB 	C
+	SUBB 	A,yb?15138
+	JNC  	?C0118
+; 	{
+			; SOURCE LINE # 779
+; 		/* setup the page number for the y direction */
+; 		lcd_out_ctl(LCD_SET_PAGE+y);	/* set page */
+			; SOURCE LINE # 781
+	MOV  	A,y?15136
+; 	
+; 		/* setup column of update to left side */
+; 		lcd_out_ctl(LCD_SET_COL_HI+(26/16));	/* set column 26 */
+			; SOURCE LINE # 784
+; 		lcd_out_ctl(LCD_SET_COL_LO+(26%16));
+			; SOURCE LINE # 785
+	LCALL	L?0124
+; 
+; 		colptr = &l_display_array[y][0];
+			; SOURCE LINE # 787
+	MOV  	A,y?15136
+	MOV  	B,#06AH
+	MUL  	AB
+	ADD  	A,#LOW (l_display_array)
+	MOV  	R1,A
+	MOV  	A,#HIGH (l_display_array)
+	ADDC 	A,B
+	MOV  	colptr?15139,#01H
+	MOV  	colptr?15139+01H,A
+	MOV  	colptr?15139+02H,R1
+; 		for (x=0; x < X_BYTES; x++)
+			; SOURCE LINE # 788
+;---- Variable 'x?15135' assigned to Register 'R4' ----
+	CLR  	A
+	MOV  	R4,A
+?C0115:
+; 		{
+			; SOURCE LINE # 789
+; 			lcd_out_dat(*colptr++);
+			; SOURCE LINE # 790
+	MOV  	R3,colptr?15139
+	INC  	colptr?15139+02H
+	MOV  	A,colptr?15139+02H
+	MOV  	R2,colptr?15139+01H
+	JNZ  	?C0123
+	INC  	colptr?15139+01H
+?C0123:
+	DEC  	A
+	MOV  	R1,A
+	LCALL	?C?CLDPTR
+	MOV  	R7,A
+	LCALL	_lcd_out_dat
+; 		}
+			; SOURCE LINE # 791
+	INC  	R4
+	CJNE 	R4,#06AH,?C0115
+; 	}
+			; SOURCE LINE # 792
+?C0114:
+	INC  	y?15136
+	SJMP 	?C0112
+; }
+			; SOURCE LINE # 793
+?C0118:
+	RET  	
+; END OF _lcd_update
+
+	END

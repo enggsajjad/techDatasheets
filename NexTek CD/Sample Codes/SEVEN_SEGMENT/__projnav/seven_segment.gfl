@@ -1,0 +1,4661 @@
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Edit Constraints (Text)
+__projnav/parentEditConstraintsTextApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Edit Constraints (Text)
+__projnav/parentEditConstraintsTextApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\fpga_train\design\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Create Timing Constraints
+__projnav/parentCreateTimingConstraintsApp_tcl.rsp
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# XST (Creating Lso File) : 
+seg_display.lso
+# xst flow : RunXST
+seg_display.syr
+seg_display.prj
+seg_display.sprj
+seg_display.ana
+seg_display.stx
+seg_display.cmd_log
+seg_display.ngc
+seg_display.ngr
+# Implmentation : Translate
+__projnav/ngdbuild.err
+__projnav/ednTOngd_tcl.rsp
+c:\testing_from\seven_segment/_ngo
+seg_display.ngd
+seg_display_ngdbuild.nav
+seg_display.bld
+seg_display.ucf.untf
+seg_display.cmd_log
+# Implementation : Map
+seg_display_map.ncd
+seg_display.ngm
+seg_display.pcf
+seg_display.nc1
+seg_display.mrp
+seg_display_map.mrp
+seg_display.mdf
+__projnav/map.log
+seg_display.cmd_log
+MAP_NO_GUIDE_FILE_CPF "seg_display"
+# Implmentation : Post-Place & Route Timing
+__projnav/ncdTOtwr_tcl.rsp
+__projnav/posttrc.log
+seg_display.twr
+seg_display.twx
+seg_display.tsi
+seg_display.cmd_log
+# Implmentation : Place & Route
+__projnav/nc1TOncd_tcl.rsp
+seg_display.ncd
+seg_display.par
+seg_display.pad
+seg_display_pad.txt
+seg_display_pad.csv
+seg_display.pad_txt
+seg_display.dly
+reportgen.log
+seg_display.xpi
+seg_display.grf
+seg_display.itr
+seg_display_last_par.ncd
+__projnav/par.log
+seg_display.placed_ncd_tracker
+seg_display.routed_ncd_tracker
+seg_display.cmd_log
+PAR_NO_GUIDE_FILE_CPF "seg_display"
+# Generate Programming File
+__projnav/seg_display_ncdTOut_tcl.rsp
+__projnav/bitgen.rsp
+bitgen.ut
+seg_display.ut
+# Generate Programming File
+seg_display.bgn
+seg_display.rbt
+seg_display.ll
+seg_display.msk
+seg_display.drc
+seg_display.nky
+seg_display.bit
+seg_display.bin
+seg_display.isc
+seg_display.cmd_log
+# Generate PROM, ACE, or JTAG File
+seg_display.ace
+xilinx.sys
+seg_display.mpm
+seg_display.mcs
+seg_display.prm
+seg_display.dst
+seg_display.exo
+seg_display.tek
+seg_display.hex
+seg_display.svf
+seg_display.stapl
+impact.cmd
+_impact.log
+_impact.cmd
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log
+# Configure Device (iMPACT)
+seg_display.prm
+seg_display.isc
+seg_display.svf
+xilinx.sys
+seg_display.mcs
+seg_display.exo
+seg_display.hex
+seg_display.tek
+seg_display.dst
+seg_display.dst_compressed
+seg_display.mpm
+_impact.cmd
+_impact.log

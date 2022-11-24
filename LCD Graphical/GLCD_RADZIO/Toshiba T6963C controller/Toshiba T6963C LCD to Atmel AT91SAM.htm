@@ -1,0 +1,194 @@
+<html><head>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Interfacing Toshiba T6963 LCD display to Atmel AT91SAM ARM 
+microcontroller</title>
+<meta name="keywords" content="t6963 t6963 c controller atmel toshiba arm at91sam mcu">
+<link rel="stylesheet" type="text/css" href="Toshiba%20T6963C%20LCD%20to%20Atmel%20AT91SAM_files/styl.css">
+<script src="Toshiba%20T6963C%20LCD%20to%20Atmel%20AT91SAM_files/ct_global.js" type="text/javascript"></script>
+<script src="Toshiba%20T6963C%20LCD%20to%20Atmel%20AT91SAM_files/ct_adsense.js" type="text/javascript"></script>
+<script type="text/javascript">
+var ct_path = 'http://dxp.pl/ct/';	// with trailing slash
+ct_registerURLClickHandler( ct_path+'index.php?action=click' );
+
+setTimeout('ct_adsenseRun()', 500);
+</script>
+</head><body style="margin-left: 40px; margin-right: 40px;">
+
+<table id="table1" width="100%" border="0">
+	<tbody><tr>
+		<td width="80">
+		<a href="http://en.radzio.dxp.pl/">
+		<img src="Toshiba%20T6963C%20LCD%20to%20Atmel%20AT91SAM_files/avatarek.jpg" width="80" border="0" height="79"></a></td>
+		<td>
+		<p align="center"><font size="4"><b>Interfacing Toshiba T6963C LCD to Atmel AT91SAM ARM microcontroller</b></font></p></td>
+	</tr>
+</tbody></table>
+<table id="table2" width="100%" border="0">
+	<tbody><tr>
+		<td>
+		<div align="center">
+			<div align="left">
+				<p><b>Introduction</b></p>
+			</div>
+			<div align="left">
+				<p>LCD displays with Toshiba T6963 controller are ones of the 
+				most popular LCD displays. On this page You will find 
+				ready-to-use source code for Atmel AT91SAM microcontrollers with 
+				ARM core written 
+				in C language for arm-elf-gcc compiler (WinARM). </p>
+			</div>
+			<div align="left">
+				<p>&nbsp;<script type="text/javascript"><!--
+google_ad_client = "pub-2353379534068076";
+/* 728x15, utworzono 08-04-04 */
+google_ad_slot = "7970049863";
+google_ad_width = 728;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="Toshiba%20T6963C%20LCD%20to%20Atmel%20AT91SAM_files/show_ads.htm">
+</script></p>
+			</div>
+			<div align="left">
+				<p></p>
+			</div>
+			<div align="left">
+				<p>I divide source code for following files :</p>
+			</div>
+			<div align="left">
+				<ul>
+					<li>T6963C.h - configuration and functions declarations for 
+					T6963.c file</li>
+					<li>T6963C.c - all functions specific for T6963 controller</li>
+					<li>graphic.c - functions for drawing lines, circles and 
+					rectangles </li>
+					<li>graphic.h - functions declarations for graphic.c file</li>
+				</ul>
+				<p>&nbsp;<script type="text/javascript"><!--
+google_ad_client = "pub-2353379534068076";
+/* 468x60, utworzono 08-04-04 */
+google_ad_slot = "3402862322";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript" src="Toshiba%20T6963C%20LCD%20to%20Atmel%20AT91SAM_files/show_ads.htm">
+</script></p>
+				<p></p>
+				<p>All source codes are available in Download section. After 
+				download all files to folder with Your project and add T6963.c 
+				and graphic.c files to project tree and to&nbsp; makefile)and place in 
+				file with the main() function calls to functions which You would 
+				to use. Code is work currently only with 240x64 pixels displays. 
+				With other resolutions can work wrong.</p>
+				<p>For example, code shown below :</p>
+				<div align="center">
+					<table id="table3" width="80%" border="0">
+						<tbody><tr>
+							<td bgcolor="#000000"><font color="#00ffff">#include 
+							"build/board.h"<br>
+							#include "T6963C.h"<br>
+							#include "graph.h"<br>
+							<br>
+							extern void Init(void);<br>
+							<br>
+							int main(void)<br>
+							{<br>
+							int i;<br>
+							Init();<br>
+							<br>
+							GLCD_Initalize();<br>
+							GLCD_Clear_Graphic();<br>
+							GLCD_Clear_Text();<br>
+							GLCD_Clear_CG();<br>
+							<br>
+							GLCD_Line(0,0, 239, 0);<br>
+							GLCD_Line(0,0,0,63);<br>
+							GLCD_Line(239,0, 239, 63);<br>
+							GLCD_Line(239, 63, 0, 63);<br>
+							<br>
+							GLCD_Circle(30,30,20);<br>
+							GLCD_Line(30, 10, 30, 20);<br>
+							<br>
+							GLCD_Circle(209,30,20);<br>
+							GLCD_Line(209, 10, 209, 20);<br>
+							<br>
+							GLCD_Rectangle(60, 6, 120, 48); <br>
+							<br>
+							GLCD_Text_GoTo(13,1);<br>
+							GLCD_Write_String("radzio.dxp.pl");<br>
+							<br>
+							GLCD_Text_GoTo(13,3);<br>
+							GLCD_Write_String("TOSHIBA T6963C");<br>
+							<br>
+							GLCD_Text_GoTo(11,5);<br>
+							GLCD_Write_String("AT91SAM7 &amp; arm-gcc");<br>
+							<br>
+							while(1);<br>
+							return 0;<br>
+							}</font></td>
+						</tr>
+					</tbody></table>
+					<p align="left">...will produced following image :</p>
+					<p>
+					<img src="Toshiba%20T6963C%20LCD%20to%20Atmel%20AT91SAM_files/t6963c_arm.jpg" width="639" border="0" height="245"><br>
+					<br>
+&nbsp;<script type="text/javascript"><!--
+google_ad_client = "pub-2353379534068076";
+/* 300x250, utworzono 08-04-04 */
+google_ad_slot = "7930585910";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="Toshiba%20T6963C%20LCD%20to%20Atmel%20AT91SAM_files/show_ads.htm">
+</script></p></div>
+				<p><b>Download </b></p>
+			</div>
+			<div align="left">
+				<p>Source code for arm-elf-gcc compiler from WinARM package. It can be ported for 
+				others compilers and other ARM-based microcontrollers. Tested 
+				with AT91SAM7S256 and Optrex DMF-5005 display.</p>
+			</div>
+			<div align="left">
+				<p>&nbsp; <a href="http://en.radzio.dxp.pl/t6963/arm/t6963c.c"><u>T6963C.c</u></a><br>&nbsp; 
+				<a href="http://en.radzio.dxp.pl/t6963/arm/t6963c.h"><u>T6963C.h</u></a><br>&nbsp; 
+				<a href="http://en.radzio.dxp.pl/t6963/arm/graphic.c"><u>Graphic.c</u></a><br>&nbsp; 
+				<a href="http://en.radzio.dxp.pl/t6963/arm/graphic.h"><u>Graphic.h</u></a></p>
+			</div>
+			<div align="left">
+				<script type="text/javascript"><!--
+google_ad_client = "pub-2353379534068076";
+/* 200x90, utworzono 08-04-04 */
+google_ad_slot = "4154315500";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="Toshiba%20T6963C%20LCD%20to%20Atmel%20AT91SAM_files/show_ads.htm">
+</script><p></p>
+			</div>
+			<div align="left">
+				<p>If You have questions or suggestions about this site and 
+				source codes, You can contact me by e-mail (only in Polish or 
+				English language) :
+				<img src="Toshiba%20T6963C%20LCD%20to%20Atmel%20AT91SAM_files/email.png" width="81" border="0" height="12"></p>
+			</div>
+		</div>
+		</td>
+	</tr>
+</tbody></table>
+<p align="center">Last modification :
+<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%d-%m-%Y %H:%M:%S" startspan -->24-05-2008 10:30:12<!--webbot bot="Timestamp" endspan i-checksum="25418" --><br>
+(c) Radosław Kwiecień<br>
+<a href="http://en.radzio.dxp.pl/privacy_policy.htm">Privacy policy</a></p>
+<script src="Toshiba%20T6963C%20LCD%20to%20Atmel%20AT91SAM_files/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-354750-5";
+urchinTracker();
+</script>
+</body></html>

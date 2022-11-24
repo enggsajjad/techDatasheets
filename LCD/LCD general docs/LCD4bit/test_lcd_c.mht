@@ -1,0 +1,25 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: 
+Date: Wed, 12 Nov 2008 09:24:54 +0500
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: 7bit
+Content-Location: http://freewebs.com/80x51/source/lcd/test_lcd.c
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY><PRE>#include &lt;8051.h&gt;
+#include "lcd.h"
+
+main( )
+{
+    LCD_init();
+    LCD_row1(); LCD_puts("Hello LCD");
+    LCD_row2(); LCD_puts("&lt; Line 2: OK &gt;");
+    while (1);
+}
+</PRE></BODY></HTML>

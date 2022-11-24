@@ -1,0 +1,98 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:30:57                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\writepage.c                   #
+#       List file     =  c:\projects\at17c8515\release\list\writepage.lst    #
+#       Object file   =  c:\projects\at17c8515\release\obj\writepage.r90     #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Release\Obj\ -e     #
+#                        -gA -RCODE -LC:\Projects\at17c8515\Release\List\    #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -z9 -K                   #
+#                        C:\Projects\at17c8515\WritePage.c                   #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+      1            // WritePage.c
+      2            // Writes PAGE_SIZE bytes at address from bufptr
+      3            // Starts writing at address 0 within the page
+      4            // Please refer to the application note titled: 
+      5            // "Programming Specification for Atmel's Configuration Memory E²PROMS AT17C65/128/256/512/010" 
+      6            // found at www.atmel.com for detailed device address decoding and page address formatting
+      7            // After programming the data polling method is used to determine the end of 
+      8            // the internal programming cycle.
+      9            // Timer/Counter1 is used to ensure the polling code exits its while loop.
+     10            
+     11            #include "at17c.h"
+     12            
+     13            extern volatile unsigned char t1_timed_out;
+     14             
+     15            extern unsigned char SendByte(unsigned char byte, unsigned char order);
+     16            extern void SendStartBit(void);
+     17            extern void SendStopBit(void);
+     18            extern void BitDelay(void);
+     19             
+     20            void WritePage(unsigned int address, unsigned char *bufptr) {
+     21            
+     22            unsigned char i;
+     23            unsigned char addr1;
+     24            unsigned char addr2;
+     25            unsigned char addr3;
+     26            unsigned char test_ack = 0xff;
+     27            
+     28                PORTB &= 0xfb; // bring SER_EN low
+     29                BitDelay();
+     30                            
+     31                addr1 = (unsigned char)(address >> 9);
+     32                addr2 = (unsigned char)(address >> 1);
+     33                addr3 = (unsigned char)(address << 7);
+     34                    
+     35                SendStartBit();
+     36                SendByte(AT17C010 + WRITE,MSB_FIRST);  // send device address byte with write bit
+     37                SendByte(addr1,MSB_FIRST);                 // 1st address byte
+     38                SendByte(addr2,MSB_FIRST);                 // 2nd address byte
+     39                SendByte(addr3,MSB_FIRST);                 // 3rd address byte
+     40             
+     41                for (i = 0; i < PAGE_SIZE; i++)
+     42                    SendByte(bufptr[i],LSB_FIRST);
+     43                        
+     44                SendStopBit();
+     45                          
+     46                t1_timed_out = FALSE; // set in timer counter 0 overflow interrupt routine
+     47             
+     48                // 20 milli-second timeout
+     49                // 7.3728MHz / 1024 = 7200 Hz
+     50                // 7200 Hz = 138.8 us
+     51                // 20 ms / 138.8 us = 144
+     52                // 65536 - 144 = 65392 = ff70
+     53                // interrupt on ffff to 0000 transition
+     54                TCNT1H = 0xff;  
+     55                TCNT1L = 0x70; // load counter
+     56                TCCR1B = 0x05; // timer/counter 1 clock / 1024
+     57            
+     58                // continue sending start bit and device address until we get an ack back
+     59                // data poll to program complete ... time out for error
+     60                while (test_ack && !t1_timed_out) {
+     61                    SendStartBit();
+     62                    test_ack = SendByte(AT17C010 + WRITE,MSB_FIRST);  // send device address byte
+     63                }
+     64                TCCR1B = 0x00; // disable timer/counter 1 clock
+     65                SendStopBit();
+     66            
+     67                PORTB |= 0x04; // bring SER_EN high
+     68                    
+     69            }
+
+Source file: c:\projects\at17c8515\writepage.c
+Errors: none
+Warnings: none
+Code size: 142
+Constant size: 0
+Static variable size: 0
+

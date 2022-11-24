@@ -1,0 +1,155 @@
+From: "Dzidek" <dzidek AT posejdon DOT wpk DOT p DOT lodz DOT pl> (NOSPAM)
+To: <paul@pjrc.com>
+Subject: LCD with Paulmon 2.1 (2.2) ?
+Date: Sat, 8 Sep 2001 13:16:23 +0200
+
+Hello.
+
+I send You, as I promissed, Schematic and LCD procedures for PAULMON 2.1
+( I call it 2.2).  I will be glad(?) if you put this in your page (send
+me adress if you do it) and write who write this.
+
+I know that many peoples visit your page( I think), so they can read and
+use my concept.
+
+My eanglish is not strong enought so please forgive me.
+
+
+Information(for HTML page) :
+--------------------------
+
+Schematic for interface to LCD (HD 44780) --- >schematic1.jpg
+Procedures ----> LCD.txt
+
+
+  This schematic can be seen with the following URL:
+  http://www.pjrc.com/tech/8051/contrib/Dzidek_Schematic.jpg
+
+
+I wrote this procedures and put it in 8051 chip (Atmel). In 4 kB is
+enought space to put it. So my Paulmon write some text on power-up. If
+enybody want this version, compiled or *.asm, please contact me.
+
+Interface and Procedures was written by:
+
+Ogest    (unknown e-mail)
+Rad     (xdzidek@wp.pl)
+
+
+
+----------------------------------------------------------------------
+
+; I am a bit concerned about your circuit.  I connected an address
+; pin to R/W instead of the WR signal, because the timing diagrams
+; I found specified that there was a 40 ns setup time required from
+; R/W signal becoming stable to the rising edge of E.  Three NOR
+; gates, using a 74HC02 might provide enough delay, but I believe
+; the "typical" delay is less than 10 ns for many 74HC02 chips.
+;
+;Yes, the delay is a bit problem but I use slow (very slow) 7402 chip.
+;It was not tested on HC or HCT chips.
+
+----------------------------------------------------------------------
+
+
+
+;$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+;LCD Procedures
+;$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+;		Lcd_int	-LCD Init
+;		Lcd_Wc	-Write Command to LCD
+;		Lcd_Wd	-Write Data to LCD
+;		Lcd_Busy	-IS Busy ?
+;		Lcd_Wt	-Send Text to LCD
+;		Clr_Scr	-Clear LCD
+
+;*****************************************************************
+lcd_int:	mov 	r7,#30			; inicjalizacja wyœwietlacza
+		lcall	delay_ms
+		
+		mov	a,#38h
+		mov	dptr,#lcd_i
+		movx	@dptr,a
+
+		mov	r7,#9
+		lcall	delay_ms
+
+		movx	@dptr,a
+
+		mov	r7,#9
+		lcall	delay_ms
+
+
+		movx	@dptr,a
+
+		mov	a,#06h
+		lcall	lcd_wc
+
+		mov	a,#0ch
+		lcall	lcd_wc
+
+		mov	a,#01h
+		lcall	lcd_wc
+		ret
+;*****************************************************************
+lcd_wc:	push	dph
+		push	dpl
+		mov	dptr,#lcd_i		; wys³anie komndy do wyœwietlacza
+		lcall	lcd_busy
+		movx @dptr,a
+		pop	dpl
+		pop	dph
+		ret
+;*****************************************************************
+lcd_wd:	push	dph
+		push	dpl
+		lcall	lcd_busy		;wys³anie danych do wyswietlacza
+		mov	dptr,#lcd_d
+		movx	@dptr,a
+		pop	dpl
+		pop	dph
+		ret
+;*****************************************************************
+lcd_rc:		
+		lcall	lcd_busy	;pobranie pozycji kursora z wyœwietlacza
+		mov	dptr,#lcd_i
+		clr 	a
+		movc	a,@a+dptr
+		ret
+;*****************************************************************
+lcd_busy:	
+		push	acc		;sprawdzenie flagi busy
+
+test_b:	clr	a
+		mov	dptr,#lcd_i
+		movc 	a,@a+dptr
+		jb	acc.7,test_b
+		pop	acc
+		ret
+;*****************************************************************
+lcd_wt:	lcall	clr_scr
+		mov	r1,#0
+w:		mov	a,r1
+		movc	a,@a+dptr
+		jz	text_end
+		lcall	lcd_wd
+		inc	r1
+		cjne	r1,#16,w
+		mov	a,#0c0h
+		lcall	lcd_wc
+		sjmp	w
+text_end:
+		ret
+
+;*****************************************************************
+
+clr_scr:	mov	acc,#01
+		lcall	lcd_wc
+		ret
+
+;*****************************************************************
+delay_ms:	;daje opoznienie 0.5 ms * r7 przy zegarze 11 mhz	
+a00:		mov	r6,#229d
+		djnz	r6,*
+		djnz	r7,a00
+		ret

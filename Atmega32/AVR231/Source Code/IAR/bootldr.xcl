@@ -1,0 +1,57 @@
+/*****************************************************************************
+*
+* Atmel Corporation
+*
+* File              : main.c
+* Compiler          : IAR EWAAVR 2.28a/3.10c
+* Revision          : $Revision: 2.0 $
+* Date              : $Date: Wednesday, February 15, 2006 09:52:02 UTC $
+* Updated by        : $Author: raapeland $
+*
+* Support mail      : avr@atmel.com
+*
+* Supported devices : All devices with Bootloader Capabilities
+*                     , and at least 1-KB SRAM can be used.
+*                     The example is written for • ATmega8
+*                                                • ATmega16
+*                                                • ATmega162
+*                                                • ATmega169
+*                                                • ATmega32
+*                                                • ATmega64
+*                                                • ATmega128
+*
+* AppNote           : AVR231 - AES Bootloader
+*
+* Description       : Loader receives encrypted data frames (generated using
+*		      'create' tool and sent by 'update' tool), decrypts them and
+*		      executes the commands described in frames.
+*		      For more information, refer to the Application Note
+*                     Documentation.
+*
+*
+****************************************************************************/
+
+-ca90
+-w29
+
+
+//=============================================================================
+// Interrupt vectors
+
+-Z(CODE)INTVEC=(FLASH_SIZE-BOOT_SIZE)-(FLASH_SIZE-BOOT_SIZE+IVT_SIZE-1)
+-H1895 -h(CODE)(FLASH_SIZE-BOOT_SIZE)-(FLASH_SIZE-BOOT_SIZE+IVT_SIZE-1)
+
+//=============================================================================
+// Code memory
+
+-Z(CODE)NEAR_F,HUGE_F,SWITCH,INITTAB,DIFUNCT,CODE=(FLASH_SIZE-BOOT_SIZE)-(FLASH_SIZE-1)
+-Z(FARCODE)FAR_F,FARCODE=(FLASH_SIZE-BOOT_SIZE)-(FLASH_SIZE-1)
+
+
+//=============================================================================
+// RAM
+-Z(DATA)NEAR_I,NEAR_Z=RAM_BASE-(RAM_BASE+RAM_SIZE-1)
+-Z(DATA)RSTACK+40=RAM_BASE-(RAM_BASE+RAM_SIZE-1)
+-Z(DATA)CSTACK+(RAM_SIZE-40-APP_SRAM_USAGE)=RAM_BASE-(RAM_BASE+RAM_SIZE-1)
+//-Z(DATA)TINY_I,TINY_Z,TINY_N=RAM_BASE-FF
+//-Z(DATA)TINY_I,TINY_Z,TINY_N=RAM_BASE-100

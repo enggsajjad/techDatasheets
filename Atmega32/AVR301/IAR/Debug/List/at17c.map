@@ -1,0 +1,608 @@
+################################################################################
+#                                                                              #
+#      IAR Universal Linker V4.49H/WIN                                         #
+#                                                                              #
+#           Link time     =  21/Jan/1999  11:31:22                             #
+#           Target CPU    =  a90                                               #
+#           List file     =  c:\projects\at17c8515\debug\list\at17c.map        #
+#           Output file 1 =  c:\projects\at17c8515\debug\exe\at17c.d90         #
+#           Output format =  debug                                             #
+#                            UBROF version 6.0.0                               #
+#           Command line  =  C:\Projects\at17c8515\Debug\Obj\BitDelay.r90      #
+#                            C:\Projects\at17c8515\Debug\Obj\GetByte.r90       #
+#                            C:\Projects\at17c8515\Debug\Obj\Init.r90          #
+#                            C:\Projects\at17c8515\Debug\Obj\Main.r90          #
+#                            C:                                                #
+#                            \Projects\at17c8515\Debug\Obj\ProgramResetPolarity.r90 #
+#                                                                              #
+#                            C:\Projects\at17c8515\Debug\Obj\ReadPage.r90      #
+#                            C:\Projects\at17c8515\Debug\Obj\SendByte.r90      #
+#                            C:\Projects\at17c8515\Debug\Obj\SendStartBit.r90  #
+#                            C:\Projects\at17c8515\Debug\Obj\SendStopBit.r90   #
+#                            C:\Projects\at17c8515\Debug\Obj\SetSCLHigh.r90    #
+#                            C:\Projects\at17c8515\Debug\Obj\Timer0.r90        #
+#                            C:\Projects\at17c8515\Debug\Obj\Timer1.r90        #
+#                            C:                                                #
+#                            \Projects\at17c8515\Debug\Obj\VerifyResetPolarity.r90 #
+#                                                                              #
+#                            C:\Projects\at17c8515\Debug\Obj\WritePage.r90     #
+#                            C:\Projects\at17c8515\Debug\Obj\WriteSCL.r90      #
+#                            C:\Projects\at17c8515\Debug\Obj\WriteSDA.r90 -o   #
+#                            C:\Projects\at17c8515\Debug\Exe\at17c.d90 -rt -B  #
+#                            -l C:\Projects\at17c8515\Debug\List\at17c.map     #
+#                            -xms -IC:\IAR\EW21\A90\lib\ -f                    #
+#                            C:\IAR\EW21\A90\icca90\lnk1s.xcl (-ca90           #
+#                            -Z(CODE)INTVEC=0-1B                               #
+#                            -Z(CODE)RCODE,CDATA0,CDATA1,CCSTR,SWITCH,FLASH,   #
+#                            CODE=1C-1FFF                                      #
+#                            -Z(DATA)IDATA0,UDATA0=60-DF                       #
+#                            -e?RSTACK_IN_EXTERNAL_RAM=?C_STARTUP              #
+#                            -Z(DATA)RSTACK+40=E0-11F                          #
+#                            -Z(DATA)CSTACK+400,IDATA1,UDATA1,ECSTR=120-7FFF   #
+#                            -Z(DATA)NO_INIT=8000-8FFF                         #
+#                            -Z(DATA)CSTR,CONST=9000-FFFF                      #
+#                            -e_small_write=_formatted_write                   #
+#                            -e_small_write_P=_formatted_write_P               #
+#                            -e_medium_read=_formatted_read                    #
+#                            -e_medium_read_P=_formatted_read_P -w29 cl1s)     #
+#                                                                              #
+#                                               (c) Copyright IAR Systems 1997 #
+################################################################################
+
+
+
+
+
+                ****************************************
+                *                                      *
+                *           CROSS REFERENCE            *
+                *                                      *
+                ****************************************
+
+                  There are no program entries.
+
+
+
+
+                ****************************************
+                *                                      *
+                *              MODULE MAP              *
+                *                                      *
+                ****************************************
+
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\bitdelay.r90
+  PROGRAM MODULE, NAME : bitdelay
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 0000007A - 0000008B
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           BitDelay                0000007A        getbyte
+                                                   readpage
+                                                   sendbyte
+                                                   sendstartbit
+                                                   sendstopbit
+                                                   verifyresetpolarity
+                                                   writepage
+               calls direct
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\getbyte.r90
+  PROGRAM MODULE, NAME : getbyte
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 0000008C - 000000CF
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           GetByte                 0000008C        readpage
+                                                   verifyresetpolarity
+               calls direct
+           ?0003                   00000096 
+           ?0002                   000000B4 
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\init.r90
+  PROGRAM MODULE, NAME : init
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 000000D0 - 00000109
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           Init                    000000D0        main
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\main.r90
+  PROGRAM MODULE, NAME : main
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 0000010A - 000001B5
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           main                    0000010A        C_STARTUP_II
+               type 0 function
+               calls direct
+           ?0003                   00000114 
+           ?0002                   00000126 
+           ?0010                   00000138 
+           ?0014                   0000015A 
+           ?0018                   0000017A 
+           ?0013                   0000017E 
+           ?0020                   0000018C 
+           ?0022                   0000019A 
+           ?0024                   0000019C 
+           ?0023                   000001B0 
+           ?0006                   000001B4 
+    -------------------------------------------------------------------------
+UDATA1
+  Relative segment, address : 00000520 - 00000621
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           rdbuf                   000005A2        Not referred to
+           t0_timed_out            00000520        setsclhigh
+                                                   timer0
+           t1_timed_out            00000521        programresetpolarity
+                                                   timer1
+                                                   writepage
+           wrbuf                   00000522        Not referred to
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\programresetpolarity.r90
+  PROGRAM MODULE, NAME : programresetpolarity
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 000001B6 - 0000021B
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           ProgramResetPolarity    000001B6        main
+               calls direct
+           ?0003                   000001DA 
+           ?0002                   000001E8 
+           ?0007                   000001FC 
+           ?0006                   00000214 
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\readpage.r90
+  PROGRAM MODULE, NAME : readpage
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 0000021C - 00000295
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           ReadPage                0000021C        main
+               calls direct
+           ?0003                   0000026A 
+           ?0002                   00000280 
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\sendbyte.r90
+  PROGRAM MODULE, NAME : sendbyte
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 00000296 - 000002DF
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           SendByte                00000296        programresetpolarity
+                                                   readpage
+                                                   verifyresetpolarity
+                                                   writepage
+               calls direct
+           ?0003                   0000029E 
+           ?0007                   000002B0 
+           ?0008                   000002B8 
+           ?0002                   000002C8 
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\sendstartbit.r90
+  PROGRAM MODULE, NAME : sendstartbit
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 000002E0 - 000002F7
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           SendStartBit            000002E0        programresetpolarity
+                                                   readpage
+                                                   verifyresetpolarity
+                                                   writepage
+               calls direct
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\sendstopbit.r90
+  PROGRAM MODULE, NAME : sendstopbit
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 000002F8 - 00000309
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           SendStopBit             000002F8        programresetpolarity
+                                                   readpage
+                                                   verifyresetpolarity
+                                                   writepage
+               calls direct
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\setsclhigh.r90
+  PROGRAM MODULE, NAME : setsclhigh
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 0000030A - 00000331
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           SetSCLHigh              0000030A        getbyte
+                                                   sendbyte
+                                                   sendstartbit
+                                                   sendstopbit
+               calls direct
+           ?0003                   0000031C 
+           ?0002                   00000328 
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\timer0.r90
+  PROGRAM MODULE, NAME : timer0
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 00000332 - 0000034D
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           TIMER0_OVF0_interrupt   00000332        Not referred to
+               interrupt function
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address : 00000000 - 0000000F
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\timer1.r90
+  PROGRAM MODULE, NAME : timer1
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 0000034E - 00000369
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           TIMER1_OVF1_interrupt   0000034E        Not referred to
+               interrupt function
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address : 00000000 - 0000000D
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\verifyresetpolarity.r90
+  PROGRAM MODULE, NAME : verifyresetpolarity
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 0000036A - 000003C3
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           VerifyResetPolarity     0000036A        main
+               calls direct
+           ?0003                   000003BE 
+           ?0006                   000003C0 
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\writepage.r90
+  PROGRAM MODULE, NAME : writepage
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 000003C4 - 0000045B
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           WritePage               000003C4        main
+               calls direct
+           ?0003                   0000040E 
+           ?0002                   00000424 
+           ?0007                   00000438 
+           ?0006                   00000450 
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\writescl.r90
+  PROGRAM MODULE, NAME : writescl
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 0000045C - 00000467
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           WriteSCL                0000045C        getbyte
+                                                   sendbyte
+                                                   sendstartbit
+                                                   setsclhigh
+           ?0003                   00000464 
+
+    *************************************************************************
+
+  FILE NAME : c:\projects\at17c8515\debug\obj\writesda.r90
+  PROGRAM MODULE, NAME : writesda
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 00000468 - 00000473
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           WriteSDA                00000468        getbyte
+                                                   sendbyte
+                                                   sendstartbit
+                                                   sendstopbit
+           ?0003                   00000470 
+
+    *************************************************************************
+
+  FILE NAME : c:\iar\ew21\a90\lib\cl1s.r90
+  PROGRAM MODULE, NAME : C_STARTUP
+
+  SEGMENTS IN THE MODULE
+  ======================
+INTVEC
+  Common segment, address : 00000000 - 00000001
+
+    -------------------------------------------------------------------------
+  PROGRAM MODULE, NAME : C_STARTUP_II
+
+  SEGMENTS IN THE MODULE
+  ======================
+RCODE
+  Relative segment, address : 0000001C - 00000079
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           ?C_STARTUP              00000020        Not referred to
+           ?RSTACK_IN_EXTERNAL_RAM
+                                   0000001C        C_STARTUP
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address : Not in use
+    -------------------------------------------------------------------------
+CDATA1
+  Relative segment, address : Not in use
+    -------------------------------------------------------------------------
+IDATA1
+  Relative segment, address : Not in use
+    -------------------------------------------------------------------------
+UDATA1
+  Relative segment, address : Not in use
+    -------------------------------------------------------------------------
+RSTACK
+  Relative segment, address : Not in use
+    -------------------------------------------------------------------------
+CSTACK
+  Relative segment, address : Not in use
+    -------------------------------------------------------------------------
+SWITCH
+  Relative segment, address : Not in use
+    -------------------------------------------------------------------------
+ECSTR
+  Relative segment, address : Not in use
+    -------------------------------------------------------------------------
+CCSTR
+  Relative segment, address : Not in use
+    -------------------------------------------------------------------------
+CDATA0
+  Relative segment, address : Not in use
+    -------------------------------------------------------------------------
+IDATA0
+  Relative segment, address : Not in use
+    -------------------------------------------------------------------------
+UDATA0
+  Relative segment, address : Not in use
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : lowinit
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 00000474 - 00000477
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           __low_level_init        00000474        C_STARTUP_II
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : exit
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 00000478 - 0000047B
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           exit                    0000047A        Not referred to
+           ?C_EXIT                 0000047A        C_STARTUP_II
+           ?C_FUNCALL              00000478        Not referred to
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?C_SHL_L01
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 0000047C - 00000485
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           ?C_SHL_L01              0000047C        getbyte
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?MOVE_FLASH_L07
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 00000486 - 000004A1
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           ?MOVE_FLASH_L07         00000486        C_STARTUP_II
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?CLEAR_DATA_L07
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 000004A2 - 000004AF
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           ?CLEAR_DATA_L07         000004A2        C_STARTUP_II
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?LIB_VERSION_L08
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 000004B0 - 000004B1
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           ?CL1S_1_30_L08          000004B0        bitdelay
+                                                   getbyte
+                                                   init
+                                                   main
+                                                   programresetpolarity
+                                                   readpage
+                                                   sendbyte
+                                                   sendstartbit
+                                                   sendstopbit
+                                                   setsclhigh
+                                                   timer0
+                                                   timer1
+                                                   verifyresetpolarity
+                                                   writepage
+                                                   writescl
+                                                   writesda
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?PROLOGUE_L09
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 000004B2 - 000004D3
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           ?PROLOGUE16_L09         000004B2        Not referred to
+           ?PROLOGUE15_L09         000004B4        Not referred to
+           ?PROLOGUE14_L09         000004B6        Not referred to
+           ?PROLOGUE13_L09         000004B8        Not referred to
+           ?PROLOGUE12_L09         000004BA        Not referred to
+           ?PROLOGUE11_L09         000004BC        Not referred to
+           ?PROLOGUE10_L09         000004BE        Not referred to
+           ?PROLOGUE9_L09          000004C0        Not referred to
+           ?PROLOGUE8_L09          000004C2        Not referred to
+           ?PROLOGUE7_L09          000004C4        writepage
+           ?PROLOGUE6_L09          000004C6        readpage
+           ?PROLOGUE5_L09          000004C8        Not referred to
+           ?PROLOGUE4_L09          000004CA        verifyresetpolarity
+           ?PROLOGUE3_L09          000004CC        getbyte
+                                                   programresetpolarity
+                                                   sendbyte
+           ?PROLOGUE2_L09          000004CE        Not referred to
+           ?PROLOGUE1_L09          000004D0        Not referred to
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?EPILOGUE_B_L09
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address : 000004D4 - 00000501
+           ENTRIES                ADDRESS          REF BY MODULE
+           =======                =======          =============
+           ?EPILOGUE_B0_L09        000004F4        Not referred to
+           ?EPILOGUE_B16_L09       000004D4        Not referred to
+           ?EPILOGUE_B15_L09       000004D6        Not referred to
+           ?EPILOGUE_B14_L09       000004D8        Not referred to
+           ?EPILOGUE_B13_L09       000004DA        Not referred to
+           ?EPILOGUE_B12_L09       000004DC        Not referred to
+           ?EPILOGUE_B11_L09       000004DE        Not referred to
+           ?EPILOGUE_B10_L09       000004E0        Not referred to
+           ?EPILOGUE_B9_L09        000004E2        Not referred to
+           ?EPILOGUE_B8_L09        000004E4        Not referred to
+           ?EPILOGUE_B7_L09        000004E6        writepage
+           ?EPILOGUE_B6_L09        000004E8        readpage
+           ?EPILOGUE_B5_L09        000004EA        Not referred to
+           ?EPILOGUE_B4_L09        000004EC        verifyresetpolarity
+           ?EPILOGUE_B3_L09        000004EE        getbyte
+                                                   programresetpolarity
+                                                   sendbyte
+           ?EPILOGUE_B2_L09        000004F0        Not referred to
+           ?EPILOGUE_B1_L09        000004F2        Not referred to
+
+
+
+
+                ****************************************
+                *                                      *
+                *      SEGMENTS IN ADDRESS ORDER       *
+                *                                      *
+                ****************************************
+
+
+ SEGMENT               START ADDRESS    END ADDRESS  TYPE  ORG  P/N  ALIGN
+ =======               =============    ===========  ====  ===  ===  =====
+INTVEC                     00000000   -   0000000F    com  stc  pos   1     
+RCODE                      0000001C   -   00000079    rel  stc  pos   1     
+CDATA1                            Not in use          rel  flt  pos   0     
+CCSTR                             Not in use          rel  flt  pos   0     
+SWITCH                            Not in use          rel  flt  pos   0     
+FLASH                             Not in use          dse  flt  pos   0     
+CDATA0                            Not in use          rel  flt  pos   0     
+CODE                       0000007A   -   00000501    rel  flt  pos   1     
+UDATA0                            Not in use          rel  flt  pos   0     
+IDATA0                            Not in use          rel  stc  pos   0     
+RSTACK                     000000E0   -   0000011F    rel  stc  pos   0     
+CSTACK                     00000120   -   0000051F    rel  stc  pos   0     
+UDATA1                     00000520   -   00000621    rel  flt  pos   0     
+IDATA1                            Not in use          rel  flt  pos   0     
+ECSTR                             Not in use          rel  flt  pos   0     
+
+                ****************************************
+                *                                      *
+                *        END OF CROSS REFERENCE        *
+                *                                      *
+                ****************************************
+
+  1270 bytes of CODE memory
+  1346 bytes of DATA memory
+
+Errors: none
+Warnings: none
+

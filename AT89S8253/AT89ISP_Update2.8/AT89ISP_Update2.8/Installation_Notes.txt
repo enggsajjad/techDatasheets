@@ -1,0 +1,17 @@
+Atmel AT89ISP Software Update for
+
+AT89S8253/AT89S2051/AT89S4051/AT89LP2052/AT89LP4052/AT89LP213/AT89LP214/AT89LP216/
+AT89S52E/ATLP828 Drivers 
+
+
+1. Make sure the Atmel AT89ISP software v1.0 is already installed on the computer.
+ 
+2. Close the AT89ISP application.
+
+3. Run the file AT89ISP_update.exe.
+
+4. Click the device that you want to add or update and Click "Install Driver".
+
+5. Close all programs and restart the computer. 
+
+

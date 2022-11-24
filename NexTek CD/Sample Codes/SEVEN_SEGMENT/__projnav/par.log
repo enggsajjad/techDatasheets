@@ -1,0 +1,3 @@
+Place & Route Module seg_display . . .
+PAR command line: par -w -intstyle ise -ol std -t 1 seg_display_map.ncd seg_display.ncd seg_display.pcf
+PAR completed successfully

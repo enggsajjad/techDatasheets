@@ -1,0 +1,161 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:31:16                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\readpage.c                    #
+#       List file     =  c:\projects\at17c8515\debug\list\readpage.lst       #
+#       Object file   =  c:\projects\at17c8515\debug\obj\readpage.r90        #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Debug\Obj\ -e -gA   #
+#                        -RCODE -r0e -LC:\Projects\at17c8515\Debug\List\ -q  #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -K                       #
+#                        C:\Projects\at17c8515\ReadPage.c                    #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+   \                     	NAME	readpage(17)
+   \                     	RSEG	CODE(0)
+   \                     	EXTERN	BitDelay
+   \                     	EXTERN	GetByte
+   \                     	PUBLIC	ReadPage
+   \                     	EXTERN	SendByte
+   \                     	EXTERN	SendStartBit
+   \                     	EXTERN	SendStopBit
+   \                     	EXTERN	?PROLOGUE6_L09
+   \                     	EXTERN	?EPILOGUE_B6_L09
+   \                     	EXTERN	?CL1S_1_30_L08
+   \                     	RSEG	CODE
+   \                     ReadPage:
+      1          // ReadPage.c
+      2          // Read PAGE_SIZE bytes at address into bufptr
+      3          // Starts reading at address 0 within the page
+      4          // Please refer to the application note titled: 
+      5          // "Programming Specification for Atmel's Configuration Memory E²PROMS AT17C65/128/256/512/010" 
+      6          // found at www.atmel.com for detailed device address decoding and page address formatting
+      7           
+      8          #include "at17c.h"
+      9           
+     10          extern void BitDelay(void);
+     11          extern unsigned char SendByte(unsigned char byte, unsigned char order);
+     12          extern unsigned char GetByte(unsigned char lastbyte);
+     13          extern void SendStartBit(void);
+     14          extern void SendStopBit(void);
+     15          
+     16          void ReadPage(unsigned int address, unsigned char *bufptr) {
+   \   00000000   ....                       RCALL   ?PROLOGUE6_L09
+   \   00000002   A02F                       MOV     R26,R16
+   \   00000004   B12F                       MOV     R27,R17
+   \   00000006   842F                       MOV     R24,R20
+   \   00000008   952F                       MOV     R25,R21
+     17          
+     18          unsigned char i;
+     19          unsigned char addr1;
+     20          unsigned char addr2;
+     21          unsigned char addr3;
+     22           
+     23              PORTB &= 0xfb; // bring SER_EN low
+   \   0000000A   C298                       CBI     LOW(24),LOW(2)
+     24              
+     25              BitDelay();
+   \   0000000C   ....                       RCALL   BitDelay
+     26              
+     27              addr1 = (unsigned char)(address >> 9);
+   \   0000000E   0A2F                       MOV     R16,R26
+   \   00000010   1B2F                       MOV     R17,R27
+   \   00000012   012F                       MOV     R16,R17
+   \   00000014   1127                       CLR     R17
+   \   00000016   0695                       LSR     R16
+   \   00000018   402E                       MOV     R4,R16
+     28              addr2 = (unsigned char)(address >> 1);
+   \   0000001A   0A2F                       MOV     R16,R26
+   \   0000001C   1B2F                       MOV     R17,R27
+   \   0000001E   1695                       LSR     R17
+   \   00000020   0795                       ROR     R16
+   \   00000022   502E                       MOV     R5,R16
+     29              addr3 = (unsigned char)(address << 7);
+   \   00000024   A795                       ROR     R26
+   \   00000026   AA27                       CLR     R26
+   \   00000028   A795                       ROR     R26
+     30                  
+     31              SendStartBit();
+   \   0000002A   ....                       RCALL   SendStartBit
+     32              SendByte(AT17C010 + WRITE,MSB_FIRST);  // send device address byte
+   \   0000002C   4FEF                       LDI     R20,255
+   \   0000002E   06EA                       LDI     R16,166
+   \   00000030   ....                       RCALL   SendByte
+     33              SendByte(addr1,MSB_FIRST);                 // 1st address byte
+   \   00000032   4FEF                       LDI     R20,255
+   \   00000034   042D                       MOV     R16,R4
+   \   00000036   ....                       RCALL   SendByte
+     34              SendByte(addr2,MSB_FIRST);                 // 2nd address byte
+   \   00000038   4FEF                       LDI     R20,255
+   \   0000003A   052D                       MOV     R16,R5
+   \   0000003C   ....                       RCALL   SendByte
+     35              SendByte(addr3,MSB_FIRST);                 // 3rd address byte
+   \   0000003E   4FEF                       LDI     R20,255
+   \   00000040   0A2F                       MOV     R16,R26
+   \   00000042   ....                       RCALL   SendByte
+     36           
+     37              SendStartBit();
+   \   00000044   ....                       RCALL   SendStartBit
+     38              SendByte(AT17C010 + READ,MSB_FIRST);  // send device address byte with read bit
+   \   00000046   4FEF                       LDI     R20,255
+   \   00000048   07EA                       LDI     R16,167
+   \   0000004A   ....                       RCALL   SendByte
+     39           
+     40              for (i = 0; i < (PAGE_SIZE - 1); i++)
+   \   0000004C   AA27                       CLR     R26
+   \                     ?0003:
+   \   0000004E   AF37                       CPI     R26,LOW(127)
+   \   00000050   48F4                       BRCC    ?0002
+     41                  bufptr[i] = GetByte(0);
+   \   00000052   0027                       CLR     R16
+   \   00000054   ....                       RCALL   GetByte
+   \   00000056   EA2F                       MOV     R30,R26
+   \   00000058   FF27                       CLR     R31
+   \   0000005A   E80F                       ADD     R30,R24
+   \   0000005C   F91F                       ADC     R31,R25
+   \   0000005E   0083                       ST      Z,R16
+   \   00000060   A395                       INC     R26
+   \   00000062   F5CF                       RJMP    ?0003
+   \                     ?0002:
+     42                      
+     43              bufptr[(PAGE_SIZE - 1)] = GetByte(1); // 1 signals last byte of read sequence
+   \   00000064   01E0                       LDI     R16,1
+   \   00000066   ....                       RCALL   GetByte
+   \   00000068   8158                       SUBI    R24,LOW(129)
+   \   0000006A   9F4F                       SBCI    R25,LOW(255)
+   \   0000006C   E82F                       MOV     R30,R24
+   \   0000006E   F92F                       MOV     R31,R25
+   \   00000070   0083                       ST      Z,R16
+     44          
+     45              SendStopBit();
+   \   00000072   ....                       RCALL   SendStopBit
+     46          
+     47              PORTB |= 0x04; // bring SER_EN high
+   \   00000074   C29A                       SBI     LOW(24),LOW(2)
+     48                  
+     49          }
+   \   00000076   E6E0                       LDI     R30,6
+   \   00000078   ....                       RJMP    ?EPILOGUE_B6_L09
+   \                     ;	bufptr          	R24-R25
+   \                     ;	i               	R26
+   \                     ;	addr3           	R26
+   \                     ;	addr2           	R5
+   \                     ;	addr1           	R4
+   \                     ;	address         	R26-R27
+   \                     	END
+
+Source file: c:\projects\at17c8515\readpage.c
+Errors: none
+Warnings: none
+Code size: 122
+Constant size: 0
+Static variable size: 0
+

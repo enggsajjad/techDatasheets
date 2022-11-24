@@ -1,0 +1,137 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:31:17                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\sendbyte.c                    #
+#       List file     =  c:\projects\at17c8515\debug\list\sendbyte.lst       #
+#       Object file   =  c:\projects\at17c8515\debug\obj\sendbyte.r90        #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Debug\Obj\ -e -gA   #
+#                        -RCODE -r0e -LC:\Projects\at17c8515\Debug\List\ -q  #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -K                       #
+#                        C:\Projects\at17c8515\SendByte.c                    #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+   \                     	NAME	sendbyte(17)
+   \                     	RSEG	CODE(0)
+   \                     	EXTERN	BitDelay
+   \                     	PUBLIC	SendByte
+   \                     	EXTERN	SetSCLHigh
+   \                     	EXTERN	WriteSCL
+   \                     	EXTERN	WriteSDA
+   \                     	EXTERN	?PROLOGUE3_L09
+   \                     	EXTERN	?EPILOGUE_B3_L09
+   \                     	EXTERN	?CL1S_1_30_L08
+   \                     	RSEG	CODE
+   \                     SendByte:
+      1          // SendByte.c
+      2          // send a byte of address or data to the slave
+      3          // parameter order used to select between sending LSB or MSB first
+      4          // returns a 1 if the slave didn't ack and a 0 if the slave did
+      5           
+      6          #include "at17c.h"
+      7          
+      8          extern void WriteSCL(unsigned char state);
+      9          extern void WriteSDA(unsigned char state);
+     10          extern void BitDelay(void);
+     11          extern unsigned char SetSCLHigh(void);
+     12          
+     13          unsigned char SendByte(unsigned char byte, unsigned char order) {
+   \   00000000   ....                       RCALL   ?PROLOGUE3_L09
+   \   00000002   A02F                       MOV     R26,R16
+   \   00000004   842F                       MOV     R24,R20
+     14          
+     15          unsigned char i;
+     16          unsigned char error;
+     17          
+     18              for (i = 0; i < 8; i++) {
+   \   00000006   9927                       CLR     R25
+   \                     ?0003:
+   \   00000008   9830                       CPI     R25,LOW(8)
+   \   0000000A   98F4                       BRCC    ?0002
+     19                  if (order) {
+   \   0000000C   8823                       TST     R24
+   \   0000000E   29F0                       BREQ    ?0007
+     20                      WriteSDA(byte & 0x80); // if > 0 SDA will be a 1
+   \   00000010   0A2F                       MOV     R16,R26
+   \   00000012   0078                       ANDI    R16,LOW(128)
+   \   00000014   ....                       RCALL   WriteSDA
+     21                      byte = byte << 1; // send each bit, MSB first for address
+   \   00000016   AA0F                       LSL     R26
+     22                  }
+     23                  else {
+   \   00000018   04C0                       RJMP    ?0008
+   \                     ?0007:
+     24                      WriteSDA(byte & 0x01); // if > 0 SDA will be a 1
+   \   0000001A   0A2F                       MOV     R16,R26
+   \   0000001C   0170                       ANDI    R16,LOW(1)
+   \   0000001E   ....                       RCALL   WriteSDA
+     25                      byte = byte >> 1; // send each bit, LSB first for data
+   \   00000020   A695                       LSR     R26
+   \                     ?0008:
+     26                  }
+     27          
+     28                  BitDelay();
+   \   00000022   ....                       RCALL   BitDelay
+     29                  SetSCLHigh();
+   \   00000024   ....                       RCALL   SetSCLHigh
+     30                  BitDelay();
+   \   00000026   ....                       RCALL   BitDelay
+     31                  WriteSCL(0);
+   \   00000028   0027                       CLR     R16
+   \   0000002A   ....                       RCALL   WriteSCL
+     32                  BitDelay();
+   \   0000002C   ....                       RCALL   BitDelay
+   \   0000002E   9395                       INC     R25
+   \   00000030   EBCF                       RJMP    ?0003
+   \                     ?0002:
+     33              }
+     34              
+     35              // now for an ack
+     36              
+     37              // master generates clock pulse for ACK
+     38              WriteSDA(1); // release SDA ... listen for ACK
+   \   00000032   01E0                       LDI     R16,1
+   \   00000034   ....                       RCALL   WriteSDA
+     39              BitDelay();
+   \   00000036   ....                       RCALL   BitDelay
+     40              SetSCLHigh(); // ACK should be stable ... data not allowed to change when SCL is high
+   \   00000038   ....                       RCALL   SetSCLHigh
+     41           
+     42              // SDA at 0 ?
+     43              error = (PINB & 0x01); // ack didn't happen if bit 0 = 1
+   \   0000003A   86B3                       IN      R24,LOW(22)
+   \   0000003C   8170                       ANDI    R24,LOW(1)
+     44          
+     45              WriteSCL(0);
+   \   0000003E   0027                       CLR     R16
+   \   00000040   ....                       RCALL   WriteSCL
+     46              BitDelay();
+   \   00000042   ....                       RCALL   BitDelay
+     47           
+     48              return(error);
+   \   00000044   082F                       MOV     R16,R24
+     49          
+     50          }
+   \   00000046   E3E0                       LDI     R30,3
+   \   00000048   ....                       RJMP    ?EPILOGUE_B3_L09
+   \                     ;	error           	R24
+   \                     ;	byte            	R26
+   \                     ;	order           	R24
+   \                     ;	i               	R25
+   \                     	END
+
+Source file: c:\projects\at17c8515\sendbyte.c
+Errors: none
+Warnings: none
+Code size: 74
+Constant size: 0
+Static variable size: 0
+

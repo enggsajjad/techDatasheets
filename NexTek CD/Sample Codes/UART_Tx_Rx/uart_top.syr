@@ -1,0 +1,540 @@
+Release 6.1i - xst G.23
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 1.78 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 1.78 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Reading design: uart_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+     4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+  6) Low Level Synthesis
+  7) Final Report
+     7.1) Device utilization summary
+     7.2) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : uart_top.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : uart_top
+Output Format                      : NGC
+Target Device                      : xc2s150-5-pq208
+
+---- Source Options
+Top Module Name                    : uart_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+Resource Sharing                   : YES
+Multiplier Style                   : lut
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100
+Add Generic Clock Buffer(BUFG)     : 4
+Register Duplication               : YES
+Equivalent register Removal        : YES
+Slice Packing                      : YES
+Pack IO Registers into IOBs        : auto
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : NO
+Global Optimization                : AllClockNets
+RTL Output                         : Yes
+Write Timing Constraints           : NO
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+lso                                : uart_top.lso
+Read Cores                         : YES
+cross_clock_analysis               : NO
+verilog2001                        : YES
+Optimize Instantiated Primitives   : NO
+
+=========================================================================
+
+WARNING:Xst:1885 - LSO file is empty, default list of libraries is used
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "uat_sm.v"
+Module <uat_sm> compiled
+Compiling source file "uat_top.v"
+Module <uat_top> compiled
+Compiling source file "uar_sm.V"
+Module <uar_sm> compiled
+Compiling source file "uar_top.v"
+Module <uar_top> compiled
+Compiling source file "uart_top.v"
+Module <uart_top> compiled
+No errors in compilation
+Analysis of file <uart_top.prj> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uart_top>.
+Module <uart_top> is correct for synthesis.
+ 
+Analyzing module <uat_top>.
+Module <uat_top> is correct for synthesis.
+ 
+Analyzing module <uat_sm>.
+Module <uat_sm> is correct for synthesis.
+ 
+Analyzing module <uar_top>.
+Module <uar_top> is correct for synthesis.
+ 
+Analyzing module <uar_sm>.
+Module <uar_sm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uar_sm>.
+    Related source file is uar_sm.V.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0001                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <uar_sm> synthesized.
+
+
+Synthesizing Unit <uat_sm>.
+    Related source file is uat_sm.v.
+    Found finite state machine <FSM_1> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 1000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit comparator greatequal for signal <$n0000> created at line 84.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Comparator(s).
+Unit <uat_sm> synthesized.
+
+
+Synthesizing Unit <uar_top>.
+    Related source file is uar_top.v.
+    Found 8-bit register for signal <dout_byte>.
+    Found 1-bit register for signal <dout_rdy>.
+    Found 5-bit adder for signal <$n0021> created at line 83.
+    Found 4-bit adder for signal <$n0023> created at line 125.
+    Found 5-bit register for signal <count_rdy_sig>.
+    Found 4-bit register for signal <count_sample>.
+    Found 8-bit register for signal <dout_byte_temp>.
+    Found 1-bit register for signal <dout_rdy_d>.
+    Found 1-bit register for signal <dout_rdy_temp>.
+    Found 1-bit register for signal <ser_in_r1>.
+    Found 1-bit register for signal <ser_in_r2>.
+    Found 4-bit up counter for signal <shift_count>.
+    Found 8 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  30 D-type flip-flop(s).
+	inferred   2 Adder/Subtracter(s).
+	inferred   8 Multiplexer(s).
+Unit <uar_top> synthesized.
+
+
+Synthesizing Unit <uat_top>.
+    Related source file is uat_top.v.
+WARNING:Xst:1780 - Signal <count> is never used or assigned.
+    Found 1-bit register for signal <ser_out>.
+    Found 3-bit adder for signal <$n0009> created at line 96.
+    Found 8-bit register for signal <data_buf>.
+    Found 1-bit register for signal <din_rdy_reg>.
+    Found 3-bit register for signal <shift_count>.
+    Found 8 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred  13 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+	inferred   8 Multiplexer(s).
+Unit <uat_top> synthesized.
+
+
+Synthesizing Unit <uart_top>.
+    Related source file is uart_top.v.
+    Found 1-bit register for signal <clk_19200Hz>.
+    Found 4-bit up counter for signal <count_div>.
+    Found 10-bit up counter for signal <count_div_19200>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <uart_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                             : 2
+# Registers                        : 14
+  8-bit register                   : 3
+  3-bit register                   : 1
+  1-bit register                   : 8
+  5-bit register                   : 1
+  4-bit register                   : 1
+# Counters                         : 3
+  4-bit up counter                 : 2
+  10-bit up counter                : 1
+# Multiplexers                     : 2
+  2-to-1 multiplexer               : 2
+# Adders/Subtractors               : 3
+  5-bit adder                      : 1
+  4-bit adder                      : 1
+  3-bit adder                      : 1
+# Comparators                      : 1
+  3-bit comparator greatequal      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Selecting encoding for FSM_1 ...
+Optimizing FSM <FSM_1> on signal <current_state> with one-hot encoding.
+Selecting encoding for FSM_0 ...
+Optimizing FSM <FSM_0> on signal <state> with one-hot encoding.
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <uart_top> ...
+
+Optimizing unit <uar_sm> ...
+
+Optimizing unit <uat_top> ...
+
+Optimizing unit <uar_top> ...
+WARNING:Xst:1291 - FF/Latch <count_rdy_sig_4> is unconnected in block <uar_top>.
+Loading device for application Xst from file 'v150.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_top, actual ratio is 3.
+FlipFlop clk_19200Hz has been replicated 1 time(s)
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : uart_top.ngr
+Top Level Output File Name         : uart_top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 6
+
+Macro Statistics :
+# Registers                        : 15
+#      1-bit register              : 8
+#      3-bit register              : 1
+#      4-bit register              : 2
+#      5-bit register              : 1
+#      8-bit register              : 3
+# Counters                         : 2
+#      10-bit up counter           : 1
+#      4-bit up counter            : 1
+# Multiplexers                     : 2
+#      2-to-1 multiplexer          : 2
+# Adders/Subtractors               : 3
+#      4-bit adder                 : 2
+#      5-bit adder                 : 1
+# Comparators                      : 1
+#      3-bit comparator greatequal : 1
+
+Cell Usage :
+# BELS                             : 127
+#      GND                         : 1
+#      LUT1                        : 8
+#      LUT1_L                      : 7
+#      LUT2                        : 8
+#      LUT2_L                      : 3
+#      LUT3                        : 11
+#      LUT3_L                      : 14
+#      LUT4                        : 15
+#      LUT4_D                      : 4
+#      LUT4_L                      : 9
+#      MUXCY                       : 23
+#      VCC                         : 1
+#      XORCY                       : 23
+# FlipFlops/Latches                : 70
+#      FDC                         : 26
+#      FDC_1                       : 7
+#      FDCE                        : 10
+#      FDCE_1                      : 8
+#      FDCPE                       : 14
+#      FDP                         : 3
+#      FDP_1                       : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 5
+#      IBUF                        : 2
+#      OBUF                        : 3
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s150pq208-5 
+
+ Number of Slices:                      54  out of   1728     3%  
+ Number of Slice Flip Flops:            70  out of   3456     2%  
+ Number of 4 input LUTs:                79  out of   3456     2%  
+ Number of bonded IOBs:                  5  out of    144     3%  
+ Number of GCLKs:                        1  out of      4    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_16MHz                          | BUFGP                  | 12    |
+clk_19200Hz:Q                      | NONE                   | 20    |
+count_div_3:Q                      | NONE                   | 17    |
+clk_19200Hz_1:Q                    | NONE                   | 21    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 8.806ns (Maximum Frequency: 113.559MHz)
+   Minimum input arrival time before clock: 2.827ns
+   Maximum output required time after clock: 10.199ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+-------------------------------------------------------------------------
+Timing constraint: Default period analysis for Clock 'clk_16MHz'
+Delay:               8.806ns (Levels of Logic = 4)
+  Source:            count_div_19200_2 (FF)
+  Destination:       count_div_19200_9 (FF)
+  Source Clock:      clk_16MHz rising
+  Destination Clock: clk_16MHz rising
+
+  Data Path: count_div_19200_2 to count_div_19200_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCPE:C->Q            2   1.292   1.340  count_div_19200_2 (count_div_19200_2)
+     LUT4:I0->O            4   0.653   1.600  _n000011 (CHOICE105)
+     LUT4_D:I0->O          3   0.653   1.480  _n000032 (_n0000)
+     LUT2_L:I1->LO         0   0.653   0.000  count_div_19200_inst_lut3_91 (count_div_19200_inst_lut3_9)
+     XORCY:LI->O           1   0.382   0.000  count_div_19200_inst_sum_9 (count_div_19200_inst_sum_9)
+     FDCPE:D                   0.753          count_div_19200_9
+    ----------------------------------------
+    Total                      8.806ns (4.386ns logic, 4.420ns route)
+                                       (49.8% logic, 50.2% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default period analysis for Clock 'clk_19200Hz:Q'
+Delay:               7.625ns (Levels of Logic = 6)
+  Source:            uar_top_inst_count_sample_0 (FF)
+  Destination:       uar_top_inst_count_sample_3 (FF)
+  Source Clock:      clk_19200Hz:Q rising
+  Destination Clock: clk_19200Hz:Q rising
+
+  Data Path: uar_top_inst_count_sample_0 to uar_top_inst_count_sample_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   1.292   1.740  uar_top_inst_count_sample_0 (uar_top_inst_count_sample_0)
+     LUT1_L:I0->LO         1   0.653   0.000  uar_top_inst_Madd__n0023_inst_lut2_01 (uar_top_inst_Madd__n0023_inst_lut2_0)
+     MUXCY:S->O            1   0.784   0.000  uar_top_inst_Madd__n0023_inst_cy_11 (uar_top_inst_Madd__n0023_inst_cy_11)
+     MUXCY:CI->O           1   0.050   0.000  uar_top_inst_Madd__n0023_inst_cy_12 (uar_top_inst_Madd__n0023_inst_cy_12)
+     MUXCY:CI->O           0   0.050   0.000  uar_top_inst_Madd__n0023_inst_cy_13 (uar_top_inst_Madd__n0023_inst_cy_13)
+     XORCY:CI->O           1   0.500   1.150  uar_top_inst_Madd__n0023_inst_sum_13 (uar_top_inst__n0023<3>)
+     LUT4_L:I0->LO         1   0.653   0.000  uar_top_inst__n0002<3>1 (uar_top_inst__n0002<3>)
+     FDC:D                     0.753          uar_top_inst_count_sample_3
+    ----------------------------------------
+    Total                      7.625ns (4.735ns logic, 2.890ns route)
+                                       (62.1% logic, 37.9% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default period analysis for Clock 'count_div_3:Q'
+Delay:               7.181ns (Levels of Logic = 1)
+  Source:            uat_top_inst_uat_sm_inst_current_state_FFd3 (FF)
+  Destination:       uat_top_inst_data_buf_1 (FF)
+  Source Clock:      count_div_3:Q falling
+  Destination Clock: count_div_3:Q falling
+
+  Data Path: uat_top_inst_uat_sm_inst_current_state_FFd3 to uat_top_inst_data_buf_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC_1:C->Q           11   1.292   2.300  uat_top_inst_uat_sm_inst_current_state_FFd3 (uat_top_inst_uat_sm_inst_current_state_FFd3)
+     LUT2:I1->O            8   0.653   2.050  uat_top_inst_uart_ready1 (uat_top_inst_uart_ready)
+     FDCE_1:CE                 0.886          uat_top_inst_data_buf_1
+    ----------------------------------------
+    Total                      7.181ns (2.831ns logic, 4.350ns route)
+                                       (39.4% logic, 60.6% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default period analysis for Clock 'clk_19200Hz_1:Q'
+Delay:               8.354ns (Levels of Logic = 2)
+  Source:            uar_top_inst_uar_sm_inst_state_FFd2 (FF)
+  Destination:       uar_top_inst_shift_count_11 (FF)
+  Source Clock:      clk_19200Hz_1:Q rising
+  Destination Clock: clk_19200Hz_1:Q rising
+
+  Data Path: uar_top_inst_uar_sm_inst_state_FFd2 to uar_top_inst_shift_count_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              9   1.292   2.120  uar_top_inst_uar_sm_inst_state_FFd2 (uar_top_inst_uar_sm_inst_state_FFd2)
+     LUT2:I0->O            1   0.653   1.150  uar_top_inst__n0037_SW0 (N3506)
+     LUT4:I2->O            4   0.653   1.600  uar_top_inst__n0037 (uar_top_inst__n0037)
+     FDCPE:CE                  0.886          uar_top_inst_shift_count_10
+    ----------------------------------------
+    Total                      8.354ns (3.484ns logic, 4.870ns route)
+                                       (41.7% logic, 58.3% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_19200Hz_1:Q'
+Offset:              2.827ns (Levels of Logic = 1)
+  Source:            ser_data_frm_pc (PAD)
+  Destination:       uar_top_inst_ser_in_r1 (FF)
+  Destination Clock: clk_19200Hz_1:Q rising
+
+  Data Path: ser_data_frm_pc to uar_top_inst_ser_in_r1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.924   1.150  ser_data_frm_pc_IBUF (ser_data_frm_pc_IBUF)
+     FDP:D                     0.753          uar_top_inst_ser_in_r1
+    ----------------------------------------
+    Total                      2.827ns (1.677ns logic, 1.150ns route)
+                                       (59.3% logic, 40.7% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET OUT AFTER for Clock 'count_div_3:Q'
+Offset:              7.999ns (Levels of Logic = 1)
+  Source:            uat_top_inst_ser_out (FF)
+  Destination:       ser_data_to_pc (PAD)
+  Source Clock:      count_div_3:Q falling
+
+  Data Path: uat_top_inst_ser_out to ser_data_to_pc
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP_1:C->Q            1   1.292   1.150  uat_top_inst_ser_out (uat_top_inst_ser_out)
+     OBUF:I->O                 5.557          ser_data_to_pc_OBUF (ser_data_to_pc)
+    ----------------------------------------
+    Total                      7.999ns (6.849ns logic, 1.150ns route)
+                                       (85.6% logic, 14.4% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_16MHz'
+Offset:              10.199ns (Levels of Logic = 1)
+  Source:            clk_19200Hz (FF)
+  Destination:       clk_19200Hz (PAD)
+  Source Clock:      clk_16MHz rising
+
+  Data Path: clk_19200Hz to clk_19200Hz
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            23   1.292   3.350  clk_19200Hz (clk_19200Hz_OBUF)
+     OBUF:I->O                 5.557          clk_19200Hz_OBUF (clk_19200Hz)
+    ----------------------------------------
+    Total                     10.199ns (6.849ns logic, 3.350ns route)
+                                       (67.2% logic, 32.8% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_19200Hz:Q'
+Offset:              9.949ns (Levels of Logic = 1)
+  Source:            count_div_3 (FF)
+  Destination:       clk_1200Hz (PAD)
+  Source Clock:      clk_19200Hz:Q rising
+
+  Data Path: count_div_3 to clk_1200Hz
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             19   1.292   3.100  count_div_3 (count_div_3)
+     OBUF:I->O                 5.557          clk_1200Hz_OBUF (clk_1200Hz)
+    ----------------------------------------
+    Total                      9.949ns (6.849ns logic, 3.100ns route)
+                                       (68.8% logic, 31.2% route)
+
+=========================================================================
+CPU : 8.50 / 11.50 s | Elapsed : 9.00 / 11.00 s
+ 
+--> 
+
+Total memory usage is 54724 kilobytes
+
+

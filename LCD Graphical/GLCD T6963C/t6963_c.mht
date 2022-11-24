@@ -1,0 +1,970 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: t6963.c
+Date: Wed, 19 Sep 2007 22:30:11 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.picant.com/c2c/examples/t6963/t6963.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>t6963.c</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.2900.2180" name=3DGENERATOR></HEAD>
+<BODY style=3D"BACKGROUND: #fffedd">
+<H1>t6963.c</H1>Code to drive a Toshiba T6963C based graphic LCD module =
+(by <A=20
+href=3D"mailto:richard@artaylor.myip.org">Richard Taylor</A>).<BR><BR>
+<HR>
+<PRE><CODE><FONT color=3D#000000>
+<FONT =
+color=3D#0000a0>/********************************************</FONT>
+<FONT color=3D#0000a0> * Filename: t6963.c                        =
+*</FONT>
+<FONT color=3D#0000a0> *                                          =
+*</FONT>
+<FONT color=3D#0000a0> * Description: Toshiba LCD Driver =
+Functions*</FONT>
+<FONT color=3D#0000a0> *                                          =
+*</FONT>
+<FONT color=3D#0000a0> * by Richard Taylor                        =
+*</FONT>
+<FONT color=3D#0000a0> *                                          =
+*</FONT>
+<FONT color=3D#0000a0> * Date: 09/02/2003                         =
+*</FONT>
+<FONT color=3D#0000a0> =
+*******************************************/</FONT>
+<FONT color=3D#0000a0>/* includes */</FONT>
+<FONT color=3D#008000>#include &lt;system.h&gt;</FONT>
+<FONT color=3D#008000>#include "t6963.h"</FONT>
+
+<FONT color=3D#0000a0>/* Global Variables */</FONT>
+
+<FONT color=3D#800000><B>void</B></FONT> interrupt<FONT =
+color=3D#800000>( <B>void</B> )</FONT>
+<FONT color=3D#800000>{</FONT>
+    disable_interrupt<FONT color=3D#800000>(</FONT> GIE <FONT =
+color=3D#800000>);</FONT>
+<FONT color=3D#800000>}</FONT>
+
+main<FONT color=3D#800000>()</FONT>
+<FONT color=3D#800000>{</FONT>
+    <FONT color=3D#800000><B>unsigned char</B></FONT> n<FONT =
+color=3D#800000>,</FONT> address_h<FONT color=3D#800000>,</FONT> =
+address_l<FONT color=3D#800000>,</FONT> x<FONT color=3D#800000>,</FONT> =
+y<FONT color=3D#800000>;</FONT>
+    <FONT color=3D#800000><B>unsigned int</B></FONT> address<FONT =
+color=3D#800000>;</FONT>
+
+    <FONT color=3D#0000a0>/* Initialise the controller */</FONT>
+    lcd_initialise<FONT color=3D#800000>();</FONT>
+    <FONT color=3D#0000a0>/* Clear Graphic RAM */</FONT>
+    lcd_clear_graphics<FONT color=3D#800000>();</FONT>
+    <FONT color=3D#0000a0>/* Clear Text RAM */</FONT>
+    lcd_clear_text<FONT color=3D#800000>();</FONT>
+
+    <FONT color=3D#0000a0>/* Set Text Mode and Graphics Mode On =
+*/</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_DISPLAY_MODES_GRAPHICS_ON <FONT =
+color=3D#800000>|</FONT> LCD_DISPLAY_MODES_TEXT_ON<FONT =
+color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Write some data to display */</FONT>
+    lcd_write_text<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff8080>'1'</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>1</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>);</FONT>
+    lcd_write_text<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff8080>'2'</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>2</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>);</FONT>
+    lcd_write_text<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff8080>'3'</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>3</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>);</FONT>
+    lcd_write_text<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff8080>'4'</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>4</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>);</FONT>
+    lcd_write_text<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff8080>'5'</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>5</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>);</FONT>
+    lcd_write_text<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff8080>'6'</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>6</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>);</FONT>
+
+    lcd_write_text<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff8080>'a'</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>1</FONT><FONT color=3D#800000>);</FONT>
+    lcd_write_text<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff8080>'b'</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>2</FONT><FONT color=3D#800000>);</FONT>
+    lcd_write_text<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff8080>'c'</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>3</FONT><FONT color=3D#800000>);</FONT>
+    lcd_write_text<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff8080>'d'</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>4</FONT><FONT color=3D#800000>);</FONT>
+    lcd_write_text<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff8080>'e'</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>5</FONT><FONT color=3D#800000>);</FONT>
+    lcd_write_text<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff8080>'f'</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>,</FONT> <FONT =
+color=3D#ff0080>6</FONT><FONT color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Set Address Pointer To GRAPHIC Home =
+*/</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>LCD_GRAPHICS_HOME<FONT =
+color=3D#800000>);</FONT> <FONT color=3D#0000a0>/* LSB */</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>LCD_GRAPHICS_HOME <FONT =
+color=3D#800000>&gt;&gt;</FONT> <FONT color=3D#ff0080>8</FONT><FONT =
+color=3D#800000>);</FONT> <FONT color=3D#0000a0>/* MSB */</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_ADDRESS_POINTER_SET<FONT =
+color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Plot a few points (Draw an X) */</FONT>
+    <FONT color=3D#800000><B>for</B> (</FONT>x<FONT =
+color=3D#800000>=3D</FONT><FONT color=3D#ff0080>10</FONT><FONT =
+color=3D#800000>;</FONT> x<FONT color=3D#800000>&lt;</FONT><FONT =
+color=3D#ff0080>20</FONT><FONT color=3D#800000>;</FONT> x<FONT =
+color=3D#800000>++)</FONT>
+    <FONT color=3D#800000>{</FONT>
+        y <FONT color=3D#800000>=3D</FONT> x<FONT =
+color=3D#800000>;</FONT>
+        lcd_set_pixel<FONT color=3D#800000>(</FONT>x<FONT =
+color=3D#800000>,</FONT> y<FONT color=3D#800000>);</FONT>
+        y <FONT color=3D#800000>=3D</FONT> <FONT =
+color=3D#ff0080>30</FONT> <FONT color=3D#800000>-</FONT> x<FONT =
+color=3D#800000>;</FONT>
+        lcd_set_pixel<FONT color=3D#800000>(</FONT>x<FONT =
+color=3D#800000>,</FONT> y<FONT color=3D#800000>);</FONT>
+    <FONT color=3D#800000>}</FONT>
+
+    <FONT color=3D#800000><B>for</B> (</FONT>x<FONT =
+color=3D#800000>=3D</FONT><FONT color=3D#ff0080>8</FONT><FONT =
+color=3D#800000>;</FONT> x<FONT color=3D#800000>&lt;</FONT><FONT =
+color=3D#ff0080>57</FONT><FONT color=3D#800000>;</FONT> x<FONT =
+color=3D#800000>++)</FONT>
+    <FONT color=3D#800000>{</FONT>
+        lcd_set_pixel<FONT color=3D#800000>(</FONT>x<FONT =
+color=3D#800000>,</FONT> <FONT color=3D#ff0080>9</FONT><FONT =
+color=3D#800000>);</FONT>
+    <FONT color=3D#800000>}</FONT>
+    <FONT color=3D#800000><B>for</B> (</FONT>y<FONT =
+color=3D#800000>=3D</FONT><FONT color=3D#ff0080>8</FONT><FONT =
+color=3D#800000>;</FONT> y<FONT color=3D#800000>&lt;</FONT><FONT =
+color=3D#ff0080>57</FONT><FONT color=3D#800000>;</FONT> y<FONT =
+color=3D#800000>++)</FONT>
+    <FONT color=3D#800000>{</FONT>
+        lcd_set_pixel<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff0080>9</FONT><FONT color=3D#800000>,</FONT> y<FONT =
+color=3D#800000>);</FONT>
+    <FONT color=3D#800000>}</FONT>
+
+
+    <FONT color=3D#0000a0>/* Display a knight-rider type line */</FONT>
+    <FONT color=3D#800000><B>while</B> (</FONT><FONT =
+color=3D#ff0080>1</FONT><FONT color=3D#800000>)</FONT>
+    <FONT color=3D#800000>{</FONT>
+        <FONT color=3D#800000><B>for</B> (</FONT>x<FONT =
+color=3D#800000>=3D</FONT><FONT color=3D#ff0080>20</FONT><FONT =
+color=3D#800000>;</FONT> x<FONT color=3D#800000>&lt;</FONT><FONT =
+color=3D#ff0080>61</FONT><FONT color=3D#800000>;</FONT> x<FONT =
+color=3D#800000>++)</FONT>
+        <FONT color=3D#800000>{</FONT>
+            lcd_set_pixel<FONT color=3D#800000>(</FONT>x<FONT =
+color=3D#800000>,</FONT> <FONT color=3D#ff0080>63</FONT><FONT =
+color=3D#800000>);</FONT>
+            lcd_set_pixel<FONT color=3D#800000>(</FONT>x<FONT =
+color=3D#800000>,</FONT> <FONT color=3D#ff0080>64</FONT><FONT =
+color=3D#800000>);</FONT>
+            lcd_set_pixel<FONT color=3D#800000>(</FONT>x<FONT =
+color=3D#800000>,</FONT> <FONT color=3D#ff0080>65</FONT><FONT =
+color=3D#800000>);</FONT>
+            delay_ms<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff0080>100</FONT><FONT color=3D#800000>);</FONT>
+            lcd_clear_pixel<FONT color=3D#800000>(</FONT>x<FONT =
+color=3D#800000>,</FONT> <FONT color=3D#ff0080>63</FONT><FONT =
+color=3D#800000>);</FONT>
+            lcd_clear_pixel<FONT color=3D#800000>(</FONT>x<FONT =
+color=3D#800000>,</FONT> <FONT color=3D#ff0080>64</FONT><FONT =
+color=3D#800000>);</FONT>
+            lcd_clear_pixel<FONT color=3D#800000>(</FONT>x<FONT =
+color=3D#800000>,</FONT> <FONT color=3D#ff0080>65</FONT><FONT =
+color=3D#800000>);</FONT>
+        <FONT color=3D#800000>}</FONT>
+        <FONT color=3D#800000><B>for</B> (</FONT>x<FONT =
+color=3D#800000>=3D</FONT><FONT color=3D#ff0080>60</FONT><FONT =
+color=3D#800000>;</FONT> x<FONT color=3D#800000>&gt;</FONT><FONT =
+color=3D#ff0080>21</FONT><FONT color=3D#800000>;</FONT> x<FONT =
+color=3D#800000>--)</FONT>
+        <FONT color=3D#800000>{</FONT>
+            lcd_set_pixel<FONT color=3D#800000>(</FONT>x<FONT =
+color=3D#800000>,</FONT> <FONT color=3D#ff0080>64</FONT><FONT =
+color=3D#800000>);</FONT>
+            delay_ms<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff0080>200</FONT><FONT color=3D#800000>);</FONT>
+            lcd_clear_pixel<FONT color=3D#800000>(</FONT>x<FONT =
+color=3D#800000>,</FONT> <FONT color=3D#ff0080>64</FONT><FONT =
+color=3D#800000>);</FONT>
+        <FONT color=3D#800000>}</FONT>
+    <FONT color=3D#800000>}</FONT>
+<FONT color=3D#800000>}</FONT>
+
+
+<FONT =
+color=3D#0000a0>/********************************************</FONT>
+<FONT color=3D#0000a0> * Function name: initialise                =
+*</FONT>
+<FONT color=3D#0000a0> * Description:   Initialise PIC and LCD    =
+*</FONT>
+<FONT color=3D#0000a0> =
+*******************************************/</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_initialise<FONT =
+color=3D#800000>(<B>void</B>)</FONT>
+<FONT color=3D#800000>{</FONT>
+    <FONT color=3D#0000a0>/* Set Control Lines to outputs and High =
+*/</FONT>
+    LCD_CONTROL <FONT color=3D#800000>=3D</FONT> LCD_CONTROL <FONT =
+color=3D#800000>|</FONT> LCD_WR <FONT color=3D#800000>|</FONT> LCD_RD =
+<FONT color=3D#800000>|</FONT> LCD_CE <FONT color=3D#800000>|</FONT> =
+LCD_CD <FONT color=3D#800000>|</FONT> LCD_RST<FONT =
+color=3D#800000>;</FONT>
+    LCD_CONTROL_TRIS <FONT color=3D#800000>=3D</FONT> LCD_CONTROL_TRIS =
+<FONT color=3D#800000>&amp; (~(</FONT>LCD_WR <FONT =
+color=3D#800000>|</FONT> LCD_RD <FONT color=3D#800000>|</FONT> LCD_CE =
+<FONT color=3D#800000>|</FONT> LCD_CD <FONT color=3D#800000>|</FONT> =
+LCD_RST<FONT color=3D#800000>));</FONT>
+    LCD_CONTROL <FONT color=3D#800000>=3D</FONT> LCD_WR <FONT =
+color=3D#800000>|</FONT> LCD_RD <FONT color=3D#800000>|</FONT> LCD_CE =
+<FONT color=3D#800000>|</FONT> LCD_CD <FONT color=3D#800000>|</FONT> =
+LCD_RST<FONT color=3D#800000>;</FONT>
+
+    <FONT color=3D#0000a0>/* Set PORTB to inputs */</FONT>
+    LCD_DATA_BUS_TRIS <FONT color=3D#800000>=3D</FONT> ALL_INPUTS<FONT =
+color=3D#800000>;</FONT>
+
+    <FONT color=3D#0000a0>/* Hold Reset Line for 1ms */</FONT>
+    clear_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_RST_BIT<FONT color=3D#800000>);</FONT>
+    delay_s<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff0080>2</FONT><FONT color=3D#800000>);</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_RST_BIT<FONT color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Set Char Gen Up */</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_CG_ROM_MODE_OR<FONT =
+color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Set Graphic Home Address */</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>LCD_GRAPHICS_HOME<FONT =
+color=3D#800000>);</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>LCD_GRAPHICS_HOME <FONT =
+color=3D#800000>&gt;&gt;</FONT> <FONT color=3D#ff0080>8</FONT><FONT =
+color=3D#800000>);</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_GRAPHIC_HOME_ADDRESS_SET<FONT =
+color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Set Graphic Area */</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>LCD_GRAPHICS_AREA<FONT =
+color=3D#800000>);</FONT> <FONT color=3D#0000a0>/* Width of 20 Chars =
+*/</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff0080>0x00</FONT><FONT color=3D#800000>);</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_GRAPHIC_AREA_SET<FONT =
+color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Set Text Home Address */</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>LCD_TEXT_HOME<FONT =
+color=3D#800000>);</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>LCD_TEXT_HOME <FONT =
+color=3D#800000>&gt;&gt;</FONT> <FONT color=3D#ff0080>8</FONT><FONT =
+color=3D#800000>);</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_TEXT_HOME_ADDRESS_SET<FONT =
+color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Set Text Area */</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>LCD_TEXT_AREA<FONT =
+color=3D#800000>);</FONT> <FONT color=3D#0000a0>/* Width of 20 Chars =
+*/</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff0080>0x0</FONT><FONT color=3D#800000>);</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_TEXT_AREA_SET<FONT color=3D#800000>);</FONT>
+
+<FONT color=3D#800000>}</FONT>
+
+<FONT =
+color=3D#0000a0>/********************************************</FONT>
+<FONT color=3D#0000a0> * Function name: lcd_write_data            =
+*</FONT>
+<FONT color=3D#0000a0> * Description:   Write Data to LCD         =
+*</FONT>
+<FONT color=3D#0000a0> =
+*******************************************/</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_write_data<FONT =
+color=3D#800000>(<B>unsigned char</B></FONT> data<FONT =
+color=3D#800000>)</FONT>
+<FONT color=3D#800000>{</FONT>
+    <FONT color=3D#0000a0>/* While BUSY1 and BUSY2 are not 1 */</FONT>
+    <FONT color=3D#800000><B>while</B> ( (</FONT>lcd_read_status<FONT =
+color=3D#800000>() &amp; (</FONT>LCD_STATUS_BUSY1 <FONT =
+color=3D#800000>|</FONT> LCD_STATUS_BUSY2<FONT color=3D#800000>)) !=3D =
+(</FONT>LCD_STATUS_BUSY1 <FONT color=3D#800000>|</FONT> =
+LCD_STATUS_BUSY2<FONT color=3D#800000>));</FONT>
+
+    <FONT color=3D#0000a0>/* Clear C/D# */</FONT>
+    clear_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CD_BIT<FONT color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Set Data Lines to Output */</FONT>
+    LCD_DATA_BUS <FONT color=3D#800000>=3D</FONT> data<FONT =
+color=3D#800000>;</FONT>
+    LCD_DATA_BUS_TRIS <FONT color=3D#800000>=3D</FONT> ALL_OUTPUTS<FONT =
+color=3D#800000>;</FONT>
+
+    <FONT color=3D#0000a0>/* Clear CE and WR, set RD */</FONT>
+    clear_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CE_BIT<FONT color=3D#800000>);</FONT>
+    clear_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_WR_BIT<FONT color=3D#800000>);</FONT>
+
+    nop<FONT color=3D#800000>();</FONT>
+    nop<FONT color=3D#800000>();</FONT>
+
+    <FONT color=3D#0000a0>/* Set CE and RD*/</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CE_BIT<FONT color=3D#800000>);</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_WR_BIT<FONT color=3D#800000>);</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CD_BIT<FONT color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Set Data Lines to Input */</FONT>
+    LCD_DATA_BUS_TRIS <FONT color=3D#800000>=3D</FONT> ALL_INPUTS<FONT =
+color=3D#800000>;</FONT>
+<FONT color=3D#800000>}</FONT>
+
+<FONT =
+color=3D#0000a0>/********************************************</FONT>
+<FONT color=3D#0000a0> * Function name: lcd_read_data             =
+*</FONT>
+<FONT color=3D#0000a0> * Description:   Read Data From LCD        =
+*</FONT>
+<FONT color=3D#0000a0> =
+*******************************************/</FONT>
+<FONT color=3D#800000><B>unsigned char</B></FONT> lcd_read_data<FONT =
+color=3D#800000>(<B>void</B>)</FONT>
+<FONT color=3D#800000>{</FONT>
+    <FONT color=3D#800000><B>unsigned char</B></FONT> data<FONT =
+color=3D#800000>;</FONT>
+
+    <FONT color=3D#0000a0>/* While BUSY1 and BUSY2 are not 1 */</FONT>
+    <FONT color=3D#800000><B>while</B> ( (</FONT>lcd_read_status<FONT =
+color=3D#800000>() &amp; (</FONT>LCD_STATUS_BUSY1 <FONT =
+color=3D#800000>|</FONT> LCD_STATUS_BUSY2<FONT color=3D#800000>)) !=3D =
+(</FONT>LCD_STATUS_BUSY1 <FONT color=3D#800000>|</FONT> =
+LCD_STATUS_BUSY2<FONT color=3D#800000>));</FONT>
+
+    <FONT color=3D#0000a0>/* Clear C/D# */</FONT>
+    clear_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CD_BIT<FONT color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Set Data Lines to Input */</FONT>
+    LCD_DATA_BUS_TRIS <FONT color=3D#800000>=3D</FONT> ALL_INPUTS<FONT =
+color=3D#800000>;</FONT>
+
+    <FONT color=3D#0000a0>/* Clear CE and RD, set WR */</FONT>
+    clear_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CE_BIT<FONT color=3D#800000>);</FONT>
+    clear_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_RD_BIT<FONT color=3D#800000>);</FONT>
+
+    nop<FONT color=3D#800000>();</FONT>
+    <FONT color=3D#0000a0>/* Read Data Bus */</FONT>
+    data <FONT color=3D#800000>=3D</FONT> LCD_DATA_BUS<FONT =
+color=3D#800000>;</FONT>
+
+    <FONT color=3D#0000a0>/* Set CE and RD*/</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CE_BIT<FONT color=3D#800000>);</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_RD_BIT<FONT color=3D#800000>);</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CD_BIT<FONT color=3D#800000>);</FONT>
+
+    <FONT color=3D#800000><B>return</B></FONT> data<FONT =
+color=3D#800000>;</FONT>
+<FONT color=3D#800000>}</FONT>
+
+<FONT =
+color=3D#0000a0>/********************************************</FONT>
+<FONT color=3D#0000a0> * Function name: lcd_write_command         =
+*</FONT>
+<FONT color=3D#0000a0> * Description:   Write Command to LCD      =
+*</FONT>
+<FONT color=3D#0000a0> =
+*******************************************/</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_write_command<FONT =
+color=3D#800000>(<B>unsigned char</B></FONT> data<FONT =
+color=3D#800000>)</FONT>
+<FONT color=3D#800000>{</FONT>
+    <FONT color=3D#800000><B>unsigned char</B></FONT> status<FONT =
+color=3D#800000>;</FONT>
+
+    <FONT color=3D#0000a0>/* While BUSY1 and BUSY2 are not 1 */</FONT>
+    <FONT color=3D#800000><B>while</B> ( (</FONT>lcd_read_status<FONT =
+color=3D#800000>() &amp; (</FONT>LCD_STATUS_BUSY1 <FONT =
+color=3D#800000>|</FONT> LCD_STATUS_BUSY2<FONT color=3D#800000>)) !=3D =
+(</FONT>LCD_STATUS_BUSY1 <FONT color=3D#800000>|</FONT> =
+LCD_STATUS_BUSY2<FONT color=3D#800000>));</FONT>
+
+    <FONT color=3D#0000a0>/* Set C/D# */</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CD_BIT<FONT color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Set Data Lines to Output */</FONT>
+    LCD_DATA_BUS <FONT color=3D#800000>=3D</FONT> data<FONT =
+color=3D#800000>;</FONT>
+    LCD_DATA_BUS_TRIS <FONT color=3D#800000>=3D</FONT> ALL_OUTPUTS<FONT =
+color=3D#800000>;</FONT>
+
+    <FONT color=3D#0000a0>/* Clear CE and WR, set RD */</FONT>
+    clear_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CE_BIT<FONT color=3D#800000>);</FONT>
+    clear_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_WR_BIT<FONT color=3D#800000>);</FONT>
+
+    nop<FONT color=3D#800000>();</FONT>
+    nop<FONT color=3D#800000>();</FONT>
+
+    <FONT color=3D#0000a0>/* Set CE and RD*/</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CE_BIT<FONT color=3D#800000>);</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_WR_BIT<FONT color=3D#800000>);</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CD_BIT<FONT color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Set Data Lines to Input */</FONT>
+    LCD_DATA_BUS_TRIS <FONT color=3D#800000>=3D</FONT> ALL_INPUTS<FONT =
+color=3D#800000>;</FONT>
+<FONT color=3D#800000>}</FONT>
+
+<FONT =
+color=3D#0000a0>/********************************************</FONT>
+<FONT color=3D#0000a0> * Function name: lcd_read_status           =
+*</FONT>
+<FONT color=3D#0000a0> * Description:   Read Status From LCD      =
+*</FONT>
+<FONT color=3D#0000a0> =
+*******************************************/</FONT>
+<FONT color=3D#800000><B>unsigned char</B></FONT> lcd_read_status<FONT =
+color=3D#800000>(<B>void</B>)</FONT>
+<FONT color=3D#800000>{</FONT>
+    <FONT color=3D#800000><B>unsigned char</B></FONT> data<FONT =
+color=3D#800000>;</FONT>
+
+    <FONT color=3D#0000a0>/* Set C/D# */</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CD_BIT<FONT color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Set Data Lines to Input */</FONT>
+    LCD_DATA_BUS_TRIS <FONT color=3D#800000>=3D</FONT> ALL_INPUTS<FONT =
+color=3D#800000>;</FONT>
+
+    <FONT color=3D#0000a0>/* Clear CE and RD */</FONT>
+    clear_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CE_BIT<FONT color=3D#800000>);</FONT>
+    clear_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_RD_BIT<FONT color=3D#800000>);</FONT>
+
+    nop<FONT color=3D#800000>();</FONT>
+
+    <FONT color=3D#0000a0>/* Read Data Bus */</FONT>
+    data <FONT color=3D#800000>=3D</FONT> LCD_DATA_BUS<FONT =
+color=3D#800000>;</FONT>
+
+    <FONT color=3D#0000a0>/* Set All Bits */</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CE_BIT<FONT color=3D#800000>);</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_RD_BIT<FONT color=3D#800000>);</FONT>
+    set_bit<FONT color=3D#800000>(</FONT>LCD_CONTROL<FONT =
+color=3D#800000>,</FONT> LCD_CD_BIT<FONT color=3D#800000>);</FONT>
+
+    <FONT color=3D#800000><B>return</B></FONT> data<FONT =
+color=3D#800000>;</FONT>
+<FONT color=3D#800000>}</FONT>
+
+<FONT =
+color=3D#0000a0>/********************************************</FONT>
+<FONT color=3D#0000a0> * Function name: lcd_clear_graphics        =
+*</FONT>
+<FONT color=3D#0000a0> * Description:   Wipe Graphics RAM         =
+*</FONT>
+<FONT color=3D#0000a0> =
+*******************************************/</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_clear_graphics<FONT =
+color=3D#800000>(<B>void</B>)</FONT>
+<FONT color=3D#800000>{</FONT>
+    <FONT color=3D#800000><B>unsigned char</B></FONT> address_l<FONT =
+color=3D#800000>,</FONT> address_h<FONT color=3D#800000>;</FONT>
+    <FONT color=3D#800000><B>unsigned int</B></FONT> address<FONT =
+color=3D#800000>,</FONT> address_limit<FONT color=3D#800000>;</FONT>
+    <FONT color=3D#0000a0>/* Set Address Pointer */</FONT>
+    address <FONT color=3D#800000>=3D</FONT> LCD_GRAPHICS_HOME<FONT =
+color=3D#800000>;</FONT>
+    address_l <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>&amp;</FONT> <FONT color=3D#ff0080>0xff</FONT><FONT =
+color=3D#800000>;</FONT>
+    address_h <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>&gt;&gt;</FONT> <FONT color=3D#ff0080>8</FONT><FONT =
+color=3D#800000>;</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>address_l<FONT =
+color=3D#800000>);</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>address_h<FONT =
+color=3D#800000>);</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_ADDRESS_POINTER_SET<FONT =
+color=3D#800000>);</FONT>
+
+    address_limit <FONT color=3D#800000>=3D (</FONT>LCD_GRAPHICS_HOME =
+<FONT color=3D#800000>+</FONT> LCD_GRAPHICS_SIZE<FONT =
+color=3D#800000>);</FONT>
+
+    <FONT color=3D#800000><B>while</B> (</FONT>address <FONT =
+color=3D#800000>&lt;</FONT> address_limit<FONT color=3D#800000>)</FONT>
+    <FONT color=3D#800000>{</FONT>
+        lcd_write_data<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff0080>0x00</FONT><FONT color=3D#800000>);</FONT>
+        lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_DATA_WRITE_AUTO_INCREMENT<FONT =
+color=3D#800000>);</FONT>
+        address <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>+</FONT> <FONT color=3D#ff0080>1</FONT><FONT =
+color=3D#800000>;</FONT>
+    <FONT color=3D#800000>}</FONT>
+
+    <FONT color=3D#800000><B>if</B> (</FONT>LCD_NUMBER_OF_SCREENS <FONT =
+color=3D#800000>=3D=3D</FONT> <FONT color=3D#ff0080>0x02</FONT><FONT =
+color=3D#800000>)</FONT>
+    <FONT color=3D#800000>{</FONT>
+        <FONT color=3D#0000a0>/* Set Address Pointer */</FONT>
+        address <FONT color=3D#800000>=3D</FONT> LCD_GRAPHICS_HOME <FONT =
+color=3D#800000>+</FONT> <FONT color=3D#ff0080>0x8000</FONT><FONT =
+color=3D#800000>;</FONT>
+        address_l <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>&amp;</FONT> <FONT color=3D#ff0080>0xff</FONT><FONT =
+color=3D#800000>;</FONT>
+        address_h <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>&gt;&gt;</FONT> <FONT color=3D#ff0080>8</FONT><FONT =
+color=3D#800000>;</FONT>
+        lcd_write_data<FONT color=3D#800000>(</FONT>address_l<FONT =
+color=3D#800000>);</FONT>
+        lcd_write_data<FONT color=3D#800000>(</FONT>address_h<FONT =
+color=3D#800000>);</FONT>
+        lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_ADDRESS_POINTER_SET<FONT =
+color=3D#800000>);</FONT>
+
+        address_limit <FONT color=3D#800000>=3D =
+(</FONT>LCD_GRAPHICS_HOME <FONT color=3D#800000>+</FONT> =
+LCD_GRAPHICS_SIZE <FONT color=3D#800000>+</FONT><FONT =
+color=3D#ff0080>0x8000</FONT><FONT color=3D#800000>);</FONT>
+        <FONT color=3D#800000><B>while</B> (</FONT>address <FONT =
+color=3D#800000>&lt;</FONT> address_limit<FONT color=3D#800000>)</FONT>
+        <FONT color=3D#800000>{</FONT>
+            lcd_write_data<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff0080>0x00</FONT><FONT color=3D#800000>);</FONT>
+            lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_DATA_WRITE_AUTO_INCREMENT<FONT =
+color=3D#800000>);</FONT>
+            address <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>+</FONT> <FONT color=3D#ff0080>1</FONT><FONT =
+color=3D#800000>;</FONT>
+        <FONT color=3D#800000>}</FONT>
+
+    <FONT color=3D#800000>}</FONT>
+<FONT color=3D#800000>}</FONT>
+
+<FONT =
+color=3D#0000a0>/********************************************</FONT>
+<FONT color=3D#0000a0> * Function name: lcd_clear_text            =
+*</FONT>
+<FONT color=3D#0000a0> * Description:   Wipe Text RAM             =
+*</FONT>
+<FONT color=3D#0000a0> =
+*******************************************/</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_clear_text<FONT =
+color=3D#800000>(<B>void</B>)</FONT>
+<FONT color=3D#800000>{</FONT>
+    <FONT color=3D#800000><B>unsigned char</B></FONT> address_l<FONT =
+color=3D#800000>,</FONT> address_h<FONT color=3D#800000>;</FONT>
+    <FONT color=3D#800000><B>unsigned int</B></FONT> address<FONT =
+color=3D#800000>,</FONT> address_limit<FONT color=3D#800000>;</FONT>
+    <FONT color=3D#0000a0>/* Set Address Pointer */</FONT>
+    address <FONT color=3D#800000>=3D</FONT> LCD_TEXT_HOME<FONT =
+color=3D#800000>;</FONT>
+    address_l <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>&amp;</FONT> <FONT color=3D#ff0080>0xff</FONT><FONT =
+color=3D#800000>;</FONT>
+    address_h <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>&gt;&gt;</FONT> <FONT color=3D#ff0080>8</FONT><FONT =
+color=3D#800000>;</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>address_l<FONT =
+color=3D#800000>);</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>address_h<FONT =
+color=3D#800000>);</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_ADDRESS_POINTER_SET<FONT =
+color=3D#800000>);</FONT>
+
+        address_limit <FONT color=3D#800000>=3D  (</FONT>LCD_TEXT_HOME =
+<FONT color=3D#800000>+</FONT> LCD_TEXT_SIZE<FONT =
+color=3D#800000>);</FONT>
+        <FONT color=3D#800000><B>while</B> (</FONT>address <FONT =
+color=3D#800000>&lt;</FONT> address_limit<FONT color=3D#800000>)</FONT>
+    <FONT color=3D#800000>{</FONT>
+        lcd_write_data<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff0080>0x00</FONT><FONT color=3D#800000>);</FONT>
+        lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_DATA_WRITE_AUTO_INCREMENT<FONT =
+color=3D#800000>);</FONT>
+        address <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>+</FONT> <FONT color=3D#ff0080>1</FONT><FONT =
+color=3D#800000>;</FONT>
+    <FONT color=3D#800000>}</FONT>
+
+    <FONT color=3D#800000><B>if</B> (</FONT>LCD_NUMBER_OF_SCREENS <FONT =
+color=3D#800000>=3D=3D</FONT> <FONT color=3D#ff0080>0x02</FONT><FONT =
+color=3D#800000>)</FONT>
+    <FONT color=3D#800000>{</FONT>
+        <FONT color=3D#0000a0>/* Set Address Pointer */</FONT>
+        address <FONT color=3D#800000>=3D</FONT> LCD_TEXT_HOME <FONT =
+color=3D#800000>+</FONT> <FONT color=3D#ff0080>0x8000</FONT><FONT =
+color=3D#800000>;</FONT>
+        address_l <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>&amp;</FONT> <FONT color=3D#ff0080>0xff</FONT><FONT =
+color=3D#800000>;</FONT>
+        address_h <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>&gt;&gt;</FONT> <FONT color=3D#ff0080>8</FONT><FONT =
+color=3D#800000>;</FONT>
+        lcd_write_data<FONT color=3D#800000>(</FONT>address_l<FONT =
+color=3D#800000>);</FONT>
+        lcd_write_data<FONT color=3D#800000>(</FONT>address_h<FONT =
+color=3D#800000>);</FONT>
+        lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_ADDRESS_POINTER_SET<FONT =
+color=3D#800000>);</FONT>
+
+        address_limit <FONT color=3D#800000>=3D  (</FONT>LCD_TEXT_HOME =
+<FONT color=3D#800000>+</FONT> LCD_TEXT_SIZE <FONT =
+color=3D#800000>+</FONT> <FONT color=3D#ff0080>0x8000</FONT><FONT =
+color=3D#800000>);</FONT>
+        <FONT color=3D#800000><B>while</B> (</FONT>address <FONT =
+color=3D#800000>&lt;</FONT> address_limit<FONT color=3D#800000>)</FONT>
+        <FONT color=3D#800000>{</FONT>
+            lcd_write_data<FONT color=3D#800000>(</FONT><FONT =
+color=3D#ff0080>0x00</FONT><FONT color=3D#800000>);</FONT>
+            lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_DATA_WRITE_AUTO_INCREMENT<FONT =
+color=3D#800000>);</FONT>
+            address <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>+</FONT> <FONT color=3D#ff0080>1</FONT><FONT =
+color=3D#800000>;</FONT>
+        <FONT color=3D#800000>}</FONT>
+    <FONT color=3D#800000>}</FONT>
+<FONT color=3D#800000>}</FONT>
+
+<FONT =
+color=3D#0000a0>/********************************************</FONT>
+<FONT color=3D#0000a0> * Function name: lcd_write_text            =
+*</FONT>
+<FONT color=3D#0000a0> * Description:   Write Character to X, Y   =
+*</FONT>
+<FONT color=3D#0000a0> *                0 &lt;=3D X &lt;=3D LCD Text =
+Width  *</FONT>
+<FONT color=3D#0000a0> *                0 &lt;=3D Y &lt;=3D LCD Text =
+Height *</FONT>
+<FONT color=3D#0000a0> =
+*******************************************/</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_write_text<FONT =
+color=3D#800000>(<B>unsigned char</B></FONT> character<FONT =
+color=3D#800000>, <B>unsigned char</B></FONT> x<FONT color=3D#800000>, =
+<B>unsigned char</B></FONT> y<FONT color=3D#800000>)</FONT>
+<FONT color=3D#800000>{</FONT>
+    <FONT color=3D#800000><B>unsigned int</B></FONT> address<FONT =
+color=3D#800000>;</FONT>
+
+    address <FONT color=3D#800000>=3D (</FONT>y <FONT =
+color=3D#800000>*</FONT> LCD_TEXT_AREA<FONT color=3D#800000>) +</FONT> x =
+<FONT color=3D#800000>+</FONT> LCD_TEXT_HOME<FONT =
+color=3D#800000>;</FONT>
+    <FONT color=3D#800000><B>if</B> (</FONT>y <FONT =
+color=3D#800000>&gt;</FONT> <FONT color=3D#ff0080>63</FONT> <FONT =
+color=3D#800000>&amp;&amp;</FONT> LCD_NUMBER_OF_SCREENS <FONT =
+color=3D#800000>=3D=3D</FONT> <FONT color=3D#ff0080>2</FONT><FONT =
+color=3D#800000>)</FONT> <FONT color=3D#0000a0>/* If we are on the =
+second screen and it exists */</FONT>
+    <FONT color=3D#800000>{</FONT>
+        address <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>+</FONT> <FONT color=3D#ff0080>0x8000</FONT><FONT =
+color=3D#800000>;</FONT>
+    <FONT color=3D#800000>}</FONT>
+
+    character <FONT color=3D#800000>=3D</FONT> character <FONT =
+color=3D#800000>-</FONT> <FONT color=3D#ff0080>0x20</FONT><FONT =
+color=3D#800000>;</FONT>   <FONT color=3D#0000a0>/* Adjust standard =
+ASCII to T6963 ASCII */</FONT>
+
+    lcd_write_data<FONT color=3D#800000>(</FONT>address <FONT =
+color=3D#800000>&amp;</FONT> <FONT color=3D#ff0080>0xff</FONT><FONT =
+color=3D#800000>);</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>address <FONT =
+color=3D#800000>&gt;&gt;</FONT> <FONT color=3D#ff0080>0x08</FONT><FONT =
+color=3D#800000>);</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_ADDRESS_POINTER_SET<FONT =
+color=3D#800000>);</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>character<FONT =
+color=3D#800000>);</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_DATA_WRITE_AUTO_INCREMENT<FONT =
+color=3D#800000>);</FONT>
+<FONT color=3D#800000>}</FONT>
+
+<FONT =
+color=3D#0000a0>/********************************************</FONT>
+<FONT color=3D#0000a0> * Function name: lcd_set_pixel             =
+*</FONT>
+<FONT color=3D#0000a0> * Description:   Set a single Pixel on     =
+*</FONT>
+<FONT color=3D#0000a0> *                0 &lt;=3D X &lt;=3D LCD Width    =
+   *</FONT>
+<FONT color=3D#0000a0> *                0 &lt;=3D Y &lt;=3D LCD Height   =
+   *</FONT>
+<FONT color=3D#0000a0> =
+*******************************************/</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_set_pixel<FONT =
+color=3D#800000>(<B>unsigned char</B></FONT> x<FONT color=3D#800000>, =
+<B>unsigned char</B></FONT> y<FONT color=3D#800000>)</FONT>
+<FONT color=3D#800000>{</FONT>
+    <FONT color=3D#800000><B>unsigned char</B></FONT> data<FONT =
+color=3D#800000>;</FONT>
+    <FONT color=3D#800000><B>unsigned int</B></FONT> address<FONT =
+color=3D#800000>,</FONT> shift<FONT color=3D#800000>;</FONT>
+
+    address <FONT color=3D#800000>=3D (</FONT>y <FONT =
+color=3D#800000>*</FONT> LCD_GRAPHICS_AREA<FONT color=3D#800000>) + =
+(</FONT>x <FONT color=3D#800000>/</FONT> <FONT =
+color=3D#ff0080>8</FONT><FONT color=3D#800000>) +</FONT> =
+LCD_GRAPHICS_HOME<FONT color=3D#800000>;</FONT>
+
+    <FONT color=3D#800000><B>if</B> (</FONT>y <FONT =
+color=3D#800000>&gt;</FONT> <FONT color=3D#ff0080>63</FONT> <FONT =
+color=3D#800000>&amp;&amp;</FONT> LCD_NUMBER_OF_SCREENS <FONT =
+color=3D#800000>=3D=3D</FONT> <FONT color=3D#ff0080>2</FONT><FONT =
+color=3D#800000>)</FONT> <FONT color=3D#0000a0>/* If we are on the =
+second screen and it exists */</FONT>
+    <FONT color=3D#800000>{</FONT>
+        y <FONT color=3D#800000>=3D</FONT> y <FONT =
+color=3D#800000>-</FONT> <FONT color=3D#ff0080>64</FONT><FONT =
+color=3D#800000>;</FONT>
+        address <FONT color=3D#800000>=3D (</FONT>y <FONT =
+color=3D#800000>*</FONT> LCD_GRAPHICS_AREA<FONT color=3D#800000>) + =
+(</FONT>x <FONT color=3D#800000>/</FONT> <FONT =
+color=3D#ff0080>8</FONT><FONT color=3D#800000>) +</FONT> =
+LCD_GRAPHICS_HOME<FONT color=3D#800000>;</FONT>
+        address <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>+</FONT> <FONT color=3D#ff0080>0x8000</FONT><FONT =
+color=3D#800000>;</FONT>
+    <FONT color=3D#800000>}</FONT>
+
+    data <FONT color=3D#800000>=3D</FONT> lcd_bit_to_byte<FONT =
+color=3D#800000>(</FONT><FONT color=3D#ff0080>7</FONT> <FONT =
+color=3D#800000>- (</FONT>x <FONT color=3D#800000>%</FONT> <FONT =
+color=3D#ff0080>8</FONT><FONT color=3D#800000>));</FONT>
+
+    lcd_write_data<FONT color=3D#800000>(</FONT>address <FONT =
+color=3D#800000>&amp;</FONT> <FONT color=3D#ff0080>0xff</FONT><FONT =
+color=3D#800000>);</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>address <FONT =
+color=3D#800000>&gt;&gt;</FONT> <FONT color=3D#ff0080>0x08</FONT><FONT =
+color=3D#800000>);</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_ADDRESS_POINTER_SET<FONT =
+color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Read existing display */</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_DATA_READ_NO_INCREMENT<FONT =
+color=3D#800000>);</FONT>
+    data <FONT color=3D#800000>=3D</FONT> data <FONT =
+color=3D#800000>|</FONT> lcd_read_data<FONT color=3D#800000>();</FONT>
+
+    <FONT color=3D#0000a0>/* Write modified data */</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>data<FONT =
+color=3D#800000>);</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_DATA_WRITE_AUTO_INCREMENT<FONT =
+color=3D#800000>);</FONT>
+<FONT color=3D#800000>}</FONT>
+
+<FONT =
+color=3D#0000a0>/********************************************</FONT>
+<FONT color=3D#0000a0> * Function name: lcd_clear_pixel           =
+*</FONT>
+<FONT color=3D#0000a0> * Description:   Clear a single Pixel      =
+*</FONT>
+<FONT color=3D#0000a0> *                0 &lt;=3D X &lt;=3D LCD Width    =
+   *</FONT>
+<FONT color=3D#0000a0> *                0 &lt;=3D Y &lt;=3D LCD Height   =
+   *</FONT>
+<FONT color=3D#0000a0> =
+*******************************************/</FONT>
+<FONT color=3D#800000><B>void</B></FONT> lcd_clear_pixel<FONT =
+color=3D#800000>(<B>unsigned char</B></FONT> x<FONT color=3D#800000>, =
+<B>unsigned char</B></FONT> y<FONT color=3D#800000>)</FONT>
+<FONT color=3D#800000>{</FONT>
+    <FONT color=3D#800000><B>unsigned char</B></FONT> data<FONT =
+color=3D#800000>;</FONT>
+    <FONT color=3D#800000><B>unsigned int</B></FONT> address<FONT =
+color=3D#800000>;</FONT>
+
+    address <FONT color=3D#800000>=3D (</FONT>y <FONT =
+color=3D#800000>*</FONT> LCD_GRAPHICS_AREA<FONT color=3D#800000>) + =
+(</FONT>x <FONT color=3D#800000>/</FONT> <FONT =
+color=3D#ff0080>8</FONT><FONT color=3D#800000>) +</FONT> =
+LCD_GRAPHICS_HOME<FONT color=3D#800000>;</FONT>
+
+    <FONT color=3D#800000><B>if</B> (</FONT>y <FONT =
+color=3D#800000>&gt;</FONT> <FONT color=3D#ff0080>63</FONT> <FONT =
+color=3D#800000>&amp;&amp;</FONT> LCD_NUMBER_OF_SCREENS <FONT =
+color=3D#800000>=3D=3D</FONT> <FONT color=3D#ff0080>2</FONT><FONT =
+color=3D#800000>)</FONT> <FONT color=3D#0000a0>/* If we are on the =
+second screen and it exists */</FONT>
+    <FONT color=3D#800000>{</FONT>
+        y <FONT color=3D#800000>=3D</FONT> y <FONT =
+color=3D#800000>-</FONT> <FONT color=3D#ff0080>64</FONT><FONT =
+color=3D#800000>;</FONT>
+        address <FONT color=3D#800000>=3D (</FONT>y <FONT =
+color=3D#800000>*</FONT> LCD_GRAPHICS_AREA<FONT color=3D#800000>) + =
+(</FONT>x <FONT color=3D#800000>/</FONT> <FONT =
+color=3D#ff0080>8</FONT><FONT color=3D#800000>) +</FONT> =
+LCD_GRAPHICS_HOME<FONT color=3D#800000>;</FONT>
+        address <FONT color=3D#800000>=3D</FONT> address <FONT =
+color=3D#800000>+</FONT> <FONT color=3D#ff0080>0x8000</FONT><FONT =
+color=3D#800000>;</FONT>
+    <FONT color=3D#800000>}</FONT>
+
+    data <FONT color=3D#800000>=3D</FONT> lcd_bit_to_byte<FONT =
+color=3D#800000>(</FONT><FONT color=3D#ff0080>7</FONT> <FONT =
+color=3D#800000>- (</FONT>x <FONT color=3D#800000>%</FONT> <FONT =
+color=3D#ff0080>8</FONT><FONT color=3D#800000>));</FONT>
+
+    lcd_write_data<FONT color=3D#800000>(</FONT>address <FONT =
+color=3D#800000>&amp;</FONT> <FONT color=3D#ff0080>0xff</FONT><FONT =
+color=3D#800000>);</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>address <FONT =
+color=3D#800000>&gt;&gt;</FONT> <FONT color=3D#ff0080>0x08</FONT><FONT =
+color=3D#800000>);</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_ADDRESS_POINTER_SET<FONT =
+color=3D#800000>);</FONT>
+
+    <FONT color=3D#0000a0>/* Read existing display */</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_DATA_READ_NO_INCREMENT<FONT =
+color=3D#800000>);</FONT>
+    data <FONT color=3D#800000>=3D (~</FONT>data<FONT color=3D#800000>) =
+&amp;</FONT> lcd_read_data<FONT color=3D#800000>();</FONT>
+
+    <FONT color=3D#0000a0>/* Write modified data */</FONT>
+    lcd_write_data<FONT color=3D#800000>(</FONT>data<FONT =
+color=3D#800000>);</FONT>
+    lcd_write_command<FONT =
+color=3D#800000>(</FONT>LCD_DATA_WRITE_AUTO_INCREMENT<FONT =
+color=3D#800000>);</FONT>
+<FONT color=3D#800000>}</FONT>
+
+<FONT color=3D#800000><B>unsigned char</B></FONT> lcd_bit_to_byte<FONT =
+color=3D#800000>(<B>unsigned char</B></FONT> bit<FONT =
+color=3D#800000>)</FONT>
+<FONT color=3D#800000>{</FONT>
+    <FONT color=3D#800000><B>switch</B> (</FONT>bit<FONT =
+color=3D#800000>)</FONT>
+    <FONT color=3D#800000>{</FONT>
+        <FONT color=3D#800000><B>case</B></FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>:</FONT>
+            <FONT color=3D#800000><B>return</B></FONT> <FONT =
+color=3D#ff0080>1</FONT><FONT color=3D#800000>;</FONT>
+            <FONT color=3D#800000><B>break</B>;</FONT>
+        <FONT color=3D#800000><B>case</B></FONT> <FONT =
+color=3D#ff0080>1</FONT><FONT color=3D#800000>:</FONT>
+            <FONT color=3D#800000><B>return</B></FONT> <FONT =
+color=3D#ff0080>2</FONT><FONT color=3D#800000>;</FONT>
+            <FONT color=3D#800000><B>break</B>;</FONT>
+        <FONT color=3D#800000><B>case</B></FONT> <FONT =
+color=3D#ff0080>2</FONT><FONT color=3D#800000>:</FONT>
+            <FONT color=3D#800000><B>return</B></FONT> <FONT =
+color=3D#ff0080>4</FONT><FONT color=3D#800000>;</FONT>
+            <FONT color=3D#800000><B>break</B>;</FONT>
+        <FONT color=3D#800000><B>case</B></FONT> <FONT =
+color=3D#ff0080>3</FONT><FONT color=3D#800000>:</FONT>
+            <FONT color=3D#800000><B>return</B></FONT> <FONT =
+color=3D#ff0080>8</FONT><FONT color=3D#800000>;</FONT>
+            <FONT color=3D#800000><B>break</B>;</FONT>
+        <FONT color=3D#800000><B>case</B></FONT> <FONT =
+color=3D#ff0080>4</FONT><FONT color=3D#800000>:</FONT>
+            <FONT color=3D#800000><B>return</B></FONT> <FONT =
+color=3D#ff0080>16</FONT><FONT color=3D#800000>;</FONT>
+            <FONT color=3D#800000><B>break</B>;</FONT>
+        <FONT color=3D#800000><B>case</B></FONT> <FONT =
+color=3D#ff0080>5</FONT><FONT color=3D#800000>:</FONT>
+            <FONT color=3D#800000><B>return</B></FONT> <FONT =
+color=3D#ff0080>32</FONT><FONT color=3D#800000>;</FONT>
+            <FONT color=3D#800000><B>break</B>;</FONT>
+        <FONT color=3D#800000><B>case</B></FONT> <FONT =
+color=3D#ff0080>6</FONT><FONT color=3D#800000>:</FONT>
+            <FONT color=3D#800000><B>return</B></FONT> <FONT =
+color=3D#ff0080>64</FONT><FONT color=3D#800000>;</FONT>
+            <FONT color=3D#800000><B>break</B>;</FONT>
+        <FONT color=3D#800000><B>case</B></FONT> <FONT =
+color=3D#ff0080>7</FONT><FONT color=3D#800000>:</FONT>
+            <FONT color=3D#800000><B>return</B></FONT> <FONT =
+color=3D#ff0080>128</FONT><FONT color=3D#800000>;</FONT>
+            <FONT color=3D#800000><B>break</B>;</FONT>
+        <FONT color=3D#800000><B>default</B>:</FONT>
+            <FONT color=3D#800000><B>return</B></FONT> <FONT =
+color=3D#ff0080>0</FONT><FONT color=3D#800000>;</FONT>
+            <FONT color=3D#800000><B>break</B>;</FONT>
+    <FONT color=3D#800000>}</FONT>
+<FONT color=3D#800000>}</FONT>
+
+</FONT>
+</CODE></PRE>
+<HR>
+
+<ADDRESS style=3D"align: right"><SMALL><A=20
+href=3D"http://www.picant.com/c2c/c.html">http://www.picant.com/c2c/c.htm=
+l</A><BR>Copyright=A9=20
+2003 <A href=3D"mailto:support@picant.com">Pavel Baranov</A>.=20
+</SMALL></ADDRESS></BODY></HTML>

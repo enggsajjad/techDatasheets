@@ -1,0 +1,1 @@
+set allSynthModules {uat_sm.MOD uat_top.MOD uart_top.MOD}

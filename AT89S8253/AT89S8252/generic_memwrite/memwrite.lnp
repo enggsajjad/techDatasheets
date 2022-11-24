@@ -1,0 +1,4 @@
+"main.obj" 
+TO "memwrite" 
+RAMSIZE(256) 
+PDATA( 0xFF00 )

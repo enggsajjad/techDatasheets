@@ -1,0 +1,197 @@
+##############################################################################
+#                                                                            #
+# IAR AT90S C-Compiler V1.30A/WIN                                            #
+#                                                                            #
+#       Internal versions FE4.40D CO1.10K CG1.30A GL1.06I CD1.04A            #
+#                         AF1.25A AB1.30A EB1.30A                            #
+#                                                                            #
+#       Compile time  =  21/Jan/1999  11:31:20                               #
+#       Target option =  Max 64 KB data +   8 KB code (8515 4414...)         #
+#       Memory model  =  small                                               #
+#       Source file   =  c:\projects\at17c8515\writepage.c                   #
+#       List file     =  c:\projects\at17c8515\debug\list\writepage.lst      #
+#       Object file   =  c:\projects\at17c8515\debug\obj\writepage.r90       #
+#       Command line  =  -v1 -ms -OC:\Projects\at17c8515\Debug\Obj\ -e -gA   #
+#                        -RCODE -r0e -LC:\Projects\at17c8515\Debug\List\ -q  #
+#                        -t8 -IC:\IAR\EW21\A90\inc\ -K                       #
+#                        C:\Projects\at17c8515\WritePage.c                   #
+#                                                                            #
+#                                             (c) Copyright IAR Systems 1997 #
+##############################################################################
+
+   \                     	NAME	writepage(17)
+   \                     	RSEG	CODE(0)
+   \                     	EXTERN	BitDelay
+   \                     	EXTERN	SendByte
+   \                     	EXTERN	SendStartBit
+   \                     	EXTERN	SendStopBit
+   \                     	PUBLIC	WritePage
+   \                     	EXTERN	t1_timed_out
+   \                     	EXTERN	?PROLOGUE7_L09
+   \                     	EXTERN	?EPILOGUE_B7_L09
+   \                     	EXTERN	?CL1S_1_30_L08
+   \                     	RSEG	CODE
+   \                     WritePage:
+      1          // WritePage.c
+      2          // Writes PAGE_SIZE bytes at address from bufptr
+      3          // Starts writing at address 0 within the page
+      4          // Please refer to the application note titled: 
+      5          // "Programming Specification for Atmel's Configuration Memory E²PROMS AT17C65/128/256/512/010" 
+      6          // found at www.atmel.com for detailed device address decoding and page address formatting
+      7          // After programming the data polling method is used to determine the end of 
+      8          // the internal programming cycle.
+      9          // Timer/Counter1 is used to ensure the polling code exits its while loop.
+     10          
+     11          #include "at17c.h"
+     12          
+     13          extern volatile unsigned char t1_timed_out;
+     14           
+     15          extern unsigned char SendByte(unsigned char byte, unsigned char order);
+     16          extern void SendStartBit(void);
+     17          extern void SendStopBit(void);
+     18          extern void BitDelay(void);
+     19           
+     20          void WritePage(unsigned int address, unsigned char *bufptr) {
+   \   00000000   ....                       RCALL   ?PROLOGUE7_L09
+   \   00000002   A02F                       MOV     R26,R16
+   \   00000004   B12F                       MOV     R27,R17
+   \   00000006   842F                       MOV     R24,R20
+   \   00000008   952F                       MOV     R25,R21
+     21          
+     22          unsigned char i;
+     23          unsigned char addr1;
+     24          unsigned char addr2;
+     25          unsigned char addr3;
+     26          unsigned char test_ack = 0xff;
+   \   0000000A   0FEF                       LDI     R16,255
+   \   0000000C   602E                       MOV     R6,R16
+     27          
+     28              PORTB &= 0xfb; // bring SER_EN low
+   \   0000000E   C298                       CBI     LOW(24),LOW(2)
+     29              BitDelay();
+   \   00000010   ....                       RCALL   BitDelay
+     30                          
+     31              addr1 = (unsigned char)(address >> 9);
+   \   00000012   0A2F                       MOV     R16,R26
+   \   00000014   1B2F                       MOV     R17,R27
+   \   00000016   012F                       MOV     R16,R17
+   \   00000018   1127                       CLR     R17
+   \   0000001A   0695                       LSR     R16
+   \   0000001C   402E                       MOV     R4,R16
+     32              addr2 = (unsigned char)(address >> 1);
+   \   0000001E   0A2F                       MOV     R16,R26
+   \   00000020   1B2F                       MOV     R17,R27
+   \   00000022   1695                       LSR     R17
+   \   00000024   0795                       ROR     R16
+   \   00000026   502E                       MOV     R5,R16
+     33              addr3 = (unsigned char)(address << 7);
+   \   00000028   A795                       ROR     R26
+   \   0000002A   AA27                       CLR     R26
+   \   0000002C   A795                       ROR     R26
+     34                  
+     35              SendStartBit();
+   \   0000002E   ....                       RCALL   SendStartBit
+     36              SendByte(AT17C010 + WRITE,MSB_FIRST);  // send device address byte with write bit
+   \   00000030   4FEF                       LDI     R20,255
+   \   00000032   06EA                       LDI     R16,166
+   \   00000034   ....                       RCALL   SendByte
+     37              SendByte(addr1,MSB_FIRST);                 // 1st address byte
+   \   00000036   4FEF                       LDI     R20,255
+   \   00000038   042D                       MOV     R16,R4
+   \   0000003A   ....                       RCALL   SendByte
+     38              SendByte(addr2,MSB_FIRST);                 // 2nd address byte
+   \   0000003C   4FEF                       LDI     R20,255
+   \   0000003E   052D                       MOV     R16,R5
+   \   00000040   ....                       RCALL   SendByte
+     39              SendByte(addr3,MSB_FIRST);                 // 3rd address byte
+   \   00000042   4FEF                       LDI     R20,255
+   \   00000044   0A2F                       MOV     R16,R26
+   \   00000046   ....                       RCALL   SendByte
+     40           
+     41              for (i = 0; i < PAGE_SIZE; i++)
+   \   00000048   AA27                       CLR     R26
+   \                     ?0003:
+   \   0000004A   A038                       CPI     R26,LOW(128)
+   \   0000004C   48F4                       BRCC    ?0002
+     42                  SendByte(bufptr[i],LSB_FIRST);
+   \   0000004E   4427                       CLR     R20
+   \   00000050   EA2F                       MOV     R30,R26
+   \   00000052   FF27                       CLR     R31
+   \   00000054   E80F                       ADD     R30,R24
+   \   00000056   F91F                       ADC     R31,R25
+   \   00000058   0081                       LD      R16,Z
+   \   0000005A   ....                       RCALL   SendByte
+   \   0000005C   A395                       INC     R26
+   \   0000005E   F5CF                       RJMP    ?0003
+   \                     ?0002:
+     43                      
+     44              SendStopBit();
+   \   00000060   ....                       RCALL   SendStopBit
+     45                        
+     46              t1_timed_out = FALSE; // set in timer counter 0 overflow interrupt routine
+   \   00000062   0027                       CLR     R16
+   \   00000064   0093....                   STS     LWRD(t1_timed_out),R16
+     47           
+     48              // 20 milli-second timeout
+     49              // 7.3728MHz / 1024 = 7200 Hz
+     50              // 7200 Hz = 138.8 us
+     51              // 20 ms / 138.8 us = 144
+     52              // 65536 - 144 = 65392 = ff70
+     53              // interrupt on ffff to 0000 transition
+     54              TCNT1H = 0xff;  
+   \   00000068   0FEF                       LDI     R16,255
+   \   0000006A   0DBD                       OUT     LOW(45),R16
+     55              TCNT1L = 0x70; // load counter
+   \   0000006C   00E7                       LDI     R16,112
+   \   0000006E   0CBD                       OUT     LOW(44),R16
+     56              TCCR1B = 0x05; // timer/counter 1 clock / 1024
+   \   00000070   05E0                       LDI     R16,5
+   \   00000072   0EBD                       OUT     LOW(46),R16
+   \                     ?0007:
+     57          
+     58              // continue sending start bit and device address until we get an ack back
+     59              // data poll to program complete ... time out for error
+     60              while (test_ack && !t1_timed_out) {
+   \   00000074   6620                       TST     R6
+   \   00000076   51F0                       BREQ    ?0006
+   \   00000078   0091....                   LDS     R16,LWRD(t1_timed_out)
+   \   0000007C   0023                       TST     R16
+   \   0000007E   31F4                       BRNE    ?0006
+     61                  SendStartBit();
+   \   00000080   ....                       RCALL   SendStartBit
+     62                  test_ack = SendByte(AT17C010 + WRITE,MSB_FIRST);  // send device address byte
+   \   00000082   4FEF                       LDI     R20,255
+   \   00000084   06EA                       LDI     R16,166
+   \   00000086   ....                       RCALL   SendByte
+   \   00000088   602E                       MOV     R6,R16
+   \   0000008A   F4CF                       RJMP    ?0007
+   \                     ?0006:
+     63              }
+     64              TCCR1B = 0x00; // disable timer/counter 1 clock
+   \   0000008C   0027                       CLR     R16
+   \   0000008E   0EBD                       OUT     LOW(46),R16
+     65              SendStopBit();
+   \   00000090   ....                       RCALL   SendStopBit
+     66          
+     67              PORTB |= 0x04; // bring SER_EN high
+   \   00000092   C29A                       SBI     LOW(24),LOW(2)
+     68                  
+     69          }
+   \   00000094   E7E0                       LDI     R30,7
+   \   00000096   ....                       RJMP    ?EPILOGUE_B7_L09
+   \                     ;	bufptr          	R24-R25
+   \                     ;	i               	R26
+   \                     ;	addr3           	R26
+   \                     ;	addr2           	R5
+   \                     ;	addr1           	R4
+   \                     ;	address         	R26-R27
+   \                     ;	test_ack        	R6
+   \                     	END
+
+Source file: c:\projects\at17c8515\writepage.c
+Errors: none
+Warnings: none
+Code size: 152
+Constant size: 0
+Static variable size: 0
+

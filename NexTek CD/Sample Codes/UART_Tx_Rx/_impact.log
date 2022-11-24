@@ -1,0 +1,104 @@
+iMPACT Version: G.23
+iMPACT log file Started on 2004/12/08 14:43:08
+// *** BATCH CMD : setPreference -pref UserLevel:NOVICE
+// *** BATCH CMD : setPreference -pref MessageLevel:DETAILED
+// *** BATCH CMD : setPreference -pref ConcurrentMode:FALSE
+// *** BATCH CMD : setPreference -pref UseHighz:FALSE
+// *** BATCH CMD : setPreference -pref ConfigOnFailure:STOP
+// *** BATCH CMD : setPreference -pref StartupCLock:AUTO_CORRECTION
+// *** BATCH CMD : setPreference -pref AutoSignature:FALSE
+// *** BATCH CMD : setPreference -pref KeepSVF:FALSE
+// *** BATCH CMD : setPreference -pref svfUseTime:FALSE
+// *** BATCH CMD : setPreference -pref UserLevel:NOVICE
+// *** BATCH CMD : setPreference -pref MessageLevel:DETAILED
+// *** BATCH CMD : setPreference -pref ConcurrentMode:FALSE
+// *** BATCH CMD : setPreference -pref UseHighz:FALSE
+// *** BATCH CMD : setPreference -pref ConfigOnFailure:STOP
+// *** BATCH CMD : setPreference -pref StartupCLock:AUTO_CORRECTION
+// *** BATCH CMD : setPreference -pref AutoSignature:FALSE
+// *** BATCH CMD : setPreference -pref KeepSVF:FALSE
+// *** BATCH CMD : setPreference -pref svfUseTime:FALSE
+GUI --- Boundary-Scan Mode selected
+// *** BATCH CMD : setMode -bs
+GUI --- Auto connect to cable...
+// *** BATCH CMD : setCable -port auto
+AutoDetecting cable. Please wait.
+CB_PROGRESS_START - Starting Operation.
+Connecting to cable (USB Port).
+Cable connection failed.
+Connecting to cable (Parallel Port - LPT1).
+Checking cable driver.
+ Driver windrvr.sys version = 5.0.5.1. LPT base address = 0378h.
+Cable connection established.
+CB_PROGRESS_END - End Operation.
+Elapsed time =      1 sec.
+// *** BATCH CMD : Identify
+PROGRESS_START - Starting Operation.
+Identifying chain contents ....'1': : Manufacturer's ID =Xilinx xc2s150, Version : 9
+INFO:iMPACT:1777 - 
+Reading C:/Xilinx/spartan2/data/xc2s150.bsd...
+Reading C:/Xilinx/spartan2/data/xc2s150.bsd...
+INFO:iMPACT:501 - '1': Added Device xc2s150 successfully.
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+'2': : Manufacturer's ID =Xilinx xcf01s, Version : 0
+INFO:iMPACT:1777 - 
+Reading C:/Xilinx/xcf/data/xcf01s.bsd...
+Reading C:/Xilinx/xcf/data/xcf01s.bsd...
+INFO:iMPACT:501 - '1': Added Device xcf01s successfully.
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+done.
+PROGRESS_END - End Operation.
+Elapsed time =      2 sec.
+xc18v01_pc20
+xc18v01_so20
+xc18v01_vq44
+xc18v02_pc44
+xc18v02_vq44
+xc18v04_pc44
+xc18v04_vq44
+xcf01s_vo20
+xcf02s_vo20
+xcf04s_vo20
+// *** BATCH CMD : setAttribute -position 1 -attr configFileName -value "\\nextek3\c\testing_FROM\UART_Tx_Rx\uart.mcs"
+'1': Loading file '\\nextek3\c\testing_FROM\UART_Tx_Rx\uart.mcs' ...
+done.
+// *** BATCH CMD : setAttribute -position 2 -attr configFileName -value "\\nextek3\c\testing_FROM\UART_Tx_Rx\uart_top.bit"
+'2': Loading file '\\nextek3\c\testing_FROM\UART_Tx_Rx\uart_top.bit' ...
+done.
+WARNING:iMPACT:1049 - Startup Clock has been changed to 'JtagClk' in the bitstream stored in memory,
+but the original bitstream file remains unchanged.
+but the original bitstream file remains unchanged.
+INFO:iMPACT:501 - '2': Added Device xc2s150 successfully.
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+// *** BATCH CMD : Erase -p 1 
+PROGRESS_START - Starting Operation.
+Validating chain...
+Boundary-scan chain validated successfully.
+'1': Putting device in ISP mode...done.
+'1': Erasing device...done.
+'1': Erasure completed successfully.
+PROGRESS_END - End Operation.
+Elapsed time =      6 sec.
+// *** BATCH CMD : Program -p 1 -e -loadfpga 
+PROGRESS_START - Starting Operation.
+Validating chain...
+Boundary-scan chain validated successfully.
+'1': Putting device in ISP mode...done.
+'1': Erasing device...done.
+'1': Erasure completed successfully.
+'1': Putting device in ISP mode...done.
+'1': Programming device...done.
+'1': Setting user-programmable bits...
+done.
+'1': Starting FPGA Load with Prom Data...INFO:iMPACT:563 - '1':Please ensure proper connections as specified by the data book ...
+'1': Programming completed successfully.
+PROGRESS_END - End Operation.
+Elapsed time =     14 sec.
+*****   Closing iMPACT program.   *****
+----------------------------------------------------------------------
+----------------------------------------------------------------------

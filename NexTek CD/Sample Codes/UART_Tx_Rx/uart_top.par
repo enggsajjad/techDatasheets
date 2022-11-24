@@ -1,0 +1,127 @@
+
+Constraints file: uart_top.pcf
+
+Loading device database for application Par from file "uart_top_map.ncd".
+   "uart_top" is an NCD, version 2.38, device xc2s150, package pq208, speed -5
+Loading device for application Par from file 'v150.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-06-19.
+
+
+Resolved that IOB <clk_1200Hz> must be placed at site P6.
+Resolved that IOB <ser_data_frm_pc> must be placed at site P71.
+Resolved that GCLKIOB <clk_16MHz> must be placed at site P77.
+Resolved that IOB <clk_19200Hz> must be placed at site P191.
+Resolved that IOB <rst_n> must be placed at site P110.
+Resolved that IOB <ser_data_to_pc> must be placed at site P69.
+
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs             5 out of 140     3%
+      Number of LOCed External IOBs    5 out of 5     100%
+
+   Number of SLICEs                   56 out of 1728    3%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:9897f2) REAL time: 2 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 2 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 2 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 2 secs 
+
+Phase 5.8
+..
+Phase 5.8 (Checksum:995f2e) REAL time: 2 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 2 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 2 secs 
+
+Writing design to file uart_top.ncd.
+
+Total REAL time to Placer completion: 2 secs 
+Total CPU time to Placer completion: 1 secs 
+
+
+Phase 1: 373 unrouted;       REAL time: 2 secs 
+
+Phase 2: 339 unrouted;       REAL time: 24 secs 
+
+Phase 3: 76 unrouted;       REAL time: 24 secs 
+
+Phase 4: 0 unrouted;       REAL time: 25 secs 
+
+Total REAL time to Router completion: 25 secs 
+Total CPU time to Router completion: 21 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|   clk_16MHz_BUFGP          |  Global  |    8   |  0.097     |  0.719      |
++----------------------------+----------+--------+------------+-------------+
+|      count_div<3>          |   Local  |   12   |  1.745     |  3.768      |
++----------------------------+----------+--------+------------+-------------+
+|  clk_19200Hz_OBUF          |   Local  |   14   |  2.261     |  3.764      |
++----------------------------+----------+--------+------------+-------------+
+|     clk_19200Hz_1          |   Local  |   17   |  2.115     |  3.990      |
++----------------------------+----------+--------+------------+-------------+
+
+
+   The Delay Summary Report
+
+   The SCORE FOR THIS DESIGN is: 217
+
+
+The NUMBER OF SIGNALS NOT COMPLETELY ROUTED for this design is: 0
+
+   The AVERAGE CONNECTION DELAY for this design is:        1.629
+   The MAXIMUM PIN DELAY IS:                               4.980
+   The AVERAGE CONNECTION DELAY on the 10 WORST NETS is:   2.687
+
+   Listing Pin Delays by value: (nsec)
+
+    d < 1.00   < d < 2.00  < d < 3.00  < d < 4.00  < d < 5.00  d >= 5.00
+   ---------   ---------   ---------   ---------   ---------   ---------
+         130         157          24          41          21           0
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 30 secs 
+Total CPU time to PAR completion: 24 secs 
+
+Peak Memory Usage:  55 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file uart_top.ncd.
+
+
+PAR done.
